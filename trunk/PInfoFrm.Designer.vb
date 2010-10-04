@@ -105,9 +105,9 @@ Partial Class PInfoFrm
         Me.VersionLabel.AutoSize = True
         Me.VersionLabel.Location = New System.Drawing.Point(81, 35)
         Me.VersionLabel.Name = "VersionLabel"
-        Me.VersionLabel.Size = New System.Drawing.Size(49, 12)
+        Me.VersionLabel.Size = New System.Drawing.Size(59, 12)
         Me.VersionLabel.TabIndex = 1
-        Me.VersionLabel.Text = "버전 -.-"
+        Me.VersionLabel.Text = "버전 -.-.-"
         '
         'NameLabel
         '
@@ -143,7 +143,7 @@ Partial Class PInfoFrm
         Me.FileInfoTextBox.Name = "FileInfoTextBox"
         Me.FileInfoTextBox.ReadOnly = True
         Me.FileInfoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.FileInfoTextBox.Size = New System.Drawing.Size(360, 137)
+        Me.FileInfoTextBox.Size = New System.Drawing.Size(334, 137)
         Me.FileInfoTextBox.TabIndex = 1
         Me.FileInfoTextBox.Text = resources.GetString("FileInfoTextBox.Text")
         Me.FileInfoTextBox.WordWrap = False

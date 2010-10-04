@@ -24,7 +24,15 @@ Public Class AVSIFrm
 
     Dim AVSOK As Boolean = False
 
+    Private Sub AVSIFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+
+        MainFrm.OldVerCheckBoxAVSIFrmV = OldVerCheckBox.Checked
+
+    End Sub
+
     Private Sub AVSIFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        OldVerCheckBox.Checked = MainFrm.OldVerCheckBoxAVSIFrmV
 
         '=========================================
         'Rev 1.1

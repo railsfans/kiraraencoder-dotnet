@@ -50,6 +50,14 @@ Partial Class AviSynthEditorFrm
         Me.MPEG2SourceLabel = New System.Windows.Forms.Label
         Me.Def_MPEG2SourceTextBox = New System.Windows.Forms.TextBox
         Me.MPEG2SourceTextBox = New System.Windows.Forms.TextBox
+        Me.AVCTabPage = New System.Windows.Forms.TabPage
+        Me.AVCLabel = New System.Windows.Forms.Label
+        Me.Def_AVCTextBox = New System.Windows.Forms.TextBox
+        Me.AVCTextBox = New System.Windows.Forms.TextBox
+        Me.VC1TabPage = New System.Windows.Forms.TabPage
+        Me.VC1Label = New System.Windows.Forms.Label
+        Me.Def_VC1TextBox = New System.Windows.Forms.TextBox
+        Me.VC1TextBox = New System.Windows.Forms.TextBox
         Me.BassAudioTabPage = New System.Windows.Forms.TabPage
         Me.BassAudioLabel = New System.Windows.Forms.Label
         Me.Def_BassAudioTextBox = New System.Windows.Forms.TextBox
@@ -79,6 +87,8 @@ Partial Class AviSynthEditorFrm
         Me.TabPage1.SuspendLayout()
         Me.FFmpegSourceTabPage.SuspendLayout()
         Me.MPEG2SourceTabPage.SuspendLayout()
+        Me.AVCTabPage.SuspendLayout()
+        Me.VC1TabPage.SuspendLayout()
         Me.BassAudioTabPage.SuspendLayout()
         Me.NicAudioTabPage.SuspendLayout()
         Me.ChannelScriptTabPage.SuspendLayout()
@@ -91,28 +101,28 @@ Partial Class AviSynthEditorFrm
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.LineColToolStripStatusLabel})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 447)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 486)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(735, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(851, 22)
         Me.StatusStrip1.TabIndex = 13
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(180, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(209, 17)
         Me.ToolStripStatusLabel1.Spring = True
         '
         'ToolStripStatusLabel2
         '
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(180, 17)
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(209, 17)
         Me.ToolStripStatusLabel2.Spring = True
         '
         'ToolStripStatusLabel3
         '
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(180, 17)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(209, 17)
         Me.ToolStripStatusLabel3.Spring = True
         '
         'LineColToolStripStatusLabel
@@ -120,7 +130,7 @@ Partial Class AviSynthEditorFrm
         Me.LineColToolStripStatusLabel.AutoSize = False
         Me.LineColToolStripStatusLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.LineColToolStripStatusLabel.Name = "LineColToolStripStatusLabel"
-        Me.LineColToolStripStatusLabel.Size = New System.Drawing.Size(180, 17)
+        Me.LineColToolStripStatusLabel.Size = New System.Drawing.Size(209, 17)
         Me.LineColToolStripStatusLabel.Spring = True
         Me.LineColToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -149,7 +159,7 @@ Partial Class AviSynthEditorFrm
         Me.FFmpegSourceTextBox.Multiline = True
         Me.FFmpegSourceTextBox.Name = "FFmpegSourceTextBox"
         Me.FFmpegSourceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.FFmpegSourceTextBox.Size = New System.Drawing.Size(705, 284)
+        Me.FFmpegSourceTextBox.Size = New System.Drawing.Size(821, 323)
         Me.FFmpegSourceTextBox.TabIndex = 23
         Me.FFmpegSourceTextBox.WordWrap = False
         '
@@ -162,7 +172,7 @@ Partial Class AviSynthEditorFrm
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(735, 37)
+        Me.Panel1.Size = New System.Drawing.Size(851, 37)
         Me.Panel1.TabIndex = 16
         '
         'ConPanel
@@ -171,7 +181,7 @@ Partial Class AviSynthEditorFrm
         Me.ConPanel.Controls.Add(Me.ListenButton)
         Me.ConPanel.Controls.Add(Me.RefButton)
         Me.ConPanel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ConPanel.Location = New System.Drawing.Point(375, 0)
+        Me.ConPanel.Location = New System.Drawing.Point(491, 0)
         Me.ConPanel.Name = "ConPanel"
         Me.ConPanel.Size = New System.Drawing.Size(360, 37)
         Me.ConPanel.TabIndex = 6
@@ -242,7 +252,7 @@ Partial Class AviSynthEditorFrm
         Me.ChannelTextBox.Multiline = True
         Me.ChannelTextBox.Name = "ChannelTextBox"
         Me.ChannelTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.ChannelTextBox.Size = New System.Drawing.Size(705, 284)
+        Me.ChannelTextBox.Size = New System.Drawing.Size(821, 323)
         Me.ChannelTextBox.TabIndex = 25
         Me.ChannelTextBox.WordWrap = False
         '
@@ -268,13 +278,15 @@ Partial Class AviSynthEditorFrm
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.FFmpegSourceTabPage)
         Me.TabControl1.Controls.Add(Me.MPEG2SourceTabPage)
+        Me.TabControl1.Controls.Add(Me.AVCTabPage)
+        Me.TabControl1.Controls.Add(Me.VC1TabPage)
         Me.TabControl1.Controls.Add(Me.BassAudioTabPage)
         Me.TabControl1.Controls.Add(Me.NicAudioTabPage)
         Me.TabControl1.Controls.Add(Me.ChannelScriptTabPage)
         Me.TabControl1.Location = New System.Drawing.Point(10, 43)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(713, 340)
+        Me.TabControl1.Size = New System.Drawing.Size(829, 379)
         Me.TabControl1.TabIndex = 28
         '
         'TabPage1
@@ -282,7 +294,7 @@ Partial Class AviSynthEditorFrm
         Me.TabPage1.Controls.Add(Me.ScriptTextBox)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(705, 314)
+        Me.TabPage1.Size = New System.Drawing.Size(821, 353)
         Me.TabPage1.TabIndex = 6
         Me.TabPage1.Text = "Script"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -299,7 +311,7 @@ Partial Class AviSynthEditorFrm
         Me.ScriptTextBox.Name = "ScriptTextBox"
         Me.ScriptTextBox.ReadOnly = True
         Me.ScriptTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.ScriptTextBox.Size = New System.Drawing.Size(705, 314)
+        Me.ScriptTextBox.Size = New System.Drawing.Size(821, 353)
         Me.ScriptTextBox.TabIndex = 24
         Me.ScriptTextBox.WordWrap = False
         '
@@ -311,7 +323,7 @@ Partial Class AviSynthEditorFrm
         Me.FFmpegSourceTabPage.Location = New System.Drawing.Point(4, 22)
         Me.FFmpegSourceTabPage.Name = "FFmpegSourceTabPage"
         Me.FFmpegSourceTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.FFmpegSourceTabPage.Size = New System.Drawing.Size(705, 314)
+        Me.FFmpegSourceTabPage.Size = New System.Drawing.Size(821, 353)
         Me.FFmpegSourceTabPage.TabIndex = 0
         Me.FFmpegSourceTabPage.Text = "FFmpegSource"
         Me.FFmpegSourceTabPage.UseVisualStyleBackColor = True
@@ -332,7 +344,7 @@ Partial Class AviSynthEditorFrm
         Me.MPEG2SourceTabPage.Controls.Add(Me.MPEG2SourceTextBox)
         Me.MPEG2SourceTabPage.Location = New System.Drawing.Point(4, 22)
         Me.MPEG2SourceTabPage.Name = "MPEG2SourceTabPage"
-        Me.MPEG2SourceTabPage.Size = New System.Drawing.Size(705, 314)
+        Me.MPEG2SourceTabPage.Size = New System.Drawing.Size(821, 353)
         Me.MPEG2SourceTabPage.TabIndex = 5
         Me.MPEG2SourceTabPage.Text = "MPEG2Source"
         Me.MPEG2SourceTabPage.UseVisualStyleBackColor = True
@@ -342,9 +354,9 @@ Partial Class AviSynthEditorFrm
         Me.MPEG2SourceLabel.AutoSize = True
         Me.MPEG2SourceLabel.Location = New System.Drawing.Point(7, 7)
         Me.MPEG2SourceLabel.Name = "MPEG2SourceLabel"
-        Me.MPEG2SourceLabel.Size = New System.Drawing.Size(546, 12)
+        Me.MPEG2SourceLabel.Size = New System.Drawing.Size(577, 12)
         Me.MPEG2SourceLabel.TabIndex = 29
-        Me.MPEG2SourceLabel.Text = "비디오 MPEGTS, MPEG 파일(AVC제외) / MPEGTS 파일은 기본 오디오 스트림으로 인코딩됩니다."
+        Me.MPEG2SourceLabel.Text = "비디오 MPEGTS, MPEG 파일(AVC, VC1제외) / MPEGTS 파일은 기본 오디오 스트림으로 인코딩됩니다."
         '
         'Def_MPEG2SourceTextBox
         '
@@ -371,9 +383,109 @@ Partial Class AviSynthEditorFrm
         Me.MPEG2SourceTextBox.Multiline = True
         Me.MPEG2SourceTextBox.Name = "MPEG2SourceTextBox"
         Me.MPEG2SourceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.MPEG2SourceTextBox.Size = New System.Drawing.Size(705, 284)
+        Me.MPEG2SourceTextBox.Size = New System.Drawing.Size(821, 323)
         Me.MPEG2SourceTextBox.TabIndex = 24
         Me.MPEG2SourceTextBox.WordWrap = False
+        '
+        'AVCTabPage
+        '
+        Me.AVCTabPage.Controls.Add(Me.AVCLabel)
+        Me.AVCTabPage.Controls.Add(Me.Def_AVCTextBox)
+        Me.AVCTabPage.Controls.Add(Me.AVCTextBox)
+        Me.AVCTabPage.Location = New System.Drawing.Point(4, 22)
+        Me.AVCTabPage.Name = "AVCTabPage"
+        Me.AVCTabPage.Size = New System.Drawing.Size(821, 353)
+        Me.AVCTabPage.TabIndex = 7
+        Me.AVCTabPage.Text = "MPEG/MPEGTS(AVC)"
+        Me.AVCTabPage.UseVisualStyleBackColor = True
+        '
+        'AVCLabel
+        '
+        Me.AVCLabel.AutoSize = True
+        Me.AVCLabel.Location = New System.Drawing.Point(7, 7)
+        Me.AVCLabel.Name = "AVCLabel"
+        Me.AVCLabel.Size = New System.Drawing.Size(196, 12)
+        Me.AVCLabel.TabIndex = 32
+        Me.AVCLabel.Text = "비디오 MPEG/MPEGTS AVC 파일"
+        '
+        'Def_AVCTextBox
+        '
+        Me.Def_AVCTextBox.BackColor = System.Drawing.Color.White
+        Me.Def_AVCTextBox.Location = New System.Drawing.Point(0, 30)
+        Me.Def_AVCTextBox.MaxLength = 2147483647
+        Me.Def_AVCTextBox.Multiline = True
+        Me.Def_AVCTextBox.Name = "Def_AVCTextBox"
+        Me.Def_AVCTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.Def_AVCTextBox.Size = New System.Drawing.Size(50, 50)
+        Me.Def_AVCTextBox.TabIndex = 31
+        Me.Def_AVCTextBox.Text = resources.GetString("Def_AVCTextBox.Text")
+        Me.Def_AVCTextBox.Visible = False
+        Me.Def_AVCTextBox.WordWrap = False
+        '
+        'AVCTextBox
+        '
+        Me.AVCTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.AVCTextBox.BackColor = System.Drawing.Color.White
+        Me.AVCTextBox.Location = New System.Drawing.Point(0, 30)
+        Me.AVCTextBox.MaxLength = 2147483647
+        Me.AVCTextBox.Multiline = True
+        Me.AVCTextBox.Name = "AVCTextBox"
+        Me.AVCTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.AVCTextBox.Size = New System.Drawing.Size(821, 323)
+        Me.AVCTextBox.TabIndex = 30
+        Me.AVCTextBox.WordWrap = False
+        '
+        'VC1TabPage
+        '
+        Me.VC1TabPage.Controls.Add(Me.VC1Label)
+        Me.VC1TabPage.Controls.Add(Me.Def_VC1TextBox)
+        Me.VC1TabPage.Controls.Add(Me.VC1TextBox)
+        Me.VC1TabPage.Location = New System.Drawing.Point(4, 22)
+        Me.VC1TabPage.Name = "VC1TabPage"
+        Me.VC1TabPage.Size = New System.Drawing.Size(821, 353)
+        Me.VC1TabPage.TabIndex = 8
+        Me.VC1TabPage.Text = "MPEG/MPEGTS(VC1)"
+        Me.VC1TabPage.UseVisualStyleBackColor = True
+        '
+        'VC1Label
+        '
+        Me.VC1Label.AutoSize = True
+        Me.VC1Label.Location = New System.Drawing.Point(7, 7)
+        Me.VC1Label.Name = "VC1Label"
+        Me.VC1Label.Size = New System.Drawing.Size(194, 12)
+        Me.VC1Label.TabIndex = 32
+        Me.VC1Label.Text = "비디오 MPEG/MPEGTS VC1 파일"
+        '
+        'Def_VC1TextBox
+        '
+        Me.Def_VC1TextBox.BackColor = System.Drawing.Color.White
+        Me.Def_VC1TextBox.Location = New System.Drawing.Point(0, 30)
+        Me.Def_VC1TextBox.MaxLength = 2147483647
+        Me.Def_VC1TextBox.Multiline = True
+        Me.Def_VC1TextBox.Name = "Def_VC1TextBox"
+        Me.Def_VC1TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.Def_VC1TextBox.Size = New System.Drawing.Size(50, 50)
+        Me.Def_VC1TextBox.TabIndex = 31
+        Me.Def_VC1TextBox.Text = resources.GetString("Def_VC1TextBox.Text")
+        Me.Def_VC1TextBox.Visible = False
+        Me.Def_VC1TextBox.WordWrap = False
+        '
+        'VC1TextBox
+        '
+        Me.VC1TextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.VC1TextBox.BackColor = System.Drawing.Color.White
+        Me.VC1TextBox.Location = New System.Drawing.Point(0, 30)
+        Me.VC1TextBox.MaxLength = 2147483647
+        Me.VC1TextBox.Multiline = True
+        Me.VC1TextBox.Name = "VC1TextBox"
+        Me.VC1TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.VC1TextBox.Size = New System.Drawing.Size(821, 323)
+        Me.VC1TextBox.TabIndex = 30
+        Me.VC1TextBox.WordWrap = False
         '
         'BassAudioTabPage
         '
@@ -383,7 +495,7 @@ Partial Class AviSynthEditorFrm
         Me.BassAudioTabPage.Location = New System.Drawing.Point(4, 22)
         Me.BassAudioTabPage.Name = "BassAudioTabPage"
         Me.BassAudioTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.BassAudioTabPage.Size = New System.Drawing.Size(705, 314)
+        Me.BassAudioTabPage.Size = New System.Drawing.Size(821, 353)
         Me.BassAudioTabPage.TabIndex = 1
         Me.BassAudioTabPage.Text = "BassAudio"
         Me.BassAudioTabPage.UseVisualStyleBackColor = True
@@ -423,7 +535,7 @@ Partial Class AviSynthEditorFrm
         Me.BassAudioTextBox.Multiline = True
         Me.BassAudioTextBox.Name = "BassAudioTextBox"
         Me.BassAudioTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.BassAudioTextBox.Size = New System.Drawing.Size(705, 284)
+        Me.BassAudioTextBox.Size = New System.Drawing.Size(821, 323)
         Me.BassAudioTextBox.TabIndex = 24
         Me.BassAudioTextBox.WordWrap = False
         '
@@ -434,7 +546,7 @@ Partial Class AviSynthEditorFrm
         Me.NicAudioTabPage.Controls.Add(Me.NicAudioTextBox)
         Me.NicAudioTabPage.Location = New System.Drawing.Point(4, 22)
         Me.NicAudioTabPage.Name = "NicAudioTabPage"
-        Me.NicAudioTabPage.Size = New System.Drawing.Size(705, 314)
+        Me.NicAudioTabPage.Size = New System.Drawing.Size(821, 353)
         Me.NicAudioTabPage.TabIndex = 3
         Me.NicAudioTabPage.Text = "NicAudio"
         Me.NicAudioTabPage.UseVisualStyleBackColor = True
@@ -473,7 +585,7 @@ Partial Class AviSynthEditorFrm
         Me.NicAudioTextBox.Multiline = True
         Me.NicAudioTextBox.Name = "NicAudioTextBox"
         Me.NicAudioTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.NicAudioTextBox.Size = New System.Drawing.Size(705, 284)
+        Me.NicAudioTextBox.Size = New System.Drawing.Size(821, 323)
         Me.NicAudioTextBox.TabIndex = 25
         Me.NicAudioTextBox.WordWrap = False
         '
@@ -484,7 +596,7 @@ Partial Class AviSynthEditorFrm
         Me.ChannelScriptTabPage.Controls.Add(Me.ChannelTextBox)
         Me.ChannelScriptTabPage.Location = New System.Drawing.Point(4, 22)
         Me.ChannelScriptTabPage.Name = "ChannelScriptTabPage"
-        Me.ChannelScriptTabPage.Size = New System.Drawing.Size(705, 314)
+        Me.ChannelScriptTabPage.Size = New System.Drawing.Size(821, 353)
         Me.ChannelScriptTabPage.TabIndex = 2
         Me.ChannelScriptTabPage.Text = "Channel"
         Me.ChannelScriptTabPage.UseVisualStyleBackColor = True
@@ -507,7 +619,7 @@ Partial Class AviSynthEditorFrm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FolderToolStripMenuItem, Me.InitializationToolStripMenuItem, Me.PresetToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(735, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(851, 24)
         Me.MenuStrip1.TabIndex = 29
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -551,16 +663,16 @@ Partial Class AviSynthEditorFrm
         Me.AVSPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AVSPanel.Location = New System.Drawing.Point(0, 24)
         Me.AVSPanel.Name = "AVSPanel"
-        Me.AVSPanel.Size = New System.Drawing.Size(735, 423)
+        Me.AVSPanel.Size = New System.Drawing.Size(851, 462)
         Me.AVSPanel.TabIndex = 30
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 388)
+        Me.Panel2.Location = New System.Drawing.Point(0, 427)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(735, 35)
+        Me.Panel2.Size = New System.Drawing.Size(851, 35)
         Me.Panel2.TabIndex = 29
         '
         'Panel3
@@ -568,7 +680,7 @@ Partial Class AviSynthEditorFrm
         Me.Panel3.Controls.Add(Me.CancelBTN)
         Me.Panel3.Controls.Add(Me.OKBTN)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(524, 0)
+        Me.Panel3.Location = New System.Drawing.Point(640, 0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(211, 35)
         Me.Panel3.TabIndex = 0
@@ -595,7 +707,7 @@ Partial Class AviSynthEditorFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(735, 469)
+        Me.ClientSize = New System.Drawing.Size(851, 508)
         Me.Controls.Add(Me.AVSPanel)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -616,6 +728,10 @@ Partial Class AviSynthEditorFrm
         Me.FFmpegSourceTabPage.PerformLayout()
         Me.MPEG2SourceTabPage.ResumeLayout(False)
         Me.MPEG2SourceTabPage.PerformLayout()
+        Me.AVCTabPage.ResumeLayout(False)
+        Me.AVCTabPage.PerformLayout()
+        Me.VC1TabPage.ResumeLayout(False)
+        Me.VC1TabPage.PerformLayout()
         Me.BassAudioTabPage.ResumeLayout(False)
         Me.BassAudioTabPage.PerformLayout()
         Me.NicAudioTabPage.ResumeLayout(False)
@@ -679,4 +795,12 @@ Partial Class AviSynthEditorFrm
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents CancelBTN As System.Windows.Forms.Button
     Friend WithEvents OKBTN As System.Windows.Forms.Button
+    Friend WithEvents AVCTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents VC1TabPage As System.Windows.Forms.TabPage
+    Friend WithEvents AVCLabel As System.Windows.Forms.Label
+    Friend WithEvents Def_AVCTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents AVCTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents VC1Label As System.Windows.Forms.Label
+    Friend WithEvents Def_VC1TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents VC1TextBox As System.Windows.Forms.TextBox
 End Class

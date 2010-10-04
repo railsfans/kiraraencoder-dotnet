@@ -219,6 +219,28 @@ function DolbyProLogicII6KE(clip KEIPA) {
     Return MergeChannels(SPKMixL5, SPKMixR5)
 }</value>
   </data>
+  <data name="Def_VC1TextBox.Text" xml:space="preserve">
+    <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
+LoadPlugin("#&lt;pluginpath&gt;BassAudio.dll")
+LoadPlugin("#&lt;pluginpath&gt;NicAudio.dll")
+
+A=
+V=
+AudioDub(A,V)
+#&lt;channel&gt;
+#&lt;changefps&gt;
+#&lt;crop&gt;
+#&lt;image&gt;
+ConvertToYV12()
+#&lt;coloryuv&gt;
+#&lt;sharpen&gt;
+#&lt;tweak&gt;
+#&lt;coloryuv_analyze&gt;
+#&lt;textsub&gt;
+#&lt;trim&gt;
+#&lt;amplifydb&gt;
+#&lt;supereq&gt;</value>
+  </data>
   <data name="Def_MPEG2SourceTextBox.Text" xml:space="preserve">
     <value>LoadPlugin("#&lt;toolspath&gt;dgindex\DGDecode.dll")
 LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
@@ -230,6 +252,28 @@ V=MPEG2Source("#&lt;d2vsource&gt;")
 AudioDub(A,V)
 #&lt;deinterlace&gt;
 #&lt;delayaudio&gt;
+#&lt;channel&gt;
+#&lt;changefps&gt;
+#&lt;crop&gt;
+#&lt;image&gt;
+ConvertToYV12()
+#&lt;coloryuv&gt;
+#&lt;sharpen&gt;
+#&lt;tweak&gt;
+#&lt;coloryuv_analyze&gt;
+#&lt;textsub&gt;
+#&lt;trim&gt;
+#&lt;amplifydb&gt;
+#&lt;supereq&gt;</value>
+  </data>
+  <data name="Def_AVCTextBox.Text" xml:space="preserve">
+    <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
+LoadPlugin("#&lt;pluginpath&gt;BassAudio.dll")
+LoadPlugin("#&lt;pluginpath&gt;NicAudio.dll")
+
+A=
+V=
+AudioDub(A,V)
 #&lt;channel&gt;
 #&lt;changefps&gt;
 #&lt;crop&gt;

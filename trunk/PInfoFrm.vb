@@ -93,7 +93,8 @@ LANG_SKIP:
         CopyrightLabel.Text = My.Application.Info.Copyright
         VersionLabel.Text = VersionLabelV & " " & _
         My.Application.Info.Version.Major & "." & _
-        My.Application.Info.Version.Minor
+        My.Application.Info.Version.Minor & "." & _
+        My.Application.Info.Version.Revision
 
     End Sub
 

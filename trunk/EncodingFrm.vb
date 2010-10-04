@@ -1644,8 +1644,7 @@ ENC_STOP:
 
         '--------------------
 
-        My.Settings.PriorityComboBox = PriorityComboBox.SelectedIndex
-        My.Settings.Save()
+        MainFrm.PriorityComboBoxEncodingFrmV = PriorityComboBox.SelectedIndex
 
         '---------------------
 
@@ -1761,7 +1760,7 @@ LANG_SKIP:
         PriorityComboBox.Items.Add(LangCls.EncodingPriorityRealtime)
 
         '설정 불러옴
-        PriorityComboBox.SelectedIndex = My.Settings.PriorityComboBox
+        PriorityComboBox.SelectedIndex = MainFrm.PriorityComboBoxEncodingFrmV
 
         '초기화
         LoadInitialization()
@@ -1975,9 +1974,18 @@ LANG_SKIP:
     Private Sub CapTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CapTimer.Tick
         Dim Pnt As Double = EncPositionD / EncDurationD
         Dim PntS As String = "0.00%"
-        If IsNumeric(Pnt) = True AndAlso EncDurationD <> 0 Then
-            PntS = Format(Pnt, "0.00%")
+
+        If IndexProc = True Then
+            If AviSynthPP.INDEX_PStr = "" Then
+                PntS = "0%"
+            End If
+            PntS = AviSynthPP.INDEX_PStr & "%"
+        Else
+            If IsNumeric(Pnt) = True AndAlso EncDurationD <> 0 Then
+                PntS = Format(Pnt, "0.00%")
+            End If
         End If
+
         Me.Text = LangCls.EncodingFrmV & ": " & PntS & " " & EncPassStr
         MainFrm.Text = PntS & " [" & EncindexI + 1 & "/" & MainFrm.EncListListView.Items.Count & "] " & MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text & " - " & MainFrmTitleBack
         MainFrm.NotifyIcon.Text = Strings.Left(MainFrm.Text, 63)

@@ -98,7 +98,7 @@ Public Class StreamFrm
     Dim GETPP_TV As Single
 
     '배속변수
-    Private rateM As Single = 1.0
+    Public rateM As Single = 1.0
 
     '재생시간추출
     Dim PHHMMSSEMSV As String = ""
@@ -830,19 +830,21 @@ skip:
     Private Sub StreamFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         '설정로드
-        VolTrackBar.Value = My.Settings.StreamFrm_Volume
-        AllChToolStripMenuItem.Checked = My.Settings.StreamFrm_AllChToolStripMenuItem
-        LeftChToolStripMenuItem.Checked = My.Settings.StreamFrm_LeftChToolStripMenuItem
-        RightChToolStripMenuItem.Checked = My.Settings.StreamFrm_RightChToolStripMenuItem
-        rateM = My.Settings.StreamFrm_rateM
-        scaletempoToolStripMenuItem.Checked = My.Settings.StreamFrm_scaletempoToolStripMenuItem
-        extrastereoToolStripMenuItem.Checked = My.Settings.StreamFrm_extrastereoToolStripMenuItem
-        karaokeToolStripMenuItem.Checked = My.Settings.StreamFrm_karaokeToolStripMenuItem
-        VisualizeMotionVectorsToolStripMenuItem.Checked = My.Settings.StreamFrm_VisualizeMotionVectorsToolStripMenuItem
-        VisualizeBlockTypesToolStripMenuItem.Checked = My.Settings.StreamFrm_VisualizeBlockTypesToolStripMenuItem
-        FFmpegDeinterlacerToolStripMenuItem.Checked = My.Settings.StreamFrm_FFmpegDeinterlacerToolStripMenuItem
-        AspectOriginToolStripMenuItem.Checked = My.Settings.StreamFrm_AspectOriginToolStripMenuItem
-        SizeOriginToolStripMenuItem.Checked = My.Settings.StreamFrm_SizeOriginToolStripMenuItem
+        With MainFrm
+            VolTrackBar.Value = .VolTrackBarStreamFrmV
+            AllChToolStripMenuItem.Checked = .AllChToolStripMenuItemStreamFrmV
+            LeftChToolStripMenuItem.Checked = .LeftChToolStripMenuItemStreamFrmV
+            RightChToolStripMenuItem.Checked = .RightChToolStripMenuItemStreamFrmV
+            rateM = .rateMStreamFrmV
+            scaletempoToolStripMenuItem.Checked = .scaletempoToolStripMenuItemStreamFrmV
+            extrastereoToolStripMenuItem.Checked = .extrastereoToolStripMenuItemStreamFrmV
+            karaokeToolStripMenuItem.Checked = .karaokeToolStripMenuItemStreamFrmV
+            VisualizeMotionVectorsToolStripMenuItem.Checked = .VisualizeMotionVectorsToolStripMenuItemStreamFrmV
+            VisualizeBlockTypesToolStripMenuItem.Checked = .VisualizeBlockTypesToolStripMenuItemStreamFrmV
+            FFmpegDeinterlacerToolStripMenuItem.Checked = .FFmpegDeinterlacerToolStripMenuItemStreamFrmV
+            AspectOriginToolStripMenuItem.Checked = .AspectOriginToolStripMenuItemStreamFrmV
+            SizeOriginToolStripMenuItem.Checked = .SizeOriginToolStripMenuItemStreamFrmV
+        End With
 
         '=========================================
         'Rev 1.1
@@ -1155,20 +1157,21 @@ LANG_SKIP:
         Loop
 
         '설정저장
-        My.Settings.StreamFrm_Volume = VolTrackBar.Value
-        My.Settings.StreamFrm_AllChToolStripMenuItem = AllChToolStripMenuItem.Checked
-        My.Settings.StreamFrm_LeftChToolStripMenuItem = LeftChToolStripMenuItem.Checked
-        My.Settings.StreamFrm_RightChToolStripMenuItem = RightChToolStripMenuItem.Checked
-        My.Settings.StreamFrm_rateM = rateM
-        My.Settings.StreamFrm_scaletempoToolStripMenuItem = scaletempoToolStripMenuItem.Checked
-        My.Settings.StreamFrm_extrastereoToolStripMenuItem = extrastereoToolStripMenuItem.Checked
-        My.Settings.StreamFrm_karaokeToolStripMenuItem = karaokeToolStripMenuItem.Checked
-        My.Settings.StreamFrm_VisualizeMotionVectorsToolStripMenuItem = VisualizeMotionVectorsToolStripMenuItem.Checked
-        My.Settings.StreamFrm_VisualizeBlockTypesToolStripMenuItem = VisualizeBlockTypesToolStripMenuItem.Checked
-        My.Settings.StreamFrm_FFmpegDeinterlacerToolStripMenuItem = FFmpegDeinterlacerToolStripMenuItem.Checked
-        My.Settings.StreamFrm_AspectOriginToolStripMenuItem = AspectOriginToolStripMenuItem.Checked
-        My.Settings.StreamFrm_SizeOriginToolStripMenuItem = SizeOriginToolStripMenuItem.Checked
-        My.Settings.Save()
+        With MainFrm
+            .VolTrackBarStreamFrmV = VolTrackBar.Value
+            .AllChToolStripMenuItemStreamFrmV = AllChToolStripMenuItem.Checked
+            .LeftChToolStripMenuItemStreamFrmV = LeftChToolStripMenuItem.Checked
+            .RightChToolStripMenuItemStreamFrmV = RightChToolStripMenuItem.Checked
+            .rateMStreamFrmV = rateM
+            .scaletempoToolStripMenuItemStreamFrmV = scaletempoToolStripMenuItem.Checked
+            .extrastereoToolStripMenuItemStreamFrmV = extrastereoToolStripMenuItem.Checked
+            .karaokeToolStripMenuItemStreamFrmV = karaokeToolStripMenuItem.Checked
+            .VisualizeMotionVectorsToolStripMenuItemStreamFrmV = VisualizeMotionVectorsToolStripMenuItem.Checked
+            .VisualizeBlockTypesToolStripMenuItemStreamFrmV = VisualizeBlockTypesToolStripMenuItem.Checked
+            .FFmpegDeinterlacerToolStripMenuItemStreamFrmV = FFmpegDeinterlacerToolStripMenuItem.Checked
+            .AspectOriginToolStripMenuItemStreamFrmV = AspectOriginToolStripMenuItem.Checked
+            .SizeOriginToolStripMenuItemStreamFrmV = SizeOriginToolStripMenuItem.Checked
+        End With
 
     End Sub
 

@@ -879,11 +879,11 @@ Partial Class x264optsFrm
         '
         'QIPRatioNumericUpDown
         '
-        Me.QIPRatioNumericUpDown.DecimalPlaces = 1
-        Me.QIPRatioNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.QIPRatioNumericUpDown.DecimalPlaces = 2
+        Me.QIPRatioNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.QIPRatioNumericUpDown.Location = New System.Drawing.Point(226, 54)
         Me.QIPRatioNumericUpDown.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.QIPRatioNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.QIPRatioNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.QIPRatioNumericUpDown.Name = "QIPRatioNumericUpDown"
         Me.QIPRatioNumericUpDown.Size = New System.Drawing.Size(77, 21)
         Me.QIPRatioNumericUpDown.TabIndex = 8

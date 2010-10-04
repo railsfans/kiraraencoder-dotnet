@@ -136,6 +136,16 @@ Public Class AviSynthEditorFrm
                     If XTRSTR <> "" Then ChannelTextBox.Text = XTRSTR Else ChannelTextBox.Text = Def_ChannelTextBox.Text
                 End If
 
+                If XTR.Name = "AviSynthEditorFrm_AVCTextBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then AVCTextBox.Text = XTRSTR Else AVCTextBox.Text = Def_AVCTextBox.Text
+                End If
+
+                If XTR.Name = "AviSynthEditorFrm_VC1TextBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then VC1TextBox.Text = XTRSTR Else VC1TextBox.Text = Def_VC1TextBox.Text
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -168,6 +178,12 @@ Public Class AviSynthEditorFrm
 
             XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_ChannelTextBox")
             If Not XNode Is Nothing Then XNode.InnerText = ChannelTextBox.Text
+
+            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_AVCTextBox")
+            If Not XNode Is Nothing Then XNode.InnerText = AVCTextBox.Text
+
+            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_VC1TextBox")
+            If Not XNode Is Nothing Then XNode.InnerText = VC1TextBox.Text
 
             '============== 끝
             XDoc.Save(src)
@@ -243,6 +259,8 @@ Public Class AviSynthEditorFrm
                 If XTR.Name = "AviSynthEditorFrmNicAudioLabel" Then NicAudioLabel.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmChannelLabel" Then ChannelLabel.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorInitializationQ" Then LangCls.AviSynthEditorInitializationQ = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmAVCLabel" Then AVCLabel.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmVC1Label" Then VC1Label.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -499,6 +517,10 @@ LANG_SKIP:
                 NicAudioTextBox.Text = Def_NicAudioTextBox.Text
             ElseIf TabControl1.SelectedTab.Text = "Channel" Then
                 ChannelTextBox.Text = Def_ChannelTextBox.Text
+            ElseIf TabControl1.SelectedTab.Text = "MPEG/MPEGTS(AVC)" Then
+                AVCTextBox.Text = Def_AVCTextBox.Text
+            ElseIf TabControl1.SelectedTab.Text = "MPEG/MPEGTS(VC1)" Then
+                VC1TextBox.Text = Def_VC1TextBox.Text
             End If
         Else
             Exit Sub
@@ -525,4 +547,59 @@ LANG_SKIP:
         Close()
     End Sub
 
+    Private Sub AVCTextBox_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles AVCTextBox.KeyDown
+        Get_LineCol(AVCTextBox)
+    End Sub
+
+    Private Sub AVCTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles AVCTextBox.KeyPress
+        Get_LineCol(AVCTextBox)
+    End Sub
+
+    Private Sub AVCTextBox_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles AVCTextBox.KeyUp
+        Get_LineCol(AVCTextBox)
+    End Sub
+
+    Private Sub AVCTextBox_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles AVCTextBox.MouseDown
+        Get_LineCol(AVCTextBox)
+    End Sub
+
+    Private Sub AVCTextBox_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles AVCTextBox.MouseMove
+        Get_LineCol(AVCTextBox)
+    End Sub
+
+    Private Sub AVCTextBox_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles AVCTextBox.MouseUp
+        Get_LineCol(AVCTextBox)
+    End Sub
+
+    Private Sub AVCTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVCTextBox.TextChanged
+
+    End Sub
+
+    Private Sub VC1TextBox_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles VC1TextBox.KeyDown
+        Get_LineCol(VC1TextBox)
+    End Sub
+
+    Private Sub VC1TextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles VC1TextBox.KeyPress
+        Get_LineCol(VC1TextBox)
+    End Sub
+
+    Private Sub VC1TextBox_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles VC1TextBox.KeyUp
+        Get_LineCol(VC1TextBox)
+    End Sub
+
+    Private Sub VC1TextBox_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VC1TextBox.MouseDown
+        Get_LineCol(VC1TextBox)
+    End Sub
+
+    Private Sub VC1TextBox_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VC1TextBox.MouseMove
+        Get_LineCol(VC1TextBox)
+    End Sub
+
+    Private Sub VC1TextBox_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VC1TextBox.MouseUp
+        Get_LineCol(VC1TextBox)
+    End Sub
+
+    Private Sub VC1TextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VC1TextBox.TextChanged
+
+    End Sub
 End Class

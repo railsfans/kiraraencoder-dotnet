@@ -807,7 +807,9 @@ ERRSKIP:
             If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEGTS" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEG" Then
 
                 If InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then 'AVC
-                    AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                    AVTextBoxV = AviSynthEditorFrm.AVCTextBox.Text
+                ElseIf InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "vc1", CompareMethod.Text) <> 0 Then 'VC1
+                    AVTextBoxV = AviSynthEditorFrm.VC1TextBox.Text
                 Else
                     AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
                 End If

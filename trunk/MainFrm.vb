@@ -36,6 +36,7 @@ Public Class MainFrm
     '열기 오류여부
     Dim OpenErrV As Boolean = False
     Dim AVS_OpenErrV As Boolean = False
+    Dim APP_OpenErrV As Boolean = False
 
     '프론트엔드 코어
     Private OutputHandle_GI As SafeFileHandle = Nothing
@@ -89,6 +90,31 @@ Public Class MainFrm
     Public NeroAACSTRFFmpeg As String = ""
     Public NeroAACSTRAviSynth As String = ""
     Public NeroAACSTRNEP As String = ""
+
+    '외부폼설정
+    Public VolTrackBarStreamFrmV As Integer = 100
+    Public AllChToolStripMenuItemStreamFrmV As Boolean = True
+    Public LeftChToolStripMenuItemStreamFrmV As Boolean = False
+    Public RightChToolStripMenuItemStreamFrmV As Boolean = False
+    Public rateMStreamFrmV As Single = 1.0
+    Public scaletempoToolStripMenuItemStreamFrmV As Boolean = False
+    Public extrastereoToolStripMenuItemStreamFrmV As Boolean = False
+    Public karaokeToolStripMenuItemStreamFrmV As Boolean = False
+    Public VisualizeMotionVectorsToolStripMenuItemStreamFrmV As Boolean = False
+    Public VisualizeBlockTypesToolStripMenuItemStreamFrmV As Boolean = False
+    Public FFmpegDeinterlacerToolStripMenuItemStreamFrmV As Boolean = False
+    Public AspectOriginToolStripMenuItemStreamFrmV As Boolean = True
+    Public SizeOriginToolStripMenuItemStreamFrmV As Boolean = False
+    Public OldVerCheckBoxAVSIFrmV As Boolean = False
+    Public PriorityComboBoxEncodingFrmV As Integer = 2
+
+    '설정
+    Dim MainWidth As String = ""
+    Dim MainHeight As String = ""
+    Dim MainX As String = ""
+    Dim MainY As String = ""
+    Dim MainWindowState As String = ""
+    Dim LangToolStripMenuItemV As String = "Auto-select"
 
 #Region "프론트엔드 코어"
 
@@ -1301,27 +1327,21 @@ LANG_SKIP:
         '----------------------------------------------------
 
         '폼 위치 크기 저장
-        My.Settings.MainX = RzX
-        My.Settings.MainY = RzY
-        My.Settings.MainWidth = RzWidth
-        My.Settings.MainHeight = RzHeight
-        My.Settings.MainWindowState = Me.WindowState
-
-        '설정저장
-        My.Settings.SavePathTextBox = SavePathTextBox.Text
-        My.Settings.AVSCheckBox = AVSCheckBox.Checked
-        My.Settings.PresetLabel = PresetLabel.Text
-        My.Settings.EncListListView0 = EncListListView.Columns(0).Width
-        My.Settings.OldVerCheckBox = AVSIFrm.OldVerCheckBox.Checked
+        MainX = RzX
+        MainY = RzY
+        MainWidth = RzWidth
+        MainHeight = RzHeight
+        MainWindowState = Me.WindowState
 
         '언어설정저장
         For i2 = 0 To LangToolStripMenuItem.DropDownItems.Count - 1
             If CType(LangToolStripMenuItem.DropDownItems(i2), ToolStripMenuItem).Checked = True Then
-                My.Settings.LangToolStripMenuItem = LangToolStripMenuItem.DropDownItems(i2).Text
+                LangToolStripMenuItemV = LangToolStripMenuItem.DropDownItems(i2).Text
             End If
         Next
 
-        My.Settings.Save()
+        '최종 파일에 설정저장
+        APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
 
 
 
@@ -1417,11 +1437,23 @@ LANG_SKIP:
         '-----------------------------------------------------------------------------------------------------------------------------------------------------
 
         '설정로드
-        SavePathTextBox.Text = My.Settings.SavePathTextBox
-        AVSCheckBox.Checked = My.Settings.AVSCheckBox
-        PresetLabel.Text = My.Settings.PresetLabel
-        EncListListView.Columns(0).Width = My.Settings.EncListListView0
-        AVSIFrm.OldVerCheckBox.Checked = My.Settings.OldVerCheckBox
+        '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        '프로그램 설정
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\app_settings.xml") = False Then '설정파일이 없으면
+            APP_DefSUB()
+            APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
+        Else
+            APP_DefSUB()
+            APP_XML_LOAD(My.Application.Info.DirectoryPath & "\app_settings.xml")
+            If APP_OpenErrV = False Then APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml") '오류가 없다면 파일기록, 새롭게 추가된 부분 저장관련..
+        End If
+        '프로그램 설정파일 오류처리
+        If APP_OpenErrV = True Then
+            APP_DefSUB()
+            APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
+            APP_OpenErrV = False
+        End If
+        '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         '언어파일 불러옴
         LangToolStripMenuItem.DropDownItems.Add("Auto-select", Nothing, AddressOf OutSelectLang)
@@ -1432,7 +1464,7 @@ LANG_SKIP:
         '언어설정로드
         Dim Cnt As Integer = 0
         For i2 = 0 To LangToolStripMenuItem.DropDownItems.Count - 1
-            If LangToolStripMenuItem.DropDownItems(i2).Text = My.Settings.LangToolStripMenuItem Then
+            If LangToolStripMenuItem.DropDownItems(i2).Text = LangToolStripMenuItemV Then
                 CType(LangToolStripMenuItem.DropDownItems(i2), ToolStripMenuItem).Checked = True
                 Cnt = 1
             End If
@@ -1595,11 +1627,13 @@ LANG_SKIP:
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
             Me.Text = "Kirara Encoder v" & _
             My.Application.Info.Version.Major & "." & _
-            My.Application.Info.Version.Minor & " x64"
+            My.Application.Info.Version.Minor & "." & _
+            My.Application.Info.Version.Revision & " x64"
         Else
             Me.Text = "Kirara Encoder v" & _
             My.Application.Info.Version.Major & "." & _
-            My.Application.Info.Version.Minor
+            My.Application.Info.Version.Minor & "." & _
+            My.Application.Info.Version.Revision
         End If
 
         'MPLAYEREXESTR 설정
@@ -1621,12 +1655,12 @@ LANG_SKIP:
         '----------------------------------------------------------------------------------------
 
         '저장된 폼의 위치와 크기를 적용한다
-        If My.Settings.MainWidth <> "" AndAlso My.Settings.MainHeight <> "" Then
-            Me.Size = New System.Drawing.Size(My.Settings.MainWidth, My.Settings.MainHeight)
+        If MainWidth <> "" AndAlso MainHeight <> "" Then
+            Me.Size = New System.Drawing.Size(MainWidth, MainHeight)
         End If
 
-        If My.Settings.MainX <> "" AndAlso My.Settings.MainY <> "" Then
-            Me.Location = New System.Drawing.Point(My.Settings.MainX, My.Settings.MainY)
+        If MainX <> "" AndAlso MainY <> "" Then
+            Me.Location = New System.Drawing.Point(MainX, MainY)
         End If
 
         If Me.Location.X < Screen.GetBounds(Me).Left Then
@@ -1646,40 +1680,13 @@ LANG_SKIP:
         End If
 
         '아래 코드부터 폼이 보여짐.
-        If My.Settings.MainWindowState <> "" Then
-            If My.Settings.MainWindowState = FormWindowState.Minimized Then
+        If MainWindowState <> "" Then
+            If MainWindowState = FormWindowState.Minimized Then
                 Me.WindowState = FormWindowState.Normal
             Else
-                Me.WindowState = My.Settings.MainWindowState
+                Me.WindowState = MainWindowState
             End If
         End If
-
-        '////////////////////////////
-        'AviSynth 검사//
-        If My.Computer.FileSystem.FileExists(Me.PubAVSPATHStr) = False Then
-            AVSIFrm.ShowDialog(Me)
-            Exit Sub
-        End If
-        '----------------------------------- P1
-        Dim AVSFV As String = ""
-        Try
-            AVSFV = Diagnostics.FileVersionInfo.GetVersionInfo(Me.PubAVSPATHStr).FileVersion
-            AVSFV = Replace(AVSFV, ",", ".")
-            AVSFV = Replace(AVSFV, " ", "")
-        Catch ex As Exception
-            AVSFV = ""
-        End Try
-        If AVSFV = "" Then
-            AVSIFrm.ShowDialog(Me)
-            Exit Sub
-        End If
-        '----------------------------------- P2
-        If AVSFV < "2.5.8.5" Then '버전 검사
-            If AVSIFrm.OldVerCheckBox.Checked = False Then
-                AVSIFrm.ShowDialog(Me)
-            End If
-        End If
-        '////////////////////////////
 
         '----------------------------------------------------------------------------------------
         Exit Sub
@@ -1825,7 +1832,7 @@ UAC:
     End Sub
 
     Private Sub EncListListView_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles EncListListView.MouseDoubleClick
-       '선택된 아이템이 없으면 종료
+        '선택된 아이템이 없으면 종료
         If EncListListView.SelectedItems.Count = 0 Then
             Exit Sub
         End If
@@ -1977,8 +1984,37 @@ UAC:
     End Sub
 
     Private Sub MainFrm_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+
         '핸들
         MainFrmHWNDV = Me.Handle.ToString
+
+        '////////////////////////////
+        'AviSynth 검사//
+        If My.Computer.FileSystem.FileExists(Me.PubAVSPATHStr) = False Then
+            AVSIFrm.ShowDialog(Me)
+            Exit Sub
+        End If
+        '----------------------------------- P1
+        Dim AVSFV As String = ""
+        Try
+            AVSFV = Diagnostics.FileVersionInfo.GetVersionInfo(Me.PubAVSPATHStr).FileVersion
+            AVSFV = Replace(AVSFV, ",", ".")
+            AVSFV = Replace(AVSFV, " ", "")
+        Catch ex As Exception
+            AVSFV = ""
+        End Try
+        If AVSFV = "" Then
+            AVSIFrm.ShowDialog(Me)
+            Exit Sub
+        End If
+        '----------------------------------- P2
+        If AVSFV < "2.5.8.5" Then '버전 검사
+            If AVSIFrm.OldVerCheckBox.Checked = False Then
+                AVSIFrm.ShowDialog(Me)
+            End If
+        End If
+        '////////////////////////////
+
     End Sub
 
     Private Sub FileInfoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FileInfoButton.Click
@@ -2049,7 +2085,43 @@ UAC:
             .BassAudioTextBox.Text = .Def_BassAudioTextBox.Text
             .NicAudioTextBox.Text = .Def_NicAudioTextBox.Text
             .ChannelTextBox.Text = .Def_ChannelTextBox.Text
+            .AVCTextBox.Text = .Def_AVCTextBox.Text
+            .VC1TextBox.Text = .Def_VC1TextBox.Text
         End With
+
+    End Sub
+
+    Private Sub APP_DefSUB()
+
+        VolTrackBarStreamFrmV = 100
+        AllChToolStripMenuItemStreamFrmV = True
+        LeftChToolStripMenuItemStreamFrmV = False
+        RightChToolStripMenuItemStreamFrmV = False
+        rateMStreamFrmV = 1
+        scaletempoToolStripMenuItemStreamFrmV = False
+        extrastereoToolStripMenuItemStreamFrmV = False
+        karaokeToolStripMenuItemStreamFrmV = False
+        VisualizeMotionVectorsToolStripMenuItemStreamFrmV = False
+        VisualizeBlockTypesToolStripMenuItemStreamFrmV = False
+        FFmpegDeinterlacerToolStripMenuItemStreamFrmV = False
+        AspectOriginToolStripMenuItemStreamFrmV = True
+        SizeOriginToolStripMenuItemStreamFrmV = False
+
+        SavePathTextBox.Text = ""
+        AVSCheckBox.Checked = True
+        PresetLabel.Text = ""
+        MainWidth = ""
+        MainHeight = ""
+        MainX = ""
+        MainY = ""
+        MainWindowState = ""
+        EncListListView.Columns(0).Width = 240
+
+        OldVerCheckBoxAVSIFrmV = False
+
+        PriorityComboBoxEncodingFrmV = 2
+
+        LangToolStripMenuItemV = "Auto-select"
 
     End Sub
 
@@ -2114,6 +2186,7 @@ UAC:
             .SizeLimitCheckBox.Checked = False
             .DeinterlaceCheckBox.Checked = False
             .FFmpegCommandTextBox.Text = ""
+            .SubtitleRecordingCheckBox.Checked = False
 
         End With
 
@@ -2323,6 +2396,153 @@ UAC:
 
     End Sub
 
+    Public Sub APP_XML_LOAD(ByVal src As String)
+
+        Dim SR As New StreamReader(src, System.Text.Encoding.UTF8)
+        Dim XTR As New System.Xml.XmlTextReader(SR)
+
+        Try
+
+            Do While XTR.Read
+                Application.DoEvents()
+
+                If XTR.Name = "VolTrackBarStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then VolTrackBarStreamFrmV = XTRSTR Else VolTrackBarStreamFrmV = 100
+                End If
+
+                If XTR.Name = "AllChToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then AllChToolStripMenuItemStreamFrmV = XTRSTR Else AllChToolStripMenuItemStreamFrmV = True
+                End If
+
+                If XTR.Name = "LeftChToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then LeftChToolStripMenuItemStreamFrmV = XTRSTR Else LeftChToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "RightChToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then RightChToolStripMenuItemStreamFrmV = XTRSTR Else RightChToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "rateMStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then rateMStreamFrmV = XTRSTR Else rateMStreamFrmV = 1
+                End If
+
+                If XTR.Name = "scaletempoToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then scaletempoToolStripMenuItemStreamFrmV = XTRSTR Else scaletempoToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "extrastereoToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then extrastereoToolStripMenuItemStreamFrmV = XTRSTR Else extrastereoToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "karaokeToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then karaokeToolStripMenuItemStreamFrmV = XTRSTR Else karaokeToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "VisualizeMotionVectorsToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then VisualizeMotionVectorsToolStripMenuItemStreamFrmV = XTRSTR Else VisualizeMotionVectorsToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "VisualizeBlockTypesToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then VisualizeBlockTypesToolStripMenuItemStreamFrmV = XTRSTR Else VisualizeBlockTypesToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "FFmpegDeinterlacerToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFmpegDeinterlacerToolStripMenuItemStreamFrmV = XTRSTR Else FFmpegDeinterlacerToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "AspectOriginToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then AspectOriginToolStripMenuItemStreamFrmV = XTRSTR Else AspectOriginToolStripMenuItemStreamFrmV = True
+                End If
+
+                If XTR.Name = "SizeOriginToolStripMenuItemStreamFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then SizeOriginToolStripMenuItemStreamFrmV = XTRSTR Else SizeOriginToolStripMenuItemStreamFrmV = False
+                End If
+
+                If XTR.Name = "SavePathTextBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then SavePathTextBox.Text = XTRSTR Else SavePathTextBox.Text = ""
+                End If
+
+                If XTR.Name = "AVSCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = True
+                End If
+
+                If XTR.Name = "PresetLabel" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then PresetLabel.Text = XTRSTR Else PresetLabel.Text = ""
+                End If
+
+                If XTR.Name = "MainWidth" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then MainWidth = XTRSTR Else MainWidth = ""
+                End If
+
+                If XTR.Name = "MainHeight" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then MainHeight = XTRSTR Else MainHeight = ""
+                End If
+
+                If XTR.Name = "MainX" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then MainX = XTRSTR Else MainX = ""
+                End If
+
+                If XTR.Name = "MainY" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then MainY = XTRSTR Else MainY = ""
+                End If
+
+                If XTR.Name = "MainWindowState" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then MainWindowState = XTRSTR Else MainWindowState = ""
+                End If
+
+                If XTR.Name = "EncListListView0" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then EncListListView.Columns(0).Width = XTRSTR Else EncListListView.Columns(0).Width = 240
+                End If
+
+                If XTR.Name = "OldVerCheckBoxAVSIFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then OldVerCheckBoxAVSIFrmV = XTRSTR Else OldVerCheckBoxAVSIFrmV = False
+                End If
+
+                If XTR.Name = "PriorityComboBoxEncodingFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then PriorityComboBoxEncodingFrmV = XTRSTR Else PriorityComboBoxEncodingFrmV = 2
+                End If
+
+                If XTR.Name = "LangToolStripMenuItemV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then LangToolStripMenuItemV = XTRSTR Else LangToolStripMenuItemV = "Auto-select"
+                End If
+
+            Loop
+
+        Catch ex As Exception
+            MsgBox("XML_LOAD_ERROR :" & ex.Message)
+            '오류가 있으면 오류변수 ON
+            APP_OpenErrV = True
+        Finally
+            XTR.Close()
+        End Try
+
+    End Sub
+
     Public Sub AVS_XML_LOAD(ByVal src As String)
 
         Dim SR As New StreamReader(src, System.Text.Encoding.UTF8)
@@ -2359,6 +2579,16 @@ UAC:
                     If XTR.Name = "AviSynthEditorFrm_ChannelTextBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .ChannelTextBox.Text = XTRSTR Else .ChannelTextBox.Text = .Def_ChannelTextBox.Text
+                    End If
+
+                    If XTR.Name = "AviSynthEditorFrm_AVCTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AVCTextBox.Text = XTRSTR Else .AVCTextBox.Text = .Def_AVCTextBox.Text
+                    End If
+
+                    If XTR.Name = "AviSynthEditorFrm_VC1TextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .VC1TextBox.Text = XTRSTR Else .VC1TextBox.Text = .Def_VC1TextBox.Text
                     End If
 
                 End With
@@ -2697,6 +2927,11 @@ UAC:
                     If XTR.Name = "EncSetFrm_FFmpegCommandTextBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> vbNullChar Then .FFmpegCommandTextBox.Text = XTRSTR Else .FFmpegCommandTextBox.Text = ""
+                    End If
+
+                    If XTR.Name = "EncSetFrm_SubtitleRecordingCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .SubtitleRecordingCheckBox.Checked = XTRSTR Else .SubtitleRecordingCheckBox.Checked = False
                     End If
 
                 End With
@@ -3647,6 +3882,132 @@ UAC:
 
     End Sub
 
+    Public Sub APP_XML_SAVE(ByVal src As String)
+
+        Dim XTWriter As New XmlTextWriter(src, System.Text.Encoding.UTF8)
+
+        Try
+
+            XTWriter.Formatting = Formatting.Indented
+            XTWriter.Indentation = 4
+            XTWriter.WriteStartDocument()
+            XTWriter.WriteComment("Kirara Encoder Settings")
+            XTWriter.WriteStartElement("KiraraEncoderSettings")
+
+            '-----------------------
+
+            XTWriter.WriteStartElement("VolTrackBarStreamFrmV")
+            XTWriter.WriteString(VolTrackBarStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("AllChToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(AllChToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("LeftChToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(LeftChToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("RightChToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(RightChToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("rateMStreamFrmV")
+            XTWriter.WriteString(rateMStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("scaletempoToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(scaletempoToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("extrastereoToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(extrastereoToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("karaokeToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(karaokeToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("VisualizeMotionVectorsToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(VisualizeMotionVectorsToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("VisualizeBlockTypesToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(VisualizeBlockTypesToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("FFmpegDeinterlacerToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(FFmpegDeinterlacerToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("AspectOriginToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(AspectOriginToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("SizeOriginToolStripMenuItemStreamFrmV")
+            XTWriter.WriteString(SizeOriginToolStripMenuItemStreamFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("SavePathTextBox")
+            XTWriter.WriteString(SavePathTextBox.Text)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("AVSCheckBox")
+            XTWriter.WriteString(AVSCheckBox.Checked)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("PresetLabel")
+            XTWriter.WriteString(PresetLabel.Text)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("MainWidth")
+            XTWriter.WriteString(MainWidth)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("MainHeight")
+            XTWriter.WriteString(MainHeight)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("MainX")
+            XTWriter.WriteString(MainX)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("MainY")
+            XTWriter.WriteString(MainY)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("MainWindowState")
+            XTWriter.WriteString(MainWindowState)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("EncListListView0")
+            XTWriter.WriteString(EncListListView.Columns(0).Width)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("OldVerCheckBoxAVSIFrmV")
+            XTWriter.WriteString(OldVerCheckBoxAVSIFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("PriorityComboBoxEncodingFrmV")
+            XTWriter.WriteString(PriorityComboBoxEncodingFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("LangToolStripMenuItemV")
+            XTWriter.WriteString(LangToolStripMenuItemV)
+            XTWriter.WriteEndElement()
+
+            '----------------------
+
+            XTWriter.WriteEndDocument()
+
+        Catch ex As Exception
+            MsgBox("XML_SAVE_ERROR :" & ex.Message)
+        Finally
+            XTWriter.Close()
+        End Try
+
+    End Sub
+
     Public Sub AVS_XML_SAVE(ByVal src As String)
 
         Dim XTWriter As New XmlTextWriter(src, System.Text.Encoding.UTF8)
@@ -3680,6 +4041,14 @@ UAC:
 
                 XTWriter.WriteStartElement("AviSynthEditorFrm_ChannelTextBox")
                 XTWriter.WriteString(.ChannelTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AviSynthEditorFrm_AVCTextBox")
+                XTWriter.WriteString(.AVCTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AviSynthEditorFrm_VC1TextBox")
+                XTWriter.WriteString(.VC1TextBox.Text)
                 XTWriter.WriteEndElement()
 
             End With
@@ -3959,6 +4328,10 @@ UAC:
 
                 XTWriter.WriteStartElement("EncSetFrm_FFmpegCommandTextBox")
                 XTWriter.WriteString(.FFmpegCommandTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_SubtitleRecordingCheckBox")
+                XTWriter.WriteString(.SubtitleRecordingCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
                 '===

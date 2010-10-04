@@ -161,6 +161,8 @@ Partial Class EncSetFrm
         Me.ExtensionLabel = New System.Windows.Forms.Label
         Me.HeaderTextBox = New System.Windows.Forms.TextBox
         Me.HeaderLabel = New System.Windows.Forms.Label
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.SubtitleRecordingCheckBox = New System.Windows.Forms.CheckBox
         Me.EncSetPanel.SuspendLayout()
         Me.OutFGroupBox.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
@@ -213,6 +215,7 @@ Partial Class EncSetFrm
         Me.FFmpegCommandGroupBox.SuspendLayout()
         Me.SizeLimitGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncSetPanel
@@ -1571,6 +1574,7 @@ Partial Class EncSetFrm
         '
         'ETCTabPage
         '
+        Me.ETCTabPage.Controls.Add(Me.GroupBox1)
         Me.ETCTabPage.Controls.Add(Me.FFmpegCommandGroupBox)
         Me.ETCTabPage.Controls.Add(Me.SizeLimitGroupBox)
         Me.ETCTabPage.Controls.Add(Me.NameGroupBox)
@@ -1585,7 +1589,7 @@ Partial Class EncSetFrm
         '
         Me.FFmpegCommandGroupBox.Controls.Add(Me.FFmpegCommandButton)
         Me.FFmpegCommandGroupBox.Controls.Add(Me.FFmpegCommandTextBox)
-        Me.FFmpegCommandGroupBox.Location = New System.Drawing.Point(9, 178)
+        Me.FFmpegCommandGroupBox.Location = New System.Drawing.Point(9, 242)
         Me.FFmpegCommandGroupBox.Name = "FFmpegCommandGroupBox"
         Me.FFmpegCommandGroupBox.Size = New System.Drawing.Size(480, 57)
         Me.FFmpegCommandGroupBox.TabIndex = 3
@@ -1594,9 +1598,9 @@ Partial Class EncSetFrm
         '
         'FFmpegCommandButton
         '
-        Me.FFmpegCommandButton.Location = New System.Drawing.Point(346, 21)
+        Me.FFmpegCommandButton.Location = New System.Drawing.Point(295, 21)
         Me.FFmpegCommandButton.Name = "FFmpegCommandButton"
-        Me.FFmpegCommandButton.Size = New System.Drawing.Size(116, 23)
+        Me.FFmpegCommandButton.Size = New System.Drawing.Size(167, 23)
         Me.FFmpegCommandButton.TabIndex = 5
         Me.FFmpegCommandButton.Text = "명령어 보기"
         Me.FFmpegCommandButton.UseVisualStyleBackColor = True
@@ -1605,7 +1609,7 @@ Partial Class EncSetFrm
         '
         Me.FFmpegCommandTextBox.Location = New System.Drawing.Point(15, 22)
         Me.FFmpegCommandTextBox.Name = "FFmpegCommandTextBox"
-        Me.FFmpegCommandTextBox.Size = New System.Drawing.Size(321, 21)
+        Me.FFmpegCommandTextBox.Size = New System.Drawing.Size(274, 21)
         Me.FFmpegCommandTextBox.TabIndex = 4
         '
         'SizeLimitGroupBox
@@ -1707,6 +1711,26 @@ Partial Class EncSetFrm
         Me.HeaderLabel.Text = "앞 부분 이름:"
         Me.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.SubtitleRecordingCheckBox)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 178)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(480, 55)
+        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "FFmpeg Subtitle Recording"
+        '
+        'SubtitleRecordingCheckBox
+        '
+        Me.SubtitleRecordingCheckBox.AutoSize = True
+        Me.SubtitleRecordingCheckBox.Location = New System.Drawing.Point(19, 24)
+        Me.SubtitleRecordingCheckBox.Name = "SubtitleRecordingCheckBox"
+        Me.SubtitleRecordingCheckBox.Size = New System.Drawing.Size(48, 16)
+        Me.SubtitleRecordingCheckBox.TabIndex = 31
+        Me.SubtitleRecordingCheckBox.Text = "사용"
+        Me.SubtitleRecordingCheckBox.UseVisualStyleBackColor = True
+        '
         'EncSetFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -1788,6 +1812,8 @@ Partial Class EncSetFrm
         Me.SizeLimitGroupBox.PerformLayout()
         Me.NameGroupBox.ResumeLayout(False)
         Me.NameGroupBox.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1930,4 +1956,6 @@ Partial Class EncSetFrm
     Friend WithEvents ImgPPTabPage As System.Windows.Forms.TabPage
     Friend WithEvents SamplerateCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents SampleratePanel As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents SubtitleRecordingCheckBox As System.Windows.Forms.CheckBox
 End Class

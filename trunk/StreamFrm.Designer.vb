@@ -1011,7 +1011,6 @@ Partial Class StreamFrm
         '
         'SpeedXVToolStripMenuItem
         '
-        Me.SpeedXVToolStripMenuItem.Enabled = False
         Me.SpeedXVToolStripMenuItem.Name = "SpeedXVToolStripMenuItem"
         Me.SpeedXVToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
         Me.SpeedXVToolStripMenuItem.Text = "1.0x"

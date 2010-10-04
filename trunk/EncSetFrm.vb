@@ -556,6 +556,7 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFLACBP" Then LangCls.EncSetFLACBP = XTR.ReadString
                 If XTR.Name = "EncSetPCMBP" Then LangCls.EncSetPCMBP = XTR.ReadString
                 If XTR.Name = "EncSetCharERR" Then LangCls.EncSetCharERR = XTR.ReadString
+                If XTR.Name = "EncSetFrmSubtitleRecordingCheckBox" Then SubtitleRecordingCheckBox.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -750,6 +751,7 @@ LANG_SKIP:
         SizeLimitCheckBox.Checked = False
         DeinterlaceCheckBox.Checked = False
         FFmpegCommandTextBox.Text = ""
+        SubtitleRecordingCheckBox.Checked = False
 
     End Sub
 
@@ -1416,6 +1418,9 @@ LANG_SKIP:
             XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_FFmpegCommandTextBox")
             If Not XNode Is Nothing Then If FFmpegCommandTextBox.Text = "" Then XNode.InnerText = vbNullChar Else XNode.InnerText = FFmpegCommandTextBox.Text
 
+            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_SubtitleRecordingCheckBox")
+            If Not XNode Is Nothing Then XNode.InnerText = SubtitleRecordingCheckBox.Checked
+       
             '============== 끝
             XDoc.Save(src)
         Catch ex As Exception
@@ -1752,6 +1757,11 @@ LANG_SKIP:
                     If XTRSTR <> vbNullChar Then FFmpegCommandTextBox.Text = XTRSTR Else FFmpegCommandTextBox.Text = ""
                 End If
 
+                If XTR.Name = "EncSetFrm_SubtitleRecordingCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then SubtitleRecordingCheckBox.Checked = XTRSTR Else SubtitleRecordingCheckBox.Checked = False
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -2017,18 +2027,26 @@ LANG_SKIP:
                     UseaccessunitdelimitersV = " -flags2 -aud"
                 End If
 
+                '------------------------
+                ' i_qfactor
+                '------------------------
+                Dim i_qfactorV As Double = 1 / 1.4
+                If .QIPRatioNumericUpDown.Value <> 0 Then
+                    i_qfactorV = 1 / Val(.QIPRatioNumericUpDown.Value)
+                End If
+
                 '---------------------------------------------------------------------------------------------------------
                 '모든모드공통
                 x264optsV = " -threads " & .ThreadsNumericUpDown.Value & LevelComboBoxV & _
                             DeblockingCheckBoxV & CABACCheckBoxV & BFramesV & " -refs " & .ReferenceFramesNumericUpDown.Value & AdaptiveIFramesDecisionV & PframeWeightedPredictionV & _
-                            " -qmin " & .QMinNumericUpDown.Value & " -qmax " & .QMaxNumericUpDown.Value & " -qdiff " & .QDeltaNumericUpDown.Value & " -i_qfactor " & .QIPRatioNumericUpDown.Value & " -b_qfactor " & .QPBRatioNumericUpDown.Value & " -chromaoffset " & .ChromaandLumaQPOffsetNumericUpDown.Value & RateControlMV & _
+                            " -qmin " & .QMinNumericUpDown.Value & " -qmax " & .QMaxNumericUpDown.Value & " -qdiff " & .QDeltaNumericUpDown.Value & " -i_qfactor " & i_qfactorV & " -b_qfactor " & .QPBRatioNumericUpDown.Value & " -chromaoffset " & .ChromaandLumaQPOffsetNumericUpDown.Value & RateControlMV & _
                             ChromaMEV & " -me_range " & .MERangeNumericUpDown.Value & MEMethodV & SubpixelMEV & TrellisV & " -psy_rd " & .PsyRDStrengthNumericUpDown.Value & " -psy_trellis " & .PsyTrellisStrengthNumericUpDown.Value & NoMixedReferenceFramesV & NoFastPSkipV & NoPsychovisualEnhancementsV & _
                             Adaptive8x8DCTV & MacroblocksV & " -nr " & .NoiseReductionNumericUpDown.Value & UseaccessunitdelimitersV
 
                 If .FastfirstpassCheckBox.Checked = True Then '터보
                     x264opts_2passV = " -threads " & .ThreadsNumericUpDown.Value & LevelComboBoxV & _
                                  DeblockingCheckBoxV & CABACCheckBoxV & BFramesV & " -refs 1" & AdaptiveIFramesDecisionV & PframeWeightedPredictionV & _
-                                 " -qmin " & .QMinNumericUpDown.Value & " -qmax " & .QMaxNumericUpDown.Value & " -qdiff " & .QDeltaNumericUpDown.Value & " -i_qfactor " & .QIPRatioNumericUpDown.Value & " -b_qfactor " & .QPBRatioNumericUpDown.Value & " -chromaoffset " & .ChromaandLumaQPOffsetNumericUpDown.Value & RateControlMV & _
+                                 " -qmin " & .QMinNumericUpDown.Value & " -qmax " & .QMaxNumericUpDown.Value & " -qdiff " & .QDeltaNumericUpDown.Value & " -i_qfactor " & i_qfactorV & " -b_qfactor " & .QPBRatioNumericUpDown.Value & " -chromaoffset " & .ChromaandLumaQPOffsetNumericUpDown.Value & RateControlMV & _
                                  ChromaMEV & " -me_range 16 -me_method epzs -subq 1" & TrellisV & " -psy_rd " & .PsyRDStrengthNumericUpDown.Value & " -psy_trellis " & .PsyTrellisStrengthNumericUpDown.Value & NoMixedReferenceFramesV & NoFastPSkipV & NoPsychovisualEnhancementsV & _
                                  Adaptive8x8DCTV & MacroblocksV & " -nr " & .NoiseReductionNumericUpDown.Value & UseaccessunitdelimitersV
 
@@ -2040,7 +2058,7 @@ LANG_SKIP:
             End With
         End If
         If VideoCodecComboBox.Text = "H.264(AVC) x264 core" AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함
-            x264optsV = " -threads " & x264optsFrm.ThreadsNumericUpDown.Value & " -level 13 -qmin 10 -qmax 51 -qdiff 4 -i_qfactor 1.4 -b_qfactor 1.3 -chromaoffset 0"
+            x264optsV = " -threads " & x264optsFrm.ThreadsNumericUpDown.Value & " -level 13 -qmin 10 -qmax 51 -qdiff 4 -i_qfactor " & 1 / 1.4 & " -b_qfactor 1.3 -chromaoffset 0"
             x264opts_2passV = x264optsV
         End If
 
@@ -2530,9 +2548,13 @@ LANG_SKIP:
             MainFrm.VF_unsharpVTextBox = ""
         End If
 
-
-
-
+        '***********************************
+        ' FFmpeg자막기록
+        '***********************************
+        Dim SubtitleRecordingCheckBoxV As String = " -sn"
+        If SubtitleRecordingCheckBox.Checked = True Then
+            SubtitleRecordingCheckBoxV = ""
+        End If
 
 
         '===================================================================================================================================
@@ -2571,9 +2593,9 @@ LANG_SKIP:
             End If
             '---------------------------------------
 
-            MainFrm.NeroAACSTRAviSynth = " -f wav -vn" & AudioCodecComboBoxV & SamplerateComboBoxV & " - | "
+            MainFrm.NeroAACSTRAviSynth = " -f wav -vn" & SubtitleRecordingCheckBoxV & AudioCodecComboBoxV & SamplerateComboBoxV & " - | "
 
-            MainFrm.NeroAACSTRFFmpeg = " -f wav -vn" & AudioCodecComboBoxV & SamplerateComboBoxV & _
+            MainFrm.NeroAACSTRFFmpeg = " -f wav -vn" & SubtitleRecordingCheckBoxV & AudioCodecComboBoxV & SamplerateComboBoxV & _
                                                         FFmpegChComboBoxV & AudioVolNumericUpDownV & " - | "
 
             MainFrm.NeroAACSTRNEP = " -ignorelength -if -" & NeroProfileV & NeroBitrateV & " -of "
@@ -2589,33 +2611,33 @@ LANG_SKIP:
         If InStr(OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then '오디오만 인코딩
 
 
-            MainFrm.AviSynthCommandStr = FormatV & AudioCodecComboBoxV & SamplerateComboBoxV & AviSynthChComboBoxV & AudioBitrateComboBoxV & _
+            MainFrm.AviSynthCommandStr = FormatV & SubtitleRecordingCheckBoxV & AudioCodecComboBoxV & SamplerateComboBoxV & AviSynthChComboBoxV & AudioBitrateComboBoxV & _
                                               SizeLimitTextBoxV & FFmpegCommandTextBoxV
 
-            MainFrm.FFmpegCommandStr = FormatV & " -vn" & AudioCodecComboBoxV & SamplerateComboBoxV & FFmpegChComboBoxV & AudioBitrateComboBoxV & _
+            MainFrm.FFmpegCommandStr = FormatV & SubtitleRecordingCheckBoxV & " -vn" & AudioCodecComboBoxV & SamplerateComboBoxV & FFmpegChComboBoxV & AudioBitrateComboBoxV & _
                                                           AudioVolNumericUpDownV & SizeLimitTextBoxV & FFmpegCommandTextBoxV
 
 
         Else '비디오와 오디오 인코딩
 
 
-            MainFrm.AviSynthCommandStr = FormatV & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.AviSynthCommandStr = FormatV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                             PSPMP4CheckBoxV & _
                                             AudioCodecComboBoxV & SamplerateComboBoxV & AviSynthChComboBoxV & AudioBitrateComboBoxV & _
                                             SizeLimitTextBoxV & FFmpegCommandTextBoxV & _
                                             x264optsV & MPEG4optsV
 
-            MainFrm.AviSynthCommand2PassStr = FormatV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.AviSynthCommand2PassStr = FormatV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                                  FFmpegCommandTextBoxV & _
                                                  x264opts_2passV & MPEG4optsV
 
-            MainFrm.FFmpegCommandStr = FormatV & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.FFmpegCommandStr = FormatV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                             PSPMP4CheckBoxV & SwscaleV & _
                                             AudioCodecComboBoxV & SamplerateComboBoxV & FFmpegChComboBoxV & AudioBitrateComboBoxV & AudioVolNumericUpDownV & _
                                             SizeLimitTextBoxV & DeinterlaceCheckBoxV & FFmpegCommandTextBoxV & _
                                             x264optsV & MPEG4optsV
 
-            MainFrm.FFmpegCommand2PassStr = FormatV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.FFmpegCommand2PassStr = FormatV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                                  SwscaleV & _
                                                  DeinterlaceCheckBoxV & FFmpegCommandTextBoxV & _
                                                  x264opts_2passV & MPEG4optsV
