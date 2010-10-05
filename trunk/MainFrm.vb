@@ -1569,6 +1569,13 @@ LANG_SKIP:
             .AviSynthChComboBox.Items.Add(LangCls.AudioPPdolbypComboBox)
         End With
 
+        'Def_FFmpegSourceTextBox 초기화 32 / 64
+        If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
+            AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
+        Else
+            AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
+        End If
+
         '****************************************************************
         '설정
         If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\settings.xml") = False Then '설정파일이 없으면
@@ -5008,9 +5015,9 @@ UAC:
                 ElseIf .AviSynthAspectComboBox2.Text = LangCls.ImagePP169AviSynthAspectComboBox2 Then
                     XTWriter.WriteString("LangCls.ImagePP169AviSynthAspectComboBox2")
                 ElseIf .AviSynthAspectComboBox2.Text = LangCls.ImagePP1851AviSynthAspectComboBox2 Then
-                    XTWriter.WriteString("LangCls. ImagePP1851AviSynthAspectComboBox2")
+                    XTWriter.WriteString("LangCls.ImagePP1851AviSynthAspectComboBox2")
                 ElseIf .AviSynthAspectComboBox2.Text = LangCls.ImagePP2351AviSynthAspectComboBox2 Then
-                    XTWriter.WriteString("LangCls. ImagePP2351AviSynthAspectComboBox2 ")
+                    XTWriter.WriteString("LangCls.ImagePP2351AviSynthAspectComboBox2")
                 ElseIf .AviSynthAspectComboBox2.Text = LangCls.ImagePPUserInputComboBox Then
                     XTWriter.WriteString("LangCls.ImagePPUserInputComboBox")
                 End If
