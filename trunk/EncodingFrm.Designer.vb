@@ -336,7 +336,7 @@ Partial Class EncodingFrm
         '
         Me.EncToolStripStatusLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.EncToolStripStatusLabel.Name = "EncToolStripStatusLabel"
-        Me.EncToolStripStatusLabel.Size = New System.Drawing.Size(343, 17)
+        Me.EncToolStripStatusLabel.Size = New System.Drawing.Size(312, 17)
         Me.EncToolStripStatusLabel.Spring = True
         Me.EncToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '

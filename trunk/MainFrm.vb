@@ -228,6 +228,11 @@ Public Class MainFrm
 
     Public Sub GetInfo(ByVal MPATHV As String)
 
+        'FFmpeg 없으면 통과//
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe") = False Then
+            Exit Sub
+        End If
+
         '유니코드처리...
         Dim UnicodeMPATHV As String = ""
         Dim FNGBytes() As Byte = System.Text.Encoding.Default.GetBytes(MPATHV)
@@ -1613,9 +1618,6 @@ LANG_SKIP:
         '-----------------------------------------------------------------------
         ' 그 외 설정
         '-----------------------------------------------------------------------
-
-        '명령어 받기
-        EncSetFrm.GETFFCMD()
 
         '활성화 지역
         EnableArea()

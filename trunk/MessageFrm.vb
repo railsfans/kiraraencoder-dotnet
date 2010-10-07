@@ -85,22 +85,26 @@ LANG_SKIP:
 
     Private Sub YesBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles YesBTN.Click
         EncodingFrm.MessageBoxBTN = "YES"
-        Close()
+        Me.Close()
     End Sub
 
     Private Sub YesToAllBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles YesToAllBTN.Click
         EncodingFrm.MessageBoxBTN = "YESTOALL"
-        Close()
+        Me.Close()
     End Sub
 
     Private Sub NoBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoBTN.Click
         EncodingFrm.MessageBoxBTN = "NO"
-        Close()
+        Me.Close()
     End Sub
 
     Private Sub NoToAllBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoToAllBTN.Click
         EncodingFrm.MessageBoxBTN = "NOTOALL"
-        Close()
+        Me.Close()
     End Sub
 
+    Private Sub MessageFrm_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        '포커스
+        YesBTN.Focus()
+    End Sub
 End Class

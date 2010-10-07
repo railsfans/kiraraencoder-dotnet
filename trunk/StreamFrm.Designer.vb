@@ -1030,8 +1030,9 @@ Partial Class StreamFrm
         '
         'ToolStripStatusLabel1
         '
+        Me.ToolStripStatusLabel1.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(12, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(11, 17)
         Me.ToolStripStatusLabel1.Text = "-"
         '
         'StreamFrm

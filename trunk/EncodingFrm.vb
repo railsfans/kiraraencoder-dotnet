@@ -811,24 +811,14 @@ Public Class EncodingFrm
                         If LeftCV = 0 AndAlso TopCV = 0 AndAlso RightCV = 0 AndAlso BottomCV = 0 Then
                             VF_CropV = ""
                         Else
-                            If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본
-                                VF_CropV = ", crop=" & LeftCV & ":" & _
-                                                                          TopCV & ":" & _
-                                                                          Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(0)) - LeftCV - RightCV & ":" & _
-                                                                          Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(1)) - TopCV - BottomCV & _
-                                           ", scale=" & Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(0)) - LeftCV - RightCV & ":" & _
-                                                        Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(1)) - TopCV - BottomCV
-                            Else
-                                VF_CropV = ", crop=" & LeftCV & ":" & _
-                                          TopCV & ":" & _
-                                          Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(0)) - LeftCV - RightCV & ":" & _
-                                          Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(1)) - TopCV - BottomCV
-                            End If
-
+                            VF_CropV = ", crop=" & Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(0)) - LeftCV - RightCV & ":" & _
+                                                   Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(1)) - TopCV - BottomCV & ":" & _
+                                                   LeftCV & ":" & _
+                                                   TopCV
                         End If
                     Catch ex As Exception
-                        VF_CropV = ""
-                    End Try
+                    VF_CropV = ""
+                End Try
                 End If
             End If
 
@@ -992,7 +982,7 @@ Public Class EncodingFrm
                             If SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetLetterBoxAspectComboBox Then '사이즈입력받고, 레터박스 붙이기면
                                 VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV & ", pad=" & Val(RealnputWidthV) + (Val(RealnputLetterWidthV) * 2) & ":" & Val(RealnputHeightV) + (Val(RealnputLetterHeightV) * 2) & ":" & RealnputLetterWidthV & ":" & RealnputLetterHeightV
                             ElseIf SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetCropAspectComboBox Then '사이즈입력받고, 비율 자르기면
-                                VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV & ", crop=" & -1 * Val(RealnputCropWidthV) & ":" & -1 * Val(RealnputCropHeightV) & ":" & Val(RealnputWidthV) + (Val(RealnputCropWidthV) * 2) & ":" & Val(RealnputHeightV) + (Val(RealnputCropHeightV) * 2)
+                                VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV & ", crop=" & Val(RealnputWidthV) + (Val(RealnputCropWidthV) * 2) & ":" & Val(RealnputHeightV) + (Val(RealnputCropHeightV) * 2) & ":" & -1 * Val(RealnputCropWidthV) & ":" & -1 * Val(RealnputCropHeightV)
                             Else
                                 VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV
                             End If
@@ -1135,6 +1125,7 @@ Public Class EncodingFrm
             ' 비율
             '=================================
             Dim VF_AspectV As String = ""
+            Dim AspectV As String = ""
             If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
                 Dim OriginW = 0
                 Dim OriginH = 0
@@ -1166,6 +1157,7 @@ Public Class EncodingFrm
                     Else
                         VF_AspectV = ", aspect=" & EncSetFrm.ImageSizeWidthTextBox.Text & ":" & EncSetFrm.ImageSizeHeightTextBox.Text
                     End If
+                    AspectV = " -aspect -1"
                 End If
             End If
 
@@ -1474,7 +1466,7 @@ Public Class EncodingFrm
                     If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
 
                         EncPassStr = "[1/2Pass]"
-                        EncSub(InputFilePath, SSTV & VideoFilterV & timestampV & MainFrm.FFmpegCommand2PassStr, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1482,7 +1474,7 @@ Public Class EncodingFrm
                         End If
 
                         EncPassStr = "[2/2Pass]"
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1494,7 +1486,7 @@ Public Class EncodingFrm
 
                     Else
 
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & timestampV & MainFrm.FFmpegCommandStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommandStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1705,8 +1697,10 @@ ENC_STOP:
 
                 If Environment.OSVersion.Version.Major < 6 Then 'NT 5.X 이하
                     EncPanel.Font = New Font(FNXP, FS)
+                    EncToolStripStatusLabel.Font = New Font(FNXP, FS)
                 Else
                     EncPanel.Font = New Font(FN, FS)
+                    EncToolStripStatusLabel.Font = New Font(FN, FS)
                 End If
 
                 If XTR.Name = "EncodingFrmV" Then LangCls.EncodingFrmV = XTR.ReadString
@@ -1775,6 +1769,19 @@ LANG_SKIP:
         MainFrm.InChkToolStripMenuItem.Enabled = False
         MainFrm.SavePathTextBox.Enabled = False
         MainFrm.SetFolderButton.Enabled = False
+
+        '명령어 초기화
+        MainFrm.AviSynthCommandStr = ""
+        MainFrm.AviSynthCommand2PassStr = ""
+        MainFrm.FFmpegCommandStr = ""
+        MainFrm.FFmpegCommand2PassStr = ""
+        MainFrm.VF_unsharpVTextBox = ""
+        MainFrm.NeroAACSTRFFmpeg = ""
+        MainFrm.NeroAACSTRAviSynth = ""
+        MainFrm.NeroAACSTRNEP = ""
+
+        '명령어 받기
+        EncSetFrm.GETFFCMD()
 
     End Sub
 

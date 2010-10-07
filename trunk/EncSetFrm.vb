@@ -435,7 +435,6 @@ Public Class EncSetFrm
 
     Private Sub EncSetFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
-        GETFFCMD()
     End Sub
 
     Public Sub EncSetFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
