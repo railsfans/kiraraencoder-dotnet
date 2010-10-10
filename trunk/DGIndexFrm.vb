@@ -235,7 +235,7 @@ Public Class DGIndexFrm
         End If
 
         Dim MSGB As String = ""
-        MSGB = My.Application.Info.DirectoryPath & "\tools\dgindex\dgindex" & " -SD=" & Chr(34) & " -AIF=" & Chr(34) & IN_PATHV & Chr(34) & " -OF=" & Chr(34) & OUT_PATHV & Chr(34) & " -hide -exit -FO=0 -OM=1 -TN=" & TNV
+        MSGB = My.Application.Info.DirectoryPath & "\tools\dgindex\dgindex.exe" & " -SD=" & Chr(34) & " -AIF=" & Chr(34) & IN_PATHV & Chr(34) & " -OF=" & Chr(34) & OUT_PATHV & Chr(34) & " -hide -exit -FO=0 -OM=1 -TN=" & TNV
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
         Dim TempInputHandle As SafeFileHandle = Nothing

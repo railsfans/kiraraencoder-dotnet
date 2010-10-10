@@ -117,6 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAObSURBVFhHzZbHS2RBEIf9SxTvBhQRBBN49ySKCIp6ETF7
+        Utcc1kXMOeccd13d/fP2k+4pijfv9YiXrd9hmNddr+qbCt2T9c2YsuD5a0bAfAD9MSOrQO9m5DNkhufd
+        KtCbGfkMmeF580C/zcgq0KsZ+QyZ4Xn1QL/MyCrQz2TNzMxkpTQ2Nvbw8PDy8iLmPNbU1IhBT0/P/f29
+        Ngh4jt3yGQq8NjU1JfG6u7tPTk4eHx/FvqWlRXbr6uo2NjbOzs60wReB+E1JmpiYkJBtbW17e3suB2hk
+        ZES2ysrKyOXm5ubV1dXz83PAYXjLZ+jzQLu7uw5oenpaaAoKCoaGhtbW1i4uLp6enr5Mw4seiN+UpEiG
+        ALq7uzs6OhKanJycwcHBpaWl09NTWsr50Y0llu5LVVXVzc0NZY2NmBlofHxcPLa2tu7s7BwfH5MS3VgL
+        CwsgAkp6XJjq6uoIhzyWlJRsb2/DFALCUZIiQOvr67W1tbqr5ufn9/f3b29vtQfS4Gy6urroLWx+pAT9
+        1tbW9fV1bESfoQAQo64z1NjYKI/19fVzc3PkDO+UIBaov7+f0WM2mT6n8/NzGp9GDAHhLkkaqLCwUGiy
+        s7NHR0cJdnl5SetEXpcM0V4HBwdUMxBCb/kM4TFJGijSFtSOU4Bipb9bWVnpjAcGBigoQIEQeiszEGnQ
+        HPn5+fqRFqEE5D8ST4DSW3tycpISp7/iPHggtpOkgfLy8oaHhzkedRhccPyQA+0hANTX10cRmbLYiJmB
+        PixSampqYlYY2oaGBlnMzc3lEKJPNZMAdXZ2khJ6/3tKi4uLmYHwlSQN1NzczHFMjfBYWloqTLQwKxRC
+        nAhQb28vrxweHnJ6OXF+Mgd0XmxEn6FPAnGVurEi4WRFF669vZ1grDtXFRUVbpex53DXrIFYbHkgeJOk
+        b1AyxMFIx2AMFveXZuK/AL8eJnYFiI7hoKKggRB6ywPhJUmxQM6Y2nV0dGim2dlZjj62BCh9ysrLy+EG
+        MTZiZiDGSpxKDzlfFIIjWN+jRUVFlJIUEjXpLisuLl5dXXW5TJcHwnWS8E7OGS6uJD75zooY80O5VpeX
+        l8mNu7NoMoIBurKy4hYjYpEtbGIjZgYiJFUgKnPEJ99Z0b5oJsIzRxi4aYIYySLrWtiwxVshIGIYkc+Q
+        ERowPBAJNCKrQK4NLchnyAKKY/BAnLlGZBVI/oH/9y8+Q/+dQwA8EDeLEVkFgsuO/gHxa+GI+hQEPwAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <data name="FileInfoTextBox.Text" xml:space="preserve">
     <value>FFmpeg
 Licensed under the GPL v3

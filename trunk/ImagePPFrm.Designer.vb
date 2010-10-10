@@ -495,7 +495,7 @@ Partial Class ImagePPFrm
         '
         'OKBTN
         '
-        Me.OKBTN.Location = New System.Drawing.Point(690, 422)
+        Me.OKBTN.Location = New System.Drawing.Point(746, 421)
         Me.OKBTN.Name = "OKBTN"
         Me.OKBTN.Size = New System.Drawing.Size(90, 25)
         Me.OKBTN.TabIndex = 37
@@ -504,7 +504,7 @@ Partial Class ImagePPFrm
         '
         'CancelBTN
         '
-        Me.CancelBTN.Location = New System.Drawing.Point(790, 422)
+        Me.CancelBTN.Location = New System.Drawing.Point(846, 421)
         Me.CancelBTN.Name = "CancelBTN"
         Me.CancelBTN.Size = New System.Drawing.Size(90, 25)
         Me.CancelBTN.TabIndex = 36
@@ -523,7 +523,7 @@ Partial Class ImagePPFrm
         Me.IPP_Panel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.IPP_Panel.Location = New System.Drawing.Point(0, 0)
         Me.IPP_Panel.Name = "IPP_Panel"
-        Me.IPP_Panel.Size = New System.Drawing.Size(895, 464)
+        Me.IPP_Panel.Size = New System.Drawing.Size(952, 464)
         Me.IPP_Panel.TabIndex = 38
         '
         'TabControl1
@@ -533,7 +533,7 @@ Partial Class ImagePPFrm
         Me.TabControl1.Location = New System.Drawing.Point(502, 80)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(381, 170)
+        Me.TabControl1.Size = New System.Drawing.Size(438, 170)
         Me.TabControl1.TabIndex = 40
         '
         'TabPage1
@@ -543,9 +543,9 @@ Partial Class ImagePPFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(373, 144)
+        Me.TabPage1.Size = New System.Drawing.Size(430, 144)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "FFmpegSource"
+        Me.TabPage1.Text = "FFmpegSource(MPEG/MPEGTS AVC, VC1)"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'AviSynthDeinterlaceComboBox
@@ -556,7 +556,7 @@ Partial Class ImagePPFrm
         Me.AviSynthDeinterlaceComboBox.Items.AddRange(New Object() {"linear blend deinterlacer (lb)", "linear interpolating deinterlace (li)", "cubic interpolating deinterlacer (ci)", "median deinterlacer (md)", "ffmpeg deinterlacer (fd)", "FIR lowpass deinterlacer (l5)"})
         Me.AviSynthDeinterlaceComboBox.Location = New System.Drawing.Point(36, 42)
         Me.AviSynthDeinterlaceComboBox.Name = "AviSynthDeinterlaceComboBox"
-        Me.AviSynthDeinterlaceComboBox.Size = New System.Drawing.Size(293, 20)
+        Me.AviSynthDeinterlaceComboBox.Size = New System.Drawing.Size(350, 20)
         Me.AviSynthDeinterlaceComboBox.TabIndex = 33
         '
         'AviSynthDeinterlaceCheckBox
@@ -578,7 +578,7 @@ Partial Class ImagePPFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(373, 144)
+        Me.TabPage2.Size = New System.Drawing.Size(430, 144)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "MPEG2Source"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -599,7 +599,7 @@ Partial Class ImagePPFrm
         Me.FieldorderComboBox.Items.AddRange(New Object() {"Top Field First", "Bottom Field First", "Varying field order"})
         Me.FieldorderComboBox.Location = New System.Drawing.Point(36, 94)
         Me.FieldorderComboBox.Name = "FieldorderComboBox"
-        Me.FieldorderComboBox.Size = New System.Drawing.Size(293, 20)
+        Me.FieldorderComboBox.Size = New System.Drawing.Size(350, 20)
         Me.FieldorderComboBox.TabIndex = 37
         '
         'AVSMPEG2DeinterlaceComboBox
@@ -610,7 +610,7 @@ Partial Class ImagePPFrm
         Me.AVSMPEG2DeinterlaceComboBox.Items.AddRange(New Object() {"Yadif mode=0", "Yadif mode=1 double framerate (bob)", "Yadif mode=2", "Yadif mode=3 double framerate (bob)"})
         Me.AVSMPEG2DeinterlaceComboBox.Location = New System.Drawing.Point(36, 42)
         Me.AVSMPEG2DeinterlaceComboBox.Name = "AVSMPEG2DeinterlaceComboBox"
-        Me.AVSMPEG2DeinterlaceComboBox.Size = New System.Drawing.Size(293, 20)
+        Me.AVSMPEG2DeinterlaceComboBox.Size = New System.Drawing.Size(350, 20)
         Me.AVSMPEG2DeinterlaceComboBox.TabIndex = 35
         '
         'AVSMPEG2DeinterlaceCheckBox
@@ -630,7 +630,7 @@ Partial Class ImagePPFrm
         Me.AviSynthFramerateGroupBox.Controls.Add(Me.AviSynthFramerateComboBox)
         Me.AviSynthFramerateGroupBox.Location = New System.Drawing.Point(502, 12)
         Me.AviSynthFramerateGroupBox.Name = "AviSynthFramerateGroupBox"
-        Me.AviSynthFramerateGroupBox.Size = New System.Drawing.Size(381, 57)
+        Me.AviSynthFramerateGroupBox.Size = New System.Drawing.Size(434, 57)
         Me.AviSynthFramerateGroupBox.TabIndex = 35
         Me.AviSynthFramerateGroupBox.TabStop = False
         Me.AviSynthFramerateGroupBox.Text = "프레임레이트"
@@ -638,7 +638,7 @@ Partial Class ImagePPFrm
         'AviSynthFramerateCheckBox
         '
         Me.AviSynthFramerateCheckBox.AutoSize = True
-        Me.AviSynthFramerateCheckBox.Location = New System.Drawing.Point(187, 24)
+        Me.AviSynthFramerateCheckBox.Location = New System.Drawing.Point(254, 25)
         Me.AviSynthFramerateCheckBox.Name = "AviSynthFramerateCheckBox"
         Me.AviSynthFramerateCheckBox.Size = New System.Drawing.Size(124, 16)
         Me.AviSynthFramerateCheckBox.TabIndex = 21
@@ -648,7 +648,7 @@ Partial Class ImagePPFrm
         'AviSynthFramerateLabel
         '
         Me.AviSynthFramerateLabel.AutoSize = True
-        Me.AviSynthFramerateLabel.Location = New System.Drawing.Point(140, 26)
+        Me.AviSynthFramerateLabel.Location = New System.Drawing.Point(164, 27)
         Me.AviSynthFramerateLabel.Name = "AviSynthFramerateLabel"
         Me.AviSynthFramerateLabel.Size = New System.Drawing.Size(22, 12)
         Me.AviSynthFramerateLabel.TabIndex = 20
@@ -661,14 +661,14 @@ Partial Class ImagePPFrm
         Me.AviSynthFramerateComboBox.Items.AddRange(New Object() {"5", "6", "7", "8", "9", "10", "11", "12", "13", "14.985", "15", "16", "17", "18", "19", "20", "23.976", "24", "25", "29.97", "30", "59.94", "60"})
         Me.AviSynthFramerateComboBox.Location = New System.Drawing.Point(23, 22)
         Me.AviSynthFramerateComboBox.Name = "AviSynthFramerateComboBox"
-        Me.AviSynthFramerateComboBox.Size = New System.Drawing.Size(111, 20)
+        Me.AviSynthFramerateComboBox.Size = New System.Drawing.Size(128, 20)
         Me.AviSynthFramerateComboBox.TabIndex = 19
         '
         'ImagePPFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(895, 464)
+        Me.ClientSize = New System.Drawing.Size(952, 464)
         Me.Controls.Add(Me.IPP_Panel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False

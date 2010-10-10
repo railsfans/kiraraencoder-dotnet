@@ -196,8 +196,6 @@ Public Class AviSynthEditorFrm
             Dim index As Integer = MainFrm.EncListListView.SelectedItems(index).Index
             MainFrm.GET_OutputINFO(index)  '출력정보
         End If
-        'Change용 프리셋 설정된 파일 표시 지우기
-        MainFrm.PresetLabel.Text = LangCls.MainUserStr
 
     End Sub
 

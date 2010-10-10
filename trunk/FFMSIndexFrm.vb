@@ -196,7 +196,7 @@ Public Class FFMSIndexFrm
     Public Sub IDSTR(ByVal IN_PATHV As String, ByVal OUT_PATHV As String, ByVal PriorityInt As Integer)
 
         Dim MSGB As String = ""
-        MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex" & " -f -t -1 -s 3 -d 0 " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
+        MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t -1 -s 3 -d 0 " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
         Dim TempInputHandle As SafeFileHandle = Nothing
@@ -393,4 +393,5 @@ LANG_SKIP:
         End If
 
     End Sub
+
 End Class

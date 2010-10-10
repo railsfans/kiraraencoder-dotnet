@@ -23,6 +23,7 @@ Partial Class MainFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
         Me.EncListGroupBox = New System.Windows.Forms.GroupBox
         Me.EncListListView = New System.Windows.Forms.ListView
         Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader
@@ -87,6 +88,7 @@ Partial Class MainFrm
         Me._FileLabel1 = New System.Windows.Forms.Label
         Me._FileLabel = New System.Windows.Forms.Label
         Me.Panel4 = New System.Windows.Forms.Panel
+        Me.AVSPanel = New System.Windows.Forms.Panel
         Me.AVSGroupBox = New System.Windows.Forms.GroupBox
         Me.AVSCheckBox = New System.Windows.Forms.CheckBox
         Me.AVSSetButton = New System.Windows.Forms.Button
@@ -105,15 +107,15 @@ Partial Class MainFrm
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.LangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.TrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ErrToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
         Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.TrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PresetContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
-        Me.AVSPanel = New System.Windows.Forms.Panel
         Me.EncListGroupBox.SuspendLayout()
         Me.ListviewContextMenuStrip.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -125,6 +127,7 @@ Partial Class MainFrm
         Me.BPanel.SuspendLayout()
         Me.OutputGroupBox.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.AVSPanel.SuspendLayout()
         Me.AVSGroupBox.SuspendLayout()
         Me.EncSetGroupBox.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -133,7 +136,6 @@ Partial Class MainFrm
         Me.Panel7.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.MainPanel.SuspendLayout()
-        Me.AVSPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncListGroupBox
@@ -512,9 +514,9 @@ Partial Class MainFrm
         '
         Me.CleanUpListBox.FormattingEnabled = True
         Me.CleanUpListBox.ItemHeight = 12
-        Me.CleanUpListBox.Location = New System.Drawing.Point(123, 23)
+        Me.CleanUpListBox.Location = New System.Drawing.Point(134, 23)
         Me.CleanUpListBox.Name = "CleanUpListBox"
-        Me.CleanUpListBox.Size = New System.Drawing.Size(109, 28)
+        Me.CleanUpListBox.Size = New System.Drawing.Size(106, 28)
         Me.CleanUpListBox.TabIndex = 22
         Me.CleanUpListBox.Visible = False
         '
@@ -652,6 +654,15 @@ Partial Class MainFrm
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(274, 170)
         Me.Panel4.TabIndex = 13
+        '
+        'AVSPanel
+        '
+        Me.AVSPanel.Controls.Add(Me.AVSGroupBox)
+        Me.AVSPanel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.AVSPanel.Location = New System.Drawing.Point(0, 0)
+        Me.AVSPanel.Name = "AVSPanel"
+        Me.AVSPanel.Size = New System.Drawing.Size(274, 63)
+        Me.AVSPanel.TabIndex = 13
         '
         'AVSGroupBox
         '
@@ -809,7 +820,7 @@ Partial Class MainFrm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.TrayToolStripMenuItem, Me.InChkToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.ErrToolStripMenuItem2, Me.InChkToolStripMenuItem, Me.AboutToolStripMenuItem, Me.TrayToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(964, 24)
@@ -822,11 +833,11 @@ Partial Class MainFrm
         Me.LangToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
         Me.LangToolStripMenuItem.Text = "언어(Language)"
         '
-        'TrayToolStripMenuItem
+        'ErrToolStripMenuItem2
         '
-        Me.TrayToolStripMenuItem.Name = "TrayToolStripMenuItem"
-        Me.TrayToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
-        Me.TrayToolStripMenuItem.Text = "트레이"
+        Me.ErrToolStripMenuItem2.Name = "ErrToolStripMenuItem2"
+        Me.ErrToolStripMenuItem2.Size = New System.Drawing.Size(95, 20)
+        Me.ErrToolStripMenuItem2.Text = "오류로그 보기"
         '
         'InChkToolStripMenuItem
         '
@@ -839,6 +850,12 @@ Partial Class MainFrm
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(95, 20)
         Me.AboutToolStripMenuItem.Text = "프로그램 정보"
+        '
+        'TrayToolStripMenuItem
+        '
+        Me.TrayToolStripMenuItem.Name = "TrayToolStripMenuItem"
+        Me.TrayToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
+        Me.TrayToolStripMenuItem.Text = "트레이"
         '
         'PresetContextMenuStrip
         '
@@ -863,15 +880,6 @@ Partial Class MainFrm
         '
         Me.Timer.Enabled = True
         '
-        'AVSPanel
-        '
-        Me.AVSPanel.Controls.Add(Me.AVSGroupBox)
-        Me.AVSPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.AVSPanel.Location = New System.Drawing.Point(0, 0)
-        Me.AVSPanel.Name = "AVSPanel"
-        Me.AVSPanel.Size = New System.Drawing.Size(274, 63)
-        Me.AVSPanel.TabIndex = 13
-        '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -879,6 +887,7 @@ Partial Class MainFrm
         Me.ClientSize = New System.Drawing.Size(964, 542)
         Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MinimumSize = New System.Drawing.Size(980, 580)
         Me.Name = "MainFrm"
@@ -896,6 +905,7 @@ Partial Class MainFrm
         Me.BPanel.ResumeLayout(False)
         Me.OutputGroupBox.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        Me.AVSPanel.ResumeLayout(False)
         Me.AVSGroupBox.ResumeLayout(False)
         Me.AVSGroupBox.PerformLayout()
         Me.EncSetGroupBox.ResumeLayout(False)
@@ -908,7 +918,6 @@ Partial Class MainFrm
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.MainPanel.ResumeLayout(False)
-        Me.AVSPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1004,5 +1013,6 @@ Partial Class MainFrm
     Friend WithEvents OutInfoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InChkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AVSPanel As System.Windows.Forms.Panel
+    Friend WithEvents ErrToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -458,8 +458,16 @@ Public Class MainFrm
         StreamIO = ta2 & vbNewLine
 
         '여러스트림 출력(목록화) #2
+        '---------------------------------------------
+        '오디오 스트림 개수 저장
+        Dim AudioStramCntStr As String = "0"
+        Dim MI2 As MediaInfo
+        MI2 = New MediaInfo
+        MI2.Open(MPATHV)
+        AudioStramCntStr = MI2.Get_(StreamKind.Audio, 0, "StreamCount")
+        MI2.Close()
+        '---------------------------------------------
         Dim StreamIOListBox As New ListBox
-        Dim StreamAI As Integer = 0
         StreamIOListBox.Items.Clear()
         ta2 = "LoopSTR"
         Do Until ta2 = ""
@@ -483,12 +491,21 @@ Public Class MainFrm
                         Dim MI As MediaInfo
                         MI = New MediaInfo
                         MI.Open(MPATHV)
-                        Dim ta2v As String = MI.Get_(StreamKind.Audio, StreamAI, "ID")
-                        If ta2v <> "" Then
-                            ta2 = Split(ta2, "[0x")(0) & "[0x" & Hex(ta2v) & "]" & Split(ta2, "]")(1)
-                            StreamIOListBox.Items.Add(ta2)
+                        If AudioStramCntStr <> "" OrElse AudioStramCntStr <> "0" Then
+                            Dim i As Integer
+                            For i = 0 To AudioStramCntStr - 1
+                                Dim ta2v As String = MI.Get_(StreamKind.Audio, i, "ID")
+                                If ta2v <> "" Then
+                                    Dim ta3 As String = UCase(Strings.Right(Split(Split(ta2, "[0x")(1), "]")(0), 2))
+                                    Dim hex3 As String = Strings.Right(Hex(ta2v), 2)
+                                    If ta3 = hex3 Then
+                                        ta2 = Split(ta2, "[0x")(0) & "[0x" & Hex(ta2v) & "]" & Split(ta2, "]")(1)
+                                        StreamIOListBox.Items.Add(ta2)
+                                        Exit For
+                                    End If
+                                End If
+                            Next
                         End If
-                        StreamAI += 1
                         MI.Close()
                     Catch ex As Exception
                     End Try
@@ -755,7 +772,10 @@ Public Class MainFrm
                 If XTR.Name = "MainInitializationQ" Then LangCls.MainInitializationQ = XTR.ReadString
                 If XTR.Name = "MainTrayToolStripMenuItem" Then TrayToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainAddToolStripMenuItem" Then AddToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "MainErrToolStripMenuItem" Then ErrToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "MainErrToolStripMenuItem" Then
+                    ErrToolStripMenuItem.Text = XTR.ReadString
+                    ErrToolStripMenuItem2.Text = ErrToolStripMenuItem.Text
+                End If
                 If XTR.Name = "MainCheckAllToolStripMenuItem" Then CheckAllToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainUncheckAllToolStripMenuItem" Then UncheckAllToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainInPlayToolStripMenuItem" Then InPlayToolStripMenuItem.Text = XTR.ReadString
@@ -764,6 +784,7 @@ Public Class MainFrm
                 If XTR.Name = "MainOutInfoToolStripMenuItem" Then OutInfoToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmInChkToolStripMenuItem" Then InChkToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainDirectoryNotFound" Then LangCls.MainDirectoryNotFound = XTR.ReadString
+                If XTR.Name = "MainFileSame" Then LangCls.MainFileSame = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -1347,7 +1368,8 @@ LANG_SKIP:
 
         '최종 파일에 설정저장
         APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
-
+        '예외저장
+        XML_CHANGE(My.Application.Info.DirectoryPath & "\settings.xml")
 
 
 
@@ -2117,7 +2139,6 @@ UAC:
         SizeOriginToolStripMenuItemStreamFrmV = False
 
         SavePathTextBox.Text = ""
-        AVSCheckBox.Checked = True
         PresetLabel.Text = ""
         MainWidth = ""
         MainHeight = ""
@@ -2196,6 +2217,8 @@ UAC:
             .DeinterlaceCheckBox.Checked = False
             .FFmpegCommandTextBox.Text = ""
             .SubtitleRecordingCheckBox.Checked = False
+            '예외
+            AVSCheckBox.Checked = True
 
         End With
 
@@ -2483,11 +2506,6 @@ UAC:
                 If XTR.Name = "SavePathTextBox" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then SavePathTextBox.Text = XTRSTR Else SavePathTextBox.Text = ""
-                End If
-
-                If XTR.Name = "AVSCheckBox" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = True
                 End If
 
                 If XTR.Name = "PresetLabel" Then
@@ -3879,6 +3897,12 @@ UAC:
 
                 End With
 
+                '예외
+                If XTR.Name = "AVSCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = True
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -3959,10 +3983,6 @@ UAC:
 
             XTWriter.WriteStartElement("SavePathTextBox")
             XTWriter.WriteString(SavePathTextBox.Text)
-            XTWriter.WriteEndElement()
-
-            XTWriter.WriteStartElement("AVSCheckBox")
-            XTWriter.WriteString(AVSCheckBox.Checked)
             XTWriter.WriteEndElement()
 
             XTWriter.WriteStartElement("PresetLabel")
@@ -5092,6 +5112,11 @@ UAC:
 
             End With
 
+            '예외
+            XTWriter.WriteStartElement("AVSCheckBox")
+            XTWriter.WriteString(AVSCheckBox.Checked)
+            XTWriter.WriteEndElement()
+
             XTWriter.WriteEndDocument()
 
         Catch ex As Exception
@@ -5105,6 +5130,26 @@ UAC:
             Dim index As Integer = EncListListView.SelectedItems(index).Index
             GET_OutputINFO(index)  '출력정보
         End If
+
+    End Sub
+
+    Private Sub XML_CHANGE(ByVal src As String)
+
+        '예외저장//
+        Try
+            Dim XDoc As New XmlDocument()
+            Dim XNode As XmlNode
+            XDoc.Load(src)
+            '============== 시작
+
+            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AVSCheckBox")
+            If Not XNode Is Nothing Then XNode.InnerText = AVSCheckBox.Checked
+
+            '============== 끝
+            XDoc.Save(src)
+        Catch ex As Exception
+            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
+        End Try
 
     End Sub
 
@@ -5184,6 +5229,21 @@ UAC:
 
     End Sub
 
+    Private Sub EncListListView_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles EncListListView.KeyUp
+
+        '오류로그..
+        If SelIndex <> -1 Then
+            If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
+                ErrToolStripMenuItem.Enabled = False
+            Else
+                ErrToolStripMenuItem.Enabled = True
+            End If
+        Else
+            ErrToolStripMenuItem.Enabled = False
+        End If
+
+    End Sub
+
     Private Sub Timer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer.Tick
 
         EnableArea()
@@ -5197,6 +5257,8 @@ UAC:
             RemovePanel.Enabled = False
         End If
         '=====================================
+        '오류로그
+        ErrToolStripMenuItem2.Enabled = ErrToolStripMenuItem.Enabled
 
     End Sub
 
@@ -5294,9 +5356,15 @@ UAC:
             Exit Sub
         End If
 
+        '캐시예외
+        Dim CACHEV As String = ""
+        If EncListListView.Items(SelIndex).SubItems(3).Text = "MPEGTS" Then CACHEV = " -demuxer lavf -cache 8192"
+        Dim ThreadV As String = ""
+        If InStr(1, EncListListView.Items(SelIndex).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then ThreadV = " -lavdopts threads=" & Environ("NUMBER_OF_PROCESSORS")
+
         Dim MSGB As String = ""
         MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & EncListListView.Items(SelIndex).SubItems(10).Text & Chr(34) & _
-        " -identify -noquiet -nofontconfig -vo direct3d -idx"
+        " -identify -noquiet -nofontconfig -vo direct3d -idx" & CACHEV & ThreadV
         Shell(MSGB, AppWinStyle.NormalFocus)
 
     End Sub
@@ -5378,4 +5446,12 @@ UAC:
         AVSIFrm.ShowDialog(Me)
     End Sub
 
+    Private Sub ErrToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ErrToolStripMenuItem2.Click
+        ErrToolStripMenuItem_Click(Nothing, Nothing)
+    End Sub
+
+    Private Sub AVSCheckBox_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AVSCheckBox.Click
+        'Change용 프리셋 설정된 파일 표시 지우기 (저장은 프로그램이 종료될 때 하므로 여기에)
+        PresetLabel.Text = LangCls.MainUserStr
+    End Sub
 End Class

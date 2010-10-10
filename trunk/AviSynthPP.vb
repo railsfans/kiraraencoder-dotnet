@@ -39,6 +39,7 @@ Public Class AviSynthPP
     End Enum
 
     Public Shared Sub AviSynthPreprocess(ByVal index As Integer, ByVal ShowModeV As Boolean, ByVal PriorityInt As Integer, ByVal ShowStatus As Boolean)
+
         '오디오 모드는 미리듣기용으로 자막 복사를 하지 않음//
         '-------------------------------------------------------
 
@@ -75,8 +76,17 @@ Public Class AviSynthPP
                 fpsnumV = 60000
                 fpsdenV = 1001
             Else
-                fpsnumV = Format(fpsV, 0) '반올림
-                fpsdenV = 1
+                If InStr(Str(fpsV), ".", CompareMethod.Text) <> 0 Then ' 소수점이 있으면
+                    Dim FN As String = "0" '소수점 이하 숫자 구함(문자열로)
+                    Dim FNDEN As Integer = 0 '나눌값을 지정
+                    FN = Split(Str(fpsV), ".")(1)
+                    FNDEN = 10 ^ Len(FN)
+                    fpsnumV = Replace(Str(fpsV), ".", "")
+                    fpsdenV = FNDEN
+                Else '없으면
+                    fpsnumV = fpsV
+                    fpsdenV = 1
+                End If
             End If
 
         End If
@@ -834,6 +844,11 @@ ERRSKIP:
                 End If
             End If
 
+            '인덱스 프로그램이 없으면 스킵//
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe") = False Then
+                GoTo skip
+            End If
+
             If ShowModeV = True Then
                 '----------------
                 'ShowMode
@@ -937,6 +952,11 @@ skip:
                 End If
             End If
 
+            '인덱스 프로그램이 없으면 스킵//
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\tools\dgindex\dgindex.exe") = False Then
+                GoTo skip2
+            End If
+
             If ShowModeV = True Then
                 '----------------
                 'ShowMode
@@ -970,6 +990,7 @@ skip:
             'dts         = dca
             'aac         = aac or libfaad
             Dim LvAudioList As String = MainFrm.EncListListView.Items(index).SubItems(9).Text
+            Dim FileListBox2 As New ListBox
             Do
                 ia2 = 1
                 iia2 = 1
@@ -1015,7 +1036,6 @@ skip:
                         FileListBox1.Items.AddRange(Directory.GetFiles(My.Application.Info.DirectoryPath & "\temp\Caches", EXV2, SearchOption.TopDirectoryOnly))
                     End If
 
-                    Dim FileListBox2 As New ListBox
                     FileListBox2.Items.Clear()
                     If FileListBox1.Items.Count > 0 Then
                         For FLBI = 1 To FileListBox1.Items.Count
@@ -1025,52 +1045,56 @@ skip:
                         Next
                     End If
 
-                    If FileListBox2.Items.Count > 0 Then
-
-                        '중단상태(X) 인덱스한 오디오 파일경로 저장
-                        If INDEX_ProcessStopChk = False Then
-                            MainFrm.EncListListView.Items(index).SubItems(17).Text = MainFrm.EncListListView.Items(index).SubItems(17).Text & Mid(FileListBox2.Items(0), InStrRev(FileListBox2.Items(0), "\") + 1) & " |"
-                        End If
-
-                        'd2a파일 생성되는 여부
-                        Dim _DAExtensionV As String = ""
-                        Dim _d2aV As Boolean = False
-                        If My.Computer.FileSystem.FileExists(FileListBox2.Items(0)) = True Then
-                            _DAExtensionV = My.Computer.FileSystem.GetFileInfo(FileListBox2.Items(0)).Extension
-                        End If
-                        If _DAExtensionV = ".mp1" OrElse _DAExtensionV = ".mp2" OrElse _DAExtensionV = ".mp3" OrElse _DAExtensionV = ".mpa" Then
-                            _d2aV = True
-                        Else
-                            _d2aV = False
-                        End If
-
-                        If INDEX_ProcessStopChk = True Then
-                            '중지된 상태, 삭제(클린업)
-                            Try
-                                If My.Computer.FileSystem.FileExists(FileListBox2.Items(0)) = True Then
-                                    My.Computer.FileSystem.DeleteFile(FileListBox2.Items(0))
-                                End If
-                                If _d2aV = True Then
-                                    If My.Computer.FileSystem.FileExists(FileListBox2.Items(0) & ".d2a") = True Then
-                                        My.Computer.FileSystem.DeleteFile(FileListBox2.Items(0) & ".d2a")
-                                    End If
-                                End If
-                            Catch ex As Exception
-                            End Try
-                        Else
-                            MainFrm.CleanUpListBox.Items.Add(FileListBox2.Items(0)) '클린업
-                            If _d2aV = True Then
-                                MainFrm.CleanUpListBox.Items.Add(FileListBox2.Items(0) & ".d2a") '클린업
-                            End If
-                        End If
-
-                    End If
-
                     LvAudioList = Replace(LvAudioList, ta2, "")
                 End If
 
                 Application.DoEvents()
             Loop Until (ta2 = "")
+
+            If FileListBox2.Items.Count > 0 Then
+
+                For i = 0 To FileListBox2.Items.Count - 1
+
+                    '중단상태(X) 인덱스한 오디오 파일경로 저장
+                    If INDEX_ProcessStopChk = False Then
+                        MainFrm.EncListListView.Items(index).SubItems(17).Text = MainFrm.EncListListView.Items(index).SubItems(17).Text & Mid(FileListBox2.Items(i), InStrRev(FileListBox2.Items(i), "\") + 1) & " |"
+                    End If
+
+                    'd2a파일 생성되는 여부
+                    Dim _DAExtensionV As String = ""
+                    Dim _d2aV As Boolean = False
+                    If My.Computer.FileSystem.FileExists(FileListBox2.Items(i)) = True Then
+                        _DAExtensionV = My.Computer.FileSystem.GetFileInfo(FileListBox2.Items(i)).Extension
+                    End If
+                    If _DAExtensionV = ".mp1" OrElse _DAExtensionV = ".mp2" OrElse _DAExtensionV = ".mp3" OrElse _DAExtensionV = ".mpa" Then
+                        _d2aV = True
+                    Else
+                        _d2aV = False
+                    End If
+
+                    If INDEX_ProcessStopChk = True Then
+                        '중지된 상태, 삭제(클린업)
+                        Try
+                            If My.Computer.FileSystem.FileExists(FileListBox2.Items(i)) = True Then
+                                My.Computer.FileSystem.DeleteFile(FileListBox2.Items(i))
+                            End If
+                            If _d2aV = True Then
+                                If My.Computer.FileSystem.FileExists(FileListBox2.Items(i) & ".d2a") = True Then
+                                    My.Computer.FileSystem.DeleteFile(FileListBox2.Items(i) & ".d2a")
+                                End If
+                            End If
+                        Catch ex As Exception
+                        End Try
+                    Else
+                        MainFrm.CleanUpListBox.Items.Add(FileListBox2.Items(i)) '클린업
+                        If _d2aV = True Then
+                            MainFrm.CleanUpListBox.Items.Add(FileListBox2.Items(i) & ".d2a") '클린업
+                        End If
+                    End If
+
+                Next
+
+            End If
 
             '-------------------------------
 
@@ -1164,6 +1188,39 @@ skip2:
             Else
                 delayaudioV = "0"
             End If
+            '미디어 인포 비디오딜레이값 검사(MPEG/MPEGTS)
+            Dim MI As MediaInfo
+            Dim SN As Integer = 0
+            If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEG" Then '선택된 스트림 번호 가져오기// MPEG전용
+
+                'SN구하기 (스트림 ID비교)//
+                Dim AudioStramCntStr As String = "0"
+                Dim MI2 As MediaInfo
+                MI2 = New MediaInfo
+                MI2.Open(MainFrm.EncListListView.Items(index).SubItems(10).Text)
+                AudioStramCntStr = MI2.Get_(StreamKind.Audio, 0, "StreamCount")
+                Dim i2 As Integer
+                For i2 = 0 To AudioStramCntStr - 1
+                    Dim _ta2v As String = MI2.Get_(StreamKind.Audio, i2, "ID")
+                    If _ta2v <> "" Then
+                        Dim ta3 As String = UCase(Strings.Right(Split(Split(MainFrm.EncListListView.Items(index).SubItems(4).Text, "[0x")(1), "]")(0), 2))
+                        Dim hex3 As String = Strings.Right(Hex(_ta2v), 2)
+                        If ta3 = hex3 Then
+                            SN = i2
+                            Exit For
+                        End If
+                    End If
+                Next
+                MI2.Close()
+ 
+            End If
+            MI = New MediaInfo
+            MI.Open(MainFrm.EncListListView.Items(index).SubItems(10).Text)
+            Dim ta2v As String = MI.Get_(StreamKind.Audio, SN, "Video_Delay")
+            If ta2v = "0" OrElse ta2v = "" Then
+                delayaudioV = 0
+            End If
+            MI.Close()
             AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio>", "DelayAudio(" & delayaudioV & "/1000.0)")
 
             '#<audiosource>

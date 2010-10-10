@@ -836,4 +836,8 @@ LANG_SKIP:
             AVSMPEG2DeinterlaceComboBox.Enabled = False
         End If
     End Sub
+
+    Private Sub AviSynthFramerateComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AviSynthFramerateComboBox.SelectedIndexChanged
+
+    End Sub
 End Class

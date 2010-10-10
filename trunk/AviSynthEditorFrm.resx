@@ -244,13 +244,13 @@ ConvertToYV12()
 #&lt;supereq&gt;</value>
   </data>
   <data name="Def_AVCTextBox.Text" xml:space="preserve">
-    <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
-LoadPlugin("#&lt;pluginpath&gt;BassAudio.dll")
-LoadPlugin("#&lt;pluginpath&gt;NicAudio.dll")
+    <value>LoadPlugin("#&lt;toolspath&gt;ffms\ffms2.dll")
+LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
-DirectShowSource("#&lt;source&gt;")
+V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;#&lt;avifps&gt;
+A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, cache=true, cachefile="#&lt;cachefile&gt;")
+AudioDub(V,A)
 #&lt;channel&gt;
-#&lt;changefps&gt;
 #&lt;crop&gt;
 #&lt;image&gt;
 ConvertToYV12()
@@ -264,13 +264,13 @@ ConvertToYV12()
 #&lt;supereq&gt;</value>
   </data>
   <data name="Def_VC1TextBox.Text" xml:space="preserve">
-    <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
-LoadPlugin("#&lt;pluginpath&gt;BassAudio.dll")
-LoadPlugin("#&lt;pluginpath&gt;NicAudio.dll")
+    <value>LoadPlugin("#&lt;toolspath&gt;ffms\ffms2.dll")
+LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
-DirectShowSource("#&lt;source&gt;")
+V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;#&lt;avifps&gt;
+A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, cache=true, cachefile="#&lt;cachefile&gt;")
+AudioDub(V,A)
 #&lt;channel&gt;
-#&lt;changefps&gt;
 #&lt;crop&gt;
 #&lt;image&gt;
 ConvertToYV12()

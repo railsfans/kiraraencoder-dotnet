@@ -148,6 +148,8 @@ Partial Class EncSetFrm
         Me.NeroAACProfileComboBox = New System.Windows.Forms.ComboBox
         Me.NeroAACProfileLabel = New System.Windows.Forms.Label
         Me.ETCTabPage = New System.Windows.Forms.TabPage
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.SubtitleRecordingCheckBox = New System.Windows.Forms.CheckBox
         Me.FFmpegCommandGroupBox = New System.Windows.Forms.GroupBox
         Me.FFmpegCommandButton = New System.Windows.Forms.Button
         Me.FFmpegCommandTextBox = New System.Windows.Forms.TextBox
@@ -161,8 +163,6 @@ Partial Class EncSetFrm
         Me.ExtensionLabel = New System.Windows.Forms.Label
         Me.HeaderTextBox = New System.Windows.Forms.TextBox
         Me.HeaderLabel = New System.Windows.Forms.Label
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.SubtitleRecordingCheckBox = New System.Windows.Forms.CheckBox
         Me.EncSetPanel.SuspendLayout()
         Me.OutFGroupBox.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
@@ -212,10 +212,10 @@ Partial Class EncSetFrm
         CType(Me.NeroAACBitrateTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NeroAACBitrateNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ETCTabPage.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.FFmpegCommandGroupBox.SuspendLayout()
         Me.SizeLimitGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncSetPanel
@@ -1585,6 +1585,26 @@ Partial Class EncSetFrm
         Me.ETCTabPage.Text = "기타"
         Me.ETCTabPage.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.SubtitleRecordingCheckBox)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 178)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(480, 55)
+        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "FFmpeg Subtitle Recording"
+        '
+        'SubtitleRecordingCheckBox
+        '
+        Me.SubtitleRecordingCheckBox.AutoSize = True
+        Me.SubtitleRecordingCheckBox.Location = New System.Drawing.Point(19, 24)
+        Me.SubtitleRecordingCheckBox.Name = "SubtitleRecordingCheckBox"
+        Me.SubtitleRecordingCheckBox.Size = New System.Drawing.Size(48, 16)
+        Me.SubtitleRecordingCheckBox.TabIndex = 31
+        Me.SubtitleRecordingCheckBox.Text = "사용"
+        Me.SubtitleRecordingCheckBox.UseVisualStyleBackColor = True
+        '
         'FFmpegCommandGroupBox
         '
         Me.FFmpegCommandGroupBox.Controls.Add(Me.FFmpegCommandButton)
@@ -1711,26 +1731,6 @@ Partial Class EncSetFrm
         Me.HeaderLabel.Text = "앞 부분 이름:"
         Me.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.SubtitleRecordingCheckBox)
-        Me.GroupBox1.Location = New System.Drawing.Point(9, 178)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(480, 55)
-        Me.GroupBox1.TabIndex = 4
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "FFmpeg Subtitle Recording"
-        '
-        'SubtitleRecordingCheckBox
-        '
-        Me.SubtitleRecordingCheckBox.AutoSize = True
-        Me.SubtitleRecordingCheckBox.Location = New System.Drawing.Point(19, 24)
-        Me.SubtitleRecordingCheckBox.Name = "SubtitleRecordingCheckBox"
-        Me.SubtitleRecordingCheckBox.Size = New System.Drawing.Size(48, 16)
-        Me.SubtitleRecordingCheckBox.TabIndex = 31
-        Me.SubtitleRecordingCheckBox.Text = "사용"
-        Me.SubtitleRecordingCheckBox.UseVisualStyleBackColor = True
-        '
         'EncSetFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -1806,14 +1806,14 @@ Partial Class EncSetFrm
         CType(Me.NeroAACBitrateTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NeroAACBitrateNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ETCTabPage.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.FFmpegCommandGroupBox.ResumeLayout(False)
         Me.FFmpegCommandGroupBox.PerformLayout()
         Me.SizeLimitGroupBox.ResumeLayout(False)
         Me.SizeLimitGroupBox.PerformLayout()
         Me.NameGroupBox.ResumeLayout(False)
         Me.NameGroupBox.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

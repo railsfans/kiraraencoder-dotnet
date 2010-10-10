@@ -762,6 +762,14 @@ Public Class EncodingFrm
             '=================================
             SavePathStr = SavePathTextBoxV & EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV
 
+            '***********************************************
+            '출력과 원본이 같으면 스킵//
+            '***********************************************
+            If MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text = SavePathStr Then
+                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = LangCls.MainFileSame
+                GoTo SKIP
+            End If
 
             '***********************************************
             '저장파일 덮어쓰기 부분//
@@ -1157,7 +1165,34 @@ Public Class EncodingFrm
                     Else
                         VF_AspectV = ", aspect=" & EncSetFrm.ImageSizeWidthTextBox.Text & ":" & EncSetFrm.ImageSizeHeightTextBox.Text
                     End If
-                    AspectV = " -aspect -1"
+
+                    '======================================================
+                    'PAR 1:1 아닌경우 원본사이즈 비율적용//
+                    Dim PAR0 As Integer = 1, PAR00 As Integer = 0
+                    Dim PARtes As String = ""
+                    If InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) Then
+                        PAR00 = InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) + 4
+                        If InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
+                            PAR0 = InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                            PARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, PAR00, PAR0 - PAR00 - 1)
+                        End If
+                    Else
+                        PAR0 = PAR0 + 1
+                    End If
+                    If PARtes <> "" Then
+                        Dim LP, RP As String
+                        If InStr(PARtes, " ", CompareMethod.Text) <> 0 AndAlso InStr(PARtes, ":", CompareMethod.Text) <> 0 Then
+                            PARtes = Split(PARtes, " ")(0)
+                            LP = Split(PARtes, ":")(0)
+                            RP = Split(PARtes, ":")(1)
+                            If LP = "1" AndAlso RP = "1" Then
+                            Else
+                                AspectV = " -aspect " & Val(OriginW) & ":" & Val(OriginH)
+                            End If
+                        End If
+                    End If
+                    '======================================================
+
                 End If
             End If
 
@@ -1285,6 +1320,17 @@ Public Class EncodingFrm
                 timestampV = " -timestamp " & Chr(34) & Format(Now, "yyyy-MM-dd HH:mm:ss") & Chr(34)
             End If
 
+            '---------------------------------
+            ' FFmpeg 프레임레이트 지정(VBR전용)
+            '=================================
+            Dim FramerateStr As String = ""
+            If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안함
+                If EncSetFrm.FramerateCheckBox.Checked = True Then
+                    If Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)) >= 119 Then
+                        FramerateStr = " -r " & Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
+                    End If
+                End If
+            End If
 
             '---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1466,7 +1512,7 @@ Public Class EncodingFrm
                     If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
 
                         EncPassStr = "[1/2Pass]"
-                        EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr & FramerateStr, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1474,7 +1520,7 @@ Public Class EncodingFrm
                         End If
 
                         EncPassStr = "[2/2Pass]"
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1486,7 +1532,7 @@ Public Class EncodingFrm
 
                     Else
 
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommandStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommandStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr

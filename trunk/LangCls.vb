@@ -64,6 +64,7 @@ Public Class LangCls
     Public Shared MainInitializationQ As String = "초기화 하시겠습니까?"
     Public Shared MainFileNotFound As String = "파일이 없습니다."
     Public Shared MainDirectoryNotFound As String = "저장 폴더가 존재하지 않습니다."
+    Public Shared MainFileSame As String = "원본파일과 출력될 파일의 위치 및 파일명이 같습니다."
 
     'EncodingFrm
     Public Shared EncodingFrmV As String = "인코딩"
