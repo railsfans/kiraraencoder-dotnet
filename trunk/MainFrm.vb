@@ -2062,10 +2062,10 @@ UAC:
         End If
 
         If FileInfoFrm.Visible = True Then
-            FileInfoFrm.GET_TXT(EncListListView.Items(SelIndex).SubItems(10).Text)
+            FileInfoFrm.GET_TXT(WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text))
         Else
             FileInfoFrm.Show(Me)
-            FileInfoFrm.GET_TXT(EncListListView.Items(SelIndex).SubItems(10).Text)
+            FileInfoFrm.GET_TXT(WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text))
         End If
 
     End Sub

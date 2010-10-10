@@ -124,8 +124,9 @@
     <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
 V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;#&lt;avifps&gt;
-A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, adjustdelay=-3, cache=true, cachefile="#&lt;cachefile&gt;")
+A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, cache=true, cachefile="#&lt;cachefile&gt;")
 AudioDub(V,A)
+#&lt;delayaudio&gt;
 #&lt;channel&gt;
 #&lt;crop&gt;
 #&lt;image&gt;

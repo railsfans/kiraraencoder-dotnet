@@ -831,7 +831,7 @@ ERRSKIP:
         End If
 
         '(FFMSIndex)
-        If InStr(1, AVTextBoxV, "FFAudioSource", CompareMethod.Text) <> 0 OrElse InStr(1, AVTextBoxV, "FFVideoSource", CompareMethod.Text) <> 0 Then 'FFAudioSource, FFVideoSource 둘다 있을 때 작동.
+        If InStr(1, AVTextBoxV, "FFAudioSource", CompareMethod.Text) <> 0 OrElse InStr(1, AVTextBoxV, "FFVideoSource", CompareMethod.Text) <> 0 Then 'FFAudioSource, FFVideoSource
 
             '===========================
             '인덱스 생성관련
@@ -916,6 +916,46 @@ skip:
                 AVTextBoxV = Replace(AVTextBoxV, "#<textsub>", "##<textsub>")
 
             End If
+
+            '#<delayaudio>
+            Dim delayaudioV As String = "0"
+            '미디어 인포 비디오딜레이값 검사
+            Dim MI As MediaInfo
+            Dim SN As Integer = 0
+            'SN구하기 (스트림 ID비교)//
+            Dim AudioStramCntStr As String = "0"
+            Dim MI2 As MediaInfo
+            MI2 = New MediaInfo
+            MI2.Open(MainFrm.EncListListView.Items(index).SubItems(10).Text)
+            AudioStramCntStr = MI2.Get_(StreamKind.Audio, 0, "StreamCount")
+            Dim i2 As Integer
+            For i2 = 0 To AudioStramCntStr - 1
+                Dim _ta2v As String = MI2.Get_(StreamKind.Audio, i2, "ID")
+                Dim AudioMapV2 As String
+                If _ta2v <> "" Then
+                    If InStr(AudioMapV, ".", CompareMethod.Text) <> 0 Then
+                        AudioMapV2 = Split(AudioMapV, ".")(1)
+                    Else
+                        AudioMapV2 = AudioMapV
+                    End If
+                    AudioMapV2 = Val(AudioMapV2) + 1
+                    If _ta2v = AudioMapV2 Then
+                        SN = i2
+                        Exit For
+                    End If
+                End If
+            Next
+            MI2.Close()
+            MI = New MediaInfo
+            MI.Open(MainFrm.EncListListView.Items(index).SubItems(10).Text)
+            Dim ta2v As String = MI.Get_(StreamKind.Audio, SN, "Video_Delay")
+            If ta2v = "0" OrElse ta2v = "" Then
+                delayaudioV = 0
+            Else
+                delayaudioV = Val(ta2v) * -1
+            End If
+            MI.Close()
+            AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio>", "DelayAudio(" & delayaudioV & "/1000.0)")
 
             '#<ffpp>
             If ImagePPFrm.AviSynthDeinterlaceCheckBox.Checked = True Then '디인터레이스 여부
@@ -1212,7 +1252,7 @@ skip2:
                     End If
                 Next
                 MI2.Close()
- 
+
             End If
             MI = New MediaInfo
             MI.Open(MainFrm.EncListListView.Items(index).SubItems(10).Text)
