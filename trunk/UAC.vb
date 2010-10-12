@@ -51,7 +51,7 @@ Module UAC
         Catch ex As Exception
             Return
         End Try
-        Application.Exit()
+        Process.GetCurrentProcess.Kill()
     End Sub
 
 End Module

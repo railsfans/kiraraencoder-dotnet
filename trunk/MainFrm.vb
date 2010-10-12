@@ -1722,7 +1722,7 @@ LANG_SKIP:
         Exit Sub
 UAC:
         UAC.RestartElevated()
-        Close()
+        Process.GetCurrentProcess.Kill()
     End Sub
 
     Private Sub OutSelectLang(ByVal sender As Object, ByVal e As EventArgs)
