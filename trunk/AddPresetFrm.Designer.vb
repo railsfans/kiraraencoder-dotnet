@@ -22,6 +22,7 @@ Partial Class AddPresetFrm
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddPresetFrm))
         Me.NameTextBox = New System.Windows.Forms.TextBox
         Me.NameLabel = New System.Windows.Forms.Label
         Me.OKBTN = New System.Windows.Forms.Button
@@ -33,46 +34,30 @@ Partial Class AddPresetFrm
         '
         'NameTextBox
         '
-        Me.NameTextBox.Location = New System.Drawing.Point(104, 15)
+        resources.ApplyResources(Me.NameTextBox, "NameTextBox")
         Me.NameTextBox.Name = "NameTextBox"
-        Me.NameTextBox.Size = New System.Drawing.Size(300, 21)
-        Me.NameTextBox.TabIndex = 0
         '
         'NameLabel
         '
-        Me.NameLabel.Location = New System.Drawing.Point(12, 15)
+        resources.ApplyResources(Me.NameLabel, "NameLabel")
         Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(86, 21)
-        Me.NameLabel.TabIndex = 1
-        Me.NameLabel.Text = "이름:"
-        Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'OKBTN
         '
-        Me.OKBTN.Location = New System.Drawing.Point(261, 49)
+        resources.ApplyResources(Me.OKBTN, "OKBTN")
         Me.OKBTN.Name = "OKBTN"
-        Me.OKBTN.Size = New System.Drawing.Size(90, 25)
-        Me.OKBTN.TabIndex = 14
-        Me.OKBTN.Text = "확인"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
         'CancelBTN
         '
-        Me.CancelBTN.Location = New System.Drawing.Point(357, 49)
+        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
         Me.CancelBTN.Name = "CancelBTN"
-        Me.CancelBTN.Size = New System.Drawing.Size(90, 25)
-        Me.CancelBTN.TabIndex = 13
-        Me.CancelBTN.Text = "취소"
         Me.CancelBTN.UseVisualStyleBackColor = True
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(410, 15)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(37, 21)
-        Me.Label2.TabIndex = 16
-        Me.Label2.Text = ".xml"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'AP_Panel
         '
@@ -81,18 +66,14 @@ Partial Class AddPresetFrm
         Me.AP_Panel.Controls.Add(Me.NameTextBox)
         Me.AP_Panel.Controls.Add(Me.CancelBTN)
         Me.AP_Panel.Controls.Add(Me.OKBTN)
-        Me.AP_Panel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AP_Panel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.AP_Panel, "AP_Panel")
         Me.AP_Panel.Name = "AP_Panel"
-        Me.AP_Panel.Size = New System.Drawing.Size(469, 91)
-        Me.AP_Panel.TabIndex = 17
         '
         'AddPresetFrm
         '
         Me.AcceptButton = Me.OKBTN
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(469, 91)
         Me.Controls.Add(Me.AP_Panel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -100,8 +81,6 @@ Partial Class AddPresetFrm
         Me.Name = "AddPresetFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "프리셋 추가"
         Me.AP_Panel.ResumeLayout(False)
         Me.AP_Panel.PerformLayout()
         Me.ResumeLayout(False)

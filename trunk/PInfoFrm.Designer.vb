@@ -47,11 +47,9 @@ Partial Class PInfoFrm
         '
         Me.TabControl1.Controls.Add(Me.InfoTabPage)
         Me.TabControl1.Controls.Add(Me.LicenseTabPage)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(354, 175)
-        Me.TabControl1.TabIndex = 0
         '
         'InfoTabPage
         '
@@ -60,123 +58,67 @@ Partial Class PInfoFrm
         Me.InfoTabPage.Controls.Add(Me.Label4)
         Me.InfoTabPage.Controls.Add(Me.VersionLabel)
         Me.InfoTabPage.Controls.Add(Me.NameLabel)
-        Me.InfoTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.InfoTabPage, "InfoTabPage")
         Me.InfoTabPage.Name = "InfoTabPage"
-        Me.InfoTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.InfoTabPage.Size = New System.Drawing.Size(346, 149)
-        Me.InfoTabPage.TabIndex = 0
-        Me.InfoTabPage.Text = "정보"
         Me.InfoTabPage.UseVisualStyleBackColor = True
         '
         'CopyrightLabel
         '
-        Me.CopyrightLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CopyrightLabel.AutoSize = True
-        Me.CopyrightLabel.Location = New System.Drawing.Point(10, 117)
+        resources.ApplyResources(Me.CopyrightLabel, "CopyrightLabel")
         Me.CopyrightLabel.Name = "CopyrightLabel"
-        Me.CopyrightLabel.Size = New System.Drawing.Size(59, 12)
-        Me.CopyrightLabel.TabIndex = 4
-        Me.CopyrightLabel.Text = "Copyright"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(48, 48)
-        Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
         'Label4
         '
-        Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(10, 82)
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(158, 12)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Licensed under the GPL v2"
         '
         'VersionLabel
         '
-        Me.VersionLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.VersionLabel.AutoSize = True
-        Me.VersionLabel.Location = New System.Drawing.Point(81, 35)
+        resources.ApplyResources(Me.VersionLabel, "VersionLabel")
         Me.VersionLabel.Name = "VersionLabel"
-        Me.VersionLabel.Size = New System.Drawing.Size(59, 12)
-        Me.VersionLabel.TabIndex = 1
-        Me.VersionLabel.Text = "버전 -.-.-"
         '
         'NameLabel
         '
-        Me.NameLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NameLabel.AutoSize = True
-        Me.NameLabel.Location = New System.Drawing.Point(81, 16)
+        resources.ApplyResources(Me.NameLabel, "NameLabel")
         Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(121, 12)
-        Me.NameLabel.TabIndex = 0
-        Me.NameLabel.Text = "키라라 인코더 --비트"
         '
         'LicenseTabPage
         '
         Me.LicenseTabPage.Controls.Add(Me.FileInfoTextBox)
-        Me.LicenseTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.LicenseTabPage, "LicenseTabPage")
         Me.LicenseTabPage.Name = "LicenseTabPage"
-        Me.LicenseTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.LicenseTabPage.Size = New System.Drawing.Size(346, 149)
-        Me.LicenseTabPage.TabIndex = 1
-        Me.LicenseTabPage.Text = "라이선스"
         Me.LicenseTabPage.UseVisualStyleBackColor = True
         '
         'FileInfoTextBox
         '
-        Me.FileInfoTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.FileInfoTextBox, "FileInfoTextBox")
         Me.FileInfoTextBox.BackColor = System.Drawing.Color.White
-        Me.FileInfoTextBox.Location = New System.Drawing.Point(6, 6)
-        Me.FileInfoTextBox.MaxLength = 2147483647
-        Me.FileInfoTextBox.Multiline = True
         Me.FileInfoTextBox.Name = "FileInfoTextBox"
         Me.FileInfoTextBox.ReadOnly = True
-        Me.FileInfoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.FileInfoTextBox.Size = New System.Drawing.Size(334, 137)
-        Me.FileInfoTextBox.TabIndex = 1
-        Me.FileInfoTextBox.Text = resources.GetString("FileInfoTextBox.Text")
-        Me.FileInfoTextBox.WordWrap = False
         '
         'OKBTN
         '
-        Me.OKBTN.Location = New System.Drawing.Point(262, 199)
+        resources.ApplyResources(Me.OKBTN, "OKBTN")
         Me.OKBTN.Name = "OKBTN"
-        Me.OKBTN.Size = New System.Drawing.Size(104, 30)
-        Me.OKBTN.TabIndex = 10
-        Me.OKBTN.Text = "확인"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
         'LinkLabel2
         '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(10, 215)
+        resources.ApplyResources(Me.LinkLabel2, "LinkLabel2")
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(136, 12)
-        Me.LinkLabel2.TabIndex = 11
         Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "Download source code"
         '
         'LinkLabel1
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(10, 195)
+        resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(160, 12)
-        Me.LinkLabel1.TabIndex = 12
         Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Official Kirara Encoder Blog"
         '
         'PPanel
         '
@@ -184,17 +126,13 @@ Partial Class PInfoFrm
         Me.PPanel.Controls.Add(Me.LinkLabel2)
         Me.PPanel.Controls.Add(Me.OKBTN)
         Me.PPanel.Controls.Add(Me.LinkLabel1)
-        Me.PPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PPanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.PPanel, "PPanel")
         Me.PPanel.Name = "PPanel"
-        Me.PPanel.Size = New System.Drawing.Size(383, 241)
-        Me.PPanel.TabIndex = 13
         '
         'PInfoFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(383, 241)
         Me.Controls.Add(Me.PPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -202,8 +140,6 @@ Partial Class PInfoFrm
         Me.Name = "PInfoFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "키라라 인코더 정보"
         Me.TabControl1.ResumeLayout(False)
         Me.InfoTabPage.ResumeLayout(False)
         Me.InfoTabPage.PerformLayout()

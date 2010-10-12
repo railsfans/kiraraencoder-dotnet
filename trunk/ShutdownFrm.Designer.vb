@@ -23,6 +23,7 @@ Partial Class ShutdownFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ShutdownFrm))
         Me.ShutdownLabel = New System.Windows.Forms.Label
         Me.CntProgressBar = New System.Windows.Forms.ProgressBar
         Me.CancelBTN = New System.Windows.Forms.Button
@@ -33,29 +34,20 @@ Partial Class ShutdownFrm
         '
         'ShutdownLabel
         '
-        Me.ShutdownLabel.AutoSize = True
-        Me.ShutdownLabel.Location = New System.Drawing.Point(12, 13)
+        resources.ApplyResources(Me.ShutdownLabel, "ShutdownLabel")
         Me.ShutdownLabel.Name = "ShutdownLabel"
-        Me.ShutdownLabel.Size = New System.Drawing.Size(165, 12)
-        Me.ShutdownLabel.TabIndex = 0
-        Me.ShutdownLabel.Text = "30초 뒤 시스템이 종료됩니다."
         '
         'CntProgressBar
         '
-        Me.CntProgressBar.Location = New System.Drawing.Point(14, 34)
+        resources.ApplyResources(Me.CntProgressBar, "CntProgressBar")
         Me.CntProgressBar.Maximum = 300
         Me.CntProgressBar.Name = "CntProgressBar"
-        Me.CntProgressBar.Size = New System.Drawing.Size(298, 15)
         Me.CntProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
-        Me.CntProgressBar.TabIndex = 1
         '
         'CancelBTN
         '
-        Me.CancelBTN.Location = New System.Drawing.Point(327, 26)
+        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
         Me.CancelBTN.Name = "CancelBTN"
-        Me.CancelBTN.Size = New System.Drawing.Size(90, 25)
-        Me.CancelBTN.TabIndex = 12
-        Me.CancelBTN.Text = "취소"
         Me.CancelBTN.UseVisualStyleBackColor = True
         '
         'CntTimer
@@ -66,24 +58,18 @@ Partial Class ShutdownFrm
         Me.ShutdownPanel.Controls.Add(Me.CancelBTN)
         Me.ShutdownPanel.Controls.Add(Me.ShutdownLabel)
         Me.ShutdownPanel.Controls.Add(Me.CntProgressBar)
-        Me.ShutdownPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ShutdownPanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.ShutdownPanel, "ShutdownPanel")
         Me.ShutdownPanel.Name = "ShutdownPanel"
-        Me.ShutdownPanel.Size = New System.Drawing.Size(435, 66)
-        Me.ShutdownPanel.TabIndex = 13
         '
         'ShutdownFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(435, 66)
         Me.Controls.Add(Me.ShutdownPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "ShutdownFrm"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "시스템 종료"
         Me.TopMost = True
         Me.ShutdownPanel.ResumeLayout(False)
         Me.ShutdownPanel.PerformLayout()

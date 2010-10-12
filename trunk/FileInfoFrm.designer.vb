@@ -22,6 +22,7 @@ Partial Class FileInfoFrm
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FileInfoFrm))
         Me.FileInfoTextBox = New System.Windows.Forms.TextBox
         Me.FileInfoPanel = New System.Windows.Forms.Panel
         Me.FileInfoPanel.SuspendLayout()
@@ -29,41 +30,27 @@ Partial Class FileInfoFrm
         '
         'FileInfoTextBox
         '
-        Me.FileInfoTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.FileInfoTextBox, "FileInfoTextBox")
         Me.FileInfoTextBox.BackColor = System.Drawing.Color.White
-        Me.FileInfoTextBox.Location = New System.Drawing.Point(12, 12)
-        Me.FileInfoTextBox.MaxLength = 2147483647
-        Me.FileInfoTextBox.Multiline = True
         Me.FileInfoTextBox.Name = "FileInfoTextBox"
         Me.FileInfoTextBox.ReadOnly = True
-        Me.FileInfoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.FileInfoTextBox.Size = New System.Drawing.Size(462, 506)
-        Me.FileInfoTextBox.TabIndex = 0
         '
         'FileInfoPanel
         '
         Me.FileInfoPanel.Controls.Add(Me.FileInfoTextBox)
-        Me.FileInfoPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FileInfoPanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.FileInfoPanel, "FileInfoPanel")
         Me.FileInfoPanel.Name = "FileInfoPanel"
-        Me.FileInfoPanel.Size = New System.Drawing.Size(486, 530)
-        Me.FileInfoPanel.TabIndex = 1
         '
         'FileInfoFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(486, 530)
         Me.Controls.Add(Me.FileInfoPanel)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FileInfoFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "파일정보"
         Me.FileInfoPanel.ResumeLayout(False)
         Me.FileInfoPanel.PerformLayout()
         Me.ResumeLayout(False)

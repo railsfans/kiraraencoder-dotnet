@@ -1711,7 +1711,6 @@ ENC_STOP:
 
     Private Sub EncodingFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-
         '=========================================
         'Rev 1.1
         '언어로드

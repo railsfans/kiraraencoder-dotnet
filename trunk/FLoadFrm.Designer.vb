@@ -22,24 +22,19 @@ Partial Class FLoadFrm
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FLoadFrm))
         Me.FLoadLabel = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'FLoadLabel
         '
-        Me.FLoadLabel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FLoadLabel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.FLoadLabel, "FLoadLabel")
         Me.FLoadLabel.Name = "FLoadLabel"
-        Me.FLoadLabel.Size = New System.Drawing.Size(444, 70)
-        Me.FLoadLabel.TabIndex = 5
-        Me.FLoadLabel.Text = "파일을 목록에 추가하면서 정보를 추출하는 중입니다."
-        Me.FLoadLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FLoadFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(444, 70)
         Me.Controls.Add(Me.FLoadLabel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -48,8 +43,6 @@ Partial Class FLoadFrm
         Me.Opacity = 0.9
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Kirara Encoder"
         Me.ResumeLayout(False)
 
     End Sub

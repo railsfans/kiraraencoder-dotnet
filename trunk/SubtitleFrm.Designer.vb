@@ -22,6 +22,7 @@ Partial Class SubtitleFrm
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SubtitleFrm))
         Me.SubPanel = New System.Windows.Forms.Panel
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.SubtitleTabPage = New System.Windows.Forms.TabPage
@@ -123,20 +124,15 @@ Partial Class SubtitleFrm
         Me.SubPanel.Controls.Add(Me.CancelBTN)
         Me.SubPanel.Controls.Add(Me.OKBTN)
         Me.SubPanel.Controls.Add(Me.DefBTN)
-        Me.SubPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SubPanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.SubPanel, "SubPanel")
         Me.SubPanel.Name = "SubPanel"
-        Me.SubPanel.Size = New System.Drawing.Size(740, 549)
-        Me.SubPanel.TabIndex = 72
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.SubtitleTabPage)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(716, 490)
-        Me.TabControl1.TabIndex = 71
         '
         'SubtitleTabPage
         '
@@ -149,12 +145,8 @@ Partial Class SubtitleFrm
         Me.SubtitleTabPage.Controls.Add(Me.EncLabel)
         Me.SubtitleTabPage.Controls.Add(Me.BorderStyleGroupBox)
         Me.SubtitleTabPage.Controls.Add(Me.FontGroupBox)
-        Me.SubtitleTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.SubtitleTabPage, "SubtitleTabPage")
         Me.SubtitleTabPage.Name = "SubtitleTabPage"
-        Me.SubtitleTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.SubtitleTabPage.Size = New System.Drawing.Size(708, 464)
-        Me.SubtitleTabPage.TabIndex = 0
-        Me.SubtitleTabPage.Text = "자막"
         Me.SubtitleTabPage.UseVisualStyleBackColor = True
         '
         'ScaleGroupBox
@@ -167,106 +159,73 @@ Partial Class SubtitleFrm
         Me.ScaleGroupBox.Controls.Add(Me.AngleLabel)
         Me.ScaleGroupBox.Controls.Add(Me.SpacingNumericUpDown)
         Me.ScaleGroupBox.Controls.Add(Me.SpacingLabel)
-        Me.ScaleGroupBox.Location = New System.Drawing.Point(277, 371)
+        resources.ApplyResources(Me.ScaleGroupBox, "ScaleGroupBox")
         Me.ScaleGroupBox.Name = "ScaleGroupBox"
-        Me.ScaleGroupBox.Size = New System.Drawing.Size(418, 80)
-        Me.ScaleGroupBox.TabIndex = 68
         Me.ScaleGroupBox.TabStop = False
-        Me.ScaleGroupBox.Text = "스케일"
         '
         'ScaleYNumericUpDown
         '
         Me.ScaleYNumericUpDown.DecimalPlaces = 1
         Me.ScaleYNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.ScaleYNumericUpDown.Location = New System.Drawing.Point(331, 46)
+        resources.ApplyResources(Me.ScaleYNumericUpDown, "ScaleYNumericUpDown")
         Me.ScaleYNumericUpDown.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.ScaleYNumericUpDown.Name = "ScaleYNumericUpDown"
-        Me.ScaleYNumericUpDown.Size = New System.Drawing.Size(72, 21)
-        Me.ScaleYNumericUpDown.TabIndex = 59
         '
         'ScaleYLabel
         '
-        Me.ScaleYLabel.AutoSize = True
-        Me.ScaleYLabel.Location = New System.Drawing.Point(212, 50)
+        resources.ApplyResources(Me.ScaleYLabel, "ScaleYLabel")
         Me.ScaleYLabel.Name = "ScaleYLabel"
-        Me.ScaleYLabel.Size = New System.Drawing.Size(80, 12)
-        Me.ScaleYLabel.TabIndex = 58
-        Me.ScaleYLabel.Text = "스케일(y, %):"
         '
         'ScaleXNumericUpDown
         '
         Me.ScaleXNumericUpDown.DecimalPlaces = 1
         Me.ScaleXNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.ScaleXNumericUpDown.Location = New System.Drawing.Point(130, 46)
+        resources.ApplyResources(Me.ScaleXNumericUpDown, "ScaleXNumericUpDown")
         Me.ScaleXNumericUpDown.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.ScaleXNumericUpDown.Name = "ScaleXNumericUpDown"
-        Me.ScaleXNumericUpDown.Size = New System.Drawing.Size(72, 21)
-        Me.ScaleXNumericUpDown.TabIndex = 57
         '
         'ScaleXLabel
         '
-        Me.ScaleXLabel.AutoSize = True
-        Me.ScaleXLabel.Location = New System.Drawing.Point(14, 50)
+        resources.ApplyResources(Me.ScaleXLabel, "ScaleXLabel")
         Me.ScaleXLabel.Name = "ScaleXLabel"
-        Me.ScaleXLabel.Size = New System.Drawing.Size(80, 12)
-        Me.ScaleXLabel.TabIndex = 56
-        Me.ScaleXLabel.Text = "스케일(x, %):"
         '
         'AngleNumericUpDown
         '
-        Me.AngleNumericUpDown.Location = New System.Drawing.Point(331, 18)
+        resources.ApplyResources(Me.AngleNumericUpDown, "AngleNumericUpDown")
         Me.AngleNumericUpDown.Maximum = New Decimal(New Integer() {359, 0, 0, 0})
         Me.AngleNumericUpDown.Name = "AngleNumericUpDown"
-        Me.AngleNumericUpDown.Size = New System.Drawing.Size(72, 21)
-        Me.AngleNumericUpDown.TabIndex = 55
         '
         'AngleLabel
         '
-        Me.AngleLabel.AutoSize = True
-        Me.AngleLabel.Location = New System.Drawing.Point(212, 24)
+        resources.ApplyResources(Me.AngleLabel, "AngleLabel")
         Me.AngleLabel.Name = "AngleLabel"
-        Me.AngleLabel.Size = New System.Drawing.Size(50, 12)
-        Me.AngleLabel.TabIndex = 2
-        Me.AngleLabel.Text = "각(z, °):"
         '
         'SpacingNumericUpDown
         '
         Me.SpacingNumericUpDown.DecimalPlaces = 1
         Me.SpacingNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.SpacingNumericUpDown.Location = New System.Drawing.Point(130, 18)
+        resources.ApplyResources(Me.SpacingNumericUpDown, "SpacingNumericUpDown")
         Me.SpacingNumericUpDown.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.SpacingNumericUpDown.Name = "SpacingNumericUpDown"
-        Me.SpacingNumericUpDown.Size = New System.Drawing.Size(72, 21)
-        Me.SpacingNumericUpDown.TabIndex = 1
         '
         'SpacingLabel
         '
-        Me.SpacingLabel.AutoSize = True
-        Me.SpacingLabel.Location = New System.Drawing.Point(14, 24)
+        resources.ApplyResources(Me.SpacingLabel, "SpacingLabel")
         Me.SpacingLabel.Name = "SpacingLabel"
-        Me.SpacingLabel.Size = New System.Drawing.Size(33, 12)
-        Me.SpacingLabel.TabIndex = 0
-        Me.SpacingLabel.Text = "자간:"
         '
         'SubtitleCheckBox
         '
-        Me.SubtitleCheckBox.AutoSize = True
-        Me.SubtitleCheckBox.Location = New System.Drawing.Point(20, 12)
+        resources.ApplyResources(Me.SubtitleCheckBox, "SubtitleCheckBox")
         Me.SubtitleCheckBox.Name = "SubtitleCheckBox"
-        Me.SubtitleCheckBox.Size = New System.Drawing.Size(128, 16)
-        Me.SubtitleCheckBox.TabIndex = 65
-        Me.SubtitleCheckBox.Text = "영상에 자막 입히기"
         Me.SubtitleCheckBox.UseVisualStyleBackColor = True
         '
         'EncComboBox
         '
         Me.EncComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.EncComboBox.FormattingEnabled = True
-        Me.EncComboBox.Items.AddRange(New Object() {"ANSI (0)", "DEFAULT (1)", "SYMBOL (2)", "SHIFTJIS (128)", "HANGUL (129)", "GB2312 (134)", "CHINESEBIG5 (136)", "OEM (255)", "JOHAB (130)", "HEBREW (177)", "ARABIC (178)", "GREEK (161)", "TURKISH (162)", "VIETNAMSE (163)", "THAI (222)", "EASTEUROPE (238)", "RUSSIAN (204)", "MAC (77)", "BALTIC (186)"})
-        Me.EncComboBox.Location = New System.Drawing.Point(505, 10)
+        Me.EncComboBox.Items.AddRange(New Object() {resources.GetString("EncComboBox.Items"), resources.GetString("EncComboBox.Items1"), resources.GetString("EncComboBox.Items2"), resources.GetString("EncComboBox.Items3"), resources.GetString("EncComboBox.Items4"), resources.GetString("EncComboBox.Items5"), resources.GetString("EncComboBox.Items6"), resources.GetString("EncComboBox.Items7"), resources.GetString("EncComboBox.Items8"), resources.GetString("EncComboBox.Items9"), resources.GetString("EncComboBox.Items10"), resources.GetString("EncComboBox.Items11"), resources.GetString("EncComboBox.Items12"), resources.GetString("EncComboBox.Items13"), resources.GetString("EncComboBox.Items14"), resources.GetString("EncComboBox.Items15"), resources.GetString("EncComboBox.Items16"), resources.GetString("EncComboBox.Items17"), resources.GetString("EncComboBox.Items18")})
+        resources.ApplyResources(Me.EncComboBox, "EncComboBox")
         Me.EncComboBox.Name = "EncComboBox"
-        Me.EncComboBox.Size = New System.Drawing.Size(190, 20)
-        Me.EncComboBox.TabIndex = 60
         '
         'MarginGroupBox
         '
@@ -276,63 +235,42 @@ Partial Class SubtitleFrm
         Me.MarginGroupBox.Controls.Add(Me.MarginRNumericUpDown)
         Me.MarginGroupBox.Controls.Add(Me.MarginLNumericUpDown)
         Me.MarginGroupBox.Controls.Add(Me.MarginVNumericUpDown)
-        Me.MarginGroupBox.Location = New System.Drawing.Point(398, 207)
+        resources.ApplyResources(Me.MarginGroupBox, "MarginGroupBox")
         Me.MarginGroupBox.Name = "MarginGroupBox"
-        Me.MarginGroupBox.Size = New System.Drawing.Size(297, 102)
-        Me.MarginGroupBox.TabIndex = 67
         Me.MarginGroupBox.TabStop = False
-        Me.MarginGroupBox.Text = "여백"
         '
         'MarginRLabel
         '
-        Me.MarginRLabel.AutoSize = True
-        Me.MarginRLabel.Location = New System.Drawing.Point(162, 21)
+        resources.ApplyResources(Me.MarginRLabel, "MarginRLabel")
         Me.MarginRLabel.Name = "MarginRLabel"
-        Me.MarginRLabel.Size = New System.Drawing.Size(57, 12)
-        Me.MarginRLabel.TabIndex = 58
-        Me.MarginRLabel.Text = "우측여백:"
         '
         'MarginLLabel
         '
-        Me.MarginLLabel.AutoSize = True
-        Me.MarginLLabel.Location = New System.Drawing.Point(24, 21)
+        resources.ApplyResources(Me.MarginLLabel, "MarginLLabel")
         Me.MarginLLabel.Name = "MarginLLabel"
-        Me.MarginLLabel.Size = New System.Drawing.Size(57, 12)
-        Me.MarginLLabel.TabIndex = 57
-        Me.MarginLLabel.Text = "좌측여백:"
         '
         'MarginVLabel
         '
-        Me.MarginVLabel.Location = New System.Drawing.Point(60, 66)
+        resources.ApplyResources(Me.MarginVLabel, "MarginVLabel")
         Me.MarginVLabel.Name = "MarginVLabel"
-        Me.MarginVLabel.Size = New System.Drawing.Size(96, 21)
-        Me.MarginVLabel.TabIndex = 56
-        Me.MarginVLabel.Text = "수직여백:"
-        Me.MarginVLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'MarginRNumericUpDown
         '
-        Me.MarginRNumericUpDown.Location = New System.Drawing.Point(164, 39)
+        resources.ApplyResources(Me.MarginRNumericUpDown, "MarginRNumericUpDown")
         Me.MarginRNumericUpDown.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.MarginRNumericUpDown.Name = "MarginRNumericUpDown"
-        Me.MarginRNumericUpDown.Size = New System.Drawing.Size(60, 21)
-        Me.MarginRNumericUpDown.TabIndex = 55
         '
         'MarginLNumericUpDown
         '
-        Me.MarginLNumericUpDown.Location = New System.Drawing.Point(26, 39)
+        resources.ApplyResources(Me.MarginLNumericUpDown, "MarginLNumericUpDown")
         Me.MarginLNumericUpDown.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.MarginLNumericUpDown.Name = "MarginLNumericUpDown"
-        Me.MarginLNumericUpDown.Size = New System.Drawing.Size(60, 21)
-        Me.MarginLNumericUpDown.TabIndex = 54
         '
         'MarginVNumericUpDown
         '
-        Me.MarginVNumericUpDown.Location = New System.Drawing.Point(164, 66)
+        resources.ApplyResources(Me.MarginVNumericUpDown, "MarginVNumericUpDown")
         Me.MarginVNumericUpDown.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.MarginVNumericUpDown.Name = "MarginVNumericUpDown"
-        Me.MarginVNumericUpDown.Size = New System.Drawing.Size(60, 21)
-        Me.MarginVNumericUpDown.TabIndex = 53
         '
         'ColorGroupBox
         '
@@ -354,154 +292,101 @@ Partial Class SubtitleFrm
         Me.ColorGroupBox.Controls.Add(Me.PrimaryColourPanel)
         Me.ColorGroupBox.Controls.Add(Me.OutlineColourPanel)
         Me.ColorGroupBox.Controls.Add(Me.BackColourPanel)
-        Me.ColorGroupBox.Location = New System.Drawing.Point(15, 207)
+        resources.ApplyResources(Me.ColorGroupBox, "ColorGroupBox")
         Me.ColorGroupBox.Name = "ColorGroupBox"
-        Me.ColorGroupBox.Size = New System.Drawing.Size(248, 245)
-        Me.ColorGroupBox.TabIndex = 61
         Me.ColorGroupBox.TabStop = False
-        Me.ColorGroupBox.Text = "색상 / 투명도"
         '
         'SecondaryColourTrackBar
         '
-        Me.SecondaryColourTrackBar.AutoSize = False
-        Me.SecondaryColourTrackBar.Location = New System.Drawing.Point(119, 76)
+        resources.ApplyResources(Me.SecondaryColourTrackBar, "SecondaryColourTrackBar")
         Me.SecondaryColourTrackBar.Maximum = 255
         Me.SecondaryColourTrackBar.Name = "SecondaryColourTrackBar"
-        Me.SecondaryColourTrackBar.Size = New System.Drawing.Size(117, 23)
-        Me.SecondaryColourTrackBar.TabIndex = 49
         Me.SecondaryColourTrackBar.TickFrequency = 0
         Me.SecondaryColourTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
         '
         'SecondaryLabel
         '
-        Me.SecondaryLabel.Location = New System.Drawing.Point(12, 79)
+        resources.ApplyResources(Me.SecondaryLabel, "SecondaryLabel")
         Me.SecondaryLabel.Name = "SecondaryLabel"
-        Me.SecondaryLabel.Size = New System.Drawing.Size(68, 20)
-        Me.SecondaryLabel.TabIndex = 48
-        Me.SecondaryLabel.Text = "두번째"
-        Me.SecondaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'SecondaryColourPanel
         '
         Me.SecondaryColourPanel.BackColor = System.Drawing.Color.Yellow
         Me.SecondaryColourPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SecondaryColourPanel.Location = New System.Drawing.Point(86, 77)
+        resources.ApplyResources(Me.SecondaryColourPanel, "SecondaryColourPanel")
         Me.SecondaryColourPanel.Name = "SecondaryColourPanel"
-        Me.SecondaryColourPanel.Size = New System.Drawing.Size(25, 22)
-        Me.SecondaryColourPanel.TabIndex = 47
         '
         'BackLabel2
         '
-        Me.BackLabel2.Location = New System.Drawing.Point(13, 206)
+        resources.ApplyResources(Me.BackLabel2, "BackLabel2")
         Me.BackLabel2.Name = "BackLabel2"
-        Me.BackLabel2.Size = New System.Drawing.Size(159, 21)
-        Me.BackLabel2.TabIndex = 46
-        Me.BackLabel2.Text = "그림자 깊이"
-        Me.BackLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'BackUpDown
         '
         Me.BackUpDown.DecimalPlaces = 1
         Me.BackUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.BackUpDown.Location = New System.Drawing.Point(178, 206)
+        resources.ApplyResources(Me.BackUpDown, "BackUpDown")
         Me.BackUpDown.Name = "BackUpDown"
-        Me.BackUpDown.Size = New System.Drawing.Size(57, 21)
-        Me.BackUpDown.TabIndex = 45
         '
         'OutlineLabel2
         '
-        Me.OutlineLabel2.Location = New System.Drawing.Point(11, 179)
+        resources.ApplyResources(Me.OutlineLabel2, "OutlineLabel2")
         Me.OutlineLabel2.Name = "OutlineLabel2"
-        Me.OutlineLabel2.Size = New System.Drawing.Size(161, 21)
-        Me.OutlineLabel2.TabIndex = 2
-        Me.OutlineLabel2.Text = "외곽선 두께"
-        Me.OutlineLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PrimaryColourTrackBar
         '
-        Me.PrimaryColourTrackBar.AutoSize = False
-        Me.PrimaryColourTrackBar.Location = New System.Drawing.Point(119, 45)
+        resources.ApplyResources(Me.PrimaryColourTrackBar, "PrimaryColourTrackBar")
         Me.PrimaryColourTrackBar.Maximum = 255
         Me.PrimaryColourTrackBar.Name = "PrimaryColourTrackBar"
-        Me.PrimaryColourTrackBar.Size = New System.Drawing.Size(117, 23)
-        Me.PrimaryColourTrackBar.TabIndex = 44
         Me.PrimaryColourTrackBar.TickFrequency = 0
         Me.PrimaryColourTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
         '
         'BackLabel
         '
-        Me.BackLabel.Location = New System.Drawing.Point(12, 142)
+        resources.ApplyResources(Me.BackLabel, "BackLabel")
         Me.BackLabel.Name = "BackLabel"
-        Me.BackLabel.Size = New System.Drawing.Size(68, 20)
-        Me.BackLabel.TabIndex = 43
-        Me.BackLabel.Text = "그림자"
-        Me.BackLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'OutlineUpDown
         '
         Me.OutlineUpDown.DecimalPlaces = 1
         Me.OutlineUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.OutlineUpDown.Location = New System.Drawing.Point(178, 178)
+        resources.ApplyResources(Me.OutlineUpDown, "OutlineUpDown")
         Me.OutlineUpDown.Name = "OutlineUpDown"
-        Me.OutlineUpDown.Size = New System.Drawing.Size(57, 21)
-        Me.OutlineUpDown.TabIndex = 0
         '
         'OutlineLabel
         '
-        Me.OutlineLabel.Location = New System.Drawing.Point(12, 110)
+        resources.ApplyResources(Me.OutlineLabel, "OutlineLabel")
         Me.OutlineLabel.Name = "OutlineLabel"
-        Me.OutlineLabel.Size = New System.Drawing.Size(68, 20)
-        Me.OutlineLabel.TabIndex = 42
-        Me.OutlineLabel.Text = "외곽선"
-        Me.OutlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PrimaryLabel
         '
-        Me.PrimaryLabel.Location = New System.Drawing.Point(12, 48)
+        resources.ApplyResources(Me.PrimaryLabel, "PrimaryLabel")
         Me.PrimaryLabel.Name = "PrimaryLabel"
-        Me.PrimaryLabel.Size = New System.Drawing.Size(68, 20)
-        Me.PrimaryLabel.TabIndex = 41
-        Me.PrimaryLabel.Text = "첫번째"
-        Me.PrimaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label15
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(202, 27)
+        resources.ApplyResources(Me.Label15, "Label15")
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(33, 12)
-        Me.Label15.TabIndex = 37
-        Me.Label15.Text = "100%"
         '
         'Label16
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(116, 27)
+        resources.ApplyResources(Me.Label16, "Label16")
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(21, 12)
-        Me.Label16.TabIndex = 36
-        Me.Label16.Text = "0%"
         '
         'BackColourTrackBar
         '
-        Me.BackColourTrackBar.AutoSize = False
-        Me.BackColourTrackBar.Location = New System.Drawing.Point(119, 139)
+        resources.ApplyResources(Me.BackColourTrackBar, "BackColourTrackBar")
         Me.BackColourTrackBar.Maximum = 255
         Me.BackColourTrackBar.Name = "BackColourTrackBar"
-        Me.BackColourTrackBar.Size = New System.Drawing.Size(117, 23)
-        Me.BackColourTrackBar.TabIndex = 35
         Me.BackColourTrackBar.TickFrequency = 0
         Me.BackColourTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
         Me.BackColourTrackBar.Value = 128
         '
         'OutlineColourTrackBar
         '
-        Me.OutlineColourTrackBar.AutoSize = False
-        Me.OutlineColourTrackBar.Location = New System.Drawing.Point(119, 107)
+        resources.ApplyResources(Me.OutlineColourTrackBar, "OutlineColourTrackBar")
         Me.OutlineColourTrackBar.Maximum = 255
         Me.OutlineColourTrackBar.Name = "OutlineColourTrackBar"
-        Me.OutlineColourTrackBar.Size = New System.Drawing.Size(117, 23)
-        Me.OutlineColourTrackBar.TabIndex = 34
         Me.OutlineColourTrackBar.TickFrequency = 0
         Me.OutlineColourTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
         '
@@ -509,28 +394,22 @@ Partial Class SubtitleFrm
         '
         Me.PrimaryColourPanel.BackColor = System.Drawing.Color.White
         Me.PrimaryColourPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PrimaryColourPanel.Location = New System.Drawing.Point(86, 46)
+        resources.ApplyResources(Me.PrimaryColourPanel, "PrimaryColourPanel")
         Me.PrimaryColourPanel.Name = "PrimaryColourPanel"
-        Me.PrimaryColourPanel.Size = New System.Drawing.Size(25, 22)
-        Me.PrimaryColourPanel.TabIndex = 20
         '
         'OutlineColourPanel
         '
         Me.OutlineColourPanel.BackColor = System.Drawing.Color.Black
         Me.OutlineColourPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.OutlineColourPanel.Location = New System.Drawing.Point(86, 108)
+        resources.ApplyResources(Me.OutlineColourPanel, "OutlineColourPanel")
         Me.OutlineColourPanel.Name = "OutlineColourPanel"
-        Me.OutlineColourPanel.Size = New System.Drawing.Size(25, 22)
-        Me.OutlineColourPanel.TabIndex = 22
         '
         'BackColourPanel
         '
         Me.BackColourPanel.BackColor = System.Drawing.Color.Black
         Me.BackColourPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.BackColourPanel.Location = New System.Drawing.Point(86, 140)
+        resources.ApplyResources(Me.BackColourPanel, "BackColourPanel")
         Me.BackColourPanel.Name = "BackColourPanel"
-        Me.BackColourPanel.Size = New System.Drawing.Size(25, 22)
-        Me.BackColourPanel.TabIndex = 24
         '
         'AlignmentGroupBox
         '
@@ -543,143 +422,98 @@ Partial Class SubtitleFrm
         Me.AlignmentGroupBox.Controls.Add(Me.Alignment4RadioButton)
         Me.AlignmentGroupBox.Controls.Add(Me.Alignment6RadioButton)
         Me.AlignmentGroupBox.Controls.Add(Me.Alignment5RadioButton)
-        Me.AlignmentGroupBox.Location = New System.Drawing.Point(277, 208)
+        resources.ApplyResources(Me.AlignmentGroupBox, "AlignmentGroupBox")
         Me.AlignmentGroupBox.Name = "AlignmentGroupBox"
-        Me.AlignmentGroupBox.Size = New System.Drawing.Size(110, 101)
-        Me.AlignmentGroupBox.TabIndex = 66
         Me.AlignmentGroupBox.TabStop = False
-        Me.AlignmentGroupBox.Text = "위치"
         '
         'Alignment3RadioButton
         '
-        Me.Alignment3RadioButton.AutoSize = True
-        Me.Alignment3RadioButton.Location = New System.Drawing.Point(78, 68)
+        resources.ApplyResources(Me.Alignment3RadioButton, "Alignment3RadioButton")
         Me.Alignment3RadioButton.Name = "Alignment3RadioButton"
-        Me.Alignment3RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment3RadioButton.TabIndex = 8
         Me.Alignment3RadioButton.TabStop = True
         Me.Alignment3RadioButton.UseVisualStyleBackColor = True
         '
         'Alignment2RadioButton
         '
-        Me.Alignment2RadioButton.AutoSize = True
-        Me.Alignment2RadioButton.Location = New System.Drawing.Point(49, 68)
+        resources.ApplyResources(Me.Alignment2RadioButton, "Alignment2RadioButton")
         Me.Alignment2RadioButton.Name = "Alignment2RadioButton"
-        Me.Alignment2RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment2RadioButton.TabIndex = 7
         Me.Alignment2RadioButton.TabStop = True
         Me.Alignment2RadioButton.UseVisualStyleBackColor = True
         '
         'Alignment1RadioButton
         '
-        Me.Alignment1RadioButton.AutoSize = True
-        Me.Alignment1RadioButton.Location = New System.Drawing.Point(20, 68)
+        resources.ApplyResources(Me.Alignment1RadioButton, "Alignment1RadioButton")
         Me.Alignment1RadioButton.Name = "Alignment1RadioButton"
-        Me.Alignment1RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment1RadioButton.TabIndex = 6
         Me.Alignment1RadioButton.TabStop = True
         Me.Alignment1RadioButton.UseVisualStyleBackColor = True
         '
         'Alignment8RadioButton
         '
-        Me.Alignment8RadioButton.AutoSize = True
-        Me.Alignment8RadioButton.Location = New System.Drawing.Point(49, 20)
+        resources.ApplyResources(Me.Alignment8RadioButton, "Alignment8RadioButton")
         Me.Alignment8RadioButton.Name = "Alignment8RadioButton"
-        Me.Alignment8RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment8RadioButton.TabIndex = 5
         Me.Alignment8RadioButton.TabStop = True
         Me.Alignment8RadioButton.UseVisualStyleBackColor = True
         '
         'Alignment7RadioButton
         '
-        Me.Alignment7RadioButton.AutoSize = True
-        Me.Alignment7RadioButton.Location = New System.Drawing.Point(20, 20)
+        resources.ApplyResources(Me.Alignment7RadioButton, "Alignment7RadioButton")
         Me.Alignment7RadioButton.Name = "Alignment7RadioButton"
-        Me.Alignment7RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment7RadioButton.TabIndex = 4
         Me.Alignment7RadioButton.TabStop = True
         Me.Alignment7RadioButton.UseVisualStyleBackColor = True
         '
         'Alignment9RadioButton
         '
-        Me.Alignment9RadioButton.AutoSize = True
-        Me.Alignment9RadioButton.Location = New System.Drawing.Point(78, 20)
+        resources.ApplyResources(Me.Alignment9RadioButton, "Alignment9RadioButton")
         Me.Alignment9RadioButton.Name = "Alignment9RadioButton"
-        Me.Alignment9RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment9RadioButton.TabIndex = 3
         Me.Alignment9RadioButton.TabStop = True
         Me.Alignment9RadioButton.UseVisualStyleBackColor = True
         '
         'Alignment4RadioButton
         '
-        Me.Alignment4RadioButton.AutoSize = True
-        Me.Alignment4RadioButton.Location = New System.Drawing.Point(20, 44)
+        resources.ApplyResources(Me.Alignment4RadioButton, "Alignment4RadioButton")
         Me.Alignment4RadioButton.Name = "Alignment4RadioButton"
-        Me.Alignment4RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment4RadioButton.TabIndex = 2
         Me.Alignment4RadioButton.TabStop = True
         Me.Alignment4RadioButton.UseVisualStyleBackColor = True
         '
         'Alignment6RadioButton
         '
-        Me.Alignment6RadioButton.AutoSize = True
-        Me.Alignment6RadioButton.Location = New System.Drawing.Point(78, 44)
+        resources.ApplyResources(Me.Alignment6RadioButton, "Alignment6RadioButton")
         Me.Alignment6RadioButton.Name = "Alignment6RadioButton"
-        Me.Alignment6RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment6RadioButton.TabIndex = 1
         Me.Alignment6RadioButton.TabStop = True
         Me.Alignment6RadioButton.UseVisualStyleBackColor = True
         '
         'Alignment5RadioButton
         '
-        Me.Alignment5RadioButton.AutoSize = True
-        Me.Alignment5RadioButton.Location = New System.Drawing.Point(49, 44)
+        resources.ApplyResources(Me.Alignment5RadioButton, "Alignment5RadioButton")
         Me.Alignment5RadioButton.Name = "Alignment5RadioButton"
-        Me.Alignment5RadioButton.Size = New System.Drawing.Size(14, 13)
-        Me.Alignment5RadioButton.TabIndex = 0
         Me.Alignment5RadioButton.TabStop = True
         Me.Alignment5RadioButton.UseVisualStyleBackColor = True
         '
         'EncLabel
         '
-        Me.EncLabel.Location = New System.Drawing.Point(326, 10)
+        resources.ApplyResources(Me.EncLabel, "EncLabel")
         Me.EncLabel.Name = "EncLabel"
-        Me.EncLabel.Size = New System.Drawing.Size(171, 20)
-        Me.EncLabel.TabIndex = 62
-        Me.EncLabel.Text = "문자인코딩:"
-        Me.EncLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'BorderStyleGroupBox
         '
         Me.BorderStyleGroupBox.Controls.Add(Me.BorderStyle3)
         Me.BorderStyleGroupBox.Controls.Add(Me.BorderStyle1)
-        Me.BorderStyleGroupBox.Location = New System.Drawing.Point(277, 316)
+        resources.ApplyResources(Me.BorderStyleGroupBox, "BorderStyleGroupBox")
         Me.BorderStyleGroupBox.Name = "BorderStyleGroupBox"
-        Me.BorderStyleGroupBox.Size = New System.Drawing.Size(418, 47)
-        Me.BorderStyleGroupBox.TabIndex = 63
         Me.BorderStyleGroupBox.TabStop = False
-        Me.BorderStyleGroupBox.Text = "경계 스타일"
         '
         'BorderStyle3
         '
-        Me.BorderStyle3.AutoSize = True
-        Me.BorderStyle3.Location = New System.Drawing.Point(214, 20)
+        resources.ApplyResources(Me.BorderStyle3, "BorderStyle3")
         Me.BorderStyle3.Name = "BorderStyle3"
-        Me.BorderStyle3.Size = New System.Drawing.Size(87, 16)
-        Me.BorderStyle3.TabIndex = 1
         Me.BorderStyle3.TabStop = True
-        Me.BorderStyle3.Text = "불투명 박스"
         Me.BorderStyle3.UseVisualStyleBackColor = True
         '
         'BorderStyle1
         '
-        Me.BorderStyle1.AutoSize = True
-        Me.BorderStyle1.Location = New System.Drawing.Point(16, 20)
+        resources.ApplyResources(Me.BorderStyle1, "BorderStyle1")
         Me.BorderStyle1.Name = "BorderStyle1"
-        Me.BorderStyle1.Size = New System.Drawing.Size(109, 16)
-        Me.BorderStyle1.TabIndex = 0
         Me.BorderStyle1.TabStop = True
-        Me.BorderStyle1.Text = "외곽선 + 그림자"
         Me.BorderStyle1.UseVisualStyleBackColor = True
         '
         'FontGroupBox
@@ -695,149 +529,97 @@ Partial Class SubtitleFrm
         Me.FontGroupBox.Controls.Add(Me.BoldCheckBox)
         Me.FontGroupBox.Controls.Add(Me.PreviewLabel2)
         Me.FontGroupBox.Controls.Add(Me.ItalicCheckBox)
-        Me.FontGroupBox.Location = New System.Drawing.Point(15, 35)
+        resources.ApplyResources(Me.FontGroupBox, "FontGroupBox")
         Me.FontGroupBox.Name = "FontGroupBox"
-        Me.FontGroupBox.Size = New System.Drawing.Size(680, 166)
-        Me.FontGroupBox.TabIndex = 64
         Me.FontGroupBox.TabStop = False
-        Me.FontGroupBox.Text = "글꼴"
         '
         'UnderlineCheckBox
         '
-        Me.UnderlineCheckBox.AutoSize = True
-        Me.UnderlineCheckBox.Location = New System.Drawing.Point(579, 46)
+        resources.ApplyResources(Me.UnderlineCheckBox, "UnderlineCheckBox")
         Me.UnderlineCheckBox.Name = "UnderlineCheckBox"
-        Me.UnderlineCheckBox.Size = New System.Drawing.Size(48, 16)
-        Me.UnderlineCheckBox.TabIndex = 54
-        Me.UnderlineCheckBox.Text = "밑줄"
         Me.UnderlineCheckBox.UseVisualStyleBackColor = True
         '
         'StrikeOutCheckBox
         '
-        Me.StrikeOutCheckBox.AutoSize = True
-        Me.StrikeOutCheckBox.Location = New System.Drawing.Point(492, 46)
+        resources.ApplyResources(Me.StrikeOutCheckBox, "StrikeOutCheckBox")
         Me.StrikeOutCheckBox.Name = "StrikeOutCheckBox"
-        Me.StrikeOutCheckBox.Size = New System.Drawing.Size(60, 16)
-        Me.StrikeOutCheckBox.TabIndex = 53
-        Me.StrikeOutCheckBox.Text = "취소선"
         Me.StrikeOutCheckBox.UseVisualStyleBackColor = True
         '
         'PreviewLabel
         '
         Me.PreviewLabel.BackColor = System.Drawing.Color.White
         Me.PreviewLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PreviewLabel.Location = New System.Drawing.Point(252, 95)
+        resources.ApplyResources(Me.PreviewLabel, "PreviewLabel")
         Me.PreviewLabel.Name = "PreviewLabel"
-        Me.PreviewLabel.Size = New System.Drawing.Size(410, 56)
-        Me.PreviewLabel.TabIndex = 51
-        Me.PreviewLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FontLabel
         '
-        Me.FontLabel.AutoSize = True
-        Me.FontLabel.Location = New System.Drawing.Point(11, 24)
+        resources.ApplyResources(Me.FontLabel, "FontLabel")
         Me.FontLabel.Name = "FontLabel"
-        Me.FontLabel.Size = New System.Drawing.Size(29, 12)
-        Me.FontLabel.TabIndex = 44
-        Me.FontLabel.Text = "글꼴"
         '
         'FontComboBox
         '
         Me.FontComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
         Me.FontComboBox.FormattingEnabled = True
-        Me.FontComboBox.Location = New System.Drawing.Point(14, 44)
+        resources.ApplyResources(Me.FontComboBox, "FontComboBox")
         Me.FontComboBox.Name = "FontComboBox"
-        Me.FontComboBox.Size = New System.Drawing.Size(218, 108)
-        Me.FontComboBox.TabIndex = 45
         '
         'SizeLabel
         '
-        Me.SizeLabel.AutoSize = True
-        Me.SizeLabel.Location = New System.Drawing.Point(246, 24)
+        resources.ApplyResources(Me.SizeLabel, "SizeLabel")
         Me.SizeLabel.Name = "SizeLabel"
-        Me.SizeLabel.Size = New System.Drawing.Size(29, 12)
-        Me.SizeLabel.TabIndex = 46
-        Me.SizeLabel.Text = "크기"
         '
         'StyleLabel
         '
-        Me.StyleLabel.AutoSize = True
-        Me.StyleLabel.Location = New System.Drawing.Point(331, 24)
+        resources.ApplyResources(Me.StyleLabel, "StyleLabel")
         Me.StyleLabel.Name = "StyleLabel"
-        Me.StyleLabel.Size = New System.Drawing.Size(41, 12)
-        Me.StyleLabel.TabIndex = 47
-        Me.StyleLabel.Text = "스타일"
         '
         'SizeUpDown
         '
-        Me.SizeUpDown.Location = New System.Drawing.Point(250, 42)
+        resources.ApplyResources(Me.SizeUpDown, "SizeUpDown")
         Me.SizeUpDown.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.SizeUpDown.Name = "SizeUpDown"
-        Me.SizeUpDown.Size = New System.Drawing.Size(60, 21)
-        Me.SizeUpDown.TabIndex = 52
         Me.SizeUpDown.Value = New Decimal(New Integer() {18, 0, 0, 0})
         '
         'BoldCheckBox
         '
-        Me.BoldCheckBox.AutoSize = True
-        Me.BoldCheckBox.Location = New System.Drawing.Point(418, 46)
+        resources.ApplyResources(Me.BoldCheckBox, "BoldCheckBox")
         Me.BoldCheckBox.Name = "BoldCheckBox"
-        Me.BoldCheckBox.Size = New System.Drawing.Size(48, 16)
-        Me.BoldCheckBox.TabIndex = 48
-        Me.BoldCheckBox.Text = "굵게"
         Me.BoldCheckBox.UseVisualStyleBackColor = True
         '
         'PreviewLabel2
         '
-        Me.PreviewLabel2.AutoSize = True
-        Me.PreviewLabel2.Location = New System.Drawing.Point(248, 76)
+        resources.ApplyResources(Me.PreviewLabel2, "PreviewLabel2")
         Me.PreviewLabel2.Name = "PreviewLabel2"
-        Me.PreviewLabel2.Size = New System.Drawing.Size(57, 12)
-        Me.PreviewLabel2.TabIndex = 50
-        Me.PreviewLabel2.Text = "미리 보기"
         '
         'ItalicCheckBox
         '
-        Me.ItalicCheckBox.AutoSize = True
-        Me.ItalicCheckBox.Location = New System.Drawing.Point(332, 46)
+        resources.ApplyResources(Me.ItalicCheckBox, "ItalicCheckBox")
         Me.ItalicCheckBox.Name = "ItalicCheckBox"
-        Me.ItalicCheckBox.Size = New System.Drawing.Size(60, 16)
-        Me.ItalicCheckBox.TabIndex = 49
-        Me.ItalicCheckBox.Text = "기울임"
         Me.ItalicCheckBox.UseVisualStyleBackColor = True
         '
         'CancelBTN
         '
-        Me.CancelBTN.Location = New System.Drawing.Point(634, 508)
+        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
         Me.CancelBTN.Name = "CancelBTN"
-        Me.CancelBTN.Size = New System.Drawing.Size(90, 28)
-        Me.CancelBTN.TabIndex = 69
-        Me.CancelBTN.Text = "취소"
         Me.CancelBTN.UseVisualStyleBackColor = True
         '
         'OKBTN
         '
-        Me.OKBTN.Location = New System.Drawing.Point(537, 508)
+        resources.ApplyResources(Me.OKBTN, "OKBTN")
         Me.OKBTN.Name = "OKBTN"
-        Me.OKBTN.Size = New System.Drawing.Size(90, 28)
-        Me.OKBTN.TabIndex = 70
-        Me.OKBTN.Text = "확인"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
         'DefBTN
         '
-        Me.DefBTN.Location = New System.Drawing.Point(12, 508)
+        resources.ApplyResources(Me.DefBTN, "DefBTN")
         Me.DefBTN.Name = "DefBTN"
-        Me.DefBTN.Size = New System.Drawing.Size(90, 28)
-        Me.DefBTN.TabIndex = 68
-        Me.DefBTN.Text = "기본값"
         Me.DefBTN.UseVisualStyleBackColor = True
         '
         'SubtitleFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(740, 549)
         Me.Controls.Add(Me.SubPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -845,8 +627,6 @@ Partial Class SubtitleFrm
         Me.Name = "SubtitleFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "자막 설정"
         Me.SubPanel.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.SubtitleTabPage.ResumeLayout(False)

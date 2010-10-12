@@ -1383,7 +1383,6 @@ LANG_SKIP:
             Try
                 If My.Computer.FileSystem.FileExists(CleanUpListBox.Items(i)) = True Then My.Computer.FileSystem.DeleteFile(CleanUpListBox.Items(i))
             Catch ex As Exception
-                MsgBox(ex.Message)
             End Try
         Next
 

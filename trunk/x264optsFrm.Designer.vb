@@ -201,11 +201,9 @@ Partial Class x264optsFrm
         Me.SettingTabControl.Controls.Add(Me.TabPage2)
         Me.SettingTabControl.Controls.Add(Me.TabPage3)
         Me.SettingTabControl.Controls.Add(Me.TabPage4)
-        Me.SettingTabControl.Location = New System.Drawing.Point(10, 10)
+        resources.ApplyResources(Me.SettingTabControl, "SettingTabControl")
         Me.SettingTabControl.Name = "SettingTabControl"
         Me.SettingTabControl.SelectedIndex = 0
-        Me.SettingTabControl.Size = New System.Drawing.Size(668, 395)
-        Me.SettingTabControl.TabIndex = 0
         '
         'TabPage1
         '
@@ -215,125 +213,87 @@ Partial Class x264optsFrm
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(660, 369)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Main"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'ffmpegPictureBox
         '
         Me.ffmpegPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ffmpegPictureBox.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ffmpegPictureBox.Image = CType(resources.GetObject("ffmpegPictureBox.Image"), System.Drawing.Image)
-        Me.ffmpegPictureBox.Location = New System.Drawing.Point(365, 282)
+        resources.ApplyResources(Me.ffmpegPictureBox, "ffmpegPictureBox")
         Me.ffmpegPictureBox.Name = "ffmpegPictureBox"
-        Me.ffmpegPictureBox.Size = New System.Drawing.Size(276, 67)
-        Me.ffmpegPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ffmpegPictureBox.TabIndex = 5
         Me.ffmpegPictureBox.TabStop = False
         '
         'x264PictureBox
         '
         Me.x264PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.x264PictureBox.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.x264PictureBox.Image = CType(resources.GetObject("x264PictureBox.Image"), System.Drawing.Image)
-        Me.x264PictureBox.Location = New System.Drawing.Point(124, 282)
+        resources.ApplyResources(Me.x264PictureBox, "x264PictureBox")
         Me.x264PictureBox.Name = "x264PictureBox"
-        Me.x264PictureBox.Size = New System.Drawing.Size(222, 67)
-        Me.x264PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.x264PictureBox.TabIndex = 4
         Me.x264PictureBox.TabStop = False
         '
         'TurboGroupBox
         '
         Me.TurboGroupBox.Controls.Add(Me.FastfirstpassCheckBox)
-        Me.TurboGroupBox.Location = New System.Drawing.Point(238, 10)
+        resources.ApplyResources(Me.TurboGroupBox, "TurboGroupBox")
         Me.TurboGroupBox.Name = "TurboGroupBox"
-        Me.TurboGroupBox.Size = New System.Drawing.Size(198, 64)
-        Me.TurboGroupBox.TabIndex = 3
         Me.TurboGroupBox.TabStop = False
-        Me.TurboGroupBox.Text = "Turbo(2pass only)"
         '
         'FastfirstpassCheckBox
         '
-        Me.FastfirstpassCheckBox.AutoSize = True
-        Me.FastfirstpassCheckBox.Location = New System.Drawing.Point(21, 27)
+        resources.ApplyResources(Me.FastfirstpassCheckBox, "FastfirstpassCheckBox")
         Me.FastfirstpassCheckBox.Name = "FastfirstpassCheckBox"
-        Me.FastfirstpassCheckBox.Size = New System.Drawing.Size(104, 16)
-        Me.FastfirstpassCheckBox.TabIndex = 0
-        Me.FastfirstpassCheckBox.Text = "Fast first pass"
         Me.FastfirstpassCheckBox.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.LevelComboBox)
-        Me.GroupBox3.Location = New System.Drawing.Point(299, 80)
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(274, 60)
-        Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Level"
         '
         'LevelComboBox
         '
         Me.LevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.LevelComboBox.FormattingEnabled = True
-        Me.LevelComboBox.Items.AddRange(New Object() {"Unrestricted AutoGuess", "1.0", "1.1", "1.2", "1.3", "2.0", "2.1", "2.2", "3.0", "3.1", "3.2", "4.0", "4.1", "4.2", "5.0", "5.1"})
-        Me.LevelComboBox.Location = New System.Drawing.Point(18, 25)
+        Me.LevelComboBox.Items.AddRange(New Object() {resources.GetString("LevelComboBox.Items"), resources.GetString("LevelComboBox.Items1"), resources.GetString("LevelComboBox.Items2"), resources.GetString("LevelComboBox.Items3"), resources.GetString("LevelComboBox.Items4"), resources.GetString("LevelComboBox.Items5"), resources.GetString("LevelComboBox.Items6"), resources.GetString("LevelComboBox.Items7"), resources.GetString("LevelComboBox.Items8"), resources.GetString("LevelComboBox.Items9"), resources.GetString("LevelComboBox.Items10"), resources.GetString("LevelComboBox.Items11"), resources.GetString("LevelComboBox.Items12"), resources.GetString("LevelComboBox.Items13"), resources.GetString("LevelComboBox.Items14"), resources.GetString("LevelComboBox.Items15")})
+        resources.ApplyResources(Me.LevelComboBox, "LevelComboBox")
         Me.LevelComboBox.Name = "LevelComboBox"
-        Me.LevelComboBox.Size = New System.Drawing.Size(235, 20)
-        Me.LevelComboBox.TabIndex = 1
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.ProfileComboBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(10, 80)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(277, 60)
-        Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Profile"
         '
         'ProfileComboBox
         '
         Me.ProfileComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ProfileComboBox.FormattingEnabled = True
-        Me.ProfileComboBox.Items.AddRange(New Object() {"Baseline Profile", "Main Profile", "High Profile"})
-        Me.ProfileComboBox.Location = New System.Drawing.Point(18, 25)
+        Me.ProfileComboBox.Items.AddRange(New Object() {resources.GetString("ProfileComboBox.Items"), resources.GetString("ProfileComboBox.Items1"), resources.GetString("ProfileComboBox.Items2")})
+        resources.ApplyResources(Me.ProfileComboBox, "ProfileComboBox")
         Me.ProfileComboBox.Name = "ProfileComboBox"
-        Me.ProfileComboBox.Size = New System.Drawing.Size(235, 20)
-        Me.ProfileComboBox.TabIndex = 0
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.ThreadsNumericUpDown)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 10)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(217, 64)
-        Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Threads(0=Auto)"
         '
         'ThreadsNumericUpDown
         '
-        Me.ThreadsNumericUpDown.Location = New System.Drawing.Point(105, 25)
+        resources.ApplyResources(Me.ThreadsNumericUpDown, "ThreadsNumericUpDown")
         Me.ThreadsNumericUpDown.Maximum = New Decimal(New Integer() {16, 0, 0, 0})
         Me.ThreadsNumericUpDown.Name = "ThreadsNumericUpDown"
-        Me.ThreadsNumericUpDown.Size = New System.Drawing.Size(87, 21)
-        Me.ThreadsNumericUpDown.TabIndex = 1
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 28)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 12)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Threads:"
         '
         'TabPage2
         '
@@ -341,32 +301,21 @@ Partial Class x264optsFrm
         Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.BFramesGroupBox)
         Me.TabPage2.Controls.Add(Me.GroupBox4)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.TabPage2, "TabPage2")
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(660, 369)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Frame-Type"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'CABACGroupBox
         '
         Me.CABACGroupBox.Controls.Add(Me.CABACCheckBox)
-        Me.CABACGroupBox.Location = New System.Drawing.Point(10, 126)
+        resources.ApplyResources(Me.CABACGroupBox, "CABACGroupBox")
         Me.CABACGroupBox.Name = "CABACGroupBox"
-        Me.CABACGroupBox.Size = New System.Drawing.Size(315, 54)
-        Me.CABACGroupBox.TabIndex = 4
         Me.CABACGroupBox.TabStop = False
-        Me.CABACGroupBox.Text = "CABAC"
         '
         'CABACCheckBox
         '
-        Me.CABACCheckBox.AutoSize = True
-        Me.CABACCheckBox.Location = New System.Drawing.Point(21, 22)
+        resources.ApplyResources(Me.CABACCheckBox, "CABACCheckBox")
         Me.CABACCheckBox.Name = "CABACCheckBox"
-        Me.CABACCheckBox.Size = New System.Drawing.Size(66, 16)
-        Me.CABACCheckBox.TabIndex = 1
-        Me.CABACCheckBox.Text = "CABAC"
         Me.CABACCheckBox.UseVisualStyleBackColor = True
         '
         'GroupBox6
@@ -378,79 +327,52 @@ Partial Class x264optsFrm
         Me.GroupBox6.Controls.Add(Me.ExtraIFramesLabel)
         Me.GroupBox6.Controls.Add(Me.ReferenceFramesNumericUpDown)
         Me.GroupBox6.Controls.Add(Me.Label8)
-        Me.GroupBox6.Location = New System.Drawing.Point(10, 187)
+        resources.ApplyResources(Me.GroupBox6, "GroupBox6")
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(636, 140)
-        Me.GroupBox6.TabIndex = 3
         Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Other"
         '
         'AdaptiveIFramesDecisionCheckBox
         '
-        Me.AdaptiveIFramesDecisionCheckBox.AutoSize = True
-        Me.AdaptiveIFramesDecisionCheckBox.Location = New System.Drawing.Point(16, 106)
+        resources.ApplyResources(Me.AdaptiveIFramesDecisionCheckBox, "AdaptiveIFramesDecisionCheckBox")
         Me.AdaptiveIFramesDecisionCheckBox.Name = "AdaptiveIFramesDecisionCheckBox"
-        Me.AdaptiveIFramesDecisionCheckBox.Size = New System.Drawing.Size(181, 16)
-        Me.AdaptiveIFramesDecisionCheckBox.TabIndex = 11
-        Me.AdaptiveIFramesDecisionCheckBox.Text = "Adaptive I-Frames Decision"
         Me.AdaptiveIFramesDecisionCheckBox.UseVisualStyleBackColor = True
         '
         'PframeWeightedPredictionComboBox
         '
         Me.PframeWeightedPredictionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.PframeWeightedPredictionComboBox.FormattingEnabled = True
-        Me.PframeWeightedPredictionComboBox.Items.AddRange(New Object() {"Disabled", "Blind offset", "Smart analysis"})
-        Me.PframeWeightedPredictionComboBox.Location = New System.Drawing.Point(220, 75)
+        Me.PframeWeightedPredictionComboBox.Items.AddRange(New Object() {resources.GetString("PframeWeightedPredictionComboBox.Items"), resources.GetString("PframeWeightedPredictionComboBox.Items1"), resources.GetString("PframeWeightedPredictionComboBox.Items2")})
+        resources.ApplyResources(Me.PframeWeightedPredictionComboBox, "PframeWeightedPredictionComboBox")
         Me.PframeWeightedPredictionComboBox.Name = "PframeWeightedPredictionComboBox"
-        Me.PframeWeightedPredictionComboBox.Size = New System.Drawing.Size(192, 20)
-        Me.PframeWeightedPredictionComboBox.TabIndex = 10
         '
         'PframeWeightedPredictionLabel
         '
-        Me.PframeWeightedPredictionLabel.Location = New System.Drawing.Point(22, 74)
+        resources.ApplyResources(Me.PframeWeightedPredictionLabel, "PframeWeightedPredictionLabel")
         Me.PframeWeightedPredictionLabel.Name = "PframeWeightedPredictionLabel"
-        Me.PframeWeightedPredictionLabel.Size = New System.Drawing.Size(192, 21)
-        Me.PframeWeightedPredictionLabel.TabIndex = 9
-        Me.PframeWeightedPredictionLabel.Text = "P-frame Weighted Prediction:"
-        Me.PframeWeightedPredictionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ExtraIFramesNumericUpDown
         '
-        Me.ExtraIFramesNumericUpDown.Enabled = False
-        Me.ExtraIFramesNumericUpDown.Location = New System.Drawing.Point(220, 48)
+        resources.ApplyResources(Me.ExtraIFramesNumericUpDown, "ExtraIFramesNumericUpDown")
         Me.ExtraIFramesNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.ExtraIFramesNumericUpDown.Name = "ExtraIFramesNumericUpDown"
-        Me.ExtraIFramesNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.ExtraIFramesNumericUpDown.TabIndex = 8
         '
         'ExtraIFramesLabel
         '
-        Me.ExtraIFramesLabel.Enabled = False
-        Me.ExtraIFramesLabel.Location = New System.Drawing.Point(18, 48)
+        resources.ApplyResources(Me.ExtraIFramesLabel, "ExtraIFramesLabel")
         Me.ExtraIFramesLabel.Name = "ExtraIFramesLabel"
-        Me.ExtraIFramesLabel.Size = New System.Drawing.Size(196, 21)
-        Me.ExtraIFramesLabel.TabIndex = 7
-        Me.ExtraIFramesLabel.Text = "Extra I-Frames:"
-        Me.ExtraIFramesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ReferenceFramesNumericUpDown
         '
-        Me.ReferenceFramesNumericUpDown.Location = New System.Drawing.Point(220, 21)
+        resources.ApplyResources(Me.ReferenceFramesNumericUpDown, "ReferenceFramesNumericUpDown")
         Me.ReferenceFramesNumericUpDown.Maximum = New Decimal(New Integer() {16, 0, 0, 0})
         Me.ReferenceFramesNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.ReferenceFramesNumericUpDown.Name = "ReferenceFramesNumericUpDown"
-        Me.ReferenceFramesNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.ReferenceFramesNumericUpDown.TabIndex = 6
         Me.ReferenceFramesNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label8
         '
-        Me.Label8.Location = New System.Drawing.Point(20, 21)
+        resources.ApplyResources(Me.Label8, "Label8")
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(194, 21)
-        Me.Label8.TabIndex = 5
-        Me.Label8.Text = "Reference Frames:"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'BFramesGroupBox
         '
@@ -462,91 +384,56 @@ Partial Class x264optsFrm
         Me.BFramesGroupBox.Controls.Add(Me.BFrameBiasLabel)
         Me.BFramesGroupBox.Controls.Add(Me.AdaptiveBFramesLabel)
         Me.BFramesGroupBox.Controls.Add(Me.Label4)
-        Me.BFramesGroupBox.Location = New System.Drawing.Point(331, 10)
+        resources.ApplyResources(Me.BFramesGroupBox, "BFramesGroupBox")
         Me.BFramesGroupBox.Name = "BFramesGroupBox"
-        Me.BFramesGroupBox.Size = New System.Drawing.Size(315, 170)
-        Me.BFramesGroupBox.TabIndex = 2
         Me.BFramesGroupBox.TabStop = False
-        Me.BFramesGroupBox.Text = "B-Frames"
         '
         'BFrameWeightedPredictionCheckBox
         '
-        Me.BFrameWeightedPredictionCheckBox.AutoSize = True
-        Me.BFrameWeightedPredictionCheckBox.Enabled = False
-        Me.BFrameWeightedPredictionCheckBox.Location = New System.Drawing.Point(16, 136)
+        resources.ApplyResources(Me.BFrameWeightedPredictionCheckBox, "BFrameWeightedPredictionCheckBox")
         Me.BFrameWeightedPredictionCheckBox.Name = "BFrameWeightedPredictionCheckBox"
-        Me.BFrameWeightedPredictionCheckBox.Size = New System.Drawing.Size(189, 16)
-        Me.BFrameWeightedPredictionCheckBox.TabIndex = 11
-        Me.BFrameWeightedPredictionCheckBox.Text = "B-Frame Weighted Prediction"
         Me.BFrameWeightedPredictionCheckBox.UseVisualStyleBackColor = True
         '
         'BFramePyramidCheckBox
         '
-        Me.BFramePyramidCheckBox.AutoSize = True
-        Me.BFramePyramidCheckBox.Enabled = False
-        Me.BFramePyramidCheckBox.Location = New System.Drawing.Point(16, 109)
+        resources.ApplyResources(Me.BFramePyramidCheckBox, "BFramePyramidCheckBox")
         Me.BFramePyramidCheckBox.Name = "BFramePyramidCheckBox"
-        Me.BFramePyramidCheckBox.Size = New System.Drawing.Size(125, 16)
-        Me.BFramePyramidCheckBox.TabIndex = 10
-        Me.BFramePyramidCheckBox.Text = "B-Frame Pyramid"
         Me.BFramePyramidCheckBox.UseVisualStyleBackColor = True
         '
         'AdaptiveBFramesComboBox
         '
         Me.AdaptiveBFramesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.AdaptiveBFramesComboBox.Enabled = False
+        resources.ApplyResources(Me.AdaptiveBFramesComboBox, "AdaptiveBFramesComboBox")
         Me.AdaptiveBFramesComboBox.FormattingEnabled = True
-        Me.AdaptiveBFramesComboBox.Items.AddRange(New Object() {"0 - Off", "1 - Fast", "2 - Optimal"})
-        Me.AdaptiveBFramesComboBox.Location = New System.Drawing.Point(174, 80)
+        Me.AdaptiveBFramesComboBox.Items.AddRange(New Object() {resources.GetString("AdaptiveBFramesComboBox.Items"), resources.GetString("AdaptiveBFramesComboBox.Items1"), resources.GetString("AdaptiveBFramesComboBox.Items2")})
         Me.AdaptiveBFramesComboBox.Name = "AdaptiveBFramesComboBox"
-        Me.AdaptiveBFramesComboBox.Size = New System.Drawing.Size(123, 20)
-        Me.AdaptiveBFramesComboBox.TabIndex = 8
         '
         'BFrameBiasNumericUpDown
         '
-        Me.BFrameBiasNumericUpDown.Enabled = False
-        Me.BFrameBiasNumericUpDown.Location = New System.Drawing.Point(174, 53)
+        resources.ApplyResources(Me.BFrameBiasNumericUpDown, "BFrameBiasNumericUpDown")
         Me.BFrameBiasNumericUpDown.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
         Me.BFrameBiasNumericUpDown.Name = "BFrameBiasNumericUpDown"
-        Me.BFrameBiasNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.BFrameBiasNumericUpDown.TabIndex = 7
         '
         'BFramesNumericUpDown
         '
-        Me.BFramesNumericUpDown.Location = New System.Drawing.Point(174, 26)
+        resources.ApplyResources(Me.BFramesNumericUpDown, "BFramesNumericUpDown")
         Me.BFramesNumericUpDown.Maximum = New Decimal(New Integer() {16, 0, 0, 0})
         Me.BFramesNumericUpDown.Name = "BFramesNumericUpDown"
-        Me.BFramesNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.BFramesNumericUpDown.TabIndex = 6
         '
         'BFrameBiasLabel
         '
-        Me.BFrameBiasLabel.Enabled = False
-        Me.BFrameBiasLabel.Location = New System.Drawing.Point(14, 53)
+        resources.ApplyResources(Me.BFrameBiasLabel, "BFrameBiasLabel")
         Me.BFrameBiasLabel.Name = "BFrameBiasLabel"
-        Me.BFrameBiasLabel.Size = New System.Drawing.Size(154, 21)
-        Me.BFrameBiasLabel.TabIndex = 5
-        Me.BFrameBiasLabel.Text = "B-Frame Bias:"
-        Me.BFrameBiasLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'AdaptiveBFramesLabel
         '
-        Me.AdaptiveBFramesLabel.Enabled = False
-        Me.AdaptiveBFramesLabel.Location = New System.Drawing.Point(14, 79)
+        resources.ApplyResources(Me.AdaptiveBFramesLabel, "AdaptiveBFramesLabel")
         Me.AdaptiveBFramesLabel.Name = "AdaptiveBFramesLabel"
-        Me.AdaptiveBFramesLabel.Size = New System.Drawing.Size(154, 21)
-        Me.AdaptiveBFramesLabel.TabIndex = 3
-        Me.AdaptiveBFramesLabel.Text = "Adaptive B-Frames:"
-        Me.AdaptiveBFramesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(14, 26)
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(154, 21)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "B-Frames:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GroupBox4
         '
@@ -555,57 +442,38 @@ Partial Class x264optsFrm
         Me.GroupBox4.Controls.Add(Me.DeblockingBetaLabel)
         Me.GroupBox4.Controls.Add(Me.DeblockingAlphaLabel)
         Me.GroupBox4.Controls.Add(Me.DeblockingCheckBox)
-        Me.GroupBox4.Location = New System.Drawing.Point(10, 10)
+        resources.ApplyResources(Me.GroupBox4, "GroupBox4")
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(315, 110)
-        Me.GroupBox4.TabIndex = 1
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Deblocking"
         '
         'DeblockingBetaNumericUpDown
         '
-        Me.DeblockingBetaNumericUpDown.Location = New System.Drawing.Point(220, 73)
+        resources.ApplyResources(Me.DeblockingBetaNumericUpDown, "DeblockingBetaNumericUpDown")
         Me.DeblockingBetaNumericUpDown.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
         Me.DeblockingBetaNumericUpDown.Minimum = New Decimal(New Integer() {6, 0, 0, -2147483648})
         Me.DeblockingBetaNumericUpDown.Name = "DeblockingBetaNumericUpDown"
-        Me.DeblockingBetaNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.DeblockingBetaNumericUpDown.TabIndex = 4
         '
         'DeblockingAlphaNumericUpDown
         '
-        Me.DeblockingAlphaNumericUpDown.Location = New System.Drawing.Point(220, 46)
+        resources.ApplyResources(Me.DeblockingAlphaNumericUpDown, "DeblockingAlphaNumericUpDown")
         Me.DeblockingAlphaNumericUpDown.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
         Me.DeblockingAlphaNumericUpDown.Minimum = New Decimal(New Integer() {6, 0, 0, -2147483648})
         Me.DeblockingAlphaNumericUpDown.Name = "DeblockingAlphaNumericUpDown"
-        Me.DeblockingAlphaNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.DeblockingAlphaNumericUpDown.TabIndex = 3
         '
         'DeblockingBetaLabel
         '
-        Me.DeblockingBetaLabel.Location = New System.Drawing.Point(14, 73)
+        resources.ApplyResources(Me.DeblockingBetaLabel, "DeblockingBetaLabel")
         Me.DeblockingBetaLabel.Name = "DeblockingBetaLabel"
-        Me.DeblockingBetaLabel.Size = New System.Drawing.Size(200, 21)
-        Me.DeblockingBetaLabel.TabIndex = 2
-        Me.DeblockingBetaLabel.Text = "Deblocking Beta(Threshold):"
-        Me.DeblockingBetaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'DeblockingAlphaLabel
         '
-        Me.DeblockingAlphaLabel.Location = New System.Drawing.Point(14, 46)
+        resources.ApplyResources(Me.DeblockingAlphaLabel, "DeblockingAlphaLabel")
         Me.DeblockingAlphaLabel.Name = "DeblockingAlphaLabel"
-        Me.DeblockingAlphaLabel.Size = New System.Drawing.Size(200, 21)
-        Me.DeblockingAlphaLabel.TabIndex = 1
-        Me.DeblockingAlphaLabel.Text = "Deblocking Alpha(Strength):"
-        Me.DeblockingAlphaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'DeblockingCheckBox
         '
-        Me.DeblockingCheckBox.AutoSize = True
-        Me.DeblockingCheckBox.Location = New System.Drawing.Point(21, 23)
+        resources.ApplyResources(Me.DeblockingCheckBox, "DeblockingCheckBox")
         Me.DeblockingCheckBox.Name = "DeblockingCheckBox"
-        Me.DeblockingCheckBox.Size = New System.Drawing.Size(86, 16)
-        Me.DeblockingCheckBox.TabIndex = 0
-        Me.DeblockingCheckBox.Text = "Deblocking"
         Me.DeblockingCheckBox.UseVisualStyleBackColor = True
         '
         'TabPage3
@@ -613,11 +481,8 @@ Partial Class x264optsFrm
         Me.TabPage3.Controls.Add(Me.RateControlGroupBox)
         Me.TabPage3.Controls.Add(Me.AdaptiveQuantizersGroupBox)
         Me.TabPage3.Controls.Add(Me.GroupBox8)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.TabPage3, "TabPage3")
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(660, 369)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Rate Control"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'RateControlGroupBox
@@ -635,136 +500,93 @@ Partial Class x264optsFrm
         Me.RateControlGroupBox.Controls.Add(Me.Label22)
         Me.RateControlGroupBox.Controls.Add(Me.VBVBufferSizeNumericUpDown)
         Me.RateControlGroupBox.Controls.Add(Me.Label21)
-        Me.RateControlGroupBox.Location = New System.Drawing.Point(10, 161)
+        resources.ApplyResources(Me.RateControlGroupBox, "RateControlGroupBox")
         Me.RateControlGroupBox.Name = "RateControlGroupBox"
-        Me.RateControlGroupBox.Size = New System.Drawing.Size(638, 163)
-        Me.RateControlGroupBox.TabIndex = 4
         Me.RateControlGroupBox.TabStop = False
-        Me.RateControlGroupBox.Text = "Rate Control"
         '
         'UseMBTreeCheckBox
         '
-        Me.UseMBTreeCheckBox.AutoSize = True
-        Me.UseMBTreeCheckBox.Location = New System.Drawing.Point(439, 59)
+        resources.ApplyResources(Me.UseMBTreeCheckBox, "UseMBTreeCheckBox")
         Me.UseMBTreeCheckBox.Name = "UseMBTreeCheckBox"
-        Me.UseMBTreeCheckBox.Size = New System.Drawing.Size(101, 16)
-        Me.UseMBTreeCheckBox.TabIndex = 21
-        Me.UseMBTreeCheckBox.Text = "Use MB-Tree"
         Me.UseMBTreeCheckBox.UseVisualStyleBackColor = True
         '
         'NumberofFramesforLookaheadNumericUpDown
         '
-        Me.NumberofFramesforLookaheadNumericUpDown.Location = New System.Drawing.Point(546, 23)
+        resources.ApplyResources(Me.NumberofFramesforLookaheadNumericUpDown, "NumberofFramesforLookaheadNumericUpDown")
         Me.NumberofFramesforLookaheadNumericUpDown.Maximum = New Decimal(New Integer() {250, 0, 0, 0})
         Me.NumberofFramesforLookaheadNumericUpDown.Name = "NumberofFramesforLookaheadNumericUpDown"
-        Me.NumberofFramesforLookaheadNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.NumberofFramesforLookaheadNumericUpDown.TabIndex = 20
         Me.NumberofFramesforLookaheadNumericUpDown.Value = New Decimal(New Integer() {40, 0, 0, 0})
         '
         'Label26
         '
-        Me.Label26.Location = New System.Drawing.Point(335, 24)
+        resources.ApplyResources(Me.Label26, "Label26")
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(205, 21)
-        Me.Label26.TabIndex = 19
-        Me.Label26.Text = "Number of Frames for Lookahead:"
-        Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'QuantizerCompressionNumericUpDown
         '
         Me.QuantizerCompressionNumericUpDown.DecimalPlaces = 1
         Me.QuantizerCompressionNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.QuantizerCompressionNumericUpDown.Location = New System.Drawing.Point(226, 129)
+        resources.ApplyResources(Me.QuantizerCompressionNumericUpDown, "QuantizerCompressionNumericUpDown")
         Me.QuantizerCompressionNumericUpDown.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.QuantizerCompressionNumericUpDown.Name = "QuantizerCompressionNumericUpDown"
-        Me.QuantizerCompressionNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.QuantizerCompressionNumericUpDown.TabIndex = 18
         Me.QuantizerCompressionNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label25
         '
-        Me.Label25.Location = New System.Drawing.Point(15, 129)
+        resources.ApplyResources(Me.Label25, "Label25")
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(205, 21)
-        Me.Label25.TabIndex = 17
-        Me.Label25.Text = "Quantizer Compression:"
-        Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'AverageBitrateVarianceNumericUpDown
         '
         Me.AverageBitrateVarianceNumericUpDown.DecimalPlaces = 1
         Me.AverageBitrateVarianceNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.AverageBitrateVarianceNumericUpDown.Location = New System.Drawing.Point(226, 102)
+        resources.ApplyResources(Me.AverageBitrateVarianceNumericUpDown, "AverageBitrateVarianceNumericUpDown")
         Me.AverageBitrateVarianceNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.AverageBitrateVarianceNumericUpDown.Name = "AverageBitrateVarianceNumericUpDown"
-        Me.AverageBitrateVarianceNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.AverageBitrateVarianceNumericUpDown.TabIndex = 16
         Me.AverageBitrateVarianceNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'AverageBitrateVarianceLabel
         '
-        Me.AverageBitrateVarianceLabel.Location = New System.Drawing.Point(15, 102)
+        resources.ApplyResources(Me.AverageBitrateVarianceLabel, "AverageBitrateVarianceLabel")
         Me.AverageBitrateVarianceLabel.Name = "AverageBitrateVarianceLabel"
-        Me.AverageBitrateVarianceLabel.Size = New System.Drawing.Size(205, 21)
-        Me.AverageBitrateVarianceLabel.TabIndex = 15
-        Me.AverageBitrateVarianceLabel.Text = "Average Bitrate Variance:"
-        Me.AverageBitrateVarianceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'VBVInitialBufferNumericUpDown
         '
         Me.VBVInitialBufferNumericUpDown.DecimalPlaces = 1
         Me.VBVInitialBufferNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.VBVInitialBufferNumericUpDown.Location = New System.Drawing.Point(226, 75)
+        resources.ApplyResources(Me.VBVInitialBufferNumericUpDown, "VBVInitialBufferNumericUpDown")
         Me.VBVInitialBufferNumericUpDown.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.VBVInitialBufferNumericUpDown.Name = "VBVInitialBufferNumericUpDown"
-        Me.VBVInitialBufferNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.VBVInitialBufferNumericUpDown.TabIndex = 14
         Me.VBVInitialBufferNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label23
         '
-        Me.Label23.Location = New System.Drawing.Point(15, 75)
+        resources.ApplyResources(Me.Label23, "Label23")
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(205, 21)
-        Me.Label23.TabIndex = 13
-        Me.Label23.Text = "VBV Initial Buffer:"
-        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'VBVMaximumBitrateNumericUpDown
         '
-        Me.VBVMaximumBitrateNumericUpDown.Location = New System.Drawing.Point(226, 48)
+        resources.ApplyResources(Me.VBVMaximumBitrateNumericUpDown, "VBVMaximumBitrateNumericUpDown")
         Me.VBVMaximumBitrateNumericUpDown.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.VBVMaximumBitrateNumericUpDown.Name = "VBVMaximumBitrateNumericUpDown"
-        Me.VBVMaximumBitrateNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.VBVMaximumBitrateNumericUpDown.TabIndex = 12
         Me.VBVMaximumBitrateNumericUpDown.Value = New Decimal(New Integer() {100000, 0, 0, 0})
         '
         'Label22
         '
-        Me.Label22.Location = New System.Drawing.Point(15, 48)
+        resources.ApplyResources(Me.Label22, "Label22")
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(205, 21)
-        Me.Label22.TabIndex = 11
-        Me.Label22.Text = "VBV Maximum Bitrate(Kbit/s):"
-        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'VBVBufferSizeNumericUpDown
         '
-        Me.VBVBufferSizeNumericUpDown.Location = New System.Drawing.Point(226, 20)
+        resources.ApplyResources(Me.VBVBufferSizeNumericUpDown, "VBVBufferSizeNumericUpDown")
         Me.VBVBufferSizeNumericUpDown.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.VBVBufferSizeNumericUpDown.Name = "VBVBufferSizeNumericUpDown"
-        Me.VBVBufferSizeNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.VBVBufferSizeNumericUpDown.TabIndex = 10
         Me.VBVBufferSizeNumericUpDown.Value = New Decimal(New Integer() {100000, 0, 0, 0})
         '
         'Label21
         '
-        Me.Label21.Location = New System.Drawing.Point(15, 21)
+        resources.ApplyResources(Me.Label21, "Label21")
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(205, 21)
-        Me.Label21.TabIndex = 9
-        Me.Label21.Text = "VBV Buffer Size(Kbit/s):"
-        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'AdaptiveQuantizersGroupBox
         '
@@ -772,51 +594,36 @@ Partial Class x264optsFrm
         Me.AdaptiveQuantizersGroupBox.Controls.Add(Me.Label20)
         Me.AdaptiveQuantizersGroupBox.Controls.Add(Me.AdaptiveQuantizersModeComboBox)
         Me.AdaptiveQuantizersGroupBox.Controls.Add(Me.Label19)
-        Me.AdaptiveQuantizersGroupBox.Location = New System.Drawing.Point(443, 10)
+        resources.ApplyResources(Me.AdaptiveQuantizersGroupBox, "AdaptiveQuantizersGroupBox")
         Me.AdaptiveQuantizersGroupBox.Name = "AdaptiveQuantizersGroupBox"
-        Me.AdaptiveQuantizersGroupBox.Size = New System.Drawing.Size(205, 145)
-        Me.AdaptiveQuantizersGroupBox.TabIndex = 3
         Me.AdaptiveQuantizersGroupBox.TabStop = False
-        Me.AdaptiveQuantizersGroupBox.Text = "Adaptive Quantizers"
         '
         'AdaptiveQuantizersStrengthNumericUpDown
         '
         Me.AdaptiveQuantizersStrengthNumericUpDown.DecimalPlaces = 1
         Me.AdaptiveQuantizersStrengthNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.AdaptiveQuantizersStrengthNumericUpDown.Location = New System.Drawing.Point(129, 81)
+        resources.ApplyResources(Me.AdaptiveQuantizersStrengthNumericUpDown, "AdaptiveQuantizersStrengthNumericUpDown")
         Me.AdaptiveQuantizersStrengthNumericUpDown.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.AdaptiveQuantizersStrengthNumericUpDown.Name = "AdaptiveQuantizersStrengthNumericUpDown"
-        Me.AdaptiveQuantizersStrengthNumericUpDown.Size = New System.Drawing.Size(61, 21)
-        Me.AdaptiveQuantizersStrengthNumericUpDown.TabIndex = 12
         Me.AdaptiveQuantizersStrengthNumericUpDown.Value = New Decimal(New Integer() {2, 0, 0, 0})
         '
         'Label20
         '
-        Me.Label20.Location = New System.Drawing.Point(16, 81)
+        resources.ApplyResources(Me.Label20, "Label20")
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(94, 21)
-        Me.Label20.TabIndex = 11
-        Me.Label20.Text = "Strength:"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'AdaptiveQuantizersModeComboBox
         '
         Me.AdaptiveQuantizersModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.AdaptiveQuantizersModeComboBox.FormattingEnabled = True
-        Me.AdaptiveQuantizersModeComboBox.Items.AddRange(New Object() {"Disabled", "Variance AQ", "Auto-variance AQ"})
-        Me.AdaptiveQuantizersModeComboBox.Location = New System.Drawing.Point(18, 48)
+        Me.AdaptiveQuantizersModeComboBox.Items.AddRange(New Object() {resources.GetString("AdaptiveQuantizersModeComboBox.Items"), resources.GetString("AdaptiveQuantizersModeComboBox.Items1"), resources.GetString("AdaptiveQuantizersModeComboBox.Items2")})
+        resources.ApplyResources(Me.AdaptiveQuantizersModeComboBox, "AdaptiveQuantizersModeComboBox")
         Me.AdaptiveQuantizersModeComboBox.Name = "AdaptiveQuantizersModeComboBox"
-        Me.AdaptiveQuantizersModeComboBox.Size = New System.Drawing.Size(172, 20)
-        Me.AdaptiveQuantizersModeComboBox.TabIndex = 10
         '
         'Label19
         '
-        Me.Label19.Location = New System.Drawing.Point(16, 24)
+        resources.ApplyResources(Me.Label19, "Label19")
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(174, 21)
-        Me.Label19.TabIndex = 9
-        Me.Label19.Text = "Mode:"
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GroupBox8
         '
@@ -830,112 +637,81 @@ Partial Class x264optsFrm
         Me.GroupBox8.Controls.Add(Me.QMaxNumericUpDown)
         Me.GroupBox8.Controls.Add(Me.QMinNumericUpDown)
         Me.GroupBox8.Controls.Add(Me.Label12)
-        Me.GroupBox8.Location = New System.Drawing.Point(10, 10)
+        resources.ApplyResources(Me.GroupBox8, "GroupBox8")
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(423, 145)
-        Me.GroupBox8.TabIndex = 2
         Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "Quantizers"
         '
         'ChromaandLumaQPOffsetNumericUpDown
         '
-        Me.ChromaandLumaQPOffsetNumericUpDown.Location = New System.Drawing.Point(226, 108)
+        resources.ApplyResources(Me.ChromaandLumaQPOffsetNumericUpDown, "ChromaandLumaQPOffsetNumericUpDown")
         Me.ChromaandLumaQPOffsetNumericUpDown.Maximum = New Decimal(New Integer() {12, 0, 0, 0})
         Me.ChromaandLumaQPOffsetNumericUpDown.Minimum = New Decimal(New Integer() {12, 0, 0, -2147483648})
         Me.ChromaandLumaQPOffsetNumericUpDown.Name = "ChromaandLumaQPOffsetNumericUpDown"
-        Me.ChromaandLumaQPOffsetNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.ChromaandLumaQPOffsetNumericUpDown.TabIndex = 12
         Me.ChromaandLumaQPOffsetNumericUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label17
         '
-        Me.Label17.Location = New System.Drawing.Point(15, 108)
+        resources.ApplyResources(Me.Label17, "Label17")
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(205, 21)
-        Me.Label17.TabIndex = 11
-        Me.Label17.Text = "Chroma and Luma QP Offset:"
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'QPBRatioNumericUpDown
         '
         Me.QPBRatioNumericUpDown.DecimalPlaces = 1
         Me.QPBRatioNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.QPBRatioNumericUpDown.Location = New System.Drawing.Point(226, 81)
+        resources.ApplyResources(Me.QPBRatioNumericUpDown, "QPBRatioNumericUpDown")
         Me.QPBRatioNumericUpDown.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.QPBRatioNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.QPBRatioNumericUpDown.Name = "QPBRatioNumericUpDown"
-        Me.QPBRatioNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.QPBRatioNumericUpDown.TabIndex = 10
         Me.QPBRatioNumericUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label13
         '
-        Me.Label13.Location = New System.Drawing.Point(15, 81)
+        resources.ApplyResources(Me.Label13, "Label13")
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(205, 21)
-        Me.Label13.TabIndex = 9
-        Me.Label13.Text = "Quantizer P-B Ratio:"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'QIPRatioNumericUpDown
         '
         Me.QIPRatioNumericUpDown.DecimalPlaces = 2
         Me.QIPRatioNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.QIPRatioNumericUpDown.Location = New System.Drawing.Point(226, 54)
+        resources.ApplyResources(Me.QIPRatioNumericUpDown, "QIPRatioNumericUpDown")
         Me.QIPRatioNumericUpDown.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.QIPRatioNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.QIPRatioNumericUpDown.Name = "QIPRatioNumericUpDown"
-        Me.QIPRatioNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.QIPRatioNumericUpDown.TabIndex = 8
         Me.QIPRatioNumericUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label11
         '
-        Me.Label11.Location = New System.Drawing.Point(15, 54)
+        resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(205, 21)
-        Me.Label11.TabIndex = 7
-        Me.Label11.Text = "Quantizer I-P Ratio:"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'QDeltaNumericUpDown
         '
-        Me.QDeltaNumericUpDown.Location = New System.Drawing.Point(346, 26)
+        resources.ApplyResources(Me.QDeltaNumericUpDown, "QDeltaNumericUpDown")
         Me.QDeltaNumericUpDown.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
         Me.QDeltaNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.QDeltaNumericUpDown.Name = "QDeltaNumericUpDown"
-        Me.QDeltaNumericUpDown.Size = New System.Drawing.Size(54, 21)
-        Me.QDeltaNumericUpDown.TabIndex = 6
         Me.QDeltaNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'QMaxNumericUpDown
         '
-        Me.QMaxNumericUpDown.Location = New System.Drawing.Point(286, 26)
+        resources.ApplyResources(Me.QMaxNumericUpDown, "QMaxNumericUpDown")
         Me.QMaxNumericUpDown.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
         Me.QMaxNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.QMaxNumericUpDown.Name = "QMaxNumericUpDown"
-        Me.QMaxNumericUpDown.Size = New System.Drawing.Size(54, 21)
-        Me.QMaxNumericUpDown.TabIndex = 5
         Me.QMaxNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'QMinNumericUpDown
         '
-        Me.QMinNumericUpDown.Location = New System.Drawing.Point(226, 26)
+        resources.ApplyResources(Me.QMinNumericUpDown, "QMinNumericUpDown")
         Me.QMinNumericUpDown.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
         Me.QMinNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.QMinNumericUpDown.Name = "QMinNumericUpDown"
-        Me.QMinNumericUpDown.Size = New System.Drawing.Size(54, 21)
-        Me.QMinNumericUpDown.TabIndex = 3
         Me.QMinNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label12
         '
-        Me.Label12.Location = New System.Drawing.Point(15, 26)
+        resources.ApplyResources(Me.Label12, "Label12")
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(205, 21)
-        Me.Label12.TabIndex = 1
-        Me.Label12.Text = "Min/Max/Delta:"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TabPage4
         '
@@ -944,50 +720,35 @@ Partial Class x264optsFrm
         Me.TabPage4.Controls.Add(Me.GroupBox14)
         Me.TabPage4.Controls.Add(Me.GroupBox13)
         Me.TabPage4.Controls.Add(Me.GroupBox12)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.TabPage4, "TabPage4")
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(660, 369)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Analysis"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'GroupBox17
         '
         Me.GroupBox17.Controls.Add(Me.UseaccessunitdelimitersCheckBox)
-        Me.GroupBox17.Location = New System.Drawing.Point(393, 219)
+        resources.ApplyResources(Me.GroupBox17, "GroupBox17")
         Me.GroupBox17.Name = "GroupBox17"
-        Me.GroupBox17.Size = New System.Drawing.Size(253, 54)
-        Me.GroupBox17.TabIndex = 7
         Me.GroupBox17.TabStop = False
-        Me.GroupBox17.Text = "Blu-ray"
         '
         'UseaccessunitdelimitersCheckBox
         '
-        Me.UseaccessunitdelimitersCheckBox.AutoSize = True
-        Me.UseaccessunitdelimitersCheckBox.Location = New System.Drawing.Point(24, 22)
+        resources.ApplyResources(Me.UseaccessunitdelimitersCheckBox, "UseaccessunitdelimitersCheckBox")
         Me.UseaccessunitdelimitersCheckBox.Name = "UseaccessunitdelimitersCheckBox"
-        Me.UseaccessunitdelimitersCheckBox.Size = New System.Drawing.Size(175, 16)
-        Me.UseaccessunitdelimitersCheckBox.TabIndex = 0
-        Me.UseaccessunitdelimitersCheckBox.Text = "Use access unit delimiters"
         Me.UseaccessunitdelimitersCheckBox.UseVisualStyleBackColor = True
         '
         'GroupBox16
         '
         Me.GroupBox16.Controls.Add(Me.NoiseReductionNumericUpDown)
-        Me.GroupBox16.Location = New System.Drawing.Point(393, 154)
+        resources.ApplyResources(Me.GroupBox16, "GroupBox16")
         Me.GroupBox16.Name = "GroupBox16"
-        Me.GroupBox16.Size = New System.Drawing.Size(253, 59)
-        Me.GroupBox16.TabIndex = 6
         Me.GroupBox16.TabStop = False
-        Me.GroupBox16.Text = "Noise Reduction"
         '
         'NoiseReductionNumericUpDown
         '
-        Me.NoiseReductionNumericUpDown.Location = New System.Drawing.Point(24, 23)
+        resources.ApplyResources(Me.NoiseReductionNumericUpDown, "NoiseReductionNumericUpDown")
         Me.NoiseReductionNumericUpDown.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NoiseReductionNumericUpDown.Name = "NoiseReductionNumericUpDown"
-        Me.NoiseReductionNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.NoiseReductionNumericUpDown.TabIndex = 0
         '
         'GroupBox14
         '
@@ -1002,119 +763,80 @@ Partial Class x264optsFrm
         Me.GroupBox14.Controls.Add(Me.TrellisLabel)
         Me.GroupBox14.Controls.Add(Me.MVPredictionModeComboBox)
         Me.GroupBox14.Controls.Add(Me.MVPredictionModeLabel)
-        Me.GroupBox14.Location = New System.Drawing.Point(10, 154)
+        resources.ApplyResources(Me.GroupBox14, "GroupBox14")
         Me.GroupBox14.Name = "GroupBox14"
-        Me.GroupBox14.Size = New System.Drawing.Size(372, 205)
-        Me.GroupBox14.TabIndex = 5
         Me.GroupBox14.TabStop = False
-        Me.GroupBox14.Text = "Extra"
         '
         'NoPsychovisualEnhancementsCheckBox
         '
-        Me.NoPsychovisualEnhancementsCheckBox.AutoSize = True
-        Me.NoPsychovisualEnhancementsCheckBox.Location = New System.Drawing.Point(21, 175)
+        resources.ApplyResources(Me.NoPsychovisualEnhancementsCheckBox, "NoPsychovisualEnhancementsCheckBox")
         Me.NoPsychovisualEnhancementsCheckBox.Name = "NoPsychovisualEnhancementsCheckBox"
-        Me.NoPsychovisualEnhancementsCheckBox.Size = New System.Drawing.Size(209, 16)
-        Me.NoPsychovisualEnhancementsCheckBox.TabIndex = 19
-        Me.NoPsychovisualEnhancementsCheckBox.Text = "No Psychovisual Enhancements"
         Me.NoPsychovisualEnhancementsCheckBox.UseVisualStyleBackColor = True
         '
         'NoFastPSkipCheckBox
         '
-        Me.NoFastPSkipCheckBox.AutoSize = True
-        Me.NoFastPSkipCheckBox.Location = New System.Drawing.Point(21, 154)
+        resources.ApplyResources(Me.NoFastPSkipCheckBox, "NoFastPSkipCheckBox")
         Me.NoFastPSkipCheckBox.Name = "NoFastPSkipCheckBox"
-        Me.NoFastPSkipCheckBox.Size = New System.Drawing.Size(110, 16)
-        Me.NoFastPSkipCheckBox.TabIndex = 18
-        Me.NoFastPSkipCheckBox.Text = "No Fast P-Skip"
         Me.NoFastPSkipCheckBox.UseVisualStyleBackColor = True
         '
         'NoMixedReferenceFramesCheckBox
         '
-        Me.NoMixedReferenceFramesCheckBox.AutoSize = True
-        Me.NoMixedReferenceFramesCheckBox.Location = New System.Drawing.Point(21, 133)
+        resources.ApplyResources(Me.NoMixedReferenceFramesCheckBox, "NoMixedReferenceFramesCheckBox")
         Me.NoMixedReferenceFramesCheckBox.Name = "NoMixedReferenceFramesCheckBox"
-        Me.NoMixedReferenceFramesCheckBox.Size = New System.Drawing.Size(187, 16)
-        Me.NoMixedReferenceFramesCheckBox.TabIndex = 17
-        Me.NoMixedReferenceFramesCheckBox.Text = "No Mixed Reference Frames"
         Me.NoMixedReferenceFramesCheckBox.UseVisualStyleBackColor = True
         '
         'PsyTrellisStrengthNumericUpDown
         '
         Me.PsyTrellisStrengthNumericUpDown.DecimalPlaces = 2
         Me.PsyTrellisStrengthNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.PsyTrellisStrengthNumericUpDown.Location = New System.Drawing.Point(226, 106)
+        resources.ApplyResources(Me.PsyTrellisStrengthNumericUpDown, "PsyTrellisStrengthNumericUpDown")
         Me.PsyTrellisStrengthNumericUpDown.Name = "PsyTrellisStrengthNumericUpDown"
-        Me.PsyTrellisStrengthNumericUpDown.Size = New System.Drawing.Size(85, 21)
-        Me.PsyTrellisStrengthNumericUpDown.TabIndex = 16
         Me.PsyTrellisStrengthNumericUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label33
         '
-        Me.Label33.Location = New System.Drawing.Point(15, 106)
+        resources.ApplyResources(Me.Label33, "Label33")
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(205, 21)
-        Me.Label33.TabIndex = 15
-        Me.Label33.Text = "Psy-Trellis Strength:"
-        Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PsyRDStrengthNumericUpDown
         '
         Me.PsyRDStrengthNumericUpDown.DecimalPlaces = 2
         Me.PsyRDStrengthNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.PsyRDStrengthNumericUpDown.Location = New System.Drawing.Point(226, 79)
+        resources.ApplyResources(Me.PsyRDStrengthNumericUpDown, "PsyRDStrengthNumericUpDown")
         Me.PsyRDStrengthNumericUpDown.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.PsyRDStrengthNumericUpDown.Name = "PsyRDStrengthNumericUpDown"
-        Me.PsyRDStrengthNumericUpDown.Size = New System.Drawing.Size(85, 21)
-        Me.PsyRDStrengthNumericUpDown.TabIndex = 14
         Me.PsyRDStrengthNumericUpDown.Value = New Decimal(New Integer() {2, 0, 0, 0})
         '
         'Label32
         '
-        Me.Label32.Location = New System.Drawing.Point(15, 79)
+        resources.ApplyResources(Me.Label32, "Label32")
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(205, 21)
-        Me.Label32.TabIndex = 13
-        Me.Label32.Text = "Psy-RD Strength:"
-        Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TrellisComboBox
         '
         Me.TrellisComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TrellisComboBox.FormattingEnabled = True
-        Me.TrellisComboBox.Items.AddRange(New Object() {"0 - None", "1 - Final MB", "2 - Always"})
-        Me.TrellisComboBox.Location = New System.Drawing.Point(226, 50)
+        Me.TrellisComboBox.Items.AddRange(New Object() {resources.GetString("TrellisComboBox.Items"), resources.GetString("TrellisComboBox.Items1"), resources.GetString("TrellisComboBox.Items2")})
+        resources.ApplyResources(Me.TrellisComboBox, "TrellisComboBox")
         Me.TrellisComboBox.Name = "TrellisComboBox"
-        Me.TrellisComboBox.Size = New System.Drawing.Size(124, 20)
-        Me.TrellisComboBox.TabIndex = 12
         '
         'TrellisLabel
         '
-        Me.TrellisLabel.Location = New System.Drawing.Point(15, 49)
+        resources.ApplyResources(Me.TrellisLabel, "TrellisLabel")
         Me.TrellisLabel.Name = "TrellisLabel"
-        Me.TrellisLabel.Size = New System.Drawing.Size(205, 21)
-        Me.TrellisLabel.TabIndex = 11
-        Me.TrellisLabel.Text = "Trellis:"
-        Me.TrellisLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'MVPredictionModeComboBox
         '
         Me.MVPredictionModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.MVPredictionModeComboBox.FormattingEnabled = True
-        Me.MVPredictionModeComboBox.Items.AddRange(New Object() {"None", "Spatial", "Temporal", "Auto"})
-        Me.MVPredictionModeComboBox.Location = New System.Drawing.Point(226, 24)
+        Me.MVPredictionModeComboBox.Items.AddRange(New Object() {resources.GetString("MVPredictionModeComboBox.Items"), resources.GetString("MVPredictionModeComboBox.Items1"), resources.GetString("MVPredictionModeComboBox.Items2"), resources.GetString("MVPredictionModeComboBox.Items3")})
+        resources.ApplyResources(Me.MVPredictionModeComboBox, "MVPredictionModeComboBox")
         Me.MVPredictionModeComboBox.Name = "MVPredictionModeComboBox"
-        Me.MVPredictionModeComboBox.Size = New System.Drawing.Size(124, 20)
-        Me.MVPredictionModeComboBox.TabIndex = 10
         '
         'MVPredictionModeLabel
         '
-        Me.MVPredictionModeLabel.Location = New System.Drawing.Point(15, 23)
+        resources.ApplyResources(Me.MVPredictionModeLabel, "MVPredictionModeLabel")
         Me.MVPredictionModeLabel.Name = "MVPredictionModeLabel"
-        Me.MVPredictionModeLabel.Size = New System.Drawing.Size(205, 21)
-        Me.MVPredictionModeLabel.TabIndex = 9
-        Me.MVPredictionModeLabel.Text = "MV Prediction Mode:"
-        Me.MVPredictionModeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GroupBox13
         '
@@ -1125,81 +847,52 @@ Partial Class x264optsFrm
         Me.GroupBox13.Controls.Add(Me.P4x4CheckBox)
         Me.GroupBox13.Controls.Add(Me.I4x4CheckBox)
         Me.GroupBox13.Controls.Add(Me.Adaptive8x8DCTCheckBox)
-        Me.GroupBox13.Location = New System.Drawing.Point(393, 10)
+        resources.ApplyResources(Me.GroupBox13, "GroupBox13")
         Me.GroupBox13.Name = "GroupBox13"
-        Me.GroupBox13.Size = New System.Drawing.Size(253, 138)
-        Me.GroupBox13.TabIndex = 4
         Me.GroupBox13.TabStop = False
-        Me.GroupBox13.Text = "Macroblocks"
         '
         'MacroblocksComboBox
         '
         Me.MacroblocksComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.MacroblocksComboBox.FormattingEnabled = True
-        Me.MacroblocksComboBox.Items.AddRange(New Object() {"Default", "Custom"})
-        Me.MacroblocksComboBox.Location = New System.Drawing.Point(24, 23)
+        Me.MacroblocksComboBox.Items.AddRange(New Object() {resources.GetString("MacroblocksComboBox.Items"), resources.GetString("MacroblocksComboBox.Items1")})
+        resources.ApplyResources(Me.MacroblocksComboBox, "MacroblocksComboBox")
         Me.MacroblocksComboBox.Name = "MacroblocksComboBox"
-        Me.MacroblocksComboBox.Size = New System.Drawing.Size(200, 20)
-        Me.MacroblocksComboBox.TabIndex = 11
         '
         'B8x8CheckBox
         '
-        Me.B8x8CheckBox.AutoSize = True
-        Me.B8x8CheckBox.Location = New System.Drawing.Point(173, 103)
+        resources.ApplyResources(Me.B8x8CheckBox, "B8x8CheckBox")
         Me.B8x8CheckBox.Name = "B8x8CheckBox"
-        Me.B8x8CheckBox.Size = New System.Drawing.Size(51, 16)
-        Me.B8x8CheckBox.TabIndex = 5
-        Me.B8x8CheckBox.Text = "B8x8"
         Me.B8x8CheckBox.UseVisualStyleBackColor = True
         '
         'P8x8CheckBox
         '
-        Me.P8x8CheckBox.AutoSize = True
-        Me.P8x8CheckBox.Location = New System.Drawing.Point(97, 103)
+        resources.ApplyResources(Me.P8x8CheckBox, "P8x8CheckBox")
         Me.P8x8CheckBox.Name = "P8x8CheckBox"
-        Me.P8x8CheckBox.Size = New System.Drawing.Size(51, 16)
-        Me.P8x8CheckBox.TabIndex = 4
-        Me.P8x8CheckBox.Text = "P8x8"
         Me.P8x8CheckBox.UseVisualStyleBackColor = True
         '
         'I8x8CheckBox
         '
-        Me.I8x8CheckBox.AutoSize = True
-        Me.I8x8CheckBox.Location = New System.Drawing.Point(24, 103)
+        resources.ApplyResources(Me.I8x8CheckBox, "I8x8CheckBox")
         Me.I8x8CheckBox.Name = "I8x8CheckBox"
-        Me.I8x8CheckBox.Size = New System.Drawing.Size(46, 16)
-        Me.I8x8CheckBox.TabIndex = 3
-        Me.I8x8CheckBox.Text = "I8x8"
         Me.I8x8CheckBox.UseVisualStyleBackColor = True
         '
         'P4x4CheckBox
         '
-        Me.P4x4CheckBox.AutoSize = True
-        Me.P4x4CheckBox.Location = New System.Drawing.Point(97, 80)
+        resources.ApplyResources(Me.P4x4CheckBox, "P4x4CheckBox")
         Me.P4x4CheckBox.Name = "P4x4CheckBox"
-        Me.P4x4CheckBox.Size = New System.Drawing.Size(51, 16)
-        Me.P4x4CheckBox.TabIndex = 2
-        Me.P4x4CheckBox.Text = "P4x4"
         Me.P4x4CheckBox.UseVisualStyleBackColor = True
         '
         'I4x4CheckBox
         '
-        Me.I4x4CheckBox.AutoSize = True
-        Me.I4x4CheckBox.Location = New System.Drawing.Point(24, 80)
+        resources.ApplyResources(Me.I4x4CheckBox, "I4x4CheckBox")
         Me.I4x4CheckBox.Name = "I4x4CheckBox"
-        Me.I4x4CheckBox.Size = New System.Drawing.Size(46, 16)
-        Me.I4x4CheckBox.TabIndex = 1
-        Me.I4x4CheckBox.Text = "I4x4"
         Me.I4x4CheckBox.UseVisualStyleBackColor = True
         '
         'Adaptive8x8DCTCheckBox
         '
-        Me.Adaptive8x8DCTCheckBox.AutoSize = True
-        Me.Adaptive8x8DCTCheckBox.Location = New System.Drawing.Point(24, 57)
+        resources.ApplyResources(Me.Adaptive8x8DCTCheckBox, "Adaptive8x8DCTCheckBox")
         Me.Adaptive8x8DCTCheckBox.Name = "Adaptive8x8DCTCheckBox"
-        Me.Adaptive8x8DCTCheckBox.Size = New System.Drawing.Size(124, 16)
-        Me.Adaptive8x8DCTCheckBox.TabIndex = 0
-        Me.Adaptive8x8DCTCheckBox.Text = "Adaptive 8x8 DCT"
         Me.Adaptive8x8DCTCheckBox.UseVisualStyleBackColor = True
         '
         'GroupBox12
@@ -1211,79 +904,54 @@ Partial Class x264optsFrm
         Me.GroupBox12.Controls.Add(Me.Label29)
         Me.GroupBox12.Controls.Add(Me.MERangeNumericUpDown)
         Me.GroupBox12.Controls.Add(Me.Label30)
-        Me.GroupBox12.Location = New System.Drawing.Point(10, 10)
+        resources.ApplyResources(Me.GroupBox12, "GroupBox12")
         Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Size = New System.Drawing.Size(372, 138)
-        Me.GroupBox12.TabIndex = 3
         Me.GroupBox12.TabStop = False
-        Me.GroupBox12.Text = "Motion Estimation"
         '
         'SubpixelMEComboBox
         '
         Me.SubpixelMEComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SubpixelMEComboBox.FormattingEnabled = True
-        Me.SubpixelMEComboBox.Items.AddRange(New Object() {"1 - QPel SAD 1 iteration", "2 - QPel SATD 2 iterations", "3 - HPel on MB then QPel", "4 - Always QPel", "5 - Multi QPel + bime", "6 - RD on I/P frames", "7 - RD on all frames", "8 - RD refinement on I/P frames", "9 - RD refinement on all frames", "10 - QP-RD"})
-        Me.SubpixelMEComboBox.Location = New System.Drawing.Point(127, 100)
+        Me.SubpixelMEComboBox.Items.AddRange(New Object() {resources.GetString("SubpixelMEComboBox.Items"), resources.GetString("SubpixelMEComboBox.Items1"), resources.GetString("SubpixelMEComboBox.Items2"), resources.GetString("SubpixelMEComboBox.Items3"), resources.GetString("SubpixelMEComboBox.Items4"), resources.GetString("SubpixelMEComboBox.Items5"), resources.GetString("SubpixelMEComboBox.Items6"), resources.GetString("SubpixelMEComboBox.Items7"), resources.GetString("SubpixelMEComboBox.Items8"), resources.GetString("SubpixelMEComboBox.Items9")})
+        resources.ApplyResources(Me.SubpixelMEComboBox, "SubpixelMEComboBox")
         Me.SubpixelMEComboBox.Name = "SubpixelMEComboBox"
-        Me.SubpixelMEComboBox.Size = New System.Drawing.Size(223, 20)
-        Me.SubpixelMEComboBox.TabIndex = 18
         '
         'Label27
         '
-        Me.Label27.Location = New System.Drawing.Point(15, 99)
+        resources.ApplyResources(Me.Label27, "Label27")
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(106, 21)
-        Me.Label27.TabIndex = 17
-        Me.Label27.Text = "Subpixel M.E.:"
-        Me.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'MEMethodComboBox
         '
         Me.MEMethodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.MEMethodComboBox.FormattingEnabled = True
-        Me.MEMethodComboBox.Items.AddRange(New Object() {"Diamond", "Hexagon", "Multi Hex", "Exhaustive", "SATD Exhaustive"})
-        Me.MEMethodComboBox.Location = New System.Drawing.Point(127, 74)
+        Me.MEMethodComboBox.Items.AddRange(New Object() {resources.GetString("MEMethodComboBox.Items"), resources.GetString("MEMethodComboBox.Items1"), resources.GetString("MEMethodComboBox.Items2"), resources.GetString("MEMethodComboBox.Items3"), resources.GetString("MEMethodComboBox.Items4")})
+        resources.ApplyResources(Me.MEMethodComboBox, "MEMethodComboBox")
         Me.MEMethodComboBox.Name = "MEMethodComboBox"
-        Me.MEMethodComboBox.Size = New System.Drawing.Size(161, 20)
-        Me.MEMethodComboBox.TabIndex = 16
         '
         'ChromaMECheckBox
         '
-        Me.ChromaMECheckBox.AutoSize = True
-        Me.ChromaMECheckBox.Location = New System.Drawing.Point(21, 23)
+        resources.ApplyResources(Me.ChromaMECheckBox, "ChromaMECheckBox")
         Me.ChromaMECheckBox.Name = "ChromaMECheckBox"
-        Me.ChromaMECheckBox.Size = New System.Drawing.Size(100, 16)
-        Me.ChromaMECheckBox.TabIndex = 15
-        Me.ChromaMECheckBox.Text = "Chroma M.E."
         Me.ChromaMECheckBox.UseVisualStyleBackColor = True
         '
         'Label29
         '
-        Me.Label29.Location = New System.Drawing.Point(15, 73)
+        resources.ApplyResources(Me.Label29, "Label29")
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(106, 21)
-        Me.Label29.TabIndex = 9
-        Me.Label29.Text = "M.E. Method:"
-        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'MERangeNumericUpDown
         '
-        Me.MERangeNumericUpDown.Location = New System.Drawing.Point(127, 46)
+        resources.ApplyResources(Me.MERangeNumericUpDown, "MERangeNumericUpDown")
         Me.MERangeNumericUpDown.Maximum = New Decimal(New Integer() {64, 0, 0, 0})
         Me.MERangeNumericUpDown.Minimum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.MERangeNumericUpDown.Name = "MERangeNumericUpDown"
-        Me.MERangeNumericUpDown.Size = New System.Drawing.Size(77, 21)
-        Me.MERangeNumericUpDown.TabIndex = 8
         Me.MERangeNumericUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label30
         '
-        Me.Label30.Location = New System.Drawing.Point(15, 46)
+        resources.ApplyResources(Me.Label30, "Label30")
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(106, 21)
-        Me.Label30.TabIndex = 7
-        Me.Label30.Text = "M.E. Range:"
-        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GroupBox9
         '
@@ -1295,119 +963,85 @@ Partial Class x264optsFrm
         Me.GroupBox9.Controls.Add(Me.NumericUpDown16)
         Me.GroupBox9.Controls.Add(Me.NumericUpDown17)
         Me.GroupBox9.Controls.Add(Me.Label16)
-        Me.GroupBox9.Location = New System.Drawing.Point(10, 10)
+        resources.ApplyResources(Me.GroupBox9, "GroupBox9")
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(366, 146)
-        Me.GroupBox9.TabIndex = 2
         Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Text = "Quantizers"
         '
         'NumericUpDown13
         '
         Me.NumericUpDown13.DecimalPlaces = 1
         Me.NumericUpDown13.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumericUpDown13.Location = New System.Drawing.Point(161, 81)
+        resources.ApplyResources(Me.NumericUpDown13, "NumericUpDown13")
         Me.NumericUpDown13.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown13.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown13.Name = "NumericUpDown13"
-        Me.NumericUpDown13.Size = New System.Drawing.Size(77, 21)
-        Me.NumericUpDown13.TabIndex = 10
         Me.NumericUpDown13.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label14
         '
-        Me.Label14.Location = New System.Drawing.Point(15, 81)
+        resources.ApplyResources(Me.Label14, "Label14")
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(140, 21)
-        Me.Label14.TabIndex = 9
-        Me.Label14.Text = "Quantizer P-B Ratio:"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'NumericUpDown14
         '
         Me.NumericUpDown14.DecimalPlaces = 1
         Me.NumericUpDown14.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumericUpDown14.Location = New System.Drawing.Point(161, 54)
+        resources.ApplyResources(Me.NumericUpDown14, "NumericUpDown14")
         Me.NumericUpDown14.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown14.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown14.Name = "NumericUpDown14"
-        Me.NumericUpDown14.Size = New System.Drawing.Size(77, 21)
-        Me.NumericUpDown14.TabIndex = 8
         Me.NumericUpDown14.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label15
         '
-        Me.Label15.Location = New System.Drawing.Point(15, 54)
+        resources.ApplyResources(Me.Label15, "Label15")
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(140, 21)
-        Me.Label15.TabIndex = 7
-        Me.Label15.Text = "Quantizer I-P Ratio:"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'NumericUpDown15
         '
-        Me.NumericUpDown15.Location = New System.Drawing.Point(281, 26)
+        resources.ApplyResources(Me.NumericUpDown15, "NumericUpDown15")
         Me.NumericUpDown15.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
         Me.NumericUpDown15.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown15.Name = "NumericUpDown15"
-        Me.NumericUpDown15.Size = New System.Drawing.Size(54, 21)
-        Me.NumericUpDown15.TabIndex = 6
         Me.NumericUpDown15.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'NumericUpDown16
         '
-        Me.NumericUpDown16.Location = New System.Drawing.Point(221, 26)
+        resources.ApplyResources(Me.NumericUpDown16, "NumericUpDown16")
         Me.NumericUpDown16.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
         Me.NumericUpDown16.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown16.Name = "NumericUpDown16"
-        Me.NumericUpDown16.Size = New System.Drawing.Size(54, 21)
-        Me.NumericUpDown16.TabIndex = 5
         Me.NumericUpDown16.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'NumericUpDown17
         '
-        Me.NumericUpDown17.Location = New System.Drawing.Point(161, 26)
+        resources.ApplyResources(Me.NumericUpDown17, "NumericUpDown17")
         Me.NumericUpDown17.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
         Me.NumericUpDown17.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown17.Name = "NumericUpDown17"
-        Me.NumericUpDown17.Size = New System.Drawing.Size(54, 21)
-        Me.NumericUpDown17.TabIndex = 3
         Me.NumericUpDown17.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label16
         '
-        Me.Label16.Location = New System.Drawing.Point(15, 26)
+        resources.ApplyResources(Me.Label16, "Label16")
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(140, 21)
-        Me.Label16.TabIndex = 1
-        Me.Label16.Text = "Min/Max/Delta:"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'DefBTN
         '
-        Me.DefBTN.Location = New System.Drawing.Point(10, 413)
+        resources.ApplyResources(Me.DefBTN, "DefBTN")
         Me.DefBTN.Name = "DefBTN"
-        Me.DefBTN.Size = New System.Drawing.Size(100, 25)
-        Me.DefBTN.TabIndex = 1
-        Me.DefBTN.Text = "기본값"
         Me.DefBTN.UseVisualStyleBackColor = True
         '
         'CancelBTN
         '
-        Me.CancelBTN.Location = New System.Drawing.Point(578, 413)
+        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
         Me.CancelBTN.Name = "CancelBTN"
-        Me.CancelBTN.Size = New System.Drawing.Size(100, 25)
-        Me.CancelBTN.TabIndex = 2
-        Me.CancelBTN.Text = "취소"
         Me.CancelBTN.UseVisualStyleBackColor = True
         '
         'OKBTN
         '
-        Me.OKBTN.Location = New System.Drawing.Point(472, 413)
+        resources.ApplyResources(Me.OKBTN, "OKBTN")
         Me.OKBTN.Name = "OKBTN"
-        Me.OKBTN.Size = New System.Drawing.Size(100, 25)
-        Me.OKBTN.TabIndex = 3
-        Me.OKBTN.Text = "확인"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
         'BPanel
@@ -1416,17 +1050,13 @@ Partial Class x264optsFrm
         Me.BPanel.Controls.Add(Me.OKBTN)
         Me.BPanel.Controls.Add(Me.DefBTN)
         Me.BPanel.Controls.Add(Me.CancelBTN)
-        Me.BPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BPanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.BPanel, "BPanel")
         Me.BPanel.Name = "BPanel"
-        Me.BPanel.Size = New System.Drawing.Size(690, 450)
-        Me.BPanel.TabIndex = 4
         '
         'x264optsFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(690, 450)
         Me.Controls.Add(Me.BPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -1434,8 +1064,6 @@ Partial Class x264optsFrm
         Me.Name = "x264optsFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "x264 configuration"
         Me.SettingTabControl.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         CType(Me.ffmpegPictureBox, System.ComponentModel.ISupportInitialize).EndInit()

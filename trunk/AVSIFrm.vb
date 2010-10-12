@@ -91,6 +91,10 @@ Public Class AVSIFrm
 LANG_SKIP:
         '=========================================
 
+        '제품버전, 파일버전 초기화
+        ProductVersionLabel.Text = LangCls.AVSIProductVersion & ": -"
+        FileVersionLabel.Text = LangCls.AVSIFileVersion & ": -"
+
         '버전 체크
         RefBTN_Click(Nothing, Nothing)
 

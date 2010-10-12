@@ -101,67 +101,45 @@ Partial Class AviSynthEditorFrm
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.LineColToolStripStatusLabel})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 486)
+        resources.ApplyResources(Me.StatusStrip1, "StatusStrip1")
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(851, 22)
-        Me.StatusStrip1.TabIndex = 13
-        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(209, 17)
+        resources.ApplyResources(Me.ToolStripStatusLabel1, "ToolStripStatusLabel1")
         Me.ToolStripStatusLabel1.Spring = True
         '
         'ToolStripStatusLabel2
         '
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(209, 17)
+        resources.ApplyResources(Me.ToolStripStatusLabel2, "ToolStripStatusLabel2")
         Me.ToolStripStatusLabel2.Spring = True
         '
         'ToolStripStatusLabel3
         '
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(209, 17)
+        resources.ApplyResources(Me.ToolStripStatusLabel3, "ToolStripStatusLabel3")
         Me.ToolStripStatusLabel3.Spring = True
         '
         'LineColToolStripStatusLabel
         '
-        Me.LineColToolStripStatusLabel.AutoSize = False
+        resources.ApplyResources(Me.LineColToolStripStatusLabel, "LineColToolStripStatusLabel")
         Me.LineColToolStripStatusLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.LineColToolStripStatusLabel.Name = "LineColToolStripStatusLabel"
-        Me.LineColToolStripStatusLabel.Size = New System.Drawing.Size(209, 17)
         Me.LineColToolStripStatusLabel.Spring = True
-        Me.LineColToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Def_FFmpegSourceTextBox
         '
         Me.Def_FFmpegSourceTextBox.BackColor = System.Drawing.Color.White
-        Me.Def_FFmpegSourceTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.Def_FFmpegSourceTextBox.MaxLength = 2147483647
-        Me.Def_FFmpegSourceTextBox.Multiline = True
+        resources.ApplyResources(Me.Def_FFmpegSourceTextBox, "Def_FFmpegSourceTextBox")
         Me.Def_FFmpegSourceTextBox.Name = "Def_FFmpegSourceTextBox"
-        Me.Def_FFmpegSourceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Def_FFmpegSourceTextBox.Size = New System.Drawing.Size(50, 50)
-        Me.Def_FFmpegSourceTextBox.TabIndex = 27
-        Me.Def_FFmpegSourceTextBox.Text = resources.GetString("Def_FFmpegSourceTextBox.Text")
-        Me.Def_FFmpegSourceTextBox.Visible = False
-        Me.Def_FFmpegSourceTextBox.WordWrap = False
         '
         'FFmpegSourceTextBox
         '
-        Me.FFmpegSourceTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.FFmpegSourceTextBox, "FFmpegSourceTextBox")
         Me.FFmpegSourceTextBox.BackColor = System.Drawing.Color.White
-        Me.FFmpegSourceTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.FFmpegSourceTextBox.MaxLength = 2147483647
-        Me.FFmpegSourceTextBox.Multiline = True
         Me.FFmpegSourceTextBox.Name = "FFmpegSourceTextBox"
-        Me.FFmpegSourceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.FFmpegSourceTextBox.Size = New System.Drawing.Size(821, 323)
-        Me.FFmpegSourceTextBox.TabIndex = 23
-        Me.FFmpegSourceTextBox.WordWrap = False
         '
         'Panel1
         '
@@ -169,112 +147,68 @@ Partial Class AviSynthEditorFrm
         Me.Panel1.Controls.Add(Me.SubSButton)
         Me.Panel1.Controls.Add(Me.AudSButton)
         Me.Panel1.Controls.Add(Me.ImgSButton)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(851, 37)
-        Me.Panel1.TabIndex = 16
         '
         'ConPanel
         '
         Me.ConPanel.Controls.Add(Me.PreviewButton)
         Me.ConPanel.Controls.Add(Me.ListenButton)
         Me.ConPanel.Controls.Add(Me.RefButton)
-        Me.ConPanel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ConPanel.Location = New System.Drawing.Point(491, 0)
+        resources.ApplyResources(Me.ConPanel, "ConPanel")
         Me.ConPanel.Name = "ConPanel"
-        Me.ConPanel.Size = New System.Drawing.Size(360, 37)
-        Me.ConPanel.TabIndex = 6
         '
         'PreviewButton
         '
-        Me.PreviewButton.Location = New System.Drawing.Point(5, 8)
+        resources.ApplyResources(Me.PreviewButton, "PreviewButton")
         Me.PreviewButton.Name = "PreviewButton"
-        Me.PreviewButton.Size = New System.Drawing.Size(110, 25)
-        Me.PreviewButton.TabIndex = 3
-        Me.PreviewButton.Text = "미리 보기"
         Me.PreviewButton.UseVisualStyleBackColor = True
         '
         'ListenButton
         '
-        Me.ListenButton.Location = New System.Drawing.Point(238, 8)
+        resources.ApplyResources(Me.ListenButton, "ListenButton")
         Me.ListenButton.Name = "ListenButton"
-        Me.ListenButton.Size = New System.Drawing.Size(110, 25)
-        Me.ListenButton.TabIndex = 5
-        Me.ListenButton.Text = "미리 듣기"
         Me.ListenButton.UseVisualStyleBackColor = True
         '
         'RefButton
         '
-        Me.RefButton.Enabled = False
-        Me.RefButton.Location = New System.Drawing.Point(122, 8)
+        resources.ApplyResources(Me.RefButton, "RefButton")
         Me.RefButton.Name = "RefButton"
-        Me.RefButton.Size = New System.Drawing.Size(110, 25)
-        Me.RefButton.TabIndex = 4
-        Me.RefButton.Text = "새로 고침"
         Me.RefButton.UseVisualStyleBackColor = True
         '
         'SubSButton
         '
-        Me.SubSButton.Location = New System.Drawing.Point(242, 8)
+        resources.ApplyResources(Me.SubSButton, "SubSButton")
         Me.SubSButton.Name = "SubSButton"
-        Me.SubSButton.Size = New System.Drawing.Size(110, 25)
-        Me.SubSButton.TabIndex = 2
-        Me.SubSButton.Text = "자막설정"
         Me.SubSButton.UseVisualStyleBackColor = True
         '
         'AudSButton
         '
-        Me.AudSButton.Location = New System.Drawing.Point(126, 8)
+        resources.ApplyResources(Me.AudSButton, "AudSButton")
         Me.AudSButton.Name = "AudSButton"
-        Me.AudSButton.Size = New System.Drawing.Size(110, 25)
-        Me.AudSButton.TabIndex = 1
-        Me.AudSButton.Text = "음성설정"
         Me.AudSButton.UseVisualStyleBackColor = True
         '
         'ImgSButton
         '
-        Me.ImgSButton.Location = New System.Drawing.Point(10, 8)
+        resources.ApplyResources(Me.ImgSButton, "ImgSButton")
         Me.ImgSButton.Name = "ImgSButton"
-        Me.ImgSButton.Size = New System.Drawing.Size(110, 25)
-        Me.ImgSButton.TabIndex = 0
-        Me.ImgSButton.Text = "영상설정"
         Me.ImgSButton.UseVisualStyleBackColor = True
         '
         'ChannelTextBox
         '
-        Me.ChannelTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.ChannelTextBox, "ChannelTextBox")
         Me.ChannelTextBox.BackColor = System.Drawing.Color.White
-        Me.ChannelTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.ChannelTextBox.MaxLength = 2147483647
-        Me.ChannelTextBox.Multiline = True
         Me.ChannelTextBox.Name = "ChannelTextBox"
-        Me.ChannelTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.ChannelTextBox.Size = New System.Drawing.Size(821, 323)
-        Me.ChannelTextBox.TabIndex = 25
-        Me.ChannelTextBox.WordWrap = False
         '
         'Def_ChannelTextBox
         '
         Me.Def_ChannelTextBox.BackColor = System.Drawing.Color.White
-        Me.Def_ChannelTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.Def_ChannelTextBox.MaxLength = 2147483647
-        Me.Def_ChannelTextBox.Multiline = True
+        resources.ApplyResources(Me.Def_ChannelTextBox, "Def_ChannelTextBox")
         Me.Def_ChannelTextBox.Name = "Def_ChannelTextBox"
-        Me.Def_ChannelTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Def_ChannelTextBox.Size = New System.Drawing.Size(50, 50)
-        Me.Def_ChannelTextBox.TabIndex = 26
-        Me.Def_ChannelTextBox.Text = resources.GetString("Def_ChannelTextBox.Text")
-        Me.Def_ChannelTextBox.Visible = False
-        Me.Def_ChannelTextBox.WordWrap = False
         '
         'TabControl1
         '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.FFmpegSourceTabPage)
         Me.TabControl1.Controls.Add(Me.MPEG2SourceTabPage)
@@ -283,332 +217,180 @@ Partial Class AviSynthEditorFrm
         Me.TabControl1.Controls.Add(Me.BassAudioTabPage)
         Me.TabControl1.Controls.Add(Me.NicAudioTabPage)
         Me.TabControl1.Controls.Add(Me.ChannelScriptTabPage)
-        Me.TabControl1.Location = New System.Drawing.Point(10, 43)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(829, 379)
-        Me.TabControl1.TabIndex = 28
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.ScriptTextBox)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(821, 353)
-        Me.TabPage1.TabIndex = 6
-        Me.TabPage1.Text = "Script"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'ScriptTextBox
         '
-        Me.ScriptTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.ScriptTextBox, "ScriptTextBox")
         Me.ScriptTextBox.BackColor = System.Drawing.Color.White
-        Me.ScriptTextBox.Location = New System.Drawing.Point(0, 0)
-        Me.ScriptTextBox.MaxLength = 2147483647
-        Me.ScriptTextBox.Multiline = True
         Me.ScriptTextBox.Name = "ScriptTextBox"
         Me.ScriptTextBox.ReadOnly = True
-        Me.ScriptTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.ScriptTextBox.Size = New System.Drawing.Size(821, 353)
-        Me.ScriptTextBox.TabIndex = 24
-        Me.ScriptTextBox.WordWrap = False
         '
         'FFmpegSourceTabPage
         '
         Me.FFmpegSourceTabPage.Controls.Add(Me.FFmpegSourceLabel)
         Me.FFmpegSourceTabPage.Controls.Add(Me.Def_FFmpegSourceTextBox)
         Me.FFmpegSourceTabPage.Controls.Add(Me.FFmpegSourceTextBox)
-        Me.FFmpegSourceTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.FFmpegSourceTabPage, "FFmpegSourceTabPage")
         Me.FFmpegSourceTabPage.Name = "FFmpegSourceTabPage"
-        Me.FFmpegSourceTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.FFmpegSourceTabPage.Size = New System.Drawing.Size(821, 353)
-        Me.FFmpegSourceTabPage.TabIndex = 0
-        Me.FFmpegSourceTabPage.Text = "FFmpegSource"
         Me.FFmpegSourceTabPage.UseVisualStyleBackColor = True
         '
         'FFmpegSourceLabel
         '
-        Me.FFmpegSourceLabel.AutoSize = True
-        Me.FFmpegSourceLabel.Location = New System.Drawing.Point(7, 7)
+        resources.ApplyResources(Me.FFmpegSourceLabel, "FFmpegSourceLabel")
         Me.FFmpegSourceLabel.Name = "FFmpegSourceLabel"
-        Me.FFmpegSourceLabel.Size = New System.Drawing.Size(164, 12)
-        Me.FFmpegSourceLabel.TabIndex = 28
-        Me.FFmpegSourceLabel.Text = "비디오 파일, 오디오 RM 파일"
         '
         'MPEG2SourceTabPage
         '
         Me.MPEG2SourceTabPage.Controls.Add(Me.MPEG2SourceLabel)
         Me.MPEG2SourceTabPage.Controls.Add(Me.Def_MPEG2SourceTextBox)
         Me.MPEG2SourceTabPage.Controls.Add(Me.MPEG2SourceTextBox)
-        Me.MPEG2SourceTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.MPEG2SourceTabPage, "MPEG2SourceTabPage")
         Me.MPEG2SourceTabPage.Name = "MPEG2SourceTabPage"
-        Me.MPEG2SourceTabPage.Size = New System.Drawing.Size(821, 353)
-        Me.MPEG2SourceTabPage.TabIndex = 5
-        Me.MPEG2SourceTabPage.Text = "MPEG2Source"
         Me.MPEG2SourceTabPage.UseVisualStyleBackColor = True
         '
         'MPEG2SourceLabel
         '
-        Me.MPEG2SourceLabel.AutoSize = True
-        Me.MPEG2SourceLabel.Location = New System.Drawing.Point(7, 7)
+        resources.ApplyResources(Me.MPEG2SourceLabel, "MPEG2SourceLabel")
         Me.MPEG2SourceLabel.Name = "MPEG2SourceLabel"
-        Me.MPEG2SourceLabel.Size = New System.Drawing.Size(577, 12)
-        Me.MPEG2SourceLabel.TabIndex = 29
-        Me.MPEG2SourceLabel.Text = "비디오 MPEGTS, MPEG 파일(AVC, VC1제외) / MPEGTS 파일은 기본 오디오 스트림으로 인코딩됩니다."
         '
         'Def_MPEG2SourceTextBox
         '
         Me.Def_MPEG2SourceTextBox.BackColor = System.Drawing.Color.White
-        Me.Def_MPEG2SourceTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.Def_MPEG2SourceTextBox.MaxLength = 2147483647
-        Me.Def_MPEG2SourceTextBox.Multiline = True
+        resources.ApplyResources(Me.Def_MPEG2SourceTextBox, "Def_MPEG2SourceTextBox")
         Me.Def_MPEG2SourceTextBox.Name = "Def_MPEG2SourceTextBox"
-        Me.Def_MPEG2SourceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Def_MPEG2SourceTextBox.Size = New System.Drawing.Size(50, 50)
-        Me.Def_MPEG2SourceTextBox.TabIndex = 28
-        Me.Def_MPEG2SourceTextBox.Text = resources.GetString("Def_MPEG2SourceTextBox.Text")
-        Me.Def_MPEG2SourceTextBox.Visible = False
-        Me.Def_MPEG2SourceTextBox.WordWrap = False
         '
         'MPEG2SourceTextBox
         '
-        Me.MPEG2SourceTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.MPEG2SourceTextBox, "MPEG2SourceTextBox")
         Me.MPEG2SourceTextBox.BackColor = System.Drawing.Color.White
-        Me.MPEG2SourceTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.MPEG2SourceTextBox.MaxLength = 2147483647
-        Me.MPEG2SourceTextBox.Multiline = True
         Me.MPEG2SourceTextBox.Name = "MPEG2SourceTextBox"
-        Me.MPEG2SourceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.MPEG2SourceTextBox.Size = New System.Drawing.Size(821, 323)
-        Me.MPEG2SourceTextBox.TabIndex = 24
-        Me.MPEG2SourceTextBox.WordWrap = False
         '
         'AVCTabPage
         '
         Me.AVCTabPage.Controls.Add(Me.AVCLabel)
         Me.AVCTabPage.Controls.Add(Me.Def_AVCTextBox)
         Me.AVCTabPage.Controls.Add(Me.AVCTextBox)
-        Me.AVCTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.AVCTabPage, "AVCTabPage")
         Me.AVCTabPage.Name = "AVCTabPage"
-        Me.AVCTabPage.Size = New System.Drawing.Size(821, 353)
-        Me.AVCTabPage.TabIndex = 7
-        Me.AVCTabPage.Text = "MPEG/MPEGTS(AVC)"
         Me.AVCTabPage.UseVisualStyleBackColor = True
         '
         'AVCLabel
         '
-        Me.AVCLabel.AutoSize = True
-        Me.AVCLabel.Location = New System.Drawing.Point(7, 7)
+        resources.ApplyResources(Me.AVCLabel, "AVCLabel")
         Me.AVCLabel.Name = "AVCLabel"
-        Me.AVCLabel.Size = New System.Drawing.Size(196, 12)
-        Me.AVCLabel.TabIndex = 32
-        Me.AVCLabel.Text = "비디오 MPEG/MPEGTS AVC 파일"
         '
         'Def_AVCTextBox
         '
         Me.Def_AVCTextBox.BackColor = System.Drawing.Color.White
-        Me.Def_AVCTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.Def_AVCTextBox.MaxLength = 2147483647
-        Me.Def_AVCTextBox.Multiline = True
+        resources.ApplyResources(Me.Def_AVCTextBox, "Def_AVCTextBox")
         Me.Def_AVCTextBox.Name = "Def_AVCTextBox"
-        Me.Def_AVCTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Def_AVCTextBox.Size = New System.Drawing.Size(50, 50)
-        Me.Def_AVCTextBox.TabIndex = 31
-        Me.Def_AVCTextBox.Text = resources.GetString("Def_AVCTextBox.Text")
-        Me.Def_AVCTextBox.Visible = False
-        Me.Def_AVCTextBox.WordWrap = False
         '
         'AVCTextBox
         '
-        Me.AVCTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.AVCTextBox, "AVCTextBox")
         Me.AVCTextBox.BackColor = System.Drawing.Color.White
-        Me.AVCTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.AVCTextBox.MaxLength = 2147483647
-        Me.AVCTextBox.Multiline = True
         Me.AVCTextBox.Name = "AVCTextBox"
-        Me.AVCTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.AVCTextBox.Size = New System.Drawing.Size(821, 323)
-        Me.AVCTextBox.TabIndex = 30
-        Me.AVCTextBox.WordWrap = False
         '
         'VC1TabPage
         '
         Me.VC1TabPage.Controls.Add(Me.VC1Label)
         Me.VC1TabPage.Controls.Add(Me.Def_VC1TextBox)
         Me.VC1TabPage.Controls.Add(Me.VC1TextBox)
-        Me.VC1TabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.VC1TabPage, "VC1TabPage")
         Me.VC1TabPage.Name = "VC1TabPage"
-        Me.VC1TabPage.Size = New System.Drawing.Size(821, 353)
-        Me.VC1TabPage.TabIndex = 8
-        Me.VC1TabPage.Text = "MPEG/MPEGTS(VC1)"
         Me.VC1TabPage.UseVisualStyleBackColor = True
         '
         'VC1Label
         '
-        Me.VC1Label.AutoSize = True
-        Me.VC1Label.Location = New System.Drawing.Point(7, 7)
+        resources.ApplyResources(Me.VC1Label, "VC1Label")
         Me.VC1Label.Name = "VC1Label"
-        Me.VC1Label.Size = New System.Drawing.Size(194, 12)
-        Me.VC1Label.TabIndex = 32
-        Me.VC1Label.Text = "비디오 MPEG/MPEGTS VC1 파일"
         '
         'Def_VC1TextBox
         '
         Me.Def_VC1TextBox.BackColor = System.Drawing.Color.White
-        Me.Def_VC1TextBox.Location = New System.Drawing.Point(0, 30)
-        Me.Def_VC1TextBox.MaxLength = 2147483647
-        Me.Def_VC1TextBox.Multiline = True
+        resources.ApplyResources(Me.Def_VC1TextBox, "Def_VC1TextBox")
         Me.Def_VC1TextBox.Name = "Def_VC1TextBox"
-        Me.Def_VC1TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Def_VC1TextBox.Size = New System.Drawing.Size(50, 50)
-        Me.Def_VC1TextBox.TabIndex = 31
-        Me.Def_VC1TextBox.Text = resources.GetString("Def_VC1TextBox.Text")
-        Me.Def_VC1TextBox.Visible = False
-        Me.Def_VC1TextBox.WordWrap = False
         '
         'VC1TextBox
         '
-        Me.VC1TextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.VC1TextBox, "VC1TextBox")
         Me.VC1TextBox.BackColor = System.Drawing.Color.White
-        Me.VC1TextBox.Location = New System.Drawing.Point(0, 30)
-        Me.VC1TextBox.MaxLength = 2147483647
-        Me.VC1TextBox.Multiline = True
         Me.VC1TextBox.Name = "VC1TextBox"
-        Me.VC1TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.VC1TextBox.Size = New System.Drawing.Size(821, 323)
-        Me.VC1TextBox.TabIndex = 30
-        Me.VC1TextBox.WordWrap = False
         '
         'BassAudioTabPage
         '
         Me.BassAudioTabPage.Controls.Add(Me.BassAudioLabel)
         Me.BassAudioTabPage.Controls.Add(Me.Def_BassAudioTextBox)
         Me.BassAudioTabPage.Controls.Add(Me.BassAudioTextBox)
-        Me.BassAudioTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.BassAudioTabPage, "BassAudioTabPage")
         Me.BassAudioTabPage.Name = "BassAudioTabPage"
-        Me.BassAudioTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.BassAudioTabPage.Size = New System.Drawing.Size(821, 353)
-        Me.BassAudioTabPage.TabIndex = 1
-        Me.BassAudioTabPage.Text = "BassAudio"
         Me.BassAudioTabPage.UseVisualStyleBackColor = True
         '
         'BassAudioLabel
         '
-        Me.BassAudioLabel.AutoSize = True
-        Me.BassAudioLabel.Location = New System.Drawing.Point(7, 7)
+        resources.ApplyResources(Me.BassAudioLabel, "BassAudioLabel")
         Me.BassAudioLabel.Name = "BassAudioLabel"
-        Me.BassAudioLabel.Size = New System.Drawing.Size(69, 12)
-        Me.BassAudioLabel.TabIndex = 29
-        Me.BassAudioLabel.Text = "오디오 파일"
         '
         'Def_BassAudioTextBox
         '
         Me.Def_BassAudioTextBox.BackColor = System.Drawing.Color.White
-        Me.Def_BassAudioTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.Def_BassAudioTextBox.MaxLength = 2147483647
-        Me.Def_BassAudioTextBox.Multiline = True
+        resources.ApplyResources(Me.Def_BassAudioTextBox, "Def_BassAudioTextBox")
         Me.Def_BassAudioTextBox.Name = "Def_BassAudioTextBox"
-        Me.Def_BassAudioTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Def_BassAudioTextBox.Size = New System.Drawing.Size(50, 50)
-        Me.Def_BassAudioTextBox.TabIndex = 28
-        Me.Def_BassAudioTextBox.Text = "LoadPlugin(""#<pluginpath>BassAudio.dll"")" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "BassAudioSource(""#<source>"")" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "#<chann" & _
-            "el>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "#<trim>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "#<amplifydb>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "#<supereq>"
-        Me.Def_BassAudioTextBox.Visible = False
-        Me.Def_BassAudioTextBox.WordWrap = False
         '
         'BassAudioTextBox
         '
-        Me.BassAudioTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.BassAudioTextBox, "BassAudioTextBox")
         Me.BassAudioTextBox.BackColor = System.Drawing.Color.White
-        Me.BassAudioTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.BassAudioTextBox.MaxLength = 2147483647
-        Me.BassAudioTextBox.Multiline = True
         Me.BassAudioTextBox.Name = "BassAudioTextBox"
-        Me.BassAudioTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.BassAudioTextBox.Size = New System.Drawing.Size(821, 323)
-        Me.BassAudioTextBox.TabIndex = 24
-        Me.BassAudioTextBox.WordWrap = False
         '
         'NicAudioTabPage
         '
         Me.NicAudioTabPage.Controls.Add(Me.NicAudioLabel)
         Me.NicAudioTabPage.Controls.Add(Me.Def_NicAudioTextBox)
         Me.NicAudioTabPage.Controls.Add(Me.NicAudioTextBox)
-        Me.NicAudioTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.NicAudioTabPage, "NicAudioTabPage")
         Me.NicAudioTabPage.Name = "NicAudioTabPage"
-        Me.NicAudioTabPage.Size = New System.Drawing.Size(821, 353)
-        Me.NicAudioTabPage.TabIndex = 3
-        Me.NicAudioTabPage.Text = "NicAudio"
         Me.NicAudioTabPage.UseVisualStyleBackColor = True
         '
         'NicAudioLabel
         '
-        Me.NicAudioLabel.AutoSize = True
-        Me.NicAudioLabel.Location = New System.Drawing.Point(7, 7)
+        resources.ApplyResources(Me.NicAudioLabel, "NicAudioLabel")
         Me.NicAudioLabel.Name = "NicAudioLabel"
-        Me.NicAudioLabel.Size = New System.Drawing.Size(128, 12)
-        Me.NicAudioLabel.TabIndex = 30
-        Me.NicAudioLabel.Text = "오디오 AC3, DTS 파일"
         '
         'Def_NicAudioTextBox
         '
         Me.Def_NicAudioTextBox.BackColor = System.Drawing.Color.White
-        Me.Def_NicAudioTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.Def_NicAudioTextBox.MaxLength = 2147483647
-        Me.Def_NicAudioTextBox.Multiline = True
+        resources.ApplyResources(Me.Def_NicAudioTextBox, "Def_NicAudioTextBox")
         Me.Def_NicAudioTextBox.Name = "Def_NicAudioTextBox"
-        Me.Def_NicAudioTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Def_NicAudioTextBox.Size = New System.Drawing.Size(50, 50)
-        Me.Def_NicAudioTextBox.TabIndex = 29
-        Me.Def_NicAudioTextBox.Text = resources.GetString("Def_NicAudioTextBox.Text")
-        Me.Def_NicAudioTextBox.Visible = False
-        Me.Def_NicAudioTextBox.WordWrap = False
         '
         'NicAudioTextBox
         '
-        Me.NicAudioTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.NicAudioTextBox, "NicAudioTextBox")
         Me.NicAudioTextBox.BackColor = System.Drawing.Color.White
-        Me.NicAudioTextBox.Location = New System.Drawing.Point(0, 30)
-        Me.NicAudioTextBox.MaxLength = 2147483647
-        Me.NicAudioTextBox.Multiline = True
         Me.NicAudioTextBox.Name = "NicAudioTextBox"
-        Me.NicAudioTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.NicAudioTextBox.Size = New System.Drawing.Size(821, 323)
-        Me.NicAudioTextBox.TabIndex = 25
-        Me.NicAudioTextBox.WordWrap = False
         '
         'ChannelScriptTabPage
         '
         Me.ChannelScriptTabPage.Controls.Add(Me.ChannelLabel)
         Me.ChannelScriptTabPage.Controls.Add(Me.Def_ChannelTextBox)
         Me.ChannelScriptTabPage.Controls.Add(Me.ChannelTextBox)
-        Me.ChannelScriptTabPage.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.ChannelScriptTabPage, "ChannelScriptTabPage")
         Me.ChannelScriptTabPage.Name = "ChannelScriptTabPage"
-        Me.ChannelScriptTabPage.Size = New System.Drawing.Size(821, 353)
-        Me.ChannelScriptTabPage.TabIndex = 2
-        Me.ChannelScriptTabPage.Text = "Channel"
         Me.ChannelScriptTabPage.UseVisualStyleBackColor = True
         '
         'ChannelLabel
         '
-        Me.ChannelLabel.AutoSize = True
-        Me.ChannelLabel.Location = New System.Drawing.Point(7, 7)
+        resources.ApplyResources(Me.ChannelLabel, "ChannelLabel")
         Me.ChannelLabel.Name = "ChannelLabel"
-        Me.ChannelLabel.Size = New System.Drawing.Size(81, 12)
-        Me.ChannelLabel.TabIndex = 31
-        Me.ChannelLabel.Text = "채널 스크립트"
         '
         'ProcessDetTimer
         '
@@ -617,97 +399,72 @@ Partial Class AviSynthEditorFrm
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FolderToolStripMenuItem, Me.InitializationToolStripMenuItem, Me.PresetToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(851, 24)
-        Me.MenuStrip1.TabIndex = 29
-        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FolderToolStripMenuItem
         '
         Me.FolderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PluginToolStripMenuItem, Me.ToolsToolStripMenuItem})
         Me.FolderToolStripMenuItem.Name = "FolderToolStripMenuItem"
-        Me.FolderToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.FolderToolStripMenuItem.Text = "폴더(&F)"
+        resources.ApplyResources(Me.FolderToolStripMenuItem, "FolderToolStripMenuItem")
         '
         'PluginToolStripMenuItem
         '
         Me.PluginToolStripMenuItem.Name = "PluginToolStripMenuItem"
-        Me.PluginToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
-        Me.PluginToolStripMenuItem.Text = "플러그인"
+        resources.ApplyResources(Me.PluginToolStripMenuItem, "PluginToolStripMenuItem")
         '
         'ToolsToolStripMenuItem
         '
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
-        Me.ToolsToolStripMenuItem.Text = "도구"
+        resources.ApplyResources(Me.ToolsToolStripMenuItem, "ToolsToolStripMenuItem")
         '
         'InitializationToolStripMenuItem
         '
-        Me.InitializationToolStripMenuItem.Enabled = False
+        resources.ApplyResources(Me.InitializationToolStripMenuItem, "InitializationToolStripMenuItem")
         Me.InitializationToolStripMenuItem.Name = "InitializationToolStripMenuItem"
-        Me.InitializationToolStripMenuItem.Size = New System.Drawing.Size(107, 20)
-        Me.InitializationToolStripMenuItem.Text = "스크립트 초기화"
         '
         'PresetToolStripMenuItem
         '
         Me.PresetToolStripMenuItem.Name = "PresetToolStripMenuItem"
-        Me.PresetToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
-        Me.PresetToolStripMenuItem.Text = "프리셋"
+        resources.ApplyResources(Me.PresetToolStripMenuItem, "PresetToolStripMenuItem")
         '
         'AVSPanel
         '
         Me.AVSPanel.Controls.Add(Me.Panel2)
         Me.AVSPanel.Controls.Add(Me.Panel1)
         Me.AVSPanel.Controls.Add(Me.TabControl1)
-        Me.AVSPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AVSPanel.Location = New System.Drawing.Point(0, 24)
+        resources.ApplyResources(Me.AVSPanel, "AVSPanel")
         Me.AVSPanel.Name = "AVSPanel"
-        Me.AVSPanel.Size = New System.Drawing.Size(851, 462)
-        Me.AVSPanel.TabIndex = 30
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 427)
+        resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(851, 35)
-        Me.Panel2.TabIndex = 29
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.CancelBTN)
         Me.Panel3.Controls.Add(Me.OKBTN)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(640, 0)
+        resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(211, 35)
-        Me.Panel3.TabIndex = 0
         '
         'CancelBTN
         '
-        Me.CancelBTN.Location = New System.Drawing.Point(108, 3)
+        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
         Me.CancelBTN.Name = "CancelBTN"
-        Me.CancelBTN.Size = New System.Drawing.Size(90, 25)
-        Me.CancelBTN.TabIndex = 10
-        Me.CancelBTN.Text = "취소"
         Me.CancelBTN.UseVisualStyleBackColor = True
         '
         'OKBTN
         '
-        Me.OKBTN.Location = New System.Drawing.Point(12, 3)
+        resources.ApplyResources(Me.OKBTN, "OKBTN")
         Me.OKBTN.Name = "OKBTN"
-        Me.OKBTN.Size = New System.Drawing.Size(90, 25)
-        Me.OKBTN.TabIndex = 11
-        Me.OKBTN.Text = "확인"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
         'AviSynthEditorFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(851, 508)
         Me.Controls.Add(Me.AVSPanel)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -715,8 +472,6 @@ Partial Class AviSynthEditorFrm
         Me.Name = "AviSynthEditorFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "AviSynth 스크립트"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)

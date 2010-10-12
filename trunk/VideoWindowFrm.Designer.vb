@@ -23,6 +23,7 @@ Partial Class VideoWindowFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VideoWindowFrm))
         Me.VideoTrackBar = New System.Windows.Forms.TrackBar
         Me.VideoWindowPanel = New System.Windows.Forms.Panel
         Me.VideoPictureBox = New System.Windows.Forms.PictureBox
@@ -49,12 +50,8 @@ Partial Class VideoWindowFrm
         '
         'VideoTrackBar
         '
-        Me.VideoTrackBar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.VideoTrackBar.Location = New System.Drawing.Point(251, -3)
+        resources.ApplyResources(Me.VideoTrackBar, "VideoTrackBar")
         Me.VideoTrackBar.Name = "VideoTrackBar"
-        Me.VideoTrackBar.Size = New System.Drawing.Size(226, 45)
-        Me.VideoTrackBar.TabIndex = 15
         Me.VideoTrackBar.TickFrequency = 0
         Me.VideoTrackBar.TickStyle = System.Windows.Forms.TickStyle.Both
         '
@@ -63,32 +60,22 @@ Partial Class VideoWindowFrm
         Me.VideoWindowPanel.Controls.Add(Me.VideoPictureBox)
         Me.VideoWindowPanel.Controls.Add(Me.Panel2)
         Me.VideoWindowPanel.Controls.Add(Me.MenuStrip1)
-        Me.VideoWindowPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.VideoWindowPanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.VideoWindowPanel, "VideoWindowPanel")
         Me.VideoWindowPanel.Name = "VideoWindowPanel"
-        Me.VideoWindowPanel.Size = New System.Drawing.Size(480, 331)
-        Me.VideoWindowPanel.TabIndex = 17
         '
         'VideoPictureBox
         '
         Me.VideoPictureBox.BackColor = System.Drawing.Color.DarkGray
-        Me.VideoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.VideoPictureBox.Location = New System.Drawing.Point(0, 24)
+        resources.ApplyResources(Me.VideoPictureBox, "VideoPictureBox")
         Me.VideoPictureBox.Name = "VideoPictureBox"
-        Me.VideoPictureBox.Size = New System.Drawing.Size(480, 272)
-        Me.VideoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.VideoPictureBox.TabIndex = 18
         Me.VideoPictureBox.TabStop = False
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.VideoTrackBar)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 296)
+        resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(480, 35)
-        Me.Panel2.TabIndex = 17
         '
         'Panel3
         '
@@ -98,86 +85,60 @@ Partial Class VideoWindowFrm
         Me.Panel3.Controls.Add(Me.PlayButton)
         Me.Panel3.Controls.Add(Me.PFButton)
         Me.Panel3.Controls.Add(Me.NFButton)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(252, 35)
-        Me.Panel3.TabIndex = 16
         '
         'NNFButton
         '
-        Me.NNFButton.Location = New System.Drawing.Point(206, 5)
+        resources.ApplyResources(Me.NNFButton, "NNFButton")
         Me.NNFButton.Name = "NNFButton"
-        Me.NNFButton.Size = New System.Drawing.Size(42, 25)
-        Me.NNFButton.TabIndex = 5
-        Me.NNFButton.Text = ">>"
         Me.NNFButton.UseVisualStyleBackColor = True
         '
         'PPFButton
         '
-        Me.PPFButton.Location = New System.Drawing.Point(90, 5)
+        resources.ApplyResources(Me.PPFButton, "PPFButton")
         Me.PPFButton.Name = "PPFButton"
-        Me.PPFButton.Size = New System.Drawing.Size(42, 25)
-        Me.PPFButton.TabIndex = 2
-        Me.PPFButton.Text = "<<"
         Me.PPFButton.UseVisualStyleBackColor = True
         '
         'StopButton
         '
-        Me.StopButton.Location = New System.Drawing.Point(56, 5)
+        resources.ApplyResources(Me.StopButton, "StopButton")
         Me.StopButton.Name = "StopButton"
-        Me.StopButton.Size = New System.Drawing.Size(28, 25)
-        Me.StopButton.TabIndex = 1
-        Me.StopButton.Text = "[]"
         Me.StopButton.UseVisualStyleBackColor = True
         '
         'PlayButton
         '
-        Me.PlayButton.Location = New System.Drawing.Point(8, 5)
+        resources.ApplyResources(Me.PlayButton, "PlayButton")
         Me.PlayButton.Name = "PlayButton"
-        Me.PlayButton.Size = New System.Drawing.Size(42, 25)
-        Me.PlayButton.TabIndex = 0
-        Me.PlayButton.Text = ">||"
         Me.PlayButton.UseVisualStyleBackColor = True
         '
         'PFButton
         '
-        Me.PFButton.Location = New System.Drawing.Point(138, 5)
+        resources.ApplyResources(Me.PFButton, "PFButton")
         Me.PFButton.Name = "PFButton"
-        Me.PFButton.Size = New System.Drawing.Size(28, 25)
-        Me.PFButton.TabIndex = 3
-        Me.PFButton.Text = "<"
         Me.PFButton.UseVisualStyleBackColor = True
         '
         'NFButton
         '
-        Me.NFButton.Location = New System.Drawing.Point(172, 5)
+        resources.ApplyResources(Me.NFButton, "NFButton")
         Me.NFButton.Name = "NFButton"
-        Me.NFButton.Size = New System.Drawing.Size(28, 25)
-        Me.NFButton.TabIndex = 4
-        Me.NFButton.Text = ">"
         Me.NFButton.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MoveToolStripMenuItem, Me.SizeModeToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(480, 24)
-        Me.MenuStrip1.TabIndex = 9
-        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'MoveToolStripMenuItem
         '
         Me.MoveToolStripMenuItem.Name = "MoveToolStripMenuItem"
-        Me.MoveToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
-        Me.MoveToolStripMenuItem.Text = "이동"
+        resources.ApplyResources(Me.MoveToolStripMenuItem, "MoveToolStripMenuItem")
         '
         'SizeModeToolStripMenuItem
         '
         Me.SizeModeToolStripMenuItem.Name = "SizeModeToolStripMenuItem"
-        Me.SizeModeToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
-        Me.SizeModeToolStripMenuItem.Text = "사이즈 모드"
+        resources.ApplyResources(Me.SizeModeToolStripMenuItem, "SizeModeToolStripMenuItem")
         '
         'RealtimeTimer
         '
@@ -188,14 +149,12 @@ Partial Class VideoWindowFrm
         '
         'VideoWindowFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(480, 331)
         Me.Controls.Add(Me.VideoWindowPanel)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "VideoWindowFrm"
         Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.VideoTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.VideoWindowPanel.ResumeLayout(False)
         Me.VideoWindowPanel.PerformLayout()

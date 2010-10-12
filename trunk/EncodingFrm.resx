@@ -117,16 +117,892 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="OutputBox_EI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 255</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="OutputBox_EI.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="OutputBox_EI.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="OutputBox_EI.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="OutputBox_EI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 28</value>
+  </data>
+  <data name="OutputBox_EI.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="OutputBox_EI.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;OutputBox_EI.Name" xml:space="preserve">
+    <value>OutputBox_EI</value>
+  </data>
+  <data name="&gt;&gt;OutputBox_EI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OutputBox_EI.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;OutputBox_EI.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="StopButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 307</value>
+  </data>
+  <data name="StopButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="StopButton.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="StopButton.Text" xml:space="preserve">
+    <value>중지</value>
+  </data>
+  <data name="&gt;&gt;StopButton.Name" xml:space="preserve">
+    <value>StopButton</value>
+  </data>
+  <data name="&gt;&gt;StopButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StopButton.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;StopButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <metadata name="IndexTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="InfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 255</value>
+  </data>
+  <data name="InfoTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="InfoTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="InfoTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="InfoTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 28</value>
+  </data>
+  <data name="InfoTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="InfoTextBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;InfoTextBox.Name" xml:space="preserve">
+    <value>InfoTextBox</value>
+  </data>
+  <data name="&gt;&gt;InfoTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InfoTextBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;InfoTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="TimeRemainingTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 180</value>
+  </data>
+  <data name="TimeRemainingTXTLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="TimeRemainingTXTLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="TimeRemainingTXTLabel.Text" xml:space="preserve">
+    <value>남은시간</value>
+  </data>
+  <data name="TimeRemainingTXTLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;TimeRemainingTXTLabel.Name" xml:space="preserve">
+    <value>TimeRemainingTXTLabel</value>
+  </data>
+  <data name="&gt;&gt;TimeRemainingTXTLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimeRemainingTXTLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;TimeRemainingTXTLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TimeRemainingLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="TimeRemainingLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 180</value>
+  </data>
+  <data name="TimeRemainingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="TimeRemainingLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="TimeRemainingLabel.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="TimeRemainingLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;TimeRemainingLabel.Name" xml:space="preserve">
+    <value>TimeRemainingLabel</value>
+  </data>
+  <data name="&gt;&gt;TimeRemainingLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimeRemainingLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;TimeRemainingLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TimeElapsedTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 157</value>
+  </data>
+  <data name="TimeElapsedTXTLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="TimeElapsedTXTLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="TimeElapsedTXTLabel.Text" xml:space="preserve">
+    <value>경과시간</value>
+  </data>
+  <data name="TimeElapsedTXTLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedTXTLabel.Name" xml:space="preserve">
+    <value>TimeElapsedTXTLabel</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedTXTLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedTXTLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedTXTLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TimeElapsedLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="TimeElapsedLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 157</value>
+  </data>
+  <data name="TimeElapsedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="TimeElapsedLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="TimeElapsedLabel.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="TimeElapsedLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedLabel.Name" xml:space="preserve">
+    <value>TimeElapsedLabel</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ProcessingRateTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 134</value>
+  </data>
+  <data name="ProcessingRateTXTLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="ProcessingRateTXTLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="ProcessingRateTXTLabel.Text" xml:space="preserve">
+    <value>속도</value>
+  </data>
+  <data name="ProcessingRateTXTLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ProcessingRateTXTLabel.Name" xml:space="preserve">
+    <value>ProcessingRateTXTLabel</value>
+  </data>
+  <data name="&gt;&gt;ProcessingRateTXTLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProcessingRateTXTLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;ProcessingRateTXTLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ProcessingRateLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ProcessingRateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 134</value>
+  </data>
+  <data name="ProcessingRateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="ProcessingRateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="ProcessingRateLabel.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="ProcessingRateLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;ProcessingRateLabel.Name" xml:space="preserve">
+    <value>ProcessingRateLabel</value>
+  </data>
+  <data name="&gt;&gt;ProcessingRateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProcessingRateLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;ProcessingRateLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="BitrateTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 111</value>
+  </data>
+  <data name="BitrateTXTLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="BitrateTXTLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="BitrateTXTLabel.Text" xml:space="preserve">
+    <value>비트레이트</value>
+  </data>
+  <data name="BitrateTXTLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;BitrateTXTLabel.Name" xml:space="preserve">
+    <value>BitrateTXTLabel</value>
+  </data>
+  <data name="&gt;&gt;BitrateTXTLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BitrateTXTLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;BitrateTXTLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="BitrateLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="BitrateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 111</value>
+  </data>
+  <data name="BitrateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="BitrateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="BitrateLabel.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="BitrateLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;BitrateLabel.Name" xml:space="preserve">
+    <value>BitrateLabel</value>
+  </data>
+  <data name="&gt;&gt;BitrateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BitrateLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;BitrateLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="QTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 88</value>
+  </data>
+  <data name="QTXTLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="QTXTLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="QTXTLabel.Text" xml:space="preserve">
+    <value>큐</value>
+  </data>
+  <data name="QTXTLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;QTXTLabel.Name" xml:space="preserve">
+    <value>QTXTLabel</value>
+  </data>
+  <data name="&gt;&gt;QTXTLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;QTXTLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;QTXTLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="QLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="QLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 88</value>
+  </data>
+  <data name="QLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="QLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="QLabel.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="QLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;QLabel.Name" xml:space="preserve">
+    <value>QLabel</value>
+  </data>
+  <data name="&gt;&gt;QLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;QLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;QLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="FilesizeTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 65</value>
+  </data>
+  <data name="FilesizeTXTLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="FilesizeTXTLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="FilesizeTXTLabel.Text" xml:space="preserve">
+    <value>파일크기</value>
+  </data>
+  <data name="FilesizeTXTLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;FilesizeTXTLabel.Name" xml:space="preserve">
+    <value>FilesizeTXTLabel</value>
+  </data>
+  <data name="&gt;&gt;FilesizeTXTLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FilesizeTXTLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;FilesizeTXTLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="FilesizeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="FilesizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 65</value>
+  </data>
+  <data name="FilesizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="FilesizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="FilesizeLabel.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="FilesizeLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;FilesizeLabel.Name" xml:space="preserve">
+    <value>FilesizeLabel</value>
+  </data>
+  <data name="&gt;&gt;FilesizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FilesizeLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;FilesizeLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="FrameTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 42</value>
+  </data>
+  <data name="FrameTXTLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="FrameTXTLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="FrameTXTLabel.Text" xml:space="preserve">
+    <value>프레임</value>
+  </data>
+  <data name="FrameTXTLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;FrameTXTLabel.Name" xml:space="preserve">
+    <value>FrameTXTLabel</value>
+  </data>
+  <data name="&gt;&gt;FrameTXTLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FrameTXTLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;FrameTXTLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="FrameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="FrameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 42</value>
+  </data>
+  <data name="FrameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="FrameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="FrameLabel.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="FrameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;FrameLabel.Name" xml:space="preserve">
+    <value>FrameLabel</value>
+  </data>
+  <data name="&gt;&gt;FrameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FrameLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;FrameLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="PositionDurationTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 19</value>
+  </data>
+  <data name="PositionDurationTXTLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="PositionDurationTXTLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="PositionDurationTXTLabel.Text" xml:space="preserve">
+    <value>진행위치</value>
+  </data>
+  <data name="PositionDurationTXTLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;PositionDurationTXTLabel.Name" xml:space="preserve">
+    <value>PositionDurationTXTLabel</value>
+  </data>
+  <data name="&gt;&gt;PositionDurationTXTLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PositionDurationTXTLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;PositionDurationTXTLabel.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="PositionDurationLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="PositionDurationLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 19</value>
+  </data>
+  <data name="PositionDurationLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="PositionDurationLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="PositionDurationLabel.Text" xml:space="preserve">
+    <value>--- / ---</value>
+  </data>
+  <data name="PositionDurationLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;PositionDurationLabel.Name" xml:space="preserve">
+    <value>PositionDurationLabel</value>
+  </data>
+  <data name="&gt;&gt;PositionDurationLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PositionDurationLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;PositionDurationLabel.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 5</value>
+  </data>
+  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 210</value>
+  </data>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ProgressBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ProgressBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 220</value>
+  </data>
+  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 23</value>
+  </data>
+  <data name="ProgressBar.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Name" xml:space="preserve">
+    <value>ProgressBar</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LogStr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 244</value>
+  </data>
+  <data name="LogStr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>494, 23</value>
+  </data>
+  <data name="LogStr.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LogStr.Name" xml:space="preserve">
+    <value>LogStr</value>
+  </data>
+  <data name="&gt;&gt;LogStr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogStr.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LogStr.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ShutdownCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ShutdownCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 280</value>
+  </data>
+  <data name="ShutdownCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 18</value>
+  </data>
+  <data name="ShutdownCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="ShutdownCheckBox.Text" xml:space="preserve">
+    <value>인코딩 완료 후 시스템 종료</value>
+  </data>
+  <data name="&gt;&gt;ShutdownCheckBox.Name" xml:space="preserve">
+    <value>ShutdownCheckBox</value>
+  </data>
+  <data name="&gt;&gt;ShutdownCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ShutdownCheckBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;ShutdownCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>283, 17</value>
+    <value>0, 339</value>
   </metadata>
+  <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 344</value>
+  </data>
+  <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 22</value>
+  </data>
+  <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="StatusStrip1.Text" xml:space="preserve">
+    <value>StatusStrip1</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Name" xml:space="preserve">
+    <value>StatusStrip1</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PriorityComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="PriorityComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 249</value>
+  </data>
+  <data name="PriorityComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="PriorityComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;PriorityComboBox.Name" xml:space="preserve">
+    <value>PriorityComboBox</value>
+  </data>
+  <data name="&gt;&gt;PriorityComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PriorityComboBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;PriorityComboBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SuspendResumeButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SuspendResumeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 307</value>
+  </data>
+  <data name="SuspendResumeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="SuspendResumeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="SuspendResumeButton.Text" xml:space="preserve">
+    <value>일시 정지</value>
+  </data>
+  <data name="&gt;&gt;SuspendResumeButton.Name" xml:space="preserve">
+    <value>SuspendResumeButton</value>
+  </data>
+  <data name="&gt;&gt;SuspendResumeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SuspendResumeButton.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;SuspendResumeButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ForceStopButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 307</value>
+  </data>
+  <data name="ForceStopButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="ForceStopButton.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="ForceStopButton.Text" xml:space="preserve">
+    <value>강제중지</value>
+  </data>
+  <data name="&gt;&gt;ForceStopButton.Name" xml:space="preserve">
+    <value>ForceStopButton</value>
+  </data>
+  <data name="&gt;&gt;ForceStopButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ForceStopButton.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;ForceStopButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ProgressLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 221</value>
+  </data>
+  <data name="ProgressLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 23</value>
+  </data>
+  <data name="ProgressLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="ProgressLabel.Text" xml:space="preserve">
+    <value>진행률</value>
+  </data>
+  <data name="ProgressLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ProgressLabel.Name" xml:space="preserve">
+    <value>ProgressLabel</value>
+  </data>
+  <data name="&gt;&gt;ProgressLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProgressLabel.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;ProgressLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="PriorityLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 249</value>
+  </data>
+  <data name="PriorityLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="PriorityLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="PriorityLabel.Text" xml:space="preserve">
+    <value>우선순위</value>
+  </data>
+  <data name="PriorityLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;PriorityLabel.Name" xml:space="preserve">
+    <value>PriorityLabel</value>
+  </data>
+  <data name="&gt;&gt;PriorityLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PriorityLabel.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;PriorityLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EncPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EncPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EncPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 366</value>
+  </data>
+  <data name="EncPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;EncPanel.Name" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;EncPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EncPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EncPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EncToolStripStatusLabel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="EncToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 17</value>
+  </data>
+  <data name="EncToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
   <metadata name="TimeElapsedTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>130, 17</value>
   </metadata>
   <metadata name="CapTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>401, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 14</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>358, 366</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;IndexTimer.Name" xml:space="preserve">
+    <value>IndexTimer</value>
+  </data>
+  <data name="&gt;&gt;IndexTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EncToolStripStatusLabel.Name" xml:space="preserve">
+    <value>EncToolStripStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;EncToolStripStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedTimer.Name" xml:space="preserve">
+    <value>TimeElapsedTimer</value>
+  </data>
+  <data name="&gt;&gt;TimeElapsedTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CapTimer.Name" xml:space="preserve">
+    <value>CapTimer</value>
+  </data>
+  <data name="&gt;&gt;CapTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>EncodingFrm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

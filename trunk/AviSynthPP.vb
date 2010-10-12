@@ -508,7 +508,7 @@ ERRSKIP:
                 '---------------
                 ' 스크립트 작성
                 '---------------
-                If SubFileExistsV = True Then
+                If SubFileExistsV = True AndAlso .SubtitleCheckBox.Checked = True Then
                     If MainFrm.EncListListView.Items(index).SubItems(2).Text = "ASS" Then
                         If My.Computer.FileSystem.FileExists(SubPathV & "ass") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "ass" & Chr(34) & ")"
 
@@ -888,7 +888,7 @@ skip:
                 '비디오 부분
                 AVTextBoxV = Replace(AVTextBoxV, "V=FFVideoSource(source=", "FFVideoSource(source=")
                 '오디오 덥 부분 주석 처리
-                AVTextBoxV = Replace(AVTextBoxV, "AudioDub(A,V)", "#AudioDub(A,V)")
+                AVTextBoxV = Replace(AVTextBoxV, "AudioDub(V,A)", "#AudioDub(V,A)")
                 '증폭
                 AVTextBoxV = Replace(AVTextBoxV, "#<amplifydb>", "##<amplifydb>")
                 '이퀄라이저
@@ -920,14 +920,17 @@ skip:
             '#<delayaudio>
             Dim delayaudioV As String = "0"
             '미디어 인포 비디오딜레이값 검사
-            Dim MI As MediaInfo
-            Dim SN As Integer = 0
-            'SN구하기 (스트림 ID비교)//
             Dim AudioStramCntStr As String = "0"
             Dim MI2 As MediaInfo
             MI2 = New MediaInfo
             MI2.Open(MainFrm.EncListListView.Items(index).SubItems(10).Text)
             AudioStramCntStr = MI2.Get_(StreamKind.Audio, 0, "StreamCount")
+            If AudioStramCntStr = "" OrElse AudioStramCntStr = "0" Then
+                MI2.Close()
+                GoTo DelayAudioSkip
+            End If
+            'SN구하기 (스트림 ID비교)//
+            Dim SN As Integer = 0
             Dim i2 As Integer
             For i2 = 0 To AudioStramCntStr - 1
                 Dim _ta2v As String = MI2.Get_(StreamKind.Audio, i2, "ID")
@@ -946,6 +949,7 @@ skip:
                 End If
             Next
             MI2.Close()
+            Dim MI As MediaInfo
             MI = New MediaInfo
             MI.Open(MainFrm.EncListListView.Items(index).SubItems(10).Text)
             Dim ta2v As String = MI.Get_(StreamKind.Audio, SN, "Video_Delay")
@@ -955,6 +959,7 @@ skip:
                 delayaudioV = Val(ta2v) * -1
             End If
             MI.Close()
+DelayAudioSkip:
             AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio>", "DelayAudio(" & delayaudioV & "/1000.0)")
 
             '#<ffpp>

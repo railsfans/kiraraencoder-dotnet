@@ -22,6 +22,7 @@ Partial Class FrameMoveFrm
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrameMoveFrm))
         Me.FrameNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.MoveButton = New System.Windows.Forms.Button
         Me.FrameMovePanel = New System.Windows.Forms.Panel
@@ -31,35 +32,26 @@ Partial Class FrameMoveFrm
         '
         'FrameNumericUpDown
         '
-        Me.FrameNumericUpDown.Location = New System.Drawing.Point(12, 12)
+        resources.ApplyResources(Me.FrameNumericUpDown, "FrameNumericUpDown")
         Me.FrameNumericUpDown.Name = "FrameNumericUpDown"
-        Me.FrameNumericUpDown.Size = New System.Drawing.Size(181, 21)
-        Me.FrameNumericUpDown.TabIndex = 0
         '
         'MoveButton
         '
-        Me.MoveButton.Location = New System.Drawing.Point(199, 11)
+        resources.ApplyResources(Me.MoveButton, "MoveButton")
         Me.MoveButton.Name = "MoveButton"
-        Me.MoveButton.Size = New System.Drawing.Size(89, 23)
-        Me.MoveButton.TabIndex = 1
-        Me.MoveButton.Text = "이동"
         Me.MoveButton.UseVisualStyleBackColor = True
         '
         'FrameMovePanel
         '
         Me.FrameMovePanel.Controls.Add(Me.FrameNumericUpDown)
         Me.FrameMovePanel.Controls.Add(Me.MoveButton)
-        Me.FrameMovePanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FrameMovePanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.FrameMovePanel, "FrameMovePanel")
         Me.FrameMovePanel.Name = "FrameMovePanel"
-        Me.FrameMovePanel.Size = New System.Drawing.Size(300, 45)
-        Me.FrameMovePanel.TabIndex = 2
         '
         'FrameMoveFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(300, 45)
         Me.Controls.Add(Me.FrameMovePanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -67,8 +59,6 @@ Partial Class FrameMoveFrm
         Me.Name = "FrameMoveFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "프레임 단위로 이동"
         CType(Me.FrameNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FrameMovePanel.ResumeLayout(False)
         Me.ResumeLayout(False)

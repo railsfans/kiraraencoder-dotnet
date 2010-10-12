@@ -617,13 +617,13 @@ LANG_SKIP:
             FramerateCheckBox.Visible = False
             FramerateLabel2.Visible = False
             VideoGroupBox.Height = 245
-            KeyFrameGroupBox.Top = 263
-            MP4OptsGroupBox.Top = 377
+            KeyFrameGroupBox.Top = 260
+            MP4OptsGroupBox.Top = 370
 
             FFmpegChComboBox.Visible = False
             FFmpegChLabel.Visible = False
-            AudioGroupBox.Height = 120
-            NeroAACGroupBox.Top = 135
+            AudioGroupBox.Height = 115
+            NeroAACGroupBox.Top = 132
 
             If ImageTabControl.TabCount = 2 Then
                 ImageTabControl.TabPages.Remove(ImgTabPage)
@@ -636,14 +636,14 @@ LANG_SKIP:
             FramerateComboBox.Visible = True
             FramerateCheckBox.Visible = True
             FramerateLabel2.Visible = True
-            VideoGroupBox.Height = 282
-            KeyFrameGroupBox.Top = 297
-            MP4OptsGroupBox.Top = 408
+            VideoGroupBox.Height = 280
+            KeyFrameGroupBox.Top = 295
+            MP4OptsGroupBox.Top = 405
 
             FFmpegChComboBox.Visible = True
             FFmpegChLabel.Visible = True
-            AudioGroupBox.Height = 206
-            NeroAACGroupBox.Top = 224
+            AudioGroupBox.Height = 212
+            NeroAACGroupBox.Top = 228
 
             If ImageTabControl.TabCount = 1 Then
                 ImageTabControl.TabPages.Remove(ImgTabPage)
@@ -950,7 +950,7 @@ LANG_SKIP:
             AAMRBitratePanel.Visible = True
             BitrateNPanel.Visible = False
             AAMRBitratePanel.Left = 15
-            AAMRBitratePanel.Top = 46
+            AAMRBitratePanel.Top = 48
             NeroAACGroupBox.Visible = False
             SampleratePanel.Enabled = False
             '채널
@@ -965,7 +965,7 @@ LANG_SKIP:
             AAMRBitratePanel.Visible = False
             BitrateNPanel.Visible = False
             AVorbisQPanel.Left = 15
-            AVorbisQPanel.Top = 46
+            AVorbisQPanel.Top = 48
             NeroAACGroupBox.Visible = False
             SampleratePanel.Enabled = True
             '채널
@@ -980,7 +980,7 @@ LANG_SKIP:
             AAMRBitratePanel.Visible = False
             BitrateNPanel.Visible = True
             BitrateNPanel.Left = 15
-            BitrateNPanel.Top = 46
+            BitrateNPanel.Top = 48
             NeroAACGroupBox.Visible = True
             AudioBitrateNLabel.Text = LangCls.EncSetNeroAACBP
             SampleratePanel.Enabled = True
@@ -996,7 +996,7 @@ LANG_SKIP:
             AAMRBitratePanel.Visible = False
             BitrateNPanel.Visible = True
             BitrateNPanel.Left = 15
-            BitrateNPanel.Top = 46
+            BitrateNPanel.Top = 48
             NeroAACGroupBox.Visible = False
             AudioBitrateNLabel.Text = LangCls.EncSetFLACBP
             SampleratePanel.Enabled = True
@@ -1012,7 +1012,7 @@ LANG_SKIP:
             AAMRBitratePanel.Visible = False
             BitrateNPanel.Visible = True
             BitrateNPanel.Left = 15
-            BitrateNPanel.Top = 46
+            BitrateNPanel.Top = 48
             NeroAACGroupBox.Visible = False
             AudioBitrateNLabel.Text = LangCls.EncSetPCMBP
             SampleratePanel.Enabled = True
@@ -1028,7 +1028,7 @@ LANG_SKIP:
             AAMRBitratePanel.Visible = False
             BitrateNPanel.Visible = False
             AbitratePanel.Left = 15
-            AbitratePanel.Top = 46
+            AbitratePanel.Top = 48
             NeroAACGroupBox.Visible = False
             SampleratePanel.Enabled = True
             '채널
@@ -2976,4 +2976,7 @@ LANG_SKIP:
         MainFrm.PresetContextMenuStrip.Show(Control.MousePosition)
     End Sub
 
+    Private Sub AudioBitrateNLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AudioBitrateNLabel.Click
+
+    End Sub
 End Class

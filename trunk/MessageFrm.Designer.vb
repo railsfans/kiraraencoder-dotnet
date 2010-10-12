@@ -22,6 +22,7 @@ Partial Class MessageFrm
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MessageFrm))
         Me.YesToAllBTN = New System.Windows.Forms.Button
         Me.YesBTN = New System.Windows.Forms.Button
         Me.NoBTN = New System.Windows.Forms.Button
@@ -34,57 +35,37 @@ Partial Class MessageFrm
         '
         'YesToAllBTN
         '
-        Me.YesToAllBTN.Location = New System.Drawing.Point(135, 96)
+        resources.ApplyResources(Me.YesToAllBTN, "YesToAllBTN")
         Me.YesToAllBTN.Name = "YesToAllBTN"
-        Me.YesToAllBTN.Size = New System.Drawing.Size(115, 25)
-        Me.YesToAllBTN.TabIndex = 1
-        Me.YesToAllBTN.Text = "모두 예"
         Me.YesToAllBTN.UseVisualStyleBackColor = True
         '
         'YesBTN
         '
-        Me.YesBTN.Location = New System.Drawing.Point(14, 96)
+        resources.ApplyResources(Me.YesBTN, "YesBTN")
         Me.YesBTN.Name = "YesBTN"
-        Me.YesBTN.Size = New System.Drawing.Size(115, 25)
-        Me.YesBTN.TabIndex = 0
-        Me.YesBTN.Text = "예"
         Me.YesBTN.UseVisualStyleBackColor = True
         '
         'NoBTN
         '
-        Me.NoBTN.Location = New System.Drawing.Point(269, 96)
+        resources.ApplyResources(Me.NoBTN, "NoBTN")
         Me.NoBTN.Name = "NoBTN"
-        Me.NoBTN.Size = New System.Drawing.Size(115, 25)
-        Me.NoBTN.TabIndex = 3
-        Me.NoBTN.Text = "아니요"
         Me.NoBTN.UseVisualStyleBackColor = True
         '
         'NoToAllBTN
         '
-        Me.NoToAllBTN.Location = New System.Drawing.Point(390, 96)
+        resources.ApplyResources(Me.NoToAllBTN, "NoToAllBTN")
         Me.NoToAllBTN.Name = "NoToAllBTN"
-        Me.NoToAllBTN.Size = New System.Drawing.Size(115, 25)
-        Me.NoToAllBTN.TabIndex = 2
-        Me.NoToAllBTN.Text = "모두 아니요"
         Me.NoToAllBTN.UseVisualStyleBackColor = True
         '
         'FileLabel
         '
-        Me.FileLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FileLabel.Location = New System.Drawing.Point(14, 64)
+        resources.ApplyResources(Me.FileLabel, "FileLabel")
         Me.FileLabel.Name = "FileLabel"
-        Me.FileLabel.Size = New System.Drawing.Size(491, 20)
-        Me.FileLabel.TabIndex = 6
         '
         'FilePathLabel
         '
-        Me.FilePathLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FilePathLabel.Location = New System.Drawing.Point(14, 14)
+        resources.ApplyResources(Me.FilePathLabel, "FilePathLabel")
         Me.FilePathLabel.Name = "FilePathLabel"
-        Me.FilePathLabel.Size = New System.Drawing.Size(491, 40)
-        Me.FilePathLabel.TabIndex = 5
         '
         'MessagePanel
         '
@@ -94,17 +75,13 @@ Partial Class MessageFrm
         Me.MessagePanel.Controls.Add(Me.YesBTN)
         Me.MessagePanel.Controls.Add(Me.NoBTN)
         Me.MessagePanel.Controls.Add(Me.NoToAllBTN)
-        Me.MessagePanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MessagePanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.MessagePanel, "MessagePanel")
         Me.MessagePanel.Name = "MessagePanel"
-        Me.MessagePanel.Size = New System.Drawing.Size(521, 134)
-        Me.MessagePanel.TabIndex = 7
         '
         'MessageFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(521, 134)
         Me.ControlBox = False
         Me.Controls.Add(Me.MessagePanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -113,8 +90,6 @@ Partial Class MessageFrm
         Me.Name = "MessageFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "MessageFrm"
         Me.MessagePanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 

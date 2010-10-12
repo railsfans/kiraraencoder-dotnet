@@ -23,6 +23,7 @@ Partial Class StreamFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StreamFrm))
         Me.TPrePanel = New System.Windows.Forms.Panel
         Me.InTPrePanel = New System.Windows.Forms.Panel
         Me.LoadingLabel = New System.Windows.Forms.Label
@@ -144,120 +145,75 @@ Partial Class StreamFrm
         '
         'TPrePanel
         '
-        Me.TPrePanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.TPrePanel, "TPrePanel")
         Me.TPrePanel.BackColor = System.Drawing.Color.Gray
         Me.TPrePanel.Controls.Add(Me.InTPrePanel)
         Me.TPrePanel.Controls.Add(Me.CropGroupBox)
         Me.TPrePanel.Controls.Add(Me.TimeSpGroupBox)
-        Me.TPrePanel.Location = New System.Drawing.Point(12, 19)
         Me.TPrePanel.Name = "TPrePanel"
-        Me.TPrePanel.Size = New System.Drawing.Size(384, 216)
-        Me.TPrePanel.TabIndex = 0
         '
         'InTPrePanel
         '
         Me.InTPrePanel.Controls.Add(Me.LoadingLabel)
         Me.InTPrePanel.Controls.Add(Me.PrePanel)
         Me.InTPrePanel.Controls.Add(Me.OutputBox_Stream)
-        Me.InTPrePanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.InTPrePanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.InTPrePanel, "InTPrePanel")
         Me.InTPrePanel.Name = "InTPrePanel"
-        Me.InTPrePanel.Size = New System.Drawing.Size(384, 56)
-        Me.InTPrePanel.TabIndex = 34
         '
         'LoadingLabel
         '
-        Me.LoadingLabel.AutoSize = True
-        Me.LoadingLabel.Font = New System.Drawing.Font("굴림", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        resources.ApplyResources(Me.LoadingLabel, "LoadingLabel")
         Me.LoadingLabel.ForeColor = System.Drawing.Color.White
-        Me.LoadingLabel.Location = New System.Drawing.Point(10, 10)
         Me.LoadingLabel.Name = "LoadingLabel"
-        Me.LoadingLabel.Size = New System.Drawing.Size(150, 27)
-        Me.LoadingLabel.TabIndex = 23
-        Me.LoadingLabel.Text = "Loading..."
-        Me.LoadingLabel.Visible = False
         '
         'PrePanel
         '
-        Me.PrePanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.PrePanel, "PrePanel")
         Me.PrePanel.Controls.Add(Me.RightPanel)
         Me.PrePanel.Controls.Add(Me.LeftPanel)
         Me.PrePanel.Controls.Add(Me.BottomPanel)
         Me.PrePanel.Controls.Add(Me.TopPanel)
         Me.PrePanel.Controls.Add(Me.PrePanel1)
-        Me.PrePanel.Location = New System.Drawing.Point(0, 0)
         Me.PrePanel.Name = "PrePanel"
-        Me.PrePanel.Size = New System.Drawing.Size(292, 28)
-        Me.PrePanel.TabIndex = 0
-        Me.PrePanel.Visible = False
         '
         'RightPanel
         '
         Me.RightPanel.BackColor = System.Drawing.Color.White
-        Me.RightPanel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.RightPanel.Location = New System.Drawing.Point(282, 10)
+        resources.ApplyResources(Me.RightPanel, "RightPanel")
         Me.RightPanel.Name = "RightPanel"
-        Me.RightPanel.Size = New System.Drawing.Size(10, 7)
-        Me.RightPanel.TabIndex = 39
         '
         'LeftPanel
         '
         Me.LeftPanel.BackColor = System.Drawing.Color.White
-        Me.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LeftPanel.Location = New System.Drawing.Point(0, 10)
+        resources.ApplyResources(Me.LeftPanel, "LeftPanel")
         Me.LeftPanel.Name = "LeftPanel"
-        Me.LeftPanel.Size = New System.Drawing.Size(10, 7)
-        Me.LeftPanel.TabIndex = 38
         '
         'BottomPanel
         '
         Me.BottomPanel.BackColor = System.Drawing.Color.White
-        Me.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BottomPanel.Location = New System.Drawing.Point(0, 17)
+        resources.ApplyResources(Me.BottomPanel, "BottomPanel")
         Me.BottomPanel.Name = "BottomPanel"
-        Me.BottomPanel.Size = New System.Drawing.Size(292, 11)
-        Me.BottomPanel.TabIndex = 37
         '
         'TopPanel
         '
         Me.TopPanel.BackColor = System.Drawing.Color.White
-        Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TopPanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.TopPanel, "TopPanel")
         Me.TopPanel.Name = "TopPanel"
-        Me.TopPanel.Size = New System.Drawing.Size(292, 10)
-        Me.TopPanel.TabIndex = 36
         '
         'PrePanel1
         '
-        Me.PrePanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PrePanel1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.PrePanel1, "PrePanel1")
         Me.PrePanel1.Name = "PrePanel1"
-        Me.PrePanel1.Size = New System.Drawing.Size(207, 25)
-        Me.PrePanel1.TabIndex = 34
         '
         'OutputBox_Stream
         '
-        Me.OutputBox_Stream.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.OutputBox_Stream, "OutputBox_Stream")
         Me.OutputBox_Stream.BackColor = System.Drawing.Color.Gray
         Me.OutputBox_Stream.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.OutputBox_Stream.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.OutputBox_Stream.ForeColor = System.Drawing.Color.White
-        Me.OutputBox_Stream.Location = New System.Drawing.Point(16, 50)
-        Me.OutputBox_Stream.MaxLength = 2147483647
-        Me.OutputBox_Stream.Multiline = True
         Me.OutputBox_Stream.Name = "OutputBox_Stream"
         Me.OutputBox_Stream.ReadOnly = True
-        Me.OutputBox_Stream.Size = New System.Drawing.Size(351, 10)
-        Me.OutputBox_Stream.TabIndex = 22
-        Me.OutputBox_Stream.Visible = False
         '
         'CropGroupBox
         '
@@ -272,101 +228,60 @@ Partial Class StreamFrm
         Me.CropGroupBox.Controls.Add(Me.TopNumericUpDown)
         Me.CropGroupBox.Controls.Add(Me.BottomNumericUpDown)
         Me.CropGroupBox.Controls.Add(Me.LeftNumericUpDown)
-        Me.CropGroupBox.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.CropGroupBox.Location = New System.Drawing.Point(0, 56)
+        resources.ApplyResources(Me.CropGroupBox, "CropGroupBox")
         Me.CropGroupBox.Name = "CropGroupBox"
-        Me.CropGroupBox.Size = New System.Drawing.Size(384, 80)
-        Me.CropGroupBox.TabIndex = 33
         Me.CropGroupBox.TabStop = False
-        Me.CropGroupBox.Text = "잘라내기"
-        Me.CropGroupBox.Visible = False
         '
         'SizeTextBox
         '
-        Me.SizeTextBox.Location = New System.Drawing.Point(282, 41)
+        resources.ApplyResources(Me.SizeTextBox, "SizeTextBox")
         Me.SizeTextBox.Name = "SizeTextBox"
         Me.SizeTextBox.ReadOnly = True
-        Me.SizeTextBox.Size = New System.Drawing.Size(85, 21)
-        Me.SizeTextBox.TabIndex = 12
-        Me.SizeTextBox.Text = "0x0"
-        Me.SizeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SizeLabel
         '
-        Me.SizeLabel.AutoSize = True
-        Me.SizeLabel.Location = New System.Drawing.Point(280, 23)
+        resources.ApplyResources(Me.SizeLabel, "SizeLabel")
         Me.SizeLabel.Name = "SizeLabel"
-        Me.SizeLabel.Size = New System.Drawing.Size(45, 12)
-        Me.SizeLabel.TabIndex = 11
-        Me.SizeLabel.Text = "사이즈:"
         '
         'RightLabel
         '
-        Me.RightLabel.AutoSize = True
-        Me.RightLabel.Location = New System.Drawing.Point(209, 23)
+        resources.ApplyResources(Me.RightLabel, "RightLabel")
         Me.RightLabel.Name = "RightLabel"
-        Me.RightLabel.Size = New System.Drawing.Size(21, 12)
-        Me.RightLabel.TabIndex = 10
-        Me.RightLabel.Text = "우:"
         '
         'BottomLabel
         '
-        Me.BottomLabel.AutoSize = True
-        Me.BottomLabel.Location = New System.Drawing.Point(149, 23)
+        resources.ApplyResources(Me.BottomLabel, "BottomLabel")
         Me.BottomLabel.Name = "BottomLabel"
-        Me.BottomLabel.Size = New System.Drawing.Size(21, 12)
-        Me.BottomLabel.TabIndex = 9
-        Me.BottomLabel.Text = "하:"
         '
         'TopLabel
         '
-        Me.TopLabel.AutoSize = True
-        Me.TopLabel.Location = New System.Drawing.Point(82, 23)
+        resources.ApplyResources(Me.TopLabel, "TopLabel")
         Me.TopLabel.Name = "TopLabel"
-        Me.TopLabel.Size = New System.Drawing.Size(21, 12)
-        Me.TopLabel.TabIndex = 8
-        Me.TopLabel.Text = "상:"
         '
         'LeftLabel
         '
-        Me.LeftLabel.AutoSize = True
-        Me.LeftLabel.Location = New System.Drawing.Point(19, 23)
+        resources.ApplyResources(Me.LeftLabel, "LeftLabel")
         Me.LeftLabel.Name = "LeftLabel"
-        Me.LeftLabel.Size = New System.Drawing.Size(21, 12)
-        Me.LeftLabel.TabIndex = 7
-        Me.LeftLabel.Text = "좌:"
         '
         'RightNumericUpDown
         '
-        Me.RightNumericUpDown.Location = New System.Drawing.Point(212, 41)
+        resources.ApplyResources(Me.RightNumericUpDown, "RightNumericUpDown")
         Me.RightNumericUpDown.Name = "RightNumericUpDown"
-        Me.RightNumericUpDown.Size = New System.Drawing.Size(58, 21)
-        Me.RightNumericUpDown.TabIndex = 6
-        Me.RightNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TopNumericUpDown
         '
-        Me.TopNumericUpDown.Location = New System.Drawing.Point(84, 41)
+        resources.ApplyResources(Me.TopNumericUpDown, "TopNumericUpDown")
         Me.TopNumericUpDown.Name = "TopNumericUpDown"
-        Me.TopNumericUpDown.Size = New System.Drawing.Size(58, 21)
-        Me.TopNumericUpDown.TabIndex = 4
-        Me.TopNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'BottomNumericUpDown
         '
-        Me.BottomNumericUpDown.Location = New System.Drawing.Point(148, 41)
+        resources.ApplyResources(Me.BottomNumericUpDown, "BottomNumericUpDown")
         Me.BottomNumericUpDown.Name = "BottomNumericUpDown"
-        Me.BottomNumericUpDown.Size = New System.Drawing.Size(58, 21)
-        Me.BottomNumericUpDown.TabIndex = 2
-        Me.BottomNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LeftNumericUpDown
         '
-        Me.LeftNumericUpDown.Location = New System.Drawing.Point(20, 41)
+        resources.ApplyResources(Me.LeftNumericUpDown, "LeftNumericUpDown")
         Me.LeftNumericUpDown.Name = "LeftNumericUpDown"
-        Me.LeftNumericUpDown.Size = New System.Drawing.Size(58, 21)
-        Me.LeftNumericUpDown.TabIndex = 0
-        Me.LeftNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TimeSpGroupBox
         '
@@ -389,253 +304,141 @@ Partial Class StreamFrm
         Me.TimeSpGroupBox.Controls.Add(Me.SP1Label)
         Me.TimeSpGroupBox.Controls.Add(Me.SHTextBox)
         Me.TimeSpGroupBox.Controls.Add(Me.SCheckBox)
-        Me.TimeSpGroupBox.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TimeSpGroupBox.Location = New System.Drawing.Point(0, 136)
+        resources.ApplyResources(Me.TimeSpGroupBox, "TimeSpGroupBox")
         Me.TimeSpGroupBox.Name = "TimeSpGroupBox"
-        Me.TimeSpGroupBox.Size = New System.Drawing.Size(384, 80)
-        Me.TimeSpGroupBox.TabIndex = 27
         Me.TimeSpGroupBox.TabStop = False
-        Me.TimeSpGroupBox.Text = "구간 설정"
-        Me.TimeSpGroupBox.Visible = False
         '
         'EMSTextBox
         '
-        Me.EMSTextBox.Enabled = False
-        Me.EMSTextBox.Location = New System.Drawing.Point(247, 47)
-        Me.EMSTextBox.MaxLength = 2
+        resources.ApplyResources(Me.EMSTextBox, "EMSTextBox")
         Me.EMSTextBox.Name = "EMSTextBox"
-        Me.EMSTextBox.Size = New System.Drawing.Size(31, 21)
-        Me.EMSTextBox.TabIndex = 45
-        Me.EMSTextBox.Text = "00"
-        Me.EMSTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SMSTextBox
         '
-        Me.SMSTextBox.Enabled = False
-        Me.SMSTextBox.Location = New System.Drawing.Point(247, 21)
-        Me.SMSTextBox.MaxLength = 2
+        resources.ApplyResources(Me.SMSTextBox, "SMSTextBox")
         Me.SMSTextBox.Name = "SMSTextBox"
-        Me.SMSTextBox.Size = New System.Drawing.Size(31, 21)
-        Me.SMSTextBox.TabIndex = 37
-        Me.SMSTextBox.Text = "00"
-        Me.SMSTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ESTextBox
         '
         Me.ESTextBox.BackColor = System.Drawing.Color.LightYellow
-        Me.ESTextBox.Enabled = False
-        Me.ESTextBox.Location = New System.Drawing.Point(199, 47)
-        Me.ESTextBox.MaxLength = 2
+        resources.ApplyResources(Me.ESTextBox, "ESTextBox")
         Me.ESTextBox.Name = "ESTextBox"
-        Me.ESTextBox.Size = New System.Drawing.Size(31, 21)
-        Me.ESTextBox.TabIndex = 43
-        Me.ESTextBox.Text = "00"
-        Me.ESTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SSTextBox
         '
         Me.SSTextBox.BackColor = System.Drawing.Color.LightYellow
-        Me.SSTextBox.Enabled = False
-        Me.SSTextBox.Location = New System.Drawing.Point(199, 21)
-        Me.SSTextBox.MaxLength = 2
+        resources.ApplyResources(Me.SSTextBox, "SSTextBox")
         Me.SSTextBox.Name = "SSTextBox"
-        Me.SSTextBox.Size = New System.Drawing.Size(31, 21)
-        Me.SSTextBox.TabIndex = 35
-        Me.SSTextBox.Text = "00"
-        Me.SSTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ENDCKButton
         '
-        Me.ENDCKButton.Location = New System.Drawing.Point(281, 46)
+        resources.ApplyResources(Me.ENDCKButton, "ENDCKButton")
         Me.ENDCKButton.Name = "ENDCKButton"
-        Me.ENDCKButton.Size = New System.Drawing.Size(92, 23)
-        Me.ENDCKButton.TabIndex = 47
-        Me.ENDCKButton.Text = "구간표시"
         Me.ENDCKButton.UseVisualStyleBackColor = True
         '
         'STRCKButton
         '
-        Me.STRCKButton.Location = New System.Drawing.Point(281, 20)
+        resources.ApplyResources(Me.STRCKButton, "STRCKButton")
         Me.STRCKButton.Name = "STRCKButton"
-        Me.STRCKButton.Size = New System.Drawing.Size(92, 23)
-        Me.STRCKButton.TabIndex = 46
-        Me.STRCKButton.Text = "구간표시"
         Me.STRCKButton.UseVisualStyleBackColor = True
         '
         'EP3Label
         '
-        Me.EP3Label.AutoSize = True
-        Me.EP3Label.Enabled = False
-        Me.EP3Label.Location = New System.Drawing.Point(233, 51)
+        resources.ApplyResources(Me.EP3Label, "EP3Label")
         Me.EP3Label.Name = "EP3Label"
-        Me.EP3Label.Size = New System.Drawing.Size(11, 12)
-        Me.EP3Label.TabIndex = 44
-        Me.EP3Label.Text = "/"
         '
         'EP2Label
         '
-        Me.EP2Label.AutoSize = True
-        Me.EP2Label.Enabled = False
-        Me.EP2Label.Location = New System.Drawing.Point(188, 50)
+        resources.ApplyResources(Me.EP2Label, "EP2Label")
         Me.EP2Label.Name = "EP2Label"
-        Me.EP2Label.Size = New System.Drawing.Size(9, 12)
-        Me.EP2Label.TabIndex = 42
-        Me.EP2Label.Text = ":"
         '
         'EMTextBox
         '
         Me.EMTextBox.BackColor = System.Drawing.Color.LightYellow
-        Me.EMTextBox.Enabled = False
-        Me.EMTextBox.Location = New System.Drawing.Point(154, 47)
-        Me.EMTextBox.MaxLength = 2
+        resources.ApplyResources(Me.EMTextBox, "EMTextBox")
         Me.EMTextBox.Name = "EMTextBox"
-        Me.EMTextBox.Size = New System.Drawing.Size(31, 21)
-        Me.EMTextBox.TabIndex = 41
-        Me.EMTextBox.Text = "00"
-        Me.EMTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'EP1Label
         '
-        Me.EP1Label.AutoSize = True
-        Me.EP1Label.Enabled = False
-        Me.EP1Label.Location = New System.Drawing.Point(142, 50)
+        resources.ApplyResources(Me.EP1Label, "EP1Label")
         Me.EP1Label.Name = "EP1Label"
-        Me.EP1Label.Size = New System.Drawing.Size(9, 12)
-        Me.EP1Label.TabIndex = 40
-        Me.EP1Label.Text = ":"
         '
         'EHTextBox
         '
         Me.EHTextBox.BackColor = System.Drawing.Color.LightYellow
-        Me.EHTextBox.Enabled = False
-        Me.EHTextBox.Location = New System.Drawing.Point(110, 47)
-        Me.EHTextBox.MaxLength = 2
+        resources.ApplyResources(Me.EHTextBox, "EHTextBox")
         Me.EHTextBox.Name = "EHTextBox"
-        Me.EHTextBox.Size = New System.Drawing.Size(31, 21)
-        Me.EHTextBox.TabIndex = 39
-        Me.EHTextBox.Text = "00"
-        Me.EHTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ECheckBox
         '
-        Me.ECheckBox.AutoSize = True
-        Me.ECheckBox.Location = New System.Drawing.Point(12, 51)
+        resources.ApplyResources(Me.ECheckBox, "ECheckBox")
         Me.ECheckBox.Name = "ECheckBox"
-        Me.ECheckBox.Size = New System.Drawing.Size(72, 16)
-        Me.ECheckBox.TabIndex = 38
-        Me.ECheckBox.Text = "종료시간"
         Me.ECheckBox.UseVisualStyleBackColor = True
         '
         'SP3Label
         '
-        Me.SP3Label.AutoSize = True
-        Me.SP3Label.Enabled = False
-        Me.SP3Label.Location = New System.Drawing.Point(233, 25)
+        resources.ApplyResources(Me.SP3Label, "SP3Label")
         Me.SP3Label.Name = "SP3Label"
-        Me.SP3Label.Size = New System.Drawing.Size(11, 12)
-        Me.SP3Label.TabIndex = 36
-        Me.SP3Label.Text = "/"
         '
         'SP2Label
         '
-        Me.SP2Label.AutoSize = True
-        Me.SP2Label.Enabled = False
-        Me.SP2Label.Location = New System.Drawing.Point(188, 24)
+        resources.ApplyResources(Me.SP2Label, "SP2Label")
         Me.SP2Label.Name = "SP2Label"
-        Me.SP2Label.Size = New System.Drawing.Size(9, 12)
-        Me.SP2Label.TabIndex = 34
-        Me.SP2Label.Text = ":"
         '
         'SMTextBox
         '
         Me.SMTextBox.BackColor = System.Drawing.Color.LightYellow
-        Me.SMTextBox.Enabled = False
-        Me.SMTextBox.Location = New System.Drawing.Point(154, 21)
-        Me.SMTextBox.MaxLength = 2
+        resources.ApplyResources(Me.SMTextBox, "SMTextBox")
         Me.SMTextBox.Name = "SMTextBox"
-        Me.SMTextBox.Size = New System.Drawing.Size(31, 21)
-        Me.SMTextBox.TabIndex = 33
-        Me.SMTextBox.Text = "00"
-        Me.SMTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SP1Label
         '
-        Me.SP1Label.AutoSize = True
-        Me.SP1Label.Enabled = False
-        Me.SP1Label.Location = New System.Drawing.Point(142, 24)
+        resources.ApplyResources(Me.SP1Label, "SP1Label")
         Me.SP1Label.Name = "SP1Label"
-        Me.SP1Label.Size = New System.Drawing.Size(9, 12)
-        Me.SP1Label.TabIndex = 32
-        Me.SP1Label.Text = ":"
         '
         'SHTextBox
         '
         Me.SHTextBox.BackColor = System.Drawing.Color.LightYellow
-        Me.SHTextBox.Enabled = False
-        Me.SHTextBox.Location = New System.Drawing.Point(110, 21)
-        Me.SHTextBox.MaxLength = 2
+        resources.ApplyResources(Me.SHTextBox, "SHTextBox")
         Me.SHTextBox.Name = "SHTextBox"
-        Me.SHTextBox.Size = New System.Drawing.Size(31, 21)
-        Me.SHTextBox.TabIndex = 31
-        Me.SHTextBox.Text = "00"
-        Me.SHTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SCheckBox
         '
-        Me.SCheckBox.AutoSize = True
-        Me.SCheckBox.Location = New System.Drawing.Point(12, 25)
+        resources.ApplyResources(Me.SCheckBox, "SCheckBox")
         Me.SCheckBox.Name = "SCheckBox"
-        Me.SCheckBox.Size = New System.Drawing.Size(72, 16)
-        Me.SCheckBox.TabIndex = 30
-        Me.SCheckBox.Text = "시작시간"
         Me.SCheckBox.UseVisualStyleBackColor = True
         '
         'PreviewGroupBox
         '
-        Me.PreviewGroupBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.PreviewGroupBox, "PreviewGroupBox")
         Me.PreviewGroupBox.Controls.Add(Me.TPrePanel)
         Me.PreviewGroupBox.Controls.Add(Me.PreviewPanel)
-        Me.PreviewGroupBox.Location = New System.Drawing.Point(12, 30)
         Me.PreviewGroupBox.Name = "PreviewGroupBox"
-        Me.PreviewGroupBox.Size = New System.Drawing.Size(408, 303)
-        Me.PreviewGroupBox.TabIndex = 23
         Me.PreviewGroupBox.TabStop = False
-        Me.PreviewGroupBox.Text = "원본 파일 보기"
         '
         'PreviewPanel
         '
         Me.PreviewPanel.Controls.Add(Me.Panel5)
         Me.PreviewPanel.Controls.Add(Me.Panel3)
         Me.PreviewPanel.Controls.Add(Me.SeekTrackBar)
-        Me.PreviewPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PreviewPanel.Location = New System.Drawing.Point(3, 240)
+        resources.ApplyResources(Me.PreviewPanel, "PreviewPanel")
         Me.PreviewPanel.Name = "PreviewPanel"
-        Me.PreviewPanel.Size = New System.Drawing.Size(402, 60)
-        Me.PreviewPanel.TabIndex = 31
         '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.VolTrackBar)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(311, 0)
+        resources.ApplyResources(Me.Panel5, "Panel5")
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(91, 25)
-        Me.Panel5.TabIndex = 32
         '
         'VolTrackBar
         '
-        Me.VolTrackBar.AutoSize = False
-        Me.VolTrackBar.Enabled = False
+        resources.ApplyResources(Me.VolTrackBar, "VolTrackBar")
         Me.VolTrackBar.LargeChange = 0
-        Me.VolTrackBar.Location = New System.Drawing.Point(2, 2)
         Me.VolTrackBar.Maximum = 100
         Me.VolTrackBar.Name = "VolTrackBar"
-        Me.VolTrackBar.Size = New System.Drawing.Size(87, 23)
         Me.VolTrackBar.SmallChange = 0
-        Me.VolTrackBar.TabIndex = 28
-        Me.VolTrackBar.TickFrequency = 10
+        Me.VolTrackBar.TickFrequency = 0
+        Me.VolTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
         Me.VolTrackBar.Value = 100
         '
         'Panel3
@@ -646,118 +449,69 @@ Partial Class StreamFrm
         Me.Panel3.Controls.Add(Me.BackwardBTN)
         Me.Panel3.Controls.Add(Me.StopBTN)
         Me.Panel3.Controls.Add(Me.FrameStepButton)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 25)
+        resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(402, 35)
-        Me.Panel3.TabIndex = 31
         '
         'Panel4
         '
-        Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.Panel4, "Panel4")
         Me.Panel4.Controls.Add(Me.TPanel)
-        Me.Panel4.Location = New System.Drawing.Point(213, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(189, 35)
-        Me.Panel4.TabIndex = 31
         '
         'TPanel
         '
         Me.TPanel.Controls.Add(Me.Nowhms)
         Me.TPanel.Controls.Add(Me.Totalhms)
-        Me.TPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TPanel.Location = New System.Drawing.Point(0, 13)
+        resources.ApplyResources(Me.TPanel, "TPanel")
         Me.TPanel.Name = "TPanel"
-        Me.TPanel.Size = New System.Drawing.Size(189, 22)
-        Me.TPanel.TabIndex = 31
         '
         'Nowhms
         '
-        Me.Nowhms.AutoSize = True
-        Me.Nowhms.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Nowhms.Enabled = False
-        Me.Nowhms.Location = New System.Drawing.Point(45, 0)
+        resources.ApplyResources(Me.Nowhms, "Nowhms")
         Me.Nowhms.Name = "Nowhms"
-        Me.Nowhms.Size = New System.Drawing.Size(65, 12)
-        Me.Nowhms.TabIndex = 26
-        Me.Nowhms.Text = "00:00:00.00"
-        Me.Nowhms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Totalhms
         '
-        Me.Totalhms.AutoSize = True
-        Me.Totalhms.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Totalhms.Enabled = False
-        Me.Totalhms.Location = New System.Drawing.Point(110, 0)
+        resources.ApplyResources(Me.Totalhms, "Totalhms")
         Me.Totalhms.Name = "Totalhms"
-        Me.Totalhms.Size = New System.Drawing.Size(79, 12)
-        Me.Totalhms.TabIndex = 30
-        Me.Totalhms.Text = "/ 00:00:00.00 "
-        Me.Totalhms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PlayPauseBTN
         '
-        Me.PlayPauseBTN.Location = New System.Drawing.Point(9, 4)
+        resources.ApplyResources(Me.PlayPauseBTN, "PlayPauseBTN")
         Me.PlayPauseBTN.Name = "PlayPauseBTN"
-        Me.PlayPauseBTN.Size = New System.Drawing.Size(42, 25)
-        Me.PlayPauseBTN.TabIndex = 24
-        Me.PlayPauseBTN.Text = ">||"
         Me.PlayPauseBTN.UseVisualStyleBackColor = True
         '
         'ForwardBTN
         '
-        Me.ForwardBTN.Enabled = False
-        Me.ForwardBTN.Location = New System.Drawing.Point(135, 4)
+        resources.ApplyResources(Me.ForwardBTN, "ForwardBTN")
         Me.ForwardBTN.Name = "ForwardBTN"
-        Me.ForwardBTN.Size = New System.Drawing.Size(28, 25)
-        Me.ForwardBTN.TabIndex = 27
-        Me.ForwardBTN.Text = ">"
         Me.ForwardBTN.UseVisualStyleBackColor = True
         '
         'BackwardBTN
         '
-        Me.BackwardBTN.Enabled = False
-        Me.BackwardBTN.Location = New System.Drawing.Point(101, 4)
+        resources.ApplyResources(Me.BackwardBTN, "BackwardBTN")
         Me.BackwardBTN.Name = "BackwardBTN"
-        Me.BackwardBTN.Size = New System.Drawing.Size(28, 25)
-        Me.BackwardBTN.TabIndex = 26
-        Me.BackwardBTN.Text = "<"
         Me.BackwardBTN.UseVisualStyleBackColor = True
         '
         'StopBTN
         '
-        Me.StopBTN.Enabled = False
-        Me.StopBTN.Location = New System.Drawing.Point(56, 4)
+        resources.ApplyResources(Me.StopBTN, "StopBTN")
         Me.StopBTN.Name = "StopBTN"
-        Me.StopBTN.Size = New System.Drawing.Size(28, 25)
-        Me.StopBTN.TabIndex = 25
-        Me.StopBTN.Text = "[]"
         Me.StopBTN.UseVisualStyleBackColor = True
         '
         'FrameStepButton
         '
-        Me.FrameStepButton.Enabled = False
-        Me.FrameStepButton.Location = New System.Drawing.Point(169, 4)
+        resources.ApplyResources(Me.FrameStepButton, "FrameStepButton")
         Me.FrameStepButton.Name = "FrameStepButton"
-        Me.FrameStepButton.Size = New System.Drawing.Size(28, 25)
-        Me.FrameStepButton.TabIndex = 29
-        Me.FrameStepButton.Text = "."
         Me.FrameStepButton.UseVisualStyleBackColor = True
         '
         'SeekTrackBar
         '
-        Me.SeekTrackBar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SeekTrackBar.AutoSize = False
-        Me.SeekTrackBar.Enabled = False
+        resources.ApplyResources(Me.SeekTrackBar, "SeekTrackBar")
         Me.SeekTrackBar.LargeChange = 0
-        Me.SeekTrackBar.Location = New System.Drawing.Point(2, 2)
         Me.SeekTrackBar.Maximum = 100
         Me.SeekTrackBar.Name = "SeekTrackBar"
-        Me.SeekTrackBar.Size = New System.Drawing.Size(308, 22)
         Me.SeekTrackBar.SmallChange = 0
-        Me.SeekTrackBar.TabIndex = 29
         Me.SeekTrackBar.TickFrequency = 0
         Me.SeekTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
         '
@@ -774,12 +528,8 @@ Partial Class StreamFrm
         'ASListBox
         '
         Me.ASListBox.FormattingEnabled = True
-        Me.ASListBox.ItemHeight = 12
-        Me.ASListBox.Location = New System.Drawing.Point(12, 8)
+        resources.ApplyResources(Me.ASListBox, "ASListBox")
         Me.ASListBox.Name = "ASListBox"
-        Me.ASListBox.Size = New System.Drawing.Size(75, 16)
-        Me.ASListBox.TabIndex = 25
-        Me.ASListBox.Visible = False
         '
         'GETPP
         '
@@ -794,27 +544,17 @@ Partial Class StreamFrm
         '
         'StreamSelGroupBox
         '
-        Me.StreamSelGroupBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.StreamSelGroupBox, "StreamSelGroupBox")
         Me.StreamSelGroupBox.Controls.Add(Me.AudioComboBox)
-        Me.StreamSelGroupBox.Location = New System.Drawing.Point(12, 8)
         Me.StreamSelGroupBox.Name = "StreamSelGroupBox"
-        Me.StreamSelGroupBox.Size = New System.Drawing.Size(408, 50)
-        Me.StreamSelGroupBox.TabIndex = 28
         Me.StreamSelGroupBox.TabStop = False
-        Me.StreamSelGroupBox.Text = "스트림 선택"
         '
         'AudioComboBox
         '
-        Me.AudioComboBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.AudioComboBox, "AudioComboBox")
         Me.AudioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.AudioComboBox.Enabled = False
         Me.AudioComboBox.FormattingEnabled = True
-        Me.AudioComboBox.Location = New System.Drawing.Point(11, 19)
         Me.AudioComboBox.Name = "AudioComboBox"
-        Me.AudioComboBox.Size = New System.Drawing.Size(385, 20)
-        Me.AudioComboBox.TabIndex = 0
         '
         'SeekTimer
         '
@@ -824,11 +564,8 @@ Partial Class StreamFrm
         '
         Me.BPanel.Controls.Add(Me.Panel2)
         Me.BPanel.Controls.Add(Me.StreamSelGroupBox)
-        Me.BPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BPanel.Location = New System.Drawing.Point(0, 331)
+        resources.ApplyResources(Me.BPanel, "BPanel")
         Me.BPanel.Name = "BPanel"
-        Me.BPanel.Size = New System.Drawing.Size(434, 99)
-        Me.BPanel.TabIndex = 29
         '
         'Panel2
         '
@@ -836,184 +573,146 @@ Partial Class StreamFrm
         Me.Panel2.Controls.Add(Me.TimeSpButton)
         Me.Panel2.Controls.Add(Me.ASListBox)
         Me.Panel2.Controls.Add(Me.Panel6)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 63)
+        resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(434, 36)
-        Me.Panel2.TabIndex = 31
         '
         'CropButton
         '
-        Me.CropButton.Location = New System.Drawing.Point(117, 5)
+        resources.ApplyResources(Me.CropButton, "CropButton")
         Me.CropButton.Name = "CropButton"
-        Me.CropButton.Size = New System.Drawing.Size(90, 25)
-        Me.CropButton.TabIndex = 33
-        Me.CropButton.Text = "잘라내기"
         Me.CropButton.UseVisualStyleBackColor = True
         '
         'TimeSpButton
         '
-        Me.TimeSpButton.Location = New System.Drawing.Point(11, 5)
+        resources.ApplyResources(Me.TimeSpButton, "TimeSpButton")
         Me.TimeSpButton.Name = "TimeSpButton"
-        Me.TimeSpButton.Size = New System.Drawing.Size(100, 25)
-        Me.TimeSpButton.TabIndex = 32
-        Me.TimeSpButton.Text = "구간 설정"
         Me.TimeSpButton.UseVisualStyleBackColor = True
         '
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.CancelBTN)
         Me.Panel6.Controls.Add(Me.OKBTN)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel6.Location = New System.Drawing.Point(226, 0)
+        resources.ApplyResources(Me.Panel6, "Panel6")
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(208, 36)
-        Me.Panel6.TabIndex = 31
         '
         'CancelBTN
         '
-        Me.CancelBTN.Location = New System.Drawing.Point(108, 5)
+        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
         Me.CancelBTN.Name = "CancelBTN"
-        Me.CancelBTN.Size = New System.Drawing.Size(88, 25)
-        Me.CancelBTN.TabIndex = 29
-        Me.CancelBTN.Text = "취소"
         Me.CancelBTN.UseVisualStyleBackColor = True
         '
         'OKBTN
         '
-        Me.OKBTN.Location = New System.Drawing.Point(11, 5)
+        resources.ApplyResources(Me.OKBTN, "OKBTN")
         Me.OKBTN.Name = "OKBTN"
-        Me.OKBTN.Size = New System.Drawing.Size(88, 25)
-        Me.OKBTN.TabIndex = 30
-        Me.OKBTN.Text = "확인"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptsToolStripMenuItem, Me.SpDfToolStripMenuItem, Me.SpDnToolStripMenuItem, Me.SpDuToolStripMenuItem, Me.SpeedXVToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(434, 24)
-        Me.MenuStrip1.TabIndex = 32
-        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'OptsToolStripMenuItem
         '
         Me.OptsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AllChToolStripMenuItem, Me.LeftChToolStripMenuItem, Me.RightChToolStripMenuItem, Me.ToolStripMenuItem2, Me.SizeOriginToolStripMenuItem, Me.AspectOriginToolStripMenuItem, Me.ToolStripMenuItem1, Me.scaletempoToolStripMenuItem, Me.extrastereoToolStripMenuItem, Me.karaokeToolStripMenuItem, Me.VisualizeMotionVectorsToolStripMenuItem, Me.VisualizeBlockTypesToolStripMenuItem, Me.FFmpegDeinterlacerToolStripMenuItem})
         Me.OptsToolStripMenuItem.Name = "OptsToolStripMenuItem"
-        Me.OptsToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.OptsToolStripMenuItem.Text = "재생옵션(&O)"
+        resources.ApplyResources(Me.OptsToolStripMenuItem, "OptsToolStripMenuItem")
         '
         'AllChToolStripMenuItem
         '
         Me.AllChToolStripMenuItem.Checked = True
         Me.AllChToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.AllChToolStripMenuItem.Name = "AllChToolStripMenuItem"
-        Me.AllChToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.AllChToolStripMenuItem.Text = "모든 채널"
+        resources.ApplyResources(Me.AllChToolStripMenuItem, "AllChToolStripMenuItem")
         '
         'LeftChToolStripMenuItem
         '
         Me.LeftChToolStripMenuItem.Name = "LeftChToolStripMenuItem"
-        Me.LeftChToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.LeftChToolStripMenuItem.Text = "좌측 채널"
+        resources.ApplyResources(Me.LeftChToolStripMenuItem, "LeftChToolStripMenuItem")
         '
         'RightChToolStripMenuItem
         '
         Me.RightChToolStripMenuItem.Name = "RightChToolStripMenuItem"
-        Me.RightChToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.RightChToolStripMenuItem.Text = "우측 채널"
+        resources.ApplyResources(Me.RightChToolStripMenuItem, "RightChToolStripMenuItem")
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(190, 6)
+        resources.ApplyResources(Me.ToolStripMenuItem2, "ToolStripMenuItem2")
         '
         'SizeOriginToolStripMenuItem
         '
         Me.SizeOriginToolStripMenuItem.Name = "SizeOriginToolStripMenuItem"
-        Me.SizeOriginToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.SizeOriginToolStripMenuItem.Text = "원본 사이즈"
+        resources.ApplyResources(Me.SizeOriginToolStripMenuItem, "SizeOriginToolStripMenuItem")
         '
         'AspectOriginToolStripMenuItem
         '
         Me.AspectOriginToolStripMenuItem.Checked = True
         Me.AspectOriginToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.AspectOriginToolStripMenuItem.Name = "AspectOriginToolStripMenuItem"
-        Me.AspectOriginToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.AspectOriginToolStripMenuItem.Text = "원본 비율로 유지"
+        resources.ApplyResources(Me.AspectOriginToolStripMenuItem, "AspectOriginToolStripMenuItem")
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(190, 6)
+        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
         '
         'scaletempoToolStripMenuItem
         '
         Me.scaletempoToolStripMenuItem.CheckOnClick = True
         Me.scaletempoToolStripMenuItem.Name = "scaletempoToolStripMenuItem"
-        Me.scaletempoToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.scaletempoToolStripMenuItem.Text = "피치 보정"
+        resources.ApplyResources(Me.scaletempoToolStripMenuItem, "scaletempoToolStripMenuItem")
         '
         'extrastereoToolStripMenuItem
         '
         Me.extrastereoToolStripMenuItem.CheckOnClick = True
         Me.extrastereoToolStripMenuItem.Name = "extrastereoToolStripMenuItem"
-        Me.extrastereoToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.extrastereoToolStripMenuItem.Text = "엑스트라 스테레오"
+        resources.ApplyResources(Me.extrastereoToolStripMenuItem, "extrastereoToolStripMenuItem")
         '
         'karaokeToolStripMenuItem
         '
         Me.karaokeToolStripMenuItem.CheckOnClick = True
         Me.karaokeToolStripMenuItem.Name = "karaokeToolStripMenuItem"
-        Me.karaokeToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.karaokeToolStripMenuItem.Text = "목소리 제거"
+        resources.ApplyResources(Me.karaokeToolStripMenuItem, "karaokeToolStripMenuItem")
         '
         'VisualizeMotionVectorsToolStripMenuItem
         '
         Me.VisualizeMotionVectorsToolStripMenuItem.CheckOnClick = True
         Me.VisualizeMotionVectorsToolStripMenuItem.Name = "VisualizeMotionVectorsToolStripMenuItem"
-        Me.VisualizeMotionVectorsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.VisualizeMotionVectorsToolStripMenuItem.Text = "벡터 보기"
+        resources.ApplyResources(Me.VisualizeMotionVectorsToolStripMenuItem, "VisualizeMotionVectorsToolStripMenuItem")
         '
         'VisualizeBlockTypesToolStripMenuItem
         '
         Me.VisualizeBlockTypesToolStripMenuItem.CheckOnClick = True
         Me.VisualizeBlockTypesToolStripMenuItem.Name = "VisualizeBlockTypesToolStripMenuItem"
-        Me.VisualizeBlockTypesToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.VisualizeBlockTypesToolStripMenuItem.Text = "블럭 타입 보기"
+        resources.ApplyResources(Me.VisualizeBlockTypesToolStripMenuItem, "VisualizeBlockTypesToolStripMenuItem")
         '
         'FFmpegDeinterlacerToolStripMenuItem
         '
         Me.FFmpegDeinterlacerToolStripMenuItem.CheckOnClick = True
         Me.FFmpegDeinterlacerToolStripMenuItem.Name = "FFmpegDeinterlacerToolStripMenuItem"
-        Me.FFmpegDeinterlacerToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.FFmpegDeinterlacerToolStripMenuItem.Text = "FFmpeg 디인터레이스"
+        resources.ApplyResources(Me.FFmpegDeinterlacerToolStripMenuItem, "FFmpegDeinterlacerToolStripMenuItem")
         '
         'SpDfToolStripMenuItem
         '
         Me.SpDfToolStripMenuItem.Name = "SpDfToolStripMenuItem"
-        Me.SpDfToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.SpDfToolStripMenuItem.Text = "정상배속"
+        resources.ApplyResources(Me.SpDfToolStripMenuItem, "SpDfToolStripMenuItem")
         '
         'SpDnToolStripMenuItem
         '
         Me.SpDnToolStripMenuItem.Name = "SpDnToolStripMenuItem"
-        Me.SpDnToolStripMenuItem.ShortcutKeyDisplayString = ""
-        Me.SpDnToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.SpDnToolStripMenuItem.Text = "배속감소"
+        resources.ApplyResources(Me.SpDnToolStripMenuItem, "SpDnToolStripMenuItem")
         '
         'SpDuToolStripMenuItem
         '
         Me.SpDuToolStripMenuItem.Name = "SpDuToolStripMenuItem"
-        Me.SpDuToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.SpDuToolStripMenuItem.Text = "배속증가"
+        resources.ApplyResources(Me.SpDuToolStripMenuItem, "SpDuToolStripMenuItem")
         '
         'SpeedXVToolStripMenuItem
         '
         Me.SpeedXVToolStripMenuItem.Name = "SpeedXVToolStripMenuItem"
-        Me.SpeedXVToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
-        Me.SpeedXVToolStripMenuItem.Text = "1.0x"
+        resources.ApplyResources(Me.SpeedXVToolStripMenuItem, "SpeedXVToolStripMenuItem")
         '
         'Timer1
         '
@@ -1022,36 +721,27 @@ Partial Class StreamFrm
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 430)
+        resources.ApplyResources(Me.StatusStrip1, "StatusStrip1")
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(434, 22)
-        Me.StatusStrip1.TabIndex = 33
-        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
         '
-        Me.ToolStripStatusLabel1.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        resources.ApplyResources(Me.ToolStripStatusLabel1, "ToolStripStatusLabel1")
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(11, 17)
-        Me.ToolStripStatusLabel1.Text = "-"
         '
         'StreamFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(434, 452)
         Me.Controls.Add(Me.BPanel)
         Me.Controls.Add(Me.PreviewGroupBox)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(450, 490)
         Me.Name = "StreamFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "구간 설정/스트림 선택/잘라내기"
         Me.TPrePanel.ResumeLayout(False)
         Me.InTPrePanel.ResumeLayout(False)
         Me.InTPrePanel.PerformLayout()

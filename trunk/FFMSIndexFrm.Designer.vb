@@ -23,6 +23,7 @@ Partial Class FFMSIndexFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FFMSIndexFrm))
         Me.PLabel = New System.Windows.Forms.Label
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.OutputBox_ID = New System.Windows.Forms.TextBox
@@ -36,48 +37,32 @@ Partial Class FFMSIndexFrm
         '
         'PLabel
         '
-        Me.PLabel.Location = New System.Drawing.Point(174, 31)
+        resources.ApplyResources(Me.PLabel, "PLabel")
         Me.PLabel.Name = "PLabel"
-        Me.PLabel.Size = New System.Drawing.Size(83, 20)
-        Me.PLabel.TabIndex = 1
-        Me.PLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'CancelBTN
         '
-        Me.CancelBTN.Location = New System.Drawing.Point(273, 9)
+        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
         Me.CancelBTN.Name = "CancelBTN"
-        Me.CancelBTN.Size = New System.Drawing.Size(110, 34)
-        Me.CancelBTN.TabIndex = 2
-        Me.CancelBTN.Text = "취소"
         Me.CancelBTN.UseVisualStyleBackColor = True
         '
         'OutputBox_ID
         '
         Me.OutputBox_ID.BackColor = System.Drawing.Color.White
-        Me.OutputBox_ID.Location = New System.Drawing.Point(327, 9)
-        Me.OutputBox_ID.MaxLength = 2147483647
-        Me.OutputBox_ID.Multiline = True
+        resources.ApplyResources(Me.OutputBox_ID, "OutputBox_ID")
         Me.OutputBox_ID.Name = "OutputBox_ID"
         Me.OutputBox_ID.ReadOnly = True
-        Me.OutputBox_ID.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.OutputBox_ID.Size = New System.Drawing.Size(38, 31)
-        Me.OutputBox_ID.TabIndex = 22
-        Me.OutputBox_ID.Visible = False
         '
         'ProgressBar
         '
-        Me.ProgressBar.Location = New System.Drawing.Point(12, 9)
+        resources.ApplyResources(Me.ProgressBar, "ProgressBar")
         Me.ProgressBar.Name = "ProgressBar"
-        Me.ProgressBar.Size = New System.Drawing.Size(242, 16)
         Me.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
-        Me.ProgressBar.TabIndex = 23
         '
         'TLabel
         '
-        Me.TLabel.Location = New System.Drawing.Point(10, 31)
+        resources.ApplyResources(Me.TLabel, "TLabel")
         Me.TLabel.Name = "TLabel"
-        Me.TLabel.Size = New System.Drawing.Size(153, 20)
-        Me.TLabel.TabIndex = 24
         '
         'OnePTimer
         '
@@ -93,17 +78,13 @@ Partial Class FFMSIndexFrm
         Me.IndexPanel.Controls.Add(Me.PLabel)
         Me.IndexPanel.Controls.Add(Me.TLabel)
         Me.IndexPanel.Controls.Add(Me.CancelBTN)
-        Me.IndexPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.IndexPanel.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.IndexPanel, "IndexPanel")
         Me.IndexPanel.Name = "IndexPanel"
-        Me.IndexPanel.Size = New System.Drawing.Size(399, 54)
-        Me.IndexPanel.TabIndex = 25
         '
         'FFMSIndexFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(399, 54)
         Me.ControlBox = False
         Me.Controls.Add(Me.IndexPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -113,8 +94,6 @@ Partial Class FFMSIndexFrm
         Me.Opacity = 0.9
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "FFmpegSource"
         Me.IndexPanel.ResumeLayout(False)
         Me.IndexPanel.PerformLayout()
         Me.ResumeLayout(False)
