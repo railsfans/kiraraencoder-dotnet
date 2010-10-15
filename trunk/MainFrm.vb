@@ -785,6 +785,7 @@ Public Class MainFrm
                 If XTR.Name = "MainFrmInChkToolStripMenuItem" Then InChkToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainDirectoryNotFound" Then LangCls.MainDirectoryNotFound = XTR.ReadString
                 If XTR.Name = "MainFileSame" Then LangCls.MainFileSame = XTR.ReadString
+                If XTR.Name = "MainFileNotFound" Then LangCls.MainFileNotFound = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -1898,6 +1899,7 @@ UAC:
                         For i3 = 0 To LVI.SubItems.Count - 1
                             EncListListView.Items(SI).SubItems(i3).Text = LVI.SubItems(i3).Text
                         Next
+                        EncListListView.Items(SI).Checked = LVI.Checked
                         EncListListView.Items(SI).Selected = False
                         '-------------
                         EncListListView.Items(SI - 1).Selected = True
@@ -1931,6 +1933,7 @@ UAC:
                         For i3 = 0 To LVI.SubItems.Count - 1
                             EncListListView.Items(SI).SubItems(i3).Text = LVI.SubItems(i3).Text
                         Next
+                        EncListListView.Items(SI).Checked = LVI.Checked
                         EncListListView.Items(SI).Selected = False
                         '-------------
                         EncListListView.Items(SI + 1).Selected = True
@@ -2633,6 +2636,14 @@ UAC:
 
     Public Sub XML_LOAD(ByVal src As String)
 
+        '접근권한이 있을 때 까지 반복
+RELOAD:
+        Try
+            Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
+            _SRL.Close()
+        Catch ex As Exception
+            GoTo RELOAD
+        End Try
 
         Dim SR As New StreamReader(src, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
@@ -4099,6 +4110,15 @@ UAC:
 
     Public Sub XML_SAVE(ByVal src As String)
 
+        '접근권한이 있을 때 까지 반복
+RELOAD:
+        Try
+            Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
+            _SRL.Close()
+        Catch ex As Exception
+            GoTo RELOAD
+        End Try
+
         Dim XTWriter As New XmlTextWriter(src, System.Text.Encoding.UTF8)
 
         Try
@@ -5133,6 +5153,15 @@ UAC:
     End Sub
 
     Private Sub XML_CHANGE(ByVal src As String)
+
+        '접근권한이 있을 때 까지 반복
+RELOAD:
+        Try
+            Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
+            _SRL.Close()
+        Catch ex As Exception
+            GoTo RELOAD
+        End Try
 
         '예외저장//
         Try

@@ -320,6 +320,15 @@ Public Class x264optsFrm
 
     Private Sub XML_CHANGE(ByVal src As String)
 
+        '접근권한이 있을 때 까지 반복
+RELOAD:
+        Try
+            Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
+            _SRL.Close()
+        Catch ex As Exception
+            GoTo RELOAD
+        End Try
+
         Try
             Dim XDoc As New XmlDocument()
             Dim XNode As XmlNode
@@ -503,6 +512,14 @@ Public Class x264optsFrm
     End Sub
     Private Sub XML_LOAD(ByVal src As String)
 
+        '접근권한이 있을 때 까지 반복
+RELOAD:
+        Try
+            Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
+            _SRL.Close()
+        Catch ex As Exception
+            GoTo RELOAD
+        End Try
 
         Dim SR As New StreamReader(src, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
