@@ -829,6 +829,45 @@ skip:
 
     Private Sub StreamFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        '// 초기화 시작
+
+        '타이머
+        GETPP.Enabled = False
+        SeekTimer.Enabled = False
+        SubTaskLoop1 = False
+        '로딩
+        PrePanel.Visible = False
+        LoadingLabel.Visible = False
+        OutputBox_Stream.Visible = False
+        '프로세스 종료 확인
+        ProcessEChkB = True
+        '정보받기용
+        InfoLoopExit = True
+        '기타
+        ASListBox.Items.Clear()
+        IntTimeTXT = 0.0
+        If RefBool = False Then
+            NowTimeSec = 0.0
+            SeekTrackBar.Value = 0
+        End If
+        PlayPauseBTN.Enabled = True '활성/비활성(재생)
+        '활성/비활성
+        SeekTrackBar.Enabled = False
+        VolTrackBar.Enabled = False
+        StopBTN.Enabled = False
+        AudioComboBox.Enabled = False
+        BackwardBTN.Enabled = False
+        ForwardBTN.Enabled = False
+        FrameStepButton.Enabled = False
+        Nowhms.Enabled = False
+        Totalhms.Enabled = False
+
+        DestroyHandles()
+        RefBool = False
+        OpenVL = False
+
+        '// 초기화 끝
+
         '설정로드
         With MainFrm
             VolTrackBar.Value = .VolTrackBarStreamFrmV

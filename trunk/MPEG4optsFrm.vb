@@ -23,6 +23,8 @@ Imports System.Xml
 
 Public Class MPEG4optsFrm
 
+    Dim OKBTNCLK As Boolean = False
+
     Private Sub ffmpegPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ffmpegPictureBox.Click
         System.Diagnostics.Process.Start("http://ffmpeg.org")
     End Sub
@@ -280,12 +282,14 @@ RELOAD:
 
     End Sub
 
-    Private Sub MPEG4optsFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
-    End Sub
-
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
-        XML_CHANGE(My.Application.Info.DirectoryPath & "\settings.xml")
+        OKBTNCLK = True
+
+        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+
+        '프리셋 설정된 파일 표시 지우기
+        MainFrm.PresetLabel.Text = LangCls.MainUserStr
+
         Close()
     End Sub
 
@@ -293,136 +297,13 @@ RELOAD:
         Close()
     End Sub
 
-    Private Sub XML_CHANGE(ByVal src As String)
-
-        '접근권한이 있을 때 까지 반복
-        If My.Computer.FileSystem.FileExists(src) = True Then
-RELOAD:
-            Try
-                Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
-                _SRL.Close()
-            Catch ex As Exception
-                GoTo RELOAD
-            End Try
-        End If
-
-        Try
-            Dim XDoc As New XmlDocument()
-            Dim XNode As XmlNode
-            XDoc.Load(src)
-            '============== 시작
-
-            'Main
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_ThreadsNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ThreadsNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_QuantizationTypeComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = QuantizationTypeComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_AdaptiveQuantizationCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AdaptiveQuantizationCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_InterlacedEncodingCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = InterlacedEncodingCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_GrayscaleCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = GrayscaleCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_TopFieldFirstCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = TopFieldFirstCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm__4MotionVectorCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = _4MotionVectorCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_QPELCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = QPELCheckBox.Checked
-
-            'B-VOPs
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_BFramesCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = BFramesCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_BVOPsNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = BVOPsNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_ClosedGOPCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = ClosedGOPCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_DownscalesffdBfdCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = DownscalesffdBfdCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_RefinettmvuibmCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = RefinettmvuibmCheckBox.Checked
-
-            'Motion Estimation
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_DiamondtsfmeComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = DiamondtsfmeComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_HQModeComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = HQModeComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_FpmcfComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FpmcfComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_SpmcfComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = SpmcfComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_McfComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = McfComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_IdcfComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = IdcfComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_PmecfComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = PmecfComboBox.Text
-
-            'Rate Control
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_QMinNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QMinNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_QMaxNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QMaxNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_QDeltaNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QDeltaNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_QuantizerCompressionNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QuantizerCompressionNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_QuantizerBlurNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QuantizerBlurNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_MaxVBTextBox")
-            If Not XNode Is Nothing Then If MaxVBTextBox.Text = "" Then XNode.InnerText = "0" Else XNode.InnerText = MaxVBTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_MinVBTextBox")
-            If Not XNode Is Nothing Then If MinVBTextBox.Text = "" Then XNode.InnerText = "0" Else XNode.InnerText = MinVBTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_RCBufferSizeTextBox")
-            If Not XNode Is Nothing Then If RCBufferSizeTextBox.Text = "" Then XNode.InnerText = "0" Else XNode.InnerText = RCBufferSizeTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_TrellisQuantizationCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = TrellisQuantizationCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/MPEG4optsFrm_DCTalgorithmComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = DCTalgorithmComboBox.Text
-
-            '============== 끝
-            XDoc.Save(src)
-        Catch ex As Exception
-            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
-        End Try
-
-        'SAVE, Change용
-        If MainFrm.EncListListView.SelectedItems.Count <> 0 Then
-            Dim index As Integer = MainFrm.EncListListView.SelectedItems(index).Index
-            MainFrm.GET_OutputINFO(index)  '출력정보
-        End If
-        'Change용 프리셋 설정된 파일 표시 지우기
-        MainFrm.PresetLabel.Text = LangCls.MainUserStr
-
+    Private Sub MPEG4optsFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub MPEG4optsFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        OKBTNCLK = False
 
         '=========================================
         'Rev 1.1

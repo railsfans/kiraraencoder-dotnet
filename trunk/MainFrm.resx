@@ -264,192 +264,6 @@
     <value>830, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ListviewContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 198</value>
-  </data>
-  <data name="&gt;&gt;ListviewContextMenuStrip.Name" xml:space="preserve">
-    <value>ListviewContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;ListviewContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="EncListListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 22</value>
-  </data>
-  <data name="EncListListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 158</value>
-  </data>
-  <data name="EncListListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EncListListView.Name" xml:space="preserve">
-    <value>EncListListView</value>
-  </data>
-  <data name="&gt;&gt;EncListListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EncListListView.Parent" xml:space="preserve">
-    <value>EncListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EncListListView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AudioTextBox.Name" xml:space="preserve">
-    <value>AudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;AudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioTextBox.Parent" xml:space="preserve">
-    <value>Panel6</value>
-  </data>
-  <data name="&gt;&gt;AudioTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;VideoTextBox.Name" xml:space="preserve">
-    <value>VideoTextBox</value>
-  </data>
-  <data name="&gt;&gt;VideoTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VideoTextBox.Parent" xml:space="preserve">
-    <value>Panel6</value>
-  </data>
-  <data name="&gt;&gt;VideoTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 184</value>
-  </data>
-  <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 45</value>
-  </data>
-  <data name="Panel6.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Name" xml:space="preserve">
-    <value>Panel6</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Parent" xml:space="preserve">
-    <value>EncListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RemovePanel.Name" xml:space="preserve">
-    <value>RemovePanel</value>
-  </data>
-  <data name="&gt;&gt;RemovePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RemovePanel.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;RemovePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;MovePanel.Name" xml:space="preserve">
-    <value>MovePanel</value>
-  </data>
-  <data name="&gt;&gt;MovePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovePanel.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;MovePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;AddButton.Name" xml:space="preserve">
-    <value>AddButton</value>
-  </data>
-  <data name="&gt;&gt;AddButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AddButton.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;AddButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;AllRemoveButton.Name" xml:space="preserve">
-    <value>AllRemoveButton</value>
-  </data>
-  <data name="&gt;&gt;AllRemoveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AllRemoveButton.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;AllRemoveButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 229</value>
-  </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 35</value>
-  </data>
-  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>EncListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="EncListGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 3</value>
-  </data>
-  <data name="EncListGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 267</value>
-  </data>
-  <data name="EncListGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EncListGroupBox.Text" xml:space="preserve">
-    <value>인코딩 목록</value>
-  </data>
-  <data name="&gt;&gt;EncListGroupBox.Name" xml:space="preserve">
-    <value>EncListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EncListGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EncListGroupBox.Parent" xml:space="preserve">
-    <value>MainPanel</value>
-  </data>
-  <data name="&gt;&gt;EncListGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="AddToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
   </data>
@@ -507,6 +321,36 @@
   <data name="OutInfoToolStripMenuItem.Text" xml:space="preserve">
     <value>출력 파일 정보</value>
   </data>
+  <data name="ListviewContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 198</value>
+  </data>
+  <data name="&gt;&gt;ListviewContextMenuStrip.Name" xml:space="preserve">
+    <value>ListviewContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;ListviewContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EncListListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 22</value>
+  </data>
+  <data name="EncListListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>918, 158</value>
+  </data>
+  <data name="EncListListView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EncListListView.Name" xml:space="preserve">
+    <value>EncListListView</value>
+  </data>
+  <data name="&gt;&gt;EncListListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EncListListView.Parent" xml:space="preserve">
+    <value>EncListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;EncListListView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="AudioTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -561,6 +405,42 @@
   <data name="&gt;&gt;VideoTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Panel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 184</value>
+  </data>
+  <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>946, 45</value>
+  </data>
+  <data name="Panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Name" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Parent" xml:space="preserve">
+    <value>EncListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RemoveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 2</value>
+  </data>
+  <data name="RemoveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 25</value>
+  </data>
+  <data name="RemoveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RemoveButton.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
   <data name="&gt;&gt;RemoveButton.Name" xml:space="preserve">
     <value>RemoveButton</value>
   </data>
@@ -593,99 +473,6 @@
   </data>
   <data name="&gt;&gt;RemovePanel.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="RemoveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 2</value>
-  </data>
-  <data name="RemoveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 25</value>
-  </data>
-  <data name="RemoveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="RemoveButton.Text" xml:space="preserve">
-    <value>제거</value>
-  </data>
-  <data name="&gt;&gt;RemoveButton.Name" xml:space="preserve">
-    <value>RemoveButton</value>
-  </data>
-  <data name="&gt;&gt;RemoveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RemoveButton.Parent" xml:space="preserve">
-    <value>RemovePanel</value>
-  </data>
-  <data name="&gt;&gt;RemoveButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;BBListButton.Name" xml:space="preserve">
-    <value>BBListButton</value>
-  </data>
-  <data name="&gt;&gt;BBListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BBListButton.Parent" xml:space="preserve">
-    <value>MovePanel</value>
-  </data>
-  <data name="&gt;&gt;BBListButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TTListButton.Name" xml:space="preserve">
-    <value>TTListButton</value>
-  </data>
-  <data name="&gt;&gt;TTListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TTListButton.Parent" xml:space="preserve">
-    <value>MovePanel</value>
-  </data>
-  <data name="&gt;&gt;TTListButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;TListButton.Name" xml:space="preserve">
-    <value>TListButton</value>
-  </data>
-  <data name="&gt;&gt;TListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TListButton.Parent" xml:space="preserve">
-    <value>MovePanel</value>
-  </data>
-  <data name="&gt;&gt;TListButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;BListButton.Name" xml:space="preserve">
-    <value>BListButton</value>
-  </data>
-  <data name="&gt;&gt;BListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BListButton.Parent" xml:space="preserve">
-    <value>MovePanel</value>
-  </data>
-  <data name="&gt;&gt;BListButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="MovePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 0</value>
-  </data>
-  <data name="MovePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 42</value>
-  </data>
-  <data name="MovePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;MovePanel.Name" xml:space="preserve">
-    <value>MovePanel</value>
-  </data>
-  <data name="&gt;&gt;MovePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovePanel.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;MovePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="BBListButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 10pt</value>
@@ -807,53 +594,38 @@
   <data name="&gt;&gt;BListButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;StreamSelPanel.Name" xml:space="preserve">
-    <value>StreamSelPanel</value>
+  <data name="MovePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 0</value>
   </data>
-  <data name="&gt;&gt;StreamSelPanel.Type" xml:space="preserve">
+  <data name="MovePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 42</value>
+  </data>
+  <data name="MovePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;MovePanel.Name" xml:space="preserve">
+    <value>MovePanel</value>
+  </data>
+  <data name="&gt;&gt;MovePanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;StreamSelPanel.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;StreamSelPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;FileInfoButton.Name" xml:space="preserve">
-    <value>FileInfoButton</value>
-  </data>
-  <data name="&gt;&gt;FileInfoButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileInfoButton.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;FileInfoButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>556, 0</value>
-  </data>
-  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>390, 35</value>
-  </data>
-  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;MovePanel.Parent" xml:space="preserve">
     <value>Panel1</value>
   </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;MovePanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="StreamSelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="StreamSelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 25</value>
+  </data>
+  <data name="StreamSelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="StreamSelButton.Text" xml:space="preserve">
+    <value>구간 설정/스트림 선택/잘라내기</value>
   </data>
   <data name="&gt;&gt;StreamSelButton.Name" xml:space="preserve">
     <value>StreamSelButton</value>
@@ -891,30 +663,6 @@
   <data name="&gt;&gt;StreamSelPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="StreamSelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="StreamSelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 25</value>
-  </data>
-  <data name="StreamSelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="StreamSelButton.Text" xml:space="preserve">
-    <value>구간 설정/스트림 선택/잘라내기</value>
-  </data>
-  <data name="&gt;&gt;StreamSelButton.Name" xml:space="preserve">
-    <value>StreamSelButton</value>
-  </data>
-  <data name="&gt;&gt;StreamSelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StreamSelButton.Parent" xml:space="preserve">
-    <value>StreamSelPanel</value>
-  </data>
-  <data name="&gt;&gt;StreamSelButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="FileInfoButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 2</value>
   </data>
@@ -938,6 +686,30 @@
   </data>
   <data name="&gt;&gt;FileInfoButton.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>556, 0</value>
+  </data>
+  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>390, 35</value>
+  </data>
+  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="AddButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 2</value>
@@ -986,6 +758,54 @@
   </data>
   <data name="&gt;&gt;AllRemoveButton.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 229</value>
+  </data>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>946, 35</value>
+  </data>
+  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>EncListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EncListGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 3</value>
+  </data>
+  <data name="EncListGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>952, 267</value>
+  </data>
+  <data name="EncListGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EncListGroupBox.Text" xml:space="preserve">
+    <value>인코딩 목록</value>
+  </data>
+  <data name="&gt;&gt;EncListGroupBox.Name" xml:space="preserve">
+    <value>EncListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;EncListGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EncListGroupBox.Parent" xml:space="preserve">
+    <value>MainPanel</value>
+  </data>
+  <data name="&gt;&gt;EncListGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="CleanUpListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1047,200 +867,8 @@
   <data name="&gt;&gt;OutputBox_GI.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;OutputGroupBox.Name" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;OutputGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OutputGroupBox.Parent" xml:space="preserve">
-    <value>BPanel</value>
-  </data>
-  <data name="&gt;&gt;OutputGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Name" xml:space="preserve">
-    <value>Panel4</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Parent" xml:space="preserve">
-    <value>BPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
-    <value>BPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="BPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="BPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 273</value>
-  </data>
-  <data name="BPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 245</value>
-  </data>
-  <data name="BPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;BPanel.Name" xml:space="preserve">
-    <value>BPanel</value>
-  </data>
-  <data name="&gt;&gt;BPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BPanel.Parent" xml:space="preserve">
-    <value>MainPanel</value>
-  </data>
-  <data name="&gt;&gt;BPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="OutputGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel2.Name" xml:space="preserve">
-    <value>_AudioLabel2</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel2.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel1.Name" xml:space="preserve">
-    <value>_AudioLabel1</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel1.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel2.Name" xml:space="preserve">
-    <value>_VideoLabel2</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel2.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel1.Name" xml:space="preserve">
-    <value>_VideoLabel1</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel1.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel2.Name" xml:space="preserve">
-    <value>_FileLabel2</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel2.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel.Name" xml:space="preserve">
-    <value>_AudioLabel</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_AudioLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel.Name" xml:space="preserve">
-    <value>_VideoLabel</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_VideoLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel1.Name" xml:space="preserve">
-    <value>_FileLabel1</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel1.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel.Name" xml:space="preserve">
-    <value>_FileLabel</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel.Parent" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;_FileLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="OutputGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 2</value>
-  </data>
-  <data name="OutputGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>681, 177</value>
-  </data>
-  <data name="OutputGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="OutputGroupBox.Text" xml:space="preserve">
-    <value>출력 파일 정보</value>
-  </data>
-  <data name="&gt;&gt;OutputGroupBox.Name" xml:space="preserve">
-    <value>OutputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;OutputGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OutputGroupBox.Parent" xml:space="preserve">
-    <value>BPanel</value>
-  </data>
-  <data name="&gt;&gt;OutputGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="_AudioLabel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1467,136 +1095,28 @@
   <data name="&gt;&gt;_FileLabel.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;AVSPanel.Name" xml:space="preserve">
-    <value>AVSPanel</value>
+  <data name="OutputGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 2</value>
   </data>
-  <data name="&gt;&gt;AVSPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="OutputGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>681, 177</value>
   </data>
-  <data name="&gt;&gt;AVSPanel.Parent" xml:space="preserve">
-    <value>Panel4</value>
+  <data name="OutputGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="&gt;&gt;AVSPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="OutputGroupBox.Text" xml:space="preserve">
+    <value>출력 파일 정보</value>
   </data>
-  <data name="&gt;&gt;EncSetGroupBox.Name" xml:space="preserve">
-    <value>EncSetGroupBox</value>
+  <data name="&gt;&gt;OutputGroupBox.Name" xml:space="preserve">
+    <value>OutputGroupBox</value>
   </data>
-  <data name="&gt;&gt;EncSetGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;OutputGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EncSetGroupBox.Parent" xml:space="preserve">
-    <value>Panel4</value>
-  </data>
-  <data name="&gt;&gt;EncSetGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="Panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 0</value>
-  </data>
-  <data name="Panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 182</value>
-  </data>
-  <data name="Panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Name" xml:space="preserve">
-    <value>Panel4</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;OutputGroupBox.Parent" xml:space="preserve">
     <value>BPanel</value>
   </data>
-  <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AVSGroupBox.Name" xml:space="preserve">
-    <value>AVSGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AVSGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSGroupBox.Parent" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;AVSGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AVSPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="AVSPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="AVSPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 70</value>
-  </data>
-  <data name="AVSPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Name" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Parent" xml:space="preserve">
-    <value>Panel4</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AVSCheckBox.Name" xml:space="preserve">
-    <value>AVSCheckBox</value>
-  </data>
-  <data name="&gt;&gt;AVSCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSCheckBox.Parent" xml:space="preserve">
-    <value>AVSGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AVSCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AVSSetButton.Name" xml:space="preserve">
-    <value>AVSSetButton</value>
-  </data>
-  <data name="&gt;&gt;AVSSetButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSSetButton.Parent" xml:space="preserve">
-    <value>AVSGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AVSSetButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="AVSGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 2</value>
-  </data>
-  <data name="AVSGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 60</value>
-  </data>
-  <data name="AVSGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="AVSGroupBox.Text" xml:space="preserve">
-    <value>AviSynth</value>
-  </data>
-  <data name="&gt;&gt;AVSGroupBox.Name" xml:space="preserve">
-    <value>AVSGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AVSGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSGroupBox.Parent" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;AVSGroupBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;OutputGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="AVSCheckBox.AutoSize" type="System.Boolean, mscorlib">
@@ -1653,65 +1173,53 @@
   <data name="&gt;&gt;AVSSetButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;PresetLabel.Name" xml:space="preserve">
-    <value>PresetLabel</value>
+  <data name="AVSGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 2</value>
   </data>
-  <data name="&gt;&gt;PresetLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="AVSGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 60</value>
   </data>
-  <data name="&gt;&gt;PresetLabel.Parent" xml:space="preserve">
-    <value>EncSetGroupBox</value>
+  <data name="AVSGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="&gt;&gt;PresetLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="AVSGroupBox.Text" xml:space="preserve">
+    <value>AviSynth</value>
   </data>
-  <data name="&gt;&gt;EncSetButton.Name" xml:space="preserve">
-    <value>EncSetButton</value>
+  <data name="&gt;&gt;AVSGroupBox.Name" xml:space="preserve">
+    <value>AVSGroupBox</value>
   </data>
-  <data name="&gt;&gt;EncSetButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EncSetButton.Parent" xml:space="preserve">
-    <value>EncSetGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EncSetButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;PresetButton.Name" xml:space="preserve">
-    <value>PresetButton</value>
-  </data>
-  <data name="&gt;&gt;PresetButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PresetButton.Parent" xml:space="preserve">
-    <value>EncSetGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PresetButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="EncSetGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 69</value>
-  </data>
-  <data name="EncSetGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 110</value>
-  </data>
-  <data name="EncSetGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="EncSetGroupBox.Text" xml:space="preserve">
-    <value>인코딩</value>
-  </data>
-  <data name="&gt;&gt;EncSetGroupBox.Name" xml:space="preserve">
-    <value>EncSetGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EncSetGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;AVSGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EncSetGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AVSGroupBox.Parent" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;AVSGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AVSPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="AVSPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="AVSPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 70</value>
+  </data>
+  <data name="AVSPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Name" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Parent" xml:space="preserve">
     <value>Panel4</value>
   </data>
-  <data name="&gt;&gt;EncSetGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;AVSPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="PresetLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 27</value>
@@ -1782,53 +1290,65 @@
   <data name="&gt;&gt;PresetButton.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;Panel5.Name" xml:space="preserve">
-    <value>Panel5</value>
+  <data name="EncSetGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 69</value>
   </data>
-  <data name="&gt;&gt;Panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="EncSetGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 110</value>
   </data>
-  <data name="&gt;&gt;Panel5.Parent" xml:space="preserve">
-    <value>Panel3</value>
+  <data name="EncSetGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;Panel5.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="EncSetGroupBox.Text" xml:space="preserve">
+    <value>인코딩</value>
   </data>
-  <data name="&gt;&gt;SaveFolderGroupBox.Name" xml:space="preserve">
-    <value>SaveFolderGroupBox</value>
+  <data name="&gt;&gt;EncSetGroupBox.Name" xml:space="preserve">
+    <value>EncSetGroupBox</value>
   </data>
-  <data name="&gt;&gt;SaveFolderGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;EncSetGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SaveFolderGroupBox.Parent" xml:space="preserve">
-    <value>Panel3</value>
+  <data name="&gt;&gt;EncSetGroupBox.Parent" xml:space="preserve">
+    <value>Panel4</value>
   </data>
-  <data name="&gt;&gt;SaveFolderGroupBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EncSetGroupBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="Panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
-  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 182</value>
+  <data name="Panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 0</value>
   </data>
-  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 63</value>
+  <data name="Panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 182</value>
   </data>
-  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="Panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
-    <value>Panel3</value>
+  <data name="&gt;&gt;Panel4.Name" xml:space="preserve">
+    <value>Panel4</value>
   </data>
-  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+  <data name="&gt;&gt;Panel4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Panel4.Parent" xml:space="preserve">
     <value>BPanel</value>
   </data>
-  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EncSButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="EncSButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 45</value>
+  </data>
+  <data name="EncSButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EncSButton.Text" xml:space="preserve">
+    <value>인코딩 시작</value>
   </data>
   <data name="&gt;&gt;EncSButton.Name" xml:space="preserve">
     <value>EncSButton</value>
@@ -1866,128 +1386,8 @@
   <data name="&gt;&gt;Panel5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EncSButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 8</value>
-  </data>
-  <data name="EncSButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 45</value>
-  </data>
-  <data name="EncSButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="EncSButton.Text" xml:space="preserve">
-    <value>인코딩 시작</value>
-  </data>
-  <data name="&gt;&gt;EncSButton.Name" xml:space="preserve">
-    <value>EncSButton</value>
-  </data>
-  <data name="&gt;&gt;EncSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EncSButton.Parent" xml:space="preserve">
-    <value>Panel5</value>
-  </data>
-  <data name="&gt;&gt;EncSButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="SaveFolderGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;Panel7.Name" xml:space="preserve">
-    <value>Panel7</value>
-  </data>
-  <data name="&gt;&gt;Panel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel7.Parent" xml:space="preserve">
-    <value>SaveFolderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;Panel7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SavePathTextBox.Name" xml:space="preserve">
-    <value>SavePathTextBox</value>
-  </data>
-  <data name="&gt;&gt;SavePathTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SavePathTextBox.Parent" xml:space="preserve">
-    <value>SaveFolderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SavePathTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SaveFolderGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 2</value>
-  </data>
-  <data name="SaveFolderGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>807, 52</value>
-  </data>
-  <data name="SaveFolderGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="SaveFolderGroupBox.Text" xml:space="preserve">
-    <value>저장 폴더</value>
-  </data>
-  <data name="&gt;&gt;SaveFolderGroupBox.Name" xml:space="preserve">
-    <value>SaveFolderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SaveFolderGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SaveFolderGroupBox.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;SaveFolderGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;OpenFolderButton.Name" xml:space="preserve">
-    <value>OpenFolderButton</value>
-  </data>
-  <data name="&gt;&gt;OpenFolderButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OpenFolderButton.Parent" xml:space="preserve">
-    <value>Panel7</value>
-  </data>
-  <data name="&gt;&gt;OpenFolderButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SetFolderButton.Name" xml:space="preserve">
-    <value>SetFolderButton</value>
-  </data>
-  <data name="&gt;&gt;SetFolderButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SetFolderButton.Parent" xml:space="preserve">
-    <value>Panel7</value>
-  </data>
-  <data name="&gt;&gt;SetFolderButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="Panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>571, 18</value>
-  </data>
-  <data name="Panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 31</value>
-  </data>
-  <data name="Panel7.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;Panel7.Name" xml:space="preserve">
-    <value>Panel7</value>
-  </data>
-  <data name="&gt;&gt;Panel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel7.Parent" xml:space="preserve">
-    <value>SaveFolderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;Panel7.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="OpenFolderButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 0</value>
@@ -2037,6 +1437,30 @@
   <data name="&gt;&gt;SetFolderButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Panel7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="Panel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>571, 18</value>
+  </data>
+  <data name="Panel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 31</value>
+  </data>
+  <data name="Panel7.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;Panel7.Name" xml:space="preserve">
+    <value>Panel7</value>
+  </data>
+  <data name="&gt;&gt;Panel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel7.Parent" xml:space="preserve">
+    <value>SaveFolderGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Panel7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="SavePathTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2063,6 +1487,78 @@
   </data>
   <data name="&gt;&gt;SavePathTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="SaveFolderGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 2</value>
+  </data>
+  <data name="SaveFolderGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>807, 52</value>
+  </data>
+  <data name="SaveFolderGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="SaveFolderGroupBox.Text" xml:space="preserve">
+    <value>저장 폴더</value>
+  </data>
+  <data name="&gt;&gt;SaveFolderGroupBox.Name" xml:space="preserve">
+    <value>SaveFolderGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SaveFolderGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SaveFolderGroupBox.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;SaveFolderGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 182</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>974, 63</value>
+  </data>
+  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>BPanel</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="BPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 273</value>
+  </data>
+  <data name="BPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>974, 245</value>
+  </data>
+  <data name="BPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;BPanel.Name" xml:space="preserve">
+    <value>BPanel</value>
+  </data>
+  <data name="&gt;&gt;BPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BPanel.Parent" xml:space="preserve">
+    <value>MainPanel</value>
+  </data>
+  <data name="&gt;&gt;BPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>

@@ -23,6 +23,8 @@ Imports System.Xml
 
 Public Class AudioPPFrm
 
+    Dim OKBTNCLK As Boolean = False
+
     Private Sub DefBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefBTN.Click
         AviSynthChComboBox.Text = LangCls.AudioPPch20ComboBox
         AmplifyCheckBox.Checked = False
@@ -207,10 +209,12 @@ RELOAD:
     End Sub
 
     Private Sub AudioPPFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub AudioPPFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        OKBTNCLK = False
 
         '=========================================
         'Rev 1.1
@@ -489,7 +493,13 @@ LANG_SKIP:
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
-        XML_CHANGE(My.Application.Info.DirectoryPath & "\settings.xml")
+        OKBTNCLK = True
+
+        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+
+        '프리셋 설정된 파일 표시 지우기
+        MainFrm.PresetLabel.Text = LangCls.MainUserStr
+
         Close()
     End Sub
 
@@ -497,122 +507,4 @@ LANG_SKIP:
         Close()
     End Sub
 
-    Private Sub XML_CHANGE(ByVal src As String)
-
-        '접근권한이 있을 때 까지 반복
-        If My.Computer.FileSystem.FileExists(src) = True Then
-RELOAD:
-            Try
-                Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
-                _SRL.Close()
-            Catch ex As Exception
-                GoTo RELOAD
-            End Try
-        End If
-
-        Try
-            Dim XDoc As New XmlDocument()
-            Dim XNode As XmlNode
-            XDoc.Load(src)
-            '============== 시작
-
-            'AviSynthChComboBox
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_AviSynthChComboBox")
-            If AviSynthChComboBox.Text = LangCls.AudioPPchoriginComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.AudioPPchoriginComboBox"
-            ElseIf AviSynthChComboBox.Text = LangCls.AudioPPch10ComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.AudioPPch10ComboBox"
-            ElseIf AviSynthChComboBox.Text = LangCls.AudioPPch20ComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.AudioPPch20ComboBox"
-            ElseIf AviSynthChComboBox.Text = LangCls.AudioPPch51ComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.AudioPPch51ComboBox"
-            ElseIf AviSynthChComboBox.Text = LangCls.AudioPPdolbysComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.AudioPPdolbysComboBox"
-            ElseIf AviSynthChComboBox.Text = LangCls.AudioPPdolbypComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.AudioPPdolbypComboBox"
-            End If
-            'AviSynthChComboBox
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_AmplifyCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AmplifyCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_AmplifyNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = AmplifyNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = EQCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ1TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ1TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ2TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ2TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ3TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ3TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ4TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ4TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ5TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ5TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ6TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ6TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ7TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ7TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ8TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ8TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ9TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ9TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ10TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ10TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ11TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ11TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ12TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ12TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ13TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ13TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ14TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ14TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ15TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ15TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ16TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ16TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ17TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ17TrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AudioPPFrm_EQ18TrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = EQ18TrackBar.Value
-
-            '============== 끝
-            XDoc.Save(src)
-        Catch ex As Exception
-            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
-        End Try
-
-        'SAVE, Change용
-        If MainFrm.EncListListView.SelectedItems.Count <> 0 Then
-            Dim index As Integer = MainFrm.EncListListView.SelectedItems(index).Index
-            MainFrm.GET_OutputINFO(index)  '출력정보
-        End If
-        'Change용 프리셋 설정된 파일 표시 지우기
-        MainFrm.PresetLabel.Text = LangCls.MainUserStr
-
-    End Sub
-
-    Private Sub APP_Panel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles APP_Panel.Paint
-
-    End Sub
 End Class

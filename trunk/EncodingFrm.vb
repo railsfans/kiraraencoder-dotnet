@@ -777,7 +777,10 @@ Public Class EncodingFrm
             If My.Computer.FileSystem.FileExists(SavePathStr) = True Then
                 If MessageBoxBTN = "" OrElse MessageBoxBTN = "YES" OrElse MessageBoxBTN = "NO" Then
                     MessageFrm.FilePathLabel.Text = SavePathStr
-                    MessageFrm.ShowDialog(Me)
+                    Try
+                        MessageFrm.ShowDialog(Me)
+                    Catch ex As Exception
+                    End Try
                 End If
                 If MessageBoxBTN = "NO" OrElse MessageBoxBTN = "NOTOALL" Then
                     MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainSkipStr
@@ -1203,19 +1206,19 @@ Public Class EncodingFrm
             If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
                 If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
 
-                    If MainFrm.VF_unsharpVTextBox = "" AndAlso VF_AspectV = "" Then
+                    If MainFrm.VF_TextBox = "" AndAlso VF_AspectV = "" Then
                         VideoFilterV = ""
                     Else
-                        VideoFilterV = Chr(34) & MainFrm.VF_unsharpVTextBox & VF_AspectV & Chr(34)
+                        VideoFilterV = Chr(34) & MainFrm.VF_TextBox & VF_AspectV & Chr(34)
                         VideoFilterV = " -vf " & Replace(VideoFilterV, ", ", "", 1, 1)
                     End If
 
                 Else 'AviSynth 사용 안 함
 
-                    If VF_CropV = "" AndAlso VF_imageVTextBox = "" AndAlso MainFrm.VF_unsharpVTextBox = "" AndAlso VF_AspectV = "" Then
+                    If VF_CropV = "" AndAlso VF_imageVTextBox = "" AndAlso MainFrm.VF_TextBox = "" AndAlso VF_AspectV = "" Then
                         VideoFilterV = ""
                     Else
-                        VideoFilterV = Chr(34) & VF_CropV & VF_imageVTextBox & MainFrm.VF_unsharpVTextBox & VF_AspectV & Chr(34)
+                        VideoFilterV = Chr(34) & VF_CropV & VF_imageVTextBox & MainFrm.VF_TextBox & VF_AspectV & Chr(34)
                         VideoFilterV = " -vf " & Replace(VideoFilterV, ", ", "", 1, 1)
                     End If
 
@@ -1820,7 +1823,7 @@ LANG_SKIP:
         MainFrm.AviSynthCommand2PassStr = ""
         MainFrm.FFmpegCommandStr = ""
         MainFrm.FFmpegCommand2PassStr = ""
-        MainFrm.VF_unsharpVTextBox = ""
+        MainFrm.VF_TextBox = ""
         MainFrm.NeroAACSTRFFmpeg = ""
         MainFrm.NeroAACSTRAviSynth = ""
         MainFrm.NeroAACSTRNEP = ""

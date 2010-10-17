@@ -23,6 +23,8 @@ Imports System.IO
 
 Public Class SubtitleFrm
 
+    Dim OKBTNCLK As Boolean = False
+
     Private Sub DefBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefBTN.Click
 
         '자막
@@ -122,150 +124,6 @@ Public Class SubtitleFrm
 
         Catch ex As Exception
         End Try
-
-    End Sub
-
-    Private Sub XML_CHANGE(ByVal src As String)
-
-        '접근권한이 있을 때 까지 반복
-        If My.Computer.FileSystem.FileExists(src) = True Then
-RELOAD:
-            Try
-                Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
-                _SRL.Close()
-            Catch ex As Exception
-                GoTo RELOAD
-            End Try
-        End If
-
-        Try
-            Dim XDoc As New XmlDocument()
-            Dim XNode As XmlNode
-            XDoc.Load(src)
-            '============== 시작
-
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_SubtitleCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = SubtitleCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_EncComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = EncComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_FontComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FontComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_SizeUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = SizeUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_ItalicCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = ItalicCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_BoldCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = BoldCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_PrimaryColourTrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = PrimaryColourTrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_OutlineColourTrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = OutlineColourTrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_BackColourTrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = BackColourTrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_OutlineUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = OutlineUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_ShadowUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = BackUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_BorderStyle1")
-            If Not XNode Is Nothing Then XNode.InnerText = BorderStyle1.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_BorderStyle3")
-            If Not XNode Is Nothing Then XNode.InnerText = BorderStyle3.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment5RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment5RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment6RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment6RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment4RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment4RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment9RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment9RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment7RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment7RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment8RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment8RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment1RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment1RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment2RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment2RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_Alignment3RadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = Alignment3RadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_MarginLNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = MarginLNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_MarginRNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = MarginRNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_MarginVNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = MarginVNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_PrimaryColourPanel")
-            If Not XNode Is Nothing Then XNode.InnerText = PrimaryColourPanel.BackColor.ToArgb.ToString
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_OutlineColourPanel")
-            If Not XNode Is Nothing Then XNode.InnerText = OutlineColourPanel.BackColor.ToArgb.ToString
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_BackColourPanel")
-            If Not XNode Is Nothing Then XNode.InnerText = BackColourPanel.BackColor.ToArgb.ToString
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_SecondaryColourPanel")
-            If Not XNode Is Nothing Then XNode.InnerText = SecondaryColourPanel.BackColor.ToArgb.ToString
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_SecondaryColourTrackBar")
-            If Not XNode Is Nothing Then XNode.InnerText = SecondaryColourTrackBar.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_StrikeOutCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = StrikeOutCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_UnderlineCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = UnderlineCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_SpacingNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = SpacingNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_AngleNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = AngleNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_ScaleXNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ScaleXNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/SubtitleFrm_ScaleYNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ScaleYNumericUpDown.Value
-
-            '============== 끝
-            XDoc.Save(src)
-        Catch ex As Exception
-            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
-        End Try
-
-        'SAVE, Change용
-        If MainFrm.EncListListView.SelectedItems.Count <> 0 Then
-            Dim index As Integer = MainFrm.EncListListView.SelectedItems(index).Index
-            MainFrm.GET_OutputINFO(index)  '출력정보
-        End If
-        'Change용 프리셋 설정된 파일 표시 지우기
-        MainFrm.PresetLabel.Text = LangCls.MainUserStr
 
     End Sub
 
@@ -501,10 +359,12 @@ RELOAD:
     End Sub
 
     Private Sub SubtitleFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub SubtitleFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        OKBTNCLK = False
 
         '폰트로드
         Dim ff As FontFamily
@@ -633,7 +493,13 @@ LANG_SKIP:
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
-        XML_CHANGE(My.Application.Info.DirectoryPath & "\settings.xml")
+        OKBTNCLK = True
+
+        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+
+        '프리셋 설정된 파일 표시 지우기
+        MainFrm.PresetLabel.Text = LangCls.MainUserStr
+
         Close()
     End Sub
 

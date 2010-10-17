@@ -23,11 +23,15 @@ Imports System.Xml
 
 Public Class ImagePPFrm
 
+    Dim OKBTNCLK As Boolean = False
+
     Private Sub ImagePPFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        OKBTNCLK = False
 
         '=========================================
         'Rev 1.1
@@ -363,154 +367,6 @@ RELOAD:
 
     End Sub
 
-    Private Sub XML_CHANGE(ByVal src As String)
-
-        '접근권한이 있을 때 까지 반복
-        If My.Computer.FileSystem.FileExists(src) = True Then
-RELOAD:
-            Try
-                Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
-                _SRL.Close()
-            Catch ex As Exception
-                GoTo RELOAD
-            End Try
-        End If
-
-        Try
-            Dim XDoc As New XmlDocument()
-            Dim XNode As XmlNode
-            XDoc.Load(src)
-            '============== 시작
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthFramerateComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AviSynthFramerateComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthFramerateCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AviSynthFramerateCheckBox.Checked
-
-            'AviSynthImageSizeComboBox
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthImageSizeComboBox")
-            If AviSynthImageSizeComboBox.Text = LangCls.ImagePPUserInputComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePPUserInputComboBox"
-            Else
-                If Not XNode Is Nothing Then XNode.InnerText = AviSynthImageSizeComboBox.Text
-            End If
-            'AviSynthImageSizeComboBox
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthImageSizeWidthTextBox")
-            If Not XNode Is Nothing Then If AviSynthImageSizeWidthTextBox.Text = "" Then XNode.InnerText = "480" Else XNode.InnerText = AviSynthImageSizeWidthTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthImageSizeHeightTextBox")
-            If Not XNode Is Nothing Then If AviSynthImageSizeHeightTextBox.Text = "" Then XNode.InnerText = "272" Else XNode.InnerText = AviSynthImageSizeHeightTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthImageSizeCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AviSynthImageSizeCheckBox.Checked
-
-            'AviSynthResizeFilterComboBox
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthResizeFilterComboBox")
-            If InStr(AviSynthResizeFilterComboBox.Text, LangCls.ImagePPBlurStr) <> 0 Then
-                If Not XNode Is Nothing Then XNode.InnerText = Split(AviSynthResizeFilterComboBox.Text, " ")(0) & " LangCls.ImagePPBlurStr"
-            ElseIf InStr(AviSynthResizeFilterComboBox.Text, LangCls.ImagePPSharpStr) <> 0 Then
-                If Not XNode Is Nothing Then XNode.InnerText = Split(AviSynthResizeFilterComboBox.Text, " ")(0) & " LangCls.ImagePPSharpStr"
-            ElseIf InStr(AviSynthResizeFilterComboBox.Text, LangCls.ImagePPMiddleStr) <> 0 Then
-                If Not XNode Is Nothing Then XNode.InnerText = Split(AviSynthResizeFilterComboBox.Text, " ")(0) & " LangCls.ImagePPMiddleStr"
-            End If
-            'AviSynthResizeFilterComboBox
-
-            'AviSynthAspectComboBox
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthAspectComboBox")
-            If AviSynthAspectComboBox.Text = LangCls.ImagePPNoKeepAviSynthAspectComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePPNoKeepAviSynthAspectComboBox"
-            ElseIf AviSynthAspectComboBox.Text = LangCls.ImagePPLetterBoxAviSynthAspectComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePPLetterBoxAviSynthAspectComboBox"
-            ElseIf AviSynthAspectComboBox.Text = LangCls.ImagePPCropAviSynthAspectComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePPCropAviSynthAspectComboBox"
-            End If
-            'AviSynthAspectComboBox
-
-            'AviSynthAspectComboBox2
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthAspectComboBox2")
-            If AviSynthAspectComboBox2.Text = LangCls.ImagePPOutputAviSynthAspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePPOutputAviSynthAspectComboBox2"
-            ElseIf AviSynthAspectComboBox2.Text = LangCls.ImagePPOriginalAviSynthAspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePPOriginalAviSynthAspectComboBox2"
-            ElseIf AviSynthAspectComboBox2.Text = LangCls.ImagePP43AviSynthAspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePP43AviSynthAspectComboBox2"
-            ElseIf AviSynthAspectComboBox2.Text = LangCls.ImagePP169AviSynthAspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePP169AviSynthAspectComboBox2"
-            ElseIf AviSynthAspectComboBox2.Text = LangCls.ImagePP1851AviSynthAspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePP1851AviSynthAspectComboBox2"
-            ElseIf AviSynthAspectComboBox2.Text = LangCls.ImagePP2351AviSynthAspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePP2351AviSynthAspectComboBox2"
-            ElseIf AviSynthAspectComboBox2.Text = LangCls.ImagePPUserInputComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.ImagePPUserInputComboBox"
-            End If
-            'AviSynthAspectComboBox2
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthAspectWTextBox")
-            If Not XNode Is Nothing Then If AviSynthAspectWTextBox.Text = "" Then XNode.InnerText = "0" Else XNode.InnerText = AviSynthAspectWTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthAspectHTextBox")
-            If Not XNode Is Nothing Then If AviSynthAspectHTextBox.Text = "" Then XNode.InnerText = "0" Else XNode.InnerText = AviSynthAspectHTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthDeinterlaceCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AviSynthDeinterlaceCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AviSynthDeinterlaceComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AviSynthDeinterlaceComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_brightnessNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = brightnessNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_contrastNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = contrastNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_saturationNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = saturationNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_hueNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = hueNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_SharpenNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = SharpenNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_ColorYUVTVPCRadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = ColorYUVTVPCRadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_ColorYUVPCTVRadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = ColorYUVPCTVRadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_ColorYUVNRadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = ColorYUVNRadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_ColorYUVASCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = ColorYUVASCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AVSMPEG2DeinterlaceCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AVSMPEG2DeinterlaceCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_AVSMPEG2DeinterlaceComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AVSMPEG2DeinterlaceComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/ImagePPFrm_FieldorderComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FieldorderComboBox.Text
-
-            '============== 끝
-            XDoc.Save(src)
-        Catch ex As Exception
-            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
-        End Try
-
-        'SAVE, Change용
-        If MainFrm.EncListListView.SelectedItems.Count <> 0 Then
-            Dim index As Integer = MainFrm.EncListListView.SelectedItems(index).Index
-            MainFrm.GET_OutputINFO(index)  '출력정보
-        End If
-        'Change용 프리셋 설정된 파일 표시 지우기
-        MainFrm.PresetLabel.Text = LangCls.MainUserStr
-
-    End Sub
-
     Private Sub brightnessNumericUpDown_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles brightnessNumericUpDown.LostFocus
         brightnessNumericUpDown.Text = brightnessNumericUpDown.Value
     End Sub
@@ -828,7 +684,13 @@ RELOAD:
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
-        XML_CHANGE(My.Application.Info.DirectoryPath & "\settings.xml")
+        OKBTNCLK = True
+
+        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+
+        '프리셋 설정된 파일 표시 지우기
+        MainFrm.PresetLabel.Text = LangCls.MainUserStr
+
         Close()
     End Sub
 

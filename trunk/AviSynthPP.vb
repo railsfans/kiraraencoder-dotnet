@@ -855,7 +855,10 @@ ERRSKIP:
                 '----------------
                 INDEX_PStr = ""
                 FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").FFINDEX", PriorityInt)
-                FFMSIndexFrm.ShowDialog()
+                Try
+                    FFMSIndexFrm.ShowDialog()
+                Catch ex As Exception
+                End Try
             Else
                 '----------------
                 'HideMode
@@ -1008,7 +1011,10 @@ DelayAudioSkip:
                 '----------------
                 INDEX_PStr = ""
                 DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
-                DGIndexFrm.ShowDialog()
+                Try
+                    DGIndexFrm.ShowDialog()
+                Catch ex As Exception
+                End Try
             Else
                 '----------------
                 'HideMode

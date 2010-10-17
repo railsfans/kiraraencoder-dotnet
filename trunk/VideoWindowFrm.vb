@@ -168,6 +168,7 @@ LANG_SKIP:
         '=========================================
 
         OPEN_SUB()
+
     End Sub
 
     Public Sub GET_IMAGE(ByVal frameV As Integer)
@@ -308,7 +309,10 @@ LANG_SKIP:
     Private Sub MoveToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoveToolStripMenuItem.Click
         FrameMoveFrm.FrameNumericUpDown.Maximum = VideoTrackBar.Maximum
         FrameMoveFrm.FrameNumericUpDown.Value = FrameI
-        FrameMoveFrm.ShowDialog(Me)
+        Try
+            FrameMoveFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
     End Sub
 
 End Class

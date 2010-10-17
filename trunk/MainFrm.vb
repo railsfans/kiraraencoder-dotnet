@@ -86,7 +86,7 @@ Public Class MainFrm
     Public AviSynthCommand2PassStr As String = ""
     Public FFmpegCommandStr As String = ""
     Public FFmpegCommand2PassStr As String = ""
-    Public VF_unsharpVTextBox As String = ""
+    Public VF_TextBox As String = ""
     Public NeroAACSTRFFmpeg As String = ""
     Public NeroAACSTRAviSynth As String = ""
     Public NeroAACSTRNEP As String = ""
@@ -619,7 +619,10 @@ Public Class MainFrm
     End Sub
 
     Private Sub AddPreset(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        AddPresetFrm.ShowDialog(Me)
+        Try
+            AddPresetFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub OpenPresetFolder(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -1370,7 +1373,7 @@ LANG_SKIP:
         '최종 파일에 설정저장
         APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
         '예외저장
-        XML_CHANGE(My.Application.Info.DirectoryPath & "\settings.xml")
+        XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
 
 
 
@@ -1743,7 +1746,7 @@ UAC:
         '프리셋 부분 새로고침
         RefPreset()
 
-        'SAVE, Change용 - 언어설정 예외적용
+        'SAVE용 - 언어설정 예외적용
         If EncListListView.SelectedItems.Count <> 0 Then
             Dim index As Integer = EncListListView.SelectedItems(index).Index
             GET_OutputINFO(index)  '출력정보
@@ -1771,7 +1774,10 @@ UAC:
 
         FLoadFrmFileName = OpenFileDialog1.FileNames
         FLoadFrm.FileCheckB = False
-        FLoadFrm.ShowDialog(Me)
+        Try
+            FLoadFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
 
         '목록에 아이템이 있지만 선택된 아이템이없으면 첫번째아이템 선택//
         If EncListListView.Items.Count > 0 Then
@@ -1801,7 +1807,10 @@ UAC:
 
         FLoadFrmFileName = DirectCast(e.Data.GetData(DataFormats.FileDrop), String())
         FLoadFrm.FileCheckB = True
-        FLoadFrm.ShowDialog(Me)
+        Try
+            FLoadFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
 
         '목록에 아이템이 있지만 선택된 아이템이없으면 첫번째아이템 선택//
         If EncListListView.Items.Count > 0 Then
@@ -1869,7 +1878,10 @@ UAC:
         End If
         '인코딩중이 아니면
         If EncodingFrm.EncProcBool = False Then
-            StreamFrm.ShowDialog(Me)
+            Try
+                StreamFrm.ShowDialog(Me)
+            Catch ex As Exception
+            End Try
         End If
     End Sub
 
@@ -2012,7 +2024,11 @@ UAC:
             MsgBox(LangCls.MainSelectListA)
             Exit Sub
         End If
-        StreamFrm.ShowDialog(Me)
+
+        Try
+            StreamFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
 
     End Sub
 
@@ -2024,7 +2040,10 @@ UAC:
         '////////////////////////////
         'AviSynth 검사//
         If My.Computer.FileSystem.FileExists(Me.PubAVSPATHStr) = False Then
-            AVSIFrm.ShowDialog(Me)
+            Try
+                AVSIFrm.ShowDialog(Me)
+            Catch ex As Exception
+            End Try
             Exit Sub
         End If
         '----------------------------------- P1
@@ -2037,13 +2056,19 @@ UAC:
             AVSFV = ""
         End Try
         If AVSFV = "" Then
-            AVSIFrm.ShowDialog(Me)
+            Try
+                AVSIFrm.ShowDialog(Me)
+            Catch ex As Exception
+            End Try
             Exit Sub
         End If
         '----------------------------------- P2
         If AVSFV < "2.5.8.5" Then '버전 검사
             If AVSIFrm.OldVerCheckBox.Checked = False Then
-                AVSIFrm.ShowDialog(Me)
+                Try
+                    AVSIFrm.ShowDialog(Me)
+                Catch ex As Exception
+                End Try
             End If
         End If
         '////////////////////////////
@@ -2073,7 +2098,12 @@ UAC:
     End Sub
 
     Private Sub EncSetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncSetButton.Click
-        EncSetFrm.ShowDialog(Me)
+
+        Try
+            EncSetFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+
     End Sub
 
     Private Sub EncSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncSButton.Click
@@ -2087,7 +2117,10 @@ UAC:
         'neroAacEnc.exe 체크 (Nero AAC 코덱 선택했으면)
         If EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'NeroAAC
             If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\tools\neroaac\neroAacEnc.exe") = False Then
-                NeroAACNoticeFrm.ShowDialog(Me)
+                Try
+                    NeroAACNoticeFrm.ShowDialog(Me)
+                Catch ex As Exception
+                End Try
                 Exit Sub
             End If
         End If
@@ -2196,6 +2229,8 @@ UAC:
             .ChromaMatrixHSNumericUpDown.Value = 5
             .ChromaMatrixVSNumericUpDown.Value = 5
             .ChromaEffectSNumericUpDown.Value = 1.0
+            .hflipCheckBox.Checked = False
+            .vflipCheckBox.Checked = False
             '오디오
             .AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame"
             .AudioBitrateComboBox.Text = "128"
@@ -2873,6 +2908,16 @@ RELOAD:
                     If XTR.Name = "EncSetFrm_ChromaEffectSNumericUpDown" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .ChromaEffectSNumericUpDown.Value = XTRSTR Else .ChromaEffectSNumericUpDown.Value = 1.0
+                    End If
+
+                    If XTR.Name = "EncSetFrm_hflipCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .hflipCheckBox.Checked = XTRSTR Else .hflipCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_vflipCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .vflipCheckBox.Checked = XTRSTR Else .vflipCheckBox.Checked = False
                     End If
 
                     '오디오
@@ -4146,7 +4191,7 @@ RELOAD:
             XTWriter.Close()
         End Try
 
-        'SAVE, Change용
+        'SAVE용
         If EncListListView.SelectedItems.Count <> 0 Then
             Dim index As Integer = EncListListView.SelectedItems(index).Index
             GET_OutputINFO(index)  '출력정보
@@ -4332,6 +4377,14 @@ RELOAD:
 
                 XTWriter.WriteStartElement("EncSetFrm_ChromaEffectSNumericUpDown")
                 XTWriter.WriteString(.ChromaEffectSNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_hflipCheckBox")
+                XTWriter.WriteString(.hflipCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_vflipCheckBox")
+                XTWriter.WriteString(.vflipCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
                 '오디오
@@ -5192,7 +5245,7 @@ RELOAD:
             XTWriter.Close()
         End Try
 
-        'SAVE, Change용
+        'SAVE용
         If EncListListView.SelectedItems.Count <> 0 Then
             Dim index As Integer = EncListListView.SelectedItems(index).Index
             GET_OutputINFO(index)  '출력정보
@@ -5200,39 +5253,13 @@ RELOAD:
 
     End Sub
 
-    Private Sub XML_CHANGE(ByVal src As String)
+    Private Sub AVSSetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSSetButton.Click
 
-        '접근권한이 있을 때 까지 반복
-        If My.Computer.FileSystem.FileExists(src) = True Then
-RELOAD:
-            Try
-                Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
-                _SRL.Close()
-            Catch ex As Exception
-                GoTo RELOAD
-            End Try
-        End If
-
-        '예외저장//
         Try
-            Dim XDoc As New XmlDocument()
-            Dim XNode As XmlNode
-            XDoc.Load(src)
-            '============== 시작
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AVSCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AVSCheckBox.Checked
-
-            '============== 끝
-            XDoc.Save(src)
+            AviSynthEditorFrm.ShowDialog(Me)
         Catch ex As Exception
-            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
         End Try
 
-    End Sub
-
-    Private Sub AVSSetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSSetButton.Click
-        AviSynthEditorFrm.ShowDialog(Me)
     End Sub
 
     Private Sub PresetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresetButton.Click
@@ -5250,7 +5277,7 @@ RELOAD:
 
         '-------------------------------------------------------------------------
 
-        'SAVE, Change용 - AviSynth 사용여부 예외적용
+        'SAVE용 - AviSynth 사용여부 예외적용
         If EncListListView.SelectedItems.Count <> 0 Then
             Dim index As Integer = EncListListView.SelectedItems(index).Index
             GET_OutputINFO(index)  '출력정보
@@ -5521,7 +5548,10 @@ RELOAD:
     End Sub
 
     Private Sub InChkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InChkToolStripMenuItem.Click
-        AVSIFrm.ShowDialog(Me)
+        Try
+            AVSIFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub ErrToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ErrToolStripMenuItem2.Click
@@ -5529,7 +5559,8 @@ RELOAD:
     End Sub
 
     Private Sub AVSCheckBox_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AVSCheckBox.Click
-        'Change용 프리셋 설정된 파일 표시 지우기 (저장은 프로그램이 종료될 때 하므로 여기에)
+        '프리셋 설정된 파일 표시 지우기 (저장은 프로그램이 종료될 때 하므로 여기에)
         PresetLabel.Text = LangCls.MainUserStr
     End Sub
+
 End Class

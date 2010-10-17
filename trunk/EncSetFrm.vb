@@ -23,6 +23,8 @@ Imports System.IO
 
 Public Class EncSetFrm
 
+    Dim OKBTNCLK As Boolean = False
+
     Private Sub OutFComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OutFComboBox.SelectedIndexChanged
 
         If InStr(OutFComboBox.SelectedItem, "[AVI]", CompareMethod.Text) <> 0 Then
@@ -434,10 +436,12 @@ Public Class EncSetFrm
     End Sub
 
     Private Sub EncSetFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
     End Sub
 
     Public Sub EncSetFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        OKBTNCLK = False
 
         '=========================================
         'Rev 1.1
@@ -556,6 +560,8 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetPCMBP" Then LangCls.EncSetPCMBP = XTR.ReadString
                 If XTR.Name = "EncSetCharERR" Then LangCls.EncSetCharERR = XTR.ReadString
                 If XTR.Name = "EncSetFrmSubtitleRecordingCheckBox" Then SubtitleRecordingCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmhflipCheckBox" Then hflipCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmvflipCheckBox" Then vflipCheckBox.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -728,6 +734,8 @@ LANG_SKIP:
         ChromaMatrixHSNumericUpDown.Value = 5
         ChromaMatrixVSNumericUpDown.Value = 5
         ChromaEffectSNumericUpDown.Value = 1.0
+        hflipCheckBox.Checked = False
+        vflipCheckBox.Checked = False
         '오디오
         AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame"
         AudioBitrateComboBox.Text = "128"
@@ -1213,240 +1221,6 @@ LANG_SKIP:
         ChromaEffectSNumericUpDown.Value = 1.0
     End Sub
 
-    Private Sub XML_CHANGE(ByVal src As String)
-
-        '접근권한이 있을 때 까지 반복
-        If My.Computer.FileSystem.FileExists(src) = True Then
-RELOAD:
-            Try
-                Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
-                _SRL.Close()
-            Catch ex As Exception
-                GoTo RELOAD
-            End Try
-        End If
-
-        Try
-            Dim XDoc As New XmlDocument()
-            Dim XNode As XmlNode
-            XDoc.Load(src)
-            '============== 시작
-
-            '설정 기본값
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_OutFComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = Split(OutFComboBox.Text, " ")(0)
-
-            '비디오
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_VideoCodecComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = VideoCodecComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_VideoModeComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = Split(VideoModeComboBox.Text, " ")(0)
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_BitrateComboBox")
-            If Not XNode Is Nothing Then If BitrateComboBox.Text = "" Then XNode.InnerText = "700" Else XNode.InnerText = BitrateComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_QuantizerNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QuantizerNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_QuantizerCQPNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QuantizerCQPNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_QualityNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QualityNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_FramerateComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FramerateComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_FramerateCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FramerateCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AdvanOptsCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AdvanOptsCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_GOPSizeCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = GOPSizeCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_GOPSizeTextBox")
-            If Not XNode Is Nothing Then If GOPSizeTextBox.Text = "" Then XNode.InnerText = "250" Else XNode.InnerText = GOPSizeTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_MinGOPSizeTextBox")
-            If Not XNode Is Nothing Then If MinGOPSizeTextBox.Text = "" Then XNode.InnerText = "25" Else XNode.InnerText = MinGOPSizeTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_PSPMP4CheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = PSPMP4CheckBox.Checked
-
-            '영상
-            'ImageSizeComboBox
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_ImageSizeComboBox")
-            If ImageSizeComboBox.Text = LangCls.EncSetUserInputComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetUserInputComboBox"
-            Else
-                If Not XNode Is Nothing Then XNode.InnerText = ImageSizeComboBox.Text
-            End If
-            'ImageSizeComboBox
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_ImageSizeWidthTextBox")
-            If Not XNode Is Nothing Then If ImageSizeWidthTextBox.Text = "" Then XNode.InnerText = "480" Else XNode.InnerText = ImageSizeWidthTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_ImageSizeHeightTextBox")
-            If Not XNode Is Nothing Then If ImageSizeHeightTextBox.Text = "" Then XNode.InnerText = "272" Else XNode.InnerText = ImageSizeHeightTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_ImageSizeCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = ImageSizeCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_FFmpegResizeFilterComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FFmpegResizeFilterComboBox.Text
-
-            'AspectComboBox
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AspectComboBox")
-            If AspectComboBox.Text = LangCls.EncSetNoKeepAspectComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetNoKeepAspectComboBox"
-            ElseIf AspectComboBox.Text = LangCls.EncSetLetterBoxAspectComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetLetterBoxAspectComboBox"
-            ElseIf AspectComboBox.Text = LangCls.EncSetCropAspectComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetCropAspectComboBox"
-            End If
-            'AspectComboBox
-
-            'AspectComboBox2
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AspectComboBox2")
-            If AspectComboBox2.Text = LangCls.EncSetOutputAspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetOutputAspectComboBox2"
-            ElseIf AspectComboBox2.Text = LangCls.EncSetOriginalAspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetOriginalAspectComboBox2"
-            ElseIf AspectComboBox2.Text = LangCls.EncSet43AspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSet43AspectComboBox2"
-            ElseIf AspectComboBox2.Text = LangCls.EncSet169AspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSet169AspectComboBox2"
-            ElseIf AspectComboBox2.Text = LangCls.EncSet1851AspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSet1851AspectComboBox2"
-            ElseIf AspectComboBox2.Text = LangCls.EncSet2351AspectComboBox2 Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSet2351AspectComboBox2"
-            ElseIf AspectComboBox2.Text = LangCls.EncSetUserInputComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetUserInputComboBox"
-            End If
-            'AspectComboBox2
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AspectWTextBox")
-            If Not XNode Is Nothing Then If AspectWTextBox.Text = "" Then XNode.InnerText = "0" Else XNode.InnerText = AspectWTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AspectHTextBox")
-            If Not XNode Is Nothing Then If AspectHTextBox.Text = "" Then XNode.InnerText = "0" Else XNode.InnerText = AspectHTextBox.Text
-
-            '영상 처리
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_FFmpegImageUnsharpCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FFmpegImageUnsharpCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_LumaMatrixHSNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = LumaMatrixHSNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_LumaMatrixVSNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = LumaMatrixVSNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_LumaEffectSNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = LumaEffectSNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_ChromaMatrixHSNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ChromaMatrixHSNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_ChromaMatrixVSNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ChromaMatrixVSNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_ChromaEffectSNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ChromaEffectSNumericUpDown.Value
-
-            '오디오
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AudioCodecComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AudioCodecComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AudioBitrateComboBox")
-            If Not XNode Is Nothing Then If AudioBitrateComboBox.Text = "" Then XNode.InnerText = "128" Else XNode.InnerText = AudioBitrateComboBox.Text
-
-            'FFmpegChComboBox
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_FFmpegChComboBox")
-            If FFmpegChComboBox.Text = LangCls.EncSetchoriginComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetchoriginComboBox"
-            ElseIf FFmpegChComboBox.Text = LangCls.EncSetch10ComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetch10ComboBox"
-            ElseIf FFmpegChComboBox.Text = LangCls.EncSetch20ComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetch20ComboBox"
-            ElseIf FFmpegChComboBox.Text = LangCls.EncSetch51ComboBox Then
-                If Not XNode Is Nothing Then XNode.InnerText = "LangCls.EncSetch51ComboBox"
-            End If
-            'FFmpegChComboBox
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_SamplerateComboBox")
-            If Not XNode Is Nothing Then If SamplerateComboBox.Text = "" Then XNode.InnerText = "44100" Else XNode.InnerText = SamplerateComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_SamplerateCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = SamplerateCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AudioVolNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = AudioVolNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_VorbisQNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = VorbisQNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_AMRBitrateComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AMRBitrateComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_NeroAACProfileComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = NeroAACProfileComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_NeroAACBitrateNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = NeroAACBitrateNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_NeroAACQNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = NeroAACQNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_NeroAACABRRadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = NeroAACABRRadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_NeroAACCBRRadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = NeroAACCBRRadioButton.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_NeroAACVBRRadioButton")
-            If Not XNode Is Nothing Then XNode.InnerText = NeroAACVBRRadioButton.Checked
-
-            '기타
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_HeaderTextBox")
-            If Not XNode Is Nothing Then If HeaderTextBox.Text = "" Then XNode.InnerText = vbNullChar Else XNode.InnerText = HeaderTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_ExtensionTextBox")
-            If Not XNode Is Nothing Then If ExtensionTextBox.Text = "" Then XNode.InnerText = vbNullChar Else XNode.InnerText = ExtensionTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_SizeLimitTextBox")
-            If Not XNode Is Nothing Then If SizeLimitTextBox.Text = "" Then XNode.InnerText = "0" Else XNode.InnerText = SizeLimitTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_SizeLimitCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = SizeLimitCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_DeinterlaceCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = DeinterlaceCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_FFmpegCommandTextBox")
-            If Not XNode Is Nothing Then If FFmpegCommandTextBox.Text = "" Then XNode.InnerText = vbNullChar Else XNode.InnerText = FFmpegCommandTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/EncSetFrm_SubtitleRecordingCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = SubtitleRecordingCheckBox.Checked
-       
-            '============== 끝
-            XDoc.Save(src)
-        Catch ex As Exception
-            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
-        End Try
-
-        'SAVE, Change용
-        If MainFrm.EncListListView.SelectedItems.Count <> 0 Then
-            Dim index As Integer = MainFrm.EncListListView.SelectedItems(index).Index
-            MainFrm.GET_OutputINFO(index)  '출력정보
-        End If
-        'Change용 프리셋 설정된 파일 표시 지우기
-        MainFrm.PresetLabel.Text = LangCls.MainUserStr
-
-    End Sub
-
     Private Sub XML_LOAD(ByVal src As String)
 
         '접근권한이 있을 때 까지 반복
@@ -1661,6 +1435,16 @@ RELOAD:
                 If XTR.Name = "EncSetFrm_ChromaEffectSNumericUpDown" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then ChromaEffectSNumericUpDown.Value = XTRSTR Else ChromaEffectSNumericUpDown.Value = 1.0
+                End If
+
+                If XTR.Name = "EncSetFrm_hflipCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then hflipCheckBox.Checked = XTRSTR Else hflipCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_vflipCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then vflipCheckBox.Checked = XTRSTR Else vflipCheckBox.Checked = False
                 End If
 
                 '오디오
@@ -2561,12 +2345,25 @@ RELOAD:
         '***********************************
         ' 비디오필터 unsharp
         '***********************************
+        MainFrm.VF_TextBox = ""
         If FFmpegImageUnsharpCheckBox.Checked = True Then
-            MainFrm.VF_unsharpVTextBox = ", unsharp=" & LumaMatrixHSNumericUpDown.Value & ":" & LumaMatrixVSNumericUpDown.Value & ":" & _
+            MainFrm.VF_TextBox = ", unsharp=" & LumaMatrixHSNumericUpDown.Value & ":" & LumaMatrixVSNumericUpDown.Value & ":" & _
                                                LumaEffectSNumericUpDown.Value & ":" & ChromaMatrixHSNumericUpDown.Value & ":" & _
                                                ChromaMatrixVSNumericUpDown.Value & ":" & ChromaEffectSNumericUpDown.Value
-        Else
-            MainFrm.VF_unsharpVTextBox = ""
+        End If
+
+        '***********************************
+        ' 비디오필터 hflip
+        '***********************************
+        If hflipCheckBox.Checked = True Then
+            MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", hflip"
+        End If
+
+        '***********************************
+        ' 비디오필터 vflip
+        '***********************************
+        If vflipCheckBox.Checked = True Then
+            MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", vflip"
         End If
 
         '***********************************
@@ -2670,6 +2467,7 @@ RELOAD:
 
     End Sub
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
+        OKBTNCLK = True
 
         '특수문자
         Dim TCharI As Integer
@@ -2728,7 +2526,11 @@ RELOAD:
 
         '=================================
 
-        XML_CHANGE(My.Application.Info.DirectoryPath & "\settings.xml")
+        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+
+        '프리셋 설정된 파일 표시 지우기
+        MainFrm.PresetLabel.Text = LangCls.MainUserStr
+
         Close()
     End Sub
 
@@ -2877,12 +2679,18 @@ RELOAD:
 
     Private Sub AdvanOptsButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AdvanOptsButton.Click
         If VideoCodecComboBox.Text = "H.264(AVC) x264 core" Then
-            x264optsFrm.ShowDialog(Me)
+            Try
+                x264optsFrm.ShowDialog(Me)
+            Catch ex As Exception
+            End Try
         ElseIf VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
          VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
          VideoCodecComboBox.Text = "MPEG-4 Video" Then
-            MPEG4optsFrm.ShowDialog(Me)
+            Try
+                MPEG4optsFrm.ShowDialog(Me)
+            Catch ex As Exception
+            End Try
         End If
     End Sub
 
@@ -2980,18 +2788,6 @@ RELOAD:
             SamplerateComboBox.Enabled = True
         End If
 
-    End Sub
-
-    Private Sub ImgToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        ImagePPFrm.ShowDialog(Me)
-    End Sub
-
-    Private Sub AudToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        AudioPPFrm.ShowDialog(Me)
-    End Sub
-
-    Private Sub SubToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        SubtitleFrm.ShowDialog(Me)
     End Sub
 
     Private Sub PresetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresetButton.Click

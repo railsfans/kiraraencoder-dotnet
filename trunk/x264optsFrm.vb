@@ -23,6 +23,8 @@ Imports System.Xml
 
 Public Class x264optsFrm
 
+    Dim OKBTNCLK As Boolean = False
+
     Private Sub DefBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefBTN.Click
 
         'Main
@@ -318,200 +320,6 @@ Public Class x264optsFrm
 
     End Sub
 
-    Private Sub XML_CHANGE(ByVal src As String)
-
-        '접근권한이 있을 때 까지 반복
-        If My.Computer.FileSystem.FileExists(src) = True Then
-RELOAD:
-            Try
-                Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
-                _SRL.Close()
-            Catch ex As Exception
-                GoTo RELOAD
-            End Try
-        End If
-
-        Try
-            Dim XDoc As New XmlDocument()
-            Dim XNode As XmlNode
-            XDoc.Load(src)
-            '============== 시작
-
-            'Main
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_ThreadsNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ThreadsNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_ProfileComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = ProfileComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_LevelComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = LevelComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_FastfirstpassCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FastfirstpassCheckBox.Checked
-
-            'Frame-Type
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_DeblockingCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = DeblockingCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_DeblockingAlphaNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = DeblockingAlphaNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_DeblockingBetaNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = DeblockingBetaNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_CABACCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = CABACCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_BFramesNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = BFramesNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_BFrameBiasNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = BFrameBiasNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_AdaptiveBFramesComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AdaptiveBFramesComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_BFramePyramidCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = BFramePyramidCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_BFrameWeightedPredictionCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = BFrameWeightedPredictionCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_ReferenceFramesNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ReferenceFramesNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_ExtraIFramesNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ExtraIFramesNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_PframeWeightedPredictionComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = PframeWeightedPredictionComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_AdaptiveIFramesDecisionCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AdaptiveIFramesDecisionCheckBox.Checked
-
-            'Rate Control
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_QMinNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QMinNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_QMaxNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QMaxNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_QDeltaNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QDeltaNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_QIPRatioNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QIPRatioNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_QPBRatioNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QPBRatioNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_ChromaandLumaQPOffsetNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = ChromaandLumaQPOffsetNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_VBVBufferSizeNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = VBVBufferSizeNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_VBVMaximumBitrateNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = VBVMaximumBitrateNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_VBVInitialBufferNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = VBVInitialBufferNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_AverageBitrateVarianceNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = AverageBitrateVarianceNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_QuantizerCompressionNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = QuantizerCompressionNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_NumberofFramesforLookaheadNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = NumberofFramesforLookaheadNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_UseMBTreeCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = UseMBTreeCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_AdaptiveQuantizersModeComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AdaptiveQuantizersModeComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_AdaptiveQuantizersStrengthNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = AdaptiveQuantizersStrengthNumericUpDown.Value
-
-            'Analysis
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_ChromaMECheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = ChromaMECheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_MERangeNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = MERangeNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_MEMethodComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = MEMethodComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_SubpixelMEComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = SubpixelMEComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_MVPredictionModeComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = MVPredictionModeComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_TrellisComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = TrellisComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_PsyRDStrengthNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = PsyRDStrengthNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_PsyTrellisStrengthNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = PsyTrellisStrengthNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_NoMixedReferenceFramesCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = NoMixedReferenceFramesCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_NoFastPSkipCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = NoFastPSkipCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_NoPsychovisualEnhancementsCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = NoPsychovisualEnhancementsCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_MacroblocksComboBox")
-            If Not XNode Is Nothing Then XNode.InnerText = MacroblocksComboBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_Adaptive8x8DCTCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = Adaptive8x8DCTCheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_I4x4CheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = I4x4CheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_P4x4CheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = P4x4CheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_I8x8CheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = I8x8CheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_P8x8CheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = P8x8CheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_B8x8CheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = B8x8CheckBox.Checked
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_NoiseReductionNumericUpDown")
-            If Not XNode Is Nothing Then XNode.InnerText = NoiseReductionNumericUpDown.Value
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/x264optsFrm_UseaccessunitdelimitersCheckBox")
-            If Not XNode Is Nothing Then XNode.InnerText = UseaccessunitdelimitersCheckBox.Checked
-
-            '============== 끝
-            XDoc.Save(src)
-        Catch ex As Exception
-            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
-        End Try
-
-        'SAVE, Change용
-        If MainFrm.EncListListView.SelectedItems.Count <> 0 Then
-            Dim index As Integer = MainFrm.EncListListView.SelectedItems(index).Index
-            MainFrm.GET_OutputINFO(index)  '출력정보
-        End If
-        'Change용 프리셋 설정된 파일 표시 지우기
-        MainFrm.PresetLabel.Text = LangCls.MainUserStr
-
-    End Sub
     Private Sub XML_LOAD(ByVal src As String)
 
         '접근권한이 있을 때 까지 반복
@@ -813,10 +621,12 @@ RELOAD:
     End Sub
 
     Private Sub x264optsFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub x264optsFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        OKBTNCLK = False
 
         '=========================================
         'Rev 1.1
@@ -903,7 +713,13 @@ LANG_SKIP:
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
-        XML_CHANGE(My.Application.Info.DirectoryPath & "\settings.xml")
+        OKBTNCLK = True
+
+        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+
+        '프리셋 설정된 파일 표시 지우기
+        MainFrm.PresetLabel.Text = LangCls.MainUserStr
+
         Close()
     End Sub
 

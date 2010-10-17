@@ -164,6 +164,9 @@ Partial Class EncSetFrm
         Me.ExtensionLabel = New System.Windows.Forms.Label
         Me.HeaderTextBox = New System.Windows.Forms.TextBox
         Me.HeaderLabel = New System.Windows.Forms.Label
+        Me.hflipCheckBox = New System.Windows.Forms.CheckBox
+        Me.vflipCheckBox = New System.Windows.Forms.CheckBox
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.EncSetPanel.SuspendLayout()
         Me.OutFGroupBox.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
@@ -217,6 +220,7 @@ Partial Class EncSetFrm
         Me.FFmpegCommandGroupBox.SuspendLayout()
         Me.SizeLimitGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncSetPanel
@@ -650,6 +654,7 @@ Partial Class EncSetFrm
         '
         'ImgPPTabPage
         '
+        Me.ImgPPTabPage.Controls.Add(Me.GroupBox2)
         Me.ImgPPTabPage.Controls.Add(Me.ImagePPGroupBox)
         resources.ApplyResources(Me.ImgPPTabPage, "ImgPPTabPage")
         Me.ImgPPTabPage.Name = "ImgPPTabPage"
@@ -1255,6 +1260,26 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.HeaderLabel, "HeaderLabel")
         Me.HeaderLabel.Name = "HeaderLabel"
         '
+        'hflipCheckBox
+        '
+        resources.ApplyResources(Me.hflipCheckBox, "hflipCheckBox")
+        Me.hflipCheckBox.Name = "hflipCheckBox"
+        Me.hflipCheckBox.UseVisualStyleBackColor = True
+        '
+        'vflipCheckBox
+        '
+        resources.ApplyResources(Me.vflipCheckBox, "vflipCheckBox")
+        Me.vflipCheckBox.Name = "vflipCheckBox"
+        Me.vflipCheckBox.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.hflipCheckBox)
+        Me.GroupBox2.Controls.Add(Me.vflipCheckBox)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.TabStop = False
+        '
         'EncSetFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -1335,6 +1360,8 @@ Partial Class EncSetFrm
         Me.SizeLimitGroupBox.PerformLayout()
         Me.NameGroupBox.ResumeLayout(False)
         Me.NameGroupBox.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1479,4 +1506,7 @@ Partial Class EncSetFrm
     Friend WithEvents SampleratePanel As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents SubtitleRecordingCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents hflipCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents vflipCheckBox As System.Windows.Forms.CheckBox
 End Class

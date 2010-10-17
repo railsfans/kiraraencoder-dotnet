@@ -24,6 +24,8 @@ Imports System.Xml
 
 Public Class AviSynthEditorFrm
 
+    Dim OKBTNCLK As Boolean = False
+
     'wait
     Dim waitbool As Boolean = False
     Dim shellpid As Integer
@@ -32,15 +34,30 @@ Public Class AviSynthEditorFrm
     Public ListenButtonP As Boolean = False
 
     Private Sub ImgSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImgSButton.Click
-        ImagePPFrm.ShowDialog(Me)
+
+        Try
+            ImagePPFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+
     End Sub
 
     Private Sub AudSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AudSButton.Click
-        AudioPPFrm.ShowDialog(Me)
+
+        Try
+            AudioPPFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+
     End Sub
 
     Private Sub SubSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SubSButton.Click
-        SubtitleFrm.ShowDialog(Me)
+
+        Try
+            SubtitleFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+
     End Sub
 
     Private Sub PreviewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewButton.Click
@@ -89,6 +106,8 @@ Public Class AviSynthEditorFrm
         Do Until VideoWindowFrm.Visible = False
             VideoWindowFrm.Close()
         Loop
+
+        If OKBTNCLK = False Then AVS_XML_LOAD(My.Application.Info.DirectoryPath & "\avs_settings.xml")
 
     End Sub
 
@@ -166,61 +185,9 @@ RELOAD:
 
     End Sub
 
-    Private Sub AVS_XML_CHANGE(ByVal src As String)
-
-        '접근권한이 있을 때 까지 반복
-        If My.Computer.FileSystem.FileExists(src) = True Then
-RELOAD:
-            Try
-                Dim _SRL As New StreamReader(src, System.Text.Encoding.UTF8)
-                _SRL.Close()
-            Catch ex As Exception
-                GoTo RELOAD
-            End Try
-        End If
-
-        Try
-            Dim XDoc As New XmlDocument()
-            Dim XNode As XmlNode
-            XDoc.Load(src)
-            '============== 시작
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_FFmpegSourceTextBox")
-            If Not XNode Is Nothing Then XNode.InnerText = FFmpegSourceTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_MPEG2SourceTextBox")
-            If Not XNode Is Nothing Then XNode.InnerText = MPEG2SourceTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_BassAudioTextBox")
-            If Not XNode Is Nothing Then XNode.InnerText = BassAudioTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_NicAudioTextBox")
-            If Not XNode Is Nothing Then XNode.InnerText = NicAudioTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_ChannelTextBox")
-            If Not XNode Is Nothing Then XNode.InnerText = ChannelTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_AVCTextBox")
-            If Not XNode Is Nothing Then XNode.InnerText = AVCTextBox.Text
-
-            XNode = XDoc.SelectSingleNode("/KiraraEncoderSettings/AviSynthEditorFrm_VC1TextBox")
-            If Not XNode Is Nothing Then XNode.InnerText = VC1TextBox.Text
-
-            '============== 끝
-            XDoc.Save(src)
-        Catch ex As Exception
-            MsgBox("XML_CHANGE_ERROR :" & ex.Message)
-        End Try
-
-        'SAVE, Change용
-        If MainFrm.EncListListView.SelectedItems.Count <> 0 Then
-            Dim index As Integer = MainFrm.EncListListView.SelectedItems(index).Index
-            MainFrm.GET_OutputINFO(index)  '출력정보
-        End If
-
-    End Sub
-
     Private Sub AviSynthEditorFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        OKBTNCLK = False
 
         '=========================================
         'Rev 1.1
@@ -545,7 +512,7 @@ LANG_SKIP:
             Exit Sub
         End If
         '설정저장//
-        AVS_XML_CHANGE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+        MainFrm.AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
 
     End Sub
 
@@ -558,7 +525,9 @@ LANG_SKIP:
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
-        AVS_XML_CHANGE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+        OKBTNCLK = True
+
+        MainFrm.AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
         Close()
     End Sub
 
