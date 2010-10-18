@@ -333,10 +333,16 @@ Public Class StreamFrm
             Invoke(New MethodInvoker(AddressOf EndOfProcess))
         Else
 
+            '끝
+            InfoLoopExit = False
+            DetailInfoBool = False
+            DetailStreamInfoTimer.Enabled = False
+            GetInfoL = False
+            SubTaskLoop1 = False
             '타이머
+            NowhmsTimer.Enabled = False
             GETPP.Enabled = False
             SeekTimer.Enabled = False
-            SubTaskLoop1 = False
             '로딩
             PrePanel.Visible = False
             LoadingLabel.Visible = False
@@ -526,6 +532,7 @@ Public Class StreamFrm
             DetailInfoBool = False
             DetailStreamInfoTimer.Enabled = True
             '타이머
+            NowhmsTimer.Enabled = True
             SeekTimer.Enabled = True
             '프로세스 종료 확인
             ProcessEChkB = False
@@ -828,45 +835,6 @@ skip:
     End Sub
 
     Private Sub StreamFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        '// 초기화 시작
-
-        '타이머
-        GETPP.Enabled = False
-        SeekTimer.Enabled = False
-        SubTaskLoop1 = False
-        '로딩
-        PrePanel.Visible = False
-        LoadingLabel.Visible = False
-        OutputBox_Stream.Visible = False
-        '프로세스 종료 확인
-        ProcessEChkB = True
-        '정보받기용
-        InfoLoopExit = True
-        '기타
-        ASListBox.Items.Clear()
-        IntTimeTXT = 0.0
-        If RefBool = False Then
-            NowTimeSec = 0.0
-            SeekTrackBar.Value = 0
-        End If
-        PlayPauseBTN.Enabled = True '활성/비활성(재생)
-        '활성/비활성
-        SeekTrackBar.Enabled = False
-        VolTrackBar.Enabled = False
-        StopBTN.Enabled = False
-        AudioComboBox.Enabled = False
-        BackwardBTN.Enabled = False
-        ForwardBTN.Enabled = False
-        FrameStepButton.Enabled = False
-        Nowhms.Enabled = False
-        Totalhms.Enabled = False
-
-        DestroyHandles()
-        RefBool = False
-        OpenVL = False
-
-        '// 초기화 끝
 
         '설정로드
         With MainFrm
@@ -1353,7 +1321,7 @@ LANG_SKIP:
 
         Dim VTBV As Integer = Int(((e.X - 8) / (SeekTrackBar.Width - (8 * 2))) * SeekTrackBar.Maximum)
         If VTBV >= SeekTrackBar.Maximum Then
-            VTBV = SeekTrackBar.Maximum
+            VTBV = SeekTrackBar.Minimum
         ElseIf VTBV <= SeekTrackBar.Minimum Then
             VTBV = SeekTrackBar.Minimum
         End If

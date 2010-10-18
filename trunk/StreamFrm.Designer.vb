@@ -536,7 +536,6 @@ Partial Class StreamFrm
         '
         'NowhmsTimer
         '
-        Me.NowhmsTimer.Enabled = True
         Me.NowhmsTimer.Interval = 1
         '
         'SoundM
