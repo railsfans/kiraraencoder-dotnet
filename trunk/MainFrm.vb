@@ -1027,13 +1027,14 @@ LANG_SKIP:
             If ExAudioB = True Then '스킵
                 AVKByteC = ""
             Else '용량계산
-                AVKByteC = (AKByteV * __GTimeV)
+                AVKByteC = ((AKByteV * 1000) * __GTimeV) / 1024
             End If
         Else '둘다
             If ExVideoB = True OrElse ExAudioB = True Then '스킵
                 AVKByteC = ""
             Else '용량계산
-                AVKByteC = ((VKByteV + AKByteV) * __GTimeV)
+                '비디오 부분은 추후에 고칠 예정 ㅇ_ㅇ...
+                AVKByteC = (((VKByteV * 1000) + (AKByteV * 1000)) * __GTimeV) / 1024
             End If
         End If
         If AVKByteC <> "" Then
@@ -1880,6 +1881,12 @@ UAC:
         If EncodingFrm.EncProcBool = False Then
             Try
                 StreamFrm.ShowDialog(Me)
+
+                'SAVE용 - 구간 설정/스트림 선택/잘라내기 예외적용
+                If EncListListView.SelectedItems.Count <> 0 Then
+                    Dim index As Integer = EncListListView.SelectedItems(index).Index
+                    GET_OutputINFO(index)  '출력정보
+                End If
             Catch ex As Exception
             End Try
         End If
@@ -2027,6 +2034,12 @@ UAC:
 
         Try
             StreamFrm.ShowDialog(Me)
+
+            'SAVE용 - 구간 설정/스트림 선택/잘라내기 예외적용
+            If EncListListView.SelectedItems.Count <> 0 Then
+                Dim index As Integer = EncListListView.SelectedItems(index).Index
+                GET_OutputINFO(index)  '출력정보
+            End If
         Catch ex As Exception
         End Try
 
