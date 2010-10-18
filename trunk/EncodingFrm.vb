@@ -95,6 +95,9 @@ Public Class EncodingFrm
     Dim EncPassStr As String = ""
     '-------------------------------------------
 
+    'Win7진행바
+    Dim _ITaskbarList3 As WinAPI.ITaskbarList3
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -1689,6 +1692,15 @@ ENC_STOP:
 
         '---------------------
 
+        'Win7진행바
+        Try
+            If (Environment.OSVersion.Version.Major = 6 AndAlso Environment.OSVersion.Version.Minor >= 1) OrElse Environment.OSVersion.Version.Major > 6 Then
+                _ITaskbarList3.SetProgressState(MainFrm.Handle, WinAPI.TBPFLAG.NoProgress)
+                Marshal.ReleaseComObject(_ITaskbarList3)
+            End If
+        Catch ex As Exception
+        End Try
+
         '활성화
         MainFrm.AVSGroupBox.Enabled = True
         MainFrm.EncSetGroupBox.Enabled = True
@@ -1791,6 +1803,15 @@ ENC_STOP:
         End Try
 LANG_SKIP:
         '=========================================
+
+        'Win7진행바
+        Try
+            If (Environment.OSVersion.Version.Major = 6 AndAlso Environment.OSVersion.Version.Minor >= 1) OrElse Environment.OSVersion.Version.Major > 6 Then
+                _ITaskbarList3 = DirectCast(New WinAPI.TaskbarList(), WinAPI.ITaskbarList3)
+                _ITaskbarList3.SetProgressState(MainFrm.Handle, WinAPI.TBPFLAG.Normal)
+            End If
+        Catch ex As Exception
+        End Try
 
         '우선순위 초기화
         PriorityComboBox.Items.Clear()
@@ -1968,11 +1989,27 @@ LANG_SKIP:
             SuspendResumeButton.Text = LangCls.EncodingResume
             TimeElapsedTimer.Enabled = False
             SuspendThread(ThreadHandle_EI)
+
+            'Win7진행바
+            Try
+                If (Environment.OSVersion.Version.Major = 6 AndAlso Environment.OSVersion.Version.Minor >= 1) OrElse Environment.OSVersion.Version.Major > 6 Then
+                    _ITaskbarList3.SetProgressState(MainFrm.Handle, WinAPI.TBPFLAG.Paused)
+                End If
+            Catch ex As Exception
+            End Try
         Else
             ResumeThread(ThreadHandle_EI)
             TimeElapsedTimer.Enabled = True
             SuspendResumeButton.Text = LangCls.EncodingSuspend
             SuspendB = False
+
+            'Win7진행바
+            Try
+                If (Environment.OSVersion.Version.Major = 6 AndAlso Environment.OSVersion.Version.Minor >= 1) OrElse Environment.OSVersion.Version.Major > 6 Then
+                    _ITaskbarList3.SetProgressState(MainFrm.Handle, WinAPI.TBPFLAG.Normal)
+                End If
+            Catch ex As Exception
+            End Try
         End If
     End Sub
 
@@ -2044,6 +2081,14 @@ LANG_SKIP:
         Me.Text = LangCls.EncodingFrmV & ": " & PntS & " " & EncPassStr
         MainFrm.Text = PntS & " [" & EncindexI + 1 & "/" & MainFrm.EncListListView.Items.Count & "] " & MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text & " - " & MainFrmTitleBack
         MainFrm.NotifyIcon.Text = Strings.Left(MainFrm.Text, 63)
+
+        'Win7진행바
+        Try
+            If (Environment.OSVersion.Version.Major = 6 AndAlso Environment.OSVersion.Version.Minor >= 1) OrElse Environment.OSVersion.Version.Major > 6 Then
+                _ITaskbarList3.SetProgressValue(MainFrm.Handle, Convert.ToInt64(ProgressBar.Value), Convert.ToInt64(ProgressBar.Maximum))
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
 
 End Class

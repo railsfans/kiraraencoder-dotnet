@@ -160,6 +160,85 @@ Public Class WinAPI
 
 #End Region
 
+#Region "Windows 7 작업표시줄 진행바"
+
+    '=================================
+    '코드 출처: http://msdn.microsoft.com/en-us/library/dd391692(VS.85).aspx
+
+    <ComImport(), InterfaceType(ComInterfaceType.InterfaceIsIUnknown), Guid("EA1AFB91-9E28-4B86-90E9-9E9F8A5EEFAF")> _
+    Public Interface ITaskbarList3
+        Overloads Sub HrInit()
+        Overloads Sub AddTab(<[In]()> ByVal hwnd As IntPtr)
+        Overloads Sub DeleteTab(<[In]()> ByVal hwnd As IntPtr)
+        Overloads Sub ActivateTab(<[In]()> ByVal hwnd As IntPtr)
+        Overloads Sub SetActivateAlt(<[In]()> ByVal hwnd As IntPtr)
+        Overloads Sub MarkFullscreenWindow(<[In]()> ByVal hwnd As IntPtr, <[In]()> ByVal fFullscreen As Integer)
+        Sub SetProgressValue(<[In]()> ByVal hwnd As IntPtr, <[In]()> ByVal ullCompleted As UInt64, <[In]()> ByVal ullTotal As UInt64)
+        Sub SetProgressState(<[In]()> ByVal hwnd As IntPtr, <[In]()> ByVal tbpFlags As TBPFLAG)
+        Sub RegisterTab(<[In]()> ByVal hwndTab As IntPtr, <[In](), ComAliasName("TaskbarLib.wireHWND")> ByRef hwndMDI As IntPtr)
+        Sub UnregisterTab(<[In]()> ByVal hwndTab As IntPtr)
+        Sub SetTabOrder(<[In]()> ByVal hwndTab As IntPtr, <[In]()> ByVal hwndInsertBefore As Integer)
+        Sub SetTabActive(<[In]()> ByVal hwndTab As IntPtr, <[In]()> ByVal hwndMDI As Integer, <[In]()> ByVal tbatFlags As TBATFLAG)
+        Sub ThumbBarAddButtons(<[In]()> ByVal hwnd As IntPtr, <[In]()> ByVal cButtons As UInt32, <[In]()> ByRef pButton As ThumbButton)
+        Sub ThumbBarUpdateButtons(<[In]()> ByVal hwnd As IntPtr, <[In]()> ByVal cButtons As UInt32, <[In]()> ByRef pButton As ThumbButton)
+        Sub ThumbBarSetImageList(<[In]()> ByVal hwnd As IntPtr, <[In](), MarshalAs(UnmanagedType.IUnknown)> ByVal himl As Object)
+        Sub SetOverlayIcon(<[In]()> ByVal hwnd As IntPtr, <[In]()> ByVal hIcon As IntPtr, <[In](), MarshalAs(UnmanagedType.LPWStr)> ByVal pszDescription As String)
+        Sub SetThumbnailTooltip(<[In]()> ByVal hwnd As IntPtr, <[In](), MarshalAs(UnmanagedType.LPWStr)> ByVal pszTip As String)
+        Sub SetThumbnailClip(<[In]()> ByVal hwnd As IntPtr, <[In]()> ByRef prcClip As tagRECT)
+    End Interface
+
+    <ComImport(), Guid("56FDF344-FD6D-11d0-958A-006097C9A090"), ClassInterface(ClassInterfaceType.None)> _
+    Friend Class TaskbarList
+    End Class
+
+    Public Enum TBPFLAG As UInteger
+        NoProgress = &H0
+        Indeterminate = &H1
+        Normal = &H2
+        [Error] = &H4
+        Paused = &H8
+    End Enum
+
+    Public Enum TBATFLAG
+        TBATF_USEMDITHUMBNAIL = &H1
+        TBATF_USEMDILIVEPREVIEW = &H2
+    End Enum
+
+    Public Enum ThumbButtonMask As UInteger
+        Bitmap = &H1
+        Icon = &H2
+        ToolTip = &H4
+        Flags = &H8
+    End Enum
+
+    Public Enum ThumbButtonFlags As UInteger
+        Enabled = &H0
+        Disabled = &H1
+        DisMissonClick = &H2
+        NoBackground = &H4
+        Hidden = &H8
+        NonInterActive = &H10
+    End Enum
+
+    Public Structure ThumbButton
+        Public dwMask As ThumbButtonMask
+        Public iID As UInteger
+        Public iBitmap As UInteger
+        Private hIcon As IntPtr
+        <MarshalAs(UnmanagedType.ByValTStr, SizeConst:=260)> _
+        Public szTip As String
+        Public dwFlags As ThumbButtonFlags
+    End Structure
+
+    Public Structure tagRECT
+        Public left As Integer
+        Public top As Integer
+        Public right As Integer
+        Public bottom As Integer
+    End Structure
+
+#End Region
+
     <DllImport("kernel32.dll", SetLastError:=True)> _
     Public Shared Function TerminateProcess(ByVal hProcess As IntPtr, ByVal uExitCode As UInteger) As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
@@ -173,3 +252,5 @@ Public Class WinAPI
     End Function
 
 End Class
+
+

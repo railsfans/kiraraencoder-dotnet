@@ -62,15 +62,20 @@ Public Class AviSynthEditorFrm
 
     Private Sub PreviewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewButton.Click
 
+        TabControl1.Focus()
+
         '선택된 아이템이 없으면 종료
         If MainFrm.EncListListView.SelectedItems.Count = 0 Then
             MsgBox(LangCls.MainSelectListA)
             Exit Sub
         End If
 
+        PreviewButton.Enabled = False
+
         AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
         If AviSynthPP.INDEX_ProcessStopChk = True Then
             AviSynthPP.INDEX_ProcessStopChk = False
+            PreviewButton.Enabled = True
         Else
             VideoWindowFrm.Close()
             VideoWindowFrm.Show(Me)
@@ -79,6 +84,9 @@ Public Class AviSynthEditorFrm
     End Sub
 
     Private Sub RefButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefButton.Click
+
+        TabControl1.Focus()
+
         waitbool = True
         VideoWindowFrm.Ref_SUB()
         waitbool = False
@@ -262,6 +270,8 @@ LANG_SKIP:
     End Sub
 
     Private Sub ListenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListenButton.Click
+
+        TabControl1.Focus()
 
         '선택된 아이템이 없으면 종료
         If MainFrm.EncListListView.SelectedItems.Count = 0 Then
