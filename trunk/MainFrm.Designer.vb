@@ -44,7 +44,6 @@ Partial Class MainFrm
         Me.ColumnHeader16 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader17 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader18 = New System.Windows.Forms.ColumnHeader
-        Me.ColumnHeader19 = New System.Windows.Forms.ColumnHeader
         Me.ListviewContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ErrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -152,7 +151,7 @@ Partial Class MainFrm
         Me.EncListListView.AllowDrop = True
         resources.ApplyResources(Me.EncListListView, "EncListListView")
         Me.EncListListView.CheckBoxes = True
-        Me.EncListListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17, Me.ColumnHeader18, Me.ColumnHeader19})
+        Me.EncListListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17, Me.ColumnHeader18})
         Me.EncListListView.ContextMenuStrip = Me.ListviewContextMenuStrip
         Me.EncListListView.FullRowSelect = True
         Me.EncListListView.HideSelection = False
@@ -231,10 +230,6 @@ Partial Class MainFrm
         'ColumnHeader18
         '
         resources.ApplyResources(Me.ColumnHeader18, "ColumnHeader18")
-        '
-        'ColumnHeader19
-        '
-        resources.ApplyResources(Me.ColumnHeader19, "ColumnHeader19")
         '
         'ListviewContextMenuStrip
         '
@@ -734,7 +729,6 @@ Partial Class MainFrm
     Friend WithEvents ColumnHeader17 As System.Windows.Forms.ColumnHeader
     Friend WithEvents CleanUpListBox As System.Windows.Forms.ListBox
     Friend WithEvents ColumnHeader18 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader19 As System.Windows.Forms.ColumnHeader
     Friend WithEvents PresetContextMenuStrip As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents AVSCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents EncSetButton As System.Windows.Forms.Button

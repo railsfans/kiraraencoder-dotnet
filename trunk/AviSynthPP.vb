@@ -468,24 +468,18 @@ Public Class AviSynthPP
                     _StreamWriter.Close()
 
                     '---------------
-                    ' 파일 복사
+                    ' 파일복사
                     '---------------
                     Dim RECOPY As Integer = 0
-                    If MainFrm.EncListListView.Items(index).SubItems(18).Text <> "" Then
-                        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi") = True Then '파일이 존재하면
-                            If My.Computer.FileSystem.GetFileInfo(SubPathV & "smi").LastWriteTime.Ticks.ToString = MainFrm.EncListListView.Items(index).SubItems(18).Text Then
-                                GoTo SUBSKIP
-                            End If
-                        End If
-                    End If
                     If My.Computer.FileSystem.FileExists(SubPathV & "smi") = True Then
                         Try
 RECOPY:
                             My.Computer.FileSystem.CopyFile(SubPathV & "smi", My.Application.Info.DirectoryPath & "\temp\Subtitle.smi", True)
                         Catch ex As Exception
+                            Threading.Thread.Sleep(100)
                             RECOPY += 1
                             Debug.Print("파일복사실패 " & RECOPY & " : " & ex.Message)
-                            If RECOPY > 10 Then
+                            If RECOPY > 1000 Then '1000번(100초) = 1분 40초
                                 Dim MessageBoxV = MessageBox.Show("File copy failed, Retry?", "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
                                 If MessageBoxV = DialogResult.Yes Then
                                     GoTo RECOPY
@@ -495,8 +489,6 @@ RECOPY:
                             End If
                             GoTo RECOPY
                         End Try
-                        MainFrm.EncListListView.Items(index).SubItems(18).Text = My.Computer.FileSystem.GetFileInfo(SubPathV & "smi").LastWriteTime.Ticks.ToString
-SUBSKIP:
                         SubFileExistsV = True
                     Else
 ERRSKIP:
