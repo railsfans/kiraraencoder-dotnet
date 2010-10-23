@@ -63,15 +63,23 @@ Partial Class ImagePPFrm
         Me.OKBTN = New System.Windows.Forms.Button
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.IPP_Panel = New System.Windows.Forms.Panel
-        Me.TabControl1 = New System.Windows.Forms.TabControl
-        Me.TabPage1 = New System.Windows.Forms.TabPage
-        Me.AviSynthDeinterlaceComboBox = New System.Windows.Forms.ComboBox
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.Label2 = New System.Windows.Forms.Label
         Me.AviSynthDeinterlaceCheckBox = New System.Windows.Forms.CheckBox
-        Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.AviSynthDeinterlaceComboBox = New System.Windows.Forms.ComboBox
+        Me.FFPP_dr_CheckBox = New System.Windows.Forms.CheckBox
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.FFPP_v1_CheckBox = New System.Windows.Forms.CheckBox
+        Me.FFPP_hb_CheckBox = New System.Windows.Forms.CheckBox
+        Me.FFPP_h1_CheckBox = New System.Windows.Forms.CheckBox
+        Me.FFPP_vb_CheckBox = New System.Windows.Forms.CheckBox
+        Me.FFPP_va_CheckBox = New System.Windows.Forms.CheckBox
+        Me.FFPP_ha_CheckBox = New System.Windows.Forms.CheckBox
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.FieldorderLabel = New System.Windows.Forms.Label
+        Me.AVSMPEG2DeinterlaceCheckBox = New System.Windows.Forms.CheckBox
         Me.FieldorderComboBox = New System.Windows.Forms.ComboBox
         Me.AVSMPEG2DeinterlaceComboBox = New System.Windows.Forms.ComboBox
-        Me.AVSMPEG2DeinterlaceCheckBox = New System.Windows.Forms.CheckBox
         Me.AviSynthFramerateGroupBox = New System.Windows.Forms.GroupBox
         Me.AviSynthFramerateCheckBox = New System.Windows.Forms.CheckBox
         Me.AviSynthFramerateLabel = New System.Windows.Forms.Label
@@ -89,9 +97,8 @@ Partial Class ImagePPFrm
         CType(Me.brightnessTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AviSynthImageGroupBox.SuspendLayout()
         Me.IPP_Panel.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.AviSynthFramerateGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -384,7 +391,8 @@ Partial Class ImagePPFrm
         '
         'IPP_Panel
         '
-        Me.IPP_Panel.Controls.Add(Me.TabControl1)
+        Me.IPP_Panel.Controls.Add(Me.GroupBox2)
+        Me.IPP_Panel.Controls.Add(Me.GroupBox1)
         Me.IPP_Panel.Controls.Add(Me.AviSynthFramerateGroupBox)
         Me.IPP_Panel.Controls.Add(Me.AviSynthImageGroupBox)
         Me.IPP_Panel.Controls.Add(Me.DefBTN)
@@ -394,21 +402,33 @@ Partial Class ImagePPFrm
         resources.ApplyResources(Me.IPP_Panel, "IPP_Panel")
         Me.IPP_Panel.Name = "IPP_Panel"
         '
-        'TabControl1
+        'GroupBox2
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        resources.ApplyResources(Me.TabControl1, "TabControl1")
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.AviSynthDeinterlaceCheckBox)
+        Me.GroupBox2.Controls.Add(Me.AviSynthDeinterlaceComboBox)
+        Me.GroupBox2.Controls.Add(Me.FFPP_dr_CheckBox)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.FFPP_v1_CheckBox)
+        Me.GroupBox2.Controls.Add(Me.FFPP_hb_CheckBox)
+        Me.GroupBox2.Controls.Add(Me.FFPP_h1_CheckBox)
+        Me.GroupBox2.Controls.Add(Me.FFPP_vb_CheckBox)
+        Me.GroupBox2.Controls.Add(Me.FFPP_va_CheckBox)
+        Me.GroupBox2.Controls.Add(Me.FFPP_ha_CheckBox)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.TabStop = False
         '
-        'TabPage1
+        'Label2
         '
-        Me.TabPage1.Controls.Add(Me.AviSynthDeinterlaceComboBox)
-        Me.TabPage1.Controls.Add(Me.AviSynthDeinterlaceCheckBox)
-        resources.ApplyResources(Me.TabPage1, "TabPage1")
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
+        '
+        'AviSynthDeinterlaceCheckBox
+        '
+        resources.ApplyResources(Me.AviSynthDeinterlaceCheckBox, "AviSynthDeinterlaceCheckBox")
+        Me.AviSynthDeinterlaceCheckBox.Name = "AviSynthDeinterlaceCheckBox"
+        Me.AviSynthDeinterlaceCheckBox.UseVisualStyleBackColor = True
         '
         'AviSynthDeinterlaceComboBox
         '
@@ -418,26 +438,73 @@ Partial Class ImagePPFrm
         Me.AviSynthDeinterlaceComboBox.Items.AddRange(New Object() {resources.GetString("AviSynthDeinterlaceComboBox.Items"), resources.GetString("AviSynthDeinterlaceComboBox.Items1"), resources.GetString("AviSynthDeinterlaceComboBox.Items2"), resources.GetString("AviSynthDeinterlaceComboBox.Items3"), resources.GetString("AviSynthDeinterlaceComboBox.Items4"), resources.GetString("AviSynthDeinterlaceComboBox.Items5")})
         Me.AviSynthDeinterlaceComboBox.Name = "AviSynthDeinterlaceComboBox"
         '
-        'AviSynthDeinterlaceCheckBox
+        'FFPP_dr_CheckBox
         '
-        resources.ApplyResources(Me.AviSynthDeinterlaceCheckBox, "AviSynthDeinterlaceCheckBox")
-        Me.AviSynthDeinterlaceCheckBox.Name = "AviSynthDeinterlaceCheckBox"
-        Me.AviSynthDeinterlaceCheckBox.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.FFPP_dr_CheckBox, "FFPP_dr_CheckBox")
+        Me.FFPP_dr_CheckBox.Name = "FFPP_dr_CheckBox"
+        Me.FFPP_dr_CheckBox.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'Label1
         '
-        Me.TabPage2.Controls.Add(Me.FieldorderLabel)
-        Me.TabPage2.Controls.Add(Me.FieldorderComboBox)
-        Me.TabPage2.Controls.Add(Me.AVSMPEG2DeinterlaceComboBox)
-        Me.TabPage2.Controls.Add(Me.AVSMPEG2DeinterlaceCheckBox)
-        resources.ApplyResources(Me.TabPage2, "TabPage2")
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
+        'FFPP_v1_CheckBox
+        '
+        resources.ApplyResources(Me.FFPP_v1_CheckBox, "FFPP_v1_CheckBox")
+        Me.FFPP_v1_CheckBox.Name = "FFPP_v1_CheckBox"
+        Me.FFPP_v1_CheckBox.UseVisualStyleBackColor = True
+        '
+        'FFPP_hb_CheckBox
+        '
+        resources.ApplyResources(Me.FFPP_hb_CheckBox, "FFPP_hb_CheckBox")
+        Me.FFPP_hb_CheckBox.Name = "FFPP_hb_CheckBox"
+        Me.FFPP_hb_CheckBox.UseVisualStyleBackColor = True
+        '
+        'FFPP_h1_CheckBox
+        '
+        resources.ApplyResources(Me.FFPP_h1_CheckBox, "FFPP_h1_CheckBox")
+        Me.FFPP_h1_CheckBox.Name = "FFPP_h1_CheckBox"
+        Me.FFPP_h1_CheckBox.UseVisualStyleBackColor = True
+        '
+        'FFPP_vb_CheckBox
+        '
+        resources.ApplyResources(Me.FFPP_vb_CheckBox, "FFPP_vb_CheckBox")
+        Me.FFPP_vb_CheckBox.Name = "FFPP_vb_CheckBox"
+        Me.FFPP_vb_CheckBox.UseVisualStyleBackColor = True
+        '
+        'FFPP_va_CheckBox
+        '
+        resources.ApplyResources(Me.FFPP_va_CheckBox, "FFPP_va_CheckBox")
+        Me.FFPP_va_CheckBox.Name = "FFPP_va_CheckBox"
+        Me.FFPP_va_CheckBox.UseVisualStyleBackColor = True
+        '
+        'FFPP_ha_CheckBox
+        '
+        resources.ApplyResources(Me.FFPP_ha_CheckBox, "FFPP_ha_CheckBox")
+        Me.FFPP_ha_CheckBox.Name = "FFPP_ha_CheckBox"
+        Me.FFPP_ha_CheckBox.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.FieldorderLabel)
+        Me.GroupBox1.Controls.Add(Me.AVSMPEG2DeinterlaceCheckBox)
+        Me.GroupBox1.Controls.Add(Me.FieldorderComboBox)
+        Me.GroupBox1.Controls.Add(Me.AVSMPEG2DeinterlaceComboBox)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.TabStop = False
         '
         'FieldorderLabel
         '
         resources.ApplyResources(Me.FieldorderLabel, "FieldorderLabel")
         Me.FieldorderLabel.Name = "FieldorderLabel"
+        '
+        'AVSMPEG2DeinterlaceCheckBox
+        '
+        resources.ApplyResources(Me.AVSMPEG2DeinterlaceCheckBox, "AVSMPEG2DeinterlaceCheckBox")
+        Me.AVSMPEG2DeinterlaceCheckBox.Name = "AVSMPEG2DeinterlaceCheckBox"
+        Me.AVSMPEG2DeinterlaceCheckBox.UseVisualStyleBackColor = True
         '
         'FieldorderComboBox
         '
@@ -454,12 +521,6 @@ Partial Class ImagePPFrm
         Me.AVSMPEG2DeinterlaceComboBox.FormattingEnabled = True
         Me.AVSMPEG2DeinterlaceComboBox.Items.AddRange(New Object() {resources.GetString("AVSMPEG2DeinterlaceComboBox.Items"), resources.GetString("AVSMPEG2DeinterlaceComboBox.Items1"), resources.GetString("AVSMPEG2DeinterlaceComboBox.Items2"), resources.GetString("AVSMPEG2DeinterlaceComboBox.Items3")})
         Me.AVSMPEG2DeinterlaceComboBox.Name = "AVSMPEG2DeinterlaceComboBox"
-        '
-        'AVSMPEG2DeinterlaceCheckBox
-        '
-        resources.ApplyResources(Me.AVSMPEG2DeinterlaceCheckBox, "AVSMPEG2DeinterlaceCheckBox")
-        Me.AVSMPEG2DeinterlaceCheckBox.Name = "AVSMPEG2DeinterlaceCheckBox"
-        Me.AVSMPEG2DeinterlaceCheckBox.UseVisualStyleBackColor = True
         '
         'AviSynthFramerateGroupBox
         '
@@ -515,11 +576,10 @@ Partial Class ImagePPFrm
         Me.AviSynthImageGroupBox.ResumeLayout(False)
         Me.AviSynthImageGroupBox.PerformLayout()
         Me.IPP_Panel.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.AviSynthFramerateGroupBox.ResumeLayout(False)
         Me.AviSynthFramerateGroupBox.PerformLayout()
         Me.ResumeLayout(False)
@@ -569,13 +629,21 @@ Partial Class ImagePPFrm
     Friend WithEvents AviSynthFramerateCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents AviSynthFramerateLabel As System.Windows.Forms.Label
     Friend WithEvents AviSynthFramerateComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents AviSynthDeinterlaceComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents AviSynthDeinterlaceCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents AVSMPEG2DeinterlaceComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents AVSMPEG2DeinterlaceCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents FieldorderLabel As System.Windows.Forms.Label
     Friend WithEvents FieldorderComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents FFPP_v1_CheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FFPP_h1_CheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FFPP_va_CheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FFPP_ha_CheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FFPP_vb_CheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FFPP_hb_CheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents FFPP_dr_CheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 End Class

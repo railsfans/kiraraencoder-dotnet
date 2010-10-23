@@ -193,10 +193,14 @@ Public Class FFMSIndexFrm
 
 #End Region
 
-    Public Sub IDSTR(ByVal IN_PATHV As String, ByVal OUT_PATHV As String, ByVal PriorityInt As Integer)
+    Public Sub IDSTR(ByVal IN_PATHV As String, ByVal OUT_PATHV As String, ByVal PriorityInt As Integer, ByVal VideoOnly As Boolean)
 
         Dim MSGB As String = ""
-        MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t -1 -s 3 -d 0 " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
+        If VideoOnly = False Then
+            MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t -1 -s 3 -d 0 " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
+        Else '비디오 부분만 인덱스//
+            MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t 0 -s 3 -d 0 " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
+        End If
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
         Dim TempInputHandle As SafeFileHandle = Nothing

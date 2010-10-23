@@ -118,33 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 450</value>
+    <value>280, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ToolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
+    <value>212, 17</value>
   </data>
   <data name="ToolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
+    <value>212, 17</value>
   </data>
   <data name="ToolStripStatusLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
+    <value>212, 17</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LineColToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="LineColToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
+    <value>212, 17</value>
   </data>
   <data name="LineColToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 450</value>
+    <value>0, 473</value>
   </data>
   <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 22</value>
+    <value>864, 22</value>
   </data>
   <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -164,63 +164,7 @@
   <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Def_FFmpegSourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
-  </data>
-  <data name="Def_FFmpegSourceTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="Def_FFmpegSourceTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Def_FFmpegSourceTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="Def_FFmpegSourceTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 58</value>
-  </data>
-  <data name="Def_FFmpegSourceTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="Def_FFmpegSourceTextBox.Text" xml:space="preserve">
-    <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
-
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;#&lt;avifps&gt;
-A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, cache=true, cachefile="#&lt;cachefile&gt;")
-AudioDub(V,A)
-#&lt;delayaudio&gt;
-#&lt;channel&gt;
-#&lt;crop&gt;
-#&lt;image&gt;
-ConvertToYV12()
-#&lt;coloryuv&gt;
-#&lt;sharpen&gt;
-#&lt;tweak&gt;
-#&lt;coloryuv_analyze&gt;
-#&lt;textsub&gt;
-#&lt;trim&gt;
-#&lt;amplifydb&gt;
-#&lt;supereq&gt;</value>
-  </data>
-  <data name="Def_FFmpegSourceTextBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="Def_FFmpegSourceTextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Name" xml:space="preserve">
-    <value>Def_FFmpegSourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Parent" xml:space="preserve">
-    <value>FFmpegSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_FFmpegSourceTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="FFmpegSourceTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -237,7 +181,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="FFmpegSourceTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 278</value>
+    <value>834, 301</value>
   </data>
   <data name="FFmpegSourceTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -336,7 +280,7 @@ ConvertToYV12()
     <value>Right</value>
   </data>
   <data name="ConPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 0</value>
+    <value>504, 0</value>
   </data>
   <data name="ConPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 40</value>
@@ -435,7 +379,7 @@ ConvertToYV12()
     <value>0, 0</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 40</value>
+    <value>864, 40</value>
   </data>
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -468,7 +412,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="ChannelTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 278</value>
+    <value>834, 301</value>
   </data>
   <data name="ChannelTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -510,12 +454,15 @@ ConvertToYV12()
     <value># Kirara Encoder AviSynth Channel Script
 
 function Stereo2KE(clip KEIPA) {
+Try {
     SPKL = GetChannel(KEIPA, %FL%)
     SPKR = GetChannel(KEIPA, %FR%)
     Return MergeChannels(SPKL, SPKR)
+} Catch(err_msg) { }
 }
 
 function Stereo6KE(clip KEIPA) {
+Try {
     SPKL = GetChannel(KEIPA, %FL%)
     SPKR = GetChannel(KEIPA, %FR%)
     SPKC = GetChannel(KEIPA, %FC%)
@@ -533,9 +480,11 @@ function Stereo6KE(clip KEIPA) {
     SPKMixR4 = MixAudio(SPKMixR, SPKMixR2)
     SPKMixR5 = MixAudio(SPKMixR3, SPKMixR4)
     Return MergeChannels(SPKMixL5, SPKMixR5)
+} Catch(err_msg) { }
 }
 
 function LFE516KE(clip KEIPA) {
+Try {
     SPKL = GetChannel(KEIPA, %FL%)
     SPKR = GetChannel(KEIPA, %FR%)
     SPKC = GetChannel(KEIPA, %FC%)
@@ -543,9 +492,11 @@ function LFE516KE(clip KEIPA) {
     SPKBL = GetChannel(KEIPA, %RL%)
     SPKBR = GetChannel(KEIPA, %RR%)
     Return MergeChannels(SPKL, SPKR, SPKC, SPKLFE, SPKBL, SPKBR)
+} Catch(err_msg) { }
 }
 
 function DolbySurroundProLogic6KE(clip KEIPA) {
+Try {
     SPKL = GetChannel(KEIPA, %FL%)
     SPKR = GetChannel(KEIPA, %FR%)
     SPKC = GetChannel(KEIPA, %FC%)
@@ -563,9 +514,11 @@ function DolbySurroundProLogic6KE(clip KEIPA) {
     SPKMixR4 = MixAudio(SPKMixR, SPKMixR2)
     SPKMixR5 = MixAudio(SPKMixR3, SPKMixR4)
     Return MergeChannels(SPKMixL5, SPKMixR5)
+} Catch(err_msg) { }
 }
 
 function DolbyProLogicII6KE(clip KEIPA) {
+Try {
     SPKL = GetChannel(KEIPA, %FL%)
     SPKR = GetChannel(KEIPA, %FR%)
     SPKC = GetChannel(KEIPA, %FC%)
@@ -583,6 +536,7 @@ function DolbyProLogicII6KE(clip KEIPA) {
     SPKMixR4 = MixAudio(SPKMixR, SPKMixR2)
     SPKMixR5 = MixAudio(SPKMixR3, SPKMixR4)
     Return MergeChannels(SPKMixL5, SPKMixR5)
+} Catch(err_msg) { }
 }</value>
   </data>
   <data name="Def_ChannelTextBox.Visible" type="System.Boolean, mscorlib">
@@ -622,7 +576,7 @@ function DolbyProLogicII6KE(clip KEIPA) {
     <value>Both</value>
   </data>
   <data name="ScriptTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="ScriptTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -646,7 +600,7 @@ function DolbyProLogicII6KE(clip KEIPA) {
     <value>4, 23</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -664,6 +618,65 @@ function DolbyProLogicII6KE(clip KEIPA) {
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 35</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 58</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.Text" xml:space="preserve">
+    <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
+
+V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;#&lt;avifps&gt;
+A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, adjustdelay=-2, cache=true, cachefile="#&lt;cachefile&gt;")
+AudioDub(V,A)
+#&lt;deinterlace&gt;
+#&lt;delayaudio&gt;
+#&lt;channel&gt;
+#&lt;crop&gt;
+#&lt;image&gt;
+ConvertToYV12()
+#&lt;coloryuv&gt;
+#&lt;sharpen&gt;
+#&lt;tweak&gt;
+#&lt;coloryuv_analyze&gt;
+#&lt;textsub&gt;
+#&lt;trim&gt;
+#&lt;normalize&gt;
+#&lt;amplifydb&gt;
+#&lt;supereq&gt;
+#&lt;audio_analyze&gt;</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Def_FFmpegSourceTextBox.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Name" xml:space="preserve">
+    <value>Def_FFmpegSourceTextBox</value>
+  </data>
+  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Parent" xml:space="preserve">
+    <value>FFmpegSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;Def_FFmpegSourceTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="FFmpegSourceLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -691,7 +704,7 @@ function DolbyProLogicII6KE(clip KEIPA) {
     <value>FFmpegSourceTabPage</value>
   </data>
   <data name="&gt;&gt;FFmpegSourceLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="FFmpegSourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -700,7 +713,7 @@ function DolbyProLogicII6KE(clip KEIPA) {
     <value>3, 3, 3, 3</value>
   </data>
   <data name="FFmpegSourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="FFmpegSourceTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -719,6 +732,161 @@ function DolbyProLogicII6KE(clip KEIPA) {
   </data>
   <data name="&gt;&gt;FFmpegSourceTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="ASFLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ASFLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ASFLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 8</value>
+  </data>
+  <data name="ASFLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 14</value>
+  </data>
+  <data name="ASFLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="ASFLabel.Text" xml:space="preserve">
+    <value>비디오 ASF/WMV 파일 / ASF 파일은 기본 오디오 스트림으로 인코딩됩니다.</value>
+  </data>
+  <data name="&gt;&gt;ASFLabel.Name" xml:space="preserve">
+    <value>ASFLabel</value>
+  </data>
+  <data name="&gt;&gt;ASFLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ASFLabel.Parent" xml:space="preserve">
+    <value>ASFTabPage</value>
+  </data>
+  <data name="&gt;&gt;ASFLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Def_ASFTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 35</value>
+  </data>
+  <data name="Def_ASFTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="Def_ASFTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Def_ASFTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="Def_ASFTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 58</value>
+  </data>
+  <data name="Def_ASFTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="Def_ASFTextBox.Text" xml:space="preserve">
+    <value>LoadPlugin("#&lt;pluginpath&gt;DirectShowSource.dll")
+LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
+
+#ASF
+#ASFV=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=-1, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
+#ASFA=DirectShowSource("#&lt;source&gt;", timeout=6000, video=false)
+
+#WMV
+#WMVV=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
+#WMVA=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, cache=true, cachefile="#&lt;cachefile&gt;")
+
+#AudioDub(V,A)
+#&lt;deinterlace&gt;
+#&lt;channel&gt;
+#&lt;crop&gt;
+#&lt;image&gt;
+ConvertToYV12()
+#&lt;coloryuv&gt;
+#&lt;sharpen&gt;
+#&lt;tweak&gt;
+#&lt;coloryuv_analyze&gt;
+#&lt;textsub&gt;
+#&lt;trim&gt;
+#&lt;normalize&gt;
+#&lt;amplifydb&gt;
+#&lt;supereq&gt;
+#&lt;audio_analyze&gt;</value>
+  </data>
+  <data name="Def_ASFTextBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Def_ASFTextBox.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Def_ASFTextBox.Name" xml:space="preserve">
+    <value>Def_ASFTextBox</value>
+  </data>
+  <data name="&gt;&gt;Def_ASFTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Def_ASFTextBox.Parent" xml:space="preserve">
+    <value>ASFTabPage</value>
+  </data>
+  <data name="&gt;&gt;Def_ASFTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ASFTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="ASFTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 35</value>
+  </data>
+  <data name="ASFTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="ASFTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ASFTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="ASFTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 301</value>
+  </data>
+  <data name="ASFTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="ASFTextBox.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ASFTextBox.Name" xml:space="preserve">
+    <value>ASFTextBox</value>
+  </data>
+  <data name="&gt;&gt;ASFTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ASFTextBox.Parent" xml:space="preserve">
+    <value>ASFTabPage</value>
+  </data>
+  <data name="&gt;&gt;ASFTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ASFTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="ASFTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="ASFTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="ASFTabPage.Text" xml:space="preserve">
+    <value>ASF/WMV</value>
+  </data>
+  <data name="&gt;&gt;ASFTabPage.Name" xml:space="preserve">
+    <value>ASFTabPage</value>
+  </data>
+  <data name="&gt;&gt;ASFTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ASFTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;ASFTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="MPEG2SourceLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -775,7 +943,7 @@ V=MPEG2Source("#&lt;d2vsource&gt;")
 A=#&lt;audiosource&gt;
 AudioDub(V,A)
 #&lt;deinterlace&gt;
-#&lt;delayaudio&gt;
+#&lt;delayaudio1&gt;
 #&lt;channel&gt;
 #&lt;changefps&gt;
 #&lt;crop&gt;
@@ -787,8 +955,10 @@ ConvertToYV12()
 #&lt;coloryuv_analyze&gt;
 #&lt;textsub&gt;
 #&lt;trim&gt;
+#&lt;normalize&gt;
 #&lt;amplifydb&gt;
-#&lt;supereq&gt;</value>
+#&lt;supereq&gt;
+#&lt;audio_analyze&gt;</value>
   </data>
   <data name="Def_MPEG2SourceTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -824,7 +994,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="MPEG2SourceTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 278</value>
+    <value>834, 301</value>
   </data>
   <data name="MPEG2SourceTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -848,7 +1018,7 @@ ConvertToYV12()
     <value>4, 23</value>
   </data>
   <data name="MPEG2SourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="MPEG2SourceTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -866,7 +1036,7 @@ ConvertToYV12()
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;MPEG2SourceTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="AVCLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -875,13 +1045,13 @@ ConvertToYV12()
     <value>7, 8</value>
   </data>
   <data name="AVCLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 14</value>
+    <value>405, 14</value>
   </data>
   <data name="AVCLabel.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="AVCLabel.Text" xml:space="preserve">
-    <value>비디오 MPEG/MPEGTS AVC 파일</value>
+    <value>비디오 MPEG/MPEGTS AVC 파일 / 기본 오디오 스트림으로 인코딩됩니다.</value>
   </data>
   <data name="&gt;&gt;AVCLabel.Name" xml:space="preserve">
     <value>AVCLabel</value>
@@ -914,12 +1084,14 @@ ConvertToYV12()
     <value>31</value>
   </data>
   <data name="Def_AVCTextBox.Text" xml:space="preserve">
-    <value>LoadPlugin("#&lt;toolspath&gt;ffms\ffms2.dll")
+    <value>LoadPlugin("#&lt;pluginpath&gt;DirectShowSource.dll")
 LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;#&lt;avifps&gt;
-A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, cache=true, cachefile="#&lt;cachefile&gt;")
+V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=-1, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
+A=DirectShowSource("#&lt;source&gt;", timeout=6000, video=false)
 AudioDub(V,A)
+#&lt;deinterlace&gt;
+#&lt;delayaudio2&gt;
 #&lt;channel&gt;
 #&lt;crop&gt;
 #&lt;image&gt;
@@ -930,8 +1102,10 @@ ConvertToYV12()
 #&lt;coloryuv_analyze&gt;
 #&lt;textsub&gt;
 #&lt;trim&gt;
+#&lt;normalize&gt;
 #&lt;amplifydb&gt;
-#&lt;supereq&gt;</value>
+#&lt;supereq&gt;
+#&lt;audio_analyze&gt;</value>
   </data>
   <data name="Def_AVCTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -967,7 +1141,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="AVCTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 278</value>
+    <value>834, 301</value>
   </data>
   <data name="AVCTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -991,7 +1165,7 @@ ConvertToYV12()
     <value>4, 23</value>
   </data>
   <data name="AVCTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="AVCTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1009,7 +1183,7 @@ ConvertToYV12()
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;AVCTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="VC1Label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1018,13 +1192,13 @@ ConvertToYV12()
     <value>7, 8</value>
   </data>
   <data name="VC1Label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 14</value>
+    <value>404, 14</value>
   </data>
   <data name="VC1Label.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="VC1Label.Text" xml:space="preserve">
-    <value>비디오 MPEG/MPEGTS VC1 파일</value>
+    <value>비디오 MPEG/MPEGTS VC1 파일 / 기본 오디오 스트림으로 인코딩됩니다.</value>
   </data>
   <data name="&gt;&gt;VC1Label.Name" xml:space="preserve">
     <value>VC1Label</value>
@@ -1057,12 +1231,14 @@ ConvertToYV12()
     <value>31</value>
   </data>
   <data name="Def_VC1TextBox.Text" xml:space="preserve">
-    <value>LoadPlugin("#&lt;toolspath&gt;ffms\ffms2.dll")
+    <value>LoadPlugin("#&lt;pluginpath&gt;DirectShowSource.dll")
 LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;#&lt;avifps&gt;
-A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, cache=true, cachefile="#&lt;cachefile&gt;")
+V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=-1, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
+A=DirectShowSource("#&lt;source&gt;", timeout=6000, video=false)
 AudioDub(V,A)
+#&lt;deinterlace&gt;
+#&lt;delayaudio2&gt;
 #&lt;channel&gt;
 #&lt;crop&gt;
 #&lt;image&gt;
@@ -1073,8 +1249,10 @@ ConvertToYV12()
 #&lt;coloryuv_analyze&gt;
 #&lt;textsub&gt;
 #&lt;trim&gt;
+#&lt;normalize&gt;
 #&lt;amplifydb&gt;
-#&lt;supereq&gt;</value>
+#&lt;supereq&gt;
+#&lt;audio_analyze&gt;</value>
   </data>
   <data name="Def_VC1TextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1110,7 +1288,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="VC1TextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 278</value>
+    <value>834, 301</value>
   </data>
   <data name="VC1TextBox.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -1134,7 +1312,7 @@ ConvertToYV12()
     <value>4, 23</value>
   </data>
   <data name="VC1TabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="VC1TabPage.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1152,7 +1330,7 @@ ConvertToYV12()
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;VC1TabPage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="BassAudioLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1206,8 +1384,11 @@ BassAudioSource("#&lt;source&gt;")
 PointResize(176,144)
 #&lt;channel&gt;
 #&lt;trim&gt;
+#&lt;normalize&gt;
 #&lt;amplifydb&gt;
-#&lt;supereq&gt;</value>
+#&lt;supereq&gt;
+ConvertToYV12()
+#&lt;audio_analyze&gt;</value>
   </data>
   <data name="Def_BassAudioTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1243,7 +1424,7 @@ PointResize(176,144)
     <value>Both</value>
   </data>
   <data name="BassAudioTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 278</value>
+    <value>834, 301</value>
   </data>
   <data name="BassAudioTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -1270,7 +1451,7 @@ PointResize(176,144)
     <value>3, 3, 3, 3</value>
   </data>
   <data name="BassAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="BassAudioTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1288,7 +1469,7 @@ PointResize(176,144)
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;BassAudioTabPage.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="NicAudioLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1338,13 +1519,16 @@ PointResize(176,144)
   <data name="Def_NicAudioTextBox.Text" xml:space="preserve">
     <value>LoadPlugin("#&lt;pluginpath&gt;NicAudio.dll")
 
-V=Blankclip(length=#&lt;nicsourcelength&gt;, width=176,height=144, fps=#&lt;nicsourcefps&gt;)
+V=Blankclip(length=#&lt;nicsourcelength&gt;, width=176, height=144, fps=#&lt;nicsourcefps&gt;)
 A=Nic#&lt;nicsourcename&gt;Source("#&lt;source&gt;")
 AudioDub(V,A)
 #&lt;channel&gt;
 #&lt;trim&gt;
+#&lt;normalize&gt;
 #&lt;amplifydb&gt;
-#&lt;supereq&gt;</value>
+#&lt;supereq&gt;
+ConvertToYV12()
+#&lt;audio_analyze&gt;</value>
   </data>
   <data name="Def_NicAudioTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1380,7 +1564,7 @@ AudioDub(V,A)
     <value>Both</value>
   </data>
   <data name="NicAudioTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 278</value>
+    <value>834, 301</value>
   </data>
   <data name="NicAudioTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1404,7 +1588,7 @@ AudioDub(V,A)
     <value>4, 23</value>
   </data>
   <data name="NicAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="NicAudioTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1422,7 +1606,7 @@ AudioDub(V,A)
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;NicAudioTabPage.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="ChannelLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1455,7 +1639,7 @@ AudioDub(V,A)
     <value>4, 23</value>
   </data>
   <data name="ChannelScriptTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 313</value>
+    <value>834, 336</value>
   </data>
   <data name="ChannelScriptTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1473,13 +1657,13 @@ AudioDub(V,A)
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;ChannelScriptTabPage.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 43</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>744, 340</value>
+    <value>842, 363</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1539,7 +1723,7 @@ AudioDub(V,A)
     <value>0, 0</value>
   </data>
   <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1611,7 +1795,7 @@ AudioDub(V,A)
     <value>Right</value>
   </data>
   <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 0</value>
+    <value>626, 0</value>
   </data>
   <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 35</value>
@@ -1635,10 +1819,10 @@ AudioDub(V,A)
     <value>Bottom</value>
   </data>
   <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 391</value>
+    <value>0, 414</value>
   </data>
   <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 35</value>
+    <value>864, 35</value>
   </data>
   <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1662,7 +1846,7 @@ AudioDub(V,A)
     <value>0, 24</value>
   </data>
   <data name="AVSPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 426</value>
+    <value>864, 449</value>
   </data>
   <data name="AVSPanel.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -1679,6 +1863,9 @@ AudioDub(V,A)
   <data name="&gt;&gt;AVSPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="ProcessDetTimer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>398, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1686,7 +1873,7 @@ AudioDub(V,A)
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>766, 472</value>
+    <value>864, 495</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
@@ -1756,6 +1943,12 @@ AudioDub(V,A)
   </data>
   <data name="&gt;&gt;PresetToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProcessDetTimer2.Name" xml:space="preserve">
+    <value>ProcessDetTimer2</value>
+  </data>
+  <data name="&gt;&gt;ProcessDetTimer2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AviSynthEditorFrm</value>

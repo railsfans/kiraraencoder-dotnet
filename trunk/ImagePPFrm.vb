@@ -357,6 +357,41 @@ RELOAD:
                     If XTRSTR <> "" Then FieldorderComboBox.Text = XTRSTR Else FieldorderComboBox.Text = "Varying field order"
                 End If
 
+                If XTR.Name = "ImagePPFrm_FFPP_hb_CheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFPP_hb_CheckBox.Checked = XTRSTR Else FFPP_hb_CheckBox.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_FFPP_vb_CheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFPP_vb_CheckBox.Checked = XTRSTR Else FFPP_vb_CheckBox.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_FFPP_ha_CheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFPP_ha_CheckBox.Checked = XTRSTR Else FFPP_ha_CheckBox.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_FFPP_va_CheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFPP_va_CheckBox.Checked = XTRSTR Else FFPP_va_CheckBox.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_FFPP_h1_CheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFPP_h1_CheckBox.Checked = XTRSTR Else FFPP_h1_CheckBox.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_FFPP_v1_CheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFPP_v1_CheckBox.Checked = XTRSTR Else FFPP_v1_CheckBox.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_FFPP_dr_CheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFPP_dr_CheckBox.Checked = XTRSTR Else FFPP_dr_CheckBox.Checked = False
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -681,6 +716,13 @@ RELOAD:
         AVSMPEG2DeinterlaceCheckBox.Checked = False
         AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=0"
         FieldorderComboBox.Text = "Varying field order"
+        FFPP_hb_CheckBox.Checked = False
+        FFPP_vb_CheckBox.Checked = False
+        FFPP_ha_CheckBox.Checked = False
+        FFPP_va_CheckBox.Checked = False
+        FFPP_h1_CheckBox.Checked = False
+        FFPP_v1_CheckBox.Checked = False
+        FFPP_dr_CheckBox.Checked = False
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click

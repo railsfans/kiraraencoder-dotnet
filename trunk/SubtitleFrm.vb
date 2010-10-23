@@ -30,7 +30,7 @@ Public Class SubtitleFrm
         '자막
         SubtitleCheckBox.Checked = True
         EncComboBox.Text = "DEFAULT (1)"
-        FontComboBox.Text = "Arial"
+        FontComboBox.Text = "Tahoma"
         SizeUpDown.Value = 22
         ItalicCheckBox.Checked = False
         BoldCheckBox.Checked = False
@@ -160,7 +160,7 @@ RELOAD:
 
                 If XTR.Name = "SubtitleFrm_FontComboBox" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then FontComboBox.Text = XTRSTR Else FontComboBox.Text = "Arial"
+                    If XTRSTR <> "" Then FontComboBox.Text = XTRSTR Else FontComboBox.Text = "Tahoma"
                 End If
 
                 If XTR.Name = "SubtitleFrm_SizeUpDown" Then

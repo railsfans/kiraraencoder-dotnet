@@ -75,8 +75,14 @@ Partial Class AudioPPFrm
         Me.DefBTN = New System.Windows.Forms.Button
         Me.EQToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.APP_Panel = New System.Windows.Forms.Panel
+        Me.NormalizeGroupBox = New System.Windows.Forms.GroupBox
+        Me.NormalizeCheckBox = New System.Windows.Forms.CheckBox
+        Me.NormalizeTrackBar = New System.Windows.Forms.TrackBar
+        Me.NormalizeNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.AviSynthChGroupBox = New System.Windows.Forms.GroupBox
         Me.AviSynthChComboBox = New System.Windows.Forms.ComboBox
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.AudioASCheckBox = New System.Windows.Forms.CheckBox
         Me.AmplifyGroupBox.SuspendLayout()
         CType(Me.AmplifyTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AmplifyNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,7 +106,11 @@ Partial Class AudioPPFrm
         CType(Me.EQ2TrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EQ1TrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.APP_Panel.SuspendLayout()
+        Me.NormalizeGroupBox.SuspendLayout()
+        CType(Me.NormalizeTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NormalizeNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AviSynthChGroupBox.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'AmplifyGroupBox
@@ -127,7 +137,7 @@ Partial Class AudioPPFrm
         'AmplifyTrackBar
         '
         resources.ApplyResources(Me.AmplifyTrackBar, "AmplifyTrackBar")
-        Me.AmplifyTrackBar.Maximum = 1000
+        Me.AmplifyTrackBar.Maximum = 300
         Me.AmplifyTrackBar.Minimum = -1000
         Me.AmplifyTrackBar.Name = "AmplifyTrackBar"
         Me.AmplifyTrackBar.TickFrequency = 0
@@ -138,6 +148,7 @@ Partial Class AudioPPFrm
         Me.AmplifyNumericUpDown.DecimalPlaces = 1
         resources.ApplyResources(Me.AmplifyNumericUpDown, "AmplifyNumericUpDown")
         Me.AmplifyNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.AmplifyNumericUpDown.Maximum = New Decimal(New Integer() {30, 0, 0, 0})
         Me.AmplifyNumericUpDown.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
         Me.AmplifyNumericUpDown.Name = "AmplifyNumericUpDown"
         '
@@ -517,6 +528,8 @@ Partial Class AudioPPFrm
         '
         'APP_Panel
         '
+        Me.APP_Panel.Controls.Add(Me.GroupBox1)
+        Me.APP_Panel.Controls.Add(Me.NormalizeGroupBox)
         Me.APP_Panel.Controls.Add(Me.AviSynthChGroupBox)
         Me.APP_Panel.Controls.Add(Me.AmplifyGroupBox)
         Me.APP_Panel.Controls.Add(Me.DefBTN)
@@ -525,6 +538,36 @@ Partial Class AudioPPFrm
         Me.APP_Panel.Controls.Add(Me.EQGroupBox)
         resources.ApplyResources(Me.APP_Panel, "APP_Panel")
         Me.APP_Panel.Name = "APP_Panel"
+        '
+        'NormalizeGroupBox
+        '
+        Me.NormalizeGroupBox.Controls.Add(Me.NormalizeCheckBox)
+        Me.NormalizeGroupBox.Controls.Add(Me.NormalizeTrackBar)
+        Me.NormalizeGroupBox.Controls.Add(Me.NormalizeNumericUpDown)
+        resources.ApplyResources(Me.NormalizeGroupBox, "NormalizeGroupBox")
+        Me.NormalizeGroupBox.Name = "NormalizeGroupBox"
+        Me.NormalizeGroupBox.TabStop = False
+        '
+        'NormalizeCheckBox
+        '
+        resources.ApplyResources(Me.NormalizeCheckBox, "NormalizeCheckBox")
+        Me.NormalizeCheckBox.Name = "NormalizeCheckBox"
+        Me.NormalizeCheckBox.UseVisualStyleBackColor = True
+        '
+        'NormalizeTrackBar
+        '
+        resources.ApplyResources(Me.NormalizeTrackBar, "NormalizeTrackBar")
+        Me.NormalizeTrackBar.Maximum = 100
+        Me.NormalizeTrackBar.Name = "NormalizeTrackBar"
+        Me.NormalizeTrackBar.TickFrequency = 0
+        Me.NormalizeTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        '
+        'NormalizeNumericUpDown
+        '
+        Me.NormalizeNumericUpDown.DecimalPlaces = 2
+        resources.ApplyResources(Me.NormalizeNumericUpDown, "NormalizeNumericUpDown")
+        Me.NormalizeNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NormalizeNumericUpDown.Name = "NormalizeNumericUpDown"
         '
         'AviSynthChGroupBox
         '
@@ -539,6 +582,19 @@ Partial Class AudioPPFrm
         Me.AviSynthChComboBox.FormattingEnabled = True
         resources.ApplyResources(Me.AviSynthChComboBox, "AviSynthChComboBox")
         Me.AviSynthChComboBox.Name = "AviSynthChComboBox"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.AudioASCheckBox)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.TabStop = False
+        '
+        'AudioASCheckBox
+        '
+        resources.ApplyResources(Me.AudioASCheckBox, "AudioASCheckBox")
+        Me.AudioASCheckBox.Name = "AudioASCheckBox"
+        Me.AudioASCheckBox.UseVisualStyleBackColor = True
         '
         'AudioPPFrm
         '
@@ -576,7 +632,13 @@ Partial Class AudioPPFrm
         CType(Me.EQ2TrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EQ1TrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.APP_Panel.ResumeLayout(False)
+        Me.NormalizeGroupBox.ResumeLayout(False)
+        Me.NormalizeGroupBox.PerformLayout()
+        CType(Me.NormalizeTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NormalizeNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AviSynthChGroupBox.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -633,4 +695,10 @@ Partial Class AudioPPFrm
     Friend WithEvents AviSynthChGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents AviSynthChComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents dBLabel As System.Windows.Forms.Label
+    Friend WithEvents NormalizeGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents NormalizeCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents NormalizeTrackBar As System.Windows.Forms.TrackBar
+    Friend WithEvents NormalizeNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents AudioASCheckBox As System.Windows.Forms.CheckBox
 End Class

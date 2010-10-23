@@ -364,8 +364,28 @@ Namespace AvisynthWrapper
 
         Public Sub ReadFrame(ByVal addr As IntPtr, ByVal stride As Integer, ByVal frame As Integer)
             If 0 <> dimzon_avs_getvframe(_avs, addr, stride, frame) Then
+                Ref()
+            End If
+
+        End Sub
+
+        Public Sub ReadFrame2(ByVal addr As IntPtr, ByVal stride As Integer, ByVal frame As Integer)
+            If 0 <> dimzon_avs_getvframe(_avs, addr, stride, frame) Then
                 Throw New AviSynthException(getLastError())
             End If
+
+        End Sub
+
+        Public Sub Ref()
+            Try
+                AviSynthEditorFrm.waitbool = True
+                VideoWindowFrm.TR = True
+                VideoWindowFrm.Ref_SUB()
+                VideoWindowFrm.TR = False
+                AviSynthEditorFrm.waitbool = False
+            Catch ex As Exception
+                Throw New AviSynthException(getLastError())
+            End Try
         End Sub
 
         Public Sub New(ByVal func As String, ByVal arg As String, ByVal forceColorspace As AviSynthColorspace, ByVal env As AviSynthScriptEnvironment)

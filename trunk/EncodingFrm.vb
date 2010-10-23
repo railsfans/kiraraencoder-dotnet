@@ -715,7 +715,11 @@ Public Class EncodingFrm
                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainEncodingStr
             End If
 
-
+            '비디오와 오디오 둘다 없으면 오류처리
+            If MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text = "None" Then
+                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                GoTo SKIP
+            End If
 
 
             '++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1264,7 +1268,7 @@ Public Class EncodingFrm
                     PriorityV = PriorityClass.NORMAL_PRIORITY_CLASS
                 End If
                 'EncToolStripStatusLabel.Text = LangCls.EncodingCreatingD2V or EncodingCreatingFFINDEX // 아래에서
-                AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True)
+                AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True, False)
                 EncToolStripStatusLabel.Text = ""
                 IndexProc = False
                 IndexTimer.Enabled = False
@@ -1322,8 +1326,11 @@ Public Class EncodingFrm
             ' 타임스탬프
             '=================================
             Dim timestampV As String = ""
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 Then
-                timestampV = " -timestamp " & Chr(34) & Format(Now, "yyyy-MM-dd HH:mm:ss") & Chr(34)
+            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
+                timestampV = " -timestamp now" ' & Chr(34) & Format(Now, "yyyy-MM-dd HH:mm:ss") & Chr(34)
             End If
 
             '---------------------------------
@@ -1337,6 +1344,43 @@ Public Class EncodingFrm
                     End If
                 End If
             End If
+
+            '---------------------------------
+            ' FLV 원본 샘플링 가변적//
+            '=================================
+            Dim AudioListV As String = MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text
+            Dim FLVSamplerateV As String = ""
+            Dim _i As Long = 1
+            Dim _ii As Long = 0
+            Dim _t As String = ""
+            'FLV 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
+            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 AndAlso EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" Then
+                If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플레이트 체크
+                    _i = 1
+                    _ii = 0
+                    _t = ""
+                    If InStr(_i, AudioListV, MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, CompareMethod.Text) Then
+                        _ii = InStr(_i, AudioListV, MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, CompareMethod.Text)
+                        If InStr(_ii, AudioListV, "Hz", CompareMethod.Text) Then
+                            _i = InStr(_ii, AudioListV, "Hz", CompareMethod.Text) + 1
+                            _t = Mid(AudioListV, _ii, _i - _ii - 1)
+                        End If
+                    Else
+                        _i = _i + 1
+                    End If
+                    If _t <> "" Then
+                        _t = Strings.Mid(RTrim(_t), InStrRev(RTrim(_t), " ") + 1)
+                        If Val(_t) >= 44100 Then
+                            FLVSamplerateV = " -ar 44100"
+                        ElseIf Val(_t) >= 22050 Then
+                            FLVSamplerateV = " -ar 22050"
+                        Else
+                            FLVSamplerateV = " -ar 11025"
+                        End If
+                    End If
+                End If
+            End If
+
 
             '---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1492,7 +1536,7 @@ Public Class EncodingFrm
                         End If
 
                         EncPassStr = "[2/2Pass]"
-                        EncSub(InputFilePath, VideoFilterV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1504,7 +1548,7 @@ Public Class EncodingFrm
 
                     Else
 
-                        EncSub(InputFilePath, VideoFilterV & timestampV & MainFrm.AviSynthCommandStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & MainFrm.AviSynthCommandStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1526,7 +1570,7 @@ Public Class EncodingFrm
                         End If
 
                         EncPassStr = "[2/2Pass]"
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1538,7 +1582,7 @@ Public Class EncodingFrm
 
                     Else
 
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommandStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & MainFrm.FFmpegCommandStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr

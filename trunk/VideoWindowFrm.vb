@@ -29,6 +29,7 @@ Public Class VideoWindowFrm
     Public FrameI As Integer = 0
     Dim PLAYVL As Boolean = False
     Dim GETIMG As Boolean = False
+    Public TR As Boolean = False
 
 #Region "코어"
 
@@ -102,10 +103,16 @@ Public Class VideoWindowFrm
             '닫기
             FrameTimer.Enabled = False
             RealtimeTimer.Enabled = False
+            If _AviSynthClip IsNot Nothing Then
+                _AviSynthClip.IDisposable_Dispose()
+            End If
+            If BitmapV IsNot Nothing Then
+                BitmapV.Dispose()
+            End If
             PLAYVL = False
             '---------------
             '새로고침
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
             '열기
             OPEN_SUB()
             '재생여부
@@ -173,8 +180,10 @@ LANG_SKIP:
 
     Public Sub GET_IMAGE(ByVal frameV As Integer)
 
-        If GETIMG = True Then
-            Exit Sub
+        If TR = False Then
+            If GETIMG = True Then
+                Exit Sub
+            End If
         End If
 
         GETIMG = True
@@ -182,7 +191,11 @@ LANG_SKIP:
             VideoPictureBox.Image = BitmapV
             Dim rectV As New Rectangle(0, 0, BitmapV.Width, BitmapV.Height)
             Dim BitmapDataV As System.Drawing.Imaging.BitmapData = BitmapV.LockBits(rectV, System.Drawing.Imaging.ImageLockMode.ReadWrite, BitmapV.PixelFormat)
-            _AviSynthClip.ReadFrame(BitmapDataV.Scan0, BitmapDataV.Stride, frameV)
+            If TR = False Then
+                _AviSynthClip.ReadFrame(BitmapDataV.Scan0, BitmapDataV.Stride, frameV)
+            Else '오류로인한 새로고침일경우 TR(T두번 R새로고침)은 True가 됨.
+                _AviSynthClip.ReadFrame2(BitmapDataV.Scan0, BitmapDataV.Stride, frameV)
+            End If
             BitmapV.UnlockBits(BitmapDataV)
             BitmapV.RotateFlip(RotateFlipType.Rotate180FlipX)
         Catch ex As Exception

@@ -48,6 +48,10 @@ Public Class AudioPPFrm
         EQ16TrackBar.Value = 0
         EQ17TrackBar.Value = 0
         EQ18TrackBar.Value = 0
+        NormalizeCheckBox.Checked = False
+        NormalizeTrackBar.Value = 100
+        NormalizeNumericUpDown.Value = 1.0
+        AudioASCheckBox.Checked = False
     End Sub
 
     Private Sub XML_LOAD(ByVal src As String)
@@ -198,6 +202,26 @@ RELOAD:
                     If XTRSTR <> "" Then EQ18TrackBar.Value = XTRSTR Else EQ18TrackBar.Value = 0
                 End If
 
+                If XTR.Name = "AudioPPFrm_NormalizeCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then NormalizeCheckBox.Checked = XTRSTR Else NormalizeCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "AudioPPFrm_NormalizeTrackBar" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then NormalizeTrackBar.Value = XTRSTR Else NormalizeTrackBar.Value = 100
+                End If
+
+                If XTR.Name = "AudioPPFrm_NormalizeNumericUpDown" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then NormalizeNumericUpDown.Value = XTRSTR Else NormalizeNumericUpDown.Value = 1.0
+                End If
+
+                If XTR.Name = "AudioPPFrm_AudioASCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then AudioASCheckBox.Checked = XTRSTR Else AudioASCheckBox.Checked = False
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -268,6 +292,7 @@ RELOAD:
                 If XTR.Name = "AudioPPch51ComboBox" Then LangCls.AudioPPch51ComboBox = XTR.ReadString
                 If XTR.Name = "AudioPPdolbysComboBox" Then LangCls.AudioPPdolbysComboBox = XTR.ReadString
                 If XTR.Name = "AudioPPdolbypComboBox" Then LangCls.AudioPPdolbypComboBox = XTR.ReadString
+                If XTR.Name = "AudioPPFrmAudioASCheckBox" Then AudioASCheckBox.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -505,6 +530,28 @@ LANG_SKIP:
 
     Private Sub CancelBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBTN.Click
         Close()
+    End Sub
+
+    Private Sub NormalizeCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NormalizeCheckBox.CheckedChanged
+        If NormalizeCheckBox.Checked = True Then
+            NormalizeNumericUpDown.Enabled = True
+            NormalizeTrackBar.Enabled = True
+        Else
+            NormalizeNumericUpDown.Enabled = False
+            NormalizeTrackBar.Enabled = False
+        End If
+    End Sub
+
+    Private Sub NormalizeTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NormalizeTrackBar.Scroll
+        NormalizeNumericUpDown.Value = NormalizeTrackBar.Value / 100
+    End Sub
+
+    Private Sub NormalizeNumericUpDown_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles NormalizeNumericUpDown.LostFocus
+        NormalizeNumericUpDown.Text = NormalizeNumericUpDown.Value
+    End Sub
+
+    Private Sub NormalizeNumericUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NormalizeNumericUpDown.ValueChanged
+        NormalizeTrackBar.Value = NormalizeNumericUpDown.Value * 100
     End Sub
 
 End Class

@@ -134,6 +134,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Windows Media Video 7")
             VideoCodecComboBox.Items.Add("Windows Media Video 8")
             VideoCodecComboBox.Items.Add("Huffyuv Lossless Video Codec")
+
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
@@ -2220,7 +2221,22 @@ RELOAD:
         If AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR 일경우 예외로 8000Hz
             SamplerateComboBoxV = " -ar 8000"
         Else
-            If SamplerateCheckBox.Checked = False Then SamplerateComboBoxV = " -ar " & SamplerateComboBox.Text
+
+            If SamplerateCheckBox.Checked = False Then
+                'FLV 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
+                If InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 AndAlso AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" Then
+                    If Val(SamplerateComboBox.Text) >= 44100 Then
+                        SamplerateComboBoxV = " -ar 44100"
+                    ElseIf Val(SamplerateComboBox.Text) >= 22050 Then
+                        SamplerateComboBoxV = " -ar 22050"
+                    Else
+                        SamplerateComboBoxV = " -ar 11025"
+                    End If
+                Else
+                    SamplerateComboBoxV = " -ar " & SamplerateComboBox.Text
+                End If
+            End If
+
         End If
 
         '***********************************

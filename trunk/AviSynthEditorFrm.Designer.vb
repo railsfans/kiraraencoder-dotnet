@@ -29,7 +29,6 @@ Partial Class AviSynthEditorFrm
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel
         Me.LineColToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
-        Me.Def_FFmpegSourceTextBox = New System.Windows.Forms.TextBox
         Me.FFmpegSourceTextBox = New System.Windows.Forms.TextBox
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.ConPanel = New System.Windows.Forms.Panel
@@ -45,7 +44,12 @@ Partial Class AviSynthEditorFrm
         Me.TabPage1 = New System.Windows.Forms.TabPage
         Me.ScriptTextBox = New System.Windows.Forms.TextBox
         Me.FFmpegSourceTabPage = New System.Windows.Forms.TabPage
+        Me.Def_FFmpegSourceTextBox = New System.Windows.Forms.TextBox
         Me.FFmpegSourceLabel = New System.Windows.Forms.Label
+        Me.ASFTabPage = New System.Windows.Forms.TabPage
+        Me.ASFLabel = New System.Windows.Forms.Label
+        Me.Def_ASFTextBox = New System.Windows.Forms.TextBox
+        Me.ASFTextBox = New System.Windows.Forms.TextBox
         Me.MPEG2SourceTabPage = New System.Windows.Forms.TabPage
         Me.MPEG2SourceLabel = New System.Windows.Forms.Label
         Me.Def_MPEG2SourceTextBox = New System.Windows.Forms.TextBox
@@ -80,12 +84,14 @@ Partial Class AviSynthEditorFrm
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.OKBTN = New System.Windows.Forms.Button
+        Me.ProcessDetTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.ConPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.FFmpegSourceTabPage.SuspendLayout()
+        Me.ASFTabPage.SuspendLayout()
         Me.MPEG2SourceTabPage.SuspendLayout()
         Me.AVCTabPage.SuspendLayout()
         Me.VC1TabPage.SuspendLayout()
@@ -128,12 +134,6 @@ Partial Class AviSynthEditorFrm
         Me.LineColToolStripStatusLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.LineColToolStripStatusLabel.Name = "LineColToolStripStatusLabel"
         Me.LineColToolStripStatusLabel.Spring = True
-        '
-        'Def_FFmpegSourceTextBox
-        '
-        Me.Def_FFmpegSourceTextBox.BackColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.Def_FFmpegSourceTextBox, "Def_FFmpegSourceTextBox")
-        Me.Def_FFmpegSourceTextBox.Name = "Def_FFmpegSourceTextBox"
         '
         'FFmpegSourceTextBox
         '
@@ -211,6 +211,7 @@ Partial Class AviSynthEditorFrm
         resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.FFmpegSourceTabPage)
+        Me.TabControl1.Controls.Add(Me.ASFTabPage)
         Me.TabControl1.Controls.Add(Me.MPEG2SourceTabPage)
         Me.TabControl1.Controls.Add(Me.AVCTabPage)
         Me.TabControl1.Controls.Add(Me.VC1TabPage)
@@ -236,17 +237,49 @@ Partial Class AviSynthEditorFrm
         '
         'FFmpegSourceTabPage
         '
-        Me.FFmpegSourceTabPage.Controls.Add(Me.FFmpegSourceLabel)
         Me.FFmpegSourceTabPage.Controls.Add(Me.Def_FFmpegSourceTextBox)
+        Me.FFmpegSourceTabPage.Controls.Add(Me.FFmpegSourceLabel)
         Me.FFmpegSourceTabPage.Controls.Add(Me.FFmpegSourceTextBox)
         resources.ApplyResources(Me.FFmpegSourceTabPage, "FFmpegSourceTabPage")
         Me.FFmpegSourceTabPage.Name = "FFmpegSourceTabPage"
         Me.FFmpegSourceTabPage.UseVisualStyleBackColor = True
         '
+        'Def_FFmpegSourceTextBox
+        '
+        Me.Def_FFmpegSourceTextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.Def_FFmpegSourceTextBox, "Def_FFmpegSourceTextBox")
+        Me.Def_FFmpegSourceTextBox.Name = "Def_FFmpegSourceTextBox"
+        '
         'FFmpegSourceLabel
         '
         resources.ApplyResources(Me.FFmpegSourceLabel, "FFmpegSourceLabel")
         Me.FFmpegSourceLabel.Name = "FFmpegSourceLabel"
+        '
+        'ASFTabPage
+        '
+        Me.ASFTabPage.Controls.Add(Me.ASFLabel)
+        Me.ASFTabPage.Controls.Add(Me.Def_ASFTextBox)
+        Me.ASFTabPage.Controls.Add(Me.ASFTextBox)
+        resources.ApplyResources(Me.ASFTabPage, "ASFTabPage")
+        Me.ASFTabPage.Name = "ASFTabPage"
+        Me.ASFTabPage.UseVisualStyleBackColor = True
+        '
+        'ASFLabel
+        '
+        resources.ApplyResources(Me.ASFLabel, "ASFLabel")
+        Me.ASFLabel.Name = "ASFLabel"
+        '
+        'Def_ASFTextBox
+        '
+        Me.Def_ASFTextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.Def_ASFTextBox, "Def_ASFTextBox")
+        Me.Def_ASFTextBox.Name = "Def_ASFTextBox"
+        '
+        'ASFTextBox
+        '
+        resources.ApplyResources(Me.ASFTextBox, "ASFTextBox")
+        Me.ASFTextBox.BackColor = System.Drawing.Color.White
+        Me.ASFTextBox.Name = "ASFTextBox"
         '
         'MPEG2SourceTabPage
         '
@@ -461,6 +494,10 @@ Partial Class AviSynthEditorFrm
         Me.OKBTN.Name = "OKBTN"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
+        'ProcessDetTimer2
+        '
+        Me.ProcessDetTimer2.Interval = 1
+        '
         'AviSynthEditorFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -481,6 +518,8 @@ Partial Class AviSynthEditorFrm
         Me.TabPage1.PerformLayout()
         Me.FFmpegSourceTabPage.ResumeLayout(False)
         Me.FFmpegSourceTabPage.PerformLayout()
+        Me.ASFTabPage.ResumeLayout(False)
+        Me.ASFTabPage.PerformLayout()
         Me.MPEG2SourceTabPage.ResumeLayout(False)
         Me.MPEG2SourceTabPage.PerformLayout()
         Me.AVCTabPage.ResumeLayout(False)
@@ -512,7 +551,6 @@ Partial Class AviSynthEditorFrm
     Friend WithEvents RefButton As System.Windows.Forms.Button
     Friend WithEvents FFmpegSourceTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ListenButton As System.Windows.Forms.Button
-    Friend WithEvents Def_FFmpegSourceTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ChannelTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Def_ChannelTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
@@ -558,4 +596,10 @@ Partial Class AviSynthEditorFrm
     Friend WithEvents VC1Label As System.Windows.Forms.Label
     Friend WithEvents Def_VC1TextBox As System.Windows.Forms.TextBox
     Friend WithEvents VC1TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ASFTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents ASFLabel As System.Windows.Forms.Label
+    Friend WithEvents Def_ASFTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ASFTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Def_FFmpegSourceTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ProcessDetTimer2 As System.Windows.Forms.Timer
 End Class

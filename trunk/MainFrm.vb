@@ -1130,13 +1130,23 @@ LANG_SKIP:
             ' 프레임레이트
             '=================================
             If AVSCheckBox.Checked = True Then 'AviSynth 사용
+                Dim bobv As Integer = 1
+                Dim bobstr As String = ""
+                With ImagePPFrm
+                    If .AVSMPEG2DeinterlaceCheckBox.Checked = True Then
+                        If .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=1 double framerate (bob)" OrElse .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=3 double framerate (bob)" Then
+                            bobv = 2
+                            bobstr = " - double framerate (bob)"
+                        End If
+                    End If
+                End With
                 If ImagePPFrm.AviSynthFramerateCheckBox.Checked = True Then
                     Try
-                        ImageFramerateV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(1) & " fps"
+                        ImageFramerateV = (Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) * bobv) & " fps" & bobstr
                     Catch ex As Exception
                     End Try
                 Else
-                    ImageFramerateV = ImagePPFrm.AviSynthFramerateComboBox.Text & " fps"
+                    ImageFramerateV = (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) & " fps" & bobstr
                 End If
             Else
                 If EncSetFrm.FramerateCheckBox.Checked = True Then
@@ -1603,8 +1613,14 @@ LANG_SKIP:
         'Def_FFmpegSourceTextBox 초기화 32 / 64
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
+            AviSynthEditorFrm.Def_ASFTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_ASFTextBox.Text
+            AviSynthEditorFrm.Def_AVCTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_AVCTextBox.Text
+            AviSynthEditorFrm.Def_VC1TextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_VC1TextBox.Text
         Else
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
+            AviSynthEditorFrm.Def_ASFTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_ASFTextBox.Text
+            AviSynthEditorFrm.Def_AVCTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_AVCTextBox.Text
+            AviSynthEditorFrm.Def_VC1TextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_VC1TextBox.Text
         End If
 
         '****************************************************************
@@ -2160,6 +2176,7 @@ UAC:
         '//////////////////////////////////////////////////////////// AviSynthEditorFrm
         With AviSynthEditorFrm
             .FFmpegSourceTextBox.Text = .Def_FFmpegSourceTextBox.Text
+            .ASFTextBox.Text = .Def_ASFTextBox.Text
             .MPEG2SourceTextBox.Text = .Def_MPEG2SourceTextBox.Text
             .BassAudioTextBox.Text = .Def_BassAudioTextBox.Text
             .NicAudioTextBox.Text = .Def_NicAudioTextBox.Text
@@ -2380,7 +2397,7 @@ UAC:
             '자막
             .SubtitleCheckBox.Checked = True
             .EncComboBox.Text = "DEFAULT (1)"
-            .FontComboBox.Text = "Arial"
+            .FontComboBox.Text = "Tahoma"
             .SizeUpDown.Value = 22
             .ItalicCheckBox.Checked = False
             .BoldCheckBox.Checked = False
@@ -2442,6 +2459,10 @@ UAC:
             .EQ16TrackBar.Value = 0
             .EQ17TrackBar.Value = 0
             .EQ18TrackBar.Value = 0
+            .NormalizeCheckBox.Checked = False
+            .NormalizeTrackBar.Value = 100
+            .NormalizeNumericUpDown.Value = 1.0
+            .AudioASCheckBox.Checked = False
 
         End With
 
@@ -2473,6 +2494,13 @@ UAC:
             .AVSMPEG2DeinterlaceCheckBox.Checked = False
             .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=0"
             .FieldorderComboBox.Text = "Varying field order"
+            .FFPP_hb_CheckBox.Checked = False
+            .FFPP_vb_CheckBox.Checked = False
+            .FFPP_ha_CheckBox.Checked = False
+            .FFPP_va_CheckBox.Checked = False
+            .FFPP_h1_CheckBox.Checked = False
+            .FFPP_v1_CheckBox.Checked = False
+            .FFPP_dr_CheckBox.Checked = False
 
         End With
 
@@ -2658,6 +2686,11 @@ RELOAD:
                     If XTR.Name = "AviSynthEditorFrm_FFmpegSourceTextBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .FFmpegSourceTextBox.Text = XTRSTR Else .FFmpegSourceTextBox.Text = .Def_FFmpegSourceTextBox.Text
+                    End If
+
+                    If XTR.Name = "AviSynthEditorFrm_ASFTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .ASFTextBox.Text = XTRSTR Else .ASFTextBox.Text = .Def_ASFTextBox.Text
                     End If
 
                     If XTR.Name = "AviSynthEditorFrm_MPEG2SourceTextBox" Then
@@ -3498,7 +3531,7 @@ RELOAD:
 
                     If XTR.Name = "SubtitleFrm_FontComboBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .FontComboBox.Text = XTRSTR Else .FontComboBox.Text = "Arial"
+                        If XTRSTR <> "" Then .FontComboBox.Text = XTRSTR Else .FontComboBox.Text = "Tahoma"
                     End If
 
                     If XTR.Name = "SubtitleFrm_SizeUpDown" Then
@@ -3798,6 +3831,26 @@ RELOAD:
                         If XTRSTR <> "" Then .EQ18TrackBar.Value = XTRSTR Else .EQ18TrackBar.Value = 0
                     End If
 
+                    If XTR.Name = "AudioPPFrm_NormalizeCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .NormalizeCheckBox.Checked = XTRSTR Else .NormalizeCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "AudioPPFrm_NormalizeTrackBar" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .NormalizeTrackBar.Value = XTRSTR Else .NormalizeTrackBar.Value = 100
+                    End If
+
+                    If XTR.Name = "AudioPPFrm_NormalizeNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .NormalizeNumericUpDown.Value = XTRSTR Else .NormalizeNumericUpDown.Value = 1.0
+                    End If
+
+                    If XTR.Name = "AudioPPFrm_AudioASCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AudioASCheckBox.Checked = XTRSTR Else .AudioASCheckBox.Checked = False
+                    End If
+
                 End With
 
                 '//////////////////////////////////////////////////////////// ImagePPFrm
@@ -3987,6 +4040,41 @@ RELOAD:
                         If XTRSTR <> "" Then .FieldorderComboBox.Text = XTRSTR Else .FieldorderComboBox.Text = "Varying field order"
                     End If
 
+                    If XTR.Name = "ImagePPFrm_FFPP_hb_CheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFPP_hb_CheckBox.Checked = XTRSTR Else .FFPP_hb_CheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_FFPP_vb_CheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFPP_vb_CheckBox.Checked = XTRSTR Else .FFPP_vb_CheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_FFPP_ha_CheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFPP_ha_CheckBox.Checked = XTRSTR Else .FFPP_ha_CheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_FFPP_va_CheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFPP_va_CheckBox.Checked = XTRSTR Else .FFPP_va_CheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_FFPP_h1_CheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFPP_h1_CheckBox.Checked = XTRSTR Else .FFPP_h1_CheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_FFPP_v1_CheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFPP_v1_CheckBox.Checked = XTRSTR Else .FFPP_v1_CheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_FFPP_dr_CheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFPP_dr_CheckBox.Checked = XTRSTR Else .FFPP_dr_CheckBox.Checked = False
+                    End If
+
                 End With
 
                 '예외
@@ -4168,6 +4256,10 @@ RELOAD:
 
                 XTWriter.WriteStartElement("AviSynthEditorFrm_FFmpegSourceTextBox")
                 XTWriter.WriteString(.FFmpegSourceTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AviSynthEditorFrm_ASFTextBox")
+                XTWriter.WriteString(.ASFTextBox.Text)
                 XTWriter.WriteEndElement()
 
                 XTWriter.WriteStartElement("AviSynthEditorFrm_MPEG2SourceTextBox")
@@ -5100,6 +5192,22 @@ RELOAD:
                 XTWriter.WriteString(.EQ18TrackBar.Value)
                 XTWriter.WriteEndElement()
 
+                XTWriter.WriteStartElement("AudioPPFrm_NormalizeCheckBox")
+                XTWriter.WriteString(.NormalizeCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AudioPPFrm_NormalizeTrackBar")
+                XTWriter.WriteString(.NormalizeTrackBar.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AudioPPFrm_NormalizeNumericUpDown")
+                XTWriter.WriteString(.NormalizeNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AudioPPFrm_AudioASCheckBox")
+                XTWriter.WriteString(.AudioASCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
             End With
 
             '//////////////////////////////////////////////////////////// ImagePPFrm
@@ -5241,6 +5349,34 @@ RELOAD:
 
                 XTWriter.WriteStartElement("ImagePPFrm_FieldorderComboBox")
                 XTWriter.WriteString(.FieldorderComboBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_FFPP_hb_CheckBox")
+                XTWriter.WriteString(.FFPP_hb_CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_FFPP_vb_CheckBox")
+                XTWriter.WriteString(.FFPP_vb_CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_FFPP_ha_CheckBox")
+                XTWriter.WriteString(.FFPP_ha_CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_FFPP_va_CheckBox")
+                XTWriter.WriteString(.FFPP_va_CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_FFPP_h1_CheckBox")
+                XTWriter.WriteString(.FFPP_h1_CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_FFPP_v1_CheckBox")
+                XTWriter.WriteString(.FFPP_v1_CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_FFPP_dr_CheckBox")
+                XTWriter.WriteString(.FFPP_dr_CheckBox.Checked)
                 XTWriter.WriteEndElement()
 
             End With

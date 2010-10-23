@@ -27,8 +27,9 @@ Public Class AviSynthEditorFrm
     Dim OKBTNCLK As Boolean = False
 
     'wait
-    Dim waitbool As Boolean = False
+    Public waitbool As Boolean = False
     Dim shellpid As Integer
+    Dim shellpid2 As Integer
 
     'ListenButtonP
     Public ListenButtonP As Boolean = False
@@ -72,13 +73,32 @@ Public Class AviSynthEditorFrm
 
         PreviewButton.Enabled = False
 
-        AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+        AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
         If AviSynthPP.INDEX_ProcessStopChk = True Then
             AviSynthPP.INDEX_ProcessStopChk = False
             PreviewButton.Enabled = True
         Else
-            VideoWindowFrm.Close()
-            VideoWindowFrm.Show(Me)
+
+            '구별//
+            If MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "MPEGTS" OrElse MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "MPEG" Then
+
+                If InStr(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 OrElse _
+                   InStr(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(8).Text, "vc1", CompareMethod.Text) <> 0 Then 'AVC, VC1
+                    Dim MSGB As String = ""
+                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs" & Chr(34) & _
+                    " -identify -noquiet -nofontconfig -nosound -vo direct3d"
+                    shellpid2 = Shell(MSGB, AppWinStyle.NormalFocus)
+                    ProcessDetTimer2.Enabled = True
+                Else
+                    VideoWindowFrm.Close()
+                    VideoWindowFrm.Show(Me)
+                End If
+
+            Else
+                VideoWindowFrm.Close()
+                VideoWindowFrm.Show(Me)
+            End If
+
         End If
 
     End Sub
@@ -110,6 +130,14 @@ Public Class AviSynthEditorFrm
             End Try
         End If
 
+        If shellpid2 <> 0 Then
+            Try
+                If Process.GetProcessById(shellpid2).HasExited = False Then
+                    Process.GetProcessById(shellpid2).Kill()
+                End If
+            Catch ex As Exception
+            End Try
+        End If
 
         Do Until VideoWindowFrm.Visible = False
             VideoWindowFrm.Close()
@@ -151,6 +179,11 @@ RELOAD:
                 If XTR.Name = "AviSynthEditorFrm_FFmpegSourceTextBox" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then FFmpegSourceTextBox.Text = XTRSTR Else FFmpegSourceTextBox.Text = Def_FFmpegSourceTextBox.Text
+                End If
+
+                If XTR.Name = "AviSynthEditorFrm_ASFTextBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then ASFTextBox.Text = XTRSTR Else ASFTextBox.Text = Def_ASFTextBox.Text
                 End If
 
                 If XTR.Name = "AviSynthEditorFrm_MPEG2SourceTextBox" Then
@@ -255,6 +288,7 @@ RELOAD:
                 If XTR.Name = "AviSynthEditorInitializationQ" Then LangCls.AviSynthEditorInitializationQ = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmAVCLabel" Then AVCLabel.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmVC1Label" Then VC1Label.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmASFLabel" Then ASFLabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -286,7 +320,7 @@ LANG_SKIP:
             Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
             Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
 
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, True)
             If AviSynthPP.INDEX_ProcessStopChk = True Then
                 AviSynthPP.INDEX_ProcessStopChk = False
                 ListenButton.Enabled = True
@@ -505,6 +539,8 @@ LANG_SKIP:
         If MSGV = Windows.Forms.DialogResult.Yes Then
             If TabControl1.SelectedTab.Text = "FFmpegSource" Then
                 FFmpegSourceTextBox.Text = Def_FFmpegSourceTextBox.Text
+            ElseIf TabControl1.SelectedTab.Text = "ASF/WMV" Then
+                ASFTextBox.Text = Def_ASFTextBox.Text
             ElseIf TabControl1.SelectedTab.Text = "MPEG2Source" Then
                 MPEG2SourceTextBox.Text = Def_MPEG2SourceTextBox.Text
             ElseIf TabControl1.SelectedTab.Text = "BassAudio" Then
@@ -599,5 +635,46 @@ LANG_SKIP:
 
     Private Sub VC1TextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VC1TextBox.TextChanged
 
+    End Sub
+
+    Private Sub ASFTextBox_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ASFTextBox.KeyDown
+        Get_LineCol(ASFTextBox)
+    End Sub
+
+    Private Sub ASFTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ASFTextBox.KeyPress
+        Get_LineCol(ASFTextBox)
+    End Sub
+
+    Private Sub ASFTextBox_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ASFTextBox.KeyUp
+        Get_LineCol(ASFTextBox)
+    End Sub
+
+    Private Sub ASFTextBox_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ASFTextBox.MouseDown
+        Get_LineCol(ASFTextBox)
+    End Sub
+
+    Private Sub ASFTextBox_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ASFTextBox.MouseMove
+        Get_LineCol(ASFTextBox)
+    End Sub
+
+    Private Sub ASFTextBox_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ASFTextBox.MouseUp
+        Get_LineCol(ASFTextBox)
+    End Sub
+
+    Private Sub ASFTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ASFTextBox.TextChanged
+
+    End Sub
+
+    Private Sub ProcessDetTimer2_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProcessDetTimer2.Tick
+        Try
+            If Process.GetProcessById(shellpid2).HasExited = False Then
+                PreviewButton.Enabled = False
+            End If
+        Catch ex As Exception
+            Debug.Print("미리보기 끝 " & ex.Message)
+            shellpid2 = 0
+            ProcessDetTimer2.Enabled = False
+            PreviewButton.Enabled = True
+        End Try
     End Sub
 End Class
