@@ -1135,8 +1135,12 @@ LANG_SKIP:
                 With ImagePPFrm
                     If .AVSMPEG2DeinterlaceCheckBox.Checked = True Then
                         If .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=1 double framerate (bob)" OrElse .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=3 double framerate (bob)" Then
-                            bobv = 2
-                            bobstr = " - double framerate (bob)"
+                            If EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                            EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
+                            Else
+                                bobv = 2
+                                bobstr = " - double framerate (bob)"
+                            End If
                         End If
                     End If
                 End With

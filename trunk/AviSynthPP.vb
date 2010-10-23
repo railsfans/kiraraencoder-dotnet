@@ -1394,7 +1394,6 @@ skip2:
         AVTextBoxV = Replace(AVTextBoxV, "#<source>", MainFrm.EncListListView.Items(index).SubItems(10).Text)
 
         '#<trim>
-        '디인터레이스보다 위에 놓아야 함.
         If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
         MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩// BassAudio 에서는 기본 프레임이 25
             fpsV = 25
@@ -1404,7 +1403,11 @@ skip2:
             If InStr(AVTextBoxV, "#<deinterlace>", CompareMethod.Text) <> 0 Then
                 If .AVSMPEG2DeinterlaceCheckBox.Checked = True Then
                     If .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=1 double framerate (bob)" OrElse .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=3 double framerate (bob)" Then
-                        bobv = 2
+                        If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                        MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
+                        Else
+                            bobv = 2
+                        End If
                     End If
                 End If
             End If
