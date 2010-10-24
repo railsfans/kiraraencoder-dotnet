@@ -92,21 +92,7 @@ Public Class AviSynthPP
             End If
 
         End If
-        '-----------------------------------------
-        ' #<avifps> AVI 에서 가변프레임이 아니면 ChangeFPS 로 프레임레이트 변경
-        '=========================================
-        Dim AVIFPSV As String = ""
-        If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
-        MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '비디오 파일용
-        Else
-            If MainFrm.EncListListView.Items(index).SubItems(3).Text = "AVI" Then
-                If InStr(1, MainFrm.EncListListView.Items(index).SubItems(8).Text, "119.88", CompareMethod.Text) = 0 Then
-                    fpsnumV = "-1"
-                    fpsdenV = "1"
-                    AVIFPSV = ".ChangeFPS(" & fpsV & ")"
-                End If
-            End If
-        End If
+
         '-----------------------------------------
         ' 프레임 #<changefps>
         '=========================================
@@ -1047,9 +1033,6 @@ DelayAudioSkip:
 
             '#<cachefile>
             AVTextBoxV = Replace(AVTextBoxV, "#<cachefile>", My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").FFINDEX")
-
-            '#<avifps>
-            AVTextBoxV = Replace(AVTextBoxV, "#<avifps>", AVIFPSV)
 
             '#<atrack>
             AVTextBoxV = Replace(AVTextBoxV, "#<atrack>", AudioMapV)

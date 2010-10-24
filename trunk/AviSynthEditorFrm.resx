@@ -641,7 +641,7 @@ Try {
   <data name="Def_FFmpegSourceTextBox.Text" xml:space="preserve">
     <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;#&lt;avifps&gt;
+V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
 A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, adjustdelay=-2, cache=true, cachefile="#&lt;cachefile&gt;")
 AudioDub(V,A)
 #&lt;deinterlace&gt;
