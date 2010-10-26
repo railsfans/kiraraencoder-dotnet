@@ -10,16 +10,16 @@
 
             Case WM_ERASEBKGND
 
-                If PreviewFrm.VideoWidth <> 0 And PreviewFrm.VideoHeight <> 0 Then
+                If MainFrm.VideoWidth <> 0 And MainFrm.VideoHeight <> 0 Then
                     Return
                 End If
 
             Case WM_DISPLAYCHANGE
 
-                If PreviewFrm.VMRWindowlessControl9 IsNot Nothing Then
-                    PreviewFrm.VMRWindowlessControl9.DisplayModeChanged()
-                ElseIf PreviewFrm.VMRWindowlessControl IsNot Nothing Then
-                    PreviewFrm.VMRWindowlessControl.DisplayModeChanged()
+                If MainFrm.VMRWindowlessControl9 IsNot Nothing Then
+                    MainFrm.VMRWindowlessControl9.DisplayModeChanged()
+                ElseIf MainFrm.VMRWindowlessControl IsNot Nothing Then
+                    MainFrm.VMRWindowlessControl.DisplayModeChanged()
                 End If
 
         End Select

@@ -5868,14 +5868,4 @@ RELOAD:
         PresetLabel.Text = LangCls.MainUserStr
     End Sub
 
-    Private Sub KiraraPlayerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KiraraPlayerToolStripMenuItem.Click
-        Try
-            Shell("explorer.exe /n, " & My.Application.Info.DirectoryPath & "\KiraraPlayer.exe", AppWinStyle.NormalFocus)
-        Catch ex As Exception
-        End Try
-    End Sub
-
-    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
-
-    End Sub
 End Class

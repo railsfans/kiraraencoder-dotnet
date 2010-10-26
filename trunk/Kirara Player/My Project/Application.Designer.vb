@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.KiraraPlayer.PreviewFrm
+            Me.MainForm = Global.KiraraPlayer.MainFrm
         End Sub
     End Class
 End Namespace

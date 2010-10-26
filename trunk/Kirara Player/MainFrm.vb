@@ -26,7 +26,7 @@ Imports MediaFoundation.EVR
 Imports MediaFoundation.Misc
 Imports System.Runtime.InteropServices
 
-Public Class PreviewFrm
+Public Class MainFrm
 
     '다이렉트쇼 / 미디어파운데이션
     Private GraphBuilder As IGraphBuilder
@@ -359,6 +359,7 @@ Public Class PreviewFrm
         '설정
         My.Settings.VOLUME_Int = VOLUME_Int
         My.Settings.MUTE_Bool = MUTE_Bool
+        My.Settings.DefaultRendererToolStripMenuItem = DefaultRendererToolStripMenuItem.Checked
         My.Settings.OverlayMixerToolStripMenuItem = OverlayMixerToolStripMenuItem.Checked
         My.Settings.VideoMixingRenderer7WindowlessToolStripMenuItem = VideoMixingRenderer7WindowlessToolStripMenuItem.Checked
         My.Settings.VideoMixingRenderer9WindowedToolStripMenuItem = VideoMixingRenderer9WindowedToolStripMenuItem.Checked
@@ -400,7 +401,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub Backward60Sub()
-  
+
         Try
             If MediaSeeking IsNot Nothing Then
                 If GCP_LONG <= 600000000 Then
@@ -415,7 +416,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub Forward60Sub()
-    
+
         Try
             If MediaSeeking IsNot Nothing Then
                 MediaSeeking.SetPositions(GCP_LONG + 600000000, IMSdwCurrentFlags, IMSpStop, IMSdwStopFlags)
@@ -426,7 +427,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub Backward300Sub()
-     
+
         Try
             If MediaSeeking IsNot Nothing Then
                 If GCP_LONG <= 3000000000 Then
@@ -566,7 +567,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub VolumeDownSub()
-    
+
         Try
             If BasicAudio IsNot Nothing Then
                 VOLUME_Int = VOLUME_Int - 5
@@ -592,7 +593,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub VolumeUpSub()
- 
+
         Try
             If BasicAudio IsNot Nothing Then
                 VOLUME_Int = VOLUME_Int + 5
@@ -618,7 +619,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub MuteSub(ByVal MuteB As Boolean)
-  
+
         Try
             If BasicAudio IsNot Nothing Then
                 If MuteB = False Then
@@ -672,6 +673,7 @@ Public Class PreviewFrm
         '설정
         VOLUME_Int = My.Settings.VOLUME_Int
         MUTE_Bool = My.Settings.MUTE_Bool
+        DefaultRendererToolStripMenuItem.Checked = My.Settings.DefaultRendererToolStripMenuItem
         OverlayMixerToolStripMenuItem.Checked = My.Settings.OverlayMixerToolStripMenuItem
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = My.Settings.VideoMixingRenderer7WindowlessToolStripMenuItem
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = My.Settings.VideoMixingRenderer9WindowedToolStripMenuItem
@@ -730,6 +732,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub OPEN_DSHOW(ByVal CommandV As String)
+
         LoadingB = True
 
         Dim hr As Integer
@@ -878,14 +881,18 @@ Public Class PreviewFrm
 
             End If
 
-            Me.Width = VideoWidth
-            Me.Height = VideoHeight
-
             Dim xp, yp As Integer
             xp = Me.Width - Me.ClientRectangle.Width
             yp = Me.Height - Me.ClientRectangle.Height
-            Me.Width += xp
-            Me.Height += yp
+
+            '기본사이즈 설정
+            If VideoWidth = 0 And VideoHeight = 0 Then
+                Me.Width = 640 + xp
+                Me.Height = 360 + yp
+            Else
+                Me.Width = VideoWidth + xp
+                Me.Height = VideoHeight + yp
+            End If
 
             MediaEventEx.SetNotifyWindow(DMVideoWindow.Handle, WM_GRAPHNOTIFY, IntPtr.Zero)
 
@@ -915,20 +922,18 @@ Public Class PreviewFrm
             MsgBox(ex.Message)
             CLOSE_DSHOW()
             Exit Sub
-
         Finally
             If Com_Object IsNot Nothing Then
                 Marshal.ReleaseComObject(Com_Object)
             End If
             Com_Object = Nothing
-
+            LoadingB = False
         End Try
 
-        LoadingB = False
     End Sub
 
     Private Sub CLOSE_DSHOW()
-  
+
         '바로 닫기
         If FilePathV = "" Then
             Exit Sub
@@ -1370,6 +1375,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub OverlayMixerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OverlayMixerToolStripMenuItem.Click
+        DefaultRendererToolStripMenuItem.Checked = False
         OverlayMixerToolStripMenuItem.Checked = True
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = False
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = False
@@ -1381,7 +1387,8 @@ Public Class PreviewFrm
         DMRefresh()
     End Sub
 
-    Private Sub DefaultToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub VideoRendererToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefaultRendererToolStripMenuItem.Click
+        DefaultRendererToolStripMenuItem.Checked = True
         OverlayMixerToolStripMenuItem.Checked = False
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = False
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = False
@@ -1394,6 +1401,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub VideoMixingRenderer9WindowedToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VideoMixingRenderer9WindowedToolStripMenuItem.Click
+        DefaultRendererToolStripMenuItem.Checked = False
         OverlayMixerToolStripMenuItem.Checked = False
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = True
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = False
@@ -1406,6 +1414,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub VideoMixingRenderer7WindowlessToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VideoMixingRenderer7WindowlessToolStripMenuItem.Click
+        DefaultRendererToolStripMenuItem.Checked = False
         OverlayMixerToolStripMenuItem.Checked = False
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = False
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = True
@@ -1418,6 +1427,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub VideoMixingRenderer9WindowlessToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VideoMixingRenderer9WindowlessToolStripMenuItem.Click
+        DefaultRendererToolStripMenuItem.Checked = False
         OverlayMixerToolStripMenuItem.Checked = False
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = False
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = False
@@ -1430,6 +1440,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub EnhancedVideoRendererToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EnhancedVideoRendererToolStripMenuItem.Click
+        DefaultRendererToolStripMenuItem.Checked = False
         OverlayMixerToolStripMenuItem.Checked = False
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = False
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = False
@@ -1442,6 +1453,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub HaaliVideoRendererToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HaaliVideoRendererToolStripMenuItem.Click
+        DefaultRendererToolStripMenuItem.Checked = False
         OverlayMixerToolStripMenuItem.Checked = False
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = False
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = False
@@ -1454,6 +1466,7 @@ Public Class PreviewFrm
     End Sub
 
     Private Sub madVRToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles madVRToolStripMenuItem.Click
+        DefaultRendererToolStripMenuItem.Checked = False
         OverlayMixerToolStripMenuItem.Checked = False
         VideoMixingRenderer9WindowedToolStripMenuItem.Checked = False
         VideoMixingRenderer7WindowlessToolStripMenuItem.Checked = False

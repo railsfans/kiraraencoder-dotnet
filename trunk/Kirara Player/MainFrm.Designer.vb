@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PreviewFrm
+Partial Class MainFrm
     Inherits System.Windows.Forms.Form
 
     'Form은 Dispose를 재정의하여 구성 요소 목록을 정리합니다.
@@ -23,14 +23,14 @@ Partial Class PreviewFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PreviewFrm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.MovePanel = New System.Windows.Forms.Panel
-        Me.DMVideoWindow = New KiraraPlayer.DMControl
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
         Me.RendererToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.OverlayMixerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -44,7 +44,8 @@ Partial Class PreviewFrm
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DefaultRendererToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DMVideoWindow = New KiraraPlayer.DMControl
         Me.MovePanel.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -64,12 +65,6 @@ Partial Class PreviewFrm
         resources.ApplyResources(Me.MovePanel, "MovePanel")
         Me.MovePanel.Name = "MovePanel"
         '
-        'DMVideoWindow
-        '
-        Me.DMVideoWindow.BackColor = System.Drawing.Color.Black
-        resources.ApplyResources(Me.DMVideoWindow, "DMVideoWindow")
-        Me.DMVideoWindow.Name = "DMVideoWindow"
-        '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.CloseToolStripMenuItem, Me.RefreshToolStripMenuItem, Me.ToolStripMenuItem2, Me.RendererToolStripMenuItem, Me.FilterControlToolStripMenuItem, Me.ToolStripMenuItem1, Me.AboutToolStripMenuItem, Me.QuitToolStripMenuItem})
@@ -86,6 +81,11 @@ Partial Class PreviewFrm
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
         resources.ApplyResources(Me.CloseToolStripMenuItem, "CloseToolStripMenuItem")
         '
+        'RefreshToolStripMenuItem
+        '
+        Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
+        resources.ApplyResources(Me.RefreshToolStripMenuItem, "RefreshToolStripMenuItem")
+        '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
@@ -93,7 +93,7 @@ Partial Class PreviewFrm
         '
         'RendererToolStripMenuItem
         '
-        Me.RendererToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OverlayMixerToolStripMenuItem, Me.VideoMixingRenderer7WindowlessToolStripMenuItem, Me.VideoMixingRenderer9WindowedToolStripMenuItem, Me.VideoMixingRenderer9WindowlessToolStripMenuItem, Me.EnhancedVideoRendererToolStripMenuItem, Me.HaaliVideoRendererToolStripMenuItem, Me.madVRToolStripMenuItem})
+        Me.RendererToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DefaultRendererToolStripMenuItem, Me.OverlayMixerToolStripMenuItem, Me.VideoMixingRenderer7WindowlessToolStripMenuItem, Me.VideoMixingRenderer9WindowedToolStripMenuItem, Me.VideoMixingRenderer9WindowlessToolStripMenuItem, Me.EnhancedVideoRendererToolStripMenuItem, Me.HaaliVideoRendererToolStripMenuItem, Me.madVRToolStripMenuItem})
         Me.RendererToolStripMenuItem.Name = "RendererToolStripMenuItem"
         resources.ApplyResources(Me.RendererToolStripMenuItem, "RendererToolStripMenuItem")
         '
@@ -109,8 +109,6 @@ Partial Class PreviewFrm
         '
         'VideoMixingRenderer9WindowedToolStripMenuItem
         '
-        Me.VideoMixingRenderer9WindowedToolStripMenuItem.Checked = True
-        Me.VideoMixingRenderer9WindowedToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.VideoMixingRenderer9WindowedToolStripMenuItem.Name = "VideoMixingRenderer9WindowedToolStripMenuItem"
         resources.ApplyResources(Me.VideoMixingRenderer9WindowedToolStripMenuItem, "VideoMixingRenderer9WindowedToolStripMenuItem")
         '
@@ -154,19 +152,27 @@ Partial Class PreviewFrm
         Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
         resources.ApplyResources(Me.QuitToolStripMenuItem, "QuitToolStripMenuItem")
         '
-        'RefreshToolStripMenuItem
+        'DefaultRendererToolStripMenuItem
         '
-        Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        resources.ApplyResources(Me.RefreshToolStripMenuItem, "RefreshToolStripMenuItem")
+        Me.DefaultRendererToolStripMenuItem.Checked = True
+        Me.DefaultRendererToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.DefaultRendererToolStripMenuItem.Name = "DefaultRendererToolStripMenuItem"
+        resources.ApplyResources(Me.DefaultRendererToolStripMenuItem, "DefaultRendererToolStripMenuItem")
         '
-        'PreviewFrm
+        'DMVideoWindow
+        '
+        Me.DMVideoWindow.BackColor = System.Drawing.Color.Black
+        resources.ApplyResources(Me.DMVideoWindow, "DMVideoWindow")
+        Me.DMVideoWindow.Name = "DMVideoWindow"
+        '
+        'MainFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.MovePanel)
         Me.KeyPreview = True
-        Me.Name = "PreviewFrm"
+        Me.Name = "MainFrm"
         Me.TopMost = True
         Me.MovePanel.ResumeLayout(False)
         Me.ContextMenuStrip1.ResumeLayout(False)
@@ -194,5 +200,6 @@ Partial Class PreviewFrm
     Friend WithEvents madVRToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CloseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RefreshToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DefaultRendererToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

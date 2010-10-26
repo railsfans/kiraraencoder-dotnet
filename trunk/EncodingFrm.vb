@@ -1277,11 +1277,18 @@ Public Class EncodingFrm
                 Catch ex As Exception
                 End Try
                 If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
-                    If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본
-                        VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
+
+                    '오디오만 있는경우를 생각 -ㅂ-;
+                    If (MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text <> "None") OrElse MainFrm.EncListListView.Items(EncindexI).SubItems(5).Text = "V_None" Then '오디오만 있는 경우
+                        VF_AspectV = ""
                     Else
-                        VF_AspectV = ", aspect=" & ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & ":" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
+                        If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본
+                            VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
+                        Else
+                            VF_AspectV = ", aspect=" & ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & ":" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
+                        End If
                     End If
+
                 Else
                     If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본
                         VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
