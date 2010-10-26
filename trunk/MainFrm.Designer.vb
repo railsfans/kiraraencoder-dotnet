@@ -106,6 +106,7 @@ Partial Class MainFrm
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.LangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.KiraraPlayerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ErrToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
         Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -115,7 +116,6 @@ Partial Class MainFrm
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
-        Me.KiraraPlayerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.EncListGroupBox.SuspendLayout()
         Me.ListviewContextMenuStrip.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -617,6 +617,11 @@ Partial Class MainFrm
         Me.LangToolStripMenuItem.Name = "LangToolStripMenuItem"
         resources.ApplyResources(Me.LangToolStripMenuItem, "LangToolStripMenuItem")
         '
+        'KiraraPlayerToolStripMenuItem
+        '
+        Me.KiraraPlayerToolStripMenuItem.Name = "KiraraPlayerToolStripMenuItem"
+        resources.ApplyResources(Me.KiraraPlayerToolStripMenuItem, "KiraraPlayerToolStripMenuItem")
+        '
         'ErrToolStripMenuItem2
         '
         Me.ErrToolStripMenuItem2.Name = "ErrToolStripMenuItem2"
@@ -656,11 +661,6 @@ Partial Class MainFrm
         'Timer
         '
         Me.Timer.Enabled = True
-        '
-        'KiraraPlayerToolStripMenuItem
-        '
-        Me.KiraraPlayerToolStripMenuItem.Name = "KiraraPlayerToolStripMenuItem"
-        resources.ApplyResources(Me.KiraraPlayerToolStripMenuItem, "KiraraPlayerToolStripMenuItem")
         '
         'MainFrm
         '

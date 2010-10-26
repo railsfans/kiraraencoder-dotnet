@@ -1922,6 +1922,9 @@ UAC:
 
     Private Sub RemoveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemoveButton.Click
 
+        '포커스 이동
+        EncListListView.Focus()
+
         For Each LVI As ListViewItem In EncListListView.SelectedItems
             If EncodingFrm.EncProcBool = False OrElse LVI.Index > EncodingFrm.EncindexI Then '인코딩 중 제거방지
                 LVI.Remove()
@@ -1996,11 +1999,15 @@ UAC:
             SelIndex = e.ItemIndex
         End If
 
-        If SelIndex <> -1 Then
-            GET_AVINFO(e.ItemIndex) 'AV정보
-            GET_OutputINFO(e.ItemIndex)  '출력정보
-            EncListListView.Focus() '포커스
-        End If
+        Try
+            If SelIndex <> -1 Then
+                GET_AVINFO(e.ItemIndex) 'AV정보
+                GET_OutputINFO(e.ItemIndex)  '출력정보
+                EncListListView.Focus() '포커스
+            End If
+        Catch ex As Exception
+            SelIndex = -1
+        End Try
 
     End Sub
 
@@ -2252,6 +2259,9 @@ UAC:
     End Sub
 
     Private Sub EncSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncSButton.Click
+
+        '포커스 이동
+        EncListListView.Focus()
 
         '목록에 아이템이 없으면 추가 버튼을//
         If EncListListView.Items.Count = 0 Then
@@ -5602,39 +5612,53 @@ RELOAD:
     Private Sub EncListListView_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles EncListListView.MouseUp
         EncListListViewChkB = False
 
-        If EncListListView.SelectedItems.Count = 0 Then
-            SelIndex = -1
-        End If
-
-        '오류로그..
-        If SelIndex <> -1 Then
-            If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
-                ErrToolStripMenuItem.Enabled = False
+        Try
+            '오류로그..
+            If SelIndex <> -1 Then
+                If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
+                    ErrToolStripMenuItem.Enabled = False
+                Else
+                    ErrToolStripMenuItem.Enabled = True
+                End If
             Else
-                ErrToolStripMenuItem.Enabled = True
+                ErrToolStripMenuItem.Enabled = False
             End If
-        Else
-            ErrToolStripMenuItem.Enabled = False
-        End If
+        Catch ex As Exception
+            SelIndex = -1
+        End Try
 
     End Sub
 
     Private Sub EncListListView_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles EncListListView.KeyUp
 
-        '오류로그..
-        If SelIndex <> -1 Then
-            If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
-                ErrToolStripMenuItem.Enabled = False
+        Try
+            '오류로그..
+            If SelIndex <> -1 Then
+                If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
+                    ErrToolStripMenuItem.Enabled = False
+                Else
+                    ErrToolStripMenuItem.Enabled = True
+                End If
             Else
-                ErrToolStripMenuItem.Enabled = True
+                ErrToolStripMenuItem.Enabled = False
             End If
-        Else
-            ErrToolStripMenuItem.Enabled = False
-        End If
+        Catch ex As Exception
+            SelIndex = -1
+        End Try
 
     End Sub
 
     Private Sub Timer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer.Tick
+
+        '인덱스관련
+        If EncListListView.Items.Count = 0 Then
+            SelIndex = -1
+            AllRemoveButton.Enabled = False
+        Else
+            If EncodingFrm.EncProcBool = False Then '인코딩중이 아닐때만 활성화
+                AllRemoveButton.Enabled = True
+            End If
+        End If
 
         EnableArea()
         '=====================================
@@ -5731,10 +5755,6 @@ RELOAD:
             FileInfoFrm.Show(Me)
             FileInfoFrm.GET_TXT(SavePathTextBoxV & EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV)
         End If
-
-    End Sub
-
-    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
 
     End Sub
 
@@ -5853,5 +5873,9 @@ RELOAD:
             Shell("explorer.exe /n, " & My.Application.Info.DirectoryPath & "\KiraraPlayer.exe", AppWinStyle.NormalFocus)
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
+
     End Sub
 End Class

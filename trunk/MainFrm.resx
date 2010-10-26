@@ -2062,7 +2062,7 @@
     <value>133, 17</value>
   </metadata>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 0</value>
+    <value>17, 17</value>
   </metadata>
   <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 20</value>
@@ -7542,6 +7542,12 @@
   <data name="&gt;&gt;LangToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;KiraraPlayerToolStripMenuItem.Name" xml:space="preserve">
+    <value>KiraraPlayerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;KiraraPlayerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ErrToolStripMenuItem2.Name" xml:space="preserve">
     <value>ErrToolStripMenuItem2</value>
   </data>
@@ -7583,12 +7589,6 @@
   </data>
   <data name="&gt;&gt;Timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;KiraraPlayerToolStripMenuItem.Name" xml:space="preserve">
-    <value>KiraraPlayerToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;KiraraPlayerToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrm</value>
