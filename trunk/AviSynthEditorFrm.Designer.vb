@@ -32,6 +32,7 @@ Partial Class AviSynthEditorFrm
         Me.FFmpegSourceTextBox = New System.Windows.Forms.TextBox
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.ConPanel = New System.Windows.Forms.Panel
+        Me.RefButton2 = New System.Windows.Forms.Button
         Me.PreviewButton = New System.Windows.Forms.Button
         Me.ListenButton = New System.Windows.Forms.Button
         Me.RefButton = New System.Windows.Forms.Button
@@ -46,10 +47,10 @@ Partial Class AviSynthEditorFrm
         Me.FFmpegSourceTabPage = New System.Windows.Forms.TabPage
         Me.Def_FFmpegSourceTextBox = New System.Windows.Forms.TextBox
         Me.FFmpegSourceLabel = New System.Windows.Forms.Label
-        Me.ASFTabPage = New System.Windows.Forms.TabPage
-        Me.ASFLabel = New System.Windows.Forms.Label
-        Me.Def_ASFTextBox = New System.Windows.Forms.TextBox
-        Me.ASFTextBox = New System.Windows.Forms.TextBox
+        Me.DirectShowSourceTabPage = New System.Windows.Forms.TabPage
+        Me.DirectShowSourceLabel = New System.Windows.Forms.Label
+        Me.Def_DirectShowSourceTextBox = New System.Windows.Forms.TextBox
+        Me.DirectShowSourceTextBox = New System.Windows.Forms.TextBox
         Me.MPEG2SourceTabPage = New System.Windows.Forms.TabPage
         Me.MPEG2SourceLabel = New System.Windows.Forms.Label
         Me.Def_MPEG2SourceTextBox = New System.Windows.Forms.TextBox
@@ -81,17 +82,17 @@ Partial Class AviSynthEditorFrm
         Me.PresetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AVSPanel = New System.Windows.Forms.Panel
         Me.Panel2 = New System.Windows.Forms.Panel
+        Me.StatusLabel = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.OKBTN = New System.Windows.Forms.Button
-        Me.ProcessDetTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.ConPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.FFmpegSourceTabPage.SuspendLayout()
-        Me.ASFTabPage.SuspendLayout()
+        Me.DirectShowSourceTabPage.SuspendLayout()
         Me.MPEG2SourceTabPage.SuspendLayout()
         Me.AVCTabPage.SuspendLayout()
         Me.VC1TabPage.SuspendLayout()
@@ -152,11 +153,18 @@ Partial Class AviSynthEditorFrm
         '
         'ConPanel
         '
+        Me.ConPanel.Controls.Add(Me.RefButton2)
         Me.ConPanel.Controls.Add(Me.PreviewButton)
         Me.ConPanel.Controls.Add(Me.ListenButton)
         Me.ConPanel.Controls.Add(Me.RefButton)
         resources.ApplyResources(Me.ConPanel, "ConPanel")
         Me.ConPanel.Name = "ConPanel"
+        '
+        'RefButton2
+        '
+        resources.ApplyResources(Me.RefButton2, "RefButton2")
+        Me.RefButton2.Name = "RefButton2"
+        Me.RefButton2.UseVisualStyleBackColor = True
         '
         'PreviewButton
         '
@@ -211,7 +219,7 @@ Partial Class AviSynthEditorFrm
         resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.FFmpegSourceTabPage)
-        Me.TabControl1.Controls.Add(Me.ASFTabPage)
+        Me.TabControl1.Controls.Add(Me.DirectShowSourceTabPage)
         Me.TabControl1.Controls.Add(Me.MPEG2SourceTabPage)
         Me.TabControl1.Controls.Add(Me.AVCTabPage)
         Me.TabControl1.Controls.Add(Me.VC1TabPage)
@@ -255,31 +263,31 @@ Partial Class AviSynthEditorFrm
         resources.ApplyResources(Me.FFmpegSourceLabel, "FFmpegSourceLabel")
         Me.FFmpegSourceLabel.Name = "FFmpegSourceLabel"
         '
-        'ASFTabPage
+        'DirectShowSourceTabPage
         '
-        Me.ASFTabPage.Controls.Add(Me.ASFLabel)
-        Me.ASFTabPage.Controls.Add(Me.Def_ASFTextBox)
-        Me.ASFTabPage.Controls.Add(Me.ASFTextBox)
-        resources.ApplyResources(Me.ASFTabPage, "ASFTabPage")
-        Me.ASFTabPage.Name = "ASFTabPage"
-        Me.ASFTabPage.UseVisualStyleBackColor = True
+        Me.DirectShowSourceTabPage.Controls.Add(Me.DirectShowSourceLabel)
+        Me.DirectShowSourceTabPage.Controls.Add(Me.Def_DirectShowSourceTextBox)
+        Me.DirectShowSourceTabPage.Controls.Add(Me.DirectShowSourceTextBox)
+        resources.ApplyResources(Me.DirectShowSourceTabPage, "DirectShowSourceTabPage")
+        Me.DirectShowSourceTabPage.Name = "DirectShowSourceTabPage"
+        Me.DirectShowSourceTabPage.UseVisualStyleBackColor = True
         '
-        'ASFLabel
+        'DirectShowSourceLabel
         '
-        resources.ApplyResources(Me.ASFLabel, "ASFLabel")
-        Me.ASFLabel.Name = "ASFLabel"
+        resources.ApplyResources(Me.DirectShowSourceLabel, "DirectShowSourceLabel")
+        Me.DirectShowSourceLabel.Name = "DirectShowSourceLabel"
         '
-        'Def_ASFTextBox
+        'Def_DirectShowSourceTextBox
         '
-        Me.Def_ASFTextBox.BackColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.Def_ASFTextBox, "Def_ASFTextBox")
-        Me.Def_ASFTextBox.Name = "Def_ASFTextBox"
+        Me.Def_DirectShowSourceTextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.Def_DirectShowSourceTextBox, "Def_DirectShowSourceTextBox")
+        Me.Def_DirectShowSourceTextBox.Name = "Def_DirectShowSourceTextBox"
         '
-        'ASFTextBox
+        'DirectShowSourceTextBox
         '
-        resources.ApplyResources(Me.ASFTextBox, "ASFTextBox")
-        Me.ASFTextBox.BackColor = System.Drawing.Color.White
-        Me.ASFTextBox.Name = "ASFTextBox"
+        resources.ApplyResources(Me.DirectShowSourceTextBox, "DirectShowSourceTextBox")
+        Me.DirectShowSourceTextBox.BackColor = System.Drawing.Color.White
+        Me.DirectShowSourceTextBox.Name = "DirectShowSourceTextBox"
         '
         'MPEG2SourceTabPage
         '
@@ -471,9 +479,16 @@ Partial Class AviSynthEditorFrm
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.StatusLabel)
         Me.Panel2.Controls.Add(Me.Panel3)
         resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
+        '
+        'StatusLabel
+        '
+        resources.ApplyResources(Me.StatusLabel, "StatusLabel")
+        Me.StatusLabel.ForeColor = System.Drawing.Color.Green
+        Me.StatusLabel.Name = "StatusLabel"
         '
         'Panel3
         '
@@ -493,10 +508,6 @@ Partial Class AviSynthEditorFrm
         resources.ApplyResources(Me.OKBTN, "OKBTN")
         Me.OKBTN.Name = "OKBTN"
         Me.OKBTN.UseVisualStyleBackColor = True
-        '
-        'ProcessDetTimer2
-        '
-        Me.ProcessDetTimer2.Interval = 1
         '
         'AviSynthEditorFrm
         '
@@ -518,8 +529,8 @@ Partial Class AviSynthEditorFrm
         Me.TabPage1.PerformLayout()
         Me.FFmpegSourceTabPage.ResumeLayout(False)
         Me.FFmpegSourceTabPage.PerformLayout()
-        Me.ASFTabPage.ResumeLayout(False)
-        Me.ASFTabPage.PerformLayout()
+        Me.DirectShowSourceTabPage.ResumeLayout(False)
+        Me.DirectShowSourceTabPage.PerformLayout()
         Me.MPEG2SourceTabPage.ResumeLayout(False)
         Me.MPEG2SourceTabPage.PerformLayout()
         Me.AVCTabPage.ResumeLayout(False)
@@ -536,6 +547,7 @@ Partial Class AviSynthEditorFrm
         Me.MenuStrip1.PerformLayout()
         Me.AVSPanel.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -596,10 +608,11 @@ Partial Class AviSynthEditorFrm
     Friend WithEvents VC1Label As System.Windows.Forms.Label
     Friend WithEvents Def_VC1TextBox As System.Windows.Forms.TextBox
     Friend WithEvents VC1TextBox As System.Windows.Forms.TextBox
-    Friend WithEvents ASFTabPage As System.Windows.Forms.TabPage
-    Friend WithEvents ASFLabel As System.Windows.Forms.Label
-    Friend WithEvents Def_ASFTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents ASFTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DirectShowSourceTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents DirectShowSourceLabel As System.Windows.Forms.Label
+    Friend WithEvents Def_DirectShowSourceTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DirectShowSourceTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Def_FFmpegSourceTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents ProcessDetTimer2 As System.Windows.Forms.Timer
+    Friend WithEvents RefButton2 As System.Windows.Forms.Button
+    Friend WithEvents StatusLabel As System.Windows.Forms.Label
 End Class

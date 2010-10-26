@@ -1053,83 +1053,6 @@ Public Class EncodingFrm
 
             End If
 
-            '***********************************
-            ' 구간설정
-            '***********************************
-            Dim PTimeInfo As String = MainFrm.EncListListView.Items(EncindexI).SubItems(11).Text
-            Dim StartHMSV As Single = 0.0
-            Dim EndHMSV As Single = 0.0
-            Dim PlayHMSV As Single = 0.0
-            Dim SSTV As String = ""
-            If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
-                '시작시간
-                Dim i As Long = 1
-                Dim ii As Long = 0
-                Dim t As String = ""
-                If InStr(i, PTimeInfo, "[", CompareMethod.Text) Then
-                    ii = InStr(i, PTimeInfo, "[", CompareMethod.Text)
-                    If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
-                        i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
-                        t = Mid(PTimeInfo, ii, i - ii - 1)
-                    End If
-                Else
-                    i = i + 1
-                End If
-                If t <> "" Then
-                    t = Mid(t, InStrRev(t, "[") + 1)
-                    Try
-                        StartHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
-                    Catch ex As Exception
-                    End Try
-                End If
-                '종료시간
-                i = 1
-                ii = 0
-                t = ""
-                If InStr(i, PTimeInfo, "- ", CompareMethod.Text) Then
-                    ii = InStr(i, PTimeInfo, "- ", CompareMethod.Text)
-                    If InStr(ii, PTimeInfo, "]", CompareMethod.Text) Then
-                        i = InStr(ii, PTimeInfo, "]", CompareMethod.Text) + 1
-                        t = Mid(PTimeInfo, ii, i - ii - 1)
-                    End If
-                Else
-                    i = i + 1
-                End If
-                If t <> "" Then
-                    t = Mid(t, InStrRev(t, "- ") + 2)
-                    Try
-                        EndHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
-                    Catch ex As Exception
-                    End Try
-                End If
-                '재생시간
-                i = 1
-                ii = 0
-                t = ""
-                If InStr(i, PTimeInfo, "", CompareMethod.Text) Then
-                    ii = InStr(i, PTimeInfo, "", CompareMethod.Text)
-                    If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
-                        i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
-                        t = Mid(PTimeInfo, ii, i - ii - 1)
-                    End If
-                Else
-                    i = i + 1
-                End If
-                If t <> "" Then
-                    Try
-                        PlayHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
-                    Catch ex As Exception
-                    End Try
-                End If
-
-                If StartHMSV = 0 AndAlso EndHMSV <> 0 Then '종료시간만
-                    SSTV = " -t " & EndHMSV
-                ElseIf StartHMSV <> 0 AndAlso EndHMSV <> 0 Then '시작시간 or 시작시간과 종료시간
-                    SSTV = " -ss " & StartHMSV & " -t " & EndHMSV - StartHMSV
-                End If
-
-            End If
-
 
 
 
@@ -1138,6 +1061,196 @@ Public Class EncodingFrm
             '============================================================================================
 
 
+
+            '***********************************
+            ' 구간설정
+            '***********************************
+            Dim PTimeInfo As String = MainFrm.EncListListView.Items(EncindexI).SubItems(11).Text
+            Dim StartHMSV As Single = 0.0
+            Dim EndHMSV As Single = 0.0
+            Dim PlayHMSV As Single = 0.0
+            Dim SSTV As String = ""
+            '시작시간
+            Dim i As Long = 1
+            Dim ii As Long = 0
+            Dim t As String = ""
+            If InStr(i, PTimeInfo, "[", CompareMethod.Text) Then
+                ii = InStr(i, PTimeInfo, "[", CompareMethod.Text)
+                If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
+                    i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
+                    t = Mid(PTimeInfo, ii, i - ii - 1)
+                End If
+            Else
+                i = i + 1
+            End If
+            If t <> "" Then
+                t = Mid(t, InStrRev(t, "[") + 1)
+                Try
+                    StartHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
+                Catch ex As Exception
+                End Try
+            End If
+            '종료시간
+            i = 1
+            ii = 0
+            t = ""
+            If InStr(i, PTimeInfo, "- ", CompareMethod.Text) Then
+                ii = InStr(i, PTimeInfo, "- ", CompareMethod.Text)
+                If InStr(ii, PTimeInfo, "]", CompareMethod.Text) Then
+                    i = InStr(ii, PTimeInfo, "]", CompareMethod.Text) + 1
+                    t = Mid(PTimeInfo, ii, i - ii - 1)
+                End If
+            Else
+                i = i + 1
+            End If
+            If t <> "" Then
+                t = Mid(t, InStrRev(t, "- ") + 2)
+                Try
+                    EndHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
+                Catch ex As Exception
+                End Try
+            End If
+            '재생시간
+            i = 1
+            ii = 0
+            t = ""
+            If InStr(i, PTimeInfo, "", CompareMethod.Text) Then
+                ii = InStr(i, PTimeInfo, "", CompareMethod.Text)
+                If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
+                    i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
+                    t = Mid(PTimeInfo, ii, i - ii - 1)
+                End If
+            Else
+                i = i + 1
+            End If
+            If t <> "" Then
+                Try
+                    PlayHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
+                Catch ex As Exception
+                End Try
+            End If
+            If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+                If StartHMSV = 0 AndAlso EndHMSV <> 0 Then '종료시간만
+                    SSTV = " -t " & EndHMSV
+                ElseIf StartHMSV <> 0 AndAlso EndHMSV <> 0 Then '시작시간 or 시작시간과 종료시간
+                    SSTV = " -ss " & StartHMSV & " -t " & EndHMSV - StartHMSV
+                End If
+            End If
+
+            '***********************************
+            ' 구간설정과 연동//
+            '***********************************
+            Dim __GTimeV As Single = (EndHMSV - StartHMSV)
+            If __GTimeV = 0 Then __GTimeV = PlayHMSV
+
+            '---------------------------------
+            ' 재생시간과, 오디오 비트레이트, 용량을 기준으로 비디오 비트레이트 값 산출(v1.0a)
+            '=================================
+            Dim CalcVideoBitrateStr As String = ""
+            If EncSetFrm.SizeEncCheckBox.Checked = True Then '용량을 기준으로 인코딩 여부 (참)
+                If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[1PASS-CBR]", -1) OrElse _
+                EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) Then  'CBR 체크
+
+                    If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then '오디오만이므로 비디오 제외.
+                    Else '둘다
+
+                        '*****************
+                        ' MainFrm 에 예상용량 추출부분에서 그대로 퍼옴 ㄷㄷ
+                        '*****************
+
+                        '//////////////////////////////
+                        '여기부터
+                        '///
+                        '오디오 부분
+                        Dim ExAudioB As Boolean = False '예외스킵
+                        Dim AKByteV As Single = Val(EncSetFrm.AudioBitrateComboBox.Text) / 8
+                        '코덱
+                        If ExAudioB = False Then
+                            If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then 'WAV
+                                Dim ACHV As Integer = 0
+                                If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
+                                    If AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPdolbypComboBox Then
+                                        ACHV = 2
+                                    ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPdolbysComboBox Then
+                                        ACHV = 2
+                                    ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch51ComboBox Then
+                                        ACHV = 6
+                                    ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch20ComboBox Then
+                                        ACHV = 2
+                                    ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch10ComboBox Then
+                                        ACHV = 1
+                                    Else
+                                        ExAudioB = True
+                                    End If
+                                Else 'AviSynth 사용 안 함
+                                    If EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch51ComboBox Then
+                                        ACHV = 6
+                                    ElseIf EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch20ComboBox Then
+                                        ACHV = 2
+                                    ElseIf EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch10ComboBox Then
+                                        ACHV = 1
+                                    Else
+                                        ExAudioB = True
+                                    End If
+                                End If
+                                Dim SAMV As Integer = 0
+                                If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플
+                                    ExAudioB = True
+                                Else
+                                    SAMV = EncSetFrm.SamplerateComboBox.Text
+                                End If
+                                AKByteV = ((16 * ACHV * SAMV) / 1000) / 8
+                            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'NeroAAC
+                                If EncSetFrm.NeroAACVBRRadioButton.Checked = True Then
+                                    ExAudioB = True
+                                Else
+                                    AKByteV = Val(EncSetFrm.NeroAACBitrateNumericUpDown.Value) / 8
+                                End If
+                            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
+                                AKByteV = Val(EncSetFrm.AMRBitrateComboBox.Text) / 8
+                            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[OGG] Vorbis" OrElse EncSetFrm.AudioCodecComboBox.Text = "Vorbis" Then 'Vorbis
+                                ExAudioB = True
+                            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC
+                                ExAudioB = True
+                            End If
+                        End If
+                        '///
+                        '여기까지
+                        '//////////////////////////////
+
+                        Dim ThrowCalcVB_ERR_B As Boolean = False
+
+                        If ExAudioB = True Then
+                            ThrowCalcVB_ERR_B = True
+                        Else
+                            Try
+                                CalcVideoBitrateStr = ((Val(EncSetFrm.SizeEncTextBox.Text) * (1024 ^ 2)) / __GTimeV) - (AKByteV * 1000)
+                                CalcVideoBitrateStr = Val(CalcVideoBitrateStr) * 8 / 1000 'Kbit/s 단위로..
+
+                                If IsNumeric(CalcVideoBitrateStr) = False Then
+                                    ThrowCalcVB_ERR_B = True
+                                Else
+                                    If Val(CalcVideoBitrateStr) < 1 Then
+                                        ThrowCalcVB_ERR_B = True
+                                    Else
+                                        ThrowCalcVB_ERR_B = False
+                                    End If
+                                End If
+                            Catch ex As Exception
+                                ThrowCalcVB_ERR_B = True
+                            End Try
+                        End If
+
+                        If ThrowCalcVB_ERR_B = True Then
+                            CalcVideoBitrateStr = " -b " & EncSetFrm.BitrateComboBox.Text & "k"
+                        Else
+                            CalcVideoBitrateStr = " -b " & Int(CalcVideoBitrateStr) & "k"
+                        End If
+
+                    End If
+
+                End If
+            End If
 
             '---------------------------------
             ' 비율
@@ -1268,7 +1381,7 @@ Public Class EncodingFrm
                     PriorityV = PriorityClass.NORMAL_PRIORITY_CLASS
                 End If
                 'EncToolStripStatusLabel.Text = LangCls.EncodingCreatingD2V or EncodingCreatingFFINDEX // 아래에서
-                AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True, False)
+                AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True)
                 EncToolStripStatusLabel.Text = ""
                 IndexProc = False
                 IndexTimer.Enabled = False
@@ -1380,6 +1493,8 @@ Public Class EncodingFrm
                     End If
                 End If
             End If
+
+
 
 
             '---------------------------------------------------------------------------------------------------------------------------------------------
@@ -1528,7 +1643,7 @@ Public Class EncodingFrm
                     If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
 
                         EncPassStr = "[1/2Pass]"
-                        EncSub(InputFilePath, VideoFilterV & timestampV & MainFrm.AviSynthCommand2PassStr, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, VideoFilterV & timestampV & MainFrm.AviSynthCommand2PassStr & CalcVideoBitrateStr, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1536,7 +1651,7 @@ Public Class EncodingFrm
                         End If
 
                         EncPassStr = "[2/2Pass]"
-                        EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1548,7 +1663,7 @@ Public Class EncodingFrm
 
                     Else
 
-                        EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & MainFrm.AviSynthCommandStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1562,7 +1677,7 @@ Public Class EncodingFrm
                     If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
 
                         EncPassStr = "[1/2Pass]"
-                        EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr & FramerateStr, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr & CalcVideoBitrateStr & FramerateStr, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1570,7 +1685,7 @@ Public Class EncodingFrm
                         End If
 
                         EncPassStr = "[2/2Pass]"
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1582,7 +1697,7 @@ Public Class EncodingFrm
 
                     Else
 
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & MainFrm.FFmpegCommandStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
+                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
                         If EncSTOPBool = True Then GoTo ENC_STOP
                         If EncERRBool(EncindexI) = True Then
                             MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1925,7 +2040,6 @@ LANG_SKIP:
         TimeS = EncPositionD
         TimeElapsed += 1
 
-        Dim Sec As Single
         Dim Minute As Single
         Dim Hour As Single
         Dim hmsValue As String = ""
@@ -1934,13 +2048,12 @@ LANG_SKIP:
         If NowTimeSec < 0 Then Exit Sub
 
         If NowTimeSec < 60 Then
-            Sec = NowTimeSec
             If NowTimeSec < 0 Then
                 hmsValue = "00:" & "00:" & "00.00"
             ElseIf NowTimeSec < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(Sec, "0.00")
+                hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
             Else
-                hmsValue = "00:" & "00:" & Format(Sec, "0.00")
+                hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")
             End If
         End If
 

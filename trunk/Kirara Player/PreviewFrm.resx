@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>107, 17</value>
+  </metadata>
+  <data name="&gt;&gt;DMVideoWindow.Name" xml:space="preserve">
+    <value>DMVideoWindow</value>
+  </data>
+  <data name="&gt;&gt;DMVideoWindow.Type" xml:space="preserve">
+    <value>KiraraPlayer.DMControl, KiraraPlayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DMVideoWindow.Parent" xml:space="preserve">
+    <value>MovePanel</value>
+  </data>
+  <data name="&gt;&gt;DMVideoWindow.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MovePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="MovePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MovePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 160</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MovePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;MovePanel.Name" xml:space="preserve">
+    <value>MovePanel</value>
+  </data>
+  <data name="&gt;&gt;MovePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MovePanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MovePanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DMVideoWindow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="DMVideoWindow.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DMVideoWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="DMVideoWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 160</value>
+  </data>
+  <data name="DMVideoWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DMVideoWindow.Name" xml:space="preserve">
+    <value>DMVideoWindow</value>
+  </data>
+  <data name="&gt;&gt;DMVideoWindow.Type" xml:space="preserve">
+    <value>KiraraPlayer.DMControl, KiraraPlayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DMVideoWindow.Parent" xml:space="preserve">
+    <value>MovePanel</value>
+  </data>
+  <data name="&gt;&gt;DMVideoWindow.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>251, 17</value>
+  </metadata>
+  <data name="OpenToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OpenToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F2</value>
+  </data>
+  <data name="OpenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="OpenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="CloseToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F4</value>
+  </data>
+  <data name="CloseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="CloseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="RefreshToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F5</value>
+  </data>
+  <data name="RefreshToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="RefreshToolStripMenuItem.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 6</value>
+  </data>
+  <data name="RendererToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="RendererToolStripMenuItem.Text" xml:space="preserve">
+    <value>Renderer</value>
+  </data>
+  <data name="FilterControlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="FilterControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 6</value>
+  </data>
+  <data name="AboutToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F1</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="QuitToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Q</value>
+  </data>
+  <data name="QuitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="QuitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="ContextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 170</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStrip1.Name" xml:space="preserve">
+    <value>ContextMenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OverlayMixerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="OverlayMixerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Overlay Mixer</value>
+  </data>
+  <data name="VideoMixingRenderer7WindowlessToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="VideoMixingRenderer7WindowlessToolStripMenuItem.Text" xml:space="preserve">
+    <value>Video Mixing Renderer 7 Windowless</value>
+  </data>
+  <data name="VideoMixingRenderer9WindowedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="VideoMixingRenderer9WindowedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Video Mixing Renderer 9 Windowed</value>
+  </data>
+  <data name="VideoMixingRenderer9WindowlessToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="VideoMixingRenderer9WindowlessToolStripMenuItem.Text" xml:space="preserve">
+    <value>Video Mixing Renderer 9 Windowless</value>
+  </data>
+  <data name="EnhancedVideoRendererToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="EnhancedVideoRendererToolStripMenuItem.Text" xml:space="preserve">
+    <value>Enhanced Video Renderer (.NET 3.0/Vista)</value>
+  </data>
+  <data name="HaaliVideoRendererToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="HaaliVideoRendererToolStripMenuItem.Text" xml:space="preserve">
+    <value>Haali Video Renderer</value>
+  </data>
+  <data name="madVRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="madVRToolStripMenuItem.Text" xml:space="preserve">
+    <value>madVR</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 14</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>294, 160</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Kirara Player</value>
+  </data>
+  <data name="&gt;&gt;Timer1.Name" xml:space="preserve">
+    <value>Timer1</value>
+  </data>
+  <data name="&gt;&gt;Timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpenFileDialog1.Name" xml:space="preserve">
+    <value>OpenFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;OpenFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpenToolStripMenuItem.Name" xml:space="preserve">
+    <value>OpenToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;OpenToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseToolStripMenuItem.Name" xml:space="preserve">
+    <value>CloseToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CloseToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem2.Name" xml:space="preserve">
+    <value>ToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RendererToolStripMenuItem.Name" xml:space="preserve">
+    <value>RendererToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;RendererToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OverlayMixerToolStripMenuItem.Name" xml:space="preserve">
+    <value>OverlayMixerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;OverlayMixerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VideoMixingRenderer7WindowlessToolStripMenuItem.Name" xml:space="preserve">
+    <value>VideoMixingRenderer7WindowlessToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;VideoMixingRenderer7WindowlessToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VideoMixingRenderer9WindowedToolStripMenuItem.Name" xml:space="preserve">
+    <value>VideoMixingRenderer9WindowedToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;VideoMixingRenderer9WindowedToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VideoMixingRenderer9WindowlessToolStripMenuItem.Name" xml:space="preserve">
+    <value>VideoMixingRenderer9WindowlessToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;VideoMixingRenderer9WindowlessToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EnhancedVideoRendererToolStripMenuItem.Name" xml:space="preserve">
+    <value>EnhancedVideoRendererToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;EnhancedVideoRendererToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HaaliVideoRendererToolStripMenuItem.Name" xml:space="preserve">
+    <value>HaaliVideoRendererToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;HaaliVideoRendererToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;madVRToolStripMenuItem.Name" xml:space="preserve">
+    <value>madVRToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;madVRToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FilterControlToolStripMenuItem.Name" xml:space="preserve">
+    <value>FilterControlToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;FilterControlToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem1.Name" xml:space="preserve">
+    <value>ToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutToolStripMenuItem.Name" xml:space="preserve">
+    <value>AboutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AboutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;QuitToolStripMenuItem.Name" xml:space="preserve">
+    <value>QuitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;QuitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RefreshToolStripMenuItem.Name" xml:space="preserve">
+    <value>RefreshToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;RefreshToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PreviewFrm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

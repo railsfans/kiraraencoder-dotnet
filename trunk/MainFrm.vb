@@ -116,6 +116,9 @@ Public Class MainFrm
     Dim MainWindowState As String = ""
     Dim LangToolStripMenuItemV As String = "Auto-select"
 
+    'SEEKMODE = -1?
+    Public SEEKMODEM1B As Boolean = False
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -377,6 +380,16 @@ Public Class MainFrm
         _MI = New MediaInfo
         _MI.Open(MPATHV)
         ta2 = _MI.Get_(StreamKind.Visual, 0, "FrameRate")
+        If IsNumeric(ta2) = False Then
+            If InStr(ta2, " ") <> 0 Then
+                ta2 = Split(ta2, " ")(0)
+                If IsNumeric(ta2) = False Then
+                    ta2 = ""
+                End If
+            Else
+                ta2 = ""
+            End If
+        End If
         _MI.Close()
         '비디오프레임 fps
         If ta2 = "" Then
@@ -641,6 +654,8 @@ Public Class MainFrm
 
         Try
             If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\preset\" & PathV) = True Then
+                '기본값 - 새로운 설정이 나올때 기본값을 안 해버리면 그대로 이전 설정 나오게 됨
+                DefSUB()
                 '설정열고저장
                 XML_LOAD(My.Application.Info.DirectoryPath & "\preset\" & PathV)
                 XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
@@ -789,7 +804,8 @@ Public Class MainFrm
                 If XTR.Name = "MainDirectoryNotFound" Then LangCls.MainDirectoryNotFound = XTR.ReadString
                 If XTR.Name = "MainFileSame" Then LangCls.MainFileSame = XTR.ReadString
                 If XTR.Name = "MainFileNotFound" Then LangCls.MainFileNotFound = XTR.ReadString
-
+                If XTR.Name = "MainFileSizeIsTooLow" Then LangCls.MainFileSizeIsTooLow = XTR.ReadString
+               
             Loop
         Catch ex As Exception
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
@@ -962,10 +978,6 @@ LANG_SKIP:
         '오디오 부분
         Dim ExAudioB As Boolean = False '예외스킵
         Dim AKByteV As Single = Val(EncSetFrm.AudioBitrateComboBox.Text) / 8
-        '모드(NeroAAC)
-        If EncSetFrm.NeroAACVBRRadioButton.Checked = True Then
-            ExAudioB = True
-        End If
         '코덱
         If ExAudioB = False Then
             If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then 'WAV
@@ -1003,7 +1015,11 @@ LANG_SKIP:
                 End If
                 AKByteV = ((16 * ACHV * SAMV) / 1000) / 8
             ElseIf EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'NeroAAC
-                AKByteV = Val(EncSetFrm.NeroAACBitrateNumericUpDown.Value) / 8
+                If EncSetFrm.NeroAACVBRRadioButton.Checked = True Then
+                    ExAudioB = True
+                Else
+                    AKByteV = Val(EncSetFrm.NeroAACBitrateNumericUpDown.Value) / 8
+                End If
             ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
                 AKByteV = Val(EncSetFrm.AMRBitrateComboBox.Text) / 8
             ElseIf EncSetFrm.AudioCodecComboBox.Text = "[OGG] Vorbis" OrElse EncSetFrm.AudioCodecComboBox.Text = "Vorbis" Then 'Vorbis
@@ -1023,6 +1039,55 @@ LANG_SKIP:
             Catch ex As Exception
             End Try
         End If
+        '//////////////
+        ' 아래는 역으로 EncodingFrm 에서 가져옴.
+        '========================================================
+        '용량을 기준으로 비트레이트 계산 부분
+        Dim CalcVideoBitrateStr As String = ""
+        Dim ThrowCalcVB_ERR_B As Boolean = False
+
+        If EncSetFrm.SizeEncCheckBox.Checked = True Then '용량을 기준으로 인코딩 여부 (참)
+            If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[1PASS-CBR]", -1) OrElse _
+            EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) Then  'CBR 체크
+
+                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then '오디오만이므로 비디오 제외.
+                Else '둘다
+
+                    If ExAudioB = True Then
+                        ThrowCalcVB_ERR_B = True
+                    Else
+                        Try
+                            CalcVideoBitrateStr = ((Val(EncSetFrm.SizeEncTextBox.Text) * (1024 ^ 2)) / __GTimeV) - (AKByteV * 1000)
+                            CalcVideoBitrateStr = Val(CalcVideoBitrateStr) * 8 / 1000 'Kbit/s 단위로..
+
+                            If IsNumeric(CalcVideoBitrateStr) = False Then
+                                ThrowCalcVB_ERR_B = True
+                            Else
+                                If Val(CalcVideoBitrateStr) < 1 Then
+                                    ThrowCalcVB_ERR_B = True
+                                Else
+                                    ThrowCalcVB_ERR_B = False
+                                End If
+                            End If
+                        Catch ex As Exception
+                            ThrowCalcVB_ERR_B = True
+                        End Try
+                    End If
+
+                    If ThrowCalcVB_ERR_B = True Then
+                        CalcVideoBitrateStr = EncSetFrm.BitrateComboBox.Text
+                    Else
+                        CalcVideoBitrateStr = CalcVideoBitrateStr
+                        VKByteV = Val(CalcVideoBitrateStr) / 8
+                    End If
+
+                End If
+
+            End If
+        End If
+        '용량을 기준으로 비트레이트 계산 부분 끝
+        '========================================================
+        '//////////////
         If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then '오디오만이므로 비디오 제외.
             If ExAudioB = True Then '스킵
                 AVKByteC = ""
@@ -1053,6 +1118,9 @@ LANG_SKIP:
             AVKByteC = LangCls.MainNotCalAVByteC
         End If
 
+        '예상용량 지정정관련 (너무 낮은 용량 메세지)
+        Dim FileSizeIsTooLowStr As String = ""
+
         '비디오 부분 ///////////
         Dim ImageSizeV As String = ""
         Dim ImageAspectV As String = ""
@@ -1064,13 +1132,18 @@ LANG_SKIP:
             ' 영상 사이즈
             '=================================
             If AVSCheckBox.Checked = True Then 'AviSynth 사용
-                If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본영상사이즈
-                    Try
-                        ImageSizeV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(0)
-                    Catch ex As Exception
-                    End Try
+                If EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
+                    ImageSizeV = "176x144"
                 Else
-                    ImageSizeV = ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & "x" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
+                    If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본영상사이즈
+                        Try
+                            ImageSizeV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(0)
+                        Catch ex As Exception
+                        End Try
+                    Else
+                        ImageSizeV = ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & "x" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
+                    End If
                 End If
             Else
                 If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본영상사이즈
@@ -1086,23 +1159,28 @@ LANG_SKIP:
             ' 비율
             '=================================
             If AVSCheckBox.Checked = True Then 'AviSynth 사용
-                If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본영상사이즈
+                If EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
                     ImageAspectV = LangCls.MainOriginAspect
                 Else
-                    Dim AviSynthAspectComboBoxV As String = ""
-                    If ImagePPFrm.AviSynthAspectComboBox2.Text = LangCls.ImagePPOutputAviSynthAspectComboBox2 Then
-                        AviSynthAspectComboBoxV = LangCls.MainOutputAspect
-                    ElseIf ImagePPFrm.AviSynthAspectComboBox2.Text = LangCls.ImagePPOriginalAviSynthAspectComboBox2 Then
-                        AviSynthAspectComboBoxV = LangCls.MainOriginalAspect
+                    If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본영상사이즈
+                        ImageAspectV = LangCls.MainOriginAspect
                     Else
-                        AviSynthAspectComboBoxV = ImagePPFrm.AviSynthAspectWTextBox.Text & ":" & ImagePPFrm.AviSynthAspectHTextBox.Text
-                    End If
-                    If ImagePPFrm.AviSynthAspectComboBox.Text = LangCls.ImagePPNoKeepAviSynthAspectComboBox Then
-                        ImageAspectV = LangCls.MainNoKeepAspect
-                    ElseIf ImagePPFrm.AviSynthAspectComboBox.Text = LangCls.ImagePPLetterBoxAviSynthAspectComboBox Then
-                        ImageAspectV = AviSynthAspectComboBoxV & ", " & LangCls.MainAspectLetterBox
-                    ElseIf ImagePPFrm.AviSynthAspectComboBox.Text = LangCls.ImagePPCropAviSynthAspectComboBox Then
-                        ImageAspectV = AviSynthAspectComboBoxV & ", " & LangCls.MainAspectCrop
+                        Dim AviSynthAspectComboBoxV As String = ""
+                        If ImagePPFrm.AviSynthAspectComboBox2.Text = LangCls.ImagePPOutputAviSynthAspectComboBox2 Then
+                            AviSynthAspectComboBoxV = LangCls.MainOutputAspect
+                        ElseIf ImagePPFrm.AviSynthAspectComboBox2.Text = LangCls.ImagePPOriginalAviSynthAspectComboBox2 Then
+                            AviSynthAspectComboBoxV = LangCls.MainOriginalAspect
+                        Else
+                            AviSynthAspectComboBoxV = ImagePPFrm.AviSynthAspectWTextBox.Text & ":" & ImagePPFrm.AviSynthAspectHTextBox.Text
+                        End If
+                        If ImagePPFrm.AviSynthAspectComboBox.Text = LangCls.ImagePPNoKeepAviSynthAspectComboBox Then
+                            ImageAspectV = LangCls.MainNoKeepAspect
+                        ElseIf ImagePPFrm.AviSynthAspectComboBox.Text = LangCls.ImagePPLetterBoxAviSynthAspectComboBox Then
+                            ImageAspectV = AviSynthAspectComboBoxV & ", " & LangCls.MainAspectLetterBox
+                        ElseIf ImagePPFrm.AviSynthAspectComboBox.Text = LangCls.ImagePPCropAviSynthAspectComboBox Then
+                            ImageAspectV = AviSynthAspectComboBoxV & ", " & LangCls.MainAspectCrop
+                        End If
                     End If
                 End If
             Else
@@ -1144,14 +1222,21 @@ LANG_SKIP:
                         End If
                     End If
                 End With
-                If ImagePPFrm.AviSynthFramerateCheckBox.Checked = True Then
-                    Try
-                        ImageFramerateV = (Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) * bobv) & " fps" & bobstr
-                    Catch ex As Exception
-                    End Try
+
+                If EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
+                    ImageFramerateV = "25 fps" & bobstr
                 Else
-                    ImageFramerateV = (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) & " fps" & bobstr
+                    If ImagePPFrm.AviSynthFramerateCheckBox.Checked = True Then
+                        Try
+                            ImageFramerateV = (Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) * bobv) & " fps" & bobstr
+                        Catch ex As Exception
+                        End Try
+                    Else
+                        ImageFramerateV = (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) & " fps" & bobstr
+                    End If
                 End If
+
             Else
                 If EncSetFrm.FramerateCheckBox.Checked = True Then
                     Try
@@ -1166,7 +1251,16 @@ LANG_SKIP:
             ' 비트레이트
             '=================================
             If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[1PASS-CBR]", -1) Then
-                VideoBitrateV = "[1PASS-CBR] " & EncSetFrm.BitrateComboBox.Text & " Kbit/s"
+
+                If EncSetFrm.SizeEncCheckBox.Checked = True AndAlso ExAudioB = False Then
+                    If ThrowCalcVB_ERR_B = True Then
+                        FileSizeIsTooLowStr = " - " & LangCls.MainFileSizeIsTooLow
+                    End If
+                    VideoBitrateV = "[1PASS-CBR] " & Int(CalcVideoBitrateStr) & " Kbit/s"
+                Else
+                    VideoBitrateV = "[1PASS-CBR] " & EncSetFrm.BitrateComboBox.Text & " Kbit/s"
+                End If
+
             ElseIf EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[1PASS-CQP]", -1) Then
                 VideoBitrateV = "[1PASS-CQP] Q=" & EncSetFrm.QuantizerCQPNumericUpDown.Value
             ElseIf EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[1PASS-CRF]", -1) Then
@@ -1174,7 +1268,16 @@ LANG_SKIP:
             ElseIf EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[1PASS-VBR]", -1) Then
                 VideoBitrateV = "[1PASS-VBR] Q=" & EncSetFrm.QuantizerNumericUpDown.Value
             ElseIf EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) Then
-                VideoBitrateV = "[2PASS-CBR] " & EncSetFrm.BitrateComboBox.Text & " Kbit/s"
+
+                If EncSetFrm.SizeEncCheckBox.Checked = True AndAlso ExAudioB = False Then
+                    If ThrowCalcVB_ERR_B = True Then
+                        FileSizeIsTooLowStr = " - " & LangCls.MainFileSizeIsTooLow
+                    End If
+                    VideoBitrateV = "[2PASS-CBR] " & Int(CalcVideoBitrateStr) & " Kbit/s"
+                Else
+                    VideoBitrateV = "[2PASS-CBR] " & EncSetFrm.BitrateComboBox.Text & " Kbit/s"
+                End If
+
             ElseIf EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[LOSSLESS]", -1) Then
                 VideoBitrateV = "[LOSSLESS]"
             End If
@@ -1282,7 +1385,7 @@ LANG_SKIP:
 
         '출력 정보
         _FileLabel1.Text = EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV
-        _FileLabel2.Text = OutFComboBoxV & ", " & _GTimeV & " " & GTimeV & ", " & AVKByteC
+        _FileLabel2.Text = OutFComboBoxV & ", " & _GTimeV & " " & GTimeV & ", " & AVKByteC & FileSizeIsTooLowStr
         If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then
             _VideoLabel1.Text = ""
             _VideoLabel2.Text = ""
@@ -1291,8 +1394,19 @@ LANG_SKIP:
             '    _VideoLabel1.Text = ""
             '    _VideoLabel2.Text = ""
             'Else
-            _VideoLabel1.Text = EncSetFrm.VideoCodecComboBox.Text
-            _VideoLabel2.Text = ImageSizeV & ", " & ImageAspectV & ", " & ImageFramerateV & ", " & VideoBitrateV
+            If AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+                If EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 FFmpeg 인코딩
+                    _VideoLabel1.Text = ""
+                    _VideoLabel2.Text = ""
+                Else
+                    _VideoLabel1.Text = EncSetFrm.VideoCodecComboBox.Text
+                    _VideoLabel2.Text = ImageSizeV & ", " & ImageAspectV & ", " & ImageFramerateV & ", " & VideoBitrateV
+                End If
+            Else
+                _VideoLabel1.Text = EncSetFrm.VideoCodecComboBox.Text
+                _VideoLabel2.Text = ImageSizeV & ", " & ImageAspectV & ", " & ImageFramerateV & ", " & VideoBitrateV
+            End If
             'End If
         End If
         'If EncListListView.Items(index).SubItems(9).Text = "None" Then
@@ -1617,12 +1731,10 @@ LANG_SKIP:
         'Def_FFmpegSourceTextBox 초기화 32 / 64
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
-            AviSynthEditorFrm.Def_ASFTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_ASFTextBox.Text
             AviSynthEditorFrm.Def_AVCTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_AVCTextBox.Text
             AviSynthEditorFrm.Def_VC1TextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_VC1TextBox.Text
         Else
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
-            AviSynthEditorFrm.Def_ASFTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_ASFTextBox.Text
             AviSynthEditorFrm.Def_AVCTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_AVCTextBox.Text
             AviSynthEditorFrm.Def_VC1TextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_VC1TextBox.Text
         End If
@@ -2180,7 +2292,7 @@ UAC:
         '//////////////////////////////////////////////////////////// AviSynthEditorFrm
         With AviSynthEditorFrm
             .FFmpegSourceTextBox.Text = .Def_FFmpegSourceTextBox.Text
-            .ASFTextBox.Text = .Def_ASFTextBox.Text
+            .DirectShowSourceTextBox.Text = .Def_DirectShowSourceTextBox.Text
             .MPEG2SourceTextBox.Text = .Def_MPEG2SourceTextBox.Text
             .BassAudioTextBox.Text = .Def_BassAudioTextBox.Text
             .NicAudioTextBox.Text = .Def_NicAudioTextBox.Text
@@ -2288,6 +2400,8 @@ UAC:
             .DeinterlaceCheckBox.Checked = False
             .FFmpegCommandTextBox.Text = ""
             .SubtitleRecordingCheckBox.Checked = False
+            .SizeEncCheckBox.Checked = False
+            .SizeEncTextBox.Text = "0"
             '예외
             AVSCheckBox.Checked = True
 
@@ -2694,7 +2808,7 @@ RELOAD:
 
                     If XTR.Name = "AviSynthEditorFrm_ASFTextBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .ASFTextBox.Text = XTRSTR Else .ASFTextBox.Text = .Def_ASFTextBox.Text
+                        If XTRSTR <> "" Then .DirectShowSourceTextBox.Text = XTRSTR Else .DirectShowSourceTextBox.Text = .Def_DirectShowSourceTextBox.Text
                     End If
 
                     If XTR.Name = "AviSynthEditorFrm_MPEG2SourceTextBox" Then
@@ -3088,6 +3202,16 @@ RELOAD:
                     If XTR.Name = "EncSetFrm_SubtitleRecordingCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .SubtitleRecordingCheckBox.Checked = XTRSTR Else .SubtitleRecordingCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_SizeEncCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .SizeEncCheckBox.Checked = XTRSTR Else .SizeEncCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_SizeEncTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .SizeEncTextBox.Text = XTRSTR Else .SizeEncTextBox.Text = "0"
                     End If
 
                 End With
@@ -4263,7 +4387,7 @@ RELOAD:
                 XTWriter.WriteEndElement()
 
                 XTWriter.WriteStartElement("AviSynthEditorFrm_ASFTextBox")
-                XTWriter.WriteString(.ASFTextBox.Text)
+                XTWriter.WriteString(.DirectShowSourceTextBox.Text)
                 XTWriter.WriteEndElement()
 
                 XTWriter.WriteStartElement("AviSynthEditorFrm_MPEG2SourceTextBox")
@@ -4590,6 +4714,14 @@ RELOAD:
 
                 XTWriter.WriteStartElement("EncSetFrm_SubtitleRecordingCheckBox")
                 XTWriter.WriteString(.SubtitleRecordingCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_SizeEncCheckBox")
+                XTWriter.WriteString(.SizeEncCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_SizeEncTextBox")
+                XTWriter.WriteString(.SizeEncTextBox.Text)
                 XTWriter.WriteEndElement()
 
                 '===
@@ -5716,4 +5848,10 @@ RELOAD:
         PresetLabel.Text = LangCls.MainUserStr
     End Sub
 
+    Private Sub KiraraPlayerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KiraraPlayerToolStripMenuItem.Click
+        Try
+            Shell("explorer.exe /n, " & My.Application.Info.DirectoryPath & "\KiraraPlayer.exe", AppWinStyle.NormalFocus)
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

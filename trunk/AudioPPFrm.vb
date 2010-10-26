@@ -293,6 +293,8 @@ RELOAD:
                 If XTR.Name = "AudioPPdolbysComboBox" Then LangCls.AudioPPdolbysComboBox = XTR.ReadString
                 If XTR.Name = "AudioPPdolbypComboBox" Then LangCls.AudioPPdolbypComboBox = XTR.ReadString
                 If XTR.Name = "AudioPPFrmAudioASCheckBox" Then AudioASCheckBox.Text = XTR.ReadString
+                If XTR.Name = "AudioPPFrmNormalizeGroupBox" Then NormalizeGroupBox.Text = XTR.ReadString
+                If XTR.Name = "AudioPPFrmNormalizeCheckBox" Then NormalizeCheckBox.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception

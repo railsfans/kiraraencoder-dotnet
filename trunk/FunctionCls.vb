@@ -303,7 +303,6 @@ Public Class FunctionCls
     '-----------------------------------------------------------------------------
     Public Shared Function TIME_TO_HMSMSTIME(ByVal TimeV As Double, ByVal PointB As Boolean) As String
 
-        Dim Sec As Single
         Dim Minute As Single
         Dim Hour As Single
         Dim hmsValue As String = ""
@@ -316,15 +315,13 @@ Public Class FunctionCls
             End If
         End If
 
-
         If TimeV < 60 Then
-            Sec = TimeV
             If TimeV < 0 Then
                 hmsValue = "00:" & "00:" & "00.00"
             ElseIf TimeV < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(Sec, "0.00")
+                hmsValue = "00:" & "00:" & "0" & Format(TimeV, "0.00")
             Else
-                hmsValue = "00:" & "00:" & Format(Sec, "0.00")
+                hmsValue = "00:" & "00:" & Format(TimeV, "0.00")
             End If
         End If
 

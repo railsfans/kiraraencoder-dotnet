@@ -84,6 +84,9 @@ Partial Class EncSetFrm
         Me.ImageSizeComboBox = New System.Windows.Forms.ComboBox
         Me.ImageSizeLabel = New System.Windows.Forms.Label
         Me.ImgPPTabPage = New System.Windows.Forms.TabPage
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.hflipCheckBox = New System.Windows.Forms.CheckBox
+        Me.vflipCheckBox = New System.Windows.Forms.CheckBox
         Me.ImagePPGroupBox = New System.Windows.Forms.GroupBox
         Me.FFmpegImageUnsharpCheckBox = New System.Windows.Forms.CheckBox
         Me.FFmpegImageUnsharpLabel = New System.Windows.Forms.Label
@@ -149,6 +152,12 @@ Partial Class EncSetFrm
         Me.NeroAACProfileComboBox = New System.Windows.Forms.ComboBox
         Me.NeroAACProfileLabel = New System.Windows.Forms.Label
         Me.ETCTabPage = New System.Windows.Forms.TabPage
+        Me.SizeEncGroupBox = New System.Windows.Forms.GroupBox
+        Me.SizeEncGBLabel = New System.Windows.Forms.Label
+        Me.SizeEncMBLabel = New System.Windows.Forms.Label
+        Me.SizeEncTextBox = New System.Windows.Forms.TextBox
+        Me.SizeEncLabel = New System.Windows.Forms.Label
+        Me.SizeEncCheckBox = New System.Windows.Forms.CheckBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.SubtitleRecordingCheckBox = New System.Windows.Forms.CheckBox
         Me.FFmpegCommandGroupBox = New System.Windows.Forms.GroupBox
@@ -164,9 +173,6 @@ Partial Class EncSetFrm
         Me.ExtensionLabel = New System.Windows.Forms.Label
         Me.HeaderTextBox = New System.Windows.Forms.TextBox
         Me.HeaderLabel = New System.Windows.Forms.Label
-        Me.hflipCheckBox = New System.Windows.Forms.CheckBox
-        Me.vflipCheckBox = New System.Windows.Forms.CheckBox
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.EncSetPanel.SuspendLayout()
         Me.OutFGroupBox.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
@@ -186,6 +192,7 @@ Partial Class EncSetFrm
         Me.ImgTabPage.SuspendLayout()
         Me.ImageGroupBox.SuspendLayout()
         Me.ImgPPTabPage.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.ImagePPGroupBox.SuspendLayout()
         CType(Me.LumaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChromaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -216,11 +223,11 @@ Partial Class EncSetFrm
         CType(Me.NeroAACBitrateTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NeroAACBitrateNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ETCTabPage.SuspendLayout()
+        Me.SizeEncGroupBox.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.FFmpegCommandGroupBox.SuspendLayout()
         Me.SizeLimitGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncSetPanel
@@ -659,6 +666,26 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.ImgPPTabPage, "ImgPPTabPage")
         Me.ImgPPTabPage.Name = "ImgPPTabPage"
         Me.ImgPPTabPage.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.hflipCheckBox)
+        Me.GroupBox2.Controls.Add(Me.vflipCheckBox)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.TabStop = False
+        '
+        'hflipCheckBox
+        '
+        resources.ApplyResources(Me.hflipCheckBox, "hflipCheckBox")
+        Me.hflipCheckBox.Name = "hflipCheckBox"
+        Me.hflipCheckBox.UseVisualStyleBackColor = True
+        '
+        'vflipCheckBox
+        '
+        resources.ApplyResources(Me.vflipCheckBox, "vflipCheckBox")
+        Me.vflipCheckBox.Name = "vflipCheckBox"
+        Me.vflipCheckBox.UseVisualStyleBackColor = True
         '
         'ImagePPGroupBox
         '
@@ -1158,6 +1185,7 @@ Partial Class EncSetFrm
         '
         'ETCTabPage
         '
+        Me.ETCTabPage.Controls.Add(Me.SizeEncGroupBox)
         Me.ETCTabPage.Controls.Add(Me.GroupBox1)
         Me.ETCTabPage.Controls.Add(Me.FFmpegCommandGroupBox)
         Me.ETCTabPage.Controls.Add(Me.SizeLimitGroupBox)
@@ -1165,6 +1193,44 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.ETCTabPage, "ETCTabPage")
         Me.ETCTabPage.Name = "ETCTabPage"
         Me.ETCTabPage.UseVisualStyleBackColor = True
+        '
+        'SizeEncGroupBox
+        '
+        Me.SizeEncGroupBox.Controls.Add(Me.SizeEncGBLabel)
+        Me.SizeEncGroupBox.Controls.Add(Me.SizeEncMBLabel)
+        Me.SizeEncGroupBox.Controls.Add(Me.SizeEncTextBox)
+        Me.SizeEncGroupBox.Controls.Add(Me.SizeEncLabel)
+        Me.SizeEncGroupBox.Controls.Add(Me.SizeEncCheckBox)
+        resources.ApplyResources(Me.SizeEncGroupBox, "SizeEncGroupBox")
+        Me.SizeEncGroupBox.Name = "SizeEncGroupBox"
+        Me.SizeEncGroupBox.TabStop = False
+        '
+        'SizeEncGBLabel
+        '
+        resources.ApplyResources(Me.SizeEncGBLabel, "SizeEncGBLabel")
+        Me.SizeEncGBLabel.Name = "SizeEncGBLabel"
+        '
+        'SizeEncMBLabel
+        '
+        resources.ApplyResources(Me.SizeEncMBLabel, "SizeEncMBLabel")
+        Me.SizeEncMBLabel.Name = "SizeEncMBLabel"
+        '
+        'SizeEncTextBox
+        '
+        resources.ApplyResources(Me.SizeEncTextBox, "SizeEncTextBox")
+        Me.SizeEncTextBox.Name = "SizeEncTextBox"
+        '
+        'SizeEncLabel
+        '
+        resources.ApplyResources(Me.SizeEncLabel, "SizeEncLabel")
+        Me.SizeEncLabel.ForeColor = System.Drawing.Color.Green
+        Me.SizeEncLabel.Name = "SizeEncLabel"
+        '
+        'SizeEncCheckBox
+        '
+        resources.ApplyResources(Me.SizeEncCheckBox, "SizeEncCheckBox")
+        Me.SizeEncCheckBox.Name = "SizeEncCheckBox"
+        Me.SizeEncCheckBox.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -1260,26 +1326,6 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.HeaderLabel, "HeaderLabel")
         Me.HeaderLabel.Name = "HeaderLabel"
         '
-        'hflipCheckBox
-        '
-        resources.ApplyResources(Me.hflipCheckBox, "hflipCheckBox")
-        Me.hflipCheckBox.Name = "hflipCheckBox"
-        Me.hflipCheckBox.UseVisualStyleBackColor = True
-        '
-        'vflipCheckBox
-        '
-        resources.ApplyResources(Me.vflipCheckBox, "vflipCheckBox")
-        Me.vflipCheckBox.Name = "vflipCheckBox"
-        Me.vflipCheckBox.UseVisualStyleBackColor = True
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.hflipCheckBox)
-        Me.GroupBox2.Controls.Add(Me.vflipCheckBox)
-        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.TabStop = False
-        '
         'EncSetFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -1315,6 +1361,8 @@ Partial Class EncSetFrm
         Me.ImageGroupBox.ResumeLayout(False)
         Me.ImageGroupBox.PerformLayout()
         Me.ImgPPTabPage.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ImagePPGroupBox.ResumeLayout(False)
         Me.ImagePPGroupBox.PerformLayout()
         CType(Me.LumaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1352,6 +1400,8 @@ Partial Class EncSetFrm
         CType(Me.NeroAACBitrateTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NeroAACBitrateNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ETCTabPage.ResumeLayout(False)
+        Me.SizeEncGroupBox.ResumeLayout(False)
+        Me.SizeEncGroupBox.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.FFmpegCommandGroupBox.ResumeLayout(False)
@@ -1360,8 +1410,6 @@ Partial Class EncSetFrm
         Me.SizeLimitGroupBox.PerformLayout()
         Me.NameGroupBox.ResumeLayout(False)
         Me.NameGroupBox.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1509,4 +1557,10 @@ Partial Class EncSetFrm
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents hflipCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents vflipCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents SizeEncGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents SizeEncGBLabel As System.Windows.Forms.Label
+    Friend WithEvents SizeEncMBLabel As System.Windows.Forms.Label
+    Friend WithEvents SizeEncTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents SizeEncLabel As System.Windows.Forms.Label
+    Friend WithEvents SizeEncCheckBox As System.Windows.Forms.CheckBox
 End Class

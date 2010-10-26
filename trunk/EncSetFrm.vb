@@ -563,6 +563,9 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmSubtitleRecordingCheckBox" Then SubtitleRecordingCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmhflipCheckBox" Then hflipCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmvflipCheckBox" Then vflipCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmSizeEncGroupBox" Then SizeEncGroupBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmSizeEncLabel" Then SizeEncLabel.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmSizeEncCheckBox" Then SizeEncCheckBox.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -760,6 +763,8 @@ LANG_SKIP:
         DeinterlaceCheckBox.Checked = False
         FFmpegCommandTextBox.Text = ""
         SubtitleRecordingCheckBox.Checked = False
+        SizeEncCheckBox.Checked = False
+        SizeEncTextBox.Text = "0"
 
     End Sub
 
@@ -1568,6 +1573,16 @@ RELOAD:
                     If XTRSTR <> "" Then SubtitleRecordingCheckBox.Checked = XTRSTR Else SubtitleRecordingCheckBox.Checked = False
                 End If
 
+                If XTR.Name = "EncSetFrm_SizeEncCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then SizeEncCheckBox.Checked = XTRSTR Else SizeEncCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_SizeEncTextBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then SizeEncTextBox.Text = XTRSTR Else SizeEncTextBox.Text = "0"
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -2115,7 +2130,13 @@ RELOAD:
         '***********************************
         Dim VideoModeComboBoxV As String = ""
         If VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-CBR]", -1) Then
-            VideoModeComboBoxV = " -b " & BitrateComboBox.Text & "k"
+
+            If SizeEncCheckBox.Checked = True Then '비트레이트 설정은 인코딩 시작할 때 한다.
+                VideoModeComboBoxV = ""
+            Else
+                VideoModeComboBoxV = " -b " & BitrateComboBox.Text & "k"
+            End If
+
         ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-CQP]", -1) Then
             VideoModeComboBoxV = " -cqp " & QuantizerCQPNumericUpDown.Value
         ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-CRF]", -1) Then
@@ -2123,7 +2144,13 @@ RELOAD:
         ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-VBR]", -1) Then
             VideoModeComboBoxV = " -qscale " & QuantizerNumericUpDown.Value
         ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[2PASS-CBR]", -1) Then
-            VideoModeComboBoxV = " -b " & BitrateComboBox.Text & "k"
+
+            If SizeEncCheckBox.Checked = True Then '비트레이트 설정은 인코딩 시작할 때 한다.
+                VideoModeComboBoxV = ""
+            Else
+                VideoModeComboBoxV = " -b " & BitrateComboBox.Text & "k"
+            End If
+
         ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[LOSSLESS]", -1) Then
             VideoModeComboBoxV = ""
         End If
@@ -2686,7 +2713,7 @@ RELOAD:
     End Sub
 
     Private Sub SizeLimitTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles SizeLimitTextBox.KeyPress
-        If FunctionCls.InputCheck_NUMBER(e, True, False) = True Then e.Handled = True
+        If FunctionCls.InputCheck_NUMBER(e, False, False) = True Then e.Handled = True
     End Sub
 
     Private Sub SizeLimitTextBox_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SizeLimitTextBox.LostFocus
@@ -2810,7 +2837,36 @@ RELOAD:
         MainFrm.PresetContextMenuStrip.Show(Control.MousePosition)
     End Sub
 
-    Private Sub AudioBitrateNLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AudioBitrateNLabel.Click
+    Private Sub SizeEncTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles SizeEncTextBox.KeyPress
+        If FunctionCls.InputCheck_NUMBER(e, True, False) = True Then e.Handled = True
+    End Sub
 
+    Private Sub SizeEncTextBox_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SizeEncTextBox.LostFocus
+        If SizeEncTextBox.Text <> "" Then SizeEncTextBox.Text = Val(SizeEncTextBox.Text)
+    End Sub
+
+    Private Sub SizeEncTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SizeEncTextBox.TextChanged
+        If IsNumeric(SizeEncTextBox.Text) = False Then
+            SizeEncGBLabel.Text = "0.000GB"
+            Exit Sub
+        End If
+
+        Try
+            SizeEncGBLabel.Text = Format(Val(SizeEncTextBox.Text) / 1024, "0.000") & "GB"
+        Catch ex As Exception
+        End Try
+
+    End Sub
+
+    Private Sub SizeEncCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SizeEncCheckBox.CheckedChanged
+        If SizeEncCheckBox.Checked = True Then
+            SizeEncTextBox.Enabled = True
+            SizeEncMBLabel.Enabled = True
+            SizeEncGBLabel.Enabled = True
+        Else
+            SizeEncTextBox.Enabled = False
+            SizeEncMBLabel.Enabled = False
+            SizeEncGBLabel.Enabled = False
+        End If
     End Sub
 End Class

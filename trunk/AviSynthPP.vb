@@ -38,7 +38,7 @@ Public Class AviSynthPP
         IDLE_PRIORITY_CLASS = &H40
     End Enum
 
-    Public Shared Sub AviSynthPreprocess(ByVal index As Integer, ByVal ShowModeV As Boolean, ByVal PriorityInt As Integer, ByVal ShowStatus As Boolean, ByVal AudioOnly As Boolean)
+    Public Shared Sub AviSynthPreprocess(ByVal index As Integer, ByVal ShowModeV As Boolean, ByVal PriorityInt As Integer, ByVal ShowStatus As Boolean)
 
         Dim SelAudioStreamStr As String = ""
 
@@ -330,165 +330,162 @@ Public Class AviSynthPP
         Dim TextSubV As String = "#<textsub>"
         Dim SubPathV As String = Strings.Left(MainFrm.EncListListView.Items(index).SubItems(10).Text, InStrRev(MainFrm.EncListListView.Items(index).SubItems(10).Text, "."))
         Dim SubFileExistsV As Boolean = True
-        If AudioOnly = False Then
 
-            If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
-            MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '비디오 파일용
-            Else
-                With SubtitleFrm
+        If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+        MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '비디오 파일용
+        Else
+            With SubtitleFrm
 
-                    '---------------
-                    ' 스타일 저장 (SMI)
-                    '---------------
-                    If MainFrm.EncListListView.Items(index).SubItems(2).Text = "SMI" Then
+                '---------------
+                ' 스타일 저장 (SMI)
+                '---------------
+                If MainFrm.EncListListView.Items(index).SubItems(2).Text = "SMI" Then
 
-                        Dim ASSHEADERV As String = "[V4+ Styles]" & vbNewLine & _
-                                                    "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding" & vbNewLine & _
-                                                    "Style: Default,"
+                    Dim ASSHEADERV As String = "[V4+ Styles]" & vbNewLine & _
+                                                "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding" & vbNewLine & _
+                                                "Style: Default,"
 
-                        '굵게
-                        Dim BoldV As String
-                        If .BoldCheckBox.Checked = True Then
-                            BoldV = "-1"
-                        Else
-                            BoldV = "0"
-                        End If
-
-                        '기울임
-                        Dim ItalicV As String
-                        If .ItalicCheckBox.Checked = True Then
-                            ItalicV = "-1"
-                        Else
-                            ItalicV = "0"
-                        End If
-
-                        '밑줄
-                        Dim UnderlineV As String
-                        If .UnderlineCheckBox.Checked = True Then
-                            UnderlineV = "-1"
-                        Else
-                            UnderlineV = "0"
-                        End If
-
-                        '취소선
-                        Dim StrikeOutV As String
-                        If .StrikeOutCheckBox.Checked = True Then
-                            StrikeOutV = "-1"
-                        Else
-                            StrikeOutV = "0"
-                        End If
-
-                        '경계 스타일
-                        Dim BorderStyleV As String
-                        If .BorderStyle1.Checked = True Then
-                            BorderStyleV = "1"
-                        Else
-                            BorderStyleV = "3"
-                        End If
-
-                        '위치
-                        Dim AlignmentV As String
-                        If .Alignment1RadioButton.Checked = True Then
-                            AlignmentV = "1"
-                        ElseIf .Alignment2RadioButton.Checked = True Then
-                            AlignmentV = "2"
-                        ElseIf .Alignment3RadioButton.Checked = True Then
-                            AlignmentV = "3"
-                        ElseIf .Alignment5RadioButton.Checked = True Then
-                            AlignmentV = "5"
-                        ElseIf .Alignment6RadioButton.Checked = True Then
-                            AlignmentV = "6"
-                        ElseIf .Alignment4RadioButton.Checked = True Then
-                            AlignmentV = "4"
-                        ElseIf .Alignment9RadioButton.Checked = True Then
-                            AlignmentV = "9"
-                        ElseIf .Alignment7RadioButton.Checked = True Then
-                            AlignmentV = "10"
-                        Else
-                            AlignmentV = "11"
-                        End If
-
-                        '문자인코딩
-                        Dim EncodingV As String
-                        Try
-                            EncodingV = Replace(Split(.EncComboBox.Text, "(")(1), ")", "")
-                        Catch ex As Exception
-                            EncodingV = "1"
-                        End Try
-
-                        Dim ASSV As String = ""
-                        ASSV = ASSHEADERV & .FontComboBox.Text & "," & .SizeUpDown.Value & "," & _
-                        FunctionCls.ColorToHEX(.PrimaryColourPanel.BackColor.ToArgb.ToString, .PrimaryColourTrackBar.Value) & "," & _
-                        FunctionCls.ColorToHEX(.SecondaryColourPanel.BackColor.ToArgb.ToString, .SecondaryColourTrackBar.Value) & "," & _
-                        FunctionCls.ColorToHEX(.OutlineColourPanel.BackColor.ToArgb.ToString, .OutlineColourTrackBar.Value) & "," & _
-                        FunctionCls.ColorToHEX(.BackColourPanel.BackColor.ToArgb.ToString, .BackColourTrackBar.Value) & "," & _
-                        BoldV & "," & ItalicV & "," & UnderlineV & "," & StrikeOutV & "," & _
-                        .ScaleXNumericUpDown.Value & "," & .ScaleYNumericUpDown.Value & "," & .SpacingNumericUpDown.Value & "," & .AngleNumericUpDown.Value & "," & _
-                        BorderStyleV & "," & _
-                        .OutlineUpDown.Value & "," & .BackUpDown.Value & "," & _
-                        AlignmentV & "," & _
-                        .MarginLNumericUpDown.Value & "," & .MarginRNumericUpDown.Value & "," & .MarginVNumericUpDown.Value & "," & _
-                        EncodingV
-
-                        Dim _StreamWriter As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi.style", False, System.Text.Encoding.Unicode)
-                        _StreamWriter.Write(ASSV)
-                        _StreamWriter.Close()
-
-                        '---------------
-                        ' 파일 복사
-                        '---------------
-                        Dim RECOPY As Integer = 0
-                        If My.Computer.FileSystem.FileExists(SubPathV & "smi") = True Then
-                            Try
-RECOPY:
-                                My.Computer.FileSystem.CopyFile(SubPathV & "smi", My.Application.Info.DirectoryPath & "\temp\Subtitle.smi", True)
-                            Catch ex As Exception
-                                Threading.Thread.Sleep(100)
-                                RECOPY += 1
-                                Debug.Print("파일복사실패 " & RECOPY & " : " & ex.Message)
-                                If RECOPY > 1000 Then '1000번(100초) = 1분 40초
-                                    Dim MessageBoxV = MessageBox.Show("File copy failed, Retry?", "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-                                    If MessageBoxV = DialogResult.Yes Then
-                                        GoTo RECOPY
-                                    Else
-                                        GoTo ERRSKIP
-                                    End If
-                                End If
-                                GoTo RECOPY
-                            End Try
-                            SubFileExistsV = True
-                        Else
-ERRSKIP:
-                            SubFileExistsV = False
-                        End If
-
-                    End If 'SMI 자막 처리 부분 End If
-
-                    '---------------
-                    ' 스크립트 작성
-                    '---------------
-                    If SubFileExistsV = True AndAlso .SubtitleCheckBox.Checked = True Then
-                        If MainFrm.EncListListView.Items(index).SubItems(2).Text = "ASS" Then
-                            If My.Computer.FileSystem.FileExists(SubPathV & "ass") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "ass" & Chr(34) & ")"
-
-                        ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SMI" Then
-                            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi") = True Then TextSubV = "TextSub(" & Chr(34) & My.Application.Info.DirectoryPath & "\temp\Subtitle.smi" & Chr(34) & ")"
-
-                        ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SRT" Then
-                            If My.Computer.FileSystem.FileExists(SubPathV & "srt") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "srt" & Chr(34) & ")"
-
-                        ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SSA" Then
-                            If My.Computer.FileSystem.FileExists(SubPathV & "ssa") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "ssa" & Chr(34) & ")"
-
-                        ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SUB" Then
-                            If My.Computer.FileSystem.FileExists(SubPathV & "sub") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "sub" & Chr(34) & ")"
-
-                        End If
+                    '굵게
+                    Dim BoldV As String
+                    If .BoldCheckBox.Checked = True Then
+                        BoldV = "-1"
+                    Else
+                        BoldV = "0"
                     End If
 
-                End With
-            End If
+                    '기울임
+                    Dim ItalicV As String
+                    If .ItalicCheckBox.Checked = True Then
+                        ItalicV = "-1"
+                    Else
+                        ItalicV = "0"
+                    End If
 
+                    '밑줄
+                    Dim UnderlineV As String
+                    If .UnderlineCheckBox.Checked = True Then
+                        UnderlineV = "-1"
+                    Else
+                        UnderlineV = "0"
+                    End If
+
+                    '취소선
+                    Dim StrikeOutV As String
+                    If .StrikeOutCheckBox.Checked = True Then
+                        StrikeOutV = "-1"
+                    Else
+                        StrikeOutV = "0"
+                    End If
+
+                    '경계 스타일
+                    Dim BorderStyleV As String
+                    If .BorderStyle1.Checked = True Then
+                        BorderStyleV = "1"
+                    Else
+                        BorderStyleV = "3"
+                    End If
+
+                    '위치
+                    Dim AlignmentV As String
+                    If .Alignment1RadioButton.Checked = True Then
+                        AlignmentV = "1"
+                    ElseIf .Alignment2RadioButton.Checked = True Then
+                        AlignmentV = "2"
+                    ElseIf .Alignment3RadioButton.Checked = True Then
+                        AlignmentV = "3"
+                    ElseIf .Alignment5RadioButton.Checked = True Then
+                        AlignmentV = "5"
+                    ElseIf .Alignment6RadioButton.Checked = True Then
+                        AlignmentV = "6"
+                    ElseIf .Alignment4RadioButton.Checked = True Then
+                        AlignmentV = "4"
+                    ElseIf .Alignment9RadioButton.Checked = True Then
+                        AlignmentV = "9"
+                    ElseIf .Alignment7RadioButton.Checked = True Then
+                        AlignmentV = "10"
+                    Else
+                        AlignmentV = "11"
+                    End If
+
+                    '문자인코딩
+                    Dim EncodingV As String
+                    Try
+                        EncodingV = Replace(Split(.EncComboBox.Text, "(")(1), ")", "")
+                    Catch ex As Exception
+                        EncodingV = "1"
+                    End Try
+
+                    Dim ASSV As String = ""
+                    ASSV = ASSHEADERV & .FontComboBox.Text & "," & .SizeUpDown.Value & "," & _
+                    FunctionCls.ColorToHEX(.PrimaryColourPanel.BackColor.ToArgb.ToString, .PrimaryColourTrackBar.Value) & "," & _
+                    FunctionCls.ColorToHEX(.SecondaryColourPanel.BackColor.ToArgb.ToString, .SecondaryColourTrackBar.Value) & "," & _
+                    FunctionCls.ColorToHEX(.OutlineColourPanel.BackColor.ToArgb.ToString, .OutlineColourTrackBar.Value) & "," & _
+                    FunctionCls.ColorToHEX(.BackColourPanel.BackColor.ToArgb.ToString, .BackColourTrackBar.Value) & "," & _
+                    BoldV & "," & ItalicV & "," & UnderlineV & "," & StrikeOutV & "," & _
+                    .ScaleXNumericUpDown.Value & "," & .ScaleYNumericUpDown.Value & "," & .SpacingNumericUpDown.Value & "," & .AngleNumericUpDown.Value & "," & _
+                    BorderStyleV & "," & _
+                    .OutlineUpDown.Value & "," & .BackUpDown.Value & "," & _
+                    AlignmentV & "," & _
+                    .MarginLNumericUpDown.Value & "," & .MarginRNumericUpDown.Value & "," & .MarginVNumericUpDown.Value & "," & _
+                    EncodingV
+
+                    Dim _StreamWriter As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi.style", False, System.Text.Encoding.Unicode)
+                    _StreamWriter.Write(ASSV)
+                    _StreamWriter.Close()
+
+                    '---------------
+                    ' 파일 복사
+                    '---------------
+                    Dim RECOPY As Integer = 0
+                    If My.Computer.FileSystem.FileExists(SubPathV & "smi") = True Then
+                        Try
+RECOPY:
+                            My.Computer.FileSystem.CopyFile(SubPathV & "smi", My.Application.Info.DirectoryPath & "\temp\Subtitle.smi", True)
+                        Catch ex As Exception
+                            Threading.Thread.Sleep(100)
+                            RECOPY += 1
+                            Debug.Print("파일복사실패 " & RECOPY & " : " & ex.Message)
+                            If RECOPY > 1000 Then '1000번(100초) = 1분 40초
+                                Dim MessageBoxV = MessageBox.Show("File copy failed, Retry?", "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+                                If MessageBoxV = DialogResult.Yes Then
+                                    GoTo RECOPY
+                                Else
+                                    GoTo ERRSKIP
+                                End If
+                            End If
+                            GoTo RECOPY
+                        End Try
+                        SubFileExistsV = True
+                    Else
+ERRSKIP:
+                        SubFileExistsV = False
+                    End If
+
+                End If 'SMI 자막 처리 부분 End If
+
+                '---------------
+                ' 스크립트 작성
+                '---------------
+                If SubFileExistsV = True AndAlso .SubtitleCheckBox.Checked = True Then
+                    If MainFrm.EncListListView.Items(index).SubItems(2).Text = "ASS" Then
+                        If My.Computer.FileSystem.FileExists(SubPathV & "ass") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "ass" & Chr(34) & ")"
+
+                    ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SMI" Then
+                        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi") = True Then TextSubV = "TextSub(" & Chr(34) & My.Application.Info.DirectoryPath & "\temp\Subtitle.smi" & Chr(34) & ")"
+
+                    ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SRT" Then
+                        If My.Computer.FileSystem.FileExists(SubPathV & "srt") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "srt" & Chr(34) & ")"
+
+                    ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SSA" Then
+                        If My.Computer.FileSystem.FileExists(SubPathV & "ssa") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "ssa" & Chr(34) & ")"
+
+                    ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SUB" Then
+                        If My.Computer.FileSystem.FileExists(SubPathV & "sub") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "sub" & Chr(34) & ")"
+
+                    End If
+                End If
+
+            End With
         End If
 
         '------------------------
@@ -746,15 +743,14 @@ ERRSKIP:
 
         '========================================== 완료 ================================================
 
-
         '---------------------------------------
         '스크립트 변수에 저장
         '---------------------------------------
         '비디오, 오디오부분 존재 여부
         Dim AVTextBoxV As String = ""
-        If MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None" Then '비디오만 있는 경우
+        If (MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None") OrElse MainFrm.EncListListView.Items(index).SubItems(5).Text = "A_None" Then '비디오만 있는 경우
             AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
-        ElseIf MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오만 있는 경우
+        ElseIf (MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None") OrElse MainFrm.EncListListView.Items(index).SubItems(5).Text = "V_None" Then '오디오만 있는 경우
 
 
             If MainFrm.EncListListView.Items(index).SubItems(3).Text = "AC3" Then
@@ -787,29 +783,8 @@ ERRSKIP:
 
             ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "ASF" Then
 
-                AVTextBoxV = AviSynthEditorFrm.ASFTextBox.Text
-                If InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "wmv1", CompareMethod.Text) <> 0 OrElse _
-                    InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "wmv2", CompareMethod.Text) <> 0 OrElse _
-                    InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "wmv3", CompareMethod.Text) <> 0 OrElse _
-                    InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "vc1", CompareMethod.Text) <> 0 Then
-                    If InStr(SelAudioStreamStr, "wmapro", CompareMethod.Text) <> 0 OrElse _
-                        InStr(SelAudioStreamStr, "wmav1", CompareMethod.Text) <> 0 OrElse _
-                        InStr(SelAudioStreamStr, "wmav2", CompareMethod.Text) <> 0 OrElse _
-                        InStr(SelAudioStreamStr, "wmavoice", CompareMethod.Text) <> 0 Then
-                        AVTextBoxV = Replace(AVTextBoxV, "#WMVV=FFVideoSource(source=", "V=FFVideoSource(source=")
-                        AVTextBoxV = Replace(AVTextBoxV, "#WMVA=FFAudioSource(source=", "A=FFAudioSource(source=")
-                        AVTextBoxV = Replace(AVTextBoxV, "#AudioDub(V,A)", "AudioDub(V,A)")
-                    Else
-                        AVTextBoxV = Replace(AVTextBoxV, "#ASFV=FFVideoSource(source=", "V=FFVideoSource(source=")
-                        AVTextBoxV = Replace(AVTextBoxV, "#ASFA=DirectShowSource(", "A=DirectShowSource(")
-                        AVTextBoxV = Replace(AVTextBoxV, "#AudioDub(V,A)", "AudioDub(V,A)")
-                    End If
-                Else
-                    AVTextBoxV = Replace(AVTextBoxV, "#ASFV=FFVideoSource(source=", "V=FFVideoSource(source=")
-                    AVTextBoxV = Replace(AVTextBoxV, "#ASFA=DirectShowSource(", "A=DirectShowSource(")
-                    AVTextBoxV = Replace(AVTextBoxV, "#AudioDub(V,A)", "AudioDub(V,A)")
-                End If
-
+                AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+ 
             Else
 
                 AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
@@ -817,6 +792,18 @@ ERRSKIP:
             End If
 
         End If
+
+        '-----------------------------------------
+        ' SEEKMODE CHECK
+        '=========================================
+        If InStr(AVTextBoxV, "seekmode=-1", CompareMethod.Text) <> 0 Then
+            MainFrm.SEEKMODEM1B = True
+            AviSynthEditorFrm.StatusLabel.Text = "FFVideoSource: Non-linear access attempted [seekmode=-1] // Playback only"
+        Else
+            MainFrm.SEEKMODEM1B = False
+            AviSynthEditorFrm.StatusLabel.Text = ""
+        End If
+
 
         '-----------------------------------------
         ' #<coloryuv>, #<coloryuv_analyze>
@@ -847,7 +834,7 @@ ERRSKIP:
         Dim delayaudioV2 As String = "0"
 
         '(FFMSIndex)
-        If InStr(1, AVTextBoxV, "FFAudioSource", CompareMethod.Text) <> 0 OrElse InStr(1, AVTextBoxV, "FFVideoSource", CompareMethod.Text) <> 0 Then 'FFAudioSource, FFVideoSource
+        If (InStr(1, AVTextBoxV, "FFAudioSource", CompareMethod.Text) <> 0 OrElse InStr(1, AVTextBoxV, "FFVideoSource", CompareMethod.Text) <> 0) Then 'FFAudioSource, FFVideoSource
 
             '===========================
             '인덱스 생성관련
@@ -911,7 +898,7 @@ ERRSKIP:
 skip:
 
             '비디오, 오디오부분 존재 여부
-            If MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None" Then '비디오만 있는 경우
+            If (MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None") OrElse MainFrm.EncListListView.Items(index).SubItems(5).Text = "A_None" Then '비디오만 있는 경우
 
                 '오디오 부분 주석 처리
                 AVTextBoxV = Replace(AVTextBoxV, "A=FFAudioSource(source=", "#A=FFAudioSource(source=")
@@ -924,10 +911,10 @@ skip:
                 '이퀄라이저
                 AVTextBoxV = Replace(AVTextBoxV, "#<supereq>", "##<supereq>")
 
-            ElseIf MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오만 있는 경우
+            ElseIf (MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None") OrElse MainFrm.EncListListView.Items(index).SubItems(5).Text = "V_None" Then '오디오만 있는 경우
 
                 '비디오 부분
-                AVTextBoxV = Replace(AVTextBoxV, "V=FFVideoSource(source=", "V=Blankclip(length=" & Int(PlayHMSV * 25) + 1 & ", width=8,height=8, fps=25)" & vbNewLine & "#V=FFVideoSource(source=")
+                AVTextBoxV = Replace(AVTextBoxV, "V=FFVideoSource(source=", "V=Blankclip(length=" & Int(PlayHMSV * 25) + 1 & ", width=176, height=144, fps=25)" & vbNewLine & "#V=FFVideoSource(source=")
                 '크롭
                 AVTextBoxV = Replace(AVTextBoxV, "#<crop>", "##<crop>")
                 '이미지
@@ -987,16 +974,15 @@ skip:
                 delayaudioV = 0
                 'delayaudioV2 = 0
             Else
-                delayaudioV = Val(ta2v1) * -1
+                delayaudioV = ta2v1
                 'delayaudioV2 = ta2v1
             End If
             MI1.Close()
-DelayAudioSkip:
-            If Val(delayaudioV) >= 0 Then
-                AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio>", "#DelayAudio(" & delayaudioV & "/1000.0)")
-            Else
-                AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio>", "DelayAudio(" & delayaudioV & "/1000.0)")
+            If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MATROSKA" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "MATROSKA,WEBM" Then 'FFmpegSource에 의해 어드저스트 딜레이 -3 설정은 자동싱크 조절 된다. 그러므로 0.
+                delayaudioV = 0
             End If
+DelayAudioSkip:
+            AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio>", "DelayAudio(" & delayaudioV & "/1000.0)")
 
             '#<ffpp>
             Dim FFPPStr As String = ""
@@ -1409,13 +1395,14 @@ skip2:
         Dim ta2v4 As String = MI4.Get_(StreamKind.Audio, 0, "Video_Delay")
         If ta2v4 = "0" OrElse ta2v4 = "" Then
             delayaudioV2 = 0
+        Else
+            delayaudioV2 = ta2v4
         End If
         MI4.Close()
-        If Int(StartHMSV * fpsV * bobv) <= (Val(delayaudioV2) / 1000) * fpsV * bobv Then
-            AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio2>", "DelayAudio(" & delayaudioV2 & "/1000.0)")
-        Else
-            AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio2>", "#DelayAudio(" & delayaudioV2 & "/1000.0)")
+        If Int(StartHMSV * fpsV * bobv) > (Val(delayaudioV2) / 1000) * fpsV * bobv Then
+            delayaudioV2 = 0
         End If
+        AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio2>", "DelayAudio(" & delayaudioV2 & "/1000.0)")
 
         '------------------------
         '영상

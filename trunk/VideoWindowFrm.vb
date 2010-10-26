@@ -112,7 +112,9 @@ Public Class VideoWindowFrm
             PLAYVL = False
             '---------------
             '새로고침
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+            'SEEKMODE 체크
+            If MainFrm.SEEKMODEM1B = True Then Throw New Exception(AviSynthEditorFrm.StatusLabel.Text)
             '열기
             OPEN_SUB()
             '재생여부

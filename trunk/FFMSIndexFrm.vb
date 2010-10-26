@@ -317,7 +317,6 @@ LANG_SKIP:
 
     Private Sub TLabelTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TLabelTimer.Tick
 
-        Dim Sec As Single
         Dim Minute As Single
         Dim Hour As Single
         Dim hmsValue As String = ""
@@ -326,13 +325,12 @@ LANG_SKIP:
         If NowTimeSec < 0 Then Exit Sub
 
         If NowTimeSec < 60 Then
-            Sec = NowTimeSec
             If NowTimeSec < 0 Then
                 hmsValue = "00:" & "00:" & "00.00"
             ElseIf NowTimeSec < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(Sec, "0.00")
+                hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
             Else
-                hmsValue = "00:" & "00:" & Format(Sec, "0.00")
+                hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")
             End If
         End If
 
