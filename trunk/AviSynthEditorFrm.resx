@@ -121,13 +121,31 @@
     <value>0, 473</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ToolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 17</value>
+  </data>
+  <data name="ToolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 17</value>
+  </data>
+  <data name="ToolStripStatusLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 17</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LineColToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LineColToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 17</value>
+  </data>
+  <data name="LineColToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
   <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 473</value>
   </data>
   <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>864, 22</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
@@ -145,24 +163,6 @@
   </data>
   <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="ToolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 17</value>
-  </data>
-  <data name="ToolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 17</value>
-  </data>
-  <data name="ToolStripStatusLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 17</value>
-  </data>
-  <data name="LineColToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LineColToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 17</value>
-  </data>
-  <data name="LineColToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="FFmpegSourceTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -201,180 +201,6 @@
   <data name="&gt;&gt;FFmpegSourceTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;ConPanel.Name" xml:space="preserve">
-    <value>ConPanel</value>
-  </data>
-  <data name="&gt;&gt;ConPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ConPanel.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;ConPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SubSButton.Name" xml:space="preserve">
-    <value>SubSButton</value>
-  </data>
-  <data name="&gt;&gt;SubSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SubSButton.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;SubSButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AudSButton.Name" xml:space="preserve">
-    <value>AudSButton</value>
-  </data>
-  <data name="&gt;&gt;AudSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudSButton.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;AudSButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ImgSButton.Name" xml:space="preserve">
-    <value>ImgSButton</value>
-  </data>
-  <data name="&gt;&gt;ImgSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImgSButton.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;ImgSButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 40</value>
-  </data>
-  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Name" xml:space="preserve">
-    <value>RefButton2</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Parent" xml:space="preserve">
-    <value>ConPanel</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PreviewButton.Name" xml:space="preserve">
-    <value>PreviewButton</value>
-  </data>
-  <data name="&gt;&gt;PreviewButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PreviewButton.Parent" xml:space="preserve">
-    <value>ConPanel</value>
-  </data>
-  <data name="&gt;&gt;PreviewButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ListenButton.Name" xml:space="preserve">
-    <value>ListenButton</value>
-  </data>
-  <data name="&gt;&gt;ListenButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ListenButton.Parent" xml:space="preserve">
-    <value>ConPanel</value>
-  </data>
-  <data name="&gt;&gt;ListenButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;RefButton.Name" xml:space="preserve">
-    <value>RefButton</value>
-  </data>
-  <data name="&gt;&gt;RefButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RefButton.Parent" xml:space="preserve">
-    <value>ConPanel</value>
-  </data>
-  <data name="&gt;&gt;RefButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ConPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="ConPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>425, 0</value>
-  </data>
-  <data name="ConPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>439, 40</value>
-  </data>
-  <data name="ConPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ConPanel.Name" xml:space="preserve">
-    <value>ConPanel</value>
-  </data>
-  <data name="&gt;&gt;ConPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ConPanel.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;ConPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="RefButton2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="RefButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="RefButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 9</value>
-  </data>
-  <data name="RefButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
-  </data>
-  <data name="RefButton2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="RefButton2.Text" xml:space="preserve">
-    <value>새로 고침</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Name" xml:space="preserve">
-    <value>RefButton2</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Parent" xml:space="preserve">
-    <value>ConPanel</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="PreviewButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 9</value>
   </data>
@@ -397,7 +223,7 @@
     <value>ConPanel</value>
   </data>
   <data name="&gt;&gt;PreviewButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="ListenButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 9</value>
@@ -409,7 +235,7 @@
     <value>5</value>
   </data>
   <data name="ListenButton.Text" xml:space="preserve">
-    <value>재생</value>
+    <value>미리 듣기</value>
   </data>
   <data name="&gt;&gt;ListenButton.Name" xml:space="preserve">
     <value>ListenButton</value>
@@ -421,7 +247,7 @@
     <value>ConPanel</value>
   </data>
   <data name="&gt;&gt;ListenButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="RefButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -448,7 +274,58 @@
     <value>ConPanel</value>
   </data>
   <data name="&gt;&gt;RefButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
+  </data>
+  <data name="ConPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="ConPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>534, 0</value>
+  </data>
+  <data name="ConPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 40</value>
+  </data>
+  <data name="ConPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ConPanel.Name" xml:space="preserve">
+    <value>ConPanel</value>
+  </data>
+  <data name="&gt;&gt;ConPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ConPanel.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;ConPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EtcSButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EtcSButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 9</value>
+  </data>
+  <data name="EtcSButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 25</value>
+  </data>
+  <data name="EtcSButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EtcSButton.Text" xml:space="preserve">
+    <value>기타 설정</value>
+  </data>
+  <data name="&gt;&gt;EtcSButton.Name" xml:space="preserve">
+    <value>EtcSButton</value>
+  </data>
+  <data name="&gt;&gt;EtcSButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EtcSButton.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;EtcSButton.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="SubSButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>242, 9</value>
@@ -460,7 +337,7 @@
     <value>2</value>
   </data>
   <data name="SubSButton.Text" xml:space="preserve">
-    <value>자막설정</value>
+    <value>자막 설정</value>
   </data>
   <data name="&gt;&gt;SubSButton.Name" xml:space="preserve">
     <value>SubSButton</value>
@@ -472,7 +349,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;SubSButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="AudSButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>126, 9</value>
@@ -484,7 +361,7 @@
     <value>1</value>
   </data>
   <data name="AudSButton.Text" xml:space="preserve">
-    <value>음성설정</value>
+    <value>음성 설정</value>
   </data>
   <data name="&gt;&gt;AudSButton.Name" xml:space="preserve">
     <value>AudSButton</value>
@@ -496,7 +373,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;AudSButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ImgSButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 9</value>
@@ -508,7 +385,7 @@
     <value>0</value>
   </data>
   <data name="ImgSButton.Text" xml:space="preserve">
-    <value>영상설정</value>
+    <value>영상 설정</value>
   </data>
   <data name="&gt;&gt;ImgSButton.Name" xml:space="preserve">
     <value>ImgSButton</value>
@@ -520,7 +397,64 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;ImgSButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 40</value>
+  </data>
+  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RefButton2.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="RefButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RefButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>520, 1</value>
+  </data>
+  <data name="RefButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="RefButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="RefButton2.Text" xml:space="preserve">
+    <value>새로 고침</value>
+  </data>
+  <data name="RefButton2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;RefButton2.Name" xml:space="preserve">
+    <value>RefButton2</value>
+  </data>
+  <data name="&gt;&gt;RefButton2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RefButton2.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;RefButton2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ChannelTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -686,6 +620,30 @@ Try {
   <data name="TabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="ScriptTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="ScriptTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ScriptTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="ScriptTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ScriptTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="ScriptTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="ScriptTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="ScriptTextBox.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;ScriptTextBox.Name" xml:space="preserve">
     <value>ScriptTextBox</value>
   </data>
@@ -750,6 +708,7 @@ AudioDub(V,A)
 #&lt;delayaudio&gt;
 #&lt;channel&gt;
 #&lt;crop&gt;
+#&lt;turn&gt;
 #&lt;image&gt;
 ConvertToYV12()
 #&lt;coloryuv&gt;
@@ -761,7 +720,8 @@ ConvertToYV12()
 #&lt;normalize&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
-#&lt;audio_analyze&gt;</value>
+#&lt;audio_analyze&gt;
+#&lt;rate&gt;</value>
   </data>
   <data name="Def_FFmpegSourceTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -835,462 +795,6 @@ ConvertToYV12()
   <data name="&gt;&gt;FFmpegSourceTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Name" xml:space="preserve">
-    <value>DirectShowSourceLabel</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Parent" xml:space="preserve">
-    <value>DirectShowSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Name" xml:space="preserve">
-    <value>Def_DirectShowSourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Parent" xml:space="preserve">
-    <value>DirectShowSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_DirectShowSourceTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTextBox.Name" xml:space="preserve">
-    <value>DirectShowSourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTextBox.Parent" xml:space="preserve">
-    <value>DirectShowSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="DirectShowSourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="DirectShowSourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 336</value>
-  </data>
-  <data name="DirectShowSourceTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="DirectShowSourceTabPage.Text" xml:space="preserve">
-    <value>DirectShowSource</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTabPage.Name" xml:space="preserve">
-    <value>DirectShowSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Name" xml:space="preserve">
-    <value>MPEG2SourceLabel</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Parent" xml:space="preserve">
-    <value>MPEG2SourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Name" xml:space="preserve">
-    <value>Def_MPEG2SourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Parent" xml:space="preserve">
-    <value>MPEG2SourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_MPEG2SourceTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTextBox.Name" xml:space="preserve">
-    <value>MPEG2SourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTextBox.Parent" xml:space="preserve">
-    <value>MPEG2SourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="MPEG2SourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="MPEG2SourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 336</value>
-  </data>
-  <data name="MPEG2SourceTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="MPEG2SourceTabPage.Text" xml:space="preserve">
-    <value>MPEG2Source</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTabPage.Name" xml:space="preserve">
-    <value>MPEG2SourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Name" xml:space="preserve">
-    <value>AVCLabel</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Name" xml:space="preserve">
-    <value>Def_AVCTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.Name" xml:space="preserve">
-    <value>AVCTextBox</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AVCTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="AVCTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 336</value>
-  </data>
-  <data name="AVCTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="AVCTabPage.Text" xml:space="preserve">
-    <value>MPEG/MPEGTS(AVC)</value>
-  </data>
-  <data name="&gt;&gt;AVCTabPage.Name" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;AVCTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVCTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;AVCTabPage.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Name" xml:space="preserve">
-    <value>VC1Label</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Name" xml:space="preserve">
-    <value>Def_VC1TextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Name" xml:space="preserve">
-    <value>VC1TextBox</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="VC1TabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="VC1TabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 336</value>
-  </data>
-  <data name="VC1TabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="VC1TabPage.Text" xml:space="preserve">
-    <value>MPEG/MPEGTS(VC1)</value>
-  </data>
-  <data name="&gt;&gt;VC1TabPage.Name" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;VC1TabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VC1TabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;VC1TabPage.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Name" xml:space="preserve">
-    <value>BassAudioLabel</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Parent" xml:space="preserve">
-    <value>BassAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_BassAudioTextBox.Name" xml:space="preserve">
-    <value>Def_BassAudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_BassAudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_BassAudioTextBox.Parent" xml:space="preserve">
-    <value>BassAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_BassAudioTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTextBox.Name" xml:space="preserve">
-    <value>BassAudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTextBox.Parent" xml:space="preserve">
-    <value>BassAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="BassAudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="BassAudioTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="BassAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 336</value>
-  </data>
-  <data name="BassAudioTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="BassAudioTabPage.Text" xml:space="preserve">
-    <value>BassAudio</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTabPage.Name" xml:space="preserve">
-    <value>BassAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTabPage.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Name" xml:space="preserve">
-    <value>NicAudioLabel</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Parent" xml:space="preserve">
-    <value>NicAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_NicAudioTextBox.Name" xml:space="preserve">
-    <value>Def_NicAudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_NicAudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_NicAudioTextBox.Parent" xml:space="preserve">
-    <value>NicAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_NicAudioTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTextBox.Name" xml:space="preserve">
-    <value>NicAudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTextBox.Parent" xml:space="preserve">
-    <value>NicAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="NicAudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="NicAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 336</value>
-  </data>
-  <data name="NicAudioTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="NicAudioTabPage.Text" xml:space="preserve">
-    <value>NicAudio</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTabPage.Name" xml:space="preserve">
-    <value>NicAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTabPage.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Name" xml:space="preserve">
-    <value>ChannelLabel</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Parent" xml:space="preserve">
-    <value>ChannelScriptTabPage</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ChannelScriptTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="ChannelScriptTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 336</value>
-  </data>
-  <data name="ChannelScriptTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ChannelScriptTabPage.Text" xml:space="preserve">
-    <value>Channel</value>
-  </data>
-  <data name="&gt;&gt;ChannelScriptTabPage.Name" xml:space="preserve">
-    <value>ChannelScriptTabPage</value>
-  </data>
-  <data name="&gt;&gt;ChannelScriptTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChannelScriptTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;ChannelScriptTabPage.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 43</value>
-  </data>
-  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>842, 363</value>
-  </data>
-  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ScriptTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="ScriptTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ScriptTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="ScriptTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ScriptTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="ScriptTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 336</value>
-  </data>
-  <data name="ScriptTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="ScriptTextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;ScriptTextBox.Name" xml:space="preserve">
-    <value>ScriptTextBox</value>
-  </data>
-  <data name="&gt;&gt;ScriptTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ScriptTextBox.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;ScriptTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="DirectShowSourceLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1347,6 +851,7 @@ DirectShowSource("#&lt;source&gt;", fps=#&lt;fps&gt;, convertfps=true).ChangeFPS
 #&lt;deinterlace&gt;
 #&lt;channel&gt;
 #&lt;crop&gt;
+#&lt;turn&gt;
 #&lt;image&gt;
 ConvertToYV12()
 #&lt;coloryuv&gt;
@@ -1358,7 +863,8 @@ ConvertToYV12()
 #&lt;normalize&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
-#&lt;audio_analyze&gt;</value>
+#&lt;audio_analyze&gt;
+#&lt;rate&gt;</value>
   </data>
   <data name="Def_DirectShowSourceTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1412,6 +918,30 @@ ConvertToYV12()
     <value>DirectShowSourceTabPage</value>
   </data>
   <data name="&gt;&gt;DirectShowSourceTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DirectShowSourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="DirectShowSourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="DirectShowSourceTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="DirectShowSourceTabPage.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Name" xml:space="preserve">
+    <value>DirectShowSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="MPEG2SourceLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -1473,6 +1003,7 @@ AudioDub(V,A)
 #&lt;channel&gt;
 #&lt;changefps&gt;
 #&lt;crop&gt;
+#&lt;turn&gt;
 #&lt;image&gt;
 ConvertToYV12()
 #&lt;coloryuv&gt;
@@ -1484,7 +1015,8 @@ ConvertToYV12()
 #&lt;normalize&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
-#&lt;audio_analyze&gt;</value>
+#&lt;audio_analyze&gt;
+#&lt;rate&gt;</value>
   </data>
   <data name="Def_MPEG2SourceTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1539,6 +1071,30 @@ ConvertToYV12()
   </data>
   <data name="&gt;&gt;MPEG2SourceTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="MPEG2SourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="MPEG2SourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="MPEG2SourceTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="MPEG2SourceTabPage.Text" xml:space="preserve">
+    <value>MPEG2Source</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Name" xml:space="preserve">
+    <value>MPEG2SourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="AVCLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1596,6 +1152,7 @@ AudioDub(V,A)
 #&lt;delayaudio2&gt;
 #&lt;channel&gt;
 #&lt;crop&gt;
+#&lt;turn&gt;
 #&lt;image&gt;
 ConvertToYV12()
 #&lt;coloryuv&gt;
@@ -1607,7 +1164,8 @@ ConvertToYV12()
 #&lt;normalize&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
-#&lt;audio_analyze&gt;</value>
+#&lt;audio_analyze&gt;
+#&lt;rate&gt;</value>
   </data>
   <data name="Def_AVCTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1662,6 +1220,30 @@ ConvertToYV12()
   </data>
   <data name="&gt;&gt;AVCTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="AVCTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="AVCTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="AVCTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="AVCTabPage.Text" xml:space="preserve">
+    <value>MPEG/MPEGTS(AVC)</value>
+  </data>
+  <data name="&gt;&gt;AVCTabPage.Name" xml:space="preserve">
+    <value>AVCTabPage</value>
+  </data>
+  <data name="&gt;&gt;AVCTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVCTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;AVCTabPage.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="VC1Label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1719,6 +1301,7 @@ AudioDub(V,A)
 #&lt;delayaudio2&gt;
 #&lt;channel&gt;
 #&lt;crop&gt;
+#&lt;turn&gt;
 #&lt;image&gt;
 ConvertToYV12()
 #&lt;coloryuv&gt;
@@ -1730,7 +1313,8 @@ ConvertToYV12()
 #&lt;normalize&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
-#&lt;audio_analyze&gt;</value>
+#&lt;audio_analyze&gt;
+#&lt;rate&gt;</value>
   </data>
   <data name="Def_VC1TextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1785,6 +1369,30 @@ ConvertToYV12()
   </data>
   <data name="&gt;&gt;VC1TextBox.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="VC1TabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="VC1TabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="VC1TabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="VC1TabPage.Text" xml:space="preserve">
+    <value>MPEG/MPEGTS(VC1)</value>
+  </data>
+  <data name="&gt;&gt;VC1TabPage.Name" xml:space="preserve">
+    <value>VC1TabPage</value>
+  </data>
+  <data name="&gt;&gt;VC1TabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VC1TabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;VC1TabPage.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="BassAudioLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1842,7 +1450,8 @@ PointResize(176,144)
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
 ConvertToYV12()
-#&lt;audio_analyze&gt;</value>
+#&lt;audio_analyze&gt;
+#&lt;rate&gt;</value>
   </data>
   <data name="Def_BassAudioTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1897,6 +1506,33 @@ ConvertToYV12()
   </data>
   <data name="&gt;&gt;BassAudioTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="BassAudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="BassAudioTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="BassAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="BassAudioTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BassAudioTabPage.Text" xml:space="preserve">
+    <value>BassAudio</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Name" xml:space="preserve">
+    <value>BassAudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="NicAudioLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1955,7 +1591,8 @@ AudioDub(V,A)
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
 ConvertToYV12()
-#&lt;audio_analyze&gt;</value>
+#&lt;audio_analyze&gt;
+#&lt;rate&gt;</value>
   </data>
   <data name="Def_NicAudioTextBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2011,6 +1648,30 @@ ConvertToYV12()
   <data name="&gt;&gt;NicAudioTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="NicAudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="NicAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="NicAudioTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="NicAudioTabPage.Text" xml:space="preserve">
+    <value>NicAudio</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Name" xml:space="preserve">
+    <value>NicAudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="ChannelLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2038,12 +1699,90 @@ ConvertToYV12()
   <data name="&gt;&gt;ChannelLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ChannelScriptTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="ChannelScriptTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 336</value>
+  </data>
+  <data name="ChannelScriptTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ChannelScriptTabPage.Text" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.Name" xml:space="preserve">
+    <value>ChannelScriptTabPage</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 43</value>
+  </data>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>842, 363</value>
+  </data>
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="ProcessDetTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 17</value>
   </metadata>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
+  <data name="PluginToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 22</value>
+  </data>
+  <data name="PluginToolStripMenuItem.Text" xml:space="preserve">
+    <value>플러그인</value>
+  </data>
+  <data name="ToolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 22</value>
+  </data>
+  <data name="ToolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>도구</value>
+  </data>
+  <data name="FolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="FolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>폴더(&amp;F)</value>
+  </data>
+  <data name="InitializationToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="InitializationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 20</value>
+  </data>
+  <data name="InitializationToolStripMenuItem.Text" xml:space="preserve">
+    <value>스크립트 초기화</value>
+  </data>
+  <data name="PresetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
+  </data>
+  <data name="PresetToolStripMenuItem.Text" xml:space="preserve">
+    <value>프리셋</value>
+  </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2067,111 +1806,6 @@ ConvertToYV12()
   </data>
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="FolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="FolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>폴더(&amp;F)</value>
-  </data>
-  <data name="PluginToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
-  </data>
-  <data name="PluginToolStripMenuItem.Text" xml:space="preserve">
-    <value>플러그인</value>
-  </data>
-  <data name="ToolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
-  </data>
-  <data name="ToolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>도구</value>
-  </data>
-  <data name="InitializationToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="InitializationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 20</value>
-  </data>
-  <data name="InitializationToolStripMenuItem.Text" xml:space="preserve">
-    <value>스크립트 초기화</value>
-  </data>
-  <data name="PresetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
-  </data>
-  <data name="PresetToolStripMenuItem.Text" xml:space="preserve">
-    <value>프리셋</value>
-  </data>
-  <data name="&gt;&gt;StatusLabel.Name" xml:space="preserve">
-    <value>StatusLabel</value>
-  </data>
-  <data name="&gt;&gt;StatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusLabel.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;StatusLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 414</value>
-  </data>
-  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 35</value>
-  </data>
-  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AVSPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="AVSPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="AVSPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 449</value>
-  </data>
-  <data name="AVSPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Name" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="StatusLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2198,54 +1832,6 @@ ConvertToYV12()
     <value>Panel2</value>
   </data>
   <data name="&gt;&gt;StatusLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CancelBTN.Name" xml:space="preserve">
-    <value>CancelBTN</value>
-  </data>
-  <data name="&gt;&gt;CancelBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CancelBTN.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;CancelBTN.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Name" xml:space="preserve">
-    <value>OKBTN</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>626, 0</value>
-  </data>
-  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 35</value>
-  </data>
-  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
@@ -2295,6 +1881,78 @@ ConvertToYV12()
   </data>
   <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>626, 0</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 35</value>
+  </data>
+  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 414</value>
+  </data>
+  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 35</value>
+  </data>
+  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AVSPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AVSPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="AVSPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 449</value>
+  </data>
+  <data name="AVSPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Name" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

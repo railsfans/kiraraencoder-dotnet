@@ -59,10 +59,26 @@ Public Class AviSynthPP
         MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '비디오 파일용
         Else
 
-            If ImagePPFrm.AviSynthFramerateCheckBox.Checked = True Then
-                fpsV = Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(1)
+            If ImagePPFrm.AviSynthFramerateCheckBox.Checked = True Then '원본 프레임 레이트
+                Try
+                    fpsV = Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(1)
+                    If ImagePPFrm.VFR60CheckBox.Checked = True Then '원본 프레임 레이트 인코딩시 최대 60 프레임 레이트로 제한
+                        If fpsV > 60 Then fpsV = 60
+                    End If
+                Catch ex As Exception
+                    '에러나면 지정한 프레임 레이트로
+                    fpsV = ImagePPFrm.AviSynthFramerateComboBox.Text
+                End Try
             Else
-                fpsV = ImagePPFrm.AviSynthFramerateComboBox.Text
+                Try
+                    fpsV = ImagePPFrm.AviSynthFramerateComboBox.Text
+                    If ImagePPFrm.FPSDOCheckBox.Checked = True Then '선택한 fps보다 원본 파일의 fps가 작을 경우 원본 프레임 레이트 사용
+                        If Val(Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(1)) < fpsV Then fpsV = Val(Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(1))
+                    End If
+                Catch ex As Exception
+                    '에러나면 지정한 프레임 레이트로
+                    fpsV = ImagePPFrm.AviSynthFramerateComboBox.Text
+                End Try
             End If
 
             If fpsV = 14.99 OrElse fpsV = 14.985 Then
@@ -156,6 +172,13 @@ Public Class AviSynthPP
                             SourceWidthV = .AviSynthAspectWTextBox.Text
                             SourceHeightV = .AviSynthAspectHTextBox.Text
                         End If
+                        '회전
+                        If ImagePPFrm.TurnCheckBox.Checked = True AndAlso (ImagePPFrm.TurnLeftRadioButton.Checked = True OrElse ImagePPFrm.TurnRightRadioButton.Checked = True) Then
+                            Dim SourceWidthV2 = SourceWidthV
+                            SourceWidthV = SourceHeightV
+                            SourceHeightV = SourceWidthV2
+                        End If
+                        '------------------
                         '/////비율 끝
 
                         ResizeWidthV = Format((SourceWidthV / SourceHeightV / 4) * SettingSizeHeightV, 0) * 4
@@ -219,6 +242,13 @@ Public Class AviSynthPP
                             SourceWidthV = .AviSynthAspectWTextBox.Text
                             SourceHeightV = .AviSynthAspectHTextBox.Text
                         End If
+                        '회전
+                        If ImagePPFrm.TurnCheckBox.Checked = True AndAlso (ImagePPFrm.TurnLeftRadioButton.Checked = True OrElse ImagePPFrm.TurnRightRadioButton.Checked = True) Then
+                            Dim SourceWidthV2 = SourceWidthV
+                            SourceWidthV = SourceHeightV
+                            SourceHeightV = SourceWidthV2
+                        End If
+                        '------------------
                         '/////비율 끝
 
                         ResizeWidthV = Format((SourceWidthV / SourceHeightV / 4) * SettingSizeHeightV, 0) * 4
@@ -784,7 +814,7 @@ ERRSKIP:
             ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "ASF" Then
 
                 AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
- 
+
             Else
 
                 AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
@@ -1458,6 +1488,17 @@ skip2:
             '#<deinterlace>
             AVTextBoxV = Replace(AVTextBoxV, "#<deinterlace>", DeinterlaceV)
 
+            '#<turn>
+            If ImagePPFrm.TurnCheckBox.Checked = True Then
+                If ImagePPFrm.TurnLeftRadioButton.Checked = True Then
+                    AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "TurnLeft()")
+                ElseIf ImagePPFrm.TurnRightRadioButton.Checked = True Then
+                    AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "TurnRight()")
+                ElseIf ImagePPFrm.Turn180RadioButton.Checked = True Then
+                    AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "Turn180()")
+                End If
+            End If
+
         End If
 
         '------------------------
@@ -1495,6 +1536,24 @@ skip2:
             AVTextBoxV = Replace(AVTextBoxV, "#<audio_analyze>", audio_analyzeV)
 
         End If
+
+        '------------------------------------------------------------------------------------------------------------------------
+
+        '------------------------
+        ' 기타
+        '------------------------
+        '#<rate>
+        If ETCPPFrm.RateCheckBox.Checked = True Then
+            Dim rateV As String = ""
+            If ETCPPFrm.RatePCheckBox.Checked = True Then '피치보정
+                rateV = "AssumeFPS(" & fpsV & " * " & ETCPPFrm.RateNumericUpDown.Value & ").TimeStretch(tempo=100 * " & ETCPPFrm.RateNumericUpDown.Value & ").ChangeFPS(" & fpsV & ")"
+            Else
+                rateV = "AssumeFPS(" & fpsV & " * " & ETCPPFrm.RateNumericUpDown.Value & ").TimeStretch(tempo=100 * " & ETCPPFrm.RateNumericUpDown.Value & ", pitch=100 * " & ETCPPFrm.RateNumericUpDown.Value & ").ChangeFPS(" & fpsV & ")"
+            End If
+            AVTextBoxV = Replace(AVTextBoxV, "#<rate>", rateV)
+        End If
+
+
 
         '------------------------------------------------------------------------------------------------------------------------
 

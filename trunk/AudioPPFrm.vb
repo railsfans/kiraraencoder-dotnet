@@ -52,6 +52,7 @@ Public Class AudioPPFrm
         NormalizeTrackBar.Value = 100
         NormalizeNumericUpDown.Value = 1.0
         AudioASCheckBox.Checked = False
+        EQComboBox.Text = "Customize"
     End Sub
 
     Private Sub XML_LOAD(ByVal src As String)
@@ -222,6 +223,11 @@ RELOAD:
                     If XTRSTR <> "" Then AudioASCheckBox.Checked = XTRSTR Else AudioASCheckBox.Checked = False
                 End If
 
+                If XTR.Name = "AudioPPFrm_EQComboBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then EQComboBox.Text = XTRSTR Else EQComboBox.Text = "Customize"
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -233,6 +239,8 @@ RELOAD:
     End Sub
 
     Private Sub AudioPPFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        Timer1.Enabled = False
+
         If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
     End Sub
 
@@ -295,6 +303,8 @@ RELOAD:
                 If XTR.Name = "AudioPPFrmAudioASCheckBox" Then AudioASCheckBox.Text = XTR.ReadString
                 If XTR.Name = "AudioPPFrmNormalizeGroupBox" Then NormalizeGroupBox.Text = XTR.ReadString
                 If XTR.Name = "AudioPPFrmNormalizeCheckBox" Then NormalizeCheckBox.Text = XTR.ReadString
+                If XTR.Name = "AudioPPFrmLoadPresetBTN" Then LoadPresetBTN.Text = XTR.ReadString
+                If XTR.Name = "AudioPPFrmSavePresetBTN" Then SavePresetBTN.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -315,6 +325,8 @@ LANG_SKIP:
         AviSynthChComboBox.Items.Add(LangCls.AudioPPdolbypComboBox)
 
         XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+
+        Timer1.Enabled = True
 
     End Sub
 
@@ -349,78 +361,7 @@ LANG_SKIP:
         EQ16TrackBar.Value = 0
         EQ17TrackBar.Value = 0
         EQ18TrackBar.Value = 0
-    End Sub
-
-    Private Sub EQ1TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ1TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ1TrackBar, EQ1TrackBar.Value)
-    End Sub
-
-    Private Sub EQ2TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ2TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ2TrackBar, EQ2TrackBar.Value)
-    End Sub
-
-    Private Sub EQ3TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ3TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ3TrackBar, EQ3TrackBar.Value)
-    End Sub
-
-    Private Sub EQ4TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ4TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ4TrackBar, EQ4TrackBar.Value)
-    End Sub
-
-    Private Sub EQ5TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ5TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ5TrackBar, EQ5TrackBar.Value)
-    End Sub
-
-    Private Sub EQ6TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ6TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ6TrackBar, EQ6TrackBar.Value)
-    End Sub
-
-    Private Sub EQ7TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ7TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ7TrackBar, EQ7TrackBar.Value)
-    End Sub
-
-    Private Sub EQ8TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ8TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ8TrackBar, EQ8TrackBar.Value)
-    End Sub
-
-    Private Sub EQ9TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ9TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ9TrackBar, EQ9TrackBar.Value)
-    End Sub
-
-    Private Sub EQ10TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ10TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ10TrackBar, EQ10TrackBar.Value)
-    End Sub
-
-    Private Sub EQ11TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ11TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ11TrackBar, EQ11TrackBar.Value)
-    End Sub
-
-    Private Sub EQ12TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ12TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ12TrackBar, EQ12TrackBar.Value)
-    End Sub
-
-    Private Sub EQ13TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ13TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ13TrackBar, EQ13TrackBar.Value)
-    End Sub
-
-    Private Sub EQ14TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ14TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ14TrackBar, EQ14TrackBar.Value)
-    End Sub
-
-    Private Sub EQ15TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ15TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ15TrackBar, EQ15TrackBar.Value)
-    End Sub
-
-    Private Sub EQ16TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ16TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ16TrackBar, EQ16TrackBar.Value)
-    End Sub
-
-    Private Sub EQ17TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ17TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ17TrackBar, EQ17TrackBar.Value)
-    End Sub
-
-    Private Sub EQ18TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ18TrackBar.Scroll
-        EQToolTip.SetToolTip(EQ18TrackBar, EQ18TrackBar.Value)
+        EQComboBox.Text = "Customize"
     End Sub
 
     Private Sub AmplifyCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AmplifyCheckBox.CheckedChanged
@@ -476,6 +417,27 @@ LANG_SKIP:
             EQ16Label.Enabled = True
             EQ17Label.Enabled = True
             EQ18Label.Enabled = True
+            Label1.Enabled = True
+            Label2.Enabled = True
+            Label3.Enabled = True
+            Label4.Enabled = True
+            Label5.Enabled = True
+            Label6.Enabled = True
+            Label7.Enabled = True
+            Label8.Enabled = True
+            Label9.Enabled = True
+            Label10.Enabled = True
+            Label11.Enabled = True
+            Label12.Enabled = True
+            Label13.Enabled = True
+            Label14.Enabled = True
+            Label15.Enabled = True
+            Label16.Enabled = True
+            Label17.Enabled = True
+            Label18.Enabled = True
+            EQComboBox.Enabled = True
+            LoadPresetBTN.Enabled = True
+            SavePresetBTN.Enabled = True
         Else
             p20dBLabel.Enabled = False
             m20dbLabel.Enabled = False
@@ -516,6 +478,27 @@ LANG_SKIP:
             EQ16Label.Enabled = False
             EQ17Label.Enabled = False
             EQ18Label.Enabled = False
+            Label1.Enabled = False
+            Label2.Enabled = False
+            Label3.Enabled = False
+            Label4.Enabled = False
+            Label5.Enabled = False
+            Label6.Enabled = False
+            Label7.Enabled = False
+            Label8.Enabled = False
+            Label9.Enabled = False
+            Label10.Enabled = False
+            Label11.Enabled = False
+            Label12.Enabled = False
+            Label13.Enabled = False
+            Label14.Enabled = False
+            Label15.Enabled = False
+            Label16.Enabled = False
+            Label17.Enabled = False
+            Label18.Enabled = False
+            EQComboBox.Enabled = False
+            LoadPresetBTN.Enabled = False
+            SavePresetBTN.Enabled = False
         End If
     End Sub
 
@@ -556,4 +539,555 @@ LANG_SKIP:
         NormalizeTrackBar.Value = NormalizeNumericUpDown.Value * 100
     End Sub
 
+    Private Sub OpenPresetBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadPresetBTN.Click
+
+        OpenFileDialog1.FileName = ""
+        OpenFileDialog1.ShowDialog()
+        If OpenFileDialog1.FileName = "" Then Exit Sub
+
+        Using SR As StreamReader = New StreamReader(OpenFileDialog1.FileName)
+
+            Dim i As Integer = 1
+            Dim RL As String = SR.ReadLine
+
+            Do While (Not RL Is Nothing)
+
+                If i = 1 Then
+                    EQ1TrackBar.Value = RL
+                ElseIf i = 2 Then
+                    EQ2TrackBar.Value = RL
+                ElseIf i = 3 Then
+                    EQ3TrackBar.Value = RL
+                ElseIf i = 4 Then
+                    EQ4TrackBar.Value = RL
+                ElseIf i = 5 Then
+                    EQ5TrackBar.Value = RL
+                ElseIf i = 6 Then
+                    EQ6TrackBar.Value = RL
+                ElseIf i = 7 Then
+                    EQ7TrackBar.Value = RL
+                ElseIf i = 8 Then
+                    EQ8TrackBar.Value = RL
+                ElseIf i = 9 Then
+                    EQ9TrackBar.Value = RL
+                ElseIf i = 10 Then
+                    EQ10TrackBar.Value = RL
+                ElseIf i = 11 Then
+                    EQ11TrackBar.Value = RL
+                ElseIf i = 12 Then
+                    EQ12TrackBar.Value = RL
+                ElseIf i = 13 Then
+                    EQ13TrackBar.Value = RL
+                ElseIf i = 14 Then
+                    EQ14TrackBar.Value = RL
+                ElseIf i = 15 Then
+                    EQ15TrackBar.Value = RL
+                ElseIf i = 16 Then
+                    EQ16TrackBar.Value = RL
+                ElseIf i = 17 Then
+                    EQ17TrackBar.Value = RL
+                ElseIf i = 18 Then
+                    EQ18TrackBar.Value = RL
+                End If
+
+                i += 1
+                RL = SR.ReadLine
+
+            Loop
+
+        End Using
+
+        EQComboBox.Text = "Customize"
+
+    End Sub
+
+    Private Sub SavePresetBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SavePresetBTN.Click
+
+        SaveFileDialog1.FileName = ""
+        SaveFileDialog1.ShowDialog()
+        If SaveFileDialog1.FileName = "" Then Exit Sub
+
+        Dim EQV As String = ""
+        EQV = EQ1TrackBar.Value & vbNewLine & _
+                EQ2TrackBar.Value & vbNewLine & _
+                EQ3TrackBar.Value & vbNewLine & _
+                EQ4TrackBar.Value & vbNewLine & _
+                EQ5TrackBar.Value & vbNewLine & _
+                EQ6TrackBar.Value & vbNewLine & _
+                EQ7TrackBar.Value & vbNewLine & _
+                EQ8TrackBar.Value & vbNewLine & _
+                EQ9TrackBar.Value & vbNewLine & _
+                EQ10TrackBar.Value & vbNewLine & _
+                EQ11TrackBar.Value & vbNewLine & _
+                EQ12TrackBar.Value & vbNewLine & _
+                EQ13TrackBar.Value & vbNewLine & _
+                EQ14TrackBar.Value & vbNewLine & _
+                EQ15TrackBar.Value & vbNewLine & _
+                EQ16TrackBar.Value & vbNewLine & _
+                EQ17TrackBar.Value & vbNewLine & _
+                EQ18TrackBar.Value
+        Dim SW As New StreamWriter(SaveFileDialog1.FileName, False, System.Text.Encoding.Default)
+        SW.Write(EQV)
+        SW.Close()
+
+    End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Label1.Text = EQ1TrackBar.Value
+        Label2.Text = EQ2TrackBar.Value
+        Label3.Text = EQ3TrackBar.Value
+        Label4.Text = EQ4TrackBar.Value
+        Label5.Text = EQ5TrackBar.Value
+        Label6.Text = EQ6TrackBar.Value
+        Label7.Text = EQ7TrackBar.Value
+        Label8.Text = EQ8TrackBar.Value
+        Label9.Text = EQ9TrackBar.Value
+        Label10.Text = EQ10TrackBar.Value
+        Label11.Text = EQ11TrackBar.Value
+        Label12.Text = EQ12TrackBar.Value
+        Label13.Text = EQ13TrackBar.Value
+        Label14.Text = EQ14TrackBar.Value
+        Label15.Text = EQ15TrackBar.Value
+        Label16.Text = EQ16TrackBar.Value
+        Label17.Text = EQ17TrackBar.Value
+        Label18.Text = EQ18TrackBar.Value
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQComboBox.SelectedIndexChanged
+        If EQComboBox.Text = "Customize" Then
+        ElseIf EQComboBox.Text = "1965" Then
+            EQ1TrackBar.Value = -20
+            EQ2TrackBar.Value = -16
+            EQ3TrackBar.Value = -7
+            EQ4TrackBar.Value = -4
+            EQ5TrackBar.Value = -4
+            EQ6TrackBar.Value = -4
+            EQ7TrackBar.Value = -7
+            EQ8TrackBar.Value = -7
+            EQ9TrackBar.Value = 3
+            EQ10TrackBar.Value = 3
+            EQ11TrackBar.Value = -2
+            EQ12TrackBar.Value = -4
+            EQ13TrackBar.Value = 4
+            EQ14TrackBar.Value = 1
+            EQ15TrackBar.Value = 1
+            EQ16TrackBar.Value = -4
+            EQ17TrackBar.Value = -6
+            EQ18TrackBar.Value = -12
+        ElseIf EQComboBox.Text = "Air" Then
+            EQ1TrackBar.Value = 0
+            EQ2TrackBar.Value = 0
+            EQ3TrackBar.Value = 0
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = 0
+            EQ6TrackBar.Value = 0
+            EQ7TrackBar.Value = 0
+            EQ8TrackBar.Value = 0
+            EQ9TrackBar.Value = 0
+            EQ10TrackBar.Value = 0
+            EQ11TrackBar.Value = 0
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = 0
+            EQ14TrackBar.Value = 0
+            EQ15TrackBar.Value = 0
+            EQ16TrackBar.Value = 0
+            EQ17TrackBar.Value = 3
+            EQ18TrackBar.Value = 2
+        ElseIf EQComboBox.Text = "Brittle" Then
+            EQ1TrackBar.Value = -12
+            EQ2TrackBar.Value = -10
+            EQ3TrackBar.Value = -9
+            EQ4TrackBar.Value = -8
+            EQ5TrackBar.Value = -7
+            EQ6TrackBar.Value = -6
+            EQ7TrackBar.Value = -5
+            EQ8TrackBar.Value = -3
+            EQ9TrackBar.Value = -2
+            EQ10TrackBar.Value = -2
+            EQ11TrackBar.Value = -2
+            EQ12TrackBar.Value = -2
+            EQ13TrackBar.Value = -1
+            EQ14TrackBar.Value = 1
+            EQ15TrackBar.Value = 4
+            EQ16TrackBar.Value = 4
+            EQ17TrackBar.Value = 1
+            EQ18TrackBar.Value = 0
+        ElseIf EQComboBox.Text = "Car Stereo" Then
+            EQ1TrackBar.Value = -5
+            EQ2TrackBar.Value = 0
+            EQ3TrackBar.Value = 1
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = 0
+            EQ6TrackBar.Value = -4
+            EQ7TrackBar.Value = -4
+            EQ8TrackBar.Value = -5
+            EQ9TrackBar.Value = -5
+            EQ10TrackBar.Value = -5
+            EQ11TrackBar.Value = -3
+            EQ12TrackBar.Value = -2
+            EQ13TrackBar.Value = -2
+            EQ14TrackBar.Value = 0
+            EQ15TrackBar.Value = 1
+            EQ16TrackBar.Value = 0
+            EQ17TrackBar.Value = -2
+            EQ18TrackBar.Value = -5
+        ElseIf EQComboBox.Text = "Classic V" Then
+            EQ1TrackBar.Value = 5
+            EQ2TrackBar.Value = 2
+            EQ3TrackBar.Value = 0
+            EQ4TrackBar.Value = -2
+            EQ5TrackBar.Value = -5
+            EQ6TrackBar.Value = -6
+            EQ7TrackBar.Value = -8
+            EQ8TrackBar.Value = -8
+            EQ9TrackBar.Value = -7
+            EQ10TrackBar.Value = -7
+            EQ11TrackBar.Value = -4
+            EQ12TrackBar.Value = -3
+            EQ13TrackBar.Value = -1
+            EQ14TrackBar.Value = 1
+            EQ15TrackBar.Value = 3
+            EQ16TrackBar.Value = 5
+            EQ17TrackBar.Value = 5
+            EQ18TrackBar.Value = 4
+        ElseIf EQComboBox.Text = "Clear" Then
+            EQ1TrackBar.Value = 1
+            EQ2TrackBar.Value = 1
+            EQ3TrackBar.Value = 0
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = 0
+            EQ6TrackBar.Value = -3
+            EQ7TrackBar.Value = 0
+            EQ8TrackBar.Value = 0
+            EQ9TrackBar.Value = 0
+            EQ10TrackBar.Value = 0
+            EQ11TrackBar.Value = 0
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = 0
+            EQ14TrackBar.Value = 0
+            EQ15TrackBar.Value = 2
+            EQ16TrackBar.Value = 2
+            EQ17TrackBar.Value = 2
+            EQ18TrackBar.Value = 1
+        ElseIf EQComboBox.Text = "Dark" Then
+            EQ1TrackBar.Value = -6
+            EQ2TrackBar.Value = -2
+            EQ3TrackBar.Value = -2
+            EQ4TrackBar.Value = -2
+            EQ5TrackBar.Value = -2
+            EQ6TrackBar.Value = -2
+            EQ7TrackBar.Value = -2
+            EQ8TrackBar.Value = -2
+            EQ9TrackBar.Value = -2
+            EQ10TrackBar.Value = -2
+            EQ11TrackBar.Value = -2
+            EQ12TrackBar.Value = -5
+            EQ13TrackBar.Value = -8
+            EQ14TrackBar.Value = -10
+            EQ15TrackBar.Value = -12
+            EQ16TrackBar.Value = -14
+            EQ17TrackBar.Value = -18
+            EQ18TrackBar.Value = -18
+        ElseIf EQComboBox.Text = "DEATH" Then
+            EQ1TrackBar.Value = 20
+            EQ2TrackBar.Value = 17
+            EQ3TrackBar.Value = 12
+            EQ4TrackBar.Value = 8
+            EQ5TrackBar.Value = 4
+            EQ6TrackBar.Value = 0
+            EQ7TrackBar.Value = 0
+            EQ8TrackBar.Value = 0
+            EQ9TrackBar.Value = 0
+            EQ10TrackBar.Value = 0
+            EQ11TrackBar.Value = 0
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = 0
+            EQ14TrackBar.Value = 0
+            EQ15TrackBar.Value = 0
+            EQ16TrackBar.Value = 0
+            EQ17TrackBar.Value = 0
+            EQ18TrackBar.Value = 0
+        ElseIf EQComboBox.Text = "Drums" Then
+            EQ1TrackBar.Value = 2
+            EQ2TrackBar.Value = 1
+            EQ3TrackBar.Value = 0
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = 0
+            EQ6TrackBar.Value = -2
+            EQ7TrackBar.Value = 0
+            EQ8TrackBar.Value = -2
+            EQ9TrackBar.Value = 0
+            EQ10TrackBar.Value = 0
+            EQ11TrackBar.Value = 0
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = 2
+            EQ14TrackBar.Value = 0
+            EQ15TrackBar.Value = 0
+            EQ16TrackBar.Value = 3
+            EQ17TrackBar.Value = 0
+            EQ18TrackBar.Value = 0
+        ElseIf EQComboBox.Text = "Flat" Then
+            EQ1TrackBar.Value = 0
+            EQ2TrackBar.Value = 0
+            EQ3TrackBar.Value = 0
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = 0
+            EQ6TrackBar.Value = 0
+            EQ7TrackBar.Value = 0
+            EQ8TrackBar.Value = 0
+            EQ9TrackBar.Value = 0
+            EQ10TrackBar.Value = 0
+            EQ11TrackBar.Value = 0
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = 0
+            EQ14TrackBar.Value = 0
+            EQ15TrackBar.Value = 0
+            EQ16TrackBar.Value = 0
+            EQ17TrackBar.Value = 0
+            EQ18TrackBar.Value = 0
+        ElseIf EQComboBox.Text = "Home Theater" Then
+            EQ1TrackBar.Value = 5
+            EQ2TrackBar.Value = 2
+            EQ3TrackBar.Value = 0
+            EQ4TrackBar.Value = -2
+            EQ5TrackBar.Value = -3
+            EQ6TrackBar.Value = -5
+            EQ7TrackBar.Value = -6
+            EQ8TrackBar.Value = -6
+            EQ9TrackBar.Value = -5
+            EQ10TrackBar.Value = -2
+            EQ11TrackBar.Value = -1
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = -1
+            EQ14TrackBar.Value = -3
+            EQ15TrackBar.Value = 3
+            EQ16TrackBar.Value = 4
+            EQ17TrackBar.Value = 3
+            EQ18TrackBar.Value = 0
+        ElseIf EQComboBox.Text = "Loudness" Then
+            EQ1TrackBar.Value = 4
+            EQ2TrackBar.Value = 4
+            EQ3TrackBar.Value = 4
+            EQ4TrackBar.Value = 2
+            EQ5TrackBar.Value = -2
+            EQ6TrackBar.Value = -2
+            EQ7TrackBar.Value = -2
+            EQ8TrackBar.Value = -2
+            EQ9TrackBar.Value = -2
+            EQ10TrackBar.Value = -2
+            EQ11TrackBar.Value = -2
+            EQ12TrackBar.Value = -4
+            EQ13TrackBar.Value = -10
+            EQ14TrackBar.Value = -7
+            EQ15TrackBar.Value = 0
+            EQ16TrackBar.Value = 3
+            EQ17TrackBar.Value = 4
+            EQ18TrackBar.Value = 4
+        ElseIf EQComboBox.Text = "Pop" Then
+            EQ1TrackBar.Value = 6
+            EQ2TrackBar.Value = 5
+            EQ3TrackBar.Value = 3
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = -2
+            EQ6TrackBar.Value = -4
+            EQ7TrackBar.Value = -4
+            EQ8TrackBar.Value = -6
+            EQ9TrackBar.Value = -3
+            EQ10TrackBar.Value = 1
+            EQ11TrackBar.Value = 0
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = 2
+            EQ14TrackBar.Value = 1
+            EQ15TrackBar.Value = 2
+            EQ16TrackBar.Value = 4
+            EQ17TrackBar.Value = 5
+            EQ18TrackBar.Value = 6
+        ElseIf EQComboBox.Text = "Premaster" Then
+            EQ1TrackBar.Value = 0
+            EQ2TrackBar.Value = 1
+            EQ3TrackBar.Value = 3
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = -3
+            EQ6TrackBar.Value = -3
+            EQ7TrackBar.Value = 0
+            EQ8TrackBar.Value = 0
+            EQ9TrackBar.Value = 0
+            EQ10TrackBar.Value = 2
+            EQ11TrackBar.Value = 0
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = 3
+            EQ14TrackBar.Value = 0
+            EQ15TrackBar.Value = 3
+            EQ16TrackBar.Value = 1
+            EQ17TrackBar.Value = 3
+            EQ18TrackBar.Value = 2
+        ElseIf EQComboBox.Text = "Presence" Then
+            EQ1TrackBar.Value = 0
+            EQ2TrackBar.Value = 0
+            EQ3TrackBar.Value = 0
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = 0
+            EQ6TrackBar.Value = 0
+            EQ7TrackBar.Value = 0
+            EQ8TrackBar.Value = 0
+            EQ9TrackBar.Value = 0
+            EQ10TrackBar.Value = 3
+            EQ11TrackBar.Value = 5
+            EQ12TrackBar.Value = 4
+            EQ13TrackBar.Value = 3
+            EQ14TrackBar.Value = 2
+            EQ15TrackBar.Value = 0
+            EQ16TrackBar.Value = 0
+            EQ17TrackBar.Value = 0
+            EQ18TrackBar.Value = 0
+        ElseIf EQComboBox.Text = "Punch & Sparkle" Then
+            EQ1TrackBar.Value = 3
+            EQ2TrackBar.Value = 5
+            EQ3TrackBar.Value = 3
+            EQ4TrackBar.Value = -1
+            EQ5TrackBar.Value = -3
+            EQ6TrackBar.Value = -5
+            EQ7TrackBar.Value = -5
+            EQ8TrackBar.Value = -3
+            EQ9TrackBar.Value = -2
+            EQ10TrackBar.Value = 1
+            EQ11TrackBar.Value = 1
+            EQ12TrackBar.Value = 1
+            EQ13TrackBar.Value = 0
+            EQ14TrackBar.Value = 2
+            EQ15TrackBar.Value = 1
+            EQ16TrackBar.Value = 3
+            EQ17TrackBar.Value = 5
+            EQ18TrackBar.Value = 3
+        ElseIf EQComboBox.Text = "Shimmer" Then
+            EQ1TrackBar.Value = 0
+            EQ2TrackBar.Value = 0
+            EQ3TrackBar.Value = 0
+            EQ4TrackBar.Value = -2
+            EQ5TrackBar.Value = -2
+            EQ6TrackBar.Value = -7
+            EQ7TrackBar.Value = -5
+            EQ8TrackBar.Value = 0
+            EQ9TrackBar.Value = 0
+            EQ10TrackBar.Value = 0
+            EQ11TrackBar.Value = 0
+            EQ12TrackBar.Value = 0
+            EQ13TrackBar.Value = 4
+            EQ14TrackBar.Value = 1
+            EQ15TrackBar.Value = 3
+            EQ16TrackBar.Value = 3
+            EQ17TrackBar.Value = 4
+            EQ18TrackBar.Value = 0
+        ElseIf EQComboBox.Text = "Soft Bass" Then
+            EQ1TrackBar.Value = 3
+            EQ2TrackBar.Value = 5
+            EQ3TrackBar.Value = 4
+            EQ4TrackBar.Value = 0
+            EQ5TrackBar.Value = -13
+            EQ6TrackBar.Value = -7
+            EQ7TrackBar.Value = -5
+            EQ8TrackBar.Value = -5
+            EQ9TrackBar.Value = -1
+            EQ10TrackBar.Value = 2
+            EQ11TrackBar.Value = 5
+            EQ12TrackBar.Value = 1
+            EQ13TrackBar.Value = -1
+            EQ14TrackBar.Value = -1
+            EQ15TrackBar.Value = -2
+            EQ16TrackBar.Value = -7
+            EQ17TrackBar.Value = -9
+            EQ18TrackBar.Value = -14
+        ElseIf EQComboBox.Text = "Strings" Then
+            EQ1TrackBar.Value = -3
+            EQ2TrackBar.Value = -4
+            EQ3TrackBar.Value = -4
+            EQ4TrackBar.Value = -5
+            EQ5TrackBar.Value = -5
+            EQ6TrackBar.Value = -4
+            EQ7TrackBar.Value = -4
+            EQ8TrackBar.Value = -3
+            EQ9TrackBar.Value = -2
+            EQ10TrackBar.Value = -2
+            EQ11TrackBar.Value = -2
+            EQ12TrackBar.Value = -2
+            EQ13TrackBar.Value = -1
+            EQ14TrackBar.Value = 2
+            EQ15TrackBar.Value = 3
+            EQ16TrackBar.Value = 0
+            EQ17TrackBar.Value = -2
+            EQ18TrackBar.Value = -2
+        End If
+    End Sub
+
+    Private Sub EQ1TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ1TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ2TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ2TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ3TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ3TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ4TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ4TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ5TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ5TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ6TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ6TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ7TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ7TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ8TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ8TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ9TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ9TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ10TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ10TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ11TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ11TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ12TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ12TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ13TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ13TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ14TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ14TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ15TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ15TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ16TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ16TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ17TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ17TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
+
+    Private Sub EQ18TrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EQ18TrackBar.Scroll
+        EQComboBox.Text = "Customize"
+    End Sub
 End Class

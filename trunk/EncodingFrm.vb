@@ -1283,10 +1283,15 @@ Public Class EncodingFrm
                         VF_AspectV = ""
                     Else
                         If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본
-                            VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
+                            '회전
+                            If ImagePPFrm.TurnCheckBox.Checked = True AndAlso (ImagePPFrm.TurnLeftRadioButton.Checked = True OrElse ImagePPFrm.TurnRightRadioButton.Checked = True) Then
+                                VF_AspectV = ", aspect=" & Val(OriginH) - _TopCV - _BottomCV & ":" & Val(OriginW) - _LeftCV - _RightCV
+                            Else
+                                VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
+                            End If
                         Else
                             VF_AspectV = ", aspect=" & ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & ":" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
-                        End If
+                    End If
                     End If
 
                 Else
@@ -1454,7 +1459,7 @@ Public Class EncodingFrm
             End If
 
             '---------------------------------
-            ' FFmpeg 프레임레이트 지정(VBR전용)
+            ' FFmpeg 프레임 레이트 지정(VBR전용)
             '=================================
             Dim FramerateStr As String = ""
             If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안함

@@ -2567,7 +2567,15 @@ RELOAD:
             Exit Sub
         End If
 
-        '=================================
+        '========================
+        '짝수로 저장//
+        If Val(ImageSizeWidthTextBox.Text) Mod 2 <> 0 Then
+            ImageSizeWidthTextBox.Text += 1
+        End If
+        If Val(ImageSizeHeightTextBox.Text) Mod 2 <> 0 Then
+            ImageSizeHeightTextBox.Text += 1
+        End If
+        '========================
 
         MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
 
@@ -2863,10 +2871,72 @@ RELOAD:
             SizeEncTextBox.Enabled = True
             SizeEncMBLabel.Enabled = True
             SizeEncGBLabel.Enabled = True
+            SizeButton.Enabled = True
         Else
             SizeEncTextBox.Enabled = False
             SizeEncMBLabel.Enabled = False
             SizeEncGBLabel.Enabled = False
+            SizeButton.Enabled = False
         End If
+    End Sub
+
+    Private Sub CD175MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CD175MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "175"
+    End Sub
+
+    Private Sub CD350MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CD350MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "350"
+    End Sub
+
+    Private Sub CD700MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CD700MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "700"
+    End Sub
+
+    Private Sub CDs1400MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CDs1400MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "1400"
+    End Sub
+
+    Private Sub CDs2100MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CDs2100MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "2100"
+    End Sub
+
+    Private Sub DVD896MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DVD896MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "896"
+    End Sub
+
+    Private Sub DVD1120MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DVD1120MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "1120"
+    End Sub
+
+    Private Sub DVD1492MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DVD1492MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "1492"
+    End Sub
+
+    Private Sub DVD2240MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DVD2240MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "2240"
+    End Sub
+
+    Private Sub DVDOrBD54480MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DVDOrBD54480MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "4480"
+    End Sub
+
+    Private Sub DVD6720MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DVD6720MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "6720"
+    End Sub
+
+    Private Sub DVDDLOrBD98145MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DVDDLOrBD98145MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "8145"
+    End Sub
+
+    Private Sub BD23450MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BD23450MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "23450"
+    End Sub
+
+    Private Sub BDDL46900MBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BDDL46900MBToolStripMenuItem.Click
+        SizeEncTextBox.Text = "46900"
+    End Sub
+
+    Private Sub SizeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SizeButton.Click
+        TargetContextMenuStrip.Show(Control.MousePosition)
     End Sub
 End Class

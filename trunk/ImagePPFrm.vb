@@ -105,6 +105,13 @@ Public Class ImagePPFrm
                 If XTR.Name = "ImagePP169AviSynthAspectComboBox2" Then LangCls.ImagePP169AviSynthAspectComboBox2 = XTR.ReadString
                 If XTR.Name = "ImagePP1851AviSynthAspectComboBox2" Then LangCls.ImagePP1851AviSynthAspectComboBox2 = XTR.ReadString
                 If XTR.Name = "ImagePP2351AviSynthAspectComboBox2" Then LangCls.ImagePP2351AviSynthAspectComboBox2 = XTR.ReadString
+                If XTR.Name = "ImagePPFrmVFR60CheckBox" Then VFR60CheckBox.Text = XTR.ReadString
+                If XTR.Name = "ImagePPFrmFPSDOCheckBox" Then FPSDOCheckBox.Text = XTR.ReadString
+                If XTR.Name = "ImagePPFrmTurnGroupBox" Then TurnGroupBox.Text = XTR.ReadString
+                If XTR.Name = "ImagePPFrmTurnCheckBox" Then TurnCheckBox.Text = XTR.ReadString
+                If XTR.Name = "ImagePPFrmTurnLeftRadioButton" Then TurnLeftRadioButton.Text = XTR.ReadString
+                If XTR.Name = "ImagePPFrmTurnRightRadioButton" Then TurnRightRadioButton.Text = XTR.ReadString
+                If XTR.Name = "ImagePPFrmTurn180RadioButton" Then Turn180RadioButton.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -175,7 +182,7 @@ RELOAD:
 
                 If XTR.Name = "ImagePPFrm_AviSynthFramerateComboBox" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then AviSynthFramerateComboBox.Text = XTRSTR Else AviSynthFramerateComboBox.Text = "23.976"
+                    If XTRSTR <> "" Then AviSynthFramerateComboBox.Text = XTRSTR Else AviSynthFramerateComboBox.Text = "30"
                 End If
 
                 If XTR.Name = "ImagePPFrm_AviSynthFramerateCheckBox" Then
@@ -390,6 +397,36 @@ RELOAD:
                 If XTR.Name = "ImagePPFrm_FFPP_dr_CheckBox" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then FFPP_dr_CheckBox.Checked = XTRSTR Else FFPP_dr_CheckBox.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_VFR60CheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then VFR60CheckBox.Checked = XTRSTR Else VFR60CheckBox.Checked = True
+                End If
+
+                If XTR.Name = "ImagePPFrm_FPSDOCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FPSDOCheckBox.Checked = XTRSTR Else FPSDOCheckBox.Checked = True
+                End If
+
+                If XTR.Name = "ImagePPFrm_TurnCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then TurnCheckBox.Checked = XTRSTR Else TurnCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_TurnLeftRadioButton" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then TurnLeftRadioButton.Checked = XTRSTR Else TurnLeftRadioButton.Checked = True
+                End If
+
+                If XTR.Name = "ImagePPFrm_TurnRightRadioButton" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then TurnRightRadioButton.Checked = XTRSTR Else TurnRightRadioButton.Checked = False
+                End If
+
+                If XTR.Name = "ImagePPFrm_Turn180RadioButton" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then Turn180RadioButton.Checked = XTRSTR Else Turn180RadioButton.Checked = False
                 End If
 
             Loop
@@ -691,7 +728,7 @@ RELOAD:
     End Sub
 
     Private Sub DefBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefBTN.Click
-        AviSynthFramerateComboBox.Text = "23.976"
+        AviSynthFramerateComboBox.Text = "30"
         AviSynthFramerateCheckBox.Checked = False
         AviSynthImageSizeComboBox.Text = "480 x 272"
         AviSynthImageSizeWidthTextBox.Text = "480"
@@ -723,10 +760,26 @@ RELOAD:
         FFPP_h1_CheckBox.Checked = False
         FFPP_v1_CheckBox.Checked = False
         FFPP_dr_CheckBox.Checked = False
+        VFR60CheckBox.Checked = True
+        FPSDOCheckBox.Checked = True
+        TurnCheckBox.Checked = False
+        TurnLeftRadioButton.Checked = True
+        TurnRightRadioButton.Checked = False
+        Turn180RadioButton.Checked = False
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
         OKBTNCLK = True
+
+        '========================
+        '짝수로 저장//
+        If Val(AviSynthImageSizeWidthTextBox.Text) Mod 2 <> 0 Then
+            AviSynthImageSizeWidthTextBox.Text += 1
+        End If
+        If Val(AviSynthImageSizeHeightTextBox.Text) Mod 2 <> 0 Then
+            AviSynthImageSizeHeightTextBox.Text += 1
+        End If
+        '========================
 
         MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
 
@@ -746,9 +799,13 @@ RELOAD:
         If AviSynthFramerateCheckBox.Checked = True Then
             AviSynthFramerateLabel.Enabled = False
             AviSynthFramerateComboBox.Enabled = False
+            VFR60CheckBox.Enabled = True
+            FPSDOCheckBox.Enabled = False
         Else
             AviSynthFramerateLabel.Enabled = True
             AviSynthFramerateComboBox.Enabled = True
+            VFR60CheckBox.Enabled = False
+            FPSDOCheckBox.Enabled = True
         End If
 
 
@@ -765,5 +822,17 @@ RELOAD:
 
     Private Sub AviSynthFramerateComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AviSynthFramerateComboBox.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub TurnCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TurnCheckBox.CheckedChanged
+        If TurnCheckBox.Checked = True Then
+            TurnLeftRadioButton.Enabled = True
+            TurnRightRadioButton.Enabled = True
+            Turn180RadioButton.Enabled = True
+        Else
+            TurnLeftRadioButton.Enabled = False
+            TurnRightRadioButton.Enabled = False
+            Turn180RadioButton.Enabled = False
+        End If
     End Sub
 End Class

@@ -63,6 +63,11 @@ Partial Class ImagePPFrm
         Me.OKBTN = New System.Windows.Forms.Button
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.IPP_Panel = New System.Windows.Forms.Panel
+        Me.TurnGroupBox = New System.Windows.Forms.GroupBox
+        Me.TurnCheckBox = New System.Windows.Forms.CheckBox
+        Me.Turn180RadioButton = New System.Windows.Forms.RadioButton
+        Me.TurnRightRadioButton = New System.Windows.Forms.RadioButton
+        Me.TurnLeftRadioButton = New System.Windows.Forms.RadioButton
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.AviSynthDeinterlaceCheckBox = New System.Windows.Forms.CheckBox
@@ -81,6 +86,8 @@ Partial Class ImagePPFrm
         Me.FieldorderComboBox = New System.Windows.Forms.ComboBox
         Me.AVSMPEG2DeinterlaceComboBox = New System.Windows.Forms.ComboBox
         Me.AviSynthFramerateGroupBox = New System.Windows.Forms.GroupBox
+        Me.FPSDOCheckBox = New System.Windows.Forms.CheckBox
+        Me.VFR60CheckBox = New System.Windows.Forms.CheckBox
         Me.AviSynthFramerateCheckBox = New System.Windows.Forms.CheckBox
         Me.AviSynthFramerateLabel = New System.Windows.Forms.Label
         Me.AviSynthFramerateComboBox = New System.Windows.Forms.ComboBox
@@ -97,6 +104,7 @@ Partial Class ImagePPFrm
         CType(Me.brightnessTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AviSynthImageGroupBox.SuspendLayout()
         Me.IPP_Panel.SuspendLayout()
+        Me.TurnGroupBox.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.AviSynthFramerateGroupBox.SuspendLayout()
@@ -391,6 +399,7 @@ Partial Class ImagePPFrm
         '
         'IPP_Panel
         '
+        Me.IPP_Panel.Controls.Add(Me.TurnGroupBox)
         Me.IPP_Panel.Controls.Add(Me.GroupBox2)
         Me.IPP_Panel.Controls.Add(Me.GroupBox1)
         Me.IPP_Panel.Controls.Add(Me.AviSynthFramerateGroupBox)
@@ -401,6 +410,43 @@ Partial Class ImagePPFrm
         Me.IPP_Panel.Controls.Add(Me.CancelBTN)
         resources.ApplyResources(Me.IPP_Panel, "IPP_Panel")
         Me.IPP_Panel.Name = "IPP_Panel"
+        '
+        'TurnGroupBox
+        '
+        Me.TurnGroupBox.Controls.Add(Me.TurnCheckBox)
+        Me.TurnGroupBox.Controls.Add(Me.Turn180RadioButton)
+        Me.TurnGroupBox.Controls.Add(Me.TurnRightRadioButton)
+        Me.TurnGroupBox.Controls.Add(Me.TurnLeftRadioButton)
+        resources.ApplyResources(Me.TurnGroupBox, "TurnGroupBox")
+        Me.TurnGroupBox.Name = "TurnGroupBox"
+        Me.TurnGroupBox.TabStop = False
+        '
+        'TurnCheckBox
+        '
+        resources.ApplyResources(Me.TurnCheckBox, "TurnCheckBox")
+        Me.TurnCheckBox.Name = "TurnCheckBox"
+        Me.TurnCheckBox.UseVisualStyleBackColor = True
+        '
+        'Turn180RadioButton
+        '
+        resources.ApplyResources(Me.Turn180RadioButton, "Turn180RadioButton")
+        Me.Turn180RadioButton.Name = "Turn180RadioButton"
+        Me.Turn180RadioButton.TabStop = True
+        Me.Turn180RadioButton.UseVisualStyleBackColor = True
+        '
+        'TurnRightRadioButton
+        '
+        resources.ApplyResources(Me.TurnRightRadioButton, "TurnRightRadioButton")
+        Me.TurnRightRadioButton.Name = "TurnRightRadioButton"
+        Me.TurnRightRadioButton.TabStop = True
+        Me.TurnRightRadioButton.UseVisualStyleBackColor = True
+        '
+        'TurnLeftRadioButton
+        '
+        resources.ApplyResources(Me.TurnLeftRadioButton, "TurnLeftRadioButton")
+        Me.TurnLeftRadioButton.Name = "TurnLeftRadioButton"
+        Me.TurnLeftRadioButton.TabStop = True
+        Me.TurnLeftRadioButton.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -524,12 +570,26 @@ Partial Class ImagePPFrm
         '
         'AviSynthFramerateGroupBox
         '
+        Me.AviSynthFramerateGroupBox.Controls.Add(Me.FPSDOCheckBox)
+        Me.AviSynthFramerateGroupBox.Controls.Add(Me.VFR60CheckBox)
         Me.AviSynthFramerateGroupBox.Controls.Add(Me.AviSynthFramerateCheckBox)
         Me.AviSynthFramerateGroupBox.Controls.Add(Me.AviSynthFramerateLabel)
         Me.AviSynthFramerateGroupBox.Controls.Add(Me.AviSynthFramerateComboBox)
         resources.ApplyResources(Me.AviSynthFramerateGroupBox, "AviSynthFramerateGroupBox")
         Me.AviSynthFramerateGroupBox.Name = "AviSynthFramerateGroupBox"
         Me.AviSynthFramerateGroupBox.TabStop = False
+        '
+        'FPSDOCheckBox
+        '
+        resources.ApplyResources(Me.FPSDOCheckBox, "FPSDOCheckBox")
+        Me.FPSDOCheckBox.Name = "FPSDOCheckBox"
+        Me.FPSDOCheckBox.UseVisualStyleBackColor = True
+        '
+        'VFR60CheckBox
+        '
+        resources.ApplyResources(Me.VFR60CheckBox, "VFR60CheckBox")
+        Me.VFR60CheckBox.Name = "VFR60CheckBox"
+        Me.VFR60CheckBox.UseVisualStyleBackColor = True
         '
         'AviSynthFramerateCheckBox
         '
@@ -576,6 +636,8 @@ Partial Class ImagePPFrm
         Me.AviSynthImageGroupBox.ResumeLayout(False)
         Me.AviSynthImageGroupBox.PerformLayout()
         Me.IPP_Panel.ResumeLayout(False)
+        Me.TurnGroupBox.ResumeLayout(False)
+        Me.TurnGroupBox.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -646,4 +708,11 @@ Partial Class ImagePPFrm
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents FFPP_dr_CheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents FPSDOCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents VFR60CheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents TurnGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents TurnRightRadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents TurnLeftRadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents Turn180RadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents TurnCheckBox As System.Windows.Forms.CheckBox
 End Class

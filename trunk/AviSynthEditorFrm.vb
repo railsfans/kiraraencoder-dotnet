@@ -25,6 +25,7 @@ Imports System.Xml
 Public Class AviSynthEditorFrm
 
     Dim OKBTNCLK As Boolean = False
+    Dim ListenButtonSTR As String = ""
 
     'wait
     Public waitbool As Boolean = False
@@ -109,37 +110,14 @@ Public Class AviSynthEditorFrm
         End If
 
         If shellpid <> 0 Then
-
-            Dim FormC As String = Me.Text
-            For i = 0 To 6 'Timeout=6000// 6초간 대기
-
-                Me.Text = FormC & " " & i & " To 6 [ 6 = Force Kill ]"
-
-                If i > 0 Then
-                    Threading.Thread.Sleep(1000)
-                End If
-                Try
-                    If Process.GetProcessById(shellpid).HasExited = False Then
-                        Process.GetProcessById(shellpid).CloseMainWindow()
-                    End If
-                Catch ex As Exception
-                    GoTo skip
-                End Try
-                Debug.Print(i)
-            Next
-
-            '프로세스 종료
             Try
                 If Process.GetProcessById(shellpid).HasExited = False Then
                     Process.GetProcessById(shellpid).Kill()
                 End If
             Catch ex As Exception
             End Try
-
         End If
-
-skip:
-
+        
         Do Until VideoWindowFrm.Visible = False
             VideoWindowFrm.Close()
         Loop
@@ -278,12 +256,16 @@ RELOAD:
                 If XTR.Name = "AviSynthEditorFrmImgSButton" Then ImgSButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmAudSButton" Then AudSButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmSubSButton" Then SubSButton.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmEtcSButton" Then etcSButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmPreviewButton" Then PreviewButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmRefButton" Then
                     RefButton.Text = XTR.ReadString
                     RefButton2.Text = RefButton.Text
                 End If
-                If XTR.Name = "AviSynthEditorFrmListenButton" Then ListenButton.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmListenButton" Then
+                    ListenButtonSTR = XTR.ReadString
+                    ListenButton.Text = ListenButtonSTR
+                End If
                 If XTR.Name = "AviSynthEditorFrmFFmpegSourceLabel" Then FFmpegSourceLabel.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmMPEG2SourceLabel" Then MPEG2SourceLabel.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmBassAudioLabel" Then BassAudioLabel.Text = XTR.ReadString
@@ -303,6 +285,7 @@ RELOAD:
 LANG_SKIP:
         '=========================================
 
+        StatusLabel.Text = ""
         AVS_XML_LOAD(My.Application.Info.DirectoryPath & "\avs_settings.xml")
 
     End Sub
@@ -331,7 +314,17 @@ LANG_SKIP:
                 _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs")
                 _AviSynthClip.IDisposable_Dispose()
                 Dim MSGB As String = ""
-                MSGB = My.Application.Info.DirectoryPath & "\KiraraPlayer.exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs" & Chr(34)
+
+                If MainFrm.SEEKMODEM1B = True Then
+                    ListenButton.Text = "Playback"
+                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs" & Chr(34) & _
+                    " -identify -noquiet -nofontconfig -vo direct3d"
+                Else
+                    ListenButton.Text = ListenButtonSTR
+                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs" & Chr(34) & _
+                    " -identify -noquiet -nofontconfig -novideo"
+                End If
+
                 shellpid = Shell(MSGB, AppWinStyle.NormalFocus)
                 ProcessDetTimer.Enabled = True
             End If
@@ -677,5 +670,14 @@ LANG_SKIP:
         HWNDV = WinAPI.FindWindowW(vbNullString, Process.GetProcessById(shellpid).MainWindowTitle)
         WinAPI.PostMessageW(HWNDV, WinAPI.WM_KEYDOWN, Keys.F5, 0&)
         RefButton2.Enabled = True
+    End Sub
+
+    Private Sub ETCButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EtcSButton.Click
+
+        Try
+            ETCPPFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+
     End Sub
 End Class

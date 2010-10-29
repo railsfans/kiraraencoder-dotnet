@@ -121,488 +121,11 @@
   <data name="TPrePanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;LoadingLabel.Name" xml:space="preserve">
-    <value>LoadingLabel</value>
-  </data>
-  <data name="&gt;&gt;LoadingLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LoadingLabel.Parent" xml:space="preserve">
-    <value>InTPrePanel</value>
-  </data>
-  <data name="&gt;&gt;LoadingLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PrePanel.Name" xml:space="preserve">
-    <value>PrePanel</value>
-  </data>
-  <data name="&gt;&gt;PrePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PrePanel.Parent" xml:space="preserve">
-    <value>InTPrePanel</value>
-  </data>
-  <data name="&gt;&gt;PrePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;OutputBox_Stream.Name" xml:space="preserve">
-    <value>OutputBox_Stream</value>
-  </data>
-  <data name="&gt;&gt;OutputBox_Stream.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OutputBox_Stream.Parent" xml:space="preserve">
-    <value>InTPrePanel</value>
-  </data>
-  <data name="&gt;&gt;OutputBox_Stream.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="InTPrePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="InTPrePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="InTPrePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 40</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="InTPrePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="&gt;&gt;InTPrePanel.Name" xml:space="preserve">
-    <value>InTPrePanel</value>
-  </data>
-  <data name="&gt;&gt;InTPrePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InTPrePanel.Parent" xml:space="preserve">
-    <value>TPrePanel</value>
-  </data>
-  <data name="&gt;&gt;InTPrePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SizeTextBox.Name" xml:space="preserve">
-    <value>SizeTextBox</value>
-  </data>
-  <data name="&gt;&gt;SizeTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeTextBox.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SizeLabel.Name" xml:space="preserve">
-    <value>SizeLabel</value>
-  </data>
-  <data name="&gt;&gt;SizeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeLabel.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RightLabel.Name" xml:space="preserve">
-    <value>RightLabel</value>
-  </data>
-  <data name="&gt;&gt;RightLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RightLabel.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RightLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;BottomLabel.Name" xml:space="preserve">
-    <value>BottomLabel</value>
-  </data>
-  <data name="&gt;&gt;BottomLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BottomLabel.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;BottomLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;TopLabel.Name" xml:space="preserve">
-    <value>TopLabel</value>
-  </data>
-  <data name="&gt;&gt;TopLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TopLabel.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;TopLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LeftLabel.Name" xml:space="preserve">
-    <value>LeftLabel</value>
-  </data>
-  <data name="&gt;&gt;LeftLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LeftLabel.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LeftLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;RightNumericUpDown.Name" xml:space="preserve">
-    <value>RightNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;RightNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RightNumericUpDown.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RightNumericUpDown.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;TopNumericUpDown.Name" xml:space="preserve">
-    <value>TopNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;TopNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TopNumericUpDown.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;TopNumericUpDown.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;BottomNumericUpDown.Name" xml:space="preserve">
-    <value>BottomNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;BottomNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BottomNumericUpDown.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;BottomNumericUpDown.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;LeftNumericUpDown.Name" xml:space="preserve">
-    <value>LeftNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LeftNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LeftNumericUpDown.Parent" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LeftNumericUpDown.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="CropGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="CropGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 40</value>
-  </data>
-  <data name="CropGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 88</value>
-  </data>
-  <data name="CropGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="CropGroupBox.Text" xml:space="preserve">
-    <value>잘라내기</value>
-  </data>
-  <data name="CropGroupBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;CropGroupBox.Name" xml:space="preserve">
-    <value>CropGroupBox</value>
-  </data>
-  <data name="&gt;&gt;CropGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CropGroupBox.Parent" xml:space="preserve">
-    <value>TPrePanel</value>
-  </data>
-  <data name="&gt;&gt;CropGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EMSTextBox.Name" xml:space="preserve">
-    <value>EMSTextBox</value>
-  </data>
-  <data name="&gt;&gt;EMSTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EMSTextBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EMSTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SMSTextBox.Name" xml:space="preserve">
-    <value>SMSTextBox</value>
-  </data>
-  <data name="&gt;&gt;SMSTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SMSTextBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SMSTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ESTextBox.Name" xml:space="preserve">
-    <value>ESTextBox</value>
-  </data>
-  <data name="&gt;&gt;ESTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ESTextBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ESTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;SSTextBox.Name" xml:space="preserve">
-    <value>SSTextBox</value>
-  </data>
-  <data name="&gt;&gt;SSTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SSTextBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SSTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ENDCKButton.Name" xml:space="preserve">
-    <value>ENDCKButton</value>
-  </data>
-  <data name="&gt;&gt;ENDCKButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ENDCKButton.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ENDCKButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;STRCKButton.Name" xml:space="preserve">
-    <value>STRCKButton</value>
-  </data>
-  <data name="&gt;&gt;STRCKButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;STRCKButton.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;STRCKButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;EP3Label.Name" xml:space="preserve">
-    <value>EP3Label</value>
-  </data>
-  <data name="&gt;&gt;EP3Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EP3Label.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EP3Label.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;EP2Label.Name" xml:space="preserve">
-    <value>EP2Label</value>
-  </data>
-  <data name="&gt;&gt;EP2Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EP2Label.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EP2Label.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;EMTextBox.Name" xml:space="preserve">
-    <value>EMTextBox</value>
-  </data>
-  <data name="&gt;&gt;EMTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EMTextBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EMTextBox.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;EP1Label.Name" xml:space="preserve">
-    <value>EP1Label</value>
-  </data>
-  <data name="&gt;&gt;EP1Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EP1Label.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EP1Label.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;EHTextBox.Name" xml:space="preserve">
-    <value>EHTextBox</value>
-  </data>
-  <data name="&gt;&gt;EHTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EHTextBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EHTextBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;ECheckBox.Name" xml:space="preserve">
-    <value>ECheckBox</value>
-  </data>
-  <data name="&gt;&gt;ECheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ECheckBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ECheckBox.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;SP3Label.Name" xml:space="preserve">
-    <value>SP3Label</value>
-  </data>
-  <data name="&gt;&gt;SP3Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SP3Label.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SP3Label.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;SP2Label.Name" xml:space="preserve">
-    <value>SP2Label</value>
-  </data>
-  <data name="&gt;&gt;SP2Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SP2Label.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SP2Label.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;SMTextBox.Name" xml:space="preserve">
-    <value>SMTextBox</value>
-  </data>
-  <data name="&gt;&gt;SMTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SMTextBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SMTextBox.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;SP1Label.Name" xml:space="preserve">
-    <value>SP1Label</value>
-  </data>
-  <data name="&gt;&gt;SP1Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SP1Label.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SP1Label.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;SHTextBox.Name" xml:space="preserve">
-    <value>SHTextBox</value>
-  </data>
-  <data name="&gt;&gt;SHTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SHTextBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SHTextBox.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;SCheckBox.Name" xml:space="preserve">
-    <value>SCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SCheckBox.Parent" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SCheckBox.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="TimeSpGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="TimeSpGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 128</value>
-  </data>
-  <data name="TimeSpGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 88</value>
-  </data>
-  <data name="TimeSpGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="TimeSpGroupBox.Text" xml:space="preserve">
-    <value>구간 설정</value>
-  </data>
-  <data name="TimeSpGroupBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;TimeSpGroupBox.Name" xml:space="preserve">
-    <value>TimeSpGroupBox</value>
-  </data>
-  <data name="&gt;&gt;TimeSpGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TimeSpGroupBox.Parent" xml:space="preserve">
-    <value>TPrePanel</value>
-  </data>
-  <data name="&gt;&gt;TimeSpGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TPrePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 22</value>
-  </data>
-  <data name="TPrePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 216</value>
-  </data>
-  <data name="TPrePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TPrePanel.Name" xml:space="preserve">
-    <value>TPrePanel</value>
-  </data>
-  <data name="&gt;&gt;TPrePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPrePanel.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
-  </data>
-  <data name="&gt;&gt;TPrePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="LoadingLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LoadingLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 20pt</value>
   </data>
@@ -635,90 +158,6 @@
   </data>
   <data name="PrePanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;RightPanel.Name" xml:space="preserve">
-    <value>RightPanel</value>
-  </data>
-  <data name="&gt;&gt;RightPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RightPanel.Parent" xml:space="preserve">
-    <value>PrePanel</value>
-  </data>
-  <data name="&gt;&gt;RightPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LeftPanel.Name" xml:space="preserve">
-    <value>LeftPanel</value>
-  </data>
-  <data name="&gt;&gt;LeftPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LeftPanel.Parent" xml:space="preserve">
-    <value>PrePanel</value>
-  </data>
-  <data name="&gt;&gt;LeftPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;BottomPanel.Name" xml:space="preserve">
-    <value>BottomPanel</value>
-  </data>
-  <data name="&gt;&gt;BottomPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BottomPanel.Parent" xml:space="preserve">
-    <value>PrePanel</value>
-  </data>
-  <data name="&gt;&gt;BottomPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;TopPanel.Name" xml:space="preserve">
-    <value>TopPanel</value>
-  </data>
-  <data name="&gt;&gt;TopPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TopPanel.Parent" xml:space="preserve">
-    <value>PrePanel</value>
-  </data>
-  <data name="&gt;&gt;TopPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;PrePanel1.Name" xml:space="preserve">
-    <value>PrePanel1</value>
-  </data>
-  <data name="&gt;&gt;PrePanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PrePanel1.Parent" xml:space="preserve">
-    <value>PrePanel</value>
-  </data>
-  <data name="&gt;&gt;PrePanel1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="PrePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PrePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 17</value>
-  </data>
-  <data name="PrePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="PrePanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;PrePanel.Name" xml:space="preserve">
-    <value>PrePanel</value>
-  </data>
-  <data name="&gt;&gt;PrePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PrePanel.Parent" xml:space="preserve">
-    <value>InTPrePanel</value>
-  </data>
-  <data name="&gt;&gt;PrePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="RightPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -840,6 +279,30 @@
   <data name="&gt;&gt;PrePanel1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="PrePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PrePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 17</value>
+  </data>
+  <data name="PrePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="PrePanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PrePanel.Name" xml:space="preserve">
+    <value>PrePanel</value>
+  </data>
+  <data name="&gt;&gt;PrePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PrePanel.Parent" xml:space="preserve">
+    <value>InTPrePanel</value>
+  </data>
+  <data name="&gt;&gt;PrePanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="OutputBox_Stream.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -872,6 +335,30 @@
   </data>
   <data name="&gt;&gt;OutputBox_Stream.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="InTPrePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="InTPrePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="InTPrePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 40</value>
+  </data>
+  <data name="InTPrePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;InTPrePanel.Name" xml:space="preserve">
+    <value>InTPrePanel</value>
+  </data>
+  <data name="&gt;&gt;InTPrePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InTPrePanel.Parent" xml:space="preserve">
+    <value>TPrePanel</value>
+  </data>
+  <data name="&gt;&gt;InTPrePanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="SizeTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>282, 48</value>
@@ -1130,6 +617,36 @@
   </data>
   <data name="&gt;&gt;LeftNumericUpDown.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="CropGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="CropGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 40</value>
+  </data>
+  <data name="CropGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 88</value>
+  </data>
+  <data name="CropGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="CropGroupBox.Text" xml:space="preserve">
+    <value>잘라내기</value>
+  </data>
+  <data name="CropGroupBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;CropGroupBox.Name" xml:space="preserve">
+    <value>CropGroupBox</value>
+  </data>
+  <data name="&gt;&gt;CropGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CropGroupBox.Parent" xml:space="preserve">
+    <value>TPrePanel</value>
+  </data>
+  <data name="&gt;&gt;CropGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="EMSTextBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1677,104 +1194,74 @@
   <data name="&gt;&gt;SCheckBox.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <data name="TimeSpGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="TimeSpGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 128</value>
+  </data>
+  <data name="TimeSpGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 88</value>
+  </data>
+  <data name="TimeSpGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="TimeSpGroupBox.Text" xml:space="preserve">
+    <value>구간 설정</value>
+  </data>
+  <data name="TimeSpGroupBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TimeSpGroupBox.Name" xml:space="preserve">
+    <value>TimeSpGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TimeSpGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimeSpGroupBox.Parent" xml:space="preserve">
+    <value>TPrePanel</value>
+  </data>
+  <data name="&gt;&gt;TimeSpGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TPrePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 22</value>
+  </data>
+  <data name="TPrePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 216</value>
+  </data>
+  <data name="TPrePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TPrePanel.Name" xml:space="preserve">
+    <value>TPrePanel</value>
+  </data>
+  <data name="&gt;&gt;TPrePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPrePanel.Parent" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TPrePanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="PreviewGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;PreviewPanel.Name" xml:space="preserve">
-    <value>PreviewPanel</value>
+  <data name="VolTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;PreviewPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="VolTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;PreviewPanel.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+  <data name="VolTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 3</value>
   </data>
-  <data name="&gt;&gt;PreviewPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="VolTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 26</value>
   </data>
-  <data name="PreviewGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 29</value>
-  </data>
-  <data name="PreviewGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 317</value>
-  </data>
-  <data name="PreviewGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="PreviewGroupBox.Text" xml:space="preserve">
-    <value>원본 파일 보기</value>
-  </data>
-  <data name="&gt;&gt;PreviewGroupBox.Name" xml:space="preserve">
-    <value>PreviewGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PreviewGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PreviewGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PreviewGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Panel5.Name" xml:space="preserve">
-    <value>Panel5</value>
-  </data>
-  <data name="&gt;&gt;Panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel5.Parent" xml:space="preserve">
-    <value>PreviewPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
-    <value>PreviewPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SeekTrackBar.Name" xml:space="preserve">
-    <value>SeekTrackBar</value>
-  </data>
-  <data name="&gt;&gt;SeekTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SeekTrackBar.Parent" xml:space="preserve">
-    <value>PreviewPanel</value>
-  </data>
-  <data name="&gt;&gt;SeekTrackBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PreviewPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PreviewPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 244</value>
-  </data>
-  <data name="PreviewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 70</value>
-  </data>
-  <data name="PreviewPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;PreviewPanel.Name" xml:space="preserve">
-    <value>PreviewPanel</value>
-  </data>
-  <data name="&gt;&gt;PreviewPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PreviewPanel.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PreviewPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="VolTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
   </data>
   <data name="&gt;&gt;VolTrackBar.Name" xml:space="preserve">
     <value>VolTrackBar</value>
@@ -1812,212 +1299,8 @@
   <data name="&gt;&gt;Panel5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="VolTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="VolTrackBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="VolTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 3</value>
-  </data>
-  <data name="VolTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 26</value>
-  </data>
-  <data name="VolTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;VolTrackBar.Name" xml:space="preserve">
-    <value>VolTrackBar</value>
-  </data>
-  <data name="&gt;&gt;VolTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VolTrackBar.Parent" xml:space="preserve">
-    <value>Panel5</value>
-  </data>
-  <data name="&gt;&gt;VolTrackBar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Name" xml:space="preserve">
-    <value>Panel4</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PlayPauseBTN.Name" xml:space="preserve">
-    <value>PlayPauseBTN</value>
-  </data>
-  <data name="&gt;&gt;PlayPauseBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PlayPauseBTN.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;PlayPauseBTN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ForwardBTN.Name" xml:space="preserve">
-    <value>ForwardBTN</value>
-  </data>
-  <data name="&gt;&gt;ForwardBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ForwardBTN.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;ForwardBTN.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;BackwardBTN.Name" xml:space="preserve">
-    <value>BackwardBTN</value>
-  </data>
-  <data name="&gt;&gt;BackwardBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BackwardBTN.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;BackwardBTN.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;StopBTN.Name" xml:space="preserve">
-    <value>StopBTN</value>
-  </data>
-  <data name="&gt;&gt;StopBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StopBTN.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;StopBTN.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;FrameStepButton.Name" xml:space="preserve">
-    <value>FrameStepButton</value>
-  </data>
-  <data name="&gt;&gt;FrameStepButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FrameStepButton.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;FrameStepButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 34</value>
-  </data>
-  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 36</value>
-  </data>
-  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
-    <value>PreviewPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="Panel4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;TPanel.Name" xml:space="preserve">
-    <value>TPanel</value>
-  </data>
-  <data name="&gt;&gt;TPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPanel.Parent" xml:space="preserve">
-    <value>Panel4</value>
-  </data>
-  <data name="&gt;&gt;TPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 0</value>
-  </data>
-  <data name="Panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 41</value>
-  </data>
-  <data name="Panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Name" xml:space="preserve">
-    <value>Panel4</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel4.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Nowhms.Name" xml:space="preserve">
-    <value>Nowhms</value>
-  </data>
-  <data name="&gt;&gt;Nowhms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Nowhms.Parent" xml:space="preserve">
-    <value>TPanel</value>
-  </data>
-  <data name="&gt;&gt;Nowhms.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Totalhms.Name" xml:space="preserve">
-    <value>Totalhms</value>
-  </data>
-  <data name="&gt;&gt;Totalhms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Totalhms.Parent" xml:space="preserve">
-    <value>TPanel</value>
-  </data>
-  <data name="&gt;&gt;Totalhms.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="TPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 6</value>
-  </data>
-  <data name="TPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 35</value>
-  </data>
-  <data name="TPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;TPanel.Name" xml:space="preserve">
-    <value>TPanel</value>
-  </data>
-  <data name="&gt;&gt;TPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPanel.Parent" xml:space="preserve">
-    <value>Panel4</value>
-  </data>
-  <data name="&gt;&gt;TPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="Nowhms.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2090,6 +1373,51 @@
   </data>
   <data name="&gt;&gt;Totalhms.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="TPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="TPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 6</value>
+  </data>
+  <data name="TPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 35</value>
+  </data>
+  <data name="TPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;TPanel.Name" xml:space="preserve">
+    <value>TPanel</value>
+  </data>
+  <data name="&gt;&gt;TPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPanel.Parent" xml:space="preserve">
+    <value>Panel4</value>
+  </data>
+  <data name="&gt;&gt;TPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 0</value>
+  </data>
+  <data name="Panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 41</value>
+  </data>
+  <data name="Panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Name" xml:space="preserve">
+    <value>Panel4</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="PlayPauseBTN.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 0</value>
@@ -2223,6 +1551,30 @@
   <data name="&gt;&gt;FrameStepButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>402, 36</value>
+  </data>
+  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>PreviewPanel</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="SeekTrackBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2252,6 +1604,54 @@
   </data>
   <data name="&gt;&gt;SeekTrackBar.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="PreviewPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PreviewPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 244</value>
+  </data>
+  <data name="PreviewPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>402, 70</value>
+  </data>
+  <data name="PreviewPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;PreviewPanel.Name" xml:space="preserve">
+    <value>PreviewPanel</value>
+  </data>
+  <data name="&gt;&gt;PreviewPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PreviewPanel.Parent" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;PreviewPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PreviewGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 29</value>
+  </data>
+  <data name="PreviewGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 317</value>
+  </data>
+  <data name="PreviewGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="PreviewGroupBox.Text" xml:space="preserve">
+    <value>원본 파일 보기</value>
+  </data>
+  <data name="&gt;&gt;PreviewGroupBox.Name" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;PreviewGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PreviewGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PreviewGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="BackwardTimerM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
@@ -2301,6 +1701,21 @@
   <data name="StreamSelGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="AudioComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="AudioComboBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="AudioComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 21</value>
+  </data>
+  <data name="AudioComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>385, 22</value>
+  </data>
+  <data name="AudioComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;AudioComboBox.Name" xml:space="preserve">
     <value>AudioComboBox</value>
   </data>
@@ -2337,132 +1752,9 @@
   <data name="&gt;&gt;StreamSelGroupBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="AudioComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="AudioComboBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="AudioComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 21</value>
-  </data>
-  <data name="AudioComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 22</value>
-  </data>
-  <data name="AudioComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AudioComboBox.Name" xml:space="preserve">
-    <value>AudioComboBox</value>
-  </data>
-  <data name="&gt;&gt;AudioComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioComboBox.Parent" xml:space="preserve">
-    <value>StreamSelGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="SeekTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>651, 17</value>
   </metadata>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
-    <value>BPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="BPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="BPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 353</value>
-  </data>
-  <data name="BPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 99</value>
-  </data>
-  <data name="BPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;BPanel.Name" xml:space="preserve">
-    <value>BPanel</value>
-  </data>
-  <data name="&gt;&gt;BPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;BPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CropButton.Name" xml:space="preserve">
-    <value>CropButton</value>
-  </data>
-  <data name="&gt;&gt;CropButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CropButton.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;CropButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TimeSpButton.Name" xml:space="preserve">
-    <value>TimeSpButton</value>
-  </data>
-  <data name="&gt;&gt;TimeSpButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TimeSpButton.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;TimeSpButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Name" xml:space="preserve">
-    <value>Panel6</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 62</value>
-  </data>
-  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 37</value>
-  </data>
-  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
-    <value>BPanel</value>
-  </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="CropButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>117, 1</value>
   </data>
@@ -2510,54 +1802,6 @@
   </data>
   <data name="&gt;&gt;TimeSpButton.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;CancelBTN.Name" xml:space="preserve">
-    <value>CancelBTN</value>
-  </data>
-  <data name="&gt;&gt;CancelBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CancelBTN.Parent" xml:space="preserve">
-    <value>Panel6</value>
-  </data>
-  <data name="&gt;&gt;CancelBTN.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Name" xml:space="preserve">
-    <value>OKBTN</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Parent" xml:space="preserve">
-    <value>Panel6</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 0</value>
-  </data>
-  <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 37</value>
-  </data>
-  <data name="Panel6.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Name" xml:space="preserve">
-    <value>Panel6</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel6.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 1</value>
@@ -2607,39 +1851,81 @@
   <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Panel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 0</value>
+  </data>
+  <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 37</value>
+  </data>
+  <data name="Panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Name" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 62</value>
+  </data>
+  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 37</value>
+  </data>
+  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>BPanel</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="BPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 353</value>
+  </data>
+  <data name="BPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 99</value>
+  </data>
+  <data name="BPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;BPanel.Name" xml:space="preserve">
+    <value>BPanel</value>
+  </data>
+  <data name="&gt;&gt;BPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
-  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 24</value>
-  </data>
-  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="MenuStrip1.Text" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="OptsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
-  </data>
-  <data name="OptsToolStripMenuItem.Text" xml:space="preserve">
-    <value>재생옵션(&amp;O)</value>
-  </data>
   <data name="AllChToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
   </data>
@@ -2712,6 +1998,12 @@
   <data name="FFmpegDeinterlacerToolStripMenuItem.Text" xml:space="preserve">
     <value>FFmpeg 디인터레이스</value>
   </data>
+  <data name="OptsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 20</value>
+  </data>
+  <data name="OptsToolStripMenuItem.Text" xml:space="preserve">
+    <value>재생옵션(&amp;O)</value>
+  </data>
   <data name="SpDfToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 20</value>
   </data>
@@ -2739,12 +2031,45 @@
   <data name="SpeedXVToolStripMenuItem.Text" xml:space="preserve">
     <value>1.0x</value>
   </data>
+  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 24</value>
+  </data>
+  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="MenuStrip1.Text" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1023, 17</value>
   </metadata>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 452</value>
   </metadata>
+  <data name="ToolStripStatusLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="ToolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 17</value>
+  </data>
+  <data name="ToolStripStatusLabel1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
   <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 452</value>
   </data>
@@ -2768,15 +2093,6 @@
   </data>
   <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="ToolStripStatusLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 9pt</value>
-  </data>
-  <data name="ToolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 17</value>
-  </data>
-  <data name="ToolStripStatusLabel1.Text" xml:space="preserve">
-    <value>-</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

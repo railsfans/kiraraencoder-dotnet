@@ -22,6 +22,7 @@ Partial Class EncSetFrm
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EncSetFrm))
         Me.EncSetPanel = New System.Windows.Forms.Panel
         Me.OutFGroupBox = New System.Windows.Forms.GroupBox
@@ -153,6 +154,7 @@ Partial Class EncSetFrm
         Me.NeroAACProfileLabel = New System.Windows.Forms.Label
         Me.ETCTabPage = New System.Windows.Forms.TabPage
         Me.SizeEncGroupBox = New System.Windows.Forms.GroupBox
+        Me.SizeButton = New System.Windows.Forms.Button
         Me.SizeEncGBLabel = New System.Windows.Forms.Label
         Me.SizeEncMBLabel = New System.Windows.Forms.Label
         Me.SizeEncTextBox = New System.Windows.Forms.TextBox
@@ -173,6 +175,21 @@ Partial Class EncSetFrm
         Me.ExtensionLabel = New System.Windows.Forms.Label
         Me.HeaderTextBox = New System.Windows.Forms.TextBox
         Me.HeaderLabel = New System.Windows.Forms.Label
+        Me.TargetContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.CD175MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.CD350MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.CD700MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.CDs1400MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.CDs2100MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DVD896MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DVD1120MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DVD1492MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DVD2240MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DVDOrBD54480MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DVD6720MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DVDDLOrBD98145MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.BD23450MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.BDDL46900MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.EncSetPanel.SuspendLayout()
         Me.OutFGroupBox.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
@@ -228,6 +245,7 @@ Partial Class EncSetFrm
         Me.FFmpegCommandGroupBox.SuspendLayout()
         Me.SizeLimitGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
+        Me.TargetContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncSetPanel
@@ -1196,6 +1214,7 @@ Partial Class EncSetFrm
         '
         'SizeEncGroupBox
         '
+        Me.SizeEncGroupBox.Controls.Add(Me.SizeButton)
         Me.SizeEncGroupBox.Controls.Add(Me.SizeEncGBLabel)
         Me.SizeEncGroupBox.Controls.Add(Me.SizeEncMBLabel)
         Me.SizeEncGroupBox.Controls.Add(Me.SizeEncTextBox)
@@ -1204,6 +1223,12 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.SizeEncGroupBox, "SizeEncGroupBox")
         Me.SizeEncGroupBox.Name = "SizeEncGroupBox"
         Me.SizeEncGroupBox.TabStop = False
+        '
+        'SizeButton
+        '
+        resources.ApplyResources(Me.SizeButton, "SizeButton")
+        Me.SizeButton.Name = "SizeButton"
+        Me.SizeButton.UseVisualStyleBackColor = True
         '
         'SizeEncGBLabel
         '
@@ -1326,6 +1351,82 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.HeaderLabel, "HeaderLabel")
         Me.HeaderLabel.Name = "HeaderLabel"
         '
+        'TargetContextMenuStrip
+        '
+        Me.TargetContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CD175MBToolStripMenuItem, Me.CD350MBToolStripMenuItem, Me.CD700MBToolStripMenuItem, Me.CDs1400MBToolStripMenuItem, Me.CDs2100MBToolStripMenuItem, Me.DVD896MBToolStripMenuItem, Me.DVD1120MBToolStripMenuItem, Me.DVD1492MBToolStripMenuItem, Me.DVD2240MBToolStripMenuItem, Me.DVDOrBD54480MBToolStripMenuItem, Me.DVD6720MBToolStripMenuItem, Me.DVDDLOrBD98145MBToolStripMenuItem, Me.BD23450MBToolStripMenuItem, Me.BDDL46900MBToolStripMenuItem})
+        Me.TargetContextMenuStrip.Name = "TargetContextMenuStrip"
+        resources.ApplyResources(Me.TargetContextMenuStrip, "TargetContextMenuStrip")
+        '
+        'CD175MBToolStripMenuItem
+        '
+        Me.CD175MBToolStripMenuItem.Name = "CD175MBToolStripMenuItem"
+        resources.ApplyResources(Me.CD175MBToolStripMenuItem, "CD175MBToolStripMenuItem")
+        '
+        'CD350MBToolStripMenuItem
+        '
+        Me.CD350MBToolStripMenuItem.Name = "CD350MBToolStripMenuItem"
+        resources.ApplyResources(Me.CD350MBToolStripMenuItem, "CD350MBToolStripMenuItem")
+        '
+        'CD700MBToolStripMenuItem
+        '
+        Me.CD700MBToolStripMenuItem.Name = "CD700MBToolStripMenuItem"
+        resources.ApplyResources(Me.CD700MBToolStripMenuItem, "CD700MBToolStripMenuItem")
+        '
+        'CDs1400MBToolStripMenuItem
+        '
+        Me.CDs1400MBToolStripMenuItem.Name = "CDs1400MBToolStripMenuItem"
+        resources.ApplyResources(Me.CDs1400MBToolStripMenuItem, "CDs1400MBToolStripMenuItem")
+        '
+        'CDs2100MBToolStripMenuItem
+        '
+        Me.CDs2100MBToolStripMenuItem.Name = "CDs2100MBToolStripMenuItem"
+        resources.ApplyResources(Me.CDs2100MBToolStripMenuItem, "CDs2100MBToolStripMenuItem")
+        '
+        'DVD896MBToolStripMenuItem
+        '
+        Me.DVD896MBToolStripMenuItem.Name = "DVD896MBToolStripMenuItem"
+        resources.ApplyResources(Me.DVD896MBToolStripMenuItem, "DVD896MBToolStripMenuItem")
+        '
+        'DVD1120MBToolStripMenuItem
+        '
+        Me.DVD1120MBToolStripMenuItem.Name = "DVD1120MBToolStripMenuItem"
+        resources.ApplyResources(Me.DVD1120MBToolStripMenuItem, "DVD1120MBToolStripMenuItem")
+        '
+        'DVD1492MBToolStripMenuItem
+        '
+        Me.DVD1492MBToolStripMenuItem.Name = "DVD1492MBToolStripMenuItem"
+        resources.ApplyResources(Me.DVD1492MBToolStripMenuItem, "DVD1492MBToolStripMenuItem")
+        '
+        'DVD2240MBToolStripMenuItem
+        '
+        Me.DVD2240MBToolStripMenuItem.Name = "DVD2240MBToolStripMenuItem"
+        resources.ApplyResources(Me.DVD2240MBToolStripMenuItem, "DVD2240MBToolStripMenuItem")
+        '
+        'DVDOrBD54480MBToolStripMenuItem
+        '
+        Me.DVDOrBD54480MBToolStripMenuItem.Name = "DVDOrBD54480MBToolStripMenuItem"
+        resources.ApplyResources(Me.DVDOrBD54480MBToolStripMenuItem, "DVDOrBD54480MBToolStripMenuItem")
+        '
+        'DVD6720MBToolStripMenuItem
+        '
+        Me.DVD6720MBToolStripMenuItem.Name = "DVD6720MBToolStripMenuItem"
+        resources.ApplyResources(Me.DVD6720MBToolStripMenuItem, "DVD6720MBToolStripMenuItem")
+        '
+        'DVDDLOrBD98145MBToolStripMenuItem
+        '
+        Me.DVDDLOrBD98145MBToolStripMenuItem.Name = "DVDDLOrBD98145MBToolStripMenuItem"
+        resources.ApplyResources(Me.DVDDLOrBD98145MBToolStripMenuItem, "DVDDLOrBD98145MBToolStripMenuItem")
+        '
+        'BD23450MBToolStripMenuItem
+        '
+        Me.BD23450MBToolStripMenuItem.Name = "BD23450MBToolStripMenuItem"
+        resources.ApplyResources(Me.BD23450MBToolStripMenuItem, "BD23450MBToolStripMenuItem")
+        '
+        'BDDL46900MBToolStripMenuItem
+        '
+        Me.BDDL46900MBToolStripMenuItem.Name = "BDDL46900MBToolStripMenuItem"
+        resources.ApplyResources(Me.BDDL46900MBToolStripMenuItem, "BDDL46900MBToolStripMenuItem")
+        '
         'EncSetFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -1410,6 +1511,7 @@ Partial Class EncSetFrm
         Me.SizeLimitGroupBox.PerformLayout()
         Me.NameGroupBox.ResumeLayout(False)
         Me.NameGroupBox.PerformLayout()
+        Me.TargetContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1563,4 +1665,20 @@ Partial Class EncSetFrm
     Friend WithEvents SizeEncTextBox As System.Windows.Forms.TextBox
     Friend WithEvents SizeEncLabel As System.Windows.Forms.Label
     Friend WithEvents SizeEncCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents SizeButton As System.Windows.Forms.Button
+    Friend WithEvents TargetContextMenuStrip As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents CD175MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CD350MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CD700MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CDs1400MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CDs2100MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DVD896MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DVD1120MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DVD1492MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DVD2240MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DVDOrBD54480MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DVD6720MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DVDDLOrBD98145MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BD23450MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BDDL46900MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -805,7 +805,7 @@ Public Class MainFrm
                 If XTR.Name = "MainFileSame" Then LangCls.MainFileSame = XTR.ReadString
                 If XTR.Name = "MainFileNotFound" Then LangCls.MainFileNotFound = XTR.ReadString
                 If XTR.Name = "MainFileSizeIsTooLow" Then LangCls.MainFileSizeIsTooLow = XTR.ReadString
-               
+
             Loop
         Catch ex As Exception
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
@@ -1131,6 +1131,28 @@ LANG_SKIP:
             '---------------------------------
             ' 영상 사이즈
             '=================================
+            '잘라내기값
+            Dim LeftCV, TopCV, RightCV, BottomCV, SourceWidthV, SourceHeightV As Integer
+            Try
+                LeftCV = Split(EncListListView.Items(index).SubItems(15).Text, ",")(0)
+                TopCV = Split(EncListListView.Items(index).SubItems(15).Text, ",")(1)
+                RightCV = Split(EncListListView.Items(index).SubItems(15).Text, ",")(2)
+                BottomCV = Split(EncListListView.Items(index).SubItems(15).Text, ",")(3)
+            Catch ex As Exception
+                LeftCV = 0
+                TopCV = 0
+                RightCV = 0
+                BottomCV = 0
+            End Try
+            '원본사이즈
+            Try
+                SourceWidthV = Split(Split(EncListListView.Items(index).SubItems(12).Text, ",")(0), "x")(0)
+                SourceHeightV = Split(Split(EncListListView.Items(index).SubItems(12).Text, ",")(0), "x")(1)
+            Catch ex As Exception
+                SourceWidthV = 0
+                SourceHeightV = 0
+            End Try
+
             If AVSCheckBox.Checked = True Then 'AviSynth 사용
                 If EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
                 EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
@@ -1138,8 +1160,14 @@ LANG_SKIP:
                 Else
                     If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본영상사이즈
                         Try
-                            ImageSizeV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(0)
+                            '회전
+                            If ImagePPFrm.TurnCheckBox.Checked = True AndAlso (ImagePPFrm.TurnLeftRadioButton.Checked = True OrElse ImagePPFrm.TurnRightRadioButton.Checked = True) Then
+                                ImageSizeV = (SourceHeightV - TopCV - BottomCV) & "x" & (SourceWidthV - LeftCV - RightCV)
+                            Else
+                                ImageSizeV = (SourceWidthV - LeftCV - RightCV) & "x" & (SourceHeightV - TopCV - BottomCV)
+                            End If
                         Catch ex As Exception
+                            ImageSizeV = "ERR"
                         End Try
                     Else
                         ImageSizeV = ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & "x" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
@@ -1148,8 +1176,9 @@ LANG_SKIP:
             Else
                 If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본영상사이즈
                     Try
-                        ImageSizeV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(0)
+                        ImageSizeV = (SourceWidthV - LeftCV - RightCV) & "x" & (SourceHeightV - TopCV - BottomCV)
                     Catch ex As Exception
+                        ImageSizeV = "ERR"
                     End Try
                 Else
                     ImageSizeV = EncSetFrm.ImageSizeWidthTextBox.Text & "x" & EncSetFrm.ImageSizeHeightTextBox.Text
@@ -1205,7 +1234,7 @@ LANG_SKIP:
                 End If
             End If
             '---------------------------------
-            ' 프레임레이트
+            ' 프레임 레이트
             '=================================
             If AVSCheckBox.Checked = True Then 'AviSynth 사용
                 Dim bobv As Integer = 1
@@ -1227,13 +1256,34 @@ LANG_SKIP:
                 EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
                     ImageFramerateV = "25 fps" & bobstr
                 Else
-                    If ImagePPFrm.AviSynthFramerateCheckBox.Checked = True Then
+                    If ImagePPFrm.AviSynthFramerateCheckBox.Checked = True Then '원본 프레임 레이트
                         Try
                             ImageFramerateV = (Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) * bobv) & " fps" & bobstr
+
+                            If ImagePPFrm.VFR60CheckBox.Checked = True Then '원본 프레임 레이트 인코딩시 최대 60 프레임 레이트로 제한
+                                If (Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) * bobv) > (60 * bobv) Then
+                                    ImageFramerateV = (60 * bobv) & " fps" & bobstr
+                                End If
+                            End If
                         Catch ex As Exception
+                            '에러나면 지정한 프레임 레이트로
+                            ImageFramerateV = (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) & " fps" & bobstr
                         End Try
                     Else
-                        ImageFramerateV = (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) & " fps" & bobstr
+                        Try
+                            ImageFramerateV = (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) & " fps" & bobstr
+
+                            If ImagePPFrm.FPSDOCheckBox.Checked = True Then '선택한 fps보다 원본 파일의 fps가 작을 경우 원본 프레임 레이트 사용
+                                If (Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) * bobv) < (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) Then
+                                    ImageFramerateV = (Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) * bobv) & " fps" & bobstr
+                                Else
+                                    ImageFramerateV = (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) & " fps" & bobstr
+                                End If
+                            End If
+                        Catch ex As Exception
+                            '에러나면 지정한 프레임 레이트로
+                            ImageFramerateV = (Val(ImagePPFrm.AviSynthFramerateComboBox.Text) * bobv) & " fps" & bobstr
+                        End Try
                     End If
                 End If
 
@@ -1560,7 +1610,7 @@ LANG_SKIP:
             MsgBox("Kirara Encoder is not supported on this operating system.")
             Close()
         Else
-            If Environment.OSVersion.Version.Major < 5 Then '윈도우 2000 이상의 운영체제가 아닐경우
+            If (Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0) OrElse Environment.OSVersion.Version.Major < 5 Then '윈도우 XP 이상의 운영체제가 아닐경우
                 MsgBox("Kirara Encoder is not supported on this operating system.")
                 Close()
             End If
@@ -2591,13 +2641,14 @@ UAC:
             .NormalizeTrackBar.Value = 100
             .NormalizeNumericUpDown.Value = 1.0
             .AudioASCheckBox.Checked = False
+            .EQComboBox.Text = "Customize"
 
         End With
 
         '//////////////////////////////////////////////////////////// ImagePPFrm
         With ImagePPFrm
 
-            .AviSynthFramerateComboBox.Text = "23.976"
+            .AviSynthFramerateComboBox.Text = "30"
             .AviSynthFramerateCheckBox.Checked = False
             .AviSynthImageSizeComboBox.Text = "480 x 272"
             .AviSynthImageSizeWidthTextBox.Text = "480"
@@ -2629,6 +2680,21 @@ UAC:
             .FFPP_h1_CheckBox.Checked = False
             .FFPP_v1_CheckBox.Checked = False
             .FFPP_dr_CheckBox.Checked = False
+            .VFR60CheckBox.Checked = True
+            .FPSDOCheckBox.Checked = True
+            .TurnCheckBox.Checked = False
+            .TurnLeftRadioButton.Checked = True
+            .TurnRightRadioButton.Checked = False
+            .Turn180RadioButton.Checked = False
+
+        End With
+
+        '//////////////////////////////////////////////////////////// ETCPPFrm
+        With ETCPPFrm
+
+            .RateCheckBox.Checked = False
+            .RateNumericUpDown.Value = 1.0
+            .RatePCheckBox.Checked = True
 
         End With
 
@@ -3989,6 +4055,11 @@ RELOAD:
                         If XTRSTR <> "" Then .AudioASCheckBox.Checked = XTRSTR Else .AudioASCheckBox.Checked = False
                     End If
 
+                    If XTR.Name = "AudioPPFrm_EQComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .EQComboBox.Text = XTRSTR Else .EQComboBox.Text = "Customize"
+                    End If
+
                 End With
 
                 '//////////////////////////////////////////////////////////// ImagePPFrm
@@ -3996,7 +4067,7 @@ RELOAD:
 
                     If XTR.Name = "ImagePPFrm_AviSynthFramerateComboBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .AviSynthFramerateComboBox.Text = XTRSTR Else .AviSynthFramerateComboBox.Text = "23.976"
+                        If XTRSTR <> "" Then .AviSynthFramerateComboBox.Text = XTRSTR Else .AviSynthFramerateComboBox.Text = "30"
                     End If
 
                     If XTR.Name = "ImagePPFrm_AviSynthFramerateCheckBox" Then
@@ -4211,6 +4282,56 @@ RELOAD:
                     If XTR.Name = "ImagePPFrm_FFPP_dr_CheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .FFPP_dr_CheckBox.Checked = XTRSTR Else .FFPP_dr_CheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_VFR60CheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .VFR60CheckBox.Checked = XTRSTR Else .VFR60CheckBox.Checked = True
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_FPSDOCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FPSDOCheckBox.Checked = XTRSTR Else .FPSDOCheckBox.Checked = True
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_TurnCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TurnCheckBox.Checked = XTRSTR Else .TurnCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_TurnLeftRadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TurnLeftRadioButton.Checked = XTRSTR Else .TurnLeftRadioButton.Checked = True
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_TurnRightRadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TurnRightRadioButton.Checked = XTRSTR Else .TurnRightRadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ImagePPFrm_Turn180RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .Turn180RadioButton.Checked = XTRSTR Else .Turn180RadioButton.Checked = False
+                    End If
+
+                End With
+
+                '//////////////////////////////////////////////////////////// ETCPPFrm
+                With ETCPPFrm
+
+                    If XTR.Name = "ETCPPFrm_RateCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .RateCheckBox.Checked = XTRSTR Else .RateCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_RateNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .RateNumericUpDown.Value = XTRSTR Else .RateNumericUpDown.Value = 1.0
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_RatePCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .RatePCheckBox.Checked = XTRSTR Else .RatePCheckBox.Checked = True
                     End If
 
                 End With
@@ -5354,6 +5475,10 @@ RELOAD:
                 XTWriter.WriteString(.AudioASCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
+                XTWriter.WriteStartElement("AudioPPFrm_EQComboBox")
+                XTWriter.WriteString(.EQComboBox.Text)
+                XTWriter.WriteEndElement()
+
             End With
 
             '//////////////////////////////////////////////////////////// ImagePPFrm
@@ -5523,6 +5648,48 @@ RELOAD:
 
                 XTWriter.WriteStartElement("ImagePPFrm_FFPP_dr_CheckBox")
                 XTWriter.WriteString(.FFPP_dr_CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_VFR60CheckBox")
+                XTWriter.WriteString(.VFR60CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_FPSDOCheckBox")
+                XTWriter.WriteString(.FPSDOCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_TurnCheckBox")
+                XTWriter.WriteString(.TurnCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_TurnLeftRadioButton")
+                XTWriter.WriteString(.TurnLeftRadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_TurnRightRadioButton")
+                XTWriter.WriteString(.TurnRightRadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ImagePPFrm_Turn180RadioButton")
+                XTWriter.WriteString(.Turn180RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+            End With
+
+
+            '//////////////////////////////////////////////////////////// ETCPPFrm
+            With ETCPPFrm
+
+                XTWriter.WriteStartElement("ETCPPFrm_RateCheckBox")
+                XTWriter.WriteString(.RateCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_RateNumericUpDown")
+                XTWriter.WriteString(.RateNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_RatePCheckBox")
+                XTWriter.WriteString(.RatePCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
             End With

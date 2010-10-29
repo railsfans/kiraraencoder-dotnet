@@ -30,6 +30,27 @@ Partial Class AudioPPFrm
         Me.AmplifyTrackBar = New System.Windows.Forms.TrackBar
         Me.AmplifyNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.EQGroupBox = New System.Windows.Forms.GroupBox
+        Me.Label18 = New System.Windows.Forms.Label
+        Me.Label17 = New System.Windows.Forms.Label
+        Me.Label16 = New System.Windows.Forms.Label
+        Me.Label15 = New System.Windows.Forms.Label
+        Me.Label14 = New System.Windows.Forms.Label
+        Me.Label13 = New System.Windows.Forms.Label
+        Me.Label12 = New System.Windows.Forms.Label
+        Me.Label11 = New System.Windows.Forms.Label
+        Me.Label10 = New System.Windows.Forms.Label
+        Me.Label9 = New System.Windows.Forms.Label
+        Me.Label8 = New System.Windows.Forms.Label
+        Me.Label7 = New System.Windows.Forms.Label
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.EQComboBox = New System.Windows.Forms.ComboBox
+        Me.LoadPresetBTN = New System.Windows.Forms.Button
+        Me.SavePresetBTN = New System.Windows.Forms.Button
         Me.EQCheckBox = New System.Windows.Forms.CheckBox
         Me.EQZeroButton = New System.Windows.Forms.Button
         Me.EQ18Label = New System.Windows.Forms.Label
@@ -73,16 +94,18 @@ Partial Class AudioPPFrm
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.OKBTN = New System.Windows.Forms.Button
         Me.DefBTN = New System.Windows.Forms.Button
-        Me.EQToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.APP_Panel = New System.Windows.Forms.Panel
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.AudioASCheckBox = New System.Windows.Forms.CheckBox
         Me.NormalizeGroupBox = New System.Windows.Forms.GroupBox
         Me.NormalizeCheckBox = New System.Windows.Forms.CheckBox
         Me.NormalizeTrackBar = New System.Windows.Forms.TrackBar
         Me.NormalizeNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.AviSynthChGroupBox = New System.Windows.Forms.GroupBox
         Me.AviSynthChComboBox = New System.Windows.Forms.ComboBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.AudioASCheckBox = New System.Windows.Forms.CheckBox
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.AmplifyGroupBox.SuspendLayout()
         CType(Me.AmplifyTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AmplifyNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,11 +129,11 @@ Partial Class AudioPPFrm
         CType(Me.EQ2TrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EQ1TrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.APP_Panel.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.NormalizeGroupBox.SuspendLayout()
         CType(Me.NormalizeTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NormalizeNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AviSynthChGroupBox.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'AmplifyGroupBox
@@ -154,6 +177,27 @@ Partial Class AudioPPFrm
         '
         'EQGroupBox
         '
+        Me.EQGroupBox.Controls.Add(Me.Label18)
+        Me.EQGroupBox.Controls.Add(Me.Label17)
+        Me.EQGroupBox.Controls.Add(Me.Label16)
+        Me.EQGroupBox.Controls.Add(Me.Label15)
+        Me.EQGroupBox.Controls.Add(Me.Label14)
+        Me.EQGroupBox.Controls.Add(Me.Label13)
+        Me.EQGroupBox.Controls.Add(Me.Label12)
+        Me.EQGroupBox.Controls.Add(Me.Label11)
+        Me.EQGroupBox.Controls.Add(Me.Label10)
+        Me.EQGroupBox.Controls.Add(Me.Label9)
+        Me.EQGroupBox.Controls.Add(Me.Label8)
+        Me.EQGroupBox.Controls.Add(Me.Label7)
+        Me.EQGroupBox.Controls.Add(Me.Label6)
+        Me.EQGroupBox.Controls.Add(Me.Label5)
+        Me.EQGroupBox.Controls.Add(Me.Label4)
+        Me.EQGroupBox.Controls.Add(Me.Label3)
+        Me.EQGroupBox.Controls.Add(Me.Label2)
+        Me.EQGroupBox.Controls.Add(Me.Label1)
+        Me.EQGroupBox.Controls.Add(Me.EQComboBox)
+        Me.EQGroupBox.Controls.Add(Me.LoadPresetBTN)
+        Me.EQGroupBox.Controls.Add(Me.SavePresetBTN)
         Me.EQGroupBox.Controls.Add(Me.EQCheckBox)
         Me.EQGroupBox.Controls.Add(Me.EQZeroButton)
         Me.EQGroupBox.Controls.Add(Me.EQ18Label)
@@ -197,6 +241,116 @@ Partial Class AudioPPFrm
         resources.ApplyResources(Me.EQGroupBox, "EQGroupBox")
         Me.EQGroupBox.Name = "EQGroupBox"
         Me.EQGroupBox.TabStop = False
+        '
+        'Label18
+        '
+        resources.ApplyResources(Me.Label18, "Label18")
+        Me.Label18.Name = "Label18"
+        '
+        'Label17
+        '
+        resources.ApplyResources(Me.Label17, "Label17")
+        Me.Label17.Name = "Label17"
+        '
+        'Label16
+        '
+        resources.ApplyResources(Me.Label16, "Label16")
+        Me.Label16.Name = "Label16"
+        '
+        'Label15
+        '
+        resources.ApplyResources(Me.Label15, "Label15")
+        Me.Label15.Name = "Label15"
+        '
+        'Label14
+        '
+        resources.ApplyResources(Me.Label14, "Label14")
+        Me.Label14.Name = "Label14"
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'Label12
+        '
+        resources.ApplyResources(Me.Label12, "Label12")
+        Me.Label12.Name = "Label12"
+        '
+        'Label11
+        '
+        resources.ApplyResources(Me.Label11, "Label11")
+        Me.Label11.Name = "Label11"
+        '
+        'Label10
+        '
+        resources.ApplyResources(Me.Label10, "Label10")
+        Me.Label10.Name = "Label10"
+        '
+        'Label9
+        '
+        resources.ApplyResources(Me.Label9, "Label9")
+        Me.Label9.Name = "Label9"
+        '
+        'Label8
+        '
+        resources.ApplyResources(Me.Label8, "Label8")
+        Me.Label8.Name = "Label8"
+        '
+        'Label7
+        '
+        resources.ApplyResources(Me.Label7, "Label7")
+        Me.Label7.Name = "Label7"
+        '
+        'Label6
+        '
+        resources.ApplyResources(Me.Label6, "Label6")
+        Me.Label6.Name = "Label6"
+        '
+        'Label5
+        '
+        resources.ApplyResources(Me.Label5, "Label5")
+        Me.Label5.Name = "Label5"
+        '
+        'Label4
+        '
+        resources.ApplyResources(Me.Label4, "Label4")
+        Me.Label4.Name = "Label4"
+        '
+        'Label3
+        '
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.Name = "Label3"
+        '
+        'Label2
+        '
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
+        'EQComboBox
+        '
+        Me.EQComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        resources.ApplyResources(Me.EQComboBox, "EQComboBox")
+        Me.EQComboBox.FormattingEnabled = True
+        Me.EQComboBox.Items.AddRange(New Object() {resources.GetString("EQComboBox.Items"), resources.GetString("EQComboBox.Items1"), resources.GetString("EQComboBox.Items2"), resources.GetString("EQComboBox.Items3"), resources.GetString("EQComboBox.Items4"), resources.GetString("EQComboBox.Items5"), resources.GetString("EQComboBox.Items6"), resources.GetString("EQComboBox.Items7"), resources.GetString("EQComboBox.Items8"), resources.GetString("EQComboBox.Items9"), resources.GetString("EQComboBox.Items10"), resources.GetString("EQComboBox.Items11"), resources.GetString("EQComboBox.Items12"), resources.GetString("EQComboBox.Items13"), resources.GetString("EQComboBox.Items14"), resources.GetString("EQComboBox.Items15"), resources.GetString("EQComboBox.Items16"), resources.GetString("EQComboBox.Items17"), resources.GetString("EQComboBox.Items18"), resources.GetString("EQComboBox.Items19")})
+        Me.EQComboBox.Name = "EQComboBox"
+        '
+        'LoadPresetBTN
+        '
+        resources.ApplyResources(Me.LoadPresetBTN, "LoadPresetBTN")
+        Me.LoadPresetBTN.Name = "LoadPresetBTN"
+        Me.LoadPresetBTN.UseVisualStyleBackColor = True
+        '
+        'SavePresetBTN
+        '
+        resources.ApplyResources(Me.SavePresetBTN, "SavePresetBTN")
+        Me.SavePresetBTN.Name = "SavePresetBTN"
+        Me.SavePresetBTN.UseVisualStyleBackColor = True
         '
         'EQCheckBox
         '
@@ -539,6 +693,19 @@ Partial Class AudioPPFrm
         resources.ApplyResources(Me.APP_Panel, "APP_Panel")
         Me.APP_Panel.Name = "APP_Panel"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.AudioASCheckBox)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.TabStop = False
+        '
+        'AudioASCheckBox
+        '
+        resources.ApplyResources(Me.AudioASCheckBox, "AudioASCheckBox")
+        Me.AudioASCheckBox.Name = "AudioASCheckBox"
+        Me.AudioASCheckBox.UseVisualStyleBackColor = True
+        '
         'NormalizeGroupBox
         '
         Me.NormalizeGroupBox.Controls.Add(Me.NormalizeCheckBox)
@@ -583,18 +750,17 @@ Partial Class AudioPPFrm
         resources.ApplyResources(Me.AviSynthChComboBox, "AviSynthChComboBox")
         Me.AviSynthChComboBox.Name = "AviSynthChComboBox"
         '
-        'GroupBox1
+        'OpenFileDialog1
         '
-        Me.GroupBox1.Controls.Add(Me.AudioASCheckBox)
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.TabStop = False
+        resources.ApplyResources(Me.OpenFileDialog1, "OpenFileDialog1")
         '
-        'AudioASCheckBox
+        'SaveFileDialog1
         '
-        resources.ApplyResources(Me.AudioASCheckBox, "AudioASCheckBox")
-        Me.AudioASCheckBox.Name = "AudioASCheckBox"
-        Me.AudioASCheckBox.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.SaveFileDialog1, "SaveFileDialog1")
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
         '
         'AudioPPFrm
         '
@@ -632,13 +798,13 @@ Partial Class AudioPPFrm
         CType(Me.EQ2TrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EQ1TrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.APP_Panel.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.NormalizeGroupBox.ResumeLayout(False)
         Me.NormalizeGroupBox.PerformLayout()
         CType(Me.NormalizeTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NormalizeNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AviSynthChGroupBox.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -690,7 +856,6 @@ Partial Class AudioPPFrm
     Friend WithEvents CancelBTN As System.Windows.Forms.Button
     Friend WithEvents OKBTN As System.Windows.Forms.Button
     Friend WithEvents DefBTN As System.Windows.Forms.Button
-    Friend WithEvents EQToolTip As System.Windows.Forms.ToolTip
     Friend WithEvents APP_Panel As System.Windows.Forms.Panel
     Friend WithEvents AviSynthChGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents AviSynthChComboBox As System.Windows.Forms.ComboBox
@@ -701,4 +866,28 @@ Partial Class AudioPPFrm
     Friend WithEvents NormalizeNumericUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents AudioASCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents LoadPresetBTN As System.Windows.Forms.Button
+    Friend WithEvents SavePresetBTN As System.Windows.Forms.Button
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents EQComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class

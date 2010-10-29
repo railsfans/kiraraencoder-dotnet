@@ -117,11 +117,275 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVASCheckBox.Name" xml:space="preserve">
+    <value>ColorYUVASCheckBox</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVASCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVASCheckBox.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVASCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SharpenTrackBar.Name" xml:space="preserve">
+    <value>SharpenTrackBar</value>
+  </data>
+  <data name="&gt;&gt;SharpenTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SharpenTrackBar.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SharpenTrackBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVTVPCRadioButton.Name" xml:space="preserve">
+    <value>ColorYUVTVPCRadioButton</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVTVPCRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVTVPCRadioButton.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVTVPCRadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;SharpenNumericUpDown.Name" xml:space="preserve">
+    <value>SharpenNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;SharpenNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SharpenNumericUpDown.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SharpenNumericUpDown.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVPCTVRadioButton.Name" xml:space="preserve">
+    <value>ColorYUVPCTVRadioButton</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVPCTVRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVPCTVRadioButton.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVPCTVRadioButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVNRadioButton.Name" xml:space="preserve">
+    <value>ColorYUVNRadioButton</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVNRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVNRadioButton.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ColorYUVNRadioButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;hueNumericUpDown.Name" xml:space="preserve">
+    <value>hueNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;hueNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hueNumericUpDown.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hueNumericUpDown.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;SharpenButton.Name" xml:space="preserve">
+    <value>SharpenButton</value>
+  </data>
+  <data name="&gt;&gt;SharpenButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SharpenButton.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SharpenButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;hueTrackBar.Name" xml:space="preserve">
+    <value>hueTrackBar</value>
+  </data>
+  <data name="&gt;&gt;hueTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hueTrackBar.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hueTrackBar.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;hueButton.Name" xml:space="preserve">
+    <value>hueButton</value>
+  </data>
+  <data name="&gt;&gt;hueButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hueButton.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hueButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;saturationNumericUpDown.Name" xml:space="preserve">
+    <value>saturationNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;saturationNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saturationNumericUpDown.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;saturationNumericUpDown.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;saturationTrackBar.Name" xml:space="preserve">
+    <value>saturationTrackBar</value>
+  </data>
+  <data name="&gt;&gt;saturationTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saturationTrackBar.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;saturationTrackBar.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;saturationButton.Name" xml:space="preserve">
+    <value>saturationButton</value>
+  </data>
+  <data name="&gt;&gt;saturationButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saturationButton.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;saturationButton.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;contrastNumericUpDown.Name" xml:space="preserve">
+    <value>contrastNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;contrastNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;contrastNumericUpDown.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;contrastNumericUpDown.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;contrastTrackBar.Name" xml:space="preserve">
+    <value>contrastTrackBar</value>
+  </data>
+  <data name="&gt;&gt;contrastTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;contrastTrackBar.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;contrastTrackBar.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;contrastButton.Name" xml:space="preserve">
+    <value>contrastButton</value>
+  </data>
+  <data name="&gt;&gt;contrastButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;contrastButton.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;contrastButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;brightnessNumericUpDown.Name" xml:space="preserve">
+    <value>brightnessNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;brightnessNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;brightnessNumericUpDown.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;brightnessNumericUpDown.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;brightnessTrackBar.Name" xml:space="preserve">
+    <value>brightnessTrackBar</value>
+  </data>
+  <data name="&gt;&gt;brightnessTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;brightnessTrackBar.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;brightnessTrackBar.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;brightnessButton.Name" xml:space="preserve">
+    <value>brightnessButton</value>
+  </data>
+  <data name="&gt;&gt;brightnessButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;brightnessButton.Parent" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;brightnessButton.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="AviSynthImageControlGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 330</value>
+  </data>
+  <data name="AviSynthImageControlGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 274</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AviSynthImageControlGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="AviSynthImageControlGroupBox.Text" xml:space="preserve">
+    <value>영상 조절</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageControlGroupBox.Name" xml:space="preserve">
+    <value>AviSynthImageControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageControlGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageControlGroupBox.Parent" xml:space="preserve">
+    <value>IPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageControlGroupBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 190</value>
   </data>
@@ -183,7 +447,7 @@
     <value>140, 149</value>
   </data>
   <data name="SharpenTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 25</value>
+    <value>269, 25</value>
   </data>
   <data name="SharpenTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -228,7 +492,7 @@
     <value>3</value>
   </data>
   <data name="SharpenNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 149</value>
+    <value>418, 149</value>
   </data>
   <data name="SharpenNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 22</value>
@@ -303,7 +567,7 @@
     <value>6</value>
   </data>
   <data name="hueNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 118</value>
+    <value>418, 118</value>
   </data>
   <data name="hueNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 22</value>
@@ -354,7 +618,7 @@
     <value>140, 118</value>
   </data>
   <data name="hueTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 25</value>
+    <value>269, 25</value>
   </data>
   <data name="hueTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -396,7 +660,7 @@
     <value>10</value>
   </data>
   <data name="saturationNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 87</value>
+    <value>418, 87</value>
   </data>
   <data name="saturationNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 22</value>
@@ -423,7 +687,7 @@
     <value>140, 87</value>
   </data>
   <data name="saturationTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 25</value>
+    <value>269, 25</value>
   </data>
   <data name="saturationTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -465,7 +729,7 @@
     <value>13</value>
   </data>
   <data name="contrastNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 56</value>
+    <value>418, 56</value>
   </data>
   <data name="contrastNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 22</value>
@@ -492,7 +756,7 @@
     <value>140, 56</value>
   </data>
   <data name="contrastTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 25</value>
+    <value>269, 25</value>
   </data>
   <data name="contrastTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -534,7 +798,7 @@
     <value>16</value>
   </data>
   <data name="brightnessNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 25</value>
+    <value>418, 25</value>
   </data>
   <data name="brightnessNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 22</value>
@@ -561,7 +825,7 @@
     <value>140, 25</value>
   </data>
   <data name="brightnessTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 25</value>
+    <value>269, 25</value>
   </data>
   <data name="brightnessTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -602,30 +866,6 @@
   <data name="&gt;&gt;brightnessButton.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="AviSynthImageControlGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 285</value>
-  </data>
-  <data name="AviSynthImageControlGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 251</value>
-  </data>
-  <data name="AviSynthImageControlGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="AviSynthImageControlGroupBox.Text" xml:space="preserve">
-    <value>영상 조절</value>
-  </data>
-  <data name="&gt;&gt;AviSynthImageControlGroupBox.Name" xml:space="preserve">
-    <value>AviSynthImageControlGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AviSynthImageControlGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AviSynthImageControlGroupBox.Parent" xml:space="preserve">
-    <value>IPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;AviSynthImageControlGroupBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="AviSynthResizeFilterComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 79</value>
   </data>
@@ -646,6 +886,186 @@
   </data>
   <data name="&gt;&gt;AviSynthResizeFilterComboBox.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectSLabel.Name" xml:space="preserve">
+    <value>AviSynthAspectSLabel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectSLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectSLabel.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectSLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectHTextBox.Name" xml:space="preserve">
+    <value>AviSynthAspectHTextBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectHTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectHTextBox.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectHTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectWTextBox.Name" xml:space="preserve">
+    <value>AviSynthAspectWTextBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectWTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectWTextBox.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectWTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectComboBox2.Name" xml:space="preserve">
+    <value>AviSynthAspectComboBox2</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectComboBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectComboBox2.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectComboBox2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectComboBox.Name" xml:space="preserve">
+    <value>AviSynthAspectComboBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectComboBox.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectComboBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectLabel.Name" xml:space="preserve">
+    <value>AviSynthAspectLabel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectLabel.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthAspectLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;AviSynthResizeFilterLabel.Name" xml:space="preserve">
+    <value>AviSynthResizeFilterLabel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthResizeFilterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthResizeFilterLabel.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthResizeFilterLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeCheckBox.Name" xml:space="preserve">
+    <value>AviSynthImageSizeCheckBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeCheckBox.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeCheckBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeSLabel.Name" xml:space="preserve">
+    <value>AviSynthImageSizeSLabel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeSLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeSLabel.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeSLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeHeightTextBox.Name" xml:space="preserve">
+    <value>AviSynthImageSizeHeightTextBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeHeightTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeHeightTextBox.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeHeightTextBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeWidthTextBox.Name" xml:space="preserve">
+    <value>AviSynthImageSizeWidthTextBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeWidthTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeWidthTextBox.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeWidthTextBox.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeComboBox.Name" xml:space="preserve">
+    <value>AviSynthImageSizeComboBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeComboBox.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeComboBox.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeLabel.Name" xml:space="preserve">
+    <value>AviSynthImageSizeLabel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeLabel.Parent" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageSizeLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="AviSynthImageGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 123</value>
+  </data>
+  <data name="AviSynthImageGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 201</value>
+  </data>
+  <data name="AviSynthImageGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="AviSynthImageGroupBox.Text" xml:space="preserve">
+    <value>영상</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageGroupBox.Name" xml:space="preserve">
+    <value>AviSynthImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageGroupBox.Parent" xml:space="preserve">
+    <value>IPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthImageGroupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="AviSynthAspectSLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1003,32 +1423,8 @@
   <data name="&gt;&gt;AviSynthImageSizeLabel.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="AviSynthImageGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 76</value>
-  </data>
-  <data name="AviSynthImageGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 201</value>
-  </data>
-  <data name="AviSynthImageGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="AviSynthImageGroupBox.Text" xml:space="preserve">
-    <value>영상</value>
-  </data>
-  <data name="&gt;&gt;AviSynthImageGroupBox.Name" xml:space="preserve">
-    <value>AviSynthImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AviSynthImageGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AviSynthImageGroupBox.Parent" xml:space="preserve">
-    <value>IPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;AviSynthImageGroupBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="DefBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>501, 511</value>
+    <value>528, 579</value>
   </data>
   <data name="DefBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -1049,10 +1445,10 @@
     <value>IPP_Panel</value>
   </data>
   <data name="&gt;&gt;DefBTN.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>699, 511</value>
+    <value>726, 579</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -1073,10 +1469,10 @@
     <value>IPP_Panel</value>
   </data>
   <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>805, 511</value>
+    <value>832, 579</value>
   </data>
   <data name="CancelBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -1097,7 +1493,490 @@
     <value>IPP_Panel</value>
   </data>
   <data name="&gt;&gt;CancelBTN.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="TurnCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TurnCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 25</value>
+  </data>
+  <data name="TurnCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 18</value>
+  </data>
+  <data name="TurnCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TurnCheckBox.Text" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="&gt;&gt;TurnCheckBox.Name" xml:space="preserve">
+    <value>TurnCheckBox</value>
+  </data>
+  <data name="&gt;&gt;TurnCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TurnCheckBox.Parent" xml:space="preserve">
+    <value>TurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TurnCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Turn180RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Turn180RadioButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Turn180RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Turn180RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 25</value>
+  </data>
+  <data name="Turn180RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 18</value>
+  </data>
+  <data name="Turn180RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="Turn180RadioButton.Text" xml:space="preserve">
+    <value>180도</value>
+  </data>
+  <data name="&gt;&gt;Turn180RadioButton.Name" xml:space="preserve">
+    <value>Turn180RadioButton</value>
+  </data>
+  <data name="&gt;&gt;Turn180RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Turn180RadioButton.Parent" xml:space="preserve">
+    <value>TurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Turn180RadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TurnRightRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TurnRightRadioButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TurnRightRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TurnRightRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 25</value>
+  </data>
+  <data name="TurnRightRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 18</value>
+  </data>
+  <data name="TurnRightRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TurnRightRadioButton.Text" xml:space="preserve">
+    <value>오른쪽</value>
+  </data>
+  <data name="&gt;&gt;TurnRightRadioButton.Name" xml:space="preserve">
+    <value>TurnRightRadioButton</value>
+  </data>
+  <data name="&gt;&gt;TurnRightRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TurnRightRadioButton.Parent" xml:space="preserve">
+    <value>TurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TurnRightRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TurnLeftRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TurnLeftRadioButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TurnLeftRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 25</value>
+  </data>
+  <data name="TurnLeftRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 18</value>
+  </data>
+  <data name="TurnLeftRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TurnLeftRadioButton.Text" xml:space="preserve">
+    <value>왼쪽</value>
+  </data>
+  <data name="&gt;&gt;TurnLeftRadioButton.Name" xml:space="preserve">
+    <value>TurnLeftRadioButton</value>
+  </data>
+  <data name="&gt;&gt;TurnLeftRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TurnLeftRadioButton.Parent" xml:space="preserve">
+    <value>TurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TurnLeftRadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TurnGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>528, 505</value>
+  </data>
+  <data name="TurnGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 60</value>
+  </data>
+  <data name="TurnGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="TurnGroupBox.Text" xml:space="preserve">
+    <value>회전</value>
+  </data>
+  <data name="&gt;&gt;TurnGroupBox.Name" xml:space="preserve">
+    <value>TurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TurnGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TurnGroupBox.Parent" xml:space="preserve">
+    <value>IPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;TurnGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AviSynthDeinterlaceCheckBox.Name" xml:space="preserve">
+    <value>AviSynthDeinterlaceCheckBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthDeinterlaceCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthDeinterlaceCheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;AviSynthDeinterlaceCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;AviSynthDeinterlaceComboBox.Name" xml:space="preserve">
+    <value>AviSynthDeinterlaceComboBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthDeinterlaceComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthDeinterlaceComboBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;AviSynthDeinterlaceComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;FFPP_dr_CheckBox.Name" xml:space="preserve">
+    <value>FFPP_dr_CheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFPP_dr_CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFPP_dr_CheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;FFPP_dr_CheckBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;FFPP_v1_CheckBox.Name" xml:space="preserve">
+    <value>FFPP_v1_CheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFPP_v1_CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFPP_v1_CheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;FFPP_v1_CheckBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;FFPP_hb_CheckBox.Name" xml:space="preserve">
+    <value>FFPP_hb_CheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFPP_hb_CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFPP_hb_CheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;FFPP_hb_CheckBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;FFPP_h1_CheckBox.Name" xml:space="preserve">
+    <value>FFPP_h1_CheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFPP_h1_CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFPP_h1_CheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;FFPP_h1_CheckBox.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="&gt;&gt;FFPP_vb_CheckBox.Name" xml:space="preserve">
+    <value>FFPP_vb_CheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFPP_vb_CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFPP_vb_CheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;FFPP_vb_CheckBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;FFPP_va_CheckBox.Name" xml:space="preserve">
+    <value>FFPP_va_CheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFPP_va_CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFPP_va_CheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;FFPP_va_CheckBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;FFPP_ha_CheckBox.Name" xml:space="preserve">
+    <value>FFPP_ha_CheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFPP_ha_CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFPP_ha_CheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;FFPP_ha_CheckBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>528, 169</value>
+  </data>
+  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 331</value>
+  </data>
+  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>FFmpegSource(FFPP)</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
+    <value>IPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;FieldorderLabel.Name" xml:space="preserve">
+    <value>FieldorderLabel</value>
+  </data>
+  <data name="&gt;&gt;FieldorderLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FieldorderLabel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;FieldorderLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AVSMPEG2DeinterlaceCheckBox.Name" xml:space="preserve">
+    <value>AVSMPEG2DeinterlaceCheckBox</value>
+  </data>
+  <data name="&gt;&gt;AVSMPEG2DeinterlaceCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVSMPEG2DeinterlaceCheckBox.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;AVSMPEG2DeinterlaceCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;FieldorderComboBox.Name" xml:space="preserve">
+    <value>FieldorderComboBox</value>
+  </data>
+  <data name="&gt;&gt;FieldorderComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FieldorderComboBox.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;FieldorderComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;AVSMPEG2DeinterlaceComboBox.Name" xml:space="preserve">
+    <value>AVSMPEG2DeinterlaceComboBox</value>
+  </data>
+  <data name="&gt;&gt;AVSMPEG2DeinterlaceComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVSMPEG2DeinterlaceComboBox.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;AVSMPEG2DeinterlaceComboBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>528, 12</value>
+  </data>
+  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 146</value>
+  </data>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="GroupBox1.Text" xml:space="preserve">
+    <value>YADIF</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>IPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;FPSDOCheckBox.Name" xml:space="preserve">
+    <value>FPSDOCheckBox</value>
+  </data>
+  <data name="&gt;&gt;FPSDOCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FPSDOCheckBox.Parent" xml:space="preserve">
+    <value>AviSynthFramerateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FPSDOCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;VFR60CheckBox.Name" xml:space="preserve">
+    <value>VFR60CheckBox</value>
+  </data>
+  <data name="&gt;&gt;VFR60CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VFR60CheckBox.Parent" xml:space="preserve">
+    <value>AviSynthFramerateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;VFR60CheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateCheckBox.Name" xml:space="preserve">
+    <value>AviSynthFramerateCheckBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateCheckBox.Parent" xml:space="preserve">
+    <value>AviSynthFramerateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateLabel.Name" xml:space="preserve">
+    <value>AviSynthFramerateLabel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateLabel.Parent" xml:space="preserve">
+    <value>AviSynthFramerateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateComboBox.Name" xml:space="preserve">
+    <value>AviSynthFramerateComboBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateComboBox.Parent" xml:space="preserve">
+    <value>AviSynthFramerateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateComboBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="AviSynthFramerateGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="AviSynthFramerateGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 105</value>
+  </data>
+  <data name="AviSynthFramerateGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="AviSynthFramerateGroupBox.Text" xml:space="preserve">
+    <value>프레임 레이트</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateGroupBox.Name" xml:space="preserve">
+    <value>AviSynthFramerateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateGroupBox.Parent" xml:space="preserve">
+    <value>IPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;AviSynthFramerateGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="IPP_Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="IPP_Panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="IPP_Panel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>944, 616</value>
+  </data>
+  <data name="IPP_Panel.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;IPP_Panel.Name" xml:space="preserve">
+    <value>IPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;IPP_Panel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IPP_Panel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IPP_Panel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1432,30 +2311,6 @@
   <data name="&gt;&gt;FFPP_ha_CheckBox.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>501, 169</value>
-  </data>
-  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 333</value>
-  </data>
-  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="GroupBox2.Text" xml:space="preserve">
-    <value>FFmpegSource(FFPP)</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
-    <value>IPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="FieldorderLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1576,28 +2431,61 @@
   <data name="&gt;&gt;AVSMPEG2DeinterlaceComboBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>501, 12</value>
+  <data name="FPSDOCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 146</value>
+  <data name="FPSDOCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 75</value>
   </data>
-  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
+  <data name="FPSDOCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 18</value>
   </data>
-  <data name="GroupBox1.Text" xml:space="preserve">
-    <value>YADIF</value>
+  <data name="FPSDOCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
-  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
-    <value>GroupBox1</value>
+  <data name="FPSDOCheckBox.Text" xml:space="preserve">
+    <value>선택한 fps보다 원본 파일의 fps가 작을 경우 원본 프레임 레이트 사용</value>
   </data>
-  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;FPSDOCheckBox.Name" xml:space="preserve">
+    <value>FPSDOCheckBox</value>
   </data>
-  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
-    <value>IPP_Panel</value>
+  <data name="&gt;&gt;FPSDOCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;FPSDOCheckBox.Parent" xml:space="preserve">
+    <value>AviSynthFramerateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FPSDOCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="VFR60CheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="VFR60CheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="VFR60CheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 54</value>
+  </data>
+  <data name="VFR60CheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 18</value>
+  </data>
+  <data name="VFR60CheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="VFR60CheckBox.Text" xml:space="preserve">
+    <value>원본 프레임 레이트 인코딩시 최대 60 프레임 레이트로 제한</value>
+  </data>
+  <data name="&gt;&gt;VFR60CheckBox.Name" xml:space="preserve">
+    <value>VFR60CheckBox</value>
+  </data>
+  <data name="&gt;&gt;VFR60CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VFR60CheckBox.Parent" xml:space="preserve">
+    <value>AviSynthFramerateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;VFR60CheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="AviSynthFramerateCheckBox.AutoSize" type="System.Boolean, mscorlib">
@@ -1607,13 +2495,13 @@
     <value>219, 25</value>
   </data>
   <data name="AviSynthFramerateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 18</value>
+    <value>130, 18</value>
   </data>
   <data name="AviSynthFramerateCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
   <data name="AviSynthFramerateCheckBox.Text" xml:space="preserve">
-    <value>원본 프레임레이트</value>
+    <value>원본 프레임 레이트</value>
   </data>
   <data name="&gt;&gt;AviSynthFramerateCheckBox.Name" xml:space="preserve">
     <value>AviSynthFramerateCheckBox</value>
@@ -1625,7 +2513,7 @@
     <value>AviSynthFramerateGroupBox</value>
   </data>
   <data name="&gt;&gt;AviSynthFramerateCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="AviSynthFramerateLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1652,7 +2540,7 @@
     <value>AviSynthFramerateGroupBox</value>
   </data>
   <data name="&gt;&gt;AviSynthFramerateLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="AviSynthFramerateComboBox.Items" xml:space="preserve">
     <value>5</value>
@@ -1742,55 +2630,7 @@
     <value>AviSynthFramerateGroupBox</value>
   </data>
   <data name="&gt;&gt;AviSynthFramerateComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AviSynthFramerateGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="AviSynthFramerateGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 56</value>
-  </data>
-  <data name="AviSynthFramerateGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="AviSynthFramerateGroupBox.Text" xml:space="preserve">
-    <value>프레임레이트</value>
-  </data>
-  <data name="&gt;&gt;AviSynthFramerateGroupBox.Name" xml:space="preserve">
-    <value>AviSynthFramerateGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AviSynthFramerateGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AviSynthFramerateGroupBox.Parent" xml:space="preserve">
-    <value>IPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;AviSynthFramerateGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="IPP_Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="IPP_Panel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="IPP_Panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>922, 553</value>
-  </data>
-  <data name="IPP_Panel.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="&gt;&gt;IPP_Panel.Name" xml:space="preserve">
-    <value>IPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;IPP_Panel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;IPP_Panel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;IPP_Panel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1799,7 +2639,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>922, 553</value>
+    <value>944, 616</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

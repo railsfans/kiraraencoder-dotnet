@@ -117,6 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="OutFComboBox.Items" xml:space="preserve">
+    <value>[AVI] - Audio Video Interleave</value>
+  </data>
+  <data name="OutFComboBox.Items1" xml:space="preserve">
+    <value>[3GP] - 3GPP(GSM)</value>
+  </data>
+  <data name="OutFComboBox.Items2" xml:space="preserve">
+    <value>[3G2] - 3GPP2(CDMA)</value>
+  </data>
+  <data name="OutFComboBox.Items3" xml:space="preserve">
+    <value>[MP4] - MPEG-4 Part 14</value>
+  </data>
+  <data name="OutFComboBox.Items4" xml:space="preserve">
+    <value>[MOV] - QuickTime</value>
+  </data>
+  <data name="OutFComboBox.Items5" xml:space="preserve">
+    <value>[MKV] - Matroska Video</value>
+  </data>
+  <data name="OutFComboBox.Items6" xml:space="preserve">
+    <value>[ASF] - Advanced Systems Format </value>
+  </data>
+  <data name="OutFComboBox.Items7" xml:space="preserve">
+    <value>[WMV] - Windows Media Video</value>
+  </data>
+  <data name="OutFComboBox.Items8" xml:space="preserve">
+    <value>[MPEG] - Moving Picture Experts Group</value>
+  </data>
+  <data name="OutFComboBox.Items9" xml:space="preserve">
+    <value>[FLV] - Flash Video</value>
+  </data>
+  <data name="OutFComboBox.Items10" xml:space="preserve">
+    <value>[SWF] - Shock Wave Flash</value>
+  </data>
+  <data name="OutFComboBox.Items11" xml:space="preserve">
+    <value>[WEBM] - WebM</value>
+  </data>
+  <data name="OutFComboBox.Items12" xml:space="preserve">
+    <value>[AUDIO] - Audio Only</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="OutFComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 21</value>
+  </data>
+  <data name="OutFComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 22</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="OutFComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;OutFComboBox.Name" xml:space="preserve">
     <value>OutFComboBox</value>
   </data>
@@ -128,6 +178,18 @@
   </data>
   <data name="&gt;&gt;OutFComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="PresetButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 20</value>
+  </data>
+  <data name="PresetButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 25</value>
+  </data>
+  <data name="PresetButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="PresetButton.Text" xml:space="preserve">
+    <value>프리셋</value>
   </data>
   <data name="&gt;&gt;PresetButton.Name" xml:space="preserve">
     <value>PresetButton</value>
@@ -141,14 +203,12 @@
   <data name="&gt;&gt;PresetButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="OutFGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 9</value>
   </data>
   <data name="OutFGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>503, 54</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="OutFGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
@@ -239,706 +299,20 @@
   <data name="&gt;&gt;DefBTN.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;MP4OptsGroupBox.Name" xml:space="preserve">
-    <value>MP4OptsGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MP4OptsGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MP4OptsGroupBox.Parent" xml:space="preserve">
-    <value>VideoTabPage</value>
-  </data>
-  <data name="&gt;&gt;MP4OptsGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;KeyFrameGroupBox.Name" xml:space="preserve">
-    <value>KeyFrameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;KeyFrameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;KeyFrameGroupBox.Parent" xml:space="preserve">
-    <value>VideoTabPage</value>
-  </data>
-  <data name="&gt;&gt;KeyFrameGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;VideoGroupBox.Name" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;VideoGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VideoGroupBox.Parent" xml:space="preserve">
-    <value>VideoTabPage</value>
-  </data>
-  <data name="&gt;&gt;VideoGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="VideoTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="VideoTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="VideoTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 474</value>
-  </data>
-  <data name="VideoTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="VideoTabPage.Text" xml:space="preserve">
-    <value>비디오</value>
-  </data>
-  <data name="&gt;&gt;VideoTabPage.Name" xml:space="preserve">
-    <value>VideoTabPage</value>
-  </data>
-  <data name="&gt;&gt;VideoTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VideoTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;VideoTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Name" xml:space="preserve">
-    <value>ImageTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Parent" xml:space="preserve">
-    <value>ImageTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ImageTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="ImageTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="ImageTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 474</value>
-  </data>
-  <data name="ImageTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ImageTabPage.Text" xml:space="preserve">
-    <value>영상</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Name" xml:space="preserve">
-    <value>ImageTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Name" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Name" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="AudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="AudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 474</value>
-  </data>
-  <data name="AudioTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="AudioTabPage.Text" xml:space="preserve">
-    <value>오디오</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Name" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SizeEncGBLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="PSPMP4CheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="SizeEncGBLabel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="PSPMP4CheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 24</value>
   </data>
-  <data name="SizeEncGBLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 30</value>
+  <data name="PSPMP4CheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 18</value>
   </data>
-  <data name="SizeEncGBLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 14</value>
-  </data>
-  <data name="SizeEncGBLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="SizeEncGBLabel.Text" xml:space="preserve">
-    <value>0GB</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGBLabel.Name" xml:space="preserve">
-    <value>SizeEncGBLabel</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGBLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGBLabel.Parent" xml:space="preserve">
-    <value>SizeEncGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGBLabel.ZOrder" xml:space="preserve">
+  <data name="PSPMP4CheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="SizeEncMBLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SizeEncMBLabel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="SizeEncMBLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SizeEncMBLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 30</value>
-  </data>
-  <data name="SizeEncMBLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 14</value>
-  </data>
-  <data name="SizeEncMBLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="SizeEncMBLabel.Text" xml:space="preserve">
-    <value>MB</value>
-  </data>
-  <data name="&gt;&gt;SizeEncMBLabel.Name" xml:space="preserve">
-    <value>SizeEncMBLabel</value>
-  </data>
-  <data name="&gt;&gt;SizeEncMBLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeEncMBLabel.Parent" xml:space="preserve">
-    <value>SizeEncGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncMBLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SizeEncTextBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="SizeEncTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 26</value>
-  </data>
-  <data name="SizeEncTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 22</value>
-  </data>
-  <data name="SizeEncTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SizeEncTextBox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;SizeEncTextBox.Name" xml:space="preserve">
-    <value>SizeEncTextBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeEncTextBox.Parent" xml:space="preserve">
-    <value>SizeEncGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SizeEncLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SizeEncLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 58</value>
-  </data>
-  <data name="SizeEncLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 28</value>
-  </data>
-  <data name="SizeEncLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SizeEncLabel.Text" xml:space="preserve">
-    <value>비디오 비트레이트 값이 예상용량을 기준으로 변경되어 인코딩됩니다.
-오버헤드는 아직 계산에 포함되지 않습니다.</value>
-  </data>
-  <data name="&gt;&gt;SizeEncLabel.Name" xml:space="preserve">
-    <value>SizeEncLabel</value>
-  </data>
-  <data name="&gt;&gt;SizeEncLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeEncLabel.Parent" xml:space="preserve">
-    <value>SizeEncGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SizeEncCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SizeEncCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 28</value>
-  </data>
-  <data name="SizeEncCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 18</value>
-  </data>
-  <data name="SizeEncCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SizeEncCheckBox.Text" xml:space="preserve">
-    <value>사용</value>
-  </data>
-  <data name="&gt;&gt;SizeEncCheckBox.Name" xml:space="preserve">
-    <value>SizeEncCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeEncCheckBox.Parent" xml:space="preserve">
-    <value>SizeEncGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="SizeEncGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 236</value>
-  </data>
-  <data name="SizeEncGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 103</value>
-  </data>
-  <data name="SizeEncGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="SizeEncGroupBox.Text" xml:space="preserve">
-    <value>예상용량을 기준으로 인코딩</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGroupBox.Name" xml:space="preserve">
-    <value>SizeEncGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGroupBox.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SubtitleRecordingCheckBox.Name" xml:space="preserve">
-    <value>SubtitleRecordingCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SubtitleRecordingCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SubtitleRecordingCheckBox.Parent" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;SubtitleRecordingCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 176</value>
-  </data>
-  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 54</value>
-  </data>
-  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="GroupBox1.Text" xml:space="preserve">
-    <value>FFmpeg Subtitle Recording</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandButton.Name" xml:space="preserve">
-    <value>FFmpegCommandButton</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandButton.Parent" xml:space="preserve">
-    <value>FFmpegCommandGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandTextBox.Name" xml:space="preserve">
-    <value>FFmpegCommandTextBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandTextBox.Parent" xml:space="preserve">
-    <value>FFmpegCommandGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="FFmpegCommandGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 345</value>
-  </data>
-  <data name="FFmpegCommandGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 57</value>
-  </data>
-  <data name="FFmpegCommandGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="FFmpegCommandGroupBox.Text" xml:space="preserve">
-    <value>FFmpeg 추가 명령어</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandGroupBox.Name" xml:space="preserve">
-    <value>FFmpegCommandGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandGroupBox.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitCheckBox.Name" xml:space="preserve">
-    <value>SizeLimitCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitCheckBox.Parent" xml:space="preserve">
-    <value>SizeLimitGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitLabel.Name" xml:space="preserve">
-    <value>SizeLimitLabel</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitLabel.Parent" xml:space="preserve">
-    <value>SizeLimitGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitTextBox.Name" xml:space="preserve">
-    <value>SizeLimitTextBox</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitTextBox.Parent" xml:space="preserve">
-    <value>SizeLimitGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SizeLimitGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 116</value>
-  </data>
-  <data name="SizeLimitGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>477, 54</value>
-  </data>
-  <data name="SizeLimitGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SizeLimitGroupBox.Text" xml:space="preserve">
-    <value>인코딩 용량 제한</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitGroupBox.Name" xml:space="preserve">
-    <value>SizeLimitGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitGroupBox.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitGroupBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;NameALabel.Name" xml:space="preserve">
-    <value>NameALabel</value>
-  </data>
-  <data name="&gt;&gt;NameALabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NameALabel.Parent" xml:space="preserve">
-    <value>NameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NameALabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ExtensionTextBox.Name" xml:space="preserve">
-    <value>ExtensionTextBox</value>
-  </data>
-  <data name="&gt;&gt;ExtensionTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExtensionTextBox.Parent" xml:space="preserve">
-    <value>NameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExtensionTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ExtensionLabel.Name" xml:space="preserve">
-    <value>ExtensionLabel</value>
-  </data>
-  <data name="&gt;&gt;ExtensionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExtensionLabel.Parent" xml:space="preserve">
-    <value>NameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExtensionLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;HeaderTextBox.Name" xml:space="preserve">
-    <value>HeaderTextBox</value>
-  </data>
-  <data name="&gt;&gt;HeaderTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HeaderTextBox.Parent" xml:space="preserve">
-    <value>NameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;HeaderTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;HeaderLabel.Name" xml:space="preserve">
-    <value>HeaderLabel</value>
-  </data>
-  <data name="&gt;&gt;HeaderLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HeaderLabel.Parent" xml:space="preserve">
-    <value>NameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;HeaderLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="NameGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 10</value>
-  </data>
-  <data name="NameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 100</value>
-  </data>
-  <data name="NameGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="NameGroupBox.Text" xml:space="preserve">
-    <value>앞 부분 이름 / 확장자</value>
-  </data>
-  <data name="&gt;&gt;NameGroupBox.Name" xml:space="preserve">
-    <value>NameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NameGroupBox.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;NameGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ETCTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="ETCTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 474</value>
-  </data>
-  <data name="ETCTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="ETCTabPage.Text" xml:space="preserve">
-    <value>기타</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Name" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SettingTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 69</value>
-  </data>
-  <data name="SettingTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>507, 501</value>
-  </data>
-  <data name="SettingTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SettingTabControl.Name" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;SettingTabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingTabControl.Parent" xml:space="preserve">
-    <value>EncSetPanel</value>
-  </data>
-  <data name="&gt;&gt;SettingTabControl.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="EncSetPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="EncSetPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="EncSetPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 612</value>
-  </data>
-  <data name="EncSetPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EncSetPanel.Name" xml:space="preserve">
-    <value>EncSetPanel</value>
-  </data>
-  <data name="&gt;&gt;EncSetPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EncSetPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;EncSetPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="OutFComboBox.Items" xml:space="preserve">
-    <value>[AVI] - Audio Video Interleave</value>
-  </data>
-  <data name="OutFComboBox.Items1" xml:space="preserve">
-    <value>[3GP] - 3GPP(GSM)</value>
-  </data>
-  <data name="OutFComboBox.Items2" xml:space="preserve">
-    <value>[3G2] - 3GPP2(CDMA)</value>
-  </data>
-  <data name="OutFComboBox.Items3" xml:space="preserve">
-    <value>[MP4] - MPEG-4 Part 14</value>
-  </data>
-  <data name="OutFComboBox.Items4" xml:space="preserve">
-    <value>[MOV] - QuickTime</value>
-  </data>
-  <data name="OutFComboBox.Items5" xml:space="preserve">
-    <value>[MKV] - Matroska Video</value>
-  </data>
-  <data name="OutFComboBox.Items6" xml:space="preserve">
-    <value>[ASF] - Advanced Systems Format </value>
-  </data>
-  <data name="OutFComboBox.Items7" xml:space="preserve">
-    <value>[WMV] - Windows Media Video</value>
-  </data>
-  <data name="OutFComboBox.Items8" xml:space="preserve">
-    <value>[MPEG] - Moving Picture Experts Group</value>
-  </data>
-  <data name="OutFComboBox.Items9" xml:space="preserve">
-    <value>[FLV] - Flash Video</value>
-  </data>
-  <data name="OutFComboBox.Items10" xml:space="preserve">
-    <value>[SWF] - Shock Wave Flash</value>
-  </data>
-  <data name="OutFComboBox.Items11" xml:space="preserve">
-    <value>[WEBM] - WebM</value>
-  </data>
-  <data name="OutFComboBox.Items12" xml:space="preserve">
-    <value>[AUDIO] - Audio Only</value>
-  </data>
-  <data name="OutFComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 21</value>
-  </data>
-  <data name="OutFComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 22</value>
-  </data>
-  <data name="OutFComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;OutFComboBox.Name" xml:space="preserve">
-    <value>OutFComboBox</value>
-  </data>
-  <data name="&gt;&gt;OutFComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OutFComboBox.Parent" xml:space="preserve">
-    <value>OutFGroupBox</value>
-  </data>
-  <data name="&gt;&gt;OutFComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PresetButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>372, 20</value>
-  </data>
-  <data name="PresetButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 25</value>
-  </data>
-  <data name="PresetButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="PresetButton.Text" xml:space="preserve">
-    <value>프리셋</value>
-  </data>
-  <data name="&gt;&gt;PresetButton.Name" xml:space="preserve">
-    <value>PresetButton</value>
-  </data>
-  <data name="&gt;&gt;PresetButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PresetButton.Parent" xml:space="preserve">
-    <value>OutFGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PresetButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="PSPMP4CheckBox.Text" xml:space="preserve">
+    <value>PSP에서 재생가능한 MP4파일을 만듭니다.</value>
   </data>
   <data name="&gt;&gt;PSPMP4CheckBox.Name" xml:space="preserve">
     <value>PSPMP4CheckBox</value>
@@ -975,117 +349,6 @@
   </data>
   <data name="&gt;&gt;MP4OptsGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="PSPMP4CheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="PSPMP4CheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 24</value>
-  </data>
-  <data name="PSPMP4CheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 18</value>
-  </data>
-  <data name="PSPMP4CheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="PSPMP4CheckBox.Text" xml:space="preserve">
-    <value>PSP에서 재생가능한 MP4파일을 만듭니다.</value>
-  </data>
-  <data name="&gt;&gt;PSPMP4CheckBox.Name" xml:space="preserve">
-    <value>PSPMP4CheckBox</value>
-  </data>
-  <data name="&gt;&gt;PSPMP4CheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PSPMP4CheckBox.Parent" xml:space="preserve">
-    <value>MP4OptsGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PSPMP4CheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;MinGOPSizeTextBox.Name" xml:space="preserve">
-    <value>MinGOPSizeTextBox</value>
-  </data>
-  <data name="&gt;&gt;MinGOPSizeTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MinGOPSizeTextBox.Parent" xml:space="preserve">
-    <value>KeyFrameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MinGOPSizeTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeTextBox.Name" xml:space="preserve">
-    <value>GOPSizeTextBox</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeTextBox.Parent" xml:space="preserve">
-    <value>KeyFrameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;MinGOPSizeLabel.Name" xml:space="preserve">
-    <value>MinGOPSizeLabel</value>
-  </data>
-  <data name="&gt;&gt;MinGOPSizeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MinGOPSizeLabel.Parent" xml:space="preserve">
-    <value>KeyFrameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MinGOPSizeLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeLabel.Name" xml:space="preserve">
-    <value>GOPSizeLabel</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeLabel.Parent" xml:space="preserve">
-    <value>KeyFrameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeCheckBox.Name" xml:space="preserve">
-    <value>GOPSizeCheckBox</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeCheckBox.Parent" xml:space="preserve">
-    <value>KeyFrameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;GOPSizeCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="KeyFrameGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 295</value>
-  </data>
-  <data name="KeyFrameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 105</value>
-  </data>
-  <data name="KeyFrameGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="KeyFrameGroupBox.Text" xml:space="preserve">
-    <value>키프레임</value>
-  </data>
-  <data name="&gt;&gt;KeyFrameGroupBox.Name" xml:space="preserve">
-    <value>KeyFrameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;KeyFrameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;KeyFrameGroupBox.Parent" xml:space="preserve">
-    <value>VideoTabPage</value>
-  </data>
-  <data name="&gt;&gt;KeyFrameGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="MinGOPSizeTextBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1222,329 +485,29 @@
   <data name="&gt;&gt;GOPSizeCheckBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;AdvanOptsPanel.Name" xml:space="preserve">
-    <value>AdvanOptsPanel</value>
+  <data name="KeyFrameGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 295</value>
   </data>
-  <data name="&gt;&gt;AdvanOptsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="KeyFrameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 105</value>
   </data>
-  <data name="&gt;&gt;AdvanOptsPanel.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPNumericUpDown.Name" xml:space="preserve">
-    <value>QuantizerCQPNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPNumericUpDown.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPNumericUpDown.ZOrder" xml:space="preserve">
+  <data name="KeyFrameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;QuantizerCQPTrackBar.Name" xml:space="preserve">
-    <value>QuantizerCQPTrackBar</value>
+  <data name="KeyFrameGroupBox.Text" xml:space="preserve">
+    <value>키프레임</value>
   </data>
-  <data name="&gt;&gt;QuantizerCQPTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;KeyFrameGroupBox.Name" xml:space="preserve">
+    <value>KeyFrameGroupBox</value>
   </data>
-  <data name="&gt;&gt;QuantizerCQPTrackBar.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPTrackBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPLabel.Name" xml:space="preserve">
-    <value>QuantizerCQPLabel</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPLabel.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QuantizerCQPLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;FramerateCheckBox.Name" xml:space="preserve">
-    <value>FramerateCheckBox</value>
-  </data>
-  <data name="&gt;&gt;FramerateCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FramerateCheckBox.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FramerateCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;FramerateLabel2.Name" xml:space="preserve">
-    <value>FramerateLabel2</value>
-  </data>
-  <data name="&gt;&gt;FramerateLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FramerateLabel2.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FramerateLabel2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;FramerateComboBox.Name" xml:space="preserve">
-    <value>FramerateComboBox</value>
-  </data>
-  <data name="&gt;&gt;FramerateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FramerateComboBox.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FramerateComboBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;FramerateLabel.Name" xml:space="preserve">
-    <value>FramerateLabel</value>
-  </data>
-  <data name="&gt;&gt;FramerateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FramerateLabel.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FramerateLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;QualityNumericUpDown.Name" xml:space="preserve">
-    <value>QualityNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;QualityNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;QualityNumericUpDown.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QualityNumericUpDown.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;QualityTrackBar.Name" xml:space="preserve">
-    <value>QualityTrackBar</value>
-  </data>
-  <data name="&gt;&gt;QualityTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;QualityTrackBar.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QualityTrackBar.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;QualityLabel.Name" xml:space="preserve">
-    <value>QualityLabel</value>
-  </data>
-  <data name="&gt;&gt;QualityLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;QualityLabel.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QualityLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;QuantizerNumericUpDown.Name" xml:space="preserve">
-    <value>QuantizerNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;QuantizerNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;QuantizerNumericUpDown.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QuantizerNumericUpDown.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;QuantizerTrackBar.Name" xml:space="preserve">
-    <value>QuantizerTrackBar</value>
-  </data>
-  <data name="&gt;&gt;QuantizerTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;QuantizerTrackBar.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QuantizerTrackBar.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;QuantizerLabel.Name" xml:space="preserve">
-    <value>QuantizerLabel</value>
-  </data>
-  <data name="&gt;&gt;QuantizerLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;QuantizerLabel.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;QuantizerLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;BitrateComboBox.Name" xml:space="preserve">
-    <value>BitrateComboBox</value>
-  </data>
-  <data name="&gt;&gt;BitrateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BitrateComboBox.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;BitrateComboBox.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;BitrateLabel2.Name" xml:space="preserve">
-    <value>BitrateLabel2</value>
-  </data>
-  <data name="&gt;&gt;BitrateLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BitrateLabel2.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;BitrateLabel2.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;BitrateLabel.Name" xml:space="preserve">
-    <value>BitrateLabel</value>
-  </data>
-  <data name="&gt;&gt;BitrateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BitrateLabel.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;BitrateLabel.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;VideoModeComboBox.Name" xml:space="preserve">
-    <value>VideoModeComboBox</value>
-  </data>
-  <data name="&gt;&gt;VideoModeComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VideoModeComboBox.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;VideoModeComboBox.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;VideoCodecComboBox.Name" xml:space="preserve">
-    <value>VideoCodecComboBox</value>
-  </data>
-  <data name="&gt;&gt;VideoCodecComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VideoCodecComboBox.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;VideoCodecComboBox.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;VCodecLabel.Name" xml:space="preserve">
-    <value>VCodecLabel</value>
-  </data>
-  <data name="&gt;&gt;VCodecLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VCodecLabel.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;VCodecLabel.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="VideoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 10</value>
-  </data>
-  <data name="VideoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 280</value>
-  </data>
-  <data name="VideoGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="VideoGroupBox.Text" xml:space="preserve">
-    <value>비디오</value>
-  </data>
-  <data name="&gt;&gt;VideoGroupBox.Name" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;VideoGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;KeyFrameGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;VideoGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;KeyFrameGroupBox.Parent" xml:space="preserve">
     <value>VideoTabPage</value>
   </data>
-  <data name="&gt;&gt;VideoGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsButton.Name" xml:space="preserve">
-    <value>AdvanOptsButton</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsButton.Parent" xml:space="preserve">
-    <value>AdvanOptsPanel</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsCheckBox.Name" xml:space="preserve">
-    <value>AdvanOptsCheckBox</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsCheckBox.Parent" xml:space="preserve">
-    <value>AdvanOptsPanel</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsCheckBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;KeyFrameGroupBox.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsLabel.Name" xml:space="preserve">
-    <value>AdvanOptsLabel</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsLabel.Parent" xml:space="preserve">
-    <value>AdvanOptsPanel</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AdvanOptsPanel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="AdvanOptsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 205</value>
-  </data>
-  <data name="AdvanOptsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 38</value>
-  </data>
-  <data name="AdvanOptsPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsPanel.Name" xml:space="preserve">
-    <value>AdvanOptsPanel</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsPanel.Parent" xml:space="preserve">
-    <value>VideoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AdvanOptsPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="AdvanOptsButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1630,6 +593,30 @@
   <data name="&gt;&gt;AdvanOptsLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="AdvanOptsPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="AdvanOptsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 205</value>
+  </data>
+  <data name="AdvanOptsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 38</value>
+  </data>
+  <data name="AdvanOptsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;AdvanOptsPanel.Name" xml:space="preserve">
+    <value>AdvanOptsPanel</value>
+  </data>
+  <data name="&gt;&gt;AdvanOptsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AdvanOptsPanel.Parent" xml:space="preserve">
+    <value>VideoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AdvanOptsPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="QuantizerCQPNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>401, 146</value>
   </data>
@@ -1709,13 +696,13 @@
     <value>306, 248</value>
   </data>
   <data name="FramerateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 18</value>
+    <value>130, 18</value>
   </data>
   <data name="FramerateCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="FramerateCheckBox.Text" xml:space="preserve">
-    <value>원본 프레임레이트</value>
+    <value>원본 프레임 레이트</value>
   </data>
   <data name="&gt;&gt;FramerateCheckBox.Name" xml:space="preserve">
     <value>FramerateCheckBox</value>
@@ -1846,6 +833,7 @@
   <data name="&gt;&gt;FramerateComboBox.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="FramerateLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1859,7 +847,7 @@
     <value>13</value>
   </data>
   <data name="FramerateLabel.Text" xml:space="preserve">
-    <value>프레임레이트:</value>
+    <value>프레임 레이트:</value>
   </data>
   <data name="FramerateLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -2203,292 +1191,55 @@
   <data name="&gt;&gt;VCodecLabel.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;ImgTabPage.Name" xml:space="preserve">
-    <value>ImgTabPage</value>
+  <data name="VideoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 10</value>
   </data>
-  <data name="&gt;&gt;ImgTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="VideoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 280</value>
   </data>
-  <data name="&gt;&gt;ImgTabPage.Parent" xml:space="preserve">
-    <value>ImageTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImgTabPage.ZOrder" xml:space="preserve">
+  <data name="VideoGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ImgPPTabPage.Name" xml:space="preserve">
-    <value>ImgPPTabPage</value>
+  <data name="VideoGroupBox.Text" xml:space="preserve">
+    <value>비디오</value>
   </data>
-  <data name="&gt;&gt;ImgPPTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;VideoGroupBox.Name" xml:space="preserve">
+    <value>VideoGroupBox</value>
   </data>
-  <data name="&gt;&gt;ImgPPTabPage.Parent" xml:space="preserve">
-    <value>ImageTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ImageTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ImageTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="ImageTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 468</value>
-  </data>
-  <data name="ImageTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Name" xml:space="preserve">
-    <value>ImageTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Parent" xml:space="preserve">
-    <value>ImageTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ImageGroupBox.Name" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImageGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;VideoGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ImageGroupBox.Parent" xml:space="preserve">
-    <value>ImgTabPage</value>
+  <data name="&gt;&gt;VideoGroupBox.Parent" xml:space="preserve">
+    <value>VideoTabPage</value>
   </data>
-  <data name="&gt;&gt;ImageGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ImgTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="ImgTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="ImgTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>485, 441</value>
-  </data>
-  <data name="ImgTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ImgTabPage.Text" xml:space="preserve">
-    <value>영상</value>
-  </data>
-  <data name="&gt;&gt;ImgTabPage.Name" xml:space="preserve">
-    <value>ImgTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImgTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImgTabPage.Parent" xml:space="preserve">
-    <value>ImageTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImgTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;DeinterlaceCheckBox.Name" xml:space="preserve">
-    <value>DeinterlaceCheckBox</value>
-  </data>
-  <data name="&gt;&gt;DeinterlaceCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DeinterlaceCheckBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;DeinterlaceCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AspectSLabel.Name" xml:space="preserve">
-    <value>AspectSLabel</value>
-  </data>
-  <data name="&gt;&gt;AspectSLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AspectSLabel.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AspectSLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AspectHTextBox.Name" xml:space="preserve">
-    <value>AspectHTextBox</value>
-  </data>
-  <data name="&gt;&gt;AspectHTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AspectHTextBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AspectHTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;VideoGroupBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;AspectWTextBox.Name" xml:space="preserve">
-    <value>AspectWTextBox</value>
+  <data name="VideoTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
   </data>
-  <data name="&gt;&gt;AspectWTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="VideoTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="&gt;&gt;AspectWTextBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
+  <data name="VideoTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 474</value>
   </data>
-  <data name="&gt;&gt;AspectWTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;AspectComboBox2.Name" xml:space="preserve">
-    <value>AspectComboBox2</value>
-  </data>
-  <data name="&gt;&gt;AspectComboBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AspectComboBox2.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AspectComboBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;AspectComboBox.Name" xml:space="preserve">
-    <value>AspectComboBox</value>
-  </data>
-  <data name="&gt;&gt;AspectComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AspectComboBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AspectComboBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;AspectLabel.Name" xml:space="preserve">
-    <value>AspectLabel</value>
-  </data>
-  <data name="&gt;&gt;AspectLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AspectLabel.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AspectLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;FFmpegResizeFilterComboBox.Name" xml:space="preserve">
-    <value>FFmpegResizeFilterComboBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegResizeFilterComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegResizeFilterComboBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegResizeFilterComboBox.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;FFmpegResizeFilterLabel.Name" xml:space="preserve">
-    <value>FFmpegResizeFilterLabel</value>
-  </data>
-  <data name="&gt;&gt;FFmpegResizeFilterLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegResizeFilterLabel.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegResizeFilterLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeCheckBox.Name" xml:space="preserve">
-    <value>ImageSizeCheckBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeCheckBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeCheckBox.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeSLabel.Name" xml:space="preserve">
-    <value>ImageSizeSLabel</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeSLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeSLabel.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeSLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeHeightTextBox.Name" xml:space="preserve">
-    <value>ImageSizeHeightTextBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeHeightTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeHeightTextBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeHeightTextBox.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeWidthTextBox.Name" xml:space="preserve">
-    <value>ImageSizeWidthTextBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeWidthTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeWidthTextBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeWidthTextBox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeComboBox.Name" xml:space="preserve">
-    <value>ImageSizeComboBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeComboBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeComboBox.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeLabel.Name" xml:space="preserve">
-    <value>ImageSizeLabel</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeLabel.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImageSizeLabel.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="ImageGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 3</value>
-  </data>
-  <data name="ImageGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 225</value>
-  </data>
-  <data name="ImageGroupBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="VideoTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ImageGroupBox.Name" xml:space="preserve">
-    <value>ImageGroupBox</value>
+  <data name="VideoTabPage.Text" xml:space="preserve">
+    <value>비디오</value>
   </data>
-  <data name="&gt;&gt;ImageGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;VideoTabPage.Name" xml:space="preserve">
+    <value>VideoTabPage</value>
   </data>
-  <data name="&gt;&gt;ImageGroupBox.Parent" xml:space="preserve">
-    <value>ImgTabPage</value>
+  <data name="&gt;&gt;VideoTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ImageGroupBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;VideoTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;VideoTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="DeinterlaceCheckBox.AutoSize" type="System.Boolean, mscorlib">
@@ -2891,100 +1642,52 @@
   <data name="&gt;&gt;ImageSizeLabel.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
-    <value>GroupBox2</value>
+  <data name="ImageGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 3</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ImageGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 225</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
-    <value>ImgPPTabPage</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+  <data name="ImageGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Name" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
+  <data name="&gt;&gt;ImageGroupBox.Name" xml:space="preserve">
+    <value>ImageGroupBox</value>
   </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;ImageGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Parent" xml:space="preserve">
-    <value>ImgPPTabPage</value>
+  <data name="&gt;&gt;ImageGroupBox.Parent" xml:space="preserve">
+    <value>ImgTabPage</value>
   </data>
-  <data name="&gt;&gt;ImagePPGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;ImageGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="ImgPPTabPage.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ImgTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
   </data>
-  <data name="ImgPPTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="ImgTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="ImgPPTabPage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ImgTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>485, 441</value>
   </data>
-  <data name="ImgPPTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ImgPPTabPage.Text" xml:space="preserve">
-    <value>영상 설정</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.Name" xml:space="preserve">
-    <value>ImgPPTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.Parent" xml:space="preserve">
-    <value>ImageTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;hflipCheckBox.Name" xml:space="preserve">
-    <value>hflipCheckBox</value>
-  </data>
-  <data name="&gt;&gt;hflipCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hflipCheckBox.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;hflipCheckBox.ZOrder" xml:space="preserve">
+  <data name="ImgTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;vflipCheckBox.Name" xml:space="preserve">
-    <value>vflipCheckBox</value>
+  <data name="ImgTabPage.Text" xml:space="preserve">
+    <value>영상</value>
   </data>
-  <data name="&gt;&gt;vflipCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ImgTabPage.Name" xml:space="preserve">
+    <value>ImgTabPage</value>
   </data>
-  <data name="&gt;&gt;vflipCheckBox.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
+  <data name="&gt;&gt;ImgTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;vflipCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;ImgTabPage.Parent" xml:space="preserve">
+    <value>ImageTabControl</value>
   </data>
-  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 268</value>
-  </data>
-  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 75</value>
-  </data>
-  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
-    <value>ImgPPTabPage</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ImgTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="hflipCheckBox.AutoSize" type="System.Boolean, mscorlib">
@@ -3047,266 +1750,26 @@
   <data name="&gt;&gt;vflipCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Name" xml:space="preserve">
-    <value>FFmpegImageUnsharpCheckBox</value>
+  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 268</value>
   </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 75</value>
   </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
+  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
   </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
+    <value>GroupBox2</value>
   </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Name" xml:space="preserve">
-    <value>FFmpegImageUnsharpLabel</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSNumericUpDown.Name" xml:space="preserve">
-    <value>LumaEffectSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Name" xml:space="preserve">
-    <value>ChromaEffectSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSTrackBar.Name" xml:space="preserve">
-    <value>ChromaEffectSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSTrackBar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSButton.Name" xml:space="preserve">
-    <value>ChromaEffectSButton</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Name" xml:space="preserve">
-    <value>ChromaMatrixVSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Name" xml:space="preserve">
-    <value>ChromaMatrixVSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSTrackBar.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSButton.Name" xml:space="preserve">
-    <value>ChromaMatrixVSButton</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSButton.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Name" xml:space="preserve">
-    <value>ChromaMatrixHSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Name" xml:space="preserve">
-    <value>ChromaMatrixHSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSTrackBar.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSButton.Name" xml:space="preserve">
-    <value>ChromaMatrixHSButton</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSButton.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSTrackBar.Name" xml:space="preserve">
-    <value>LumaEffectSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSTrackBar.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSButton.Name" xml:space="preserve">
-    <value>LumaEffectSButton</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSButton.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Name" xml:space="preserve">
-    <value>LumaMatrixVSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSTrackBar.Name" xml:space="preserve">
-    <value>LumaMatrixVSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSTrackBar.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSButton.Name" xml:space="preserve">
-    <value>LumaMatrixVSButton</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSButton.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Name" xml:space="preserve">
-    <value>LumaMatrixHSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSTrackBar.Name" xml:space="preserve">
-    <value>LumaMatrixHSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSTrackBar.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSButton.Name" xml:space="preserve">
-    <value>LumaMatrixHSButton</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSButton.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="ImagePPGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 3</value>
-  </data>
-  <data name="ImagePPGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 264</value>
-  </data>
-  <data name="ImagePPGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Name" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
     <value>ImgPPTabPage</value>
   </data>
-  <data name="&gt;&gt;ImagePPGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="FFmpegImageUnsharpCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3834,266 +2297,104 @@
   <data name="&gt;&gt;LumaMatrixHSButton.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;SampleratePanel.Name" xml:space="preserve">
-    <value>SampleratePanel</value>
+  <data name="ImagePPGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 3</value>
   </data>
-  <data name="&gt;&gt;SampleratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ImagePPGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 264</value>
   </data>
-  <data name="&gt;&gt;SampleratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
+  <data name="ImagePPGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
-  <data name="&gt;&gt;SampleratePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;ImagePPGroupBox.Name" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
   </data>
-  <data name="&gt;&gt;BitrateNPanel.Name" xml:space="preserve">
-    <value>BitrateNPanel</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNLabel.Name" xml:space="preserve">
-    <value>AudioVolNLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNLabel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;AudioVolButton.Name" xml:space="preserve">
-    <value>AudioVolButton</value>
-  </data>
-  <data name="&gt;&gt;AudioVolButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolButton.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;AudioVolTrackBar.Name" xml:space="preserve">
-    <value>AudioVolTrackBar</value>
-  </data>
-  <data name="&gt;&gt;AudioVolTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolTrackBar.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolTrackBar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNumericUpDown.Name" xml:space="preserve">
-    <value>AudioVolNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNumericUpDown.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNumericUpDown.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;AudioVolLabel.Name" xml:space="preserve">
-    <value>AudioVolLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioVolLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolLabel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChComboBox.Name" xml:space="preserve">
-    <value>FFmpegChComboBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChComboBox.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChComboBox.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChLabel.Name" xml:space="preserve">
-    <value>FFmpegChLabel</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChLabel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Name" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Name" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Name" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Name" xml:space="preserve">
-    <value>AudioCodecComboBox</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Name" xml:space="preserve">
-    <value>ACodecLabel</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="AudioGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 10</value>
-  </data>
-  <data name="AudioGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 212</value>
-  </data>
-  <data name="AudioGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="AudioGroupBox.Text" xml:space="preserve">
-    <value>오디오</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Name" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;ImagePPGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AudioGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
+  <data name="&gt;&gt;ImagePPGroupBox.Parent" xml:space="preserve">
+    <value>ImgPPTabPage</value>
   </data>
-  <data name="&gt;&gt;AudioGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SamplerateCheckBox.Name" xml:space="preserve">
-    <value>SamplerateCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SamplerateCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SamplerateCheckBox.Parent" xml:space="preserve">
-    <value>SampleratePanel</value>
-  </data>
-  <data name="&gt;&gt;SamplerateCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel2.Name" xml:space="preserve">
-    <value>SamplerateLabel2</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel2.Parent" xml:space="preserve">
-    <value>SampleratePanel</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ImagePPGroupBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;SamplerateComboBox.Name" xml:space="preserve">
-    <value>SamplerateComboBox</value>
+  <data name="ImgPPTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
   </data>
-  <data name="&gt;&gt;SamplerateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ImgPPTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="&gt;&gt;SamplerateComboBox.Parent" xml:space="preserve">
-    <value>SampleratePanel</value>
+  <data name="ImgPPTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 441</value>
   </data>
-  <data name="&gt;&gt;SamplerateComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="ImgPPTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;SamplerateLabel.Name" xml:space="preserve">
-    <value>SamplerateLabel</value>
+  <data name="ImgPPTabPage.Text" xml:space="preserve">
+    <value>영상 설정</value>
   </data>
-  <data name="&gt;&gt;SamplerateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ImgPPTabPage.Name" xml:space="preserve">
+    <value>ImgPPTabPage</value>
   </data>
-  <data name="&gt;&gt;SamplerateLabel.Parent" xml:space="preserve">
-    <value>SampleratePanel</value>
+  <data name="&gt;&gt;ImgPPTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SamplerateLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;ImgPPTabPage.Parent" xml:space="preserve">
+    <value>ImageTabControl</value>
   </data>
-  <data name="SampleratePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 82</value>
+  <data name="&gt;&gt;ImgPPTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="SampleratePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 33</value>
+  <data name="ImageTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="SampleratePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="ImageTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="&gt;&gt;SampleratePanel.Name" xml:space="preserve">
-    <value>SampleratePanel</value>
+  <data name="ImageTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>493, 468</value>
   </data>
-  <data name="&gt;&gt;SampleratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ImageTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
   </data>
-  <data name="&gt;&gt;SampleratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
+  <data name="&gt;&gt;ImageTabControl.Name" xml:space="preserve">
+    <value>ImageTabControl</value>
   </data>
-  <data name="&gt;&gt;SampleratePanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ImageTabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImageTabControl.Parent" xml:space="preserve">
+    <value>ImageTabPage</value>
+  </data>
+  <data name="&gt;&gt;ImageTabControl.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ImageTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="ImageTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="ImageTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 474</value>
+  </data>
+  <data name="ImageTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ImageTabPage.Text" xml:space="preserve">
+    <value>영상</value>
+  </data>
+  <data name="&gt;&gt;ImageTabPage.Name" xml:space="preserve">
+    <value>ImageTabPage</value>
+  </data>
+  <data name="&gt;&gt;ImageTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImageTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;ImageTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="SamplerateCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4233,6 +2534,42 @@
   <data name="&gt;&gt;SamplerateLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="SampleratePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 82</value>
+  </data>
+  <data name="SampleratePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 33</value>
+  </data>
+  <data name="SampleratePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;SampleratePanel.Name" xml:space="preserve">
+    <value>SampleratePanel</value>
+  </data>
+  <data name="&gt;&gt;SampleratePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SampleratePanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SampleratePanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AudioBitrateNLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AudioBitrateNLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 9</value>
+  </data>
+  <data name="AudioBitrateNLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 14</value>
+  </data>
+  <data name="AudioBitrateNLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="AudioBitrateNLabel.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
   <data name="&gt;&gt;AudioBitrateNLabel.Name" xml:space="preserve">
     <value>AudioBitrateNLabel</value>
   </data>
@@ -4265,33 +2602,6 @@
   </data>
   <data name="&gt;&gt;BitrateNPanel.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="AudioBitrateNLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AudioBitrateNLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 9</value>
-  </data>
-  <data name="AudioBitrateNLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 14</value>
-  </data>
-  <data name="AudioBitrateNLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="AudioBitrateNLabel.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Name" xml:space="preserve">
-    <value>AudioBitrateNLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Parent" xml:space="preserve">
-    <value>BitrateNPanel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="AudioVolNLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4464,63 +2774,6 @@
   <data name="&gt;&gt;FFmpegChLabel.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Name" xml:space="preserve">
-    <value>AMRBitrateComboBox</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Name" xml:space="preserve">
-    <value>AMRBitrateLabel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Label10.Name" xml:space="preserve">
-    <value>Label10</value>
-  </data>
-  <data name="&gt;&gt;Label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label10.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AAMRBitratePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 272</value>
-  </data>
-  <data name="AAMRBitratePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 33</value>
-  </data>
-  <data name="AAMRBitratePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Name" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="AMRBitrateComboBox.Items" xml:space="preserve">
     <value>4.75</value>
   </data>
@@ -4620,62 +2873,26 @@
   <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;AudioBitrateComboBox.Name" xml:space="preserve">
-    <value>AudioBitrateComboBox</value>
+  <data name="AAMRBitratePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 272</value>
   </data>
-  <data name="&gt;&gt;AudioBitrateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateComboBox.Parent" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateLabel.Name" xml:space="preserve">
-    <value>AudioBitrateLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateLabel.Parent" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
-    <value>Label3</value>
-  </data>
-  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AbitratePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 48</value>
-  </data>
-  <data name="AbitratePanel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="AAMRBitratePanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>445, 33</value>
   </data>
-  <data name="AbitratePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="AAMRBitratePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="&gt;&gt;AbitratePanel.Name" xml:space="preserve">
-    <value>AbitratePanel</value>
+  <data name="&gt;&gt;AAMRBitratePanel.Name" xml:space="preserve">
+    <value>AAMRBitratePanel</value>
   </data>
-  <data name="&gt;&gt;AbitratePanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;AAMRBitratePanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AbitratePanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AAMRBitratePanel.Parent" xml:space="preserve">
     <value>AudioGroupBox</value>
   </data>
-  <data name="&gt;&gt;AbitratePanel.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="AudioBitrateComboBox.Items" xml:space="preserve">
     <value>32</value>
@@ -4806,62 +3023,26 @@
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Name" xml:space="preserve">
-    <value>VorbisQTrackBar</value>
+  <data name="AbitratePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 48</value>
   </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Name" xml:space="preserve">
-    <value>VorbisQNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Name" xml:space="preserve">
-    <value>VorbisQLabel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AVorbisQPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 228</value>
-  </data>
-  <data name="AVorbisQPanel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="AbitratePanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>445, 33</value>
   </data>
-  <data name="AVorbisQPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="AbitratePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <data name="&gt;&gt;AVorbisQPanel.Name" xml:space="preserve">
-    <value>AVorbisQPanel</value>
+  <data name="&gt;&gt;AbitratePanel.Name" xml:space="preserve">
+    <value>AbitratePanel</value>
   </data>
-  <data name="&gt;&gt;AVorbisQPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;AbitratePanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AVorbisQPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AbitratePanel.Parent" xml:space="preserve">
     <value>AudioGroupBox</value>
   </data>
-  <data name="&gt;&gt;AVorbisQPanel.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;AbitratePanel.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="VorbisQTrackBar.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4935,6 +3116,27 @@
   <data name="&gt;&gt;VorbisQLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="AVorbisQPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 228</value>
+  </data>
+  <data name="AVorbisQPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 33</value>
+  </data>
+  <data name="AVorbisQPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;AVorbisQPanel.Name" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;AVorbisQPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVorbisQPanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AVorbisQPanel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <data name="AudioCodecComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 23</value>
   </data>
@@ -4983,176 +3185,29 @@
   <data name="&gt;&gt;ACodecLabel.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;NeroAACQTrackBar.Name" xml:space="preserve">
-    <value>NeroAACQTrackBar</value>
+  <data name="AudioGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 10</value>
   </data>
-  <data name="&gt;&gt;NeroAACQTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="AudioGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 212</value>
   </data>
-  <data name="&gt;&gt;NeroAACQTrackBar.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQTrackBar.ZOrder" xml:space="preserve">
+  <data name="AudioGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;NeroAACQNumericUpDown.Name" xml:space="preserve">
-    <value>NeroAACQNumericUpDown</value>
+  <data name="AudioGroupBox.Text" xml:space="preserve">
+    <value>오디오</value>
   </data>
-  <data name="&gt;&gt;NeroAACQNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;AudioGroupBox.Name" xml:space="preserve">
+    <value>AudioGroupBox</value>
   </data>
-  <data name="&gt;&gt;NeroAACQNumericUpDown.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQNumericUpDown.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQLabel.Name" xml:space="preserve">
-    <value>NeroAACQLabel</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQLabel.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;NeroAACVBRRadioButton.Name" xml:space="preserve">
-    <value>NeroAACVBRRadioButton</value>
-  </data>
-  <data name="&gt;&gt;NeroAACVBRRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACVBRRadioButton.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACVBRRadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;NeroAACCBRRadioButton.Name" xml:space="preserve">
-    <value>NeroAACCBRRadioButton</value>
-  </data>
-  <data name="&gt;&gt;NeroAACCBRRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACCBRRadioButton.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACCBRRadioButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;NeroAACABRRadioButton.Name" xml:space="preserve">
-    <value>NeroAACABRRadioButton</value>
-  </data>
-  <data name="&gt;&gt;NeroAACABRRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACABRRadioButton.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACABRRadioButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateTrackBar.Name" xml:space="preserve">
-    <value>NeroAACBitrateTrackBar</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateTrackBar.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateTrackBar.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Name" xml:space="preserve">
-    <value>NeroAACBitrateNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateLabel.Name" xml:space="preserve">
-    <value>NeroAACBitrateLabel</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateLabel.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;NeroAACSALabel.Name" xml:space="preserve">
-    <value>NeroAACSALabel</value>
-  </data>
-  <data name="&gt;&gt;NeroAACSALabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACSALabel.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACSALabel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileComboBox.Name" xml:space="preserve">
-    <value>NeroAACProfileComboBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileComboBox.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileComboBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileLabel.Name" xml:space="preserve">
-    <value>NeroAACProfileLabel</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileLabel.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="NeroAACGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 228</value>
-  </data>
-  <data name="NeroAACGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 214</value>
-  </data>
-  <data name="NeroAACGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="NeroAACGroupBox.Text" xml:space="preserve">
-    <value>Nero AAC</value>
-  </data>
-  <data name="NeroAACGroupBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Name" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;AudioGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AudioGroupBox.Parent" xml:space="preserve">
     <value>AudioTabPage</value>
   </data>
-  <data name="&gt;&gt;NeroAACGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;AudioGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="NeroAACQTrackBar.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5471,6 +3526,252 @@
   <data name="&gt;&gt;NeroAACProfileLabel.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="NeroAACGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 228</value>
+  </data>
+  <data name="NeroAACGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 214</value>
+  </data>
+  <data name="NeroAACGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="NeroAACGroupBox.Text" xml:space="preserve">
+    <value>Nero AAC</value>
+  </data>
+  <data name="NeroAACGroupBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;NeroAACGroupBox.Name" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACGroupBox.Parent" xml:space="preserve">
+    <value>AudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;NeroAACGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="AudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 474</value>
+  </data>
+  <data name="AudioTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="AudioTabPage.Text" xml:space="preserve">
+    <value>오디오</value>
+  </data>
+  <data name="&gt;&gt;AudioTabPage.Name" xml:space="preserve">
+    <value>AudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;AudioTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;AudioTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SizeButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SizeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 25</value>
+  </data>
+  <data name="SizeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 23</value>
+  </data>
+  <data name="SizeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="SizeButton.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;SizeButton.Name" xml:space="preserve">
+    <value>SizeButton</value>
+  </data>
+  <data name="&gt;&gt;SizeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeButton.Parent" xml:space="preserve">
+    <value>SizeEncGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SizeEncGBLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SizeEncGBLabel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SizeEncGBLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 30</value>
+  </data>
+  <data name="SizeEncGBLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 14</value>
+  </data>
+  <data name="SizeEncGBLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="SizeEncGBLabel.Text" xml:space="preserve">
+    <value>0GB</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGBLabel.Name" xml:space="preserve">
+    <value>SizeEncGBLabel</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGBLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGBLabel.Parent" xml:space="preserve">
+    <value>SizeEncGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGBLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SizeEncMBLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SizeEncMBLabel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SizeEncMBLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SizeEncMBLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 30</value>
+  </data>
+  <data name="SizeEncMBLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 14</value>
+  </data>
+  <data name="SizeEncMBLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="SizeEncMBLabel.Text" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="&gt;&gt;SizeEncMBLabel.Name" xml:space="preserve">
+    <value>SizeEncMBLabel</value>
+  </data>
+  <data name="&gt;&gt;SizeEncMBLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeEncMBLabel.Parent" xml:space="preserve">
+    <value>SizeEncGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncMBLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SizeEncTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SizeEncTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 26</value>
+  </data>
+  <data name="SizeEncTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 22</value>
+  </data>
+  <data name="SizeEncTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SizeEncTextBox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;SizeEncTextBox.Name" xml:space="preserve">
+    <value>SizeEncTextBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeEncTextBox.Parent" xml:space="preserve">
+    <value>SizeEncGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SizeEncLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SizeEncLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 58</value>
+  </data>
+  <data name="SizeEncLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>383, 14</value>
+  </data>
+  <data name="SizeEncLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SizeEncLabel.Text" xml:space="preserve">
+    <value>비디오 비트레이트 값이 예상용량을 기준으로 변경되어 인코딩됩니다.</value>
+  </data>
+  <data name="&gt;&gt;SizeEncLabel.Name" xml:space="preserve">
+    <value>SizeEncLabel</value>
+  </data>
+  <data name="&gt;&gt;SizeEncLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeEncLabel.Parent" xml:space="preserve">
+    <value>SizeEncGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SizeEncCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SizeEncCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 28</value>
+  </data>
+  <data name="SizeEncCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 18</value>
+  </data>
+  <data name="SizeEncCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SizeEncCheckBox.Text" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="&gt;&gt;SizeEncCheckBox.Name" xml:space="preserve">
+    <value>SizeEncCheckBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeEncCheckBox.Parent" xml:space="preserve">
+    <value>SizeEncGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncCheckBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="SizeEncGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 236</value>
+  </data>
+  <data name="SizeEncGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 88</value>
+  </data>
+  <data name="SizeEncGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="SizeEncGroupBox.Text" xml:space="preserve">
+    <value>예상용량을 기준으로 인코딩</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGroupBox.Name" xml:space="preserve">
+    <value>SizeEncGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGroupBox.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="SubtitleRecordingCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5497,6 +3798,30 @@
   </data>
   <data name="&gt;&gt;SubtitleRecordingCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 176</value>
+  </data>
+  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 54</value>
+  </data>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GroupBox1.Text" xml:space="preserve">
+    <value>FFmpeg Subtitle Recording</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="FFmpegCommandButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>334, 19</value>
@@ -5542,6 +3867,30 @@
   </data>
   <data name="&gt;&gt;FFmpegCommandTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="FFmpegCommandGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 330</value>
+  </data>
+  <data name="FFmpegCommandGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 57</value>
+  </data>
+  <data name="FFmpegCommandGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="FFmpegCommandGroupBox.Text" xml:space="preserve">
+    <value>FFmpeg 추가 명령어</value>
+  </data>
+  <data name="&gt;&gt;FFmpegCommandGroupBox.Name" xml:space="preserve">
+    <value>FFmpegCommandGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFmpegCommandGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFmpegCommandGroupBox.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;FFmpegCommandGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="SizeLimitCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5626,6 +3975,30 @@
   </data>
   <data name="&gt;&gt;SizeLimitTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="SizeLimitGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 116</value>
+  </data>
+  <data name="SizeLimitGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>477, 54</value>
+  </data>
+  <data name="SizeLimitGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SizeLimitGroupBox.Text" xml:space="preserve">
+    <value>인코딩 용량 제한</value>
+  </data>
+  <data name="&gt;&gt;SizeLimitGroupBox.Name" xml:space="preserve">
+    <value>SizeLimitGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeLimitGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeLimitGroupBox.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;SizeLimitGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="NameALabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5756,6 +4129,195 @@
   <data name="&gt;&gt;HeaderLabel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="NameGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 10</value>
+  </data>
+  <data name="NameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 100</value>
+  </data>
+  <data name="NameGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="NameGroupBox.Text" xml:space="preserve">
+    <value>앞 부분 이름 / 확장자</value>
+  </data>
+  <data name="&gt;&gt;NameGroupBox.Name" xml:space="preserve">
+    <value>NameGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NameGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NameGroupBox.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;NameGroupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ETCTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="ETCTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 474</value>
+  </data>
+  <data name="ETCTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ETCTabPage.Text" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="&gt;&gt;ETCTabPage.Name" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;ETCTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ETCTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;ETCTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SettingTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 69</value>
+  </data>
+  <data name="SettingTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>507, 501</value>
+  </data>
+  <data name="SettingTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SettingTabControl.Name" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;SettingTabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SettingTabControl.Parent" xml:space="preserve">
+    <value>EncSetPanel</value>
+  </data>
+  <data name="&gt;&gt;SettingTabControl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EncSetPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EncSetPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EncSetPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 612</value>
+  </data>
+  <data name="EncSetPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EncSetPanel.Name" xml:space="preserve">
+    <value>EncSetPanel</value>
+  </data>
+  <data name="&gt;&gt;EncSetPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EncSetPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EncSetPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="TargetContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="CD175MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="CD175MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>1/4 CD (175MB)</value>
+  </data>
+  <data name="CD350MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="CD350MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>1/2 CD (350MB)</value>
+  </data>
+  <data name="CD700MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="CD700MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>CD (700MB)</value>
+  </data>
+  <data name="CDs1400MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="CDs1400MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>2 CDs (1400MB)</value>
+  </data>
+  <data name="CDs2100MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="CDs2100MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>3 CDs (2100MB)</value>
+  </data>
+  <data name="DVD896MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="DVD896MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>1/5 DVD (896MB)</value>
+  </data>
+  <data name="DVD1120MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="DVD1120MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>1/4 DVD (1120MB)</value>
+  </data>
+  <data name="DVD1492MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="DVD1492MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>1/3 DVD (1492MB)</value>
+  </data>
+  <data name="DVD2240MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="DVD2240MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>1/2 DVD (2240MB)</value>
+  </data>
+  <data name="DVDOrBD54480MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="DVDOrBD54480MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>DVD or BD-5 (4480MB)</value>
+  </data>
+  <data name="DVD6720MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="DVD6720MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>3/2 DVD (6720MB)</value>
+  </data>
+  <data name="DVDDLOrBD98145MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="DVDDLOrBD98145MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>DVD-DL or BD-9 (8145MB)</value>
+  </data>
+  <data name="BD23450MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="BD23450MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>BD (23450MB)</value>
+  </data>
+  <data name="BDDL46900MBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="BDDL46900MBToolStripMenuItem.Text" xml:space="preserve">
+    <value>BD-DL (46900MB)</value>
+  </data>
+  <data name="TargetContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 312</value>
+  </data>
+  <data name="&gt;&gt;TargetContextMenuStrip.Name" xml:space="preserve">
+    <value>TargetContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;TargetContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -5776,6 +4338,90 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>인코딩 설정</value>
+  </data>
+  <data name="&gt;&gt;CD175MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>CD175MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CD175MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CD350MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>CD350MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CD350MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CD700MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>CD700MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CD700MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CDs1400MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>CDs1400MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CDs1400MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CDs2100MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>CDs2100MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CDs2100MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DVD896MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>DVD896MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DVD896MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DVD1120MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>DVD1120MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DVD1120MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DVD1492MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>DVD1492MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DVD1492MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DVD2240MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>DVD2240MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DVD2240MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DVDOrBD54480MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>DVDOrBD54480MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DVDOrBD54480MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DVD6720MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>DVD6720MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DVD6720MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DVDDLOrBD98145MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>DVDDLOrBD98145MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DVDDLOrBD98145MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BD23450MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>BD23450MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;BD23450MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BDDL46900MBToolStripMenuItem.Name" xml:space="preserve">
+    <value>BDDL46900MBToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;BDDL46900MBToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EncSetFrm</value>
