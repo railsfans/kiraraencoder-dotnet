@@ -2472,7 +2472,7 @@ RELOAD:
         If InStr(OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then '오디오만 인코딩
 
 
-            MainFrm.AviSynthCommandStr = FormatV & SubtitleRecordingCheckBoxV & AudioCodecComboBoxV & SamplerateComboBoxV & AviSynthChComboBoxV & AudioBitrateComboBoxV & _
+            MainFrm.AviSynthCommandStr = FormatV & SubtitleRecordingCheckBoxV & " -vn" & AudioCodecComboBoxV & SamplerateComboBoxV & AviSynthChComboBoxV & AudioBitrateComboBoxV & _
                                               SizeLimitTextBoxV & FFmpegCommandTextBoxV
 
             MainFrm.FFmpegCommandStr = FormatV & SubtitleRecordingCheckBoxV & " -vn" & AudioCodecComboBoxV & SamplerateComboBoxV & FFmpegChComboBoxV & AudioBitrateComboBoxV & _

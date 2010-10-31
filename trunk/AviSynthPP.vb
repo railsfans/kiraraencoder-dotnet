@@ -138,7 +138,16 @@ Public Class AviSynthPP
                     SettingSizeWidthV = .AviSynthImageSizeWidthTextBox.Text
                     SettingSizeHeightV = .AviSynthImageSizeHeightTextBox.Text
 
-                    SourceSizeV = Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(0)
+                    Try
+                        SourceSizeV = Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(0)
+                    Catch ex As Exception
+                        SourceSizeV = "0x0"
+                        GoTo ImageSkip
+                    End Try
+
+                    If SourceSizeV = "x" Then
+                        GoTo ImageSkip
+                    End If
 
                     If SourceSizeV <> "" AndAlso .AviSynthAspectComboBox.Text = LangCls.ImagePPLetterBoxAviSynthAspectComboBox Then '사이즈입력받고, 레터박스 붙이기면
 
@@ -158,16 +167,31 @@ Public Class AviSynthPP
                             End If
 
                             If DARtes <> "" Then 'else Location Blank
-                                SourceWidthV = Split(DARtes, ":")(0)
-                                SourceHeightV = Split(DARtes, ":")(1)
+                                Try
+                                    SourceWidthV = Split(DARtes, ":")(0)
+                                    SourceHeightV = Split(DARtes, ":")(1)
+                                Catch ex As Exception
+                                    SourceWidthV = 0
+                                    SourceHeightV = 0
+                                End Try
                             Else
-                                SourceWidthV = Split(SourceSizeV, "x")(0)
-                                SourceHeightV = Split(SourceSizeV, "x")(1)
+                                Try
+                                    SourceWidthV = Split(SourceSizeV, "x")(0)
+                                    SourceHeightV = Split(SourceSizeV, "x")(1)
+                                Catch ex As Exception
+                                    SourceWidthV = 0
+                                    SourceHeightV = 0
+                                End Try
                             End If
 
                         ElseIf .AviSynthAspectComboBox2.Text = LangCls.ImagePPOriginalAviSynthAspectComboBox2 Then 'SAR(원본 비율)
-                            SourceWidthV = Split(SourceSizeV, "x")(0)
-                            SourceHeightV = Split(SourceSizeV, "x")(1)
+                            Try
+                                SourceWidthV = Split(SourceSizeV, "x")(0)
+                                SourceHeightV = Split(SourceSizeV, "x")(1)
+                            Catch ex As Exception
+                                SourceWidthV = 0
+                                SourceHeightV = 0
+                            End Try
                         Else '아니면
                             SourceWidthV = .AviSynthAspectWTextBox.Text
                             SourceHeightV = .AviSynthAspectHTextBox.Text
@@ -228,16 +252,31 @@ Public Class AviSynthPP
                             End If
 
                             If DARtes <> "" Then 'else Location Blank
-                                SourceWidthV = Split(DARtes, ":")(0)
-                                SourceHeightV = Split(DARtes, ":")(1)
+                                Try
+                                    SourceWidthV = Split(DARtes, ":")(0)
+                                    SourceHeightV = Split(DARtes, ":")(1)
+                                Catch ex As Exception
+                                    SourceWidthV = 0
+                                    SourceHeightV = 0
+                                End Try
                             Else
-                                SourceWidthV = Split(SourceSizeV, "x")(0)
-                                SourceHeightV = Split(SourceSizeV, "x")(1)
+                                Try
+                                    SourceWidthV = Split(SourceSizeV, "x")(0)
+                                    SourceHeightV = Split(SourceSizeV, "x")(1)
+                                Catch ex As Exception
+                                    SourceWidthV = 0
+                                    SourceHeightV = 0
+                                End Try
                             End If
 
                         ElseIf .AviSynthAspectComboBox2.Text = LangCls.ImagePPOriginalAviSynthAspectComboBox2 Then 'SAR(원본 비율)
-                            SourceWidthV = Split(SourceSizeV, "x")(0)
-                            SourceHeightV = Split(SourceSizeV, "x")(1)
+                            Try
+                                SourceWidthV = Split(SourceSizeV, "x")(0)
+                                SourceHeightV = Split(SourceSizeV, "x")(1)
+                            Catch ex As Exception
+                                SourceWidthV = 0
+                                SourceHeightV = 0
+                            End Try
                         Else '아니면
                             SourceWidthV = .AviSynthAspectWTextBox.Text
                             SourceHeightV = .AviSynthAspectHTextBox.Text
@@ -281,6 +320,7 @@ Public Class AviSynthPP
                         End If
 
                     Else '아니면
+ImageSkip:
                         RealnputWidthV = SettingSizeWidthV
                         RealnputHeightV = SettingSizeHeightV
                         RealnputLetterWidthV = 0
@@ -304,7 +344,10 @@ Public Class AviSynthPP
                     ElseIf .AviSynthResizeFilterComboBox.Text = "Bicubic " & LangCls.ImagePPBlurStr Then
                         ImageV = "BicubicResize(" & RealnputWidthV & "," & RealnputHeightV & ",0.333,0.333)" & LCSizeV
                     Else
-                        ImageV = Split(.AviSynthResizeFilterComboBox.Text, " (")(0) & "Resize(" & RealnputWidthV & "," & RealnputHeightV & ")" & LCSizeV
+                        Try
+                            ImageV = Split(.AviSynthResizeFilterComboBox.Text, " (")(0) & "Resize(" & RealnputWidthV & "," & RealnputHeightV & ")" & LCSizeV
+                        Catch ex As Exception
+                        End Try
                     End If
 
                 End If
@@ -793,7 +836,7 @@ ERRSKIP:
                 AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcename>", "DTS")
                 AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcelength>", Int(PlayHMSV * 25) + 1)
                 AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcefps>", "25")
-            ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "RM" Then 'RM 은 FFmpegSource로.//
+            ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "RM" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "AMR" Then 'RM, AMR 은 FFmpegSource로.//
                 AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
             Else
                 AVTextBoxV = AviSynthEditorFrm.BassAudioTextBox.Text
@@ -870,7 +913,7 @@ ERRSKIP:
             '인덱스 생성관련
             '===========================
             If MainFrm.EncListListView.Items(index).SubItems(14).Text <> "" Then
-                If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").FFINDEX") = True Then '파일이 존재하면
+                If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") = True Then '파일이 존재하면
                     If My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString = MainFrm.EncListListView.Items(index).SubItems(14).Text Then
                         GoTo skip
                     End If
@@ -898,7 +941,7 @@ ERRSKIP:
                 'ShowMode
                 '----------------
                 INDEX_PStr = ""
-                FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").FFINDEX", PriorityInt, IndexVideoOnly)
+                FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly)
                 Try
                     FFMSIndexFrm.ShowDialog()
                 Catch ex As Exception
@@ -909,7 +952,7 @@ ERRSKIP:
                 '----------------
                 INDEX_ProcessEChk = False
                 INDEX_PStr = ""
-                FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").FFINDEX", PriorityInt, IndexVideoOnly)
+                FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly)
                 If ShowStatus = True Then EncodingFrm.EncToolStripStatusLabel.Text = LangCls.EncodingCreatingFFINDEX
                 Do Until INDEX_ProcessEChk = True
                     Application.DoEvents()
@@ -921,7 +964,7 @@ ERRSKIP:
                 Exit Sub '중지됨//
             Else
                 MainFrm.EncListListView.Items(index).SubItems(14).Text = My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString
-                MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").FFINDEX") '클린업
+                MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") '클린업
             End If
             '===========================
 
@@ -981,10 +1024,13 @@ skip:
             Dim i2 As Integer
             For i2 = 0 To AudioStramCntStr - 1
                 Dim ta2v0 As String = MI0.Get_(StreamKind.Audio, i2, "ID")
-                Dim AudioMapV2 As String
+                Dim AudioMapV2 As String = ""
                 If ta2v0 <> "" Then
                     If InStr(AudioMapV, ".", CompareMethod.Text) <> 0 Then
-                        AudioMapV2 = Split(AudioMapV, ".")(1)
+                        Try
+                            AudioMapV2 = Split(AudioMapV, ".")(1)
+                        Catch ex As Exception
+                        End Try
                     Else
                         AudioMapV2 = AudioMapV
                     End If
@@ -1039,7 +1085,10 @@ DelayAudioSkip:
                     FFPPStr = FFPPStr & "/dr:a"
                 End If
                 If ImagePPFrm.AviSynthDeinterlaceCheckBox.Checked = True Then '디인터레이스 여부
-                    FFPPStr = FFPPStr & "/" & Replace(Split(ImagePPFrm.AviSynthDeinterlaceComboBox.Text, "(")(1), ")", "")
+                    Try
+                        FFPPStr = FFPPStr & "/" & Replace(Split(ImagePPFrm.AviSynthDeinterlaceComboBox.Text, "(")(1), ")", "")
+                    Catch ex As Exception
+                    End Try
                 End If
                 If Left(FFPPStr, 1) = "/" Then
                     FFPPStr = ".FFPP(" & Chr(34) & Replace(FFPPStr, "/", "", 1, 1) & Chr(34) & ")"
@@ -1048,7 +1097,7 @@ DelayAudioSkip:
             AVTextBoxV = Replace(AVTextBoxV, "#<ffpp>", FFPPStr)
 
             '#<cachefile>
-            AVTextBoxV = Replace(AVTextBoxV, "#<cachefile>", My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").FFINDEX")
+            AVTextBoxV = Replace(AVTextBoxV, "#<cachefile>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
 
             '#<atrack>
             AVTextBoxV = Replace(AVTextBoxV, "#<atrack>", AudioMapV)
@@ -1064,7 +1113,7 @@ DelayAudioSkip:
             '인덱스 생성관련
             '===========================
             If MainFrm.EncListListView.Items(index).SubItems(16).Text <> "" Then
-                If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") = True Then '파일이 존재하면
+                If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") = True Then '파일이 존재하면
                     If My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString = MainFrm.EncListListView.Items(index).SubItems(16).Text Then
                         GoTo skip2
                     End If
@@ -1081,7 +1130,7 @@ DelayAudioSkip:
                 'ShowMode
                 '----------------
                 INDEX_PStr = ""
-                DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
+                DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
                 Try
                     DGIndexFrm.ShowDialog()
                 Catch ex As Exception
@@ -1092,7 +1141,7 @@ DelayAudioSkip:
                 '----------------
                 INDEX_ProcessEChk = False
                 INDEX_PStr = ""
-                DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
+                DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
                 If ShowStatus = True Then EncodingFrm.EncToolStripStatusLabel.Text = LangCls.EncodingCreatingD2V
                 Do Until INDEX_ProcessEChk = True
                     Application.DoEvents()
@@ -1153,15 +1202,15 @@ DelayAudioSkip:
 
                     Dim FileListBox1 As New ListBox
                     FileListBox1.Items.Clear()
-                    FileListBox1.Items.AddRange(Directory.GetFiles(My.Application.Info.DirectoryPath & "\temp\Caches", EXV, SearchOption.TopDirectoryOnly))
+                    FileListBox1.Items.AddRange(Directory.GetFiles(My.Application.Info.DirectoryPath & "\temp\caches", EXV, SearchOption.TopDirectoryOnly))
                     If FileListBox1.Items.Count = 0 Then
-                        FileListBox1.Items.AddRange(Directory.GetFiles(My.Application.Info.DirectoryPath & "\temp\Caches", EXV2, SearchOption.TopDirectoryOnly))
+                        FileListBox1.Items.AddRange(Directory.GetFiles(My.Application.Info.DirectoryPath & "\temp\caches", EXV2, SearchOption.TopDirectoryOnly))
                     End If
 
                     FileListBox2.Items.Clear()
                     If FileListBox1.Items.Count > 0 Then
                         For FLBI = 1 To FileListBox1.Items.Count
-                            If InStr(FileListBox1.Items(FLBI - 1), "Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")") <> 0 Then
+                            If InStr(FileListBox1.Items(FLBI - 1), "cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")") <> 0 Then
                                 FileListBox2.Items.Add(FileListBox1.Items(FLBI - 1))
                             End If
                         Next
@@ -1223,15 +1272,15 @@ DelayAudioSkip:
             If INDEX_ProcessStopChk = True Then
                 '중지된 상태, 삭제(클린업)
                 Try
-                    If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") = True Then
-                        My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
+                    If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") = True Then
+                        My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
                     End If
                 Catch ex As Exception
                 End Try
 
                 Exit Sub '중지됨//
             Else
-                MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") '클린업
+                MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") '클린업
                 MainFrm.EncListListView.Items(index).SubItems(16).Text = My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString
             End If
 
@@ -1240,7 +1289,7 @@ DelayAudioSkip:
 skip2:
 
             '#<d2vsource>
-            AVTextBoxV = Replace(AVTextBoxV, "#<d2vsource>", My.Application.Info.DirectoryPath & "\temp\Caches\Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
+            AVTextBoxV = Replace(AVTextBoxV, "#<d2vsource>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
 
             '===========================
             Dim DGIndexAudioStramPathV As String = ""
@@ -1271,7 +1320,11 @@ skip2:
             Loop Until (ta2 = "")
             'HEX
             Dim AudioStreamHEXV = MainFrm.EncListListView.Items(index).SubItems(4).Text
-            AudioStreamHEXV = Split(Split(AudioStreamHEXV, "0x")(1), "]")(0)
+            Try
+                AudioStreamHEXV = Split(Split(AudioStreamHEXV, "0x")(1), "]")(0)
+            Catch ex As Exception
+                AudioStreamHEXV = ""
+            End Try
 
             '오디오 스트림 선택
             For AudioStreamSelV = 1 To AudioComboBox.Items.Count
@@ -1279,18 +1332,18 @@ skip2:
 
                 If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEGTS" Then
 
-                    DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\Caches\" & AudioComboBox.Items(0)
+                    DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\caches\" & AudioComboBox.Items(0)
 
                     '여러스트림 선택용. (PID 앞에 0이 더 붙는 경우가 있다.)
-                    'If InStr(AudioComboBox.Items(AudioStreamSelV - 1), "Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ") PID " & AudioStreamHEXV & " ", CompareMethod.Text) <> 0 Then
-                    '    DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\Caches\" & AudioComboBox.Items(AudioStreamSelV - 1)
+                    'If InStr(AudioComboBox.Items(AudioStreamSelV - 1), "cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ") PID " & AudioStreamHEXV & " ", CompareMethod.Text) <> 0 Then
+                    '    DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\caches\" & AudioComboBox.Items(AudioStreamSelV - 1)
                     'End If
 
 
                 ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEG" Then
 
-                    If InStr(AudioComboBox.Items(AudioStreamSelV - 1), "Cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ") T" & AudioStreamHEXV & " ", CompareMethod.Text) <> 0 Then
-                        DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\Caches\" & AudioComboBox.Items(AudioStreamSelV - 1)
+                    If InStr(AudioComboBox.Items(AudioStreamSelV - 1), "cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ") T" & AudioStreamHEXV & " ", CompareMethod.Text) <> 0 Then
+                        DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\caches\" & AudioComboBox.Items(AudioStreamSelV - 1)
                     End If
 
                 End If
@@ -1324,7 +1377,11 @@ skip2:
                 For i2 = 0 To AudioStramCntStr - 1
                     Dim ta2v2 As String = MI2.Get_(StreamKind.Audio, i2, "ID")
                     If ta2v2 <> "" Then
-                        Dim ta3 As String = UCase(Strings.Right(Split(Split(MainFrm.EncListListView.Items(index).SubItems(4).Text, "[0x")(1), "]")(0), 2))
+                        Dim ta3 As String = ""
+                        Try
+                            ta3 = UCase(Strings.Right(Split(Split(MainFrm.EncListListView.Items(index).SubItems(4).Text, "[0x")(1), "]")(0), 2))
+                        Catch ex As Exception
+                        End Try
                         Dim hex3 As String = Strings.Right(Hex(ta2v2), 2)
                         If ta3 = hex3 Then
                             SN = i2
@@ -1414,7 +1471,7 @@ skip2:
         If PlayHMSV = EndHMSV Then '파일의 시간과 종료시간이 같으면 종료부분은 0으로 처리.
             AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & ",0)")
         Else
-            AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & "," & Int(EndHMSV * fpsV) & ")")
+            AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & "," & Int(EndHMSV * fpsV * bobv) & ")")
         End If
 
         '#<delayaudio2>
@@ -1571,9 +1628,15 @@ skip2:
         'ScriptTextBox 추가
         AviSynthEditorFrm.ScriptTextBox.Text = AVTextBoxV
 
+        '------------------------------------------
+
         '저장
         Dim _StreamWriter2 As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs", False, System.Text.Encoding.Default)
-        _StreamWriter2.Write(AVTextBoxV)
+        If (InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0) AndAlso ShowModeV = False AndAlso ShowStatus = True Then '오디오만 인코딩일경우 맨 마지막에 프레임 1로 설정..(인코딩할때만 추가되는 스크립트..)
+            _StreamWriter2.Write(AVTextBoxV & vbNewLine & "AssumeFPS(1)")
+        Else
+            _StreamWriter2.Write(AVTextBoxV)
+        End If
         _StreamWriter2.Close()
 
         '네로AAC 오디오용 저장

@@ -55,7 +55,7 @@ Public Class MainFrm
     End Enum
 
     '캐시파일 인덱스
-    Dim Cache_i As Integer = 0
+    Dim cache_i As Integer = 0
 
     '프로세스 종료 확인
     Dim ProcessEChkB As Boolean = False
@@ -118,6 +118,10 @@ Public Class MainFrm
 
     'SEEKMODE = -1?
     Public SEEKMODEM1B As Boolean = False
+
+    'Mutex
+    Dim STMutexBool As Boolean
+    Dim STMutex As New System.Threading.Mutex(True, "Kirara Encoder Mutex", STMutexBool)
 
 #Region "프론트엔드 코어"
 
@@ -317,6 +321,11 @@ Public Class MainFrm
         End If
         ELVI.SubItems(10).Text = MPATHV
 
+        '/////////////////////////////////////////////////////////////////////////////////// 미디어 인포 _MI 변수 구간
+        Dim _MI As MediaInfo
+        _MI = New MediaInfo
+        _MI.Open(MPATHV)
+
         '정보 가져오기 시작
         Dim ia2 As Integer = 1, iia2 As Integer = 0
         Dim ta2 As String = ""
@@ -340,45 +349,49 @@ Public Class MainFrm
         ELVI.SubItems(1).Text = ta2
         ELVI.SubItems(11).Text = ta2 & " [00:00:00.00 - 00:00:00.00]"
 
+        '화면크기 미디어 인포
+        ELVI.SubItems(12).Text = _MI.Get_(StreamKind.Visual, 0, "Width") & "x" & _MI.Get_(StreamKind.Visual, 0, "Height")
+
         '화면크기
-        ia2 = 1
-        iia2 = 0
-        ta2 = ""
-        If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
-            iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
-            If InStr(iia2, OutputBox_GI.Text, vbNewLine, CompareMethod.Text) Then
-                ia2 = InStr(iia2, OutputBox_GI.Text, vbNewLine, CompareMethod.Text) + 1
-                ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+        If ELVI.SubItems(12).Text = "" Then
+            ia2 = 1
+            iia2 = 0
+            ta2 = ""
+            If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
+                iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
+                If InStr(iia2, OutputBox_GI.Text, vbNewLine, CompareMethod.Text) Then
+                    ia2 = InStr(iia2, OutputBox_GI.Text, vbNewLine, CompareMethod.Text) + 1
+                    ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                End If
+            Else
+                ia2 = ia2 + 1
             End If
-        Else
-            ia2 = ia2 + 1
+
+            If InStr(1, ta2, " / 0x") <> 0 Then
+                Try
+                    If InStr(ta2, ",", CompareMethod.Text) <> 0 Then ta2 = Split(ta2, ",")(1)
+                Catch ex As Exception
+                End Try
+            Else
+                Try
+                    If InStr(ta2, ",", CompareMethod.Text) <> 0 Then ta2 = Split(ta2, ",")(2)
+                Catch ex As Exception
+                End Try
+            End If
+            If ta2 <> "" Then
+                Try
+                    If InStr(ta2, " ", CompareMethod.Text) <> 0 Then ELVI.SubItems(12).Text = Split(ta2, " ")(1)
+                Catch ex As Exception
+                End Try
+            End If
         End If
 
-        If InStr(1, ta2, " / 0x") <> 0 Then
-            Try
-                If InStr(ta2, ",", CompareMethod.Text) <> 0 Then ta2 = Split(ta2, ",")(1)
-            Catch ex As Exception
-            End Try
-        Else
-            Try
-                If InStr(ta2, ",", CompareMethod.Text) <> 0 Then ta2 = Split(ta2, ",")(2)
-            Catch ex As Exception
-            End Try
-        End If
-        If ta2 <> "" Then
-            Try
-                If InStr(ta2, " ", CompareMethod.Text) <> 0 Then ELVI.SubItems(12).Text = Split(ta2, " ")(1)
-            Catch ex As Exception
-            End Try
-        End If
-        If ELVI.SubItems(12).Text = "" Then
+        '정상인지 체크
+        If ELVI.SubItems(12).Text = "" OrElse InStr(ELVI.SubItems(12).Text, "x", CompareMethod.Text) = 0 Then
             ELVI.SubItems(12).Text = "0x0"
         End If
 
         '비디오프레임 미디어 인포
-        Dim _MI As MediaInfo
-        _MI = New MediaInfo
-        _MI.Open(MPATHV)
         ta2 = _MI.Get_(StreamKind.Visual, 0, "FrameRate")
         If IsNumeric(ta2) = False Then
             If InStr(ta2, " ") <> 0 Then
@@ -390,7 +403,7 @@ Public Class MainFrm
                 ta2 = ""
             End If
         End If
-        _MI.Close()
+
         '비디오프레임 fps
         If ta2 = "" Then
             ia2 = 1
@@ -437,6 +450,7 @@ Public Class MainFrm
         End If
         ELVI.SubItems(12).Text = ELVI.SubItems(12).Text & "," & ta2
 
+
         '형식
         ia2 = 1
         iia2 = 0
@@ -474,11 +488,7 @@ Public Class MainFrm
         '---------------------------------------------
         '오디오 스트림 개수 저장
         Dim AudioStramCntStr As String = "0"
-        Dim MI2 As MediaInfo
-        MI2 = New MediaInfo
-        MI2.Open(MPATHV)
-        AudioStramCntStr = MI2.Get_(StreamKind.Audio, 0, "StreamCount")
-        MI2.Close()
+        AudioStramCntStr = _MI.Get_(StreamKind.Audio, 0, "StreamCount")
         '---------------------------------------------
         Dim StreamIOListBox As New ListBox
         StreamIOListBox.Items.Clear()
@@ -501,13 +511,10 @@ Public Class MainFrm
                 StreamIO = Replace(StreamIO, ta2, "")
                 If InStr(ta2, "[0x") <> 0 AndAlso InStr(ta2, "Audio") <> 0 Then
                     Try
-                        Dim MI As MediaInfo
-                        MI = New MediaInfo
-                        MI.Open(MPATHV)
                         If AudioStramCntStr <> "" OrElse AudioStramCntStr <> "0" Then
                             Dim i As Integer
                             For i = 0 To AudioStramCntStr - 1
-                                Dim ta2v As String = MI.Get_(StreamKind.Audio, i, "ID")
+                                Dim ta2v As String = _MI.Get_(StreamKind.Audio, i, "ID")
                                 If ta2v <> "" Then
                                     Dim ta3 As String = UCase(Strings.Right(Split(Split(ta2, "[0x")(1), "]")(0), 2))
                                     Dim hex3 As String = Strings.Right(Hex(ta2v), 2)
@@ -519,7 +526,6 @@ Public Class MainFrm
                                 End If
                             Next
                         End If
-                        MI.Close()
                     Catch ex As Exception
                     End Try
                 Else
@@ -578,8 +584,8 @@ Public Class MainFrm
         End If
 
         'FFINDEX_FILENAME_i
-        ELVI.SubItems(13).Text = Format(Now, "yyyyMMddHHmmss") & Cache_i
-        Cache_i += 1
+        ELVI.SubItems(13).Text = Format(Now, "yyyyMMddHHmmss") & cache_i
+        cache_i += 1
 
         'Crop
         ELVI.SubItems(15).Text = "0,0,0,0"
@@ -587,6 +593,9 @@ Public Class MainFrm
         '상태
         ELVI.SubItems(6).Text = LangCls.MainWaitStr
         ELVI.Checked = True
+
+        _MI.Close()
+        '/////////////////////////////////////////////////////////////////////////////////// 미디어 인포 _MI 변수 구간
 
     End Sub
 
@@ -1511,7 +1520,6 @@ LANG_SKIP:
 
 #End Region
 
-
     Private Sub MainForm_SizeChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.SizeChanged
         '폼이 일반 상태일때 기억한다
         If Me.WindowState = FormWindowState.Normal Then
@@ -1601,6 +1609,8 @@ LANG_SKIP:
         Catch ex As Exception
         End Try
 
+        STMutex.ReleaseMutex()
+
     End Sub
 
     Private Sub MainFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -1614,6 +1624,12 @@ LANG_SKIP:
                 MsgBox("Kirara Encoder is not supported on this operating system.")
                 Close()
             End If
+        End If
+
+        '인스턴스검사(뮤텍스는 NT5.0 윈도우 2000 이상에서 사용가능)
+        If STMutexBool = False Then
+            MessageBox.Show("Kirara Encoder is already running.", "Kirara Encoder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Process.GetCurrentProcess.Kill()
         End If
 
         '==================================================
@@ -1634,13 +1650,18 @@ LANG_SKIP:
         End If
 
         '캐시 저장폴더 생성
-        If My.Computer.FileSystem.DirectoryExists(My.Application.Info.DirectoryPath & "\temp\Caches") = False Then
-            My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\temp\Caches")
+        If My.Computer.FileSystem.DirectoryExists(My.Application.Info.DirectoryPath & "\temp\caches") = False Then
+            My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\temp\caches")
         End If
 
         '프리셋폴더 생성
         If My.Computer.FileSystem.DirectoryExists(My.Application.Info.DirectoryPath & "\preset") = False Then
             My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\preset")
+        End If
+
+        '언어폴더 생성
+        If My.Computer.FileSystem.DirectoryExists(My.Application.Info.DirectoryPath & "\lang") = False Then
+            My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\lang")
         End If
 
         '-----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1678,6 +1699,7 @@ LANG_SKIP:
                 Cnt = 1
             End If
         Next
+
         '선택된 아이템이 없으면 자동선택으로//
         If Cnt = 0 Then
             CType(LangToolStripMenuItem.DropDownItems(0), ToolStripMenuItem).Checked = True

@@ -129,7 +129,7 @@ Public Class EncodingFrm
                 '------------------
                 'EncDuration
                 '------------------
-                If MainFrm.AVSCheckBox.Checked = True AndAlso PipeMode = False Then 'AviSynth 사용
+                If MainFrm.AVSCheckBox.Checked = True AndAlso PipeMode = False AndAlso (InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0) Then 'AviSynth 사용 (오디오만 인코딩 모드 아님)
                     ia2 = 1
                     iia2 = 0
                     ta2 = ""
@@ -860,7 +860,16 @@ Public Class EncodingFrm
                             SettingSizeWidthV = .ImageSizeWidthTextBox.Text
                             SettingSizeHeightV = .ImageSizeHeightTextBox.Text
 
-                            SourceSizeV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0)
+                            Try
+                                SourceSizeV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0)
+                            Catch ex As Exception
+                                SourceSizeV = "0x0"
+                                GoTo ImageSkip
+                            End Try
+
+                            If SourceSizeV = "x" Then
+                                GoTo ImageSkip
+                            End If
 
                             If SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetLetterBoxAspectComboBox Then '사이즈입력받고, 레터박스 붙이기면
 
@@ -880,16 +889,31 @@ Public Class EncodingFrm
                                     End If
 
                                     If DARtes <> "" Then 'else Location Blank
-                                        SourceWidthV = Split(DARtes, ":")(0)
-                                        SourceHeightV = Split(DARtes, ":")(1)
+                                        Try
+                                            SourceWidthV = Split(DARtes, ":")(0)
+                                            SourceHeightV = Split(DARtes, ":")(1)
+                                        Catch ex As Exception
+                                            SourceWidthV = 0
+                                            SourceHeightV = 0
+                                        End Try
                                     Else
-                                        SourceWidthV = Split(SourceSizeV, "x")(0)
-                                        SourceHeightV = Split(SourceSizeV, "x")(1)
+                                        Try
+                                            SourceWidthV = Split(SourceSizeV, "x")(0)
+                                            SourceHeightV = Split(SourceSizeV, "x")(1)
+                                        Catch ex As Exception
+                                            SourceWidthV = 0
+                                            SourceHeightV = 0
+                                        End Try
                                     End If
 
                                 ElseIf .AspectComboBox2.Text = LangCls.EncSetOriginalAspectComboBox2 Then 'SAR(원본 비율)
-                                    SourceWidthV = Split(SourceSizeV, "x")(0)
-                                    SourceHeightV = Split(SourceSizeV, "x")(1)
+                                    Try
+                                        SourceWidthV = Split(SourceSizeV, "x")(0)
+                                        SourceHeightV = Split(SourceSizeV, "x")(1)
+                                    Catch ex As Exception
+                                        SourceWidthV = 0
+                                        SourceHeightV = 0
+                                    End Try
                                 Else '아니면
                                     SourceWidthV = .AspectWTextBox.Text
                                     SourceHeightV = .AspectHTextBox.Text
@@ -943,16 +967,31 @@ Public Class EncodingFrm
                                     End If
 
                                     If DARtes <> "" Then 'else Location Blank
-                                        SourceWidthV = Split(DARtes, ":")(0)
-                                        SourceHeightV = Split(DARtes, ":")(1)
+                                        Try
+                                            SourceWidthV = Split(DARtes, ":")(0)
+                                            SourceHeightV = Split(DARtes, ":")(1)
+                                        Catch ex As Exception
+                                            SourceWidthV = 0
+                                            SourceHeightV = 0
+                                        End Try
                                     Else
-                                        SourceWidthV = Split(SourceSizeV, "x")(0)
-                                        SourceHeightV = Split(SourceSizeV, "x")(1)
+                                        Try
+                                            SourceWidthV = Split(SourceSizeV, "x")(0)
+                                            SourceHeightV = Split(SourceSizeV, "x")(1)
+                                        Catch ex As Exception
+                                            SourceWidthV = 0
+                                            SourceHeightV = 0
+                                        End Try
                                     End If
 
                                 ElseIf .AspectComboBox2.Text = LangCls.EncSetOriginalAspectComboBox2 Then 'SAR(원본 비율)
-                                    SourceWidthV = Split(SourceSizeV, "x")(0)
-                                    SourceHeightV = Split(SourceSizeV, "x")(1)
+                                    Try
+                                        SourceWidthV = Split(SourceSizeV, "x")(0)
+                                        SourceHeightV = Split(SourceSizeV, "x")(1)
+                                    Catch ex As Exception
+                                        SourceWidthV = 0
+                                        SourceHeightV = 0
+                                    End Try
                                 Else '아니면
                                     SourceWidthV = .AspectWTextBox.Text
                                     SourceHeightV = .AspectHTextBox.Text
@@ -989,6 +1028,7 @@ Public Class EncodingFrm
                                 End If
 
                             Else '아니면
+ImageSkip:
                                 RealnputWidthV = SettingSizeWidthV
                                 RealnputHeightV = SettingSizeHeightV
                                 RealnputLetterWidthV = 0
@@ -1317,9 +1357,15 @@ Public Class EncodingFrm
                     If PARtes <> "" Then
                         Dim LP, RP As String
                         If InStr(PARtes, " ", CompareMethod.Text) <> 0 AndAlso InStr(PARtes, ":", CompareMethod.Text) <> 0 Then
-                            PARtes = Split(PARtes, " ")(0)
-                            LP = Split(PARtes, ":")(0)
-                            RP = Split(PARtes, ":")(1)
+                            Try
+                                PARtes = Split(PARtes, " ")(0)
+                                LP = Split(PARtes, ":")(0)
+                                RP = Split(PARtes, ":")(1)
+                            Catch ex As Exception
+                                PARtes = "1:1"
+                                LP = 1
+                                RP = 1
+                            End Try
                             If LP = "1" AndAlso RP = "1" Then
                             Else
                                 AspectV = " -aspect " & Val(OriginW) & ":" & Val(OriginH)
@@ -1406,18 +1452,6 @@ Public Class EncodingFrm
                     InputFilePathN = My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN.avs"
                 End If
 
-                '스크립트 검사
-                'Try
-                '    Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
-                '    Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
-                '    _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs")
-                '    _AviSynthClip.IDisposable_Dispose()
-                'Catch ex As Exception
-                '    MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                '    MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
-                '    GoTo SKIP
-                'End Try
-
             Else
                 InputFilePath = MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text
                 InputFilePathN = MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text
@@ -1464,9 +1498,12 @@ Public Class EncodingFrm
             Dim FramerateStr As String = ""
             If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안함
                 If EncSetFrm.FramerateCheckBox.Checked = True Then
-                    If Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)) >= 119 Then
-                        FramerateStr = " -r " & Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
-                    End If
+                    Try
+                        If Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)) >= 119 Then
+                            FramerateStr = " -r " & Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
+                        End If
+                    Catch ex As Exception
+                    End Try
                 End If
             End If
 
@@ -1816,11 +1853,28 @@ ENC_STOP:
 
     Private Function EncERRBool(ByVal index As Integer) As Boolean
 
-        If InStr(InfoTextBox.Text, "global headers", CompareMethod.Text) <> 0 AndAlso InStr(InfoTextBox.Text, "muxing overhead", CompareMethod.Text) <> 0 Then
+        If InStr(InfoTextBox.Text, "Stream #0.0: Video: rawvideo, bgra", CompareMethod.Text) <> 0 AndAlso _
+        MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용하면서 rawvideo 에 bgra
+
+            '스크립트검사
+            Try
+                Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
+                Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs")
+                _AviSynthClip.IDisposable_Dispose()
+                Return False
+            Catch ex As Exception
+                MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
+                Return True
+            End Try
+
+        ElseIf InStr(InfoTextBox.Text, "global headers", CompareMethod.Text) <> 0 AndAlso InStr(InfoTextBox.Text, "muxing overhead", CompareMethod.Text) <> 0 Then '일반적인 경우 오류 아님
             Return False
-        Else
+
+        Else '그 외에는 모두 오류...
             MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = InfoTextBox.Text
             Return True
+
         End If
 
     End Function
@@ -2062,7 +2116,7 @@ LANG_SKIP:
         If NowTimeSec < 60 Then
             If NowTimeSec < 0 Then
                 hmsValue = "00:" & "00:" & "00.00"
-            ElseIf NowTimeSec < 10 Then
+            ElseIf Format(NowTimeSec, "0.00") < 10 Then
                 hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
             Else
                 hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")

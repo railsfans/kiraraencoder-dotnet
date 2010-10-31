@@ -22,10 +22,12 @@ Partial Class PInfoFrm
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PInfoFrm))
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.InfoTabPage = New System.Windows.Forms.TabPage
         Me.CopyrightLabel = New System.Windows.Forms.Label
+        Me.Label1 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Label4 = New System.Windows.Forms.Label
         Me.VersionLabel = New System.Windows.Forms.Label
@@ -33,14 +35,19 @@ Partial Class PInfoFrm
         Me.LicenseTabPage = New System.Windows.Forms.TabPage
         Me.FileInfoTextBox = New System.Windows.Forms.TextBox
         Me.OKBTN = New System.Windows.Forms.Button
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
         Me.PPanel = New System.Windows.Forms.Panel
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.WebsiteContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.OfficialKiraraEncoderWebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DownloadSourceCodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.BitDonGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TabControl1.SuspendLayout()
         Me.InfoTabPage.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LicenseTabPage.SuspendLayout()
         Me.PPanel.SuspendLayout()
+        Me.WebsiteContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -54,6 +61,7 @@ Partial Class PInfoFrm
         'InfoTabPage
         '
         Me.InfoTabPage.Controls.Add(Me.CopyrightLabel)
+        Me.InfoTabPage.Controls.Add(Me.Label1)
         Me.InfoTabPage.Controls.Add(Me.PictureBox1)
         Me.InfoTabPage.Controls.Add(Me.Label4)
         Me.InfoTabPage.Controls.Add(Me.VersionLabel)
@@ -66,6 +74,11 @@ Partial Class PInfoFrm
         '
         resources.ApplyResources(Me.CopyrightLabel, "CopyrightLabel")
         Me.CopyrightLabel.Name = "CopyrightLabel"
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
         '
         'PictureBox1
         '
@@ -108,26 +121,45 @@ Partial Class PInfoFrm
         Me.OKBTN.Name = "OKBTN"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
-        'LinkLabel2
-        '
-        resources.ApplyResources(Me.LinkLabel2, "LinkLabel2")
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.TabStop = True
-        '
-        'LinkLabel1
-        '
-        resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.TabStop = True
-        '
         'PPanel
         '
+        Me.PPanel.Controls.Add(Me.Button1)
         Me.PPanel.Controls.Add(Me.TabControl1)
-        Me.PPanel.Controls.Add(Me.LinkLabel2)
         Me.PPanel.Controls.Add(Me.OKBTN)
-        Me.PPanel.Controls.Add(Me.LinkLabel1)
         resources.ApplyResources(Me.PPanel, "PPanel")
         Me.PPanel.Name = "PPanel"
+        '
+        'Button1
+        '
+        resources.ApplyResources(Me.Button1, "Button1")
+        Me.Button1.Name = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'WebsiteContextMenuStrip
+        '
+        Me.WebsiteContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OfficialKiraraEncoderWebsiteToolStripMenuItem, Me.DownloadSourceCodeToolStripMenuItem, Me.ToolStripMenuItem1, Me.BitDonGToolStripMenuItem})
+        Me.WebsiteContextMenuStrip.Name = "ContextMenuStrip1"
+        resources.ApplyResources(Me.WebsiteContextMenuStrip, "WebsiteContextMenuStrip")
+        '
+        'OfficialKiraraEncoderWebsiteToolStripMenuItem
+        '
+        Me.OfficialKiraraEncoderWebsiteToolStripMenuItem.Name = "OfficialKiraraEncoderWebsiteToolStripMenuItem"
+        resources.ApplyResources(Me.OfficialKiraraEncoderWebsiteToolStripMenuItem, "OfficialKiraraEncoderWebsiteToolStripMenuItem")
+        '
+        'DownloadSourceCodeToolStripMenuItem
+        '
+        Me.DownloadSourceCodeToolStripMenuItem.Name = "DownloadSourceCodeToolStripMenuItem"
+        resources.ApplyResources(Me.DownloadSourceCodeToolStripMenuItem, "DownloadSourceCodeToolStripMenuItem")
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
+        '
+        'BitDonGToolStripMenuItem
+        '
+        Me.BitDonGToolStripMenuItem.Name = "BitDonGToolStripMenuItem"
+        resources.ApplyResources(Me.BitDonGToolStripMenuItem, "BitDonGToolStripMenuItem")
         '
         'PInfoFrm
         '
@@ -147,7 +179,7 @@ Partial Class PInfoFrm
         Me.LicenseTabPage.ResumeLayout(False)
         Me.LicenseTabPage.PerformLayout()
         Me.PPanel.ResumeLayout(False)
-        Me.PPanel.PerformLayout()
+        Me.WebsiteContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -161,7 +193,12 @@ Partial Class PInfoFrm
     Friend WithEvents CopyrightLabel As System.Windows.Forms.Label
     Friend WithEvents FileInfoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents OKBTN As System.Windows.Forms.Button
-    Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
-    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents PPanel As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents WebsiteContextMenuStrip As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents OfficialKiraraEncoderWebsiteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DownloadSourceCodeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BitDonGToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

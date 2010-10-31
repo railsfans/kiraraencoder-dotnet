@@ -31,11 +31,11 @@ Partial Class AviSynthEditorFrm
         Me.LineColToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
         Me.FFmpegSourceTextBox = New System.Windows.Forms.TextBox
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.EtcSButton = New System.Windows.Forms.Button
         Me.ConPanel = New System.Windows.Forms.Panel
         Me.PreviewButton = New System.Windows.Forms.Button
         Me.ListenButton = New System.Windows.Forms.Button
         Me.RefButton = New System.Windows.Forms.Button
+        Me.EtcSButton = New System.Windows.Forms.Button
         Me.SubSButton = New System.Windows.Forms.Button
         Me.AudSButton = New System.Windows.Forms.Button
         Me.ImgSButton = New System.Windows.Forms.Button
@@ -153,12 +153,6 @@ Partial Class AviSynthEditorFrm
         resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
         '
-        'EtcSButton
-        '
-        resources.ApplyResources(Me.EtcSButton, "EtcSButton")
-        Me.EtcSButton.Name = "EtcSButton"
-        Me.EtcSButton.UseVisualStyleBackColor = True
-        '
         'ConPanel
         '
         Me.ConPanel.Controls.Add(Me.PreviewButton)
@@ -184,6 +178,12 @@ Partial Class AviSynthEditorFrm
         resources.ApplyResources(Me.RefButton, "RefButton")
         Me.RefButton.Name = "RefButton"
         Me.RefButton.UseVisualStyleBackColor = True
+        '
+        'EtcSButton
+        '
+        resources.ApplyResources(Me.EtcSButton, "EtcSButton")
+        Me.EtcSButton.Name = "EtcSButton"
+        Me.EtcSButton.UseVisualStyleBackColor = True
         '
         'SubSButton
         '

@@ -311,7 +311,7 @@ Public Class DGIndexFrm
         If NowTimeSec < 60 Then
             If NowTimeSec < 0 Then
                 hmsValue = "00:" & "00:" & "00.00"
-            ElseIf NowTimeSec < 10 Then
+            ElseIf Format(NowTimeSec, "0.00") < 10 Then
                 hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
             Else
                 hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")

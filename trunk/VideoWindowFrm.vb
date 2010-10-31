@@ -97,9 +97,9 @@ Public Class VideoWindowFrm
         Dim PLAYVL2 As Boolean = PLAYVL '재생여부저장
 
         Try
+            Me.Text = "Loading..."
             '활성
             AviSynthEditorFrm.RefButton.Enabled = False
-            Me.Text = "Loading..."
             '닫기
             FrameTimer.Enabled = False
             RealtimeTimer.Enabled = False
@@ -188,7 +188,20 @@ LANG_SKIP:
             End If
         End If
 
+        If InStr(Me.Text, " - Loading...", CompareMethod.Text) <> 0 Then Exit Sub
+
+        '========================================================================================
+
         GETIMG = True
+        If FrameTimer.Enabled = False OrElse FrameMoveFrm.Visible = True Then
+            If Me.Text = "" Then
+                Me.Text = "Loading... [ Please wait while processing. ]"
+            ElseIf Me.Text = "Loading..." Then
+            Else
+                Me.Text &= " - Loading..."
+            End If
+        End If
+
         Try
             VideoPictureBox.Image = BitmapV
             Dim rectV As New Rectangle(0, 0, BitmapV.Width, BitmapV.Height)
@@ -249,17 +262,13 @@ LANG_SKIP:
     Private Sub VideoTrackBar_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VideoTrackBar.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Left Then
             RealtimeTimer.Enabled = False
+            FrameTimer.Enabled = False
         End If
     End Sub
 
     Private Sub VideoTrackBar_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VideoTrackBar.MouseMove
         If e.Button = Windows.Forms.MouseButtons.Left Then
-            If PLAYVL = True Then
-                FrameI = VideoTrackBar.Value
-            Else
-                FrameI = VideoTrackBar.Value
-                GET_IMAGE(FrameI)
-            End If
+            FrameI = VideoTrackBar.Value
             Me.Text = LangCls.VideoWindowFrmV & " - [ " & FrameI & " / " & VideoTrackBar.Maximum & " ]" '폼 제목
         End If
     End Sub
@@ -276,6 +285,12 @@ LANG_SKIP:
 
             FrameI = VTBV
             GET_IMAGE(FrameI)
+
+            If PLAYVL = True Then
+                FrameTimer.Enabled = True
+            Else
+                FrameTimer.Enabled = False
+            End If
             RealtimeTimer.Enabled = True
 
         End If
@@ -330,4 +345,7 @@ LANG_SKIP:
         End Try
     End Sub
 
+    Private Sub VideoTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VideoTrackBar.Scroll
+
+    End Sub
 End Class

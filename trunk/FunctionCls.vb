@@ -318,7 +318,7 @@ Public Class FunctionCls
         If TimeV < 60 Then
             If TimeV < 0 Then
                 hmsValue = "00:" & "00:" & "00.00"
-            ElseIf TimeV < 10 Then
+            ElseIf Format(TimeV, "0.00") < 10 Then
                 hmsValue = "00:" & "00:" & "0" & Format(TimeV, "0.00")
             Else
                 hmsValue = "00:" & "00:" & Format(TimeV, "0.00")

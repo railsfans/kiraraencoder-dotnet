@@ -98,11 +98,20 @@ LANG_SKIP:
 
     End Sub
 
-    Private Sub LinkLabel2_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+    Private Sub OfficialKiraraEncoderWebsiteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OfficialKiraraEncoderWebsiteToolStripMenuItem.Click
+        System.Diagnostics.Process.Start("http://www.kiraraencoder.pe.kr")
+    End Sub
+
+    Private Sub DownloadSourceCodeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DownloadSourceCodeToolStripMenuItem.Click
         System.Diagnostics.Process.Start("http://code.google.com/p/kiraraencoder-dotnet")
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        System.Diagnostics.Process.Start("http://www.kiraraencoder.pe.kr")
+    Private Sub BitDonGToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BitDonGToolStripMenuItem.Click
+        System.Diagnostics.Process.Start("http://bitdong.org")
     End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        WebsiteContextMenuStrip.Show(Control.MousePosition)
+    End Sub
+
 End Class

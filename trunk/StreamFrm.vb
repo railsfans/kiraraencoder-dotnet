@@ -24,7 +24,7 @@ Imports System.IO
 
 Public Class StreamFrm
 
-    'MPEGTS형식은 Cache사용시 음성이 안 들리는 버그로 인해 예외 코드가 추가되어있습니다.
+    'MPEGTS형식은 cache사용시 음성이 안 들리는 버그로 인해 예외 코드가 추가되어있습니다.
 
     '우선순위 설정
     Private Declare Function SetPriorityClass Lib "kernel32" (ByVal HPROCESS As Integer, ByVal dwPriorityClass As Integer) As Integer
@@ -1193,7 +1193,7 @@ LANG_SKIP:
         If NowTimeSec < 60 Then
             If NowTimeSec < 0 Then
                 hmsValue = "00:" & "00:" & "00.00"
-            ElseIf NowTimeSec < 10 Then
+            ElseIf Format(NowTimeSec, "0.00") < 10 Then
                 hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
             Else
                 hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")
