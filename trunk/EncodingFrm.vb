@@ -1989,6 +1989,7 @@ ENC_STOP:
         MainFrm.InChkToolStripMenuItem.Enabled = True
         MainFrm.SavePathTextBox.Enabled = True
         MainFrm.SetFolderButton.Enabled = True
+        MainFrm.AboutToolStripMenuItem.Enabled = True
 
         '********************************
 
@@ -2105,17 +2106,6 @@ LANG_SKIP:
 
         '초기화
         LoadInitialization()
-
-        '활성화
-        MainFrm.AVSGroupBox.Enabled = False
-        MainFrm.EncSetGroupBox.Enabled = False
-        MainFrm.EncSButton.Enabled = False
-        MainFrm.AllRemoveButton.Enabled = False
-        MainFrm.StreamSelPanel.Enabled = False
-        MainFrm.LangToolStripMenuItem.Enabled = False
-        MainFrm.InChkToolStripMenuItem.Enabled = False
-        MainFrm.SavePathTextBox.Enabled = False
-        MainFrm.SetFolderButton.Enabled = False
 
         '명령어 초기화
         MainFrm.AviSynthCommandStr = ""

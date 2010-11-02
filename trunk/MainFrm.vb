@@ -2003,6 +2003,8 @@ UAC:
 
     Private Sub OutSelectLang(ByVal sender As Object, ByVal e As EventArgs)
 
+        Me.Enabled = False
+
         Dim _MainUACVB As String = LangCls.MainUACV
 
         For i = 0 To LangToolStripMenuItem.DropDownItems.Count - 1
@@ -2027,6 +2029,8 @@ UAC:
 
         '관리자표시 변경된 언어로 바꿈.//
         Me.Text = Replace(Me.Text, _MainUACVB, LangCls.MainUACV)
+
+        Me.Enabled = True
 
     End Sub
 
@@ -2423,15 +2427,26 @@ UAC:
         If My.Computer.FileSystem.DirectoryExists(SavePathTextBox.Text) = False Then
             MsgBox(LangCls.MainDirectoryNotFound)
             SetFolderButton_Click(Nothing, Nothing)
-            Exit Sub
+            If My.Computer.FileSystem.DirectoryExists(SavePathTextBox.Text) = False Then Exit Sub
         End If
 
         '===============================
 
+        '활성화
+        AVSGroupBox.Enabled = False
+        EncSetGroupBox.Enabled = False
+        EncSButton.Enabled = False
+        AllRemoveButton.Enabled = False
+        StreamSelPanel.Enabled = False
+        LangToolStripMenuItem.Enabled = False
+        InChkToolStripMenuItem.Enabled = False
+        SavePathTextBox.Enabled = False
+        SetFolderButton.Enabled = False
+        AboutToolStripMenuItem.Enabled = False
+
         Try
             EncodingFrm.Show(Me)
         Catch ex As Exception
-
         End Try
 
     End Sub
@@ -6103,9 +6118,10 @@ RELOAD:
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
-        If PInfoFrm.Visible = False Then
-            PInfoFrm.Show(Me)
-        End If
+        Try
+            PInfoFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub InChkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InChkToolStripMenuItem.Click
