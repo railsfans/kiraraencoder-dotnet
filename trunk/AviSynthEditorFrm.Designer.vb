@@ -39,7 +39,6 @@ Partial Class AviSynthEditorFrm
         Me.SubSButton = New System.Windows.Forms.Button
         Me.AudSButton = New System.Windows.Forms.Button
         Me.ImgSButton = New System.Windows.Forms.Button
-        Me.RefButton2 = New System.Windows.Forms.Button
         Me.ChannelTextBox = New System.Windows.Forms.TextBox
         Me.Def_ChannelTextBox = New System.Windows.Forms.TextBox
         Me.TabControl1 = New System.Windows.Forms.TabControl
@@ -202,12 +201,6 @@ Partial Class AviSynthEditorFrm
         resources.ApplyResources(Me.ImgSButton, "ImgSButton")
         Me.ImgSButton.Name = "ImgSButton"
         Me.ImgSButton.UseVisualStyleBackColor = True
-        '
-        'RefButton2
-        '
-        resources.ApplyResources(Me.RefButton2, "RefButton2")
-        Me.RefButton2.Name = "RefButton2"
-        Me.RefButton2.UseVisualStyleBackColor = True
         '
         'ChannelTextBox
         '
@@ -486,7 +479,6 @@ Partial Class AviSynthEditorFrm
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.RefButton2)
         Me.Panel2.Controls.Add(Me.StatusLabel)
         Me.Panel2.Controls.Add(Me.Panel3)
         resources.ApplyResources(Me.Panel2, "Panel2")
@@ -621,7 +613,6 @@ Partial Class AviSynthEditorFrm
     Friend WithEvents Def_DirectShowSourceTextBox As System.Windows.Forms.TextBox
     Friend WithEvents DirectShowSourceTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Def_FFmpegSourceTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents RefButton2 As System.Windows.Forms.Button
     Friend WithEvents StatusLabel As System.Windows.Forms.Label
     Friend WithEvents EtcSButton As System.Windows.Forms.Button
 End Class

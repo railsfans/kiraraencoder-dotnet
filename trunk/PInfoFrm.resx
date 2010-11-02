@@ -117,159 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;InfoTabPage.Name" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;InfoTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InfoTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;InfoTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LicenseTabPage.Name" xml:space="preserve">
-    <value>LicenseTabPage</value>
-  </data>
-  <data name="&gt;&gt;LicenseTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LicenseTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;LicenseTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 14</value>
-  </data>
-  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 187</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>PPanel</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CopyrightLabel.Name" xml:space="preserve">
-    <value>CopyrightLabel</value>
-  </data>
-  <data name="&gt;&gt;CopyrightLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CopyrightLabel.Parent" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;CopyrightLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
-  </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
-    <value>PictureBox1</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;VersionLabel.Name" xml:space="preserve">
-    <value>VersionLabel</value>
-  </data>
-  <data name="&gt;&gt;VersionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VersionLabel.Parent" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;VersionLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;NameLabel.Name" xml:space="preserve">
-    <value>NameLabel</value>
-  </data>
-  <data name="&gt;&gt;NameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NameLabel.Parent" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;NameLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="InfoTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="InfoTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="InfoTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 160</value>
-  </data>
-  <data name="InfoTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="InfoTabPage.Text" xml:space="preserve">
-    <value>정보</value>
-  </data>
-  <data name="&gt;&gt;InfoTabPage.Name" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;InfoTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InfoTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;InfoTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="CopyrightLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CopyrightLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CopyrightLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 134</value>
   </data>
@@ -324,7 +180,7 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAzaSURBVFhHpZh3UFZXGsZvNqPJzmYmu2smk92Z3Z1sMpnZ
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAzaSURBVFhHpZh3UFZXGsZvNqPJzmYmu2smk92Z3Z1sMpnZ
         zR+bTVETNUaS2DEmmsQYjT0ae0PsSpFVUJqKiCgCUkQRUSxIFUSwgQgqvffem8C7v/vdLygIH2jOnLnc
         73LuOc99zvO2o8hvbg0NDZW6VldX95snE+U5pigpKbl+/fqVK1dCQ0NjYmJu3rx5+/ZtrnFxcVevXr10
         6dKFCxciIyNzcnKeY/JnANTU1HTt2rXo6OjMzMyKioqysrL8/Py0tLSkpKSEhIQ7d+4AKz4+PjExkSc0
@@ -496,44 +352,32 @@
   <data name="&gt;&gt;NameLabel.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;FileInfoTextBox.Name" xml:space="preserve">
-    <value>FileInfoTextBox</value>
-  </data>
-  <data name="&gt;&gt;FileInfoTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileInfoTextBox.Parent" xml:space="preserve">
-    <value>LicenseTabPage</value>
-  </data>
-  <data name="&gt;&gt;FileInfoTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LicenseTabPage.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="InfoTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
   </data>
-  <data name="LicenseTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="InfoTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="LicenseTabPage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="InfoTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>359, 160</value>
   </data>
-  <data name="LicenseTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="InfoTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="LicenseTabPage.Text" xml:space="preserve">
-    <value>라이선스</value>
+  <data name="InfoTabPage.Text" xml:space="preserve">
+    <value>정보</value>
   </data>
-  <data name="&gt;&gt;LicenseTabPage.Name" xml:space="preserve">
-    <value>LicenseTabPage</value>
+  <data name="&gt;&gt;InfoTabPage.Name" xml:space="preserve">
+    <value>InfoTabPage</value>
   </data>
-  <data name="&gt;&gt;LicenseTabPage.Type" xml:space="preserve">
+  <data name="&gt;&gt;InfoTabPage.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LicenseTabPage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;InfoTabPage.Parent" xml:space="preserve">
     <value>TabControl1</value>
   </data>
-  <data name="&gt;&gt;LicenseTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;InfoTabPage.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="FileInfoTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -723,6 +567,54 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
   <data name="&gt;&gt;FileInfoTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="LicenseTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="LicenseTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="LicenseTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 160</value>
+  </data>
+  <data name="LicenseTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LicenseTabPage.Text" xml:space="preserve">
+    <value>라이선스</value>
+  </data>
+  <data name="&gt;&gt;LicenseTabPage.Name" xml:space="preserve">
+    <value>LicenseTabPage</value>
+  </data>
+  <data name="&gt;&gt;LicenseTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LicenseTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;LicenseTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 14</value>
+  </data>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 187</value>
+  </data>
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>PPanel</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="OKBTN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -801,15 +693,6 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
   <metadata name="WebsiteContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="WebsiteContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 76</value>
-  </data>
-  <data name="&gt;&gt;WebsiteContextMenuStrip.Name" xml:space="preserve">
-    <value>WebsiteContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;WebsiteContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="OfficialKiraraEncoderWebsiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 22</value>
   </data>
@@ -825,11 +708,26 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
   <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 6</value>
   </data>
+  <data name="BittalkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 22</value>
+  </data>
+  <data name="BittalkToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bittalk</value>
+  </data>
   <data name="BitDonGToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 22</value>
   </data>
   <data name="BitDonGToolStripMenuItem.Text" xml:space="preserve">
     <value>BitDonG</value>
+  </data>
+  <data name="WebsiteContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 120</value>
+  </data>
+  <data name="&gt;&gt;WebsiteContextMenuStrip.Name" xml:space="preserve">
+    <value>WebsiteContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;WebsiteContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -871,6 +769,12 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>BitDonGToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;BitDonGToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BittalkToolStripMenuItem.Name" xml:space="preserve">
+    <value>BittalkToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;BittalkToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -114,4 +114,7 @@ LANG_SKIP:
         WebsiteContextMenuStrip.Show(Control.MousePosition)
     End Sub
 
+    Private Sub BittalkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BittalkToolStripMenuItem.Click
+        System.Diagnostics.Process.Start("http://bittalk.org")
+    End Sub
 End Class

@@ -73,7 +73,14 @@ Public Class AviSynthEditorFrm
 
         PreviewButton.Enabled = False
 
-        AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+        Try
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            PreviewButton.Enabled = True
+            Exit Sub
+        End Try
+
         If AviSynthPP.INDEX_ProcessStopChk = True Then
             AviSynthPP.INDEX_ProcessStopChk = False
             PreviewButton.Enabled = True
@@ -258,10 +265,7 @@ RELOAD:
                 If XTR.Name = "AviSynthEditorFrmSubSButton" Then SubSButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmEtcSButton" Then etcSButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmPreviewButton" Then PreviewButton.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmRefButton" Then
-                    RefButton.Text = XTR.ReadString
-                    RefButton2.Text = RefButton.Text
-                End If
+                If XTR.Name = "AviSynthEditorFrmRefButton" Then RefButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmListenButton" Then
                     ListenButtonSTR = XTR.ReadString
                     ListenButton.Text = ListenButtonSTR
@@ -452,14 +456,12 @@ LANG_SKIP:
         Try
             If Process.GetProcessById(shellpid).HasExited = False Then
                 ListenButton.Enabled = False
-                RefButton2.Enabled = True
             End If
         Catch ex As Exception
             Debug.Print("재생 끝 " & ex.Message)
             shellpid = 0
             ProcessDetTimer.Enabled = False
             ListenButton.Enabled = True
-            RefButton2.Enabled = False
         End Try
     End Sub
 
@@ -657,19 +659,6 @@ LANG_SKIP:
 
     Private Sub ASFTextBox_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles DirectShowSourceTextBox.MouseUp
         Get_LineCol(DirectShowSourceTextBox)
-    End Sub
-
-    Private Sub ASFTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DirectShowSourceTextBox.TextChanged
-
-    End Sub
-
-    Private Sub RefButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefButton2.Click
-        RefButton2.Enabled = False
-        AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
-        Dim HWNDV As IntPtr
-        HWNDV = WinAPI.FindWindowW(vbNullString, Process.GetProcessById(shellpid).MainWindowTitle)
-        WinAPI.PostMessageW(HWNDV, WinAPI.WM_KEYDOWN, Keys.F5, 0&)
-        RefButton2.Enabled = True
     End Sub
 
     Private Sub ETCButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EtcSButton.Click

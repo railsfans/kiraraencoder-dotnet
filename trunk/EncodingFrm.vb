@@ -209,19 +209,33 @@ Public Class EncodingFrm
                     End If
                     Dim STimeV As Single = (Val(SHTextBoxV) * 3600) + (Val(SMTextBoxV) * 60) + Val(SSTextBoxV) + Val("0." & SMSTextBoxV)
                     Dim ETimeV As Single = (Val(EHTextBoxV) * 3600) + (Val(EMTextBoxV) * 60) + Val(ESTextBoxV) + Val("0." & EMSTextBoxV)
-                    Dim _GTimeV As String = "" '구간타임
+                    Dim _TimeV As Double = 0.0
+                    Dim __TimeV As Double = 0.0
                     If (ETimeV - STimeV) = 0 Then
-                        EncDuration = MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text
                         Try
-                            EncDurationD = Val((Split(EncDuration, ":")(0) * 3600)) + Val((Split(EncDuration, ":")(1) * 60)) + Val(Split(Split(EncDuration, ":")(2), ".")(0)) + Val("0." & Split(EncDuration, ".")(1))
-                            ProgressBar.Maximum = EncDurationD
+                            __TimeV = Val((Split(MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text, ":")(0) * 3600)) + Val((Split(MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text, ":")(1) * 60)) + Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text, ":")(2), ".")(0)) + Val("0." & Split(MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text, ".")(1))
+                            If MainFrm.AVSCheckBox.Checked = True AndAlso ETCPPFrm.RateCheckBox.Checked = True Then 'AviSynth 사용하고 배속모드 사용..(보통 오디오만 인코딩할 때 적용 된다.)
+                                _TimeV = (1 / ETCPPFrm.RateNumericUpDown.Value) * __TimeV
+                            Else
+                                _TimeV = __TimeV
+                            End If
                         Catch ex As Exception
+                            _TimeV = 0.0
                         End Try
                     Else
-                        EncDuration = FunctionCls.TIME_TO_HMSMSTIME(ETimeV - STimeV, True)
-                        EncDurationD = ETimeV - STimeV
-                        ProgressBar.Maximum = EncDurationD
+                        Try
+                            If MainFrm.AVSCheckBox.Checked = True AndAlso ETCPPFrm.RateCheckBox.Checked = True Then 'AviSynth 사용하고 배속모드 사용..(보통 오디오만 인코딩할 때 적용 된다.)
+                                _TimeV = (1 / ETCPPFrm.RateNumericUpDown.Value) * (ETimeV - STimeV)
+                            Else
+                                _TimeV = ETimeV - STimeV
+                            End If
+                        Catch ex As Exception
+                            _TimeV = 0.0
+                        End Try
                     End If
+                    EncDuration = FunctionCls.TIME_TO_HMSMSTIME(_TimeV, True)
+                    EncDurationD = _TimeV
+                    ProgressBar.Maximum = EncDurationD
                 End If
                 '------------------
                 '프레임
@@ -248,7 +262,8 @@ Public Class EncodingFrm
                 '일시 정지/재시작 버튼 활성화//
                 If PipeMode = False Then SuspendResumeButton.Enabled = True
             End If
-            If InStr(MsgV, "global headers", CompareMethod.Text) <> 0 AndAlso InStr(MsgV, "muxing overhead", CompareMethod.Text) <> 0 Then
+            If InStr(MsgV, "global headers", CompareMethod.Text) <> 0 AndAlso InStr(MsgV, "muxing overhead", CompareMethod.Text) <> 0 AndAlso _
+            InStr(InfoTextBox.Text, "global headers", CompareMethod.Text) = 0 AndAlso InStr(InfoTextBox.Text, "muxing overhead", CompareMethod.Text) = 0 Then
                 InfoTextBox.AppendText(Strings.Mid(MsgV, InStr(MsgV, "video:", CompareMethod.Text)))
             End If
 
@@ -258,7 +273,7 @@ Public Class EncodingFrm
             GETINFO(MsgV)
             LogStr.Text = MsgV
 
-            End If
+        End If
     End Sub
 
     Public Sub MsgSend(ByVal msg As String)
@@ -702,1122 +717,1153 @@ Public Class EncodingFrm
 
         For Me.EncindexI = 0 To MainFrm.EncListListView.Items.Count - 1
 
-            '인덱스 초과 방지
-            If EncindexI > MainFrm.EncListListView.Items.Count - 1 Then
-                Exit For
-            End If
-
-            '체크여부 확인
-            If MainFrm.EncListListView.Items(EncindexI).Checked = False Then
-                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainSkipStr
-                GoTo SKIP
-            Else
-                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainEncodingStr
-            End If
-
-            '비디오와 오디오 둘다 없으면 오류처리
-            If MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text = "None" Then
-                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                GoTo SKIP
-            End If
-
-
-            '++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-            '---------------------------------
-            ' 원본 파일의 파일 이름만 추출
-            '=================================
-            Dim FilenameV As String = ""
-            If InStrRev(MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text, ".") <> 0 Then
-                FilenameV = Strings.Left(MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text, InStrRev(MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text, ".") - 1)
-            Else
-                FilenameV = MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text
-            End If
-
-            '---------------------------------
-            ' 확장자 (출력형식 확장자)
-            '=================================
-            Dim ExtensionV As String = ""
             Try
-                If EncSetFrm.ExtensionTextBox.Text = "" Then
-                    If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
-                        ExtensionV = "." & LCase(Replace(Split(EncSetFrm.OutFComboBox.Text, "]")(0), "[", ""))
-                    Else
-                        ExtensionV = "." & LCase(Replace(Split(EncSetFrm.AudioCodecComboBox.Text, "]")(0), "[", ""))
-                    End If
-                Else
-                    ExtensionV = "." & EncSetFrm.ExtensionTextBox.Text
+
+                '인덱스 초과 방지
+                If EncindexI > MainFrm.EncListListView.Items.Count - 1 Then
+                    Exit For
                 End If
-            Catch ex As Exception
-            End Try
 
-            '---------------------------------
-            ' 출력경로검사
-            '=================================
-            Dim SavePathTextBoxV As String = ""
-            If Strings.Right(MainFrm.SavePathTextBox.Text, 1) = "\" Then
-                SavePathTextBoxV = MainFrm.SavePathTextBox.Text
-            Else
-                SavePathTextBoxV = MainFrm.SavePathTextBox.Text & "\"
-            End If
-
-            '---------------------------------
-            ' 저장파일
-            '=================================
-            SavePathStr = SavePathTextBoxV & EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV
-
-            '***********************************************
-            '출력과 원본이 같으면 스킵//
-            '***********************************************
-            If MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text = SavePathStr Then
-                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = LangCls.MainFileSame
-                GoTo SKIP
-            End If
-
-            '***********************************************
-            '저장파일 덮어쓰기 부분//
-            '***********************************************
-            If My.Computer.FileSystem.FileExists(SavePathStr) = True Then
-                If MessageBoxBTN = "" OrElse MessageBoxBTN = "YES" OrElse MessageBoxBTN = "NO" Then
-                    MessageFrm.FilePathLabel.Text = SavePathStr
-                    Try
-                        MessageFrm.ShowDialog(Me)
-                    Catch ex As Exception
-                    End Try
-                End If
-                If MessageBoxBTN = "NO" OrElse MessageBoxBTN = "NOTOALL" Then
+                '체크여부 확인
+                If MainFrm.EncListListView.Items(EncindexI).Checked = False Then
                     MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainSkipStr
                     GoTo SKIP
-                End If
-            End If
-
-
-
-
-
-
-
-
-
-            '++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
-
-            '***********************************
-            ' 비디오필터 crop
-            '***********************************
-            Dim VF_CropV As String = ""
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
-                If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
-                    Try
-                        Dim LeftCV As Integer = 0
-                        Dim TopCV As Integer = 0
-                        Dim RightCV As Integer = 0
-                        Dim BottomCV As Integer = 0
-                        LeftCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(0)
-                        TopCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(1)
-                        RightCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(2)
-                        BottomCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(3)
-                        If LeftCV = 0 AndAlso TopCV = 0 AndAlso RightCV = 0 AndAlso BottomCV = 0 Then
-                            VF_CropV = ""
-                        Else
-                            VF_CropV = ", crop=" & Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(0)) - LeftCV - RightCV & ":" & _
-                                                   Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(1)) - TopCV - BottomCV & ":" & _
-                                                   LeftCV & ":" & _
-                                                   TopCV
-                        End If
-                    Catch ex As Exception
-                    VF_CropV = ""
-                End Try
-                End If
-            End If
-
-            '***********************************
-            ' 비디오필터 image = crop, scale, pad
-            '***********************************
-            Dim VF_imageVTextBox As String = ""
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
-                If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
-                    With EncSetFrm
-
-                        Dim SettingSizeWidthV, SettingSizeHeightV As Integer
-                        Dim SourceSizeV, SourceWidthV, SourceHeightV
-                        Dim ResizeWidthV, ResizeHeightV
-                        Dim LetterWidthV, LetterHeightV
-                        Dim CropWidthV, CropHeightV
-                        Dim RealnputWidthV, RealnputHeightV, RealnputLetterWidthV, RealnputLetterHeightV, RealnputCropWidthV, RealnputCropHeightV
-
-                        If .ImageSizeCheckBox.Checked = False Then
-
-                            SettingSizeWidthV = .ImageSizeWidthTextBox.Text
-                            SettingSizeHeightV = .ImageSizeHeightTextBox.Text
-
-                            Try
-                                SourceSizeV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0)
-                            Catch ex As Exception
-                                SourceSizeV = "0x0"
-                                GoTo ImageSkip
-                            End Try
-
-                            If SourceSizeV = "x" Then
-                                GoTo ImageSkip
-                            End If
-
-                            If SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetLetterBoxAspectComboBox Then '사이즈입력받고, 레터박스 붙이기면
-
-                                '/////비율 시작
-                                If .AspectComboBox2.Text = LangCls.EncSetOutputAspectComboBox2 Then 'DAR(출력 비율)
-
-                                    Dim DAR0 As Integer = 1, DAR00 As Integer = 0
-                                    Dim DARtes As String = ""
-                                    If InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) Then
-                                        DAR00 = InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) + 4
-                                        If InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
-                                            DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
-                                            DARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, DAR00, DAR0 - DAR00 - 1)
-                                        End If
-                                    Else
-                                        DAR0 = DAR0 + 1
-                                    End If
-
-                                    If DARtes <> "" Then 'else Location Blank
-                                        Try
-                                            SourceWidthV = Split(DARtes, ":")(0)
-                                            SourceHeightV = Split(DARtes, ":")(1)
-                                        Catch ex As Exception
-                                            SourceWidthV = 0
-                                            SourceHeightV = 0
-                                        End Try
-                                    Else
-                                        Try
-                                            SourceWidthV = Split(SourceSizeV, "x")(0)
-                                            SourceHeightV = Split(SourceSizeV, "x")(1)
-                                        Catch ex As Exception
-                                            SourceWidthV = 0
-                                            SourceHeightV = 0
-                                        End Try
-                                    End If
-
-                                ElseIf .AspectComboBox2.Text = LangCls.EncSetOriginalAspectComboBox2 Then 'SAR(원본 비율)
-                                    Try
-                                        SourceWidthV = Split(SourceSizeV, "x")(0)
-                                        SourceHeightV = Split(SourceSizeV, "x")(1)
-                                    Catch ex As Exception
-                                        SourceWidthV = 0
-                                        SourceHeightV = 0
-                                    End Try
-                                Else '아니면
-                                    SourceWidthV = .AspectWTextBox.Text
-                                    SourceHeightV = .AspectHTextBox.Text
-                                End If
-                                '/////비율 끝
-
-                                ResizeWidthV = Format((SourceWidthV / SourceHeightV / 4) * SettingSizeHeightV, 0) * 4
-                                ResizeHeightV = Format((SourceHeightV / SourceWidthV / 4) * SettingSizeWidthV, 0) * 4
-
-                                LetterWidthV = (.ImageSizeWidthTextBox.Text - ResizeWidthV) / 2
-                                LetterHeightV = (.ImageSizeHeightTextBox.Text - ResizeHeightV) / 2
-
-                                If (100 * (SourceWidthV / SourceHeightV)) - (100 * (SettingSizeWidthV / SettingSizeHeightV)) > 0 Then
-                                    RealnputWidthV = SettingSizeWidthV
-                                    RealnputHeightV = ResizeHeightV
-                                    RealnputLetterWidthV = 0
-                                    RealnputLetterHeightV = LetterHeightV
-                                    RealnputCropWidthV = 0
-                                    RealnputCropHeightV = 0
-                                ElseIf (100 * (SettingSizeWidthV / SettingSizeHeightV)) - (100 * (SourceWidthV / SourceHeightV)) > 0 Then
-                                    RealnputWidthV = ResizeWidthV
-                                    RealnputHeightV = SettingSizeHeightV
-                                    RealnputLetterWidthV = LetterWidthV
-                                    RealnputLetterHeightV = 0
-                                    RealnputCropWidthV = 0
-                                    RealnputCropHeightV = 0
-                                Else
-                                    RealnputWidthV = SettingSizeWidthV
-                                    RealnputHeightV = SettingSizeHeightV
-                                    RealnputLetterWidthV = 0
-                                    RealnputLetterHeightV = 0
-                                    RealnputCropWidthV = 0
-                                    RealnputCropHeightV = 0
-                                End If
-
-                            ElseIf SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetCropAspectComboBox Then '사이즈입력받고, 비율 자르기면
-
-                                '/////비율 시작
-                                If .AspectComboBox2.Text = LangCls.EncSetOutputAspectComboBox2 Then 'DAR(출력 비율)
-
-                                    Dim DAR0 As Integer = 1, DAR00 As Integer = 0
-                                    Dim DARtes As String = ""
-                                    If InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) Then
-                                        DAR00 = InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) + 4
-                                        If InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
-                                            DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
-                                            DARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, DAR00, DAR0 - DAR00 - 1)
-                                        End If
-                                    Else
-                                        DAR0 = DAR0 + 1
-                                    End If
-
-                                    If DARtes <> "" Then 'else Location Blank
-                                        Try
-                                            SourceWidthV = Split(DARtes, ":")(0)
-                                            SourceHeightV = Split(DARtes, ":")(1)
-                                        Catch ex As Exception
-                                            SourceWidthV = 0
-                                            SourceHeightV = 0
-                                        End Try
-                                    Else
-                                        Try
-                                            SourceWidthV = Split(SourceSizeV, "x")(0)
-                                            SourceHeightV = Split(SourceSizeV, "x")(1)
-                                        Catch ex As Exception
-                                            SourceWidthV = 0
-                                            SourceHeightV = 0
-                                        End Try
-                                    End If
-
-                                ElseIf .AspectComboBox2.Text = LangCls.EncSetOriginalAspectComboBox2 Then 'SAR(원본 비율)
-                                    Try
-                                        SourceWidthV = Split(SourceSizeV, "x")(0)
-                                        SourceHeightV = Split(SourceSizeV, "x")(1)
-                                    Catch ex As Exception
-                                        SourceWidthV = 0
-                                        SourceHeightV = 0
-                                    End Try
-                                Else '아니면
-                                    SourceWidthV = .AspectWTextBox.Text
-                                    SourceHeightV = .AspectHTextBox.Text
-                                End If
-                                '/////비율 끝
-
-                                ResizeWidthV = Format((SourceWidthV / SourceHeightV / 4) * SettingSizeHeightV, 0) * 4
-                                ResizeHeightV = Format((SourceHeightV / SourceWidthV / 4) * SettingSizeWidthV, 0) * 4
-
-                                CropWidthV = (.ImageSizeWidthTextBox.Text - ResizeWidthV) / 2
-                                CropHeightV = (.ImageSizeHeightTextBox.Text - ResizeHeightV) / 2
-
-                                If (100 * (SourceWidthV / SourceHeightV)) - (100 * (SettingSizeWidthV / SettingSizeHeightV)) > 0 Then
-                                    RealnputWidthV = SettingSizeWidthV - (CropWidthV * 2)
-                                    RealnputHeightV = SettingSizeHeightV
-                                    RealnputLetterWidthV = 0
-                                    RealnputLetterHeightV = 0
-                                    RealnputCropWidthV = CropWidthV
-                                    RealnputCropHeightV = 0
-                                ElseIf (100 * (SettingSizeWidthV / SettingSizeHeightV)) - (100 * (SourceWidthV / SourceHeightV)) > 0 Then
-                                    RealnputWidthV = SettingSizeWidthV
-                                    RealnputHeightV = SettingSizeHeightV - (CropHeightV * 2)
-                                    RealnputLetterWidthV = 0
-                                    RealnputLetterHeightV = 0
-                                    RealnputCropWidthV = 0
-                                    RealnputCropHeightV = CropHeightV
-                                Else
-                                    RealnputWidthV = SettingSizeWidthV
-                                    RealnputHeightV = SettingSizeHeightV
-                                    RealnputLetterWidthV = 0
-                                    RealnputLetterHeightV = 0
-                                    RealnputCropWidthV = 0
-                                    RealnputCropHeightV = 0
-                                End If
-
-                            Else '아니면
-ImageSkip:
-                                RealnputWidthV = SettingSizeWidthV
-                                RealnputHeightV = SettingSizeHeightV
-                                RealnputLetterWidthV = 0
-                                RealnputLetterHeightV = 0
-                                RealnputCropWidthV = 0
-                                RealnputCropHeightV = 0
-                            End If
-
-                            If SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetLetterBoxAspectComboBox Then '사이즈입력받고, 레터박스 붙이기면
-                                VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV & ", pad=" & Val(RealnputWidthV) + (Val(RealnputLetterWidthV) * 2) & ":" & Val(RealnputHeightV) + (Val(RealnputLetterHeightV) * 2) & ":" & RealnputLetterWidthV & ":" & RealnputLetterHeightV
-                            ElseIf SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetCropAspectComboBox Then '사이즈입력받고, 비율 자르기면
-                                VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV & ", crop=" & Val(RealnputWidthV) + (Val(RealnputCropWidthV) * 2) & ":" & Val(RealnputHeightV) + (Val(RealnputCropHeightV) * 2) & ":" & -1 * Val(RealnputCropWidthV) & ":" & -1 * Val(RealnputCropHeightV)
-                            Else
-                                VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV
-                            End If
-
-                        End If
-
-                    End With
-                End If
-            End If
-
-            '***********************************
-            ' 비디오, 오디오 맵
-            '***********************************
-            Dim VideoMapV As String = ""
-            Dim AudioMapV As String = ""
-            Dim NeroAACAudioMapV As String = ""
-            Dim AVMapV As String = ""
-            If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
-
-                Try
-                    VideoMapV = Split(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, ":")(0), "#")(1), "(")(0)
-                    If IsNumeric(VideoMapV) = False Then
-                        VideoMapV = Split(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, ":")(0), "#")(1), "[")(0)
-                    End If
-                Catch ex As Exception
-                End Try
-                Try
-                    AudioMapV = Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, "#")(1), "(")(0)
-                    If IsNumeric(AudioMapV) = False Then
-                        AudioMapV = Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, "#")(1), "[")(0)
-                    End If
-                Catch ex As Exception
-                End Try
-
-                If EncSetFrm.AudioCodecComboBox.Text <> "Nero AAC" Then '네로 AAC 가 아니면
-                    If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
-                        If VideoMapV <> "" AndAlso AudioMapV <> "" Then
-                            AVMapV = " -map " & VideoMapV & " -map " & AudioMapV
-                        End If
-                    Else '오디오만 인코딩, 오디오맵만,.,.
-                        If AudioMapV <> "" Then
-                            AVMapV = " -map " & AudioMapV
-                        End If
-                    End If
                 Else
-                    If AudioMapV <> "" Then
-                        NeroAACAudioMapV = " -map " & AudioMapV
-                    End If
+                    MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainEncodingStr
                 End If
 
-            End If
-
-
-
-
-            ' 위의 코드는 FFmpeg 에서만! AviSynth 무관 //
-            ' 영상에따라 값이 다르므로 인코딩 시작전에 분석을 해야 함 //
-            '============================================================================================
-
-
-
-            '***********************************
-            ' 구간설정
-            '***********************************
-            Dim PTimeInfo As String = MainFrm.EncListListView.Items(EncindexI).SubItems(11).Text
-            Dim StartHMSV As Single = 0.0
-            Dim EndHMSV As Single = 0.0
-            Dim PlayHMSV As Single = 0.0
-            Dim SSTV As String = ""
-            '시작시간
-            Dim i As Long = 1
-            Dim ii As Long = 0
-            Dim t As String = ""
-            If InStr(i, PTimeInfo, "[", CompareMethod.Text) Then
-                ii = InStr(i, PTimeInfo, "[", CompareMethod.Text)
-                If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
-                    i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
-                    t = Mid(PTimeInfo, ii, i - ii - 1)
-                End If
-            Else
-                i = i + 1
-            End If
-            If t <> "" Then
-                t = Mid(t, InStrRev(t, "[") + 1)
-                Try
-                    StartHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
-                Catch ex As Exception
-                End Try
-            End If
-            '종료시간
-            i = 1
-            ii = 0
-            t = ""
-            If InStr(i, PTimeInfo, "- ", CompareMethod.Text) Then
-                ii = InStr(i, PTimeInfo, "- ", CompareMethod.Text)
-                If InStr(ii, PTimeInfo, "]", CompareMethod.Text) Then
-                    i = InStr(ii, PTimeInfo, "]", CompareMethod.Text) + 1
-                    t = Mid(PTimeInfo, ii, i - ii - 1)
-                End If
-            Else
-                i = i + 1
-            End If
-            If t <> "" Then
-                t = Mid(t, InStrRev(t, "- ") + 2)
-                Try
-                    EndHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
-                Catch ex As Exception
-                End Try
-            End If
-            '재생시간
-            i = 1
-            ii = 0
-            t = ""
-            If InStr(i, PTimeInfo, "", CompareMethod.Text) Then
-                ii = InStr(i, PTimeInfo, "", CompareMethod.Text)
-                If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
-                    i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
-                    t = Mid(PTimeInfo, ii, i - ii - 1)
-                End If
-            Else
-                i = i + 1
-            End If
-            If t <> "" Then
-                Try
-                    PlayHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
-                Catch ex As Exception
-                End Try
-            End If
-            If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
-                If StartHMSV = 0 AndAlso EndHMSV <> 0 Then '종료시간만
-                    SSTV = " -t " & EndHMSV
-                ElseIf StartHMSV <> 0 AndAlso EndHMSV <> 0 Then '시작시간 or 시작시간과 종료시간
-                    SSTV = " -ss " & StartHMSV & " -t " & EndHMSV - StartHMSV
-                End If
-            End If
-
-            '***********************************
-            ' 구간설정과 연동//
-            '***********************************
-            Dim __GTimeV As Single = (EndHMSV - StartHMSV)
-            If __GTimeV = 0 Then __GTimeV = PlayHMSV
-
-            '---------------------------------
-            ' 재생시간과, 오디오 비트레이트, 용량을 기준으로 비디오 비트레이트 값 산출(v1.0a)
-            '=================================
-            Dim CalcVideoBitrateStr As String = ""
-            If EncSetFrm.SizeEncCheckBox.Checked = True Then '용량을 기준으로 인코딩 여부 (참)
-                If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[1PASS-CBR]", -1) OrElse _
-                EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) Then  'CBR 체크
-
-                    If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then '오디오만이므로 비디오 제외.
-                    Else '둘다
-
-                        '*****************
-                        ' MainFrm 에 예상용량 추출부분에서 그대로 퍼옴 ㄷㄷ
-                        '*****************
-
-                        '//////////////////////////////
-                        '여기부터
-                        '///
-                        '오디오 부분
-                        Dim ExAudioB As Boolean = False '예외스킵
-                        Dim AKByteV As Single = Val(EncSetFrm.AudioBitrateComboBox.Text) / 8
-                        '코덱
-                        If ExAudioB = False Then
-                            If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then 'WAV
-                                Dim ACHV As Integer = 0
-                                If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
-                                    If AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPdolbypComboBox Then
-                                        ACHV = 2
-                                    ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPdolbysComboBox Then
-                                        ACHV = 2
-                                    ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch51ComboBox Then
-                                        ACHV = 6
-                                    ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch20ComboBox Then
-                                        ACHV = 2
-                                    ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch10ComboBox Then
-                                        ACHV = 1
-                                    Else
-                                        ExAudioB = True
-                                    End If
-                                Else 'AviSynth 사용 안 함
-                                    If EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch51ComboBox Then
-                                        ACHV = 6
-                                    ElseIf EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch20ComboBox Then
-                                        ACHV = 2
-                                    ElseIf EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch10ComboBox Then
-                                        ACHV = 1
-                                    Else
-                                        ExAudioB = True
-                                    End If
-                                End If
-                                Dim SAMV As Integer = 0
-                                If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플
-                                    ExAudioB = True
-                                Else
-                                    SAMV = EncSetFrm.SamplerateComboBox.Text
-                                End If
-                                AKByteV = ((16 * ACHV * SAMV) / 1000) / 8
-                            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'NeroAAC
-                                If EncSetFrm.NeroAACVBRRadioButton.Checked = True Then
-                                    ExAudioB = True
-                                Else
-                                    AKByteV = Val(EncSetFrm.NeroAACBitrateNumericUpDown.Value) / 8
-                                End If
-                            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
-                                AKByteV = Val(EncSetFrm.AMRBitrateComboBox.Text) / 8
-                            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[OGG] Vorbis" OrElse EncSetFrm.AudioCodecComboBox.Text = "Vorbis" Then 'Vorbis
-                                ExAudioB = True
-                            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC
-                                ExAudioB = True
-                            End If
-                        End If
-                        '///
-                        '여기까지
-                        '//////////////////////////////
-
-                        Dim ThrowCalcVB_ERR_B As Boolean = False
-
-                        If ExAudioB = True Then
-                            ThrowCalcVB_ERR_B = True
-                        Else
-                            Try
-                                CalcVideoBitrateStr = ((Val(EncSetFrm.SizeEncTextBox.Text) * (1024 ^ 2)) / __GTimeV) - (AKByteV * 1000)
-                                CalcVideoBitrateStr = Val(CalcVideoBitrateStr) * 8 / 1000 'Kbit/s 단위로..
-
-                                If IsNumeric(CalcVideoBitrateStr) = False Then
-                                    ThrowCalcVB_ERR_B = True
-                                Else
-                                    If Val(CalcVideoBitrateStr) < 1 Then
-                                        ThrowCalcVB_ERR_B = True
-                                    Else
-                                        ThrowCalcVB_ERR_B = False
-                                    End If
-                                End If
-                            Catch ex As Exception
-                                ThrowCalcVB_ERR_B = True
-                            End Try
-                        End If
-
-                        If ThrowCalcVB_ERR_B = True Then
-                            CalcVideoBitrateStr = " -b " & EncSetFrm.BitrateComboBox.Text & "k"
-                        Else
-                            CalcVideoBitrateStr = " -b " & Int(CalcVideoBitrateStr) & "k"
-                        End If
-
-                    End If
-
-                End If
-            End If
-
-            '---------------------------------
-            ' 비율
-            '=================================
-            Dim VF_AspectV As String = ""
-            Dim AspectV As String = ""
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
-                Dim OriginW = 0
-                Dim OriginH = 0
-                Try
-                    OriginW = Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(0))
-                    OriginH = Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(1))
-                Catch ex As Exception
-                End Try
-                Dim _LeftCV As Integer = 0
-                Dim _TopCV As Integer = 0
-                Dim _RightCV As Integer = 0
-                Dim _BottomCV As Integer = 0
-                Try
-                    _LeftCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(0)
-                    _TopCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(1)
-                    _RightCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(2)
-                    _BottomCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(3)
-                Catch ex As Exception
-                End Try
-                If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
-
-                    '오디오만 있는경우를 생각 -ㅂ-;
-                    If (MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text <> "None") OrElse MainFrm.EncListListView.Items(EncindexI).SubItems(5).Text = "V_None" Then '오디오만 있는 경우
-                        VF_AspectV = ""
-                    Else
-                        If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본
-                            '회전
-                            If ImagePPFrm.TurnCheckBox.Checked = True AndAlso (ImagePPFrm.TurnLeftRadioButton.Checked = True OrElse ImagePPFrm.TurnRightRadioButton.Checked = True) Then
-                                VF_AspectV = ", aspect=" & Val(OriginH) - _TopCV - _BottomCV & ":" & Val(OriginW) - _LeftCV - _RightCV
-                            Else
-                                VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
-                            End If
-                        Else
-                            VF_AspectV = ", aspect=" & ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & ":" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
-                    End If
-                    End If
-
-                Else
-                    If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본
-                        VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
-                    Else
-                        VF_AspectV = ", aspect=" & EncSetFrm.ImageSizeWidthTextBox.Text & ":" & EncSetFrm.ImageSizeHeightTextBox.Text
-                    End If
-
-                    '======================================================
-                    'PAR 1:1 아닌경우 원본사이즈 비율적용//
-                    Dim PAR0 As Integer = 1, PAR00 As Integer = 0
-                    Dim PARtes As String = ""
-                    If InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) Then
-                        PAR00 = InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) + 4
-                        If InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
-                            PAR0 = InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
-                            PARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, PAR00, PAR0 - PAR00 - 1)
-                        End If
-                    Else
-                        PAR0 = PAR0 + 1
-                    End If
-                    If PARtes <> "" Then
-                        Dim LP, RP As String
-                        If InStr(PARtes, " ", CompareMethod.Text) <> 0 AndAlso InStr(PARtes, ":", CompareMethod.Text) <> 0 Then
-                            Try
-                                PARtes = Split(PARtes, " ")(0)
-                                LP = Split(PARtes, ":")(0)
-                                RP = Split(PARtes, ":")(1)
-                            Catch ex As Exception
-                                PARtes = "1:1"
-                                LP = 1
-                                RP = 1
-                            End Try
-                            If LP = "1" AndAlso RP = "1" Then
-                            Else
-                                AspectV = " -aspect " & Val(OriginW) & ":" & Val(OriginH)
-                            End If
-                        End If
-                    End If
-                    '======================================================
-
-                End If
-            End If
-
-            '---------------------------------
-            ' 비디오필터 vf!
-            '=================================
-            Dim VideoFilterV As String = ""
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
-                If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
-
-                    If MainFrm.VF_TextBox = "" AndAlso VF_AspectV = "" Then
-                        VideoFilterV = ""
-                    Else
-                        VideoFilterV = Chr(34) & MainFrm.VF_TextBox & VF_AspectV & Chr(34)
-                        VideoFilterV = " -vf " & Replace(VideoFilterV, ", ", "", 1, 1)
-                    End If
-
-                Else 'AviSynth 사용 안 함
-
-                    If VF_CropV = "" AndAlso VF_imageVTextBox = "" AndAlso MainFrm.VF_TextBox = "" AndAlso VF_AspectV = "" Then
-                        VideoFilterV = ""
-                    Else
-                        VideoFilterV = Chr(34) & VF_CropV & VF_imageVTextBox & MainFrm.VF_TextBox & VF_AspectV & Chr(34)
-                        VideoFilterV = " -vf " & Replace(VideoFilterV, ", ", "", 1, 1)
-                    End If
-
-                End If
-            End If
-
-            '***************************************************
-
-            '---------------------------------
-            ' 입력파일
-            '=================================
-            Dim InputFilePath As String = ""
-            Dim InputFilePathN As String = ""
-            If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
-
-                '초기화//
-                AviSynthPP.INDEX_PStr = ""
-                AviSynthPP.INDEX_PVStr = ""
-
-                ProgressBar.Maximum = 100
-
-                IndexTimer.Enabled = True
-                IndexProc = True
-
-                '우선순위//
-                Dim PriorityV As Integer
-                If PriorityComboBox.SelectedIndex = 0 Then
-                    PriorityV = PriorityClass.IDLE_PRIORITY_CLASS
-                ElseIf PriorityComboBox.SelectedIndex = 1 Then
-                    PriorityV = PriorityClass.BELOW_NORMAL_PRIORITY_CLASS
-                ElseIf PriorityComboBox.SelectedIndex = 2 Then
-                    PriorityV = PriorityClass.NORMAL_PRIORITY_CLASS
-                ElseIf PriorityComboBox.SelectedIndex = 3 Then
-                    PriorityV = PriorityClass.ABOVE_NORMAL_PRIORITY_CLASS
-                ElseIf PriorityComboBox.SelectedIndex = 4 Then
-                    PriorityV = PriorityClass.HIGH_PRIORITY_CLASS
-                ElseIf PriorityComboBox.SelectedIndex = 5 Then
-                    PriorityV = PriorityClass.REALTIME_PRIORITY_CLASS
-                Else
-                    PriorityV = PriorityClass.NORMAL_PRIORITY_CLASS
-                End If
-                'EncToolStripStatusLabel.Text = LangCls.EncodingCreatingD2V or EncodingCreatingFFINDEX // 아래에서
-                AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True)
-                EncToolStripStatusLabel.Text = ""
-                IndexProc = False
-                IndexTimer.Enabled = False
-
-                If AviSynthPP.INDEX_ProcessStopChk = True Then
-                    AviSynthPP.INDEX_ProcessStopChk = False
-                    GoTo ENC_STOP
-                Else
-                    InputFilePath = My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs"
-                    InputFilePathN = My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN.avs"
-                End If
-
-            Else
-                InputFilePath = MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text
-                InputFilePathN = MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text
-            End If
-
-            '***************************************************
-
-            '---------------------------------
-            ' 저장경로 유니코드처리
-            '=================================
-            Dim UnicodeMPATHV As String = ""
-            Dim FNGBytes() As Byte = System.Text.Encoding.Default.GetBytes(SavePathStr)
-            If InStr(System.Text.Encoding.Default.GetString(FNGBytes), "?") <> 0 Then
-                'NULL파일 생성(유니코드처리용)
-                Try
-                    Dim _StreamWriter As New StreamWriter(SavePathStr, False, System.Text.Encoding.Default)
-                    _StreamWriter.Write("")
-                    _StreamWriter.Close()
-                Catch ex As Exception
+                '비디오와 오디오 둘다 없으면 오류처리
+                If MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text = "None" Then
                     MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                    MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
                     GoTo SKIP
+                End If
+
+
+                '++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+                '---------------------------------
+                ' 원본 파일의 파일 이름만 추출
+                '=================================
+                Dim FilenameV As String = ""
+                If InStrRev(MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text, ".") <> 0 Then
+                    FilenameV = Strings.Left(MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text, InStrRev(MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text, ".") - 1)
+                Else
+                    FilenameV = MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text
+                End If
+
+                '---------------------------------
+                ' 확장자 (출력형식 확장자)
+                '=================================
+                Dim ExtensionV As String = ""
+                Try
+                    If EncSetFrm.ExtensionTextBox.Text = "" Then
+                        If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
+                            ExtensionV = "." & LCase(Replace(Split(EncSetFrm.OutFComboBox.Text, "]")(0), "[", ""))
+                        Else
+                            ExtensionV = "." & LCase(Replace(Split(EncSetFrm.AudioCodecComboBox.Text, "]")(0), "[", ""))
+                        End If
+                    Else
+                        ExtensionV = "." & EncSetFrm.ExtensionTextBox.Text
+                    End If
+                Catch ex As Exception
                 End Try
-                '경로백업
-                UnicodeMPATHV = SavePathStr
-                '저장경로지정
-                SavePathStr = WinAPI.GetShortPathName(SavePathStr)
-            End If
 
-            '---------------------------------
-            ' 타임스탬프
-            '=================================
-            Dim timestampV As String = ""
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
-             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
-             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
-             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
-                timestampV = " -timestamp now" ' & Chr(34) & Format(Now, "yyyy-MM-dd HH:mm:ss") & Chr(34)
-            End If
+                '---------------------------------
+                ' 출력경로검사
+                '=================================
+                Dim SavePathTextBoxV As String = ""
+                If Strings.Right(MainFrm.SavePathTextBox.Text, 1) = "\" Then
+                    SavePathTextBoxV = MainFrm.SavePathTextBox.Text
+                Else
+                    SavePathTextBoxV = MainFrm.SavePathTextBox.Text & "\"
+                End If
 
-            '---------------------------------
-            ' FFmpeg 프레임 레이트 지정(VBR전용)
-            '=================================
-            Dim FramerateStr As String = ""
-            If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안함
-                If EncSetFrm.FramerateCheckBox.Checked = True Then
+                '---------------------------------
+                ' 저장파일
+                '=================================
+                SavePathStr = SavePathTextBoxV & EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV
+
+                '***********************************************
+                '출력과 원본이 같으면 스킵//
+                '***********************************************
+                If MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text = SavePathStr Then
+                    MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                    MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = LangCls.MainFileSame
+                    GoTo SKIP
+                End If
+
+                '***********************************************
+                '저장파일 덮어쓰기 부분//
+                '***********************************************
+                If My.Computer.FileSystem.FileExists(SavePathStr) = True Then
+                    If MessageBoxBTN = "" OrElse MessageBoxBTN = "YES" OrElse MessageBoxBTN = "NO" Then
+                        MessageFrm.FilePathLabel.Text = SavePathStr
+                        Try
+                            MessageFrm.ShowDialog(Me)
+                        Catch ex As Exception
+                        End Try
+                    End If
+                    If MessageBoxBTN = "NO" OrElse MessageBoxBTN = "NOTOALL" Then
+                        MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainSkipStr
+                        GoTo SKIP
+                    End If
+                End If
+
+
+
+
+
+
+
+
+
+                '++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+                '***********************************
+                ' 비디오필터 crop
+                '***********************************
+                Dim VF_CropV As String = ""
+                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
+                    If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+                        Try
+                            Dim LeftCV As Integer = 0
+                            Dim TopCV As Integer = 0
+                            Dim RightCV As Integer = 0
+                            Dim BottomCV As Integer = 0
+                            LeftCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(0)
+                            TopCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(1)
+                            RightCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(2)
+                            BottomCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(3)
+                            If LeftCV = 0 AndAlso TopCV = 0 AndAlso RightCV = 0 AndAlso BottomCV = 0 Then
+                                VF_CropV = ""
+                            Else
+                                VF_CropV = ", crop=" & Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(0)) - LeftCV - RightCV & ":" & _
+                                                       Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(1)) - TopCV - BottomCV & ":" & _
+                                                       LeftCV & ":" & _
+                                                       TopCV
+                            End If
+                        Catch ex As Exception
+                            VF_CropV = ""
+                        End Try
+                    End If
+                End If
+
+                '***********************************
+                ' 비디오필터 image = crop, scale, pad
+                '***********************************
+                Dim VF_imageVTextBox As String = ""
+                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
+                    If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+                        With EncSetFrm
+
+                            Dim SettingSizeWidthV, SettingSizeHeightV As Integer
+                            Dim SourceSizeV, SourceWidthV, SourceHeightV
+                            Dim ResizeWidthV, ResizeHeightV
+                            Dim LetterWidthV, LetterHeightV
+                            Dim CropWidthV, CropHeightV
+                            Dim RealnputWidthV, RealnputHeightV, RealnputLetterWidthV, RealnputLetterHeightV, RealnputCropWidthV, RealnputCropHeightV
+
+                            If .ImageSizeCheckBox.Checked = False Then
+
+                                SettingSizeWidthV = .ImageSizeWidthTextBox.Text
+                                SettingSizeHeightV = .ImageSizeHeightTextBox.Text
+
+                                Try
+                                    SourceSizeV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0)
+                                Catch ex As Exception
+                                    SourceSizeV = "0x0"
+                                    GoTo ImageSkip
+                                End Try
+
+                                If SourceSizeV = "x" Then
+                                    GoTo ImageSkip
+                                End If
+
+                                If SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetLetterBoxAspectComboBox Then '사이즈입력받고, 레터박스 붙이기면
+
+                                    '/////비율 시작
+                                    If .AspectComboBox2.Text = LangCls.EncSetOutputAspectComboBox2 Then 'DAR(출력 비율)
+
+                                        Dim DAR0 As Integer = 1, DAR00 As Integer = 0
+                                        Dim DARtes As String = ""
+                                        If InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) Then
+                                            DAR00 = InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) + 4
+                                            If InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
+                                                DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                                                DARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, DAR00, DAR0 - DAR00 - 1)
+                                            End If
+                                        Else
+                                            DAR0 = DAR0 + 1
+                                        End If
+
+                                        If DARtes <> "" Then 'else Location Blank
+                                            Try
+                                                SourceWidthV = Split(DARtes, ":")(0)
+                                                SourceHeightV = Split(DARtes, ":")(1)
+                                            Catch ex As Exception
+                                                SourceWidthV = 0
+                                                SourceHeightV = 0
+                                            End Try
+                                        Else
+                                            Try
+                                                SourceWidthV = Split(SourceSizeV, "x")(0)
+                                                SourceHeightV = Split(SourceSizeV, "x")(1)
+                                            Catch ex As Exception
+                                                SourceWidthV = 0
+                                                SourceHeightV = 0
+                                            End Try
+                                        End If
+
+                                    ElseIf .AspectComboBox2.Text = LangCls.EncSetOriginalAspectComboBox2 Then 'SAR(원본 비율)
+                                        Try
+                                            SourceWidthV = Split(SourceSizeV, "x")(0)
+                                            SourceHeightV = Split(SourceSizeV, "x")(1)
+                                        Catch ex As Exception
+                                            SourceWidthV = 0
+                                            SourceHeightV = 0
+                                        End Try
+                                    Else '아니면
+                                        SourceWidthV = .AspectWTextBox.Text
+                                        SourceHeightV = .AspectHTextBox.Text
+                                    End If
+                                    '/////비율 끝
+
+                                    ResizeWidthV = Format((SourceWidthV / SourceHeightV / 4) * SettingSizeHeightV, 0) * 4
+                                    ResizeHeightV = Format((SourceHeightV / SourceWidthV / 4) * SettingSizeWidthV, 0) * 4
+
+                                    LetterWidthV = (.ImageSizeWidthTextBox.Text - ResizeWidthV) / 2
+                                    LetterHeightV = (.ImageSizeHeightTextBox.Text - ResizeHeightV) / 2
+
+                                    If (100 * (SourceWidthV / SourceHeightV)) - (100 * (SettingSizeWidthV / SettingSizeHeightV)) > 0 Then
+                                        RealnputWidthV = SettingSizeWidthV
+                                        RealnputHeightV = ResizeHeightV
+                                        RealnputLetterWidthV = 0
+                                        RealnputLetterHeightV = LetterHeightV
+                                        RealnputCropWidthV = 0
+                                        RealnputCropHeightV = 0
+                                    ElseIf (100 * (SettingSizeWidthV / SettingSizeHeightV)) - (100 * (SourceWidthV / SourceHeightV)) > 0 Then
+                                        RealnputWidthV = ResizeWidthV
+                                        RealnputHeightV = SettingSizeHeightV
+                                        RealnputLetterWidthV = LetterWidthV
+                                        RealnputLetterHeightV = 0
+                                        RealnputCropWidthV = 0
+                                        RealnputCropHeightV = 0
+                                    Else
+                                        RealnputWidthV = SettingSizeWidthV
+                                        RealnputHeightV = SettingSizeHeightV
+                                        RealnputLetterWidthV = 0
+                                        RealnputLetterHeightV = 0
+                                        RealnputCropWidthV = 0
+                                        RealnputCropHeightV = 0
+                                    End If
+
+                                ElseIf SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetCropAspectComboBox Then '사이즈입력받고, 비율 자르기면
+
+                                    '/////비율 시작
+                                    If .AspectComboBox2.Text = LangCls.EncSetOutputAspectComboBox2 Then 'DAR(출력 비율)
+
+                                        Dim DAR0 As Integer = 1, DAR00 As Integer = 0
+                                        Dim DARtes As String = ""
+                                        If InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) Then
+                                            DAR00 = InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) + 4
+                                            If InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
+                                                DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                                                DARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, DAR00, DAR0 - DAR00 - 1)
+                                            End If
+                                        Else
+                                            DAR0 = DAR0 + 1
+                                        End If
+
+                                        If DARtes <> "" Then 'else Location Blank
+                                            Try
+                                                SourceWidthV = Split(DARtes, ":")(0)
+                                                SourceHeightV = Split(DARtes, ":")(1)
+                                            Catch ex As Exception
+                                                SourceWidthV = 0
+                                                SourceHeightV = 0
+                                            End Try
+                                        Else
+                                            Try
+                                                SourceWidthV = Split(SourceSizeV, "x")(0)
+                                                SourceHeightV = Split(SourceSizeV, "x")(1)
+                                            Catch ex As Exception
+                                                SourceWidthV = 0
+                                                SourceHeightV = 0
+                                            End Try
+                                        End If
+
+                                    ElseIf .AspectComboBox2.Text = LangCls.EncSetOriginalAspectComboBox2 Then 'SAR(원본 비율)
+                                        Try
+                                            SourceWidthV = Split(SourceSizeV, "x")(0)
+                                            SourceHeightV = Split(SourceSizeV, "x")(1)
+                                        Catch ex As Exception
+                                            SourceWidthV = 0
+                                            SourceHeightV = 0
+                                        End Try
+                                    Else '아니면
+                                        SourceWidthV = .AspectWTextBox.Text
+                                        SourceHeightV = .AspectHTextBox.Text
+                                    End If
+                                    '/////비율 끝
+
+                                    ResizeWidthV = Format((SourceWidthV / SourceHeightV / 4) * SettingSizeHeightV, 0) * 4
+                                    ResizeHeightV = Format((SourceHeightV / SourceWidthV / 4) * SettingSizeWidthV, 0) * 4
+
+                                    CropWidthV = (.ImageSizeWidthTextBox.Text - ResizeWidthV) / 2
+                                    CropHeightV = (.ImageSizeHeightTextBox.Text - ResizeHeightV) / 2
+
+                                    If (100 * (SourceWidthV / SourceHeightV)) - (100 * (SettingSizeWidthV / SettingSizeHeightV)) > 0 Then
+                                        RealnputWidthV = SettingSizeWidthV - (CropWidthV * 2)
+                                        RealnputHeightV = SettingSizeHeightV
+                                        RealnputLetterWidthV = 0
+                                        RealnputLetterHeightV = 0
+                                        RealnputCropWidthV = CropWidthV
+                                        RealnputCropHeightV = 0
+                                    ElseIf (100 * (SettingSizeWidthV / SettingSizeHeightV)) - (100 * (SourceWidthV / SourceHeightV)) > 0 Then
+                                        RealnputWidthV = SettingSizeWidthV
+                                        RealnputHeightV = SettingSizeHeightV - (CropHeightV * 2)
+                                        RealnputLetterWidthV = 0
+                                        RealnputLetterHeightV = 0
+                                        RealnputCropWidthV = 0
+                                        RealnputCropHeightV = CropHeightV
+                                    Else
+                                        RealnputWidthV = SettingSizeWidthV
+                                        RealnputHeightV = SettingSizeHeightV
+                                        RealnputLetterWidthV = 0
+                                        RealnputLetterHeightV = 0
+                                        RealnputCropWidthV = 0
+                                        RealnputCropHeightV = 0
+                                    End If
+
+                                Else '아니면
+ImageSkip:
+                                    RealnputWidthV = SettingSizeWidthV
+                                    RealnputHeightV = SettingSizeHeightV
+                                    RealnputLetterWidthV = 0
+                                    RealnputLetterHeightV = 0
+                                    RealnputCropWidthV = 0
+                                    RealnputCropHeightV = 0
+                                End If
+
+                                If SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetLetterBoxAspectComboBox Then '사이즈입력받고, 레터박스 붙이기면
+                                    VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV & ", pad=" & Val(RealnputWidthV) + (Val(RealnputLetterWidthV) * 2) & ":" & Val(RealnputHeightV) + (Val(RealnputLetterHeightV) * 2) & ":" & RealnputLetterWidthV & ":" & RealnputLetterHeightV
+                                ElseIf SourceSizeV <> "" AndAlso .AspectComboBox.Text = LangCls.EncSetCropAspectComboBox Then '사이즈입력받고, 비율 자르기면
+                                    VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV & ", crop=" & Val(RealnputWidthV) + (Val(RealnputCropWidthV) * 2) & ":" & Val(RealnputHeightV) + (Val(RealnputCropHeightV) * 2) & ":" & -1 * Val(RealnputCropWidthV) & ":" & -1 * Val(RealnputCropHeightV)
+                                Else
+                                    VF_imageVTextBox = ", scale=" & RealnputWidthV & ":" & RealnputHeightV
+                                End If
+
+                            End If
+
+                        End With
+                    End If
+                End If
+
+                '***********************************
+                ' 비디오, 오디오 맵
+                '***********************************
+                Dim VideoMapV As String = ""
+                Dim AudioMapV As String = ""
+                Dim NeroAACAudioMapV As String = ""
+                Dim AVMapV As String = ""
+                If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+
                     Try
-                        If Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)) >= 119 Then
-                            FramerateStr = " -r " & Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
+                        VideoMapV = Split(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, ":")(0), "#")(1), "(")(0)
+                        If IsNumeric(VideoMapV) = False Then
+                            VideoMapV = Split(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, ":")(0), "#")(1), "[")(0)
                         End If
                     Catch ex As Exception
                     End Try
-                End If
-            End If
+                    Try
+                        AudioMapV = Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, "#")(1), "(")(0)
+                        If IsNumeric(AudioMapV) = False Then
+                            AudioMapV = Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, "#")(1), "[")(0)
+                        End If
+                    Catch ex As Exception
+                    End Try
 
-            '---------------------------------
-            ' FLV 원본 샘플링 가변적//
-            '=================================
-            Dim AudioListV As String = MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text
-            Dim FLVSamplerateV As String = ""
-            Dim _i As Long = 1
-            Dim _ii As Long = 0
-            Dim _t As String = ""
-            'FLV 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 AndAlso EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" Then
-                If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플레이트 체크
-                    _i = 1
-                    _ii = 0
-                    _t = ""
-                    If InStr(_i, AudioListV, MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, CompareMethod.Text) Then
-                        _ii = InStr(_i, AudioListV, MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, CompareMethod.Text)
-                        If InStr(_ii, AudioListV, "Hz", CompareMethod.Text) Then
-                            _i = InStr(_ii, AudioListV, "Hz", CompareMethod.Text) + 1
-                            _t = Mid(AudioListV, _ii, _i - _ii - 1)
+                    If EncSetFrm.AudioCodecComboBox.Text <> "Nero AAC" Then '네로 AAC 가 아니면
+                        If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
+                            If VideoMapV <> "" AndAlso AudioMapV <> "" Then
+                                AVMapV = " -map " & VideoMapV & " -map " & AudioMapV
+                            End If
+                        Else '오디오만 인코딩, 오디오맵만,.,.
+                            If AudioMapV <> "" Then
+                                AVMapV = " -map " & AudioMapV
+                            End If
                         End If
                     Else
-                        _i = _i + 1
-                    End If
-                    If _t <> "" Then
-                        _t = Strings.Mid(RTrim(_t), InStrRev(RTrim(_t), " ") + 1)
-                        If Val(_t) >= 44100 Then
-                            FLVSamplerateV = " -ar 44100"
-                        ElseIf Val(_t) >= 22050 Then
-                            FLVSamplerateV = " -ar 22050"
-                        Else
-                            FLVSamplerateV = " -ar 11025"
+                        If AudioMapV <> "" Then
+                            NeroAACAudioMapV = " -map " & AudioMapV
                         End If
                     End If
-                End If
-            End If
 
-
-
-
-            '---------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-            '-------------------------------------
-            '-------------------------------------
-            '
-            '           인코딩 시작
-            '
-            '=====================================
-            '=====================================
-
-
-
-
-
-
-
-
-
-            '네로 AAC 인코딩 부분//
-            If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
-
-                Dim NeroAACPath As String = Chr(34) & My.Application.Info.DirectoryPath & "\tools\neroaac\neroAacEnc.exe" & Chr(34)
-                Dim InPATHV As String = ""
-                Dim OutPATHV As String = ""
-                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '비디오 + 오디오
-                    InPATHV = InputFilePathN
-                    OutPATHV = SavePathStr & "A"
-                Else '오디오만
-                    InPATHV = InputFilePath
-                    OutPATHV = SavePathStr
                 End If
 
-                Dim CommandV As String = ""
-                If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
-                    CommandV = MainFrm.NeroAACSTRAviSynth & NeroAACPath & MainFrm.NeroAACSTRNEP
-                Else 'AviSynth 사용 안 함
-                    CommandV = NeroAACAudioMapV & SSTV & MainFrm.NeroAACSTRFFmpeg & NeroAACPath & MainFrm.NeroAACSTRNEP
-                End If
-
-                Dim MSGB As String = Chr(34) & My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe" & Chr(34) & " -y -i " & Chr(34) & InPATHV & Chr(34) & CommandV & Chr(34) & OutPATHV & Chr(34)
-
-                '경로
-                Dim NeroBATCMDPathV As String = My.Application.Info.DirectoryPath & "\temp\CLIneroAacEnc.bat"
-
-                '저장
-                Try
-                    Dim _StreamWriter As New StreamWriter(NeroBATCMDPathV, False, System.Text.Encoding.Default)
-                    _StreamWriter.Write(MSGB)
-                    _StreamWriter.Close()
-                Catch ex As Exception
-                    MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                    MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
-                    GoTo SKIP
-                End Try
-
-                '실행
-                EncToolStripStatusLabel.Text = LangCls.EncodingNeroAACEncoding
-                EncSub(NeroBATCMDPathV, Nothing, Nothing, False, False)
-                EncToolStripStatusLabel.Text = ""
-                If EncSTOPBool = True Then GoTo ENC_STOP
-                If EncERRBool(EncindexI) = True Then
-                    MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                    GoTo SKIP
-                End If
-            End If
-            '네로 AAC 인코딩 부분//
 
 
-            '***********************************
-            ' 출력 형식 NeroAAC MUX용 -f 는 확장자 뒤에 붙은 V 와 A 를 합칠때 쓴다 mp4V + mp4A = 각 포맷으로 , 지정을 안 하면 오류발생../ 지우지 말것.
-            '***********************************
-            Dim OUTPUTFORMAT As String = ""
-            Dim OUTPUTFORMAT2 As String = ""
-            If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then
-                Try
-                    OUTPUTFORMAT = LCase(Replace(Split(EncSetFrm.OutFComboBox.Text, "]")(0), "[", ""))
-                    If OUTPUTFORMAT = "3gp" Then
-                        OUTPUTFORMAT2 = " -f 3gp"
-                    ElseIf OUTPUTFORMAT = "3g2" Then
-                        OUTPUTFORMAT2 = " -f 3g2"
-                    ElseIf OUTPUTFORMAT = "mp4" Then
-                        OUTPUTFORMAT2 = " -f mp4"
-                    ElseIf OUTPUTFORMAT = "mov" Then
-                        OUTPUTFORMAT2 = " -f mov"
-                    ElseIf OUTPUTFORMAT = "mkv" Then
-                        OUTPUTFORMAT2 = " -f matroska"
-                    ElseIf OUTPUTFORMAT = "flv" Then
-                        OUTPUTFORMAT2 = " -f flv"
+
+                ' 위의 코드는 FFmpeg 에서만! AviSynth 무관 //
+                ' 영상에따라 값이 다르므로 인코딩 시작전에 분석을 해야 함 //
+                '============================================================================================
+
+
+
+                '***********************************
+                ' 구간설정
+                '***********************************
+                Dim PTimeInfo As String = MainFrm.EncListListView.Items(EncindexI).SubItems(11).Text
+                Dim StartHMSV As Single = 0.0
+                Dim EndHMSV As Single = 0.0
+                Dim PlayHMSV As Single = 0.0
+                Dim SSTV As String = ""
+                '시작시간
+                Dim i As Long = 1
+                Dim ii As Long = 0
+                Dim t As String = ""
+                If InStr(i, PTimeInfo, "[", CompareMethod.Text) Then
+                    ii = InStr(i, PTimeInfo, "[", CompareMethod.Text)
+                    If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
+                        i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
+                        t = Mid(PTimeInfo, ii, i - ii - 1)
                     End If
-                Catch ex As Exception
-                    OUTPUTFORMAT = ""
-                    OUTPUTFORMAT2 = ""
-                End Try
-            End If
-            '***********************************
-            ' 용량 제한 NeroAAC MUX용
-            '***********************************
-            Dim SizeLimitTextBoxV As String = ""
-            If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then
-                If Val(EncSetFrm.SizeLimitTextBox.Text) <> 0 Then
-                    SizeLimitTextBoxV = " -fs " & Val(EncSetFrm.SizeLimitTextBox.Text) * Val(1048576)
-                End If
-            End If
-
-
-
-
-
-            '===========================================
-
-
-
-
-
-            '오디오 비디오 인코딩 // MP4 Nero AAC 예외를 준 이유는 위에서 이미 인코딩을 진행했기 때문./ 일반 Nero AAC 코덱은 아래와 같이 진행./ 비디오 인코딩 및 MUX 과정을 행함.
-            If EncSetFrm.AudioCodecComboBox.Text <> "[MP4] Nero AAC" Then
-
-                Dim VextV As String = ""
-                Dim AnV As String = ""
-                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '네로 에에씨 인코딩이면, -an 과(2-1패스는 제외), 파일 확장자뒤에 V를 붙어줌.
-                    VextV = "V"
-                    AnV = " -an"
-                    EncToolStripStatusLabel.Text = LangCls.EncodingVEncoding
                 Else
-                    VextV = ""
-                    AnV = ""
-                    If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
-                        EncToolStripStatusLabel.Text = LangCls.EncodingAVEncoding
-                    Else
-                        EncToolStripStatusLabel.Text = LangCls.EncodingAEncoding
+                    i = i + 1
+                End If
+                If t <> "" Then
+                    t = Mid(t, InStrRev(t, "[") + 1)
+                    Try
+                        StartHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
+                    Catch ex As Exception
+                    End Try
+                End If
+                '종료시간
+                i = 1
+                ii = 0
+                t = ""
+                If InStr(i, PTimeInfo, "- ", CompareMethod.Text) Then
+                    ii = InStr(i, PTimeInfo, "- ", CompareMethod.Text)
+                    If InStr(ii, PTimeInfo, "]", CompareMethod.Text) Then
+                        i = InStr(ii, PTimeInfo, "]", CompareMethod.Text) + 1
+                        t = Mid(PTimeInfo, ii, i - ii - 1)
+                    End If
+                Else
+                    i = i + 1
+                End If
+                If t <> "" Then
+                    t = Mid(t, InStrRev(t, "- ") + 2)
+                    Try
+                        EndHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
+                    Catch ex As Exception
+                    End Try
+                End If
+                '재생시간
+                i = 1
+                ii = 0
+                t = ""
+                If InStr(i, PTimeInfo, "", CompareMethod.Text) Then
+                    ii = InStr(i, PTimeInfo, "", CompareMethod.Text)
+                    If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
+                        i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
+                        t = Mid(PTimeInfo, ii, i - ii - 1)
+                    End If
+                Else
+                    i = i + 1
+                End If
+                If t <> "" Then
+                    Try
+                        PlayHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
+                    Catch ex As Exception
+                    End Try
+                End If
+                If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+                    If StartHMSV = 0 AndAlso EndHMSV <> 0 Then '종료시간만
+                        SSTV = " -t " & EndHMSV
+                    ElseIf StartHMSV <> 0 AndAlso EndHMSV <> 0 Then '시작시간 or 시작시간과 종료시간
+                        SSTV = " -ss " & StartHMSV & " -t " & EndHMSV - StartHMSV
                     End If
                 End If
 
-                '---------------------------------------------------------
-                '=========================================================
+                Dim _TimeV As Double = 0.0
+                Dim __TimeV As Double = 0.0
+                If (EndHMSV - StartHMSV) = 0 Then
+                    Try
+                        __TimeV = Val((Split(MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text, ":")(0) * 3600)) + Val((Split(MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text, ":")(1) * 60)) + Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text, ":")(2), ".")(0)) + Val("0." & Split(MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text, ".")(1))
+                        If MainFrm.AVSCheckBox.Checked = True AndAlso ETCPPFrm.RateCheckBox.Checked = True Then 'AviSynth 사용하고 배속모드 사용..
+                            _TimeV = (1 / ETCPPFrm.RateNumericUpDown.Value) * __TimeV
+                        Else
+                            _TimeV = __TimeV
+                        End If
+                    Catch ex As Exception
+                        _TimeV = 0.0
+                    End Try
+                Else
+                    Try
+                        If MainFrm.AVSCheckBox.Checked = True AndAlso ETCPPFrm.RateCheckBox.Checked = True Then 'AviSynth 사용하고 배속모드 사용..
+                            _TimeV = (1 / ETCPPFrm.RateNumericUpDown.Value) * (EndHMSV - StartHMSV)
+                        Else
+                            _TimeV = EndHMSV - StartHMSV
+                        End If
+                    Catch ex As Exception
+                        _TimeV = 0.0
+                    End Try
+                End If
 
+                '---------------------------------
+                ' 재생시간과, 오디오 비트레이트, 용량을 기준으로 비디오 비트레이트 값 산출(v1.0a)
+                '=================================
+                Dim CalcVideoBitrateStr As String = ""
+                If EncSetFrm.SizeEncCheckBox.Checked = True Then '용량을 기준으로 인코딩 여부 (참)
+                    If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[1PASS-CBR]", -1) OrElse _
+                    EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) Then  'CBR 체크
+
+                        If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then '오디오만이므로 비디오 제외.
+                        Else '둘다
+
+                            '*****************
+                            ' MainFrm 에 예상용량 추출부분에서 그대로 퍼옴 ㄷㄷ
+                            '*****************
+
+                            '//////////////////////////////
+                            '여기부터
+                            '///
+                            '오디오 부분
+                            Dim ExAudioB As Boolean = False '예외스킵
+                            Dim AKByteV As Single = Val(EncSetFrm.AudioBitrateComboBox.Text) / 8
+                            '코덱
+                            If ExAudioB = False Then
+                                If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then 'WAV
+                                    Dim ACHV As Integer = 0
+                                    If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
+                                        If AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPdolbypComboBox Then
+                                            ACHV = 2
+                                        ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPdolbysComboBox Then
+                                            ACHV = 2
+                                        ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch51ComboBox Then
+                                            ACHV = 6
+                                        ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch20ComboBox Then
+                                            ACHV = 2
+                                        ElseIf AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPch10ComboBox Then
+                                            ACHV = 1
+                                        Else
+                                            ExAudioB = True
+                                        End If
+                                    Else 'AviSynth 사용 안 함
+                                        If EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch51ComboBox Then
+                                            ACHV = 6
+                                        ElseIf EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch20ComboBox Then
+                                            ACHV = 2
+                                        ElseIf EncSetFrm.FFmpegChComboBox.Text = LangCls.EncSetch10ComboBox Then
+                                            ACHV = 1
+                                        Else
+                                            ExAudioB = True
+                                        End If
+                                    End If
+                                    Dim SAMV As Integer = 0
+                                    If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플
+                                        ExAudioB = True
+                                    Else
+                                        SAMV = EncSetFrm.SamplerateComboBox.Text
+                                    End If
+                                    AKByteV = ((16 * ACHV * SAMV) / 1000) / 8
+                                ElseIf EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'NeroAAC
+                                    If EncSetFrm.NeroAACVBRRadioButton.Checked = True Then
+                                        ExAudioB = True
+                                    Else
+                                        AKByteV = Val(EncSetFrm.NeroAACBitrateNumericUpDown.Value) / 8
+                                    End If
+                                ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
+                                    AKByteV = Val(EncSetFrm.AMRBitrateComboBox.Text) / 8
+                                ElseIf EncSetFrm.AudioCodecComboBox.Text = "[OGG] Vorbis" OrElse EncSetFrm.AudioCodecComboBox.Text = "Vorbis" Then 'Vorbis
+                                    ExAudioB = True
+                                ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC
+                                    ExAudioB = True
+                                End If
+                            End If
+                            '///
+                            '여기까지
+                            '//////////////////////////////
+
+                            Dim ThrowCalcVB_ERR_B As Boolean = False
+
+                            If ExAudioB = True Then
+                                ThrowCalcVB_ERR_B = True
+                            Else
+                                Try
+                                    CalcVideoBitrateStr = ((Val(EncSetFrm.SizeEncTextBox.Text) * (1024 ^ 2)) / _TimeV) - (AKByteV * 1000)
+                                    CalcVideoBitrateStr = Val(CalcVideoBitrateStr) * 8 / 1000 'Kbit/s 단위로..
+
+                                    If IsNumeric(CalcVideoBitrateStr) = False Then
+                                        ThrowCalcVB_ERR_B = True
+                                    Else
+                                        If Val(CalcVideoBitrateStr) < 1 Then
+                                            ThrowCalcVB_ERR_B = True
+                                        Else
+                                            ThrowCalcVB_ERR_B = False
+                                        End If
+                                    End If
+                                Catch ex As Exception
+                                    ThrowCalcVB_ERR_B = True
+                                End Try
+                            End If
+
+                            If ThrowCalcVB_ERR_B = True Then
+                                CalcVideoBitrateStr = " -b " & EncSetFrm.BitrateComboBox.Text & "k"
+                            Else
+                                CalcVideoBitrateStr = " -b " & Int(CalcVideoBitrateStr) & "k"
+                            End If
+
+                        End If
+
+                    End If
+                End If
+
+                '---------------------------------
+                ' 비율
+                '=================================
+                Dim VF_AspectV As String = ""
+                Dim AspectV As String = ""
+                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
+                    Dim OriginW = 0
+                    Dim OriginH = 0
+                    Try
+                        OriginW = Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(0))
+                        OriginH = Val(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(0), "x")(1))
+                    Catch ex As Exception
+                    End Try
+                    Dim _LeftCV As Integer = 0
+                    Dim _TopCV As Integer = 0
+                    Dim _RightCV As Integer = 0
+                    Dim _BottomCV As Integer = 0
+                    Try
+                        _LeftCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(0)
+                        _TopCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(1)
+                        _RightCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(2)
+                        _BottomCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(3)
+                    Catch ex As Exception
+                    End Try
+                    If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
+
+                        '오디오만 있는경우를 생각 -ㅂ-;
+                        If (MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text <> "None") OrElse MainFrm.EncListListView.Items(EncindexI).SubItems(5).Text = "V_None" Then '오디오만 있는 경우
+                            VF_AspectV = ""
+                        Else
+                            If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본
+                                '회전
+                                If ImagePPFrm.TurnCheckBox.Checked = True AndAlso (ImagePPFrm.TurnLeftRadioButton.Checked = True OrElse ImagePPFrm.TurnRightRadioButton.Checked = True) Then
+                                    VF_AspectV = ", aspect=" & Val(OriginH) - _TopCV - _BottomCV & ":" & Val(OriginW) - _LeftCV - _RightCV
+                                Else
+                                    VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
+                                End If
+                            Else
+                                VF_AspectV = ", aspect=" & ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & ":" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
+                            End If
+                        End If
+
+                    Else
+                        If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본
+                            VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
+                        Else
+                            VF_AspectV = ", aspect=" & EncSetFrm.ImageSizeWidthTextBox.Text & ":" & EncSetFrm.ImageSizeHeightTextBox.Text
+                        End If
+
+                        '======================================================
+                        'PAR 1:1 아닌경우 원본사이즈 비율적용//
+                        Dim PAR0 As Integer = 1, PAR00 As Integer = 0
+                        Dim PARtes As String = ""
+                        If InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) Then
+                            PAR00 = InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) + 4
+                            If InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
+                                PAR0 = InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                                PARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, PAR00, PAR0 - PAR00 - 1)
+                            End If
+                        Else
+                            PAR0 = PAR0 + 1
+                        End If
+                        If PARtes <> "" Then
+                            Dim LP, RP As String
+                            If InStr(PARtes, " ", CompareMethod.Text) <> 0 AndAlso InStr(PARtes, ":", CompareMethod.Text) <> 0 Then
+                                Try
+                                    PARtes = Split(PARtes, " ")(0)
+                                    LP = Split(PARtes, ":")(0)
+                                    RP = Split(PARtes, ":")(1)
+                                Catch ex As Exception
+                                    PARtes = "1:1"
+                                    LP = 1
+                                    RP = 1
+                                End Try
+                                If LP = "1" AndAlso RP = "1" Then
+                                Else
+                                    AspectV = " -aspect " & Val(OriginW) & ":" & Val(OriginH)
+                                End If
+                            End If
+                        End If
+                        '======================================================
+
+                    End If
+                End If
+
+                '---------------------------------
+                ' 비디오필터 vf!
+                '=================================
+                Dim VideoFilterV As String = ""
+                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
+                    If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
+
+                        If MainFrm.VF_TextBox = "" AndAlso VF_AspectV = "" Then
+                            VideoFilterV = ""
+                        Else
+                            VideoFilterV = Chr(34) & MainFrm.VF_TextBox & VF_AspectV & Chr(34)
+                            VideoFilterV = " -vf " & Replace(VideoFilterV, ", ", "", 1, 1)
+                        End If
+
+                    Else 'AviSynth 사용 안 함
+
+                        If VF_CropV = "" AndAlso VF_imageVTextBox = "" AndAlso MainFrm.VF_TextBox = "" AndAlso VF_AspectV = "" Then
+                            VideoFilterV = ""
+                        Else
+                            VideoFilterV = Chr(34) & VF_CropV & VF_imageVTextBox & MainFrm.VF_TextBox & VF_AspectV & Chr(34)
+                            VideoFilterV = " -vf " & Replace(VideoFilterV, ", ", "", 1, 1)
+                        End If
+
+                    End If
+                End If
+
+                '***************************************************
+
+                '---------------------------------
+                ' 입력파일
+                '=================================
+                Dim InputFilePath As String = ""
+                Dim InputFilePathN As String = ""
                 If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
 
-                    If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
+                    '초기화//
+                    AviSynthPP.INDEX_PStr = ""
+                    AviSynthPP.INDEX_PVStr = ""
 
-                        EncPassStr = "[1/2Pass]"
-                        EncSub(InputFilePath, VideoFilterV & timestampV & MainFrm.AviSynthCommand2PassStr & CalcVideoBitrateStr, SavePathStr & VextV, True, False)
-                        If EncSTOPBool = True Then GoTo ENC_STOP
-                        If EncERRBool(EncindexI) = True Then
-                            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                            GoTo SKIP
-                        End If
+                    ProgressBar.Maximum = 100
 
-                        EncPassStr = "[2/2Pass]"
-                        EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr & AnV, SavePathStr & VextV, True, False)
-                        If EncSTOPBool = True Then GoTo ENC_STOP
-                        If EncERRBool(EncindexI) = True Then
-                            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                            GoTo SKIP
-                        End If
+                    IndexTimer.Enabled = True
+                    IndexProc = True
 
-                        '패스표시 초기화
-                        EncPassStr = ""
-
+                    '우선순위//
+                    Dim PriorityV As Integer
+                    If PriorityComboBox.SelectedIndex = 0 Then
+                        PriorityV = PriorityClass.IDLE_PRIORITY_CLASS
+                    ElseIf PriorityComboBox.SelectedIndex = 1 Then
+                        PriorityV = PriorityClass.BELOW_NORMAL_PRIORITY_CLASS
+                    ElseIf PriorityComboBox.SelectedIndex = 2 Then
+                        PriorityV = PriorityClass.NORMAL_PRIORITY_CLASS
+                    ElseIf PriorityComboBox.SelectedIndex = 3 Then
+                        PriorityV = PriorityClass.ABOVE_NORMAL_PRIORITY_CLASS
+                    ElseIf PriorityComboBox.SelectedIndex = 4 Then
+                        PriorityV = PriorityClass.HIGH_PRIORITY_CLASS
+                    ElseIf PriorityComboBox.SelectedIndex = 5 Then
+                        PriorityV = PriorityClass.REALTIME_PRIORITY_CLASS
                     Else
+                        PriorityV = PriorityClass.NORMAL_PRIORITY_CLASS
+                    End If
+                    'EncToolStripStatusLabel.Text = LangCls.EncodingCreatingD2V or EncodingCreatingFFINDEX // 아래에서
+                    Try
+                        AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True)
+                    Catch ex As Exception
+                        MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                        MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
+                        GoTo SKIP
+                    End Try
+                    EncToolStripStatusLabel.Text = ""
+                    IndexProc = False
+                    IndexTimer.Enabled = False
 
-                        EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr & AnV, SavePathStr & VextV, True, False)
-                        If EncSTOPBool = True Then GoTo ENC_STOP
-                        If EncERRBool(EncindexI) = True Then
-                            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                            GoTo SKIP
-                        End If
-
+                    If AviSynthPP.INDEX_ProcessStopChk = True Then
+                        AviSynthPP.INDEX_ProcessStopChk = False
+                        GoTo ENC_STOP
+                    Else
+                        InputFilePath = My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs"
+                        InputFilePathN = My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN.avs"
                     End If
 
-                Else 'AviSynth 사용 안 함
-
-                    If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
-
-                        EncPassStr = "[1/2Pass]"
-                        EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr & CalcVideoBitrateStr & FramerateStr, SavePathStr & VextV, True, False)
-                        If EncSTOPBool = True Then GoTo ENC_STOP
-                        If EncERRBool(EncindexI) = True Then
-                            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                            GoTo SKIP
-                        End If
-
-                        EncPassStr = "[2/2Pass]"
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
-                        If EncSTOPBool = True Then GoTo ENC_STOP
-                        If EncERRBool(EncindexI) = True Then
-                            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                            GoTo SKIP
-                        End If
-
-                        '패스표시 초기화
-                        EncPassStr = ""
-
-                    Else
-
-                        EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
-                        If EncSTOPBool = True Then GoTo ENC_STOP
-                        If EncERRBool(EncindexI) = True Then
-                            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                            GoTo SKIP
-                        End If
-
-                    End If
-
+                Else
+                    InputFilePath = MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text
+                    InputFilePathN = MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text
                 End If
 
-                '---------------------------------------------------------
-                '=========================================================
+                '***************************************************
 
-                EncToolStripStatusLabel.Text = ""
+                '---------------------------------
+                ' 저장경로 유니코드처리
+                '=================================
+                Dim UnicodeMPATHV As String = ""
+                Dim FNGBytes() As Byte = System.Text.Encoding.Default.GetBytes(SavePathStr)
+                If InStr(System.Text.Encoding.Default.GetString(FNGBytes), "?") <> 0 Then
+                    'NULL파일 생성(유니코드처리용)
+                    Try
+                        Dim _StreamWriter As New StreamWriter(SavePathStr, False, System.Text.Encoding.Default)
+                        _StreamWriter.Write("")
+                        _StreamWriter.Close()
+                    Catch ex As Exception
+                        MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                        MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
+                        GoTo SKIP
+                    End Try
+                    '경로백업
+                    UnicodeMPATHV = SavePathStr
+                    '저장경로지정
+                    SavePathStr = WinAPI.GetShortPathName(SavePathStr)
+                End If
 
-                '---------------------------------------------------------
-                '=========================================================
+                '---------------------------------
+                ' 타임스탬프
+                '=================================
+                Dim timestampV As String = ""
+                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
+                    timestampV = " -timestamp now" ' & Chr(34) & Format(Now, "yyyy-MM-dd HH:mm:ss") & Chr(34)
+                End If
 
-                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'Nero AAC 비디오 인코딩 MUX
+                '---------------------------------
+                ' FFmpeg 프레임 레이트 지정(VBR전용)
+                '=================================
+                Dim FramerateStr As String = ""
+                If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안함
+                    If EncSetFrm.FramerateCheckBox.Checked = True Then
+                        Try
+                            If Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)) >= 119 Then
+                                FramerateStr = " -r " & Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
+                            End If
+                        Catch ex As Exception
+                        End Try
+                    End If
+                End If
 
-                    '유니코드처리용//
-                    If UnicodeMPATHV <> "" Then
-                        If My.Computer.FileSystem.FileExists(SavePathStr) = False Then
-                            'NULL파일 생성(유니코드처리용)
-                            Try
-                                Dim _StreamWriter As New StreamWriter(UnicodeMPATHV, False, System.Text.Encoding.Default)
-                                _StreamWriter.Write("")
-                                _StreamWriter.Close()
-                            Catch ex As Exception
-                                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                                MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
-                                GoTo SKIP
-                            End Try
-                            '저장경로지정
-                            SavePathStr = WinAPI.GetShortPathName(UnicodeMPATHV)
+                '---------------------------------
+                ' FLV 원본 샘플링 가변적//
+                '=================================
+                Dim AudioListV As String = MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text
+                Dim FLVSamplerateV As String = ""
+                Dim _i As Long = 1
+                Dim _ii As Long = 0
+                Dim _t As String = ""
+                'FLV 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
+                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 AndAlso EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" Then
+                    If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플레이트 체크
+                        _i = 1
+                        _ii = 0
+                        _t = ""
+                        If InStr(_i, AudioListV, MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, CompareMethod.Text) Then
+                            _ii = InStr(_i, AudioListV, MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, CompareMethod.Text)
+                            If InStr(_ii, AudioListV, "Hz", CompareMethod.Text) Then
+                                _i = InStr(_ii, AudioListV, "Hz", CompareMethod.Text) + 1
+                                _t = Mid(AudioListV, _ii, _i - _ii - 1)
+                            End If
+                        Else
+                            _i = _i + 1
+                        End If
+                        If _t <> "" Then
+                            _t = Strings.Mid(RTrim(_t), InStrRev(RTrim(_t), " ") + 1)
+                            If Val(_t) >= 44100 Then
+                                FLVSamplerateV = " -ar 44100"
+                            ElseIf Val(_t) >= 22050 Then
+                                FLVSamplerateV = " -ar 22050"
+                            Else
+                                FLVSamplerateV = " -ar 11025"
+                            End If
                         End If
                     End If
+                End If
 
-                    EncToolStripStatusLabel.Text = LangCls.EncodingAVMux
-                    EncSub(SavePathStr & "V|" & SavePathStr & "A", _
-                           OUTPUTFORMAT2 & timestampV & SizeLimitTextBoxV, _
-                           SavePathStr, False, True)
+
+
+
+                '---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+                '-------------------------------------
+                '-------------------------------------
+                '
+                '           인코딩 시작
+                '
+                '=====================================
+                '=====================================
+
+
+
+
+
+
+
+
+
+                '네로 AAC 인코딩 부분//
+                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
+
+                    Dim NeroAACPath As String = Chr(34) & My.Application.Info.DirectoryPath & "\tools\neroaac\neroAacEnc.exe" & Chr(34)
+                    Dim InPATHV As String = ""
+                    Dim OutPATHV As String = ""
+                    If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '비디오 + 오디오
+                        InPATHV = InputFilePathN
+                        OutPATHV = SavePathStr & "A"
+                    Else '오디오만
+                        InPATHV = InputFilePath
+                        OutPATHV = SavePathStr
+                    End If
+
+                    Dim CommandV As String = ""
+                    If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
+                        CommandV = MainFrm.NeroAACSTRAviSynth & NeroAACPath & MainFrm.NeroAACSTRNEP
+                    Else 'AviSynth 사용 안 함
+                        CommandV = NeroAACAudioMapV & SSTV & MainFrm.NeroAACSTRFFmpeg & NeroAACPath & MainFrm.NeroAACSTRNEP
+                    End If
+
+                    Dim MSGB As String = Chr(34) & My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe" & Chr(34) & " -y -i " & Chr(34) & InPATHV & Chr(34) & CommandV & Chr(34) & OutPATHV & Chr(34)
+
+                    '경로
+                    Dim NeroBATCMDPathV As String = My.Application.Info.DirectoryPath & "\temp\CLIneroAacEnc.bat"
+
+                    '저장
+                    Try
+                        Dim _StreamWriter As New StreamWriter(NeroBATCMDPathV, False, System.Text.Encoding.Default)
+                        _StreamWriter.Write(MSGB)
+                        _StreamWriter.Close()
+                    Catch ex As Exception
+                        MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                        MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
+                        GoTo SKIP
+                    End Try
+
+                    '실행
+                    EncToolStripStatusLabel.Text = LangCls.EncodingNeroAACEncoding
+                    EncSub(NeroBATCMDPathV, Nothing, Nothing, False, False)
                     EncToolStripStatusLabel.Text = ""
                     If EncSTOPBool = True Then GoTo ENC_STOP
                     If EncERRBool(EncindexI) = True Then
                         MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
                         GoTo SKIP
                     End If
+                End If
+                '네로 AAC 인코딩 부분//
 
+
+                '***********************************
+                ' 출력 형식 NeroAAC MUX용 -f 는 확장자 뒤에 붙은 V 와 A 를 합칠때 쓴다 mp4V + mp4A = 각 포맷으로 , 지정을 안 하면 오류발생../ 지우지 말것.
+                '***********************************
+                Dim OUTPUTFORMAT As String = ""
+                Dim OUTPUTFORMAT2 As String = ""
+                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then
+                    Try
+                        OUTPUTFORMAT = LCase(Replace(Split(EncSetFrm.OutFComboBox.Text, "]")(0), "[", ""))
+                        If OUTPUTFORMAT = "3gp" Then
+                            OUTPUTFORMAT2 = " -f 3gp"
+                        ElseIf OUTPUTFORMAT = "3g2" Then
+                            OUTPUTFORMAT2 = " -f 3g2"
+                        ElseIf OUTPUTFORMAT = "mp4" Then
+                            OUTPUTFORMAT2 = " -f mp4"
+                        ElseIf OUTPUTFORMAT = "mov" Then
+                            OUTPUTFORMAT2 = " -f mov"
+                        ElseIf OUTPUTFORMAT = "mkv" Then
+                            OUTPUTFORMAT2 = " -f matroska"
+                        ElseIf OUTPUTFORMAT = "flv" Then
+                            OUTPUTFORMAT2 = " -f flv"
+                        End If
+                    Catch ex As Exception
+                        OUTPUTFORMAT = ""
+                        OUTPUTFORMAT2 = ""
+                    End Try
+                End If
+                '***********************************
+                ' 용량 제한 NeroAAC MUX용
+                '***********************************
+                Dim SizeLimitTextBoxV As String = ""
+                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then
+                    If Val(EncSetFrm.SizeLimitTextBox.Text) <> 0 Then
+                        SizeLimitTextBoxV = " -fs " & Val(EncSetFrm.SizeLimitTextBox.Text) * Val(1048576)
+                    End If
                 End If
 
-                '클린업//
-                Try
-                    If My.Computer.FileSystem.FileExists(SavePathStr & "A") = True Then _
-                       My.Computer.FileSystem.DeleteFile(SavePathStr & "A")
-                Catch ex As Exception
-                End Try
-                Try
-                    If My.Computer.FileSystem.FileExists(SavePathStr & "V") = True Then _
-                       My.Computer.FileSystem.DeleteFile(SavePathStr & "V")
-                Catch ex As Exception
-                End Try
 
-                '---------------------------------------------------------
-                '=========================================================
 
-            End If
-            '오디오 비디오 인코딩 //
+       
+                '===========================================
 
-            '완료//
-            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainDoneStr
+
+
+
+
+                '오디오 비디오 인코딩 // MP4 Nero AAC 예외를 준 이유는 위에서 이미 인코딩을 진행했기 때문./ 일반 Nero AAC 코덱은 아래와 같이 진행./ 비디오 인코딩 및 MUX 과정을 행함.
+                If EncSetFrm.AudioCodecComboBox.Text <> "[MP4] Nero AAC" Then
+
+                    Dim VextV As String = ""
+                    Dim AnV As String = ""
+                    If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '네로 에에씨 인코딩이면, -an 과(2-1패스는 제외), 파일 확장자뒤에 V를 붙어줌.
+                        VextV = "V"
+                        AnV = " -an"
+                        EncToolStripStatusLabel.Text = LangCls.EncodingVEncoding
+                    Else
+                        VextV = ""
+                        AnV = ""
+                        If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
+                            EncToolStripStatusLabel.Text = LangCls.EncodingAVEncoding
+                        Else
+                            EncToolStripStatusLabel.Text = LangCls.EncodingAEncoding
+                        End If
+                    End If
+
+                    '---------------------------------------------------------
+                    '=========================================================
+
+                    If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
+
+                        If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
+
+                            EncPassStr = "[1/2Pass]"
+                            EncSub(InputFilePath, VideoFilterV & timestampV & MainFrm.AviSynthCommand2PassStr & CalcVideoBitrateStr, SavePathStr & VextV, True, False)
+                            If EncSTOPBool = True Then GoTo ENC_STOP
+                            If EncERRBool(EncindexI) = True Then
+                                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                                GoTo SKIP
+                            End If
+
+                            EncPassStr = "[2/2Pass]"
+                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr & AnV, SavePathStr & VextV, True, False)
+                            If EncSTOPBool = True Then GoTo ENC_STOP
+                            If EncERRBool(EncindexI) = True Then
+                                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                                GoTo SKIP
+                            End If
+
+                            '패스표시 초기화
+                            EncPassStr = ""
+
+                        Else
+
+                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr & AnV, SavePathStr & VextV, True, False)
+                            If EncSTOPBool = True Then GoTo ENC_STOP
+                            If EncERRBool(EncindexI) = True Then
+                                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                                GoTo SKIP
+                            End If
+
+                        End If
+
+                    Else 'AviSynth 사용 안 함
+
+                        If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
+
+                            EncPassStr = "[1/2Pass]"
+                            EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr & CalcVideoBitrateStr & FramerateStr, SavePathStr & VextV, True, False)
+                            If EncSTOPBool = True Then GoTo ENC_STOP
+                            If EncERRBool(EncindexI) = True Then
+                                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                                GoTo SKIP
+                            End If
+
+                            EncPassStr = "[2/2Pass]"
+                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
+                            If EncSTOPBool = True Then GoTo ENC_STOP
+                            If EncERRBool(EncindexI) = True Then
+                                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                                GoTo SKIP
+                            End If
+
+                            '패스표시 초기화
+                            EncPassStr = ""
+
+                        Else
+
+                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
+                            If EncSTOPBool = True Then GoTo ENC_STOP
+                            If EncERRBool(EncindexI) = True Then
+                                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                                GoTo SKIP
+                            End If
+
+                        End If
+
+                    End If
+
+                    '---------------------------------------------------------
+                    '=========================================================
+
+                    EncToolStripStatusLabel.Text = ""
+
+                    '---------------------------------------------------------
+                    '=========================================================
+
+                    If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'Nero AAC 비디오 인코딩 MUX
+
+                        '유니코드처리용//
+                        If UnicodeMPATHV <> "" Then
+                            If My.Computer.FileSystem.FileExists(SavePathStr) = False Then
+                                'NULL파일 생성(유니코드처리용)
+                                Try
+                                    Dim _StreamWriter As New StreamWriter(UnicodeMPATHV, False, System.Text.Encoding.Default)
+                                    _StreamWriter.Write("")
+                                    _StreamWriter.Close()
+                                Catch ex As Exception
+                                    MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                                    MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
+                                    GoTo SKIP
+                                End Try
+                                '저장경로지정
+                                SavePathStr = WinAPI.GetShortPathName(UnicodeMPATHV)
+                            End If
+                        End If
+
+                        EncToolStripStatusLabel.Text = LangCls.EncodingAVMux
+                        EncSub(SavePathStr & "V|" & SavePathStr & "A", _
+                               OUTPUTFORMAT2 & timestampV & SizeLimitTextBoxV, _
+                               SavePathStr, False, True)
+                        EncToolStripStatusLabel.Text = ""
+                        If EncSTOPBool = True Then GoTo ENC_STOP
+                        If EncERRBool(EncindexI) = True Then
+                            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                            GoTo SKIP
+                        End If
+
+                    End If
+
+                    '클린업//
+                    Try
+                        If My.Computer.FileSystem.FileExists(SavePathStr & "A") = True Then _
+                           My.Computer.FileSystem.DeleteFile(SavePathStr & "A")
+                    Catch ex As Exception
+                    End Try
+                    Try
+                        If My.Computer.FileSystem.FileExists(SavePathStr & "V") = True Then _
+                           My.Computer.FileSystem.DeleteFile(SavePathStr & "V")
+                    Catch ex As Exception
+                    End Try
+
+                    '---------------------------------------------------------
+                    '=========================================================
+
+                End If
+                '오디오 비디오 인코딩 //
+
+                '완료//
+                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainDoneStr
+
+            Catch ex As Exception
+                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
+            End Try
 
 SKIP:
         Next
@@ -1862,7 +1908,14 @@ ENC_STOP:
                 Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
                 _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs")
                 _AviSynthClip.IDisposable_Dispose()
-                Return False
+
+                If InStr(InfoTextBox.Text, "Duration: 00:00:10.00", CompareMethod.Text) <> 0 Then '오류를 못 찾았지만 10초일경우 오류로 처리// (YV12에러는 못 찾음.)
+                    MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = InfoTextBox.Text
+                    Return True
+                Else
+                    Return False
+                End If
+
             Catch ex As Exception
                 MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
                 Return True

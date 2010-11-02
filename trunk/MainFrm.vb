@@ -324,277 +324,291 @@ Public Class MainFrm
         '/////////////////////////////////////////////////////////////////////////////////// 미디어 인포 _MI 변수 구간
         Dim _MI As MediaInfo
         _MI = New MediaInfo
-        _MI.Open(MPATHV)
+        Try
+            _MI.Open(MPATHV)
 
-        '정보 가져오기 시작
-        Dim ia2 As Integer = 1, iia2 As Integer = 0
-        Dim ta2 As String = ""
+            '정보 가져오기 시작
+            Dim ia2 As Integer = 1, iia2 As Integer = 0
+            Dim ta2 As String = ""
 
-        '재생시간
-        ia2 = 1
-        iia2 = 0
-        ta2 = ""
-        If InStr(ia2, OutputBox_GI.Text, "  Duration: ", CompareMethod.Text) Then
-            iia2 = InStr(ia2, OutputBox_GI.Text, "  Duration: ", CompareMethod.Text)
-            If InStr(iia2, OutputBox_GI.Text, ",", CompareMethod.Text) Then
-                ia2 = InStr(iia2, OutputBox_GI.Text, ",", CompareMethod.Text) + 1
-                ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
-            End If
-        Else
-            ia2 = ia2 + 1
-        End If
-        If ta2 <> "" Then
-            ta2 = Mid(ta2, InStrRev(ta2, ": ") + 2)
-        End If
-        ELVI.SubItems(1).Text = ta2
-        ELVI.SubItems(11).Text = ta2 & " [00:00:00.00 - 00:00:00.00]"
-
-        '화면크기 미디어 인포
-        ELVI.SubItems(12).Text = _MI.Get_(StreamKind.Visual, 0, "Width") & "x" & _MI.Get_(StreamKind.Visual, 0, "Height")
-
-        '화면크기
-        If ELVI.SubItems(12).Text = "" Then
+            '재생시간
             ia2 = 1
             iia2 = 0
             ta2 = ""
-            If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
-                iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
-                If InStr(iia2, OutputBox_GI.Text, vbNewLine, CompareMethod.Text) Then
-                    ia2 = InStr(iia2, OutputBox_GI.Text, vbNewLine, CompareMethod.Text) + 1
+            If InStr(ia2, OutputBox_GI.Text, "  Duration: ", CompareMethod.Text) Then
+                iia2 = InStr(ia2, OutputBox_GI.Text, "  Duration: ", CompareMethod.Text)
+                If InStr(iia2, OutputBox_GI.Text, ",", CompareMethod.Text) Then
+                    ia2 = InStr(iia2, OutputBox_GI.Text, ",", CompareMethod.Text) + 1
                     ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
                 End If
             Else
                 ia2 = ia2 + 1
             End If
-
-            If InStr(1, ta2, " / 0x") <> 0 Then
-                Try
-                    If InStr(ta2, ",", CompareMethod.Text) <> 0 Then ta2 = Split(ta2, ",")(1)
-                Catch ex As Exception
-                End Try
-            Else
-                Try
-                    If InStr(ta2, ",", CompareMethod.Text) <> 0 Then ta2 = Split(ta2, ",")(2)
-                Catch ex As Exception
-                End Try
-            End If
             If ta2 <> "" Then
-                Try
-                    If InStr(ta2, " ", CompareMethod.Text) <> 0 Then ELVI.SubItems(12).Text = Split(ta2, " ")(1)
-                Catch ex As Exception
-                End Try
+                ta2 = Mid(ta2, InStrRev(ta2, ": ") + 2)
             End If
-        End If
+            ELVI.SubItems(1).Text = ta2
+            ELVI.SubItems(11).Text = ta2 & " [00:00:00.00 - 00:00:00.00]"
 
-        '정상인지 체크
-        If ELVI.SubItems(12).Text = "" OrElse InStr(ELVI.SubItems(12).Text, "x", CompareMethod.Text) = 0 Then
-            ELVI.SubItems(12).Text = "0x0"
-        End If
+            '화면크기 미디어 인포
+            ELVI.SubItems(12).Text = _MI.Get_(StreamKind.Visual, 0, "Width") & "x" & _MI.Get_(StreamKind.Visual, 0, "Height")
 
-        '비디오프레임 미디어 인포
-        ta2 = _MI.Get_(StreamKind.Visual, 0, "FrameRate")
-        If IsNumeric(ta2) = False Then
-            If InStr(ta2, " ") <> 0 Then
-                ta2 = Split(ta2, " ")(0)
-                If IsNumeric(ta2) = False Then
-                    ta2 = ""
-                End If
-            Else
+            '화면크기
+            If ELVI.SubItems(12).Text = "x" OrElse ELVI.SubItems(12).Text = "0x0" Then
+                ia2 = 1
+                iia2 = 0
                 ta2 = ""
-            End If
-        End If
-
-        '비디오프레임 fps
-        If ta2 = "" Then
-            ia2 = 1
-            iia2 = 0
-            ta2 = ""
-            If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
-                iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
-                If InStr(iia2, OutputBox_GI.Text, " fps", CompareMethod.Text) Then
-                    ia2 = InStr(iia2, OutputBox_GI.Text, " fps", CompareMethod.Text) + 1
-                    ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
+                    iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
+                    If InStr(iia2, OutputBox_GI.Text, vbNewLine, CompareMethod.Text) Then
+                        ia2 = InStr(iia2, OutputBox_GI.Text, vbNewLine, CompareMethod.Text) + 1
+                        ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                    End If
+                Else
+                    ia2 = ia2 + 1
                 End If
-            Else
-                ia2 = ia2 + 1
-            End If
-            If ta2 <> "" Then
-                ta2 = Mid(ta2, InStrRev(ta2, " ") + 1)
-                If IsNumeric(ta2) = False Then
-                    ta2 = ""
-                End If
-            End If
-        End If
-        '비디오프레임 tbr
-        If ta2 = "" Then
-            ia2 = 1
-            iia2 = 0
-            If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
-                iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
-                If InStr(iia2, OutputBox_GI.Text, " tbr", CompareMethod.Text) Then
-                    ia2 = InStr(iia2, OutputBox_GI.Text, " tbr", CompareMethod.Text) + 1
-                    ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
-                End If
-            Else
-                ia2 = ia2 + 1
-            End If
-            If ta2 <> "" Then
-                ta2 = Mid(ta2, InStrRev(ta2, " ") + 1)
-                If IsNumeric(ta2) = False Then
-                    ta2 = ""
-                End If
-            End If
-        End If
-        If ta2 = "" Then
-            ta2 = 0
-        End If
-        ELVI.SubItems(12).Text = ELVI.SubItems(12).Text & "," & ta2
 
-
-        '형식
-        ia2 = 1
-        iia2 = 0
-        ta2 = ""
-        If InStr(ia2, OutputBox_GI.Text, "Input #0, ", CompareMethod.Text) Then
-            iia2 = InStr(ia2, OutputBox_GI.Text, "Input #0, ", CompareMethod.Text)
-            If InStr(iia2, OutputBox_GI.Text, ", from", CompareMethod.Text) Then
-                ia2 = InStr(iia2, OutputBox_GI.Text, ", from", CompareMethod.Text) + 1
-                ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
-            End If
-        Else
-            ia2 = ia2 + 1
-        End If
-        If ta2 <> "" Then
-            ELVI.SubItems(3).Text = UCase(Mid(ta2, InStrRev(ta2, " ") + 1))
-        End If
-
-        '여러스트림 출력(텍스트화) #1
-        Dim StreamIO As String = ""
-        ia2 = 1
-        iia2 = 0
-        ta2 = ""
-        If InStr(ia2, OutputBox_GI.Text, "Stream #", CompareMethod.Text) Then
-            iia2 = InStr(ia2, OutputBox_GI.Text, "Stream #", CompareMethod.Text)
-            If InStr(iia2, OutputBox_GI.Text, "At least one output file must be specified", CompareMethod.Text) Then
-                ia2 = InStr(iia2, OutputBox_GI.Text, "At least one output file must be specified", CompareMethod.Text)
-                ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
-            End If
-        Else
-            ia2 = ia2 + 1
-        End If
-        StreamIO = ta2 & vbNewLine
-
-        '여러스트림 출력(목록화) #2
-        '---------------------------------------------
-        '오디오 스트림 개수 저장
-        Dim AudioStramCntStr As String = "0"
-        AudioStramCntStr = _MI.Get_(StreamKind.Audio, 0, "StreamCount")
-        '---------------------------------------------
-        Dim StreamIOListBox As New ListBox
-        StreamIOListBox.Items.Clear()
-        ta2 = "LoopSTR"
-        Do Until ta2 = ""
-            ia2 = 1
-            iia2 = 0
-            ta2 = ""
-            If InStr(ia2, StreamIO, "Stream #", CompareMethod.Text) Then
-                iia2 = InStr(ia2, StreamIO, "Stream #", CompareMethod.Text)
-                If InStr(iia2, StreamIO, vbNewLine, CompareMethod.Text) Then
-                    ia2 = InStr(iia2, StreamIO, vbNewLine, CompareMethod.Text) + 1
-                    ta2 = Mid(StreamIO, iia2, ia2 - iia2 - 1)
-                End If
-            Else
-                ia2 = ia2 + 1
-            End If
-            If ta2 <> "" Then
-
-                StreamIO = Replace(StreamIO, ta2, "")
-                If InStr(ta2, "[0x") <> 0 AndAlso InStr(ta2, "Audio") <> 0 Then
+                If InStr(1, ta2, " / 0x") <> 0 Then
                     Try
-                        If AudioStramCntStr <> "" OrElse AudioStramCntStr <> "0" Then
-                            Dim i As Integer
-                            For i = 0 To AudioStramCntStr - 1
-                                Dim ta2v As String = _MI.Get_(StreamKind.Audio, i, "ID")
-                                If ta2v <> "" Then
-                                    Dim ta3 As String = UCase(Strings.Right(Split(Split(ta2, "[0x")(1), "]")(0), 2))
-                                    Dim hex3 As String = Strings.Right(Hex(ta2v), 2)
-                                    If ta3 = hex3 Then
-                                        ta2 = Split(ta2, "[0x")(0) & "[0x" & Hex(ta2v) & "]" & Split(ta2, "]")(1)
-                                        StreamIOListBox.Items.Add(ta2)
-                                        Exit For
-                                    End If
-                                End If
-                            Next
-                        End If
+                        If InStr(ta2, ",", CompareMethod.Text) <> 0 Then ta2 = Split(ta2, ",")(1)
                     Catch ex As Exception
                     End Try
                 Else
-                    StreamIOListBox.Items.Add(ta2)
+                    Try
+                        If InStr(ta2, ",", CompareMethod.Text) <> 0 Then ta2 = Split(ta2, ",")(2)
+                    Catch ex As Exception
+                    End Try
                 End If
-
+                If ta2 <> "" Then
+                    Try
+                        If InStr(ta2, " ", CompareMethod.Text) <> 0 Then ELVI.SubItems(12).Text = Split(ta2, " ")(1)
+                    Catch ex As Exception
+                    End Try
+                End If
             End If
-            Application.DoEvents()
-        Loop
 
-        '여러스트림 비디오, 오디오 출력(구분) #3
-        For SCHK = 1 To StreamIOListBox.Items.Count
-            If InStr(StreamIOListBox.Items(SCHK - 1), "Video") <> 0 Then 'vbCr 윈도우 2000 캐리지 리턴(음표) 제거
-                ELVI.SubItems(8).Text = ELVI.SubItems(8).Text & Replace(StreamIOListBox.Items(SCHK - 1), vbCr, "") & " | "
-            ElseIf InStr(StreamIOListBox.Items(SCHK - 1), "Audio") <> 0 Then
-                ELVI.SubItems(9).Text = ELVI.SubItems(9).Text & Replace(StreamIOListBox.Items(SCHK - 1), vbCr, "") & " | "
+            '정상인지 체크
+            If ELVI.SubItems(12).Text = "" OrElse InStr(ELVI.SubItems(12).Text, "x", CompareMethod.Text) = 0 Then
+                ELVI.SubItems(12).Text = "0x0"
             End If
-        Next
-        If ELVI.SubItems(8).Text = "" Then
-            ELVI.SubItems(8).Text = "None"
-        End If
-        If ELVI.SubItems(9).Text = "" Then
-            ELVI.SubItems(9).Text = "None"
-        End If
 
-        '오디오스트림
-        Try
-            ELVI.SubItems(4).Text = Split(ELVI.SubItems(9).Text, ":")(0)
+            '비디오프레임 미디어 인포
+            ta2 = _MI.Get_(StreamKind.Visual, 0, "FrameRate")
+            If IsNumeric(ta2) = False Then
+                If InStr(ta2, " ") <> 0 Then
+                    ta2 = Split(ta2, " ")(0)
+                    If IsNumeric(ta2) = False Then
+                        ta2 = ""
+                    End If
+                Else
+                    ta2 = ""
+                End If
+            End If
+
+            '비디오프레임 fps
+            If ta2 = "" Then
+                ia2 = 1
+                iia2 = 0
+                ta2 = ""
+                If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
+                    iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
+                    If InStr(iia2, OutputBox_GI.Text, " fps", CompareMethod.Text) Then
+                        ia2 = InStr(iia2, OutputBox_GI.Text, " fps", CompareMethod.Text) + 1
+                        ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                    End If
+                Else
+                    ia2 = ia2 + 1
+                End If
+                If ta2 <> "" Then
+                    ta2 = Mid(ta2, InStrRev(ta2, " ") + 1)
+                    If IsNumeric(ta2) = False Then
+                        ta2 = ""
+                    End If
+                End If
+            End If
+            '비디오프레임 tbr
+            If ta2 = "" Then
+                ia2 = 1
+                iia2 = 0
+                If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
+                    iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
+                    If InStr(iia2, OutputBox_GI.Text, " tbr", CompareMethod.Text) Then
+                        ia2 = InStr(iia2, OutputBox_GI.Text, " tbr", CompareMethod.Text) + 1
+                        ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                    End If
+                Else
+                    ia2 = ia2 + 1
+                End If
+                If ta2 <> "" Then
+                    ta2 = Mid(ta2, InStrRev(ta2, " ") + 1)
+                    If IsNumeric(ta2) = False Then
+                        ta2 = ""
+                    End If
+                End If
+            End If
+            If ta2 = "" Then
+                ta2 = 0
+            End If
+            ELVI.SubItems(12).Text = ELVI.SubItems(12).Text & "," & ta2
+
+            '형식
+            ia2 = 1
+            iia2 = 0
+            ta2 = ""
+            If InStr(ia2, OutputBox_GI.Text, "Input #0, ", CompareMethod.Text) Then
+                iia2 = InStr(ia2, OutputBox_GI.Text, "Input #0, ", CompareMethod.Text)
+                If InStr(iia2, OutputBox_GI.Text, ", from", CompareMethod.Text) Then
+                    ia2 = InStr(iia2, OutputBox_GI.Text, ", from", CompareMethod.Text) + 1
+                    ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                End If
+            Else
+                ia2 = ia2 + 1
+            End If
+            If ta2 <> "" Then
+                ELVI.SubItems(3).Text = UCase(Mid(ta2, InStrRev(ta2, " ") + 1))
+            End If
+
+            '여러스트림 출력(텍스트화) #1
+            Dim StreamIO As String = ""
+            ia2 = 1
+            iia2 = 0
+            ta2 = ""
+            If InStr(ia2, OutputBox_GI.Text, "Stream #", CompareMethod.Text) Then
+                iia2 = InStr(ia2, OutputBox_GI.Text, "Stream #", CompareMethod.Text)
+                If InStr(iia2, OutputBox_GI.Text, "At least one output file must be specified", CompareMethod.Text) Then
+                    ia2 = InStr(iia2, OutputBox_GI.Text, "At least one output file must be specified", CompareMethod.Text)
+                    ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                End If
+            Else
+                ia2 = ia2 + 1
+            End If
+            StreamIO = ta2 & vbNewLine
+
+            '여러스트림 출력(목록화) #2
+            '---------------------------------------------
+            '오디오 스트림 개수 저장
+            Dim AudioStramCntStr As String = "0"
+            AudioStramCntStr = _MI.Get_(StreamKind.Audio, 0, "StreamCount")
+            '---------------------------------------------
+            Dim StreamIOListBox As New ListBox
+            StreamIOListBox.Items.Clear()
+            ta2 = "LoopSTR"
+            Do Until ta2 = ""
+                ia2 = 1
+                iia2 = 0
+                ta2 = ""
+                If InStr(ia2, StreamIO, "Stream #", CompareMethod.Text) Then
+                    iia2 = InStr(ia2, StreamIO, "Stream #", CompareMethod.Text)
+                    If InStr(iia2, StreamIO, vbNewLine, CompareMethod.Text) Then
+                        ia2 = InStr(iia2, StreamIO, vbNewLine, CompareMethod.Text) + 1
+                        ta2 = Mid(StreamIO, iia2, ia2 - iia2 - 1)
+                    End If
+                Else
+                    ia2 = ia2 + 1
+                End If
+                If ta2 <> "" Then
+
+                    StreamIO = Replace(StreamIO, ta2, "")
+                    If InStr(ta2, "[0x") <> 0 AndAlso InStr(ta2, "Audio") <> 0 Then
+                        Try
+                            If AudioStramCntStr <> "" OrElse AudioStramCntStr <> "0" Then
+                                Dim i As Integer
+                                For i = 0 To AudioStramCntStr - 1
+                                    Dim ta2v As String = _MI.Get_(StreamKind.Audio, i, "ID")
+                                    If ta2v <> "" Then
+                                        Dim ta3 As String = UCase(Strings.Right(Split(Split(ta2, "[0x")(1), "]")(0), 2))
+                                        Dim hex3 As String = Strings.Right(Hex(ta2v), 2)
+                                        If ta3 = hex3 Then
+                                            ta2 = Split(ta2, "[0x")(0) & "[0x" & Hex(ta2v) & "]" & Split(ta2, "]")(1)
+                                            StreamIOListBox.Items.Add(ta2)
+                                            Exit For
+                                        End If
+                                    End If
+                                Next
+                            End If
+                        Catch ex As Exception
+                        End Try
+                    Else
+                        StreamIOListBox.Items.Add(ta2)
+                    End If
+
+                End If
+                Application.DoEvents()
+            Loop
+
+            '여러스트림 비디오, 오디오 출력(구분) #3
+            For SCHK = 1 To StreamIOListBox.Items.Count
+                If InStr(StreamIOListBox.Items(SCHK - 1), "Video") <> 0 Then 'vbCr 윈도우 2000 캐리지 리턴(음표) 제거
+                    ELVI.SubItems(8).Text = ELVI.SubItems(8).Text & Replace(StreamIOListBox.Items(SCHK - 1), vbCr, "") & " | "
+                ElseIf InStr(StreamIOListBox.Items(SCHK - 1), "Audio") <> 0 Then
+                    ELVI.SubItems(9).Text = ELVI.SubItems(9).Text & Replace(StreamIOListBox.Items(SCHK - 1), vbCr, "") & " | "
+                End If
+            Next
+            If ELVI.SubItems(8).Text = "" Then
+                ELVI.SubItems(8).Text = "None"
+            End If
+            If ELVI.SubItems(9).Text = "" Then
+                ELVI.SubItems(9).Text = "None"
+            End If
+
+            '오디오스트림
+            Try
+                ELVI.SubItems(4).Text = Split(ELVI.SubItems(9).Text, ":")(0)
+            Catch ex As Exception
+            End Try
+
+            '자막
+            If Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "ass") <> "" Then
+                ELVI.SubItems(2).Text = "ASS"
+            ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "psb") <> "" Then
+                ELVI.SubItems(2).Text = "PSB"
+            ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "smi") <> "" Then
+                ELVI.SubItems(2).Text = "SMI"
+            ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "srt") <> "" Then
+                ELVI.SubItems(2).Text = "SRT"
+            ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "ssa") <> "" Then
+                ELVI.SubItems(2).Text = "SSA"
+            ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "sub") <> "" AndAlso Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "idx") = "" Then
+                ELVI.SubItems(2).Text = "SUB"
+            ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "sub") <> "" AndAlso Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "idx") <> "" Then
+                ELVI.SubItems(2).Text = "IDX/SUB"
+            Else
+                ELVI.SubItems(2).Text = "X"
+            End If
+
+            '내장코덱
+            If InStr(1, ELVI.SubItems(8).Text, " / 0x", CompareMethod.Text) <> 0 Then
+                ELVI.SubItems(5).Text = "V_" & "None"
+            ElseIf InStr(1, ELVI.SubItems(9).Text, " / 0x", CompareMethod.Text) <> 0 Then
+                ELVI.SubItems(5).Text = "A_" & "None"
+            ElseIf ELVI.SubItems(8).Text = "None" And ELVI.SubItems(9).Text = "None" Then
+                ELVI.SubItems(5).Text = ""
+            Else
+                ELVI.SubItems(5).Text = "O"
+            End If
+
+            'FFINDEX_FILENAME_i
+            ELVI.SubItems(13).Text = Format(Now, "yyyyMMddHHmmss") & cache_i
+            cache_i += 1
+
+            'Crop
+            ELVI.SubItems(15).Text = "0,0,0,0"
+
+            '상태
+            ELVI.SubItems(6).Text = LangCls.MainWaitStr
+            ELVI.Checked = True
+
+            _MI.Close()
+
+            '비디오와 오디오 둘다 없으면 제거
+            If ELVI.SubItems(8).Text = "None" AndAlso ELVI.SubItems(9).Text = "None" Then
+                EncListListView.Items.RemoveAt(EncListListView.Items.Count - 1)
+            End If
+
         Catch ex As Exception
+            _MI.Close()
+            EncListListView.Items.RemoveAt(EncListListView.Items.Count - 1)
         End Try
-
-        '자막
-        If Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "ass") <> "" Then
-            ELVI.SubItems(2).Text = "ASS"
-        ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "smi") <> "" Then
-            ELVI.SubItems(2).Text = "SMI"
-        ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "srt") <> "" Then
-            ELVI.SubItems(2).Text = "SRT"
-        ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "ssa") <> "" Then
-            ELVI.SubItems(2).Text = "SSA"
-        ElseIf Dir(Mid(MPATHV, 1, InStrRev(MPATHV, ".", -1, CompareMethod.Text)) & "sub") <> "" Then
-            ELVI.SubItems(2).Text = "SUB"
-        Else
-            ELVI.SubItems(2).Text = "X"
-        End If
-
-        '내장코덱
-        If InStr(1, ELVI.SubItems(8).Text, " / 0x", CompareMethod.Text) <> 0 Then
-            ELVI.SubItems(5).Text = "V_" & "None"
-        ElseIf InStr(1, ELVI.SubItems(9).Text, " / 0x", CompareMethod.Text) <> 0 Then
-            ELVI.SubItems(5).Text = "A_" & "None"
-        ElseIf ELVI.SubItems(8).Text = "None" And ELVI.SubItems(9).Text = "None" Then
-            ELVI.SubItems(5).Text = ""
-        Else
-            ELVI.SubItems(5).Text = "O"
-        End If
-
-        'FFINDEX_FILENAME_i
-        ELVI.SubItems(13).Text = Format(Now, "yyyyMMddHHmmss") & cache_i
-        cache_i += 1
-
-        'Crop
-        ELVI.SubItems(15).Text = "0,0,0,0"
-
-        '상태
-        ELVI.SubItems(6).Text = LangCls.MainWaitStr
-        ELVI.Checked = True
-
-        _MI.Close()
         '/////////////////////////////////////////////////////////////////////////////////// 미디어 인포 _MI 변수 구간
 
     End Sub
@@ -653,6 +667,10 @@ Public Class MainFrm
 
     Private Sub OutSelectPreset(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
+        Me.Enabled = False
+        EncSetFrm.Enabled = False
+        AviSynthEditorFrm.Enabled = False
+
         Dim PathV As String = ""
         Dim TSM As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
         If TSM.OwnerItem Is Nothing Then
@@ -668,8 +686,6 @@ Public Class MainFrm
                 '설정열고저장
                 XML_LOAD(My.Application.Info.DirectoryPath & "\preset\" & PathV)
                 XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
-                '프리셋 표시
-                PresetLabel.Text = PathV
                 '명령어 받기
                 EncSetFrm.GETFFCMD()
             Else
@@ -680,6 +696,13 @@ Public Class MainFrm
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
+
+        '프리셋 표시
+        PresetLabel.Text = PathV
+
+        Me.Enabled = True
+        EncSetFrm.Enabled = True
+        AviSynthEditorFrm.Enabled = True
 
     End Sub
 
@@ -951,14 +974,39 @@ LANG_SKIP:
         End If
         Dim STimeV As Single = (Val(SHTextBoxV) * 3600) + (Val(SMTextBoxV) * 60) + Val(SSTextBoxV) + Val("0." & SMSTextBoxV)
         Dim ETimeV As Single = (Val(EHTextBoxV) * 3600) + (Val(EMTextBoxV) * 60) + Val(ESTextBoxV) + Val("0." & EMSTextBoxV)
+        Dim GTimeV As String = "" '구간타임
         Dim _GTimeV As String = "" '구간타임
+
+        Dim _TimeV As Double = 0.0
+        Dim __TimeV As Double = 0.0
         If (ETimeV - STimeV) = 0 Then
-            _GTimeV = EncListListView.Items(index).SubItems(1).Text
+            Try
+                __TimeV = Val((Split(EncListListView.Items(index).SubItems(1).Text, ":")(0) * 3600)) + Val((Split(EncListListView.Items(index).SubItems(1).Text, ":")(1) * 60)) + Val(Split(Split(EncListListView.Items(index).SubItems(1).Text, ":")(2), ".")(0)) + Val("0." & Split(EncListListView.Items(index).SubItems(1).Text, ".")(1))
+                If AVSCheckBox.Checked = True AndAlso ETCPPFrm.RateCheckBox.Checked = True Then 'AviSynth 사용하고 배속모드 사용..
+                    _TimeV = (1 / ETCPPFrm.RateNumericUpDown.Value) * __TimeV
+                Else
+                    _TimeV = __TimeV
+                End If
+            Catch ex As Exception
+                _TimeV = 0.0
+            End Try
         Else
-            _GTimeV = FunctionCls.TIME_TO_HMSMSTIME(ETimeV - STimeV, True)
+            Try
+                If AVSCheckBox.Checked = True AndAlso ETCPPFrm.RateCheckBox.Checked = True Then 'AviSynth 사용하고 배속모드 사용..
+                    _TimeV = (1 / ETCPPFrm.RateNumericUpDown.Value) * (ETimeV - STimeV)
+                Else
+                    _TimeV = ETimeV - STimeV
+                End If
+            Catch ex As Exception
+                _TimeV = 0.0
+            End Try
         End If
 
-        Dim GTimeV As String = "" '구간타임
+        If AVSCheckBox.Checked = True AndAlso ETCPPFrm.RateCheckBox.Checked = True Then 'AviSynth 사용하고 배속모드 사용..
+            _GTimeV = FunctionCls.TIME_TO_HMSMSTIME(_TimeV, True) & "(" & ETCPPFrm.RateNumericUpDown.Value & "x)"
+        Else
+            _GTimeV = FunctionCls.TIME_TO_HMSMSTIME(_TimeV, True)
+        End If
         If InStr(PTimeInfo, "[", CompareMethod.Text) <> 0 Then
             GTimeV = "[" & Split(PTimeInfo, "[")(1)
         End If
@@ -1037,17 +1085,6 @@ LANG_SKIP:
                 ExAudioB = True
             End If
         End If
-        '결과
-        Dim __GTimeV As Single = (ETimeV - STimeV)
-        If __GTimeV = 0 Then
-            Try
-                __GTimeV = (Val(Split(EncListListView.Items(index).SubItems(1).Text, ":")(0)) * 3600) + _
-                           (Val(Split(EncListListView.Items(index).SubItems(1).Text, ":")(1)) * 60) + _
-                           Val(Split(Split(EncListListView.Items(index).SubItems(1).Text, ":")(2), ".")(0)) + _
-                           Val("0." & Split(EncListListView.Items(index).SubItems(1).Text, ".")(1))
-            Catch ex As Exception
-            End Try
-        End If
         '//////////////
         ' 아래는 역으로 EncodingFrm 에서 가져옴.
         '========================================================
@@ -1066,7 +1103,7 @@ LANG_SKIP:
                         ThrowCalcVB_ERR_B = True
                     Else
                         Try
-                            CalcVideoBitrateStr = ((Val(EncSetFrm.SizeEncTextBox.Text) * (1024 ^ 2)) / __GTimeV) - (AKByteV * 1000)
+                            CalcVideoBitrateStr = ((Val(EncSetFrm.SizeEncTextBox.Text) * (1024 ^ 2)) / _TimeV) - (AKByteV * 1000)
                             CalcVideoBitrateStr = Val(CalcVideoBitrateStr) * 8 / 1000 'Kbit/s 단위로..
 
                             If IsNumeric(CalcVideoBitrateStr) = False Then
@@ -1101,14 +1138,14 @@ LANG_SKIP:
             If ExAudioB = True Then '스킵
                 AVKByteC = ""
             Else '용량계산
-                AVKByteC = ((AKByteV * 1000) * __GTimeV) / 1024
+                AVKByteC = ((AKByteV * 1000) * _TimeV) / 1024
             End If
         Else '둘다
             If ExVideoB = True OrElse ExAudioB = True Then '스킵
                 AVKByteC = ""
             Else '용량계산
                 '비디오 부분은 추후에 고칠 예정 ㅇ_ㅇ...
-                AVKByteC = (((VKByteV * 1000) + (AKByteV * 1000)) * __GTimeV) / 1024
+                AVKByteC = (((VKByteV * 1000) + (AKByteV * 1000)) * _TimeV) / 1024
             End If
         End If
         If AVKByteC <> "" Then
@@ -1594,6 +1631,16 @@ LANG_SKIP:
         Catch ex As Exception
         End Try
         Try
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.psb") = True Then _
+               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.psb")
+        Catch ex As Exception
+        End Try
+        Try
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.psb.style") = True Then _
+               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.psb.style")
+        Catch ex As Exception
+        End Try
+        Try
             If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi") = True Then _
                My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi")
         Catch ex As Exception
@@ -1601,6 +1648,26 @@ LANG_SKIP:
         Try
             If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi.style") = True Then _
                My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi.style")
+        Catch ex As Exception
+        End Try
+        Try
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.srt") = True Then _
+               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.srt")
+        Catch ex As Exception
+        End Try
+        Try
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.srt.style") = True Then _
+               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.srt.style")
+        Catch ex As Exception
+        End Try
+        Try
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.sub") = True Then _
+               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.sub")
+        Catch ex As Exception
+        End Try
+        Try
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.sub.style") = True Then _
+               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.sub.style")
         Catch ex As Exception
         End Try
         Try

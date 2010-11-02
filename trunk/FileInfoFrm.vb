@@ -79,26 +79,25 @@ LANG_SKIP:
 
     Public Sub GET_TXT(ByVal Path As String)
 
+        Dim MI As MediaInfo
+        MI = New MediaInfo
+        Dim To_Display As String = ""
+        To_Display = MI.Option_("Info_Version", "0.7.0.0;MediaInfoDLL_Example_MSVB;0.7.0.0") + vbCrLf + vbCrLf
+        If (To_Display.Length() = 0) Then
+            FileInfoTextBox.Text = "MediaInfo.Dll: this version of the DLL is not compatible"
+            Return
+        End If
         Try
-
-            Dim To_Display As String
-            Dim MI As MediaInfo
-            MI = New MediaInfo
-            To_Display = MI.Option_("Info_Version", "0.7.0.0;MediaInfoDLL_Example_MSVB;0.7.0.0") + vbCrLf + vbCrLf
-            If (To_Display.Length() = 0) Then
-                FileInfoTextBox.Text = "MediaInfo.Dll: this version of the DLL is not compatible"
-                Return
-            End If
-            Me.Text = Mid(Path, InStrRev(Path, "\") + 1) & " - " & FormTXT
             MI.Open(Path)
+            Me.Text = Mid(Path, InStrRev(Path, "\") + 1) & " - " & FormTXT
             MI.Option_("Complete")
             To_Display += MI.Inform()
             MI.Close()
-            FileInfoTextBox.Text = To_Display
-            FileInfoTextBox.SelectionStart = 0
-
         Catch ex As Exception
+            MI.Close()
         End Try
+        FileInfoTextBox.Text = To_Display
+        FileInfoTextBox.SelectionStart = 0
 
     End Sub
 

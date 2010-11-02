@@ -423,39 +423,6 @@
   <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="RefButton2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="RefButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="RefButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 1</value>
-  </data>
-  <data name="RefButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
-  </data>
-  <data name="RefButton2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="RefButton2.Text" xml:space="preserve">
-    <value>새로 고침</value>
-  </data>
-  <data name="RefButton2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Name" xml:space="preserve">
-    <value>RefButton2</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;RefButton2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ChannelTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -1832,7 +1799,7 @@ ConvertToYV12()
     <value>Panel2</value>
   </data>
   <data name="&gt;&gt;StatusLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
     <value>126, 1</value>
@@ -1904,7 +1871,7 @@ ConvertToYV12()
     <value>Panel2</value>
   </data>
   <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>

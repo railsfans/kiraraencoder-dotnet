@@ -42,6 +42,7 @@ Partial Class PInfoFrm
         Me.DownloadSourceCodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.BitDonGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.BittalkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TabControl1.SuspendLayout()
         Me.InfoTabPage.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -137,7 +138,7 @@ Partial Class PInfoFrm
         '
         'WebsiteContextMenuStrip
         '
-        Me.WebsiteContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OfficialKiraraEncoderWebsiteToolStripMenuItem, Me.DownloadSourceCodeToolStripMenuItem, Me.ToolStripMenuItem1, Me.BitDonGToolStripMenuItem})
+        Me.WebsiteContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OfficialKiraraEncoderWebsiteToolStripMenuItem, Me.DownloadSourceCodeToolStripMenuItem, Me.ToolStripMenuItem1, Me.BittalkToolStripMenuItem, Me.BitDonGToolStripMenuItem})
         Me.WebsiteContextMenuStrip.Name = "ContextMenuStrip1"
         resources.ApplyResources(Me.WebsiteContextMenuStrip, "WebsiteContextMenuStrip")
         '
@@ -160,6 +161,11 @@ Partial Class PInfoFrm
         '
         Me.BitDonGToolStripMenuItem.Name = "BitDonGToolStripMenuItem"
         resources.ApplyResources(Me.BitDonGToolStripMenuItem, "BitDonGToolStripMenuItem")
+        '
+        'BittalkToolStripMenuItem
+        '
+        Me.BittalkToolStripMenuItem.Name = "BittalkToolStripMenuItem"
+        resources.ApplyResources(Me.BittalkToolStripMenuItem, "BittalkToolStripMenuItem")
         '
         'PInfoFrm
         '
@@ -201,4 +207,5 @@ Partial Class PInfoFrm
     Friend WithEvents DownloadSourceCodeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BitDonGToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BittalkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
