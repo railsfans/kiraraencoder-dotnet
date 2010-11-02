@@ -2842,6 +2842,7 @@ RELOAD:
     End Sub
 
     Private Sub PresetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresetButton.Click
+        If MainFrm.SPreB = True Then Exit Sub
         MainFrm.PresetContextMenuStrip.Show(Control.MousePosition)
     End Sub
 

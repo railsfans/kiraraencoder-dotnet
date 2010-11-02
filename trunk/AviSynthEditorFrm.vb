@@ -36,6 +36,8 @@ Public Class AviSynthEditorFrm
 
     Private Sub ImgSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImgSButton.Click
 
+        If MainFrm.SPreB = True Then Exit Sub
+
         Try
             ImagePPFrm.ShowDialog(Me)
         Catch ex As Exception
@@ -44,6 +46,8 @@ Public Class AviSynthEditorFrm
     End Sub
 
     Private Sub AudSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AudSButton.Click
+
+        If MainFrm.SPreB = True Then Exit Sub
 
         Try
             AudioPPFrm.ShowDialog(Me)
@@ -54,6 +58,8 @@ Public Class AviSynthEditorFrm
 
     Private Sub SubSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SubSButton.Click
 
+        If MainFrm.SPreB = True Then Exit Sub
+
         Try
             SubtitleFrm.ShowDialog(Me)
         Catch ex As Exception
@@ -62,6 +68,8 @@ Public Class AviSynthEditorFrm
     End Sub
 
     Private Sub PreviewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewButton.Click
+
+        If MainFrm.SPreB = True Then Exit Sub
 
         TabControl1.Focus()
 
@@ -99,6 +107,8 @@ Public Class AviSynthEditorFrm
     End Sub
 
     Private Sub RefButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefButton.Click
+
+        If MainFrm.SPreB = True Then Exit Sub
 
         TabControl1.Focus()
 
@@ -295,6 +305,8 @@ LANG_SKIP:
     End Sub
 
     Private Sub ListenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListenButton.Click
+
+        If MainFrm.SPreB = True Then Exit Sub
 
         TabControl1.Focus()
 
@@ -530,6 +542,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub PresetToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresetToolStripMenuItem.Click
+        If MainFrm.SPreB = True Then Exit Sub
         MainFrm.PresetContextMenuStrip.Show(Control.MousePosition)
     End Sub
 
@@ -571,13 +584,14 @@ LANG_SKIP:
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
+        If MainFrm.SPreB = True Then Exit Sub
         OKBTNCLK = True
-
         MainFrm.AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
         Close()
     End Sub
 
     Private Sub CancelBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBTN.Click
+        If MainFrm.SPreB = True Then Exit Sub
         Close()
     End Sub
 
@@ -662,6 +676,8 @@ LANG_SKIP:
     End Sub
 
     Private Sub ETCButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EtcSButton.Click
+
+        If MainFrm.SPreB = True Then Exit Sub
 
         Try
             ETCPPFrm.ShowDialog(Me)

@@ -123,6 +123,10 @@ Public Class MainFrm
     Dim STMutexBool As Boolean
     Dim STMutex As New System.Threading.Mutex(True, "Kirara Encoder Mutex", STMutexBool)
 
+    '진행중여부
+    Dim SLangB As Boolean = False
+    Public SPreB As Boolean = False
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -667,9 +671,9 @@ Public Class MainFrm
 
     Private Sub OutSelectPreset(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
-        Me.Enabled = False
+        If SPreB = True Then Exit Sub
+        SPreB = True
         EncSetFrm.Enabled = False
-        AviSynthEditorFrm.Enabled = False
 
         Dim PathV As String = ""
         Dim TSM As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
@@ -700,9 +704,8 @@ Public Class MainFrm
         '프리셋 표시
         PresetLabel.Text = PathV
 
-        Me.Enabled = True
         EncSetFrm.Enabled = True
-        AviSynthEditorFrm.Enabled = True
+        SPreB = False
 
     End Sub
 
@@ -2003,7 +2006,8 @@ UAC:
 
     Private Sub OutSelectLang(ByVal sender As Object, ByVal e As EventArgs)
 
-        Me.Enabled = False
+        If SLangB = True Then Exit Sub
+        SLangB = True
 
         Dim _MainUACVB As String = LangCls.MainUACV
 
@@ -2030,7 +2034,7 @@ UAC:
         '관리자표시 변경된 언어로 바꿈.//
         Me.Text = Replace(Me.Text, _MainUACVB, LangCls.MainUACV)
 
-        Me.Enabled = True
+        SLangB = False
 
     End Sub
 
@@ -2394,6 +2398,8 @@ UAC:
 
     Private Sub EncSetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncSetButton.Click
 
+        If SPreB = True Then Exit Sub
+
         Try
             EncSetFrm.ShowDialog(Me)
         Catch ex As Exception
@@ -2402,6 +2408,9 @@ UAC:
     End Sub
 
     Private Sub EncSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncSButton.Click
+
+        If SPreB = True Then Exit Sub
+        If SLangB = True Then Exit Sub
 
         '포커스 이동
         EncListListView.Focus()
@@ -5821,6 +5830,8 @@ RELOAD:
 
     Private Sub AVSSetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSSetButton.Click
 
+        If SPreB = True Then Exit Sub
+
         Try
             AviSynthEditorFrm.ShowDialog(Me)
         Catch ex As Exception
@@ -5829,6 +5840,7 @@ RELOAD:
     End Sub
 
     Private Sub PresetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresetButton.Click
+        If SPreB = True Then Exit Sub
         PresetContextMenuStrip.Show(Control.MousePosition)
     End Sub
 
