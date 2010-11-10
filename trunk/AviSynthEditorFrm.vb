@@ -212,6 +212,11 @@ RELOAD:
                     If XTRSTR <> "" Then VC1TextBox.Text = XTRSTR Else VC1TextBox.Text = Def_VC1TextBox.Text
                 End If
 
+                If XTR.Name = "AviSynthEditorFrm_FFVDSATextBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFVDSATextBox.Text = XTRSTR Else FFVDSATextBox.Text = Def_FFVDSATextBox.Text
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -289,6 +294,7 @@ RELOAD:
                 If XTR.Name = "AviSynthEditorFrmAVCLabel" Then AVCLabel.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmVC1Label" Then VC1Label.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmASFLabel" Then DirectShowSourceLabel.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmFFVDSALabel" Then FFVDSALabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -300,6 +306,10 @@ LANG_SKIP:
         '=========================================
 
         StatusLabel.Text = ""
+        PreviewButton.Enabled = True
+        RefButton.Enabled = False
+        ListenButton.Enabled = True
+
         AVS_XML_LOAD(My.Application.Info.DirectoryPath & "\avs_settings.xml")
 
     End Sub
@@ -562,10 +572,12 @@ LANG_SKIP:
                 NicAudioTextBox.Text = Def_NicAudioTextBox.Text
             ElseIf TabControl1.SelectedTab.Text = "Channel" Then
                 ChannelTextBox.Text = Def_ChannelTextBox.Text
-            ElseIf TabControl1.SelectedTab.Text = "MPEG/MPEGTS(AVC)" Then
+            ElseIf TabControl1.SelectedTab.Text = "AVC" Then
                 AVCTextBox.Text = Def_AVCTextBox.Text
-            ElseIf TabControl1.SelectedTab.Text = "MPEG/MPEGTS(VC1)" Then
+            ElseIf TabControl1.SelectedTab.Text = "VC1" Then
                 VC1TextBox.Text = Def_VC1TextBox.Text
+            ElseIf TabControl1.SelectedTab.Text = "FFV/DSA" Then
+                FFVDSATextBox.Text = Def_FFVDSATextBox.Text
             End If
         Else
             Exit Sub

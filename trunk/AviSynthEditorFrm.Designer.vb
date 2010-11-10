@@ -86,6 +86,10 @@ Partial Class AviSynthEditorFrm
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.OKBTN = New System.Windows.Forms.Button
+        Me.FFVDSA = New System.Windows.Forms.TabPage
+        Me.FFVDSALabel = New System.Windows.Forms.Label
+        Me.Def_FFVDSATextBox = New System.Windows.Forms.TextBox
+        Me.FFVDSATextBox = New System.Windows.Forms.TextBox
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.ConPanel.SuspendLayout()
@@ -103,6 +107,7 @@ Partial Class AviSynthEditorFrm
         Me.AVSPanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.FFVDSA.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -221,6 +226,7 @@ Partial Class AviSynthEditorFrm
         Me.TabControl1.Controls.Add(Me.FFmpegSourceTabPage)
         Me.TabControl1.Controls.Add(Me.DirectShowSourceTabPage)
         Me.TabControl1.Controls.Add(Me.MPEG2SourceTabPage)
+        Me.TabControl1.Controls.Add(Me.FFVDSA)
         Me.TabControl1.Controls.Add(Me.AVCTabPage)
         Me.TabControl1.Controls.Add(Me.VC1TabPage)
         Me.TabControl1.Controls.Add(Me.BassAudioTabPage)
@@ -509,6 +515,32 @@ Partial Class AviSynthEditorFrm
         Me.OKBTN.Name = "OKBTN"
         Me.OKBTN.UseVisualStyleBackColor = True
         '
+        'FFVDSA
+        '
+        Me.FFVDSA.Controls.Add(Me.FFVDSALabel)
+        Me.FFVDSA.Controls.Add(Me.Def_FFVDSATextBox)
+        Me.FFVDSA.Controls.Add(Me.FFVDSATextBox)
+        resources.ApplyResources(Me.FFVDSA, "FFVDSA")
+        Me.FFVDSA.Name = "FFVDSA"
+        Me.FFVDSA.UseVisualStyleBackColor = True
+        '
+        'FFVDSALabel
+        '
+        resources.ApplyResources(Me.FFVDSALabel, "FFVDSALabel")
+        Me.FFVDSALabel.Name = "FFVDSALabel"
+        '
+        'Def_FFVDSATextBox
+        '
+        Me.Def_FFVDSATextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.Def_FFVDSATextBox, "Def_FFVDSATextBox")
+        Me.Def_FFVDSATextBox.Name = "Def_FFVDSATextBox"
+        '
+        'FFVDSATextBox
+        '
+        resources.ApplyResources(Me.FFVDSATextBox, "FFVDSATextBox")
+        Me.FFVDSATextBox.BackColor = System.Drawing.Color.White
+        Me.FFVDSATextBox.Name = "FFVDSATextBox"
+        '
         'AviSynthEditorFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -549,6 +581,8 @@ Partial Class AviSynthEditorFrm
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.FFVDSA.ResumeLayout(False)
+        Me.FFVDSA.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -615,4 +649,8 @@ Partial Class AviSynthEditorFrm
     Friend WithEvents Def_FFmpegSourceTextBox As System.Windows.Forms.TextBox
     Friend WithEvents StatusLabel As System.Windows.Forms.Label
     Friend WithEvents EtcSButton As System.Windows.Forms.Button
+    Friend WithEvents FFVDSA As System.Windows.Forms.TabPage
+    Friend WithEvents FFVDSALabel As System.Windows.Forms.Label
+    Friend WithEvents Def_FFVDSATextBox As System.Windows.Forms.TextBox
+    Friend WithEvents FFVDSATextBox As System.Windows.Forms.TextBox
 End Class

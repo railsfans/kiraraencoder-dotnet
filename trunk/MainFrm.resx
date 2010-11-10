@@ -259,64 +259,64 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="AddToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>156, 22</value>
   </data>
   <data name="AddToolStripMenuItem.Text" xml:space="preserve">
     <value>추가</value>
   </data>
   <data name="ErrToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>156, 22</value>
   </data>
   <data name="ErrToolStripMenuItem.Text" xml:space="preserve">
     <value>오류로그 보기</value>
   </data>
   <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
+    <value>153, 6</value>
   </data>
   <data name="CheckAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>156, 22</value>
   </data>
   <data name="CheckAllToolStripMenuItem.Text" xml:space="preserve">
     <value>전체 체크</value>
   </data>
   <data name="UncheckAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>156, 22</value>
   </data>
   <data name="UncheckAllToolStripMenuItem.Text" xml:space="preserve">
     <value>전체 체크 해제</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
+    <value>153, 6</value>
   </data>
   <data name="InPlayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>156, 22</value>
   </data>
   <data name="InPlayToolStripMenuItem.Text" xml:space="preserve">
     <value>원본 파일 재생</value>
   </data>
   <data name="InInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>156, 22</value>
   </data>
   <data name="InInfoToolStripMenuItem.Text" xml:space="preserve">
     <value>원본 파일 정보</value>
   </data>
   <data name="ToolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
+    <value>153, 6</value>
   </data>
   <data name="OutPlayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>156, 22</value>
   </data>
   <data name="OutPlayToolStripMenuItem.Text" xml:space="preserve">
     <value>출력 파일 재생</value>
   </data>
   <data name="OutInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>156, 22</value>
   </data>
   <data name="OutInfoToolStripMenuItem.Text" xml:space="preserve">
     <value>출력 파일 정보</value>
   </data>
   <data name="ListviewContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 198</value>
+    <value>157, 198</value>
   </data>
   <data name="&gt;&gt;ListviewContextMenuStrip.Name" xml:space="preserve">
     <value>ListviewContextMenuStrip</value>
@@ -328,7 +328,7 @@
     <value>16, 22</value>
   </data>
   <data name="EncListListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 158</value>
+    <value>926, 162</value>
   </data>
   <data name="EncListListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -355,7 +355,7 @@
     <value>2147483647</value>
   </data>
   <data name="AudioTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 15</value>
+    <value>926, 15</value>
   </data>
   <data name="AudioTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -382,7 +382,7 @@
     <value>2147483647</value>
   </data>
   <data name="VideoTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 15</value>
+    <value>926, 15</value>
   </data>
   <data name="VideoTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -403,10 +403,10 @@
     <value>Bottom</value>
   </data>
   <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 184</value>
+    <value>3, 188</value>
   </data>
   <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 45</value>
+    <value>954, 45</value>
   </data>
   <data name="Panel6.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -685,7 +685,7 @@
     <value>Right</value>
   </data>
   <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>556, 0</value>
+    <value>564, 0</value>
   </data>
   <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>390, 35</value>
@@ -757,10 +757,10 @@
     <value>Bottom</value>
   </data>
   <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 229</value>
+    <value>3, 233</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 35</value>
+    <value>954, 35</value>
   </data>
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -781,7 +781,7 @@
     <value>10, 3</value>
   </data>
   <data name="EncListGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 267</value>
+    <value>960, 271</value>
   </data>
   <data name="EncListGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -871,7 +871,7 @@
     <value>105, 148</value>
   </data>
   <data name="_AudioLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 20</value>
+    <value>568, 20</value>
   </data>
   <data name="_AudioLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -895,7 +895,7 @@
     <value>105, 125</value>
   </data>
   <data name="_AudioLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 20</value>
+    <value>568, 20</value>
   </data>
   <data name="_AudioLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -919,7 +919,7 @@
     <value>105, 99</value>
   </data>
   <data name="_VideoLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 20</value>
+    <value>568, 20</value>
   </data>
   <data name="_VideoLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -943,7 +943,7 @@
     <value>105, 76</value>
   </data>
   <data name="_VideoLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 20</value>
+    <value>568, 20</value>
   </data>
   <data name="_VideoLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -967,7 +967,7 @@
     <value>105, 50</value>
   </data>
   <data name="_FileLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 20</value>
+    <value>568, 20</value>
   </data>
   <data name="_FileLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1045,7 +1045,7 @@
     <value>105, 27</value>
   </data>
   <data name="_FileLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 20</value>
+    <value>568, 20</value>
   </data>
   <data name="_FileLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1093,7 +1093,7 @@
     <value>10, 2</value>
   </data>
   <data name="OutputGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>681, 177</value>
+    <value>689, 177</value>
   </data>
   <data name="OutputGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1312,7 +1312,7 @@
     <value>Right</value>
   </data>
   <data name="Panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 0</value>
+    <value>708, 0</value>
   </data>
   <data name="Panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 182</value>
@@ -1360,7 +1360,7 @@
     <value>Right</value>
   </data>
   <data name="Panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>823, 0</value>
+    <value>831, 0</value>
   </data>
   <data name="Panel5.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 63</value>
@@ -1435,7 +1435,7 @@
     <value>Right</value>
   </data>
   <data name="Panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>571, 18</value>
+    <value>579, 18</value>
   </data>
   <data name="Panel7.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 31</value>
@@ -1465,7 +1465,7 @@
     <value>2147483647</value>
   </data>
   <data name="SavePathTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 22</value>
+    <value>562, 22</value>
   </data>
   <data name="SavePathTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1486,7 +1486,7 @@
     <value>10, 2</value>
   </data>
   <data name="SaveFolderGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>807, 52</value>
+    <value>815, 52</value>
   </data>
   <data name="SaveFolderGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1513,7 +1513,7 @@
     <value>0, 182</value>
   </data>
   <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 63</value>
+    <value>982, 63</value>
   </data>
   <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1534,10 +1534,10 @@
     <value>Bottom</value>
   </data>
   <data name="BPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 273</value>
+    <value>0, 277</value>
   </data>
   <data name="BPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 245</value>
+    <value>982, 245</value>
   </data>
   <data name="BPanel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1561,31 +1561,31 @@
     <value>0, 0</value>
   </metadata>
   <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 20</value>
+    <value>107, 20</value>
   </data>
   <data name="LangToolStripMenuItem.Text" xml:space="preserve">
     <value>언어(Language)</value>
   </data>
   <data name="ErrToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 20</value>
+    <value>93, 20</value>
   </data>
   <data name="ErrToolStripMenuItem2.Text" xml:space="preserve">
     <value>오류로그 보기</value>
   </data>
   <data name="InChkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
+    <value>69, 20</value>
   </data>
   <data name="InChkToolStripMenuItem.Text" xml:space="preserve">
     <value>설치 확인</value>
   </data>
   <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 20</value>
+    <value>93, 20</value>
   </data>
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>프로그램 정보</value>
   </data>
   <data name="TrayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
+    <value>53, 20</value>
   </data>
   <data name="TrayToolStripMenuItem.Text" xml:space="preserve">
     <value>트레이</value>
@@ -1594,7 +1594,7 @@
     <value>0, 0</value>
   </data>
   <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 24</value>
+    <value>982, 24</value>
   </data>
   <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1633,7 +1633,7 @@
     <value>0, 24</value>
   </data>
   <data name="MainPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 518</value>
+    <value>982, 522</value>
   </data>
   <data name="MainPanel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1672,7 +1672,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>974, 542</value>
+    <value>982, 546</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

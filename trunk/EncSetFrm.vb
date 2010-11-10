@@ -1604,6 +1604,16 @@ RELOAD:
             With x264optsFrm
 
                 '------------------------
+                ' Threads
+                '------------------------
+                Dim ThreadsV As String = ""
+                If .ThreadsNumericUpDown.Value = 0 Then
+                    ThreadsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
+                Else
+                    ThreadsV = " -threads " & .ThreadsNumericUpDown.Value
+                End If
+
+                '------------------------
                 ' LEVEL
                 '------------------------.
                 Dim LevelComboBoxV As String = ""
@@ -1858,14 +1868,14 @@ RELOAD:
 
                 '---------------------------------------------------------------------------------------------------------
                 '모든모드공통
-                x264optsV = " -threads " & .ThreadsNumericUpDown.Value & LevelComboBoxV & _
+                x264optsV = ThreadsV & LevelComboBoxV & _
                             DeblockingCheckBoxV & CABACCheckBoxV & BFramesV & " -refs " & .ReferenceFramesNumericUpDown.Value & AdaptiveIFramesDecisionV & PframeWeightedPredictionV & _
                             " -qmin " & .QMinNumericUpDown.Value & " -qmax " & .QMaxNumericUpDown.Value & " -qdiff " & .QDeltaNumericUpDown.Value & " -i_qfactor " & i_qfactorV & " -b_qfactor " & .QPBRatioNumericUpDown.Value & " -chromaoffset " & .ChromaandLumaQPOffsetNumericUpDown.Value & RateControlMV & _
                             ChromaMEV & " -me_range " & .MERangeNumericUpDown.Value & MEMethodV & SubpixelMEV & TrellisV & " -psy_rd " & .PsyRDStrengthNumericUpDown.Value & " -psy_trellis " & .PsyTrellisStrengthNumericUpDown.Value & NoMixedReferenceFramesV & NoFastPSkipV & NoPsychovisualEnhancementsV & _
                             Adaptive8x8DCTV & MacroblocksV & " -nr " & .NoiseReductionNumericUpDown.Value & UseaccessunitdelimitersV
 
                 If .FastfirstpassCheckBox.Checked = True Then '터보
-                    x264opts_2passV = " -threads " & .ThreadsNumericUpDown.Value & LevelComboBoxV & _
+                    x264opts_2passV = ThreadsV & LevelComboBoxV & _
                                  DeblockingCheckBoxV & CABACCheckBoxV & BFramesV & " -refs 1" & AdaptiveIFramesDecisionV & PframeWeightedPredictionV & _
                                  " -qmin " & .QMinNumericUpDown.Value & " -qmax " & .QMaxNumericUpDown.Value & " -qdiff " & .QDeltaNumericUpDown.Value & " -i_qfactor " & i_qfactorV & " -b_qfactor " & .QPBRatioNumericUpDown.Value & " -chromaoffset " & .ChromaandLumaQPOffsetNumericUpDown.Value & RateControlMV & _
                                  ChromaMEV & " -me_range 16 -me_method epzs -subq 1" & TrellisV & " -psy_rd " & .PsyRDStrengthNumericUpDown.Value & " -psy_trellis " & .PsyTrellisStrengthNumericUpDown.Value & NoMixedReferenceFramesV & NoFastPSkipV & NoPsychovisualEnhancementsV & _
@@ -1879,7 +1889,7 @@ RELOAD:
             End With
         End If
         If VideoCodecComboBox.Text = "H.264(AVC) x264 core" AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함
-            x264optsV = " -threads " & x264optsFrm.ThreadsNumericUpDown.Value & " -level 13 -qmin 10 -qmax 51 -qdiff 4 -i_qfactor " & 1 / 1.4 & " -b_qfactor 1.3 -chromaoffset 0"
+            x264optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS") & " -level 13 -qmin 10 -qmax 51 -qdiff 4 -i_qfactor " & 1 / 1.4 & " -b_qfactor 1.3 -chromaoffset 0"
             x264opts_2passV = x264optsV
         End If
 
@@ -2042,18 +2052,7 @@ RELOAD:
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
         VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
         VideoCodecComboBox.Text = "MPEG-4 Video") AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함
-            With MPEG4optsFrm
-                '------------------------
-                ' Threads
-                '------------------------
-                Dim ThreadsV As String = ""
-                If .ThreadsNumericUpDown.Value = 0 Then
-                    ThreadsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
-                Else
-                    ThreadsV = " -threads " & .ThreadsNumericUpDown.Value
-                End If
-                MPEG4optsV = ThreadsV
-            End With
+            MPEG4optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
         End If
 
         '***********************************

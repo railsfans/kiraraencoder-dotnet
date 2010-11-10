@@ -36,6 +36,7 @@ Public Class FLoadFrm
     End Sub
 
     Private Sub FLoadFrm_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        MainFrm.InfoGExit = False
         CancelV = False
         For Each FileName In MainFrm.FLoadFrmFileName
             If CancelV = True Then

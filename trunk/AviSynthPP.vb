@@ -865,7 +865,18 @@ ERRSKIP:
                     ElseIf InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "vc1", CompareMethod.Text) <> 0 Then 'VC1
                         AVTextBoxV = AviSynthEditorFrm.VC1TextBox.Text
                     Else
-                        AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
+
+                        '원본이 59 이상이면 문제 있는 파일로 간주..// 1차
+                        Try
+                            If Val(Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(1)) >= 59 Then
+                                AVTextBoxV = AviSynthEditorFrm.FFVDSATextBox.Text
+                            Else
+                                AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
+                            End If
+                        Catch ex As Exception
+                            AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
+                        End Try
+
                     End If
 
                 ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "ASF" Then

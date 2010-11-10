@@ -609,6 +609,11 @@ Public Class MainFrm
                 EncListListView.Items.RemoveAt(EncListListView.Items.Count - 1)
             End If
 
+            'MPEG/MPEGTS 인코딩
+            'If ELVI.SubItems(3).Text = "MPEG" OrElse ELVI.SubItems(3).Text = "MPEGTS" Then
+            '    EncListListView.Items.RemoveAt(EncListListView.Items.Count - 1)
+            'End If
+
         Catch ex As Exception
             _MI.Close()
             EncListListView.Items.RemoveAt(EncListListView.Items.Count - 1)
@@ -1875,10 +1880,12 @@ LANG_SKIP:
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
             AviSynthEditorFrm.Def_AVCTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_AVCTextBox.Text
             AviSynthEditorFrm.Def_VC1TextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_VC1TextBox.Text
+            AviSynthEditorFrm.Def_FFVDSATextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFVDSATextBox.Text
         Else
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
             AviSynthEditorFrm.Def_AVCTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_AVCTextBox.Text
             AviSynthEditorFrm.Def_VC1TextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_VC1TextBox.Text
+            AviSynthEditorFrm.Def_FFVDSATextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFVDSATextBox.Text
         End If
 
         '****************************************************************
@@ -2472,6 +2479,7 @@ UAC:
             .ChannelTextBox.Text = .Def_ChannelTextBox.Text
             .AVCTextBox.Text = .Def_AVCTextBox.Text
             .VC1TextBox.Text = .Def_VC1TextBox.Text
+            .FFVDSATextBox.Text = .Def_FFVDSATextBox.Text
         End With
 
     End Sub
@@ -3028,6 +3036,11 @@ RELOAD:
                     If XTR.Name = "AviSynthEditorFrm_VC1TextBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .VC1TextBox.Text = XTRSTR Else .VC1TextBox.Text = .Def_VC1TextBox.Text
+                    End If
+
+                    If XTR.Name = "AviSynthEditorFrm_FFVDSATextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFVDSATextBox.Text = XTRSTR Else .FFVDSATextBox.Text = .Def_FFVDSATextBox.Text
                     End If
 
                 End With
@@ -4658,6 +4671,10 @@ RELOAD:
                 XTWriter.WriteString(.VC1TextBox.Text)
                 XTWriter.WriteEndElement()
 
+                XTWriter.WriteStartElement("AviSynthEditorFrm_FFVDSATextBox")
+                XTWriter.WriteString(.FFVDSATextBox.Text)
+                XTWriter.WriteEndElement()
+
             End With
 
             XTWriter.WriteEndDocument()
@@ -6152,4 +6169,7 @@ RELOAD:
         PresetLabel.Text = LangCls.MainUserStr
     End Sub
 
+    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
+
+    End Sub
 End Class
