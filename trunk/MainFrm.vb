@@ -28,6 +28,9 @@ Public Class MainFrm
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
 
+    'Beta여부
+    Dim BetaStrB As Boolean = True
+
     '-------------------------------
 
     '핸들
@@ -121,7 +124,7 @@ Public Class MainFrm
 
     'Mutex
     Dim STMutexBool As Boolean
-    Dim STMutex As New System.Threading.Mutex(True, "Kirara Encoder Mutex", STMutexBool)
+    Dim STMutex As New System.Threading.Mutex(True, "KiraraEncoderMutex" & My.Application.Info.Version.Major & My.Application.Info.Version.Minor & My.Application.Info.Version.Revision & Environ("PROCESSOR_ARCHITECTURE"), STMutexBool)
 
     '진행중여부
     Dim SLangB As Boolean = False
@@ -294,14 +297,16 @@ Public Class MainFrm
             Dim ThreadSTR As New Threading.Thread(AddressOf OutputInfo)
             ThreadSTR.IsBackground = True
             ThreadSTR.Start()
+
+            Do Until ProcessEChkB = True
+                Application.DoEvents()
+                Threading.Thread.Sleep(10)
+            Loop
+        Else
+            Exit Sub
         End If
 
         '-----
-
-        Do Until ProcessEChkB = True
-            Application.DoEvents()
-            Threading.Thread.Sleep(10)
-        Loop
 
         If InfoGExit = True Then
             InfoGExit = False
@@ -1878,14 +1883,8 @@ LANG_SKIP:
         'Def_FFmpegSourceTextBox 초기화 32 / 64
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
-            AviSynthEditorFrm.Def_AVCTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_AVCTextBox.Text
-            AviSynthEditorFrm.Def_VC1TextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_VC1TextBox.Text
-            AviSynthEditorFrm.Def_FFVDSATextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFVDSATextBox.Text
         Else
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
-            AviSynthEditorFrm.Def_AVCTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_AVCTextBox.Text
-            AviSynthEditorFrm.Def_VC1TextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_VC1TextBox.Text
-            AviSynthEditorFrm.Def_FFVDSATextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFVDSATextBox.Text
         End If
 
         '****************************************************************
@@ -1940,13 +1939,15 @@ LANG_SKIP:
         End If
 
         '어플리케이션 설정
+        Dim BetaStr As String = ""
+        If BetaStrB = True Then  BetaStr = " Beta"
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
-            Me.Text = "Kirara Encoder v" & _
+            Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
             My.Application.Info.Version.Revision & " x64"
         Else
-            Me.Text = "Kirara Encoder v" & _
+            Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
             My.Application.Info.Version.Revision
@@ -2477,9 +2478,25 @@ UAC:
             .BassAudioTextBox.Text = .Def_BassAudioTextBox.Text
             .NicAudioTextBox.Text = .Def_NicAudioTextBox.Text
             .ChannelTextBox.Text = .Def_ChannelTextBox.Text
-            .AVCTextBox.Text = .Def_AVCTextBox.Text
-            .VC1TextBox.Text = .Def_VC1TextBox.Text
-            .FFVDSATextBox.Text = .Def_FFVDSATextBox.Text
+
+            .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True
+            .AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = False
+            .MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = False
+            .MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True
+            .ASFFilesFFmpegSourceToolStripMenuItem2.Checked = False
+            .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True
+            .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True
+            .AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = False
+            .AllAudioFilesBassAudioToolStripMenuItem.Checked = True
+            .AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = False
+            .AC3DTSFilesNicAudioToolStripMenuItem.Checked = True
+            .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True
+            .MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = False
+            .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+            .AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = False
+            .AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+            .RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = False
+
         End With
 
     End Sub
@@ -3028,19 +3045,89 @@ RELOAD:
                         If XTRSTR <> "" Then .ChannelTextBox.Text = XTRSTR Else .ChannelTextBox.Text = .Def_ChannelTextBox.Text
                     End If
 
-                    If XTR.Name = "AviSynthEditorFrm_AVCTextBox" Then
+                    If XTR.Name = "AllMovieFilesFFmpegSourceToolStripMenuItem" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .AVCTextBox.Text = XTRSTR Else .AVCTextBox.Text = .Def_AVCTextBox.Text
+                        If XTRSTR <> "" Then .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = XTRSTR Else .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True
                     End If
 
-                    If XTR.Name = "AviSynthEditorFrm_VC1TextBox" Then
+                    If XTR.Name = "AllMovieFilesDirectShowSourceToolStripMenuItem" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .VC1TextBox.Text = XTRSTR Else .VC1TextBox.Text = .Def_VC1TextBox.Text
+                        If XTRSTR <> "" Then .AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = XTRSTR Else .AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = False
                     End If
 
-                    If XTR.Name = "AviSynthEditorFrm_FFVDSATextBox" Then
+                    If XTR.Name = "MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .FFVDSATextBox.Text = XTRSTR Else .FFVDSATextBox.Text = .Def_FFVDSATextBox.Text
+                        If XTRSTR <> "" Then .MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = XTRSTR Else .MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = False
+                    End If
+
+                    If XTR.Name = "MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = XTRSTR Else .MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True
+                    End If
+
+                    If XTR.Name = "ASFFilesFFmpegSourceToolStripMenuItem2" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .ASFFilesFFmpegSourceToolStripMenuItem2.Checked = XTRSTR Else .ASFFilesFFmpegSourceToolStripMenuItem2.Checked = False
+                    End If
+
+                    If XTR.Name = "ASFFilesDirectShowSourceToolStripMenuItem1" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = XTRSTR Else .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True
+                    End If
+
+                    If XTR.Name = "M2TSFilesFFmpegSourceToolStripMenuItem6" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = XTRSTR Else .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True
+                    End If
+
+                    If XTR.Name = "AllAudioFilesFFmpegSourceToolStripMenuItem3" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = XTRSTR Else .AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = False
+                    End If
+
+                    If XTR.Name = "AllAudioFilesBassAudioToolStripMenuItem" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AllAudioFilesBassAudioToolStripMenuItem.Checked = XTRSTR Else .AllAudioFilesBassAudioToolStripMenuItem.Checked = True
+                    End If
+
+                    If XTR.Name = "AC3DTSFilesFFmpegSourceToolStripMenuItem4" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = XTRSTR Else .AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = False
+                    End If
+
+                    If XTR.Name = "AC3DTSFilesNicAudioToolStripMenuItem" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AC3DTSFilesNicAudioToolStripMenuItem.Checked = XTRSTR Else .AC3DTSFilesNicAudioToolStripMenuItem.Checked = True
+                    End If
+
+                    If XTR.Name = "RMAMRFilesFFmpegSourceToolStripMenuItem5" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = XTRSTR Else .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True
+                    End If
+
+                    If XTR.Name = "MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = XTRSTR Else .MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = False
+                    End If
+
+                    If XTR.Name = "M2TSFilesDirectShowSourceToolStripMenuItem1" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = XTRSTR Else .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+                    End If
+
+                    If XTR.Name = "AllAudioFilesDirectShowSourceToolStripMenuItem" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = XTRSTR Else .AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = False
+                    End If
+
+                    If XTR.Name = "AC3DTSFilesDirectShowSourceToolStripMenuItem1" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = XTRSTR Else .AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+                    End If
+
+                    If XTR.Name = "RMAMRFilesDirectShowSourceToolStripMenuItem2" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = XTRSTR Else .RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = False
                     End If
 
                 End With
@@ -4663,16 +4750,72 @@ RELOAD:
                 XTWriter.WriteString(.ChannelTextBox.Text)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("AviSynthEditorFrm_AVCTextBox")
-                XTWriter.WriteString(.AVCTextBox.Text)
+                XTWriter.WriteStartElement("AllMovieFilesFFmpegSourceToolStripMenuItem")
+                XTWriter.WriteString(.AllMovieFilesFFmpegSourceToolStripMenuItem.Checked)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("AviSynthEditorFrm_VC1TextBox")
-                XTWriter.WriteString(.VC1TextBox.Text)
+                XTWriter.WriteStartElement("AllMovieFilesDirectShowSourceToolStripMenuItem")
+                XTWriter.WriteString(.AllMovieFilesDirectShowSourceToolStripMenuItem.Checked)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("AviSynthEditorFrm_FFVDSATextBox")
-                XTWriter.WriteString(.FFVDSATextBox.Text)
+                XTWriter.WriteStartElement("MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1")
+                XTWriter.WriteString(.MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem")
+                XTWriter.WriteString(.MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ASFFilesFFmpegSourceToolStripMenuItem2")
+                XTWriter.WriteString(.ASFFilesFFmpegSourceToolStripMenuItem2.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ASFFilesDirectShowSourceToolStripMenuItem1")
+                XTWriter.WriteString(.ASFFilesDirectShowSourceToolStripMenuItem1.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("M2TSFilesFFmpegSourceToolStripMenuItem6")
+                XTWriter.WriteString(.M2TSFilesFFmpegSourceToolStripMenuItem6.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AllAudioFilesFFmpegSourceToolStripMenuItem3")
+                XTWriter.WriteString(.AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AllAudioFilesBassAudioToolStripMenuItem")
+                XTWriter.WriteString(.AllAudioFilesBassAudioToolStripMenuItem.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AC3DTSFilesFFmpegSourceToolStripMenuItem4")
+                XTWriter.WriteString(.AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AC3DTSFilesNicAudioToolStripMenuItem")
+                XTWriter.WriteString(.AC3DTSFilesNicAudioToolStripMenuItem.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("RMAMRFilesFFmpegSourceToolStripMenuItem5")
+                XTWriter.WriteString(.RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem")
+                XTWriter.WriteString(.MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("M2TSFilesDirectShowSourceToolStripMenuItem1")
+                XTWriter.WriteString(.M2TSFilesDirectShowSourceToolStripMenuItem1.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AllAudioFilesDirectShowSourceToolStripMenuItem")
+                XTWriter.WriteString(.AllAudioFilesDirectShowSourceToolStripMenuItem.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("AC3DTSFilesDirectShowSourceToolStripMenuItem1")
+                XTWriter.WriteString(.AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("RMAMRFilesDirectShowSourceToolStripMenuItem2")
+                XTWriter.WriteString(.RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked)
                 XTWriter.WriteEndElement()
 
             End With

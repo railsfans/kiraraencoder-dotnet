@@ -88,17 +88,17 @@ Public Class AviSynthPP
                 End If
 
                 If fpsV = 14.99 OrElse fpsV = 14.985 Then
-                    fpsnumV = 14985
-                    fpsdenV = 1000
+                    fpsnumV = 15000
+                    fpsdenV = 1001
                 ElseIf fpsV = 23.98 OrElse fpsV = 23.976 Then
-                    fpsnumV = 23976
-                    fpsdenV = 1000
+                    fpsnumV = 24000
+                    fpsdenV = 1001
                 ElseIf fpsV = 29.97 Then
-                    fpsnumV = 2997
-                    fpsdenV = 100
+                    fpsnumV = 30000
+                    fpsdenV = 1001
                 ElseIf fpsV = 59.94 Then
-                    fpsnumV = 5994
-                    fpsdenV = 100
+                    fpsnumV = 60000
+                    fpsdenV = 1001
                 Else
                     If InStr(Str(fpsV), ".", CompareMethod.Text) <> 0 Then ' 소수점이 있으면
                         Dim FN As String = "0" '소수점 이하 숫자 구함(문자열로)
@@ -828,67 +828,151 @@ ERRSKIP:
 
             End With
 
+
+
+
             '========================================== 완료 ================================================
+
+
+
 
             '---------------------------------------
             '스크립트 변수에 저장
             '---------------------------------------
             '비디오, 오디오부분 존재 여부
             Dim AVTextBoxV As String = ""
-            If (MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None") OrElse MainFrm.EncListListView.Items(index).SubItems(5).Text = "A_None" Then '비디오만 있는 경우
-                AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
-            ElseIf (MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None") OrElse MainFrm.EncListListView.Items(index).SubItems(5).Text = "V_None" Then '오디오만 있는 경우
+            If (MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None") Then '오디오만 있는 경우
 
 
+
+
+                '==================================================  오디오 
                 If MainFrm.EncListListView.Items(index).SubItems(3).Text = "AC3" Then
-                    AVTextBoxV = AviSynthEditorFrm.NicAudioTextBox.Text
-                    AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcename>", "AC3")
-                    AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcelength>", Int(PlayHMSV * 25) + 1)
-                    AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcefps>", "25")
+
+                    If AviSynthEditorFrm.AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                    ElseIf AviSynthEditorFrm.AC3DTSFilesNicAudioToolStripMenuItem.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.NicAudioTextBox.Text
+                        AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcename>", "AC3")
+                        AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcelength>", Int(PlayHMSV * 25) + 1)
+                        AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcefps>", "25")
+                    ElseIf AviSynthEditorFrm.AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                    End If
+
                 ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "DTS" Then
-                    AVTextBoxV = AviSynthEditorFrm.NicAudioTextBox.Text
-                    AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcename>", "DTS")
-                    AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcelength>", Int(PlayHMSV * 25) + 1)
-                    AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcefps>", "25")
-                ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "RM" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "AMR" Then 'RM, AMR 은 FFmpegSource로.//
-                    AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+
+                    If AviSynthEditorFrm.AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                    ElseIf AviSynthEditorFrm.AC3DTSFilesNicAudioToolStripMenuItem.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.NicAudioTextBox.Text
+                        AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcename>", "DTS")
+                        AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcelength>", Int(PlayHMSV * 25) + 1)
+                        AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcefps>", "25")
+                    ElseIf AviSynthEditorFrm.AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                    End If
+
+                ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "RM" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "AMR" Then
+
+                    If AviSynthEditorFrm.RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                    ElseIf AviSynthEditorFrm.RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                    End If
+
                 Else
-                    AVTextBoxV = AviSynthEditorFrm.BassAudioTextBox.Text
+
+                    If AviSynthEditorFrm.AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                    ElseIf AviSynthEditorFrm.AllAudioFilesBassAudioToolStripMenuItem.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.BassAudioTextBox.Text
+                    ElseIf AviSynthEditorFrm.AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                    End If
+
                 End If
+                '==================================================  오디오 
 
-            ElseIf MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '비디오 + 오디오
 
+
+            Else
+
+
+
+
+                '================================================== 비디오 + 오디오 or 비디오
                 If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEGTS" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEG" Then
 
-                    If InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then 'AVC
-                        AVTextBoxV = AviSynthEditorFrm.AVCTextBox.Text
-                    ElseIf InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "vc1", CompareMethod.Text) <> 0 Then 'VC1
-                        AVTextBoxV = AviSynthEditorFrm.VC1TextBox.Text
+                    If (InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "h264", CompareMethod.Text) <> 0) OrElse (InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "vc1", CompareMethod.Text) <> 0) Then 'M2TSFiles
+                        If AviSynthEditorFrm.M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True Then
+                            AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                            AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+                        ElseIf AviSynthEditorFrm.M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
+                            AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                        End If
                     Else
-
-                        '원본이 59 이상이면 문제 있는 파일로 간주..// 1차
-                        Try
-                            If Val(Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(1)) >= 59 Then
-                                AVTextBoxV = AviSynthEditorFrm.FFVDSATextBox.Text
-                            Else
-                                AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
-                            End If
-                        Catch ex As Exception
+                        If AviSynthEditorFrm.MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True Then
+                            AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                            AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+                        ElseIf AviSynthEditorFrm.MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
-                        End Try
-
+                        ElseIf AviSynthEditorFrm.MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = True Then
+                            AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                        End If
                     End If
 
                 ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "ASF" Then
 
-                    AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                    If AviSynthEditorFrm.ASFFilesFFmpegSourceToolStripMenuItem2.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                        AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+                    ElseIf AviSynthEditorFrm.ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                    End If
 
                 Else
 
-                    AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                    If AviSynthEditorFrm.AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                    ElseIf AviSynthEditorFrm.AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = True Then
+                        AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                    End If
 
                 End If
+                '================================================== 비디오 + 오디오 or 비디오
 
+
+
+
+
+            End If
+
+
+
+
+
+
+
+
+
+
+
+            '=========================================================================================================
+
+
+
+
+
+
+
+
+
+            '-----------------------------------------
+            'seekmode=auto
+            '=========================================
+            If InStr(AVTextBoxV, "seekmode=auto", CompareMethod.Text) <> 0 Then
+                AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=1")
             End If
 
             '-----------------------------------------
@@ -1304,6 +1388,22 @@ DelayAudioSkip:
 
 skip2:
 
+                '비디오 존재 여부
+                If (MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None") Then '비디오만 있는 경우
+
+                    '오디오 부분 주석 처리
+                    AVTextBoxV = Replace(AVTextBoxV, "A=#<audiosource>", "#A=#<audiosource>")
+                    '비디오 부분
+                    AVTextBoxV = Replace(AVTextBoxV, "V=MPEG2Source(", "MPEG2Source(")
+                    '오디오 덥 부분 주석 처리
+                    AVTextBoxV = Replace(AVTextBoxV, "AudioDub(V,A)", "#AudioDub(V,A)")
+                    '증폭
+                    AVTextBoxV = Replace(AVTextBoxV, "#<amplifydb>", "##<amplifydb>")
+                    '이퀄라이저
+                    AVTextBoxV = Replace(AVTextBoxV, "#<supereq>", "##<supereq>")
+
+                End If
+
                 '#<d2vsource>
                 AVTextBoxV = Replace(AVTextBoxV, "#<d2vsource>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
 
@@ -1386,6 +1486,9 @@ skip2:
                     'SN구하기 (스트림 ID비교)//
                     Dim AudioStramCntStr As String = "0"
                     AudioStramCntStr = _MI.Get_(StreamKind.Audio, 0, "StreamCount")
+                    If AudioStramCntStr = "" OrElse AudioStramCntStr = "0" Then
+                        GoTo DelayAudioSkip2
+                    End If
                     Dim i2 As Integer
                     For i2 = 0 To AudioStramCntStr - 1
                         Dim ta2v2 As String = _MI.Get_(StreamKind.Audio, i2, "ID")
@@ -1408,6 +1511,7 @@ skip2:
                 If ta2v3 = "0" OrElse ta2v3 = "" Then
                     delayaudioV = 0
                 End If
+DelayAudioSkip2:
                 AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio1>", "DelayAudio(" & delayaudioV & "/1000.0)")
 
                 '#<audiosource>
@@ -1442,215 +1546,215 @@ skip2:
                 End If
 
 
-            End If
+                End If
 
-            '------------------------------------------------------------------------------------------------------------------------
-            '공통
-            '-----------------------
+                '------------------------------------------------------------------------------------------------------------------------
+                '공통
+                '-----------------------
 
-            '#<pluginpath>
-            AVTextBoxV = Replace(AVTextBoxV, "#<pluginpath>", My.Application.Info.DirectoryPath & "\plugin\")
+                '#<pluginpath>
+                AVTextBoxV = Replace(AVTextBoxV, "#<pluginpath>", My.Application.Info.DirectoryPath & "\plugin\")
 
-            '#<toolspath>
-            AVTextBoxV = Replace(AVTextBoxV, "#<toolspath>", My.Application.Info.DirectoryPath & "\tools\")
+                '#<toolspath>
+                AVTextBoxV = Replace(AVTextBoxV, "#<toolspath>", My.Application.Info.DirectoryPath & "\tools\")
 
-            '#<source>
-            AVTextBoxV = Replace(AVTextBoxV, "#<source>", MainFrm.EncListListView.Items(index).SubItems(10).Text)
+                '#<source>
+                AVTextBoxV = Replace(AVTextBoxV, "#<source>", MainFrm.EncListListView.Items(index).SubItems(10).Text)
 
-            '#<trim>
-            If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
-            MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩// BassAudio 에서는 기본 프레임이 25
-                fpsV = 25
-            End If
-            Dim bobv As Integer = 1
-            With ImagePPFrm
-                If InStr(AVTextBoxV, "#<deinterlace>", CompareMethod.Text) <> 0 Then
-                    If .AVSMPEG2DeinterlaceCheckBox.Checked = True Then
-                        If .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=1 double framerate (bob)" OrElse .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=3 double framerate (bob)" Then
-                            If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
-                            MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
-                            Else
-                                bobv = 2
+                '#<trim>
+                If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩// BassAudio 에서는 기본 프레임이 25
+                    fpsV = 25
+                End If
+                Dim bobv As Integer = 1
+                With ImagePPFrm
+                    If InStr(AVTextBoxV, "#<deinterlace>", CompareMethod.Text) <> 0 Then
+                        If .AVSMPEG2DeinterlaceCheckBox.Checked = True Then
+                            If .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=1 double framerate (bob)" OrElse .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=3 double framerate (bob)" Then
+                                If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                                MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
+                                Else
+                                    bobv = 2
+                                End If
                             End If
                         End If
                     End If
-                End If
-            End With
-            If PlayHMSV = EndHMSV Then '파일의 시간과 종료시간이 같으면 종료부분은 0으로 처리.
-                AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & ",0)")
-            Else
-                AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & "," & Int(EndHMSV * fpsV * bobv) & ")")
-            End If
-
-            '#<delayaudio2>
-            '구간설정(Trim) 아래에 놓아야 함
-            Dim ta2v4 As String = _MI.Get_(StreamKind.Audio, 0, "Video_Delay")
-            If ta2v4 = "0" OrElse ta2v4 = "" Then
-                delayaudioV2 = 0
-            Else
-                delayaudioV2 = ta2v4
-            End If
-            If Int(StartHMSV * fpsV * bobv) > (Val(delayaudioV2) / 1000) * fpsV * bobv Then
-                delayaudioV2 = 0
-            End If
-            AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio2>", "DelayAudio(" & delayaudioV2 & "/1000.0)")
-
-            '------------------------
-            '영상
-            '------------------------
-            If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오만 있는 경우
-            Else '아니면
-
-                '#<fps>
-                AVTextBoxV = Replace(AVTextBoxV, "#<fps>", fpsV)
-
-                '#<fpsnum>
-                AVTextBoxV = Replace(AVTextBoxV, "#<fpsnum>", fpsnumV)
-
-                '#<fpsden>
-                AVTextBoxV = Replace(AVTextBoxV, "#<fpsden>", fpsdenV)
-
-                '#<changefps>
-                AVTextBoxV = Replace(AVTextBoxV, "#<changefps>", changefpsV)
-
-                '#<image>
-                AVTextBoxV = Replace(AVTextBoxV, "#<image>", ImageV)
-
-                '#<coloryuv>
-                AVTextBoxV = Replace(AVTextBoxV, "#<coloryuv>", ColorYUVV)
-
-                '#<coloryuv_analyze>
-                AVTextBoxV = Replace(AVTextBoxV, "#<coloryuv_analyze>", ColorYUVASV)
-
-                '#<textsub>
-                AVTextBoxV = Replace(AVTextBoxV, "#<textsub>", TextSubV)
-
-                '#<sharpen>
-                AVTextBoxV = Replace(AVTextBoxV, "#<sharpen>", "Sharpen(" & ImagePPFrm.SharpenNumericUpDown.Value & ")")
-
-                '#<tweak>
-                AVTextBoxV = Replace(AVTextBoxV, "#<tweak>", "Tweak(" & ImagePPFrm.hueNumericUpDown.Value & "," & ImagePPFrm.saturationNumericUpDown.Value & "," & ImagePPFrm.brightnessNumericUpDown.Value & "," & ImagePPFrm.contrastNumericUpDown.Value & ")")
-
-                '#<crop>
-                Try
-                    Dim LeftCV, TopCV, RightCV, BottomCV As Integer
-                    LeftCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(0)
-                    TopCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(1)
-                    RightCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(2)
-                    BottomCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(3)
-                    If (LeftCV Mod 2) = 0 AndAlso (TopCV Mod 2) = 0 AndAlso (RightCV Mod 2) = 0 AndAlso (BottomCV Mod 2) = 0 Then
-                        AVTextBoxV = Replace(AVTextBoxV, "#<crop>", "Crop(" & LeftCV & "," & TopCV & ",-" & RightCV & ",-" & BottomCV & ")")
-                    Else
-                        AVTextBoxV = Replace(AVTextBoxV, "#<crop>", "ConvertToRGB.Crop(" & LeftCV & "," & TopCV & ",-" & RightCV & ",-" & BottomCV & ")")
-                    End If
-                Catch ex As Exception
-                End Try
-
-                '#<deinterlace>
-                AVTextBoxV = Replace(AVTextBoxV, "#<deinterlace>", DeinterlaceV)
-
-                '#<turn>
-                If ImagePPFrm.TurnCheckBox.Checked = True Then
-                    If ImagePPFrm.TurnLeftRadioButton.Checked = True Then
-                        AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "TurnLeft()")
-                    ElseIf ImagePPFrm.TurnRightRadioButton.Checked = True Then
-                        AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "TurnRight()")
-                    ElseIf ImagePPFrm.Turn180RadioButton.Checked = True Then
-                        AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "Turn180()")
-                    End If
-                End If
-
-            End If
-
-            '------------------------
-            ' 음성
-            '------------------------
-            If MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None" Then '비디오만 있는 경우
-            Else '아니면
-
-                '#<channel>
-                AVTextBoxV = Replace(AVTextBoxV, "#<channel>", ChannelV)
-
-                '#<amplifydb>
-                AVTextBoxV = Replace(AVTextBoxV, "#<amplifydb>", amplifydbV)
-
-                '#<supereq>
-                AVTextBoxV = Replace(AVTextBoxV, "#<supereq>", SuperEqV)
-
-                '#<ssrc>
-                AVTextBoxV = Replace(AVTextBoxV, "#<ssrc>", "SSRC(" & SSRCV & ")")
-
-                '#<normalize>
-                Dim normalizeV As String = "#<normalize>"
-                With AudioPPFrm
-                    If .NormalizeCheckBox.Checked = True Then
-                        normalizeV = "normalize(" & .NormalizeNumericUpDown.Value & ")"
-                    End If
                 End With
-                AVTextBoxV = Replace(AVTextBoxV, "#<normalize>", normalizeV)
-
-                '#<audio_analyze>
-                Dim audio_analyzeV As String = "#<audio_analyze>"
-                If AudioPPFrm.AudioASCheckBox.Checked = True Then
-                    audio_analyzeV = "Histogram(" & Chr(34) & "audiolevels" & Chr(34) & ")"
-                End If
-                AVTextBoxV = Replace(AVTextBoxV, "#<audio_analyze>", audio_analyzeV)
-
-            End If
-
-            '------------------------------------------------------------------------------------------------------------------------
-
-            '------------------------
-            ' 기타
-            '------------------------
-            '#<rate>
-            If ETCPPFrm.RateCheckBox.Checked = True Then
-                Dim rateV As String = ""
-                If ETCPPFrm.RatePCheckBox.Checked = True Then '피치보정
-                    rateV = "AssumeFPS(" & fpsV & " * " & ETCPPFrm.RateNumericUpDown.Value & ").TimeStretch(tempo=100 * " & ETCPPFrm.RateNumericUpDown.Value & ").ChangeFPS(" & fpsV & ")"
+                If PlayHMSV = EndHMSV Then '파일의 시간과 종료시간이 같으면 종료부분은 0으로 처리.
+                    AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & ",0)")
                 Else
-                    rateV = "AssumeFPS(" & fpsV & " * " & ETCPPFrm.RateNumericUpDown.Value & ").TimeStretch(tempo=100 * " & ETCPPFrm.RateNumericUpDown.Value & ", pitch=100 * " & ETCPPFrm.RateNumericUpDown.Value & ").ChangeFPS(" & fpsV & ")"
+                    AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & "," & Int(EndHMSV * fpsV * bobv) & ")")
                 End If
-                AVTextBoxV = Replace(AVTextBoxV, "#<rate>", rateV)
-            End If
+
+                '#<delayaudio2>
+                '구간설정(Trim) 아래에 놓아야 함
+                Dim ta2v4 As String = _MI.Get_(StreamKind.Audio, 0, "Video_Delay")
+                If ta2v4 = "0" OrElse ta2v4 = "" Then
+                    delayaudioV2 = 0
+                Else
+                    delayaudioV2 = ta2v4
+                End If
+                If Int(StartHMSV * fpsV * bobv) > (Val(delayaudioV2) / 1000) * fpsV * bobv Then
+                    delayaudioV2 = 0
+                End If
+                AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio2>", "DelayAudio(" & delayaudioV2 & "/1000.0)")
+
+                '------------------------
+                '영상
+                '------------------------
+                If MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오만 있는 경우
+                Else '아니면
+
+                    '#<fps>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<fps>", fpsV)
+
+                    '#<fpsnum>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<fpsnum>", fpsnumV)
+
+                    '#<fpsden>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<fpsden>", fpsdenV)
+
+                    '#<changefps>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<changefps>", changefpsV)
+
+                    '#<image>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<image>", ImageV)
+
+                    '#<coloryuv>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<coloryuv>", ColorYUVV)
+
+                    '#<coloryuv_analyze>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<coloryuv_analyze>", ColorYUVASV)
+
+                    '#<textsub>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<textsub>", TextSubV)
+
+                    '#<sharpen>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<sharpen>", "Sharpen(" & ImagePPFrm.SharpenNumericUpDown.Value & ")")
+
+                    '#<tweak>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<tweak>", "Tweak(" & ImagePPFrm.hueNumericUpDown.Value & "," & ImagePPFrm.saturationNumericUpDown.Value & "," & ImagePPFrm.brightnessNumericUpDown.Value & "," & ImagePPFrm.contrastNumericUpDown.Value & ")")
+
+                    '#<crop>
+                    Try
+                        Dim LeftCV, TopCV, RightCV, BottomCV As Integer
+                        LeftCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(0)
+                        TopCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(1)
+                        RightCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(2)
+                        BottomCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(3)
+                        If (LeftCV Mod 2) = 0 AndAlso (TopCV Mod 2) = 0 AndAlso (RightCV Mod 2) = 0 AndAlso (BottomCV Mod 2) = 0 Then
+                            AVTextBoxV = Replace(AVTextBoxV, "#<crop>", "Crop(" & LeftCV & "," & TopCV & ",-" & RightCV & ",-" & BottomCV & ")")
+                        Else
+                            AVTextBoxV = Replace(AVTextBoxV, "#<crop>", "ConvertToRGB.Crop(" & LeftCV & "," & TopCV & ",-" & RightCV & ",-" & BottomCV & ")")
+                        End If
+                    Catch ex As Exception
+                    End Try
+
+                    '#<deinterlace>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<deinterlace>", DeinterlaceV)
+
+                    '#<turn>
+                    If ImagePPFrm.TurnCheckBox.Checked = True Then
+                        If ImagePPFrm.TurnLeftRadioButton.Checked = True Then
+                            AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "TurnLeft()")
+                        ElseIf ImagePPFrm.TurnRightRadioButton.Checked = True Then
+                            AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "TurnRight()")
+                        ElseIf ImagePPFrm.Turn180RadioButton.Checked = True Then
+                            AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "Turn180()")
+                        End If
+                    End If
+
+                End If
+
+                '------------------------
+                ' 음성
+                '------------------------
+                If MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None" Then '비디오만 있는 경우
+                Else '아니면
+
+                    '#<channel>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<channel>", ChannelV)
+
+                    '#<amplifydb>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<amplifydb>", amplifydbV)
+
+                    '#<supereq>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<supereq>", SuperEqV)
+
+                    '#<ssrc>
+                    AVTextBoxV = Replace(AVTextBoxV, "#<ssrc>", "SSRC(" & SSRCV & ")")
+
+                    '#<normalize>
+                    Dim normalizeV As String = "#<normalize>"
+                    With AudioPPFrm
+                        If .NormalizeCheckBox.Checked = True Then
+                            normalizeV = "normalize(" & .NormalizeNumericUpDown.Value & ")"
+                        End If
+                    End With
+                    AVTextBoxV = Replace(AVTextBoxV, "#<normalize>", normalizeV)
+
+                    '#<audio_analyze>
+                    Dim audio_analyzeV As String = "#<audio_analyze>"
+                    If AudioPPFrm.AudioASCheckBox.Checked = True Then
+                        audio_analyzeV = "Histogram(" & Chr(34) & "audiolevels" & Chr(34) & ")"
+                    End If
+                    AVTextBoxV = Replace(AVTextBoxV, "#<audio_analyze>", audio_analyzeV)
+
+                End If
+
+                '------------------------------------------------------------------------------------------------------------------------
+
+                '------------------------
+                ' 기타
+                '------------------------
+                '#<rate>
+                If ETCPPFrm.RateCheckBox.Checked = True Then
+                    Dim rateV As String = ""
+                    If ETCPPFrm.RatePCheckBox.Checked = True Then '피치보정
+                        rateV = "AssumeFPS(" & fpsV & " * " & ETCPPFrm.RateNumericUpDown.Value & ").TimeStretch(tempo=100 * " & ETCPPFrm.RateNumericUpDown.Value & ").ChangeFPS(" & fpsV & ")"
+                    Else
+                        rateV = "AssumeFPS(" & fpsV & " * " & ETCPPFrm.RateNumericUpDown.Value & ").TimeStretch(tempo=100 * " & ETCPPFrm.RateNumericUpDown.Value & ", pitch=100 * " & ETCPPFrm.RateNumericUpDown.Value & ").ChangeFPS(" & fpsV & ")"
+                    End If
+                    AVTextBoxV = Replace(AVTextBoxV, "#<rate>", rateV)
+                End If
 
 
 
-            '------------------------------------------------------------------------------------------------------------------------
+                '------------------------------------------------------------------------------------------------------------------------
 
-            '====================================
-            '채널스크립트 추가
-            '------------------------------------
-            '비디오, 오디오부분 존재 여부
-            If MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None" Then '비디오만 있는 경우
-            ElseIf MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오만 있는 경우
-                AVTextBoxV = AVTextBoxV & vbNewLine & vbNewLine & CHTextBoxV
-            ElseIf MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '비디오 + 오디오
-                AVTextBoxV = AVTextBoxV & vbNewLine & vbNewLine & CHTextBoxV
-            End If
+                '====================================
+                '채널스크립트 추가
+                '------------------------------------
+                '비디오, 오디오부분 존재 여부
+                If MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text = "None" Then '비디오만 있는 경우
+                ElseIf MainFrm.EncListListView.Items(index).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오만 있는 경우
+                    AVTextBoxV = AVTextBoxV & vbNewLine & vbNewLine & CHTextBoxV
+                ElseIf MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '비디오 + 오디오
+                    AVTextBoxV = AVTextBoxV & vbNewLine & vbNewLine & CHTextBoxV
+                End If
 
-            'ScriptTextBox 추가
-            AviSynthEditorFrm.ScriptTextBox.Text = AVTextBoxV
+                'ScriptTextBox 추가
+                AviSynthEditorFrm.ScriptTextBox.Text = AVTextBoxV
 
-            '------------------------------------------
+                '------------------------------------------
 
-            '저장
-            Dim _StreamWriter2 As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs", False, System.Text.Encoding.Default)
-            If (InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0) AndAlso ShowModeV = False AndAlso ShowStatus = True Then '오디오만 인코딩일경우 맨 마지막에 프레임 1로 설정..(인코딩할때만 추가되는 스크립트..)
-                _StreamWriter2.Write(AVTextBoxV & vbNewLine & "AssumeFPS(1)")
-            Else
-                _StreamWriter2.Write(AVTextBoxV)
-            End If
-            _StreamWriter2.Close()
+                '저장
+                Dim _StreamWriter2 As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs", False, System.Text.Encoding.Default)
+                If (InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0) AndAlso ShowModeV = False AndAlso ShowStatus = True Then '오디오만 인코딩일경우 맨 마지막에 프레임 1로 설정..(인코딩할때만 추가되는 스크립트..)
+                    _StreamWriter2.Write(AVTextBoxV & vbNewLine & "AssumeFPS(1)")
+                Else
+                    _StreamWriter2.Write(AVTextBoxV)
+                End If
+                _StreamWriter2.Close()
 
-            '네로AAC 오디오용 저장
-            If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
-                Dim _StreamWriter3 As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN.avs", False, System.Text.Encoding.Default)
-                _StreamWriter3.Write(AVTextBoxV & vbNewLine & "AssumeFPS(1)")
-                _StreamWriter3.Close()
-            End If
+                '네로AAC 오디오용 저장
+                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
+                    Dim _StreamWriter3 As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN.avs", False, System.Text.Encoding.Default)
+                    _StreamWriter3.Write(AVTextBoxV & vbNewLine & "AssumeFPS(1)")
+                    _StreamWriter3.Close()
+                End If
 
-            _MI.Close()
+                _MI.Close()
         Catch ex As Exception
             _MI.Close()
             Throw New Exception(ex.Message)

@@ -1607,11 +1607,7 @@ RELOAD:
                 ' Threads
                 '------------------------
                 Dim ThreadsV As String = ""
-                If .ThreadsNumericUpDown.Value = 0 Then
-                    ThreadsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
-                Else
-                    ThreadsV = " -threads " & .ThreadsNumericUpDown.Value
-                End If
+                ThreadsV = " -threads " & .ThreadsNumericUpDown.Value
 
                 '------------------------
                 ' LEVEL
@@ -1889,7 +1885,7 @@ RELOAD:
             End With
         End If
         If VideoCodecComboBox.Text = "H.264(AVC) x264 core" AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함
-            x264optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS") & " -level 13 -qmin 10 -qmax 51 -qdiff 4 -i_qfactor " & 1 / 1.4 & " -b_qfactor 1.3 -chromaoffset 0"
+            x264optsV = " -threads " & x264optsFrm.ThreadsNumericUpDown.Value & " -level 13 -qmin 10 -qmax 51 -qdiff 4 -i_qfactor " & 1 / 1.4 & " -b_qfactor 1.3 -chromaoffset 0"
             x264opts_2passV = x264optsV
         End If
 

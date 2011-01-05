@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("Kirara Encoder")> 
-<Assembly: AssemblyCopyright("Copyright © 2008-2010 LEE KIWON")> 
+<Assembly: AssemblyCopyright("Copyright © 2008-2011 LEE KIWON")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 지정되도록 할 수 있습니다.
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("3.4.0.0")> 
-<Assembly: AssemblyFileVersion("3.4.0.0")> 
+<Assembly: AssemblyVersion("3.5.0.0")> 
+<Assembly: AssemblyFileVersion("3.5.0.0")> 

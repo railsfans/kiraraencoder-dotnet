@@ -202,21 +202,6 @@ RELOAD:
                     If XTRSTR <> "" Then ChannelTextBox.Text = XTRSTR Else ChannelTextBox.Text = Def_ChannelTextBox.Text
                 End If
 
-                If XTR.Name = "AviSynthEditorFrm_AVCTextBox" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then AVCTextBox.Text = XTRSTR Else AVCTextBox.Text = Def_AVCTextBox.Text
-                End If
-
-                If XTR.Name = "AviSynthEditorFrm_VC1TextBox" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then VC1TextBox.Text = XTRSTR Else VC1TextBox.Text = Def_VC1TextBox.Text
-                End If
-
-                If XTR.Name = "AviSynthEditorFrm_FFVDSATextBox" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then FFVDSATextBox.Text = XTRSTR Else FFVDSATextBox.Text = Def_FFVDSATextBox.Text
-                End If
-
             Loop
 
         Catch ex As Exception
@@ -285,16 +270,7 @@ RELOAD:
                     ListenButtonSTR = XTR.ReadString
                     ListenButton.Text = ListenButtonSTR
                 End If
-                If XTR.Name = "AviSynthEditorFrmFFmpegSourceLabel" Then FFmpegSourceLabel.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmMPEG2SourceLabel" Then MPEG2SourceLabel.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmBassAudioLabel" Then BassAudioLabel.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmNicAudioLabel" Then NicAudioLabel.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmChannelLabel" Then ChannelLabel.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorInitializationQ" Then LangCls.AviSynthEditorInitializationQ = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmAVCLabel" Then AVCLabel.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmVC1Label" Then VC1Label.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmASFLabel" Then DirectShowSourceLabel.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmFFVDSALabel" Then FFVDSALabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -572,12 +548,6 @@ LANG_SKIP:
                 NicAudioTextBox.Text = Def_NicAudioTextBox.Text
             ElseIf TabControl1.SelectedTab.Text = "Channel" Then
                 ChannelTextBox.Text = Def_ChannelTextBox.Text
-            ElseIf TabControl1.SelectedTab.Text = "AVC" Then
-                AVCTextBox.Text = Def_AVCTextBox.Text
-            ElseIf TabControl1.SelectedTab.Text = "VC1" Then
-                VC1TextBox.Text = Def_VC1TextBox.Text
-            ElseIf TabControl1.SelectedTab.Text = "FFV/DSA" Then
-                FFVDSATextBox.Text = Def_FFVDSATextBox.Text
             End If
         Else
             Exit Sub
@@ -605,62 +575,6 @@ LANG_SKIP:
     Private Sub CancelBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBTN.Click
         If MainFrm.SPreB = True Then Exit Sub
         Close()
-    End Sub
-
-    Private Sub AVCTextBox_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles AVCTextBox.KeyDown
-        Get_LineCol(AVCTextBox)
-    End Sub
-
-    Private Sub AVCTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles AVCTextBox.KeyPress
-        Get_LineCol(AVCTextBox)
-    End Sub
-
-    Private Sub AVCTextBox_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles AVCTextBox.KeyUp
-        Get_LineCol(AVCTextBox)
-    End Sub
-
-    Private Sub AVCTextBox_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles AVCTextBox.MouseDown
-        Get_LineCol(AVCTextBox)
-    End Sub
-
-    Private Sub AVCTextBox_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles AVCTextBox.MouseMove
-        Get_LineCol(AVCTextBox)
-    End Sub
-
-    Private Sub AVCTextBox_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles AVCTextBox.MouseUp
-        Get_LineCol(AVCTextBox)
-    End Sub
-
-    Private Sub AVCTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVCTextBox.TextChanged
-
-    End Sub
-
-    Private Sub VC1TextBox_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles VC1TextBox.KeyDown
-        Get_LineCol(VC1TextBox)
-    End Sub
-
-    Private Sub VC1TextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles VC1TextBox.KeyPress
-        Get_LineCol(VC1TextBox)
-    End Sub
-
-    Private Sub VC1TextBox_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles VC1TextBox.KeyUp
-        Get_LineCol(VC1TextBox)
-    End Sub
-
-    Private Sub VC1TextBox_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VC1TextBox.MouseDown
-        Get_LineCol(VC1TextBox)
-    End Sub
-
-    Private Sub VC1TextBox_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VC1TextBox.MouseMove
-        Get_LineCol(VC1TextBox)
-    End Sub
-
-    Private Sub VC1TextBox_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VC1TextBox.MouseUp
-        Get_LineCol(VC1TextBox)
-    End Sub
-
-    Private Sub VC1TextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VC1TextBox.TextChanged
-
     End Sub
 
     Private Sub ASFTextBox_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles DirectShowSourceTextBox.KeyDown
@@ -696,5 +610,159 @@ LANG_SKIP:
         Catch ex As Exception
         End Try
 
+    End Sub
+
+    Private Sub AllMovieFilesFFmpegSourceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllMovieFilesFFmpegSourceToolStripMenuItem.Click
+        AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True
+        AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = False
+    End Sub
+
+    Private Sub AllMovieFilesDirectShowSourceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllMovieFilesDirectShowSourceToolStripMenuItem.Click
+        AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = False
+        AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = True
+    End Sub
+
+    Private Sub MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Click
+        MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True
+        MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = False
+        MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = False
+    End Sub
+
+    Private Sub MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Click
+        MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = False
+        MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True
+        MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = False
+    End Sub
+
+    Private Sub InitializationDSToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InitializationDSToolStripMenuItem.Click
+        AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True
+        AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = False
+        MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = False
+        MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True
+        ASFFilesFFmpegSourceToolStripMenuItem2.Checked = False
+        ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True
+        M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True
+        AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = False
+        AllAudioFilesBassAudioToolStripMenuItem.Checked = True
+        AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = False
+        AC3DTSFilesNicAudioToolStripMenuItem.Checked = True
+        RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True
+        MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = False
+        M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+        AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = False
+        AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+        RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = False
+    End Sub
+
+    Private Sub ASFFilesFFmpegSourceToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ASFFilesFFmpegSourceToolStripMenuItem2.Click
+        ASFFilesFFmpegSourceToolStripMenuItem2.Checked = True
+        ASFFilesDirectShowSourceToolStripMenuItem1.Checked = False
+    End Sub
+
+    Private Sub ASFFilesDirectShowSourceToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ASFFilesDirectShowSourceToolStripMenuItem1.Click
+        ASFFilesFFmpegSourceToolStripMenuItem2.Checked = False
+        ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True
+    End Sub
+
+    Private Sub M2TSFilesFFmpegSourceToolStripMenuItem6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles M2TSFilesFFmpegSourceToolStripMenuItem6.Click
+        M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True
+        M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+    End Sub
+
+    Private Sub AllAudioFilesFFmpegSourceToolStripMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllAudioFilesFFmpegSourceToolStripMenuItem3.Click
+        AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = True
+        AllAudioFilesBassAudioToolStripMenuItem.Checked = False
+        AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = False
+    End Sub
+
+    Private Sub AllAudioFilesBassAudioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllAudioFilesBassAudioToolStripMenuItem.Click
+        AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = False
+        AllAudioFilesBassAudioToolStripMenuItem.Checked = True
+        AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = False
+    End Sub
+
+    Private Sub AC3DTSFilesFFmpegSourceToolStripMenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AC3DTSFilesFFmpegSourceToolStripMenuItem4.Click
+        AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = True
+        AC3DTSFilesNicAudioToolStripMenuItem.Checked = False
+        AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+    End Sub
+
+    Private Sub AC3DTSFilesNicAudioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AC3DTSFilesNicAudioToolStripMenuItem.Click
+        AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = False
+        AC3DTSFilesNicAudioToolStripMenuItem.Checked = True
+        AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+    End Sub
+
+    Private Sub RMAMRFilesFFmpegSourceToolStripMenuItem5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RMAMRFilesFFmpegSourceToolStripMenuItem5.Click
+        RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True
+        RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = False
+    End Sub
+
+    Private Sub MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Click
+        MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = False
+        MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = False
+        MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = True
+    End Sub
+
+    Private Sub M2TSFilesDirectShowSourceToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles M2TSFilesDirectShowSourceToolStripMenuItem1.Click
+        M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = False
+        M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True
+    End Sub
+
+    Private Sub AllAudioFilesDirectShowSourceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllAudioFilesDirectShowSourceToolStripMenuItem.Click
+        AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = False
+        AllAudioFilesBassAudioToolStripMenuItem.Checked = False
+        AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = True
+    End Sub
+
+    Private Sub AC3DTSFilesDirectShowSourceToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AC3DTSFilesDirectShowSourceToolStripMenuItem1.Click
+        AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = False
+        AC3DTSFilesNicAudioToolStripMenuItem.Checked = False
+        AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True
+    End Sub
+
+    Private Sub RMAMRFilesDirectShowSourceToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RMAMRFilesDirectShowSourceToolStripMenuItem2.Click
+        RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = False
+        RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = True
+    End Sub
+
+    Private Sub AllICToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllICToolStripMenuItem.Click
+        AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True
+        AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = False
+        MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True
+        MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = False
+        ASFFilesFFmpegSourceToolStripMenuItem2.Checked = True
+        ASFFilesDirectShowSourceToolStripMenuItem1.Checked = False
+        M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True
+        AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = True
+        AllAudioFilesBassAudioToolStripMenuItem.Checked = False
+        AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = True
+        AC3DTSFilesNicAudioToolStripMenuItem.Checked = False
+        RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True
+        MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = False
+        M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+        AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = False
+        AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+        RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = False
+    End Sub
+
+    Private Sub AllOCToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllOCToolStripMenuItem.Click
+        AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = False
+        AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = True
+        MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = False
+        MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = False
+        ASFFilesFFmpegSourceToolStripMenuItem2.Checked = False
+        ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True
+        M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = False
+        AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = False
+        AllAudioFilesBassAudioToolStripMenuItem.Checked = False
+        AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = False
+        AC3DTSFilesNicAudioToolStripMenuItem.Checked = False
+        RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = False
+        MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = True
+        M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True
+        AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = True
+        AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True
+        RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = True
     End Sub
 End Class

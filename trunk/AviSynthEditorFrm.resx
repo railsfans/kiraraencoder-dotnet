@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 473</value>
+    <value>280, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
@@ -169,7 +169,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="FFmpegSourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 0</value>
   </data>
   <data name="FFmpegSourceTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>2147483647</value>
@@ -181,7 +181,7 @@
     <value>Both</value>
   </data>
   <data name="FFmpegSourceTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
+    <value>802, 336</value>
   </data>
   <data name="FFmpegSourceTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -199,7 +199,7 @@
     <value>FFmpegSourceTabPage</value>
   </data>
   <data name="&gt;&gt;FFmpegSourceTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ConPanel.Name" xml:space="preserve">
     <value>ConPanel</value>
@@ -523,7 +523,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="ChannelTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 0</value>
   </data>
   <data name="ChannelTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>2147483647</value>
@@ -535,7 +535,7 @@
     <value>Both</value>
   </data>
   <data name="ChannelTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
+    <value>802, 336</value>
   </data>
   <data name="ChannelTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -553,7 +553,7 @@
     <value>ChannelScriptTabPage</value>
   </data>
   <data name="&gt;&gt;ChannelTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="Def_ChannelTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
@@ -678,10 +678,115 @@ Try {
     <value>ChannelScriptTabPage</value>
   </data>
   <data name="&gt;&gt;Def_ChannelTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="TabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;FFmpegSourceTabPage.Name" xml:space="preserve">
+    <value>FFmpegSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;FFmpegSourceTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFmpegSourceTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;FFmpegSourceTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Name" xml:space="preserve">
+    <value>DirectShowSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Name" xml:space="preserve">
+    <value>MPEG2SourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Name" xml:space="preserve">
+    <value>BassAudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Name" xml:space="preserve">
+    <value>NicAudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.Name" xml:space="preserve">
+    <value>ChannelScriptTabPage</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 43</value>
+  </data>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>810, 363</value>
+  </data>
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ScriptTextBox.Name" xml:space="preserve">
     <value>ScriptTextBox</value>
@@ -719,629 +824,6 @@ Try {
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Name" xml:space="preserve">
-    <value>Def_FFmpegSourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Parent" xml:space="preserve">
-    <value>FFmpegSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_FFmpegSourceTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceLabel.Name" xml:space="preserve">
-    <value>FFmpegSourceLabel</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceLabel.Parent" xml:space="preserve">
-    <value>FFmpegSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="FFmpegSourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="FFmpegSourceTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="FFmpegSourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="FFmpegSourceTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="FFmpegSourceTabPage.Text" xml:space="preserve">
-    <value>FFmpegSource</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceTabPage.Name" xml:space="preserve">
-    <value>FFmpegSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Name" xml:space="preserve">
-    <value>DirectShowSourceLabel</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Parent" xml:space="preserve">
-    <value>DirectShowSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Name" xml:space="preserve">
-    <value>Def_DirectShowSourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Parent" xml:space="preserve">
-    <value>DirectShowSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_DirectShowSourceTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTextBox.Name" xml:space="preserve">
-    <value>DirectShowSourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTextBox.Parent" xml:space="preserve">
-    <value>DirectShowSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="DirectShowSourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="DirectShowSourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="DirectShowSourceTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="DirectShowSourceTabPage.Text" xml:space="preserve">
-    <value>DirectShowSource</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTabPage.Name" xml:space="preserve">
-    <value>DirectShowSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Name" xml:space="preserve">
-    <value>MPEG2SourceLabel</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Parent" xml:space="preserve">
-    <value>MPEG2SourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Name" xml:space="preserve">
-    <value>Def_MPEG2SourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Parent" xml:space="preserve">
-    <value>MPEG2SourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_MPEG2SourceTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTextBox.Name" xml:space="preserve">
-    <value>MPEG2SourceTextBox</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTextBox.Parent" xml:space="preserve">
-    <value>MPEG2SourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="MPEG2SourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="MPEG2SourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="MPEG2SourceTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="MPEG2SourceTabPage.Text" xml:space="preserve">
-    <value>MPEG2Source</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTabPage.Name" xml:space="preserve">
-    <value>MPEG2SourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="FFVDSALabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="FFVDSALabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="FFVDSALabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
-  </data>
-  <data name="FFVDSALabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 14</value>
-  </data>
-  <data name="FFVDSALabel.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="FFVDSALabel.Text" xml:space="preserve">
-    <value>MPEG2Source로 디코딩 시 문제 있는 파일 - 기본 오디오 스트림으로 인코딩됩니다.</value>
-  </data>
-  <data name="&gt;&gt;FFVDSALabel.Name" xml:space="preserve">
-    <value>FFVDSALabel</value>
-  </data>
-  <data name="&gt;&gt;FFVDSALabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFVDSALabel.Parent" xml:space="preserve">
-    <value>FFVDSA</value>
-  </data>
-  <data name="&gt;&gt;FFVDSALabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Def_FFVDSATextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
-  </data>
-  <data name="Def_FFVDSATextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="Def_FFVDSATextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Def_FFVDSATextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="Def_FFVDSATextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 58</value>
-  </data>
-  <data name="Def_FFVDSATextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="Def_FFVDSATextBox.Text" xml:space="preserve">
-    <value>LoadPlugin("#&lt;pluginpath&gt;DirectShowSource.dll")
-LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
-
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=-1, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
-A=DirectShowSource("#&lt;source&gt;", timeout=6000, video=false)
-AudioDub(V,A)
-#&lt;deinterlace&gt;
-#&lt;delayaudio2&gt;
-#&lt;channel&gt;
-#&lt;crop&gt;
-#&lt;turn&gt;
-#&lt;image&gt;
-ConvertToYV12()
-#&lt;coloryuv&gt;
-#&lt;sharpen&gt;
-#&lt;tweak&gt;
-#&lt;coloryuv_analyze&gt;
-#&lt;textsub&gt;
-#&lt;trim&gt;
-#&lt;normalize&gt;
-#&lt;amplifydb&gt;
-#&lt;supereq&gt;
-#&lt;audio_analyze&gt;
-#&lt;rate&gt;</value>
-  </data>
-  <data name="Def_FFVDSATextBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="Def_FFVDSATextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;Def_FFVDSATextBox.Name" xml:space="preserve">
-    <value>Def_FFVDSATextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_FFVDSATextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_FFVDSATextBox.Parent" xml:space="preserve">
-    <value>FFVDSA</value>
-  </data>
-  <data name="&gt;&gt;Def_FFVDSATextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="FFVDSATextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="FFVDSATextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
-  </data>
-  <data name="FFVDSATextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="FFVDSATextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="FFVDSATextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="FFVDSATextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
-  </data>
-  <data name="FFVDSATextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="FFVDSATextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;FFVDSATextBox.Name" xml:space="preserve">
-    <value>FFVDSATextBox</value>
-  </data>
-  <data name="&gt;&gt;FFVDSATextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFVDSATextBox.Parent" xml:space="preserve">
-    <value>FFVDSA</value>
-  </data>
-  <data name="&gt;&gt;FFVDSATextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="FFVDSA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="FFVDSA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="FFVDSA.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="FFVDSA.Text" xml:space="preserve">
-    <value>FFV/DSA</value>
-  </data>
-  <data name="&gt;&gt;FFVDSA.Name" xml:space="preserve">
-    <value>FFVDSA</value>
-  </data>
-  <data name="&gt;&gt;FFVDSA.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFVDSA.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;FFVDSA.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Name" xml:space="preserve">
-    <value>AVCLabel</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Name" xml:space="preserve">
-    <value>Def_AVCTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.Name" xml:space="preserve">
-    <value>AVCTextBox</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AVCTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="AVCTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="AVCTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="AVCTabPage.Text" xml:space="preserve">
-    <value>AVC</value>
-  </data>
-  <data name="&gt;&gt;AVCTabPage.Name" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;AVCTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVCTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;AVCTabPage.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Name" xml:space="preserve">
-    <value>VC1Label</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Name" xml:space="preserve">
-    <value>Def_VC1TextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Name" xml:space="preserve">
-    <value>VC1TextBox</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="VC1TabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="VC1TabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="VC1TabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="VC1TabPage.Text" xml:space="preserve">
-    <value>VC1</value>
-  </data>
-  <data name="&gt;&gt;VC1TabPage.Name" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;VC1TabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VC1TabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;VC1TabPage.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Name" xml:space="preserve">
-    <value>BassAudioLabel</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Parent" xml:space="preserve">
-    <value>BassAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_BassAudioTextBox.Name" xml:space="preserve">
-    <value>Def_BassAudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_BassAudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_BassAudioTextBox.Parent" xml:space="preserve">
-    <value>BassAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_BassAudioTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTextBox.Name" xml:space="preserve">
-    <value>BassAudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTextBox.Parent" xml:space="preserve">
-    <value>BassAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="BassAudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="BassAudioTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="BassAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="BassAudioTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="BassAudioTabPage.Text" xml:space="preserve">
-    <value>BassAudio</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTabPage.Name" xml:space="preserve">
-    <value>BassAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;BassAudioTabPage.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Name" xml:space="preserve">
-    <value>NicAudioLabel</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Parent" xml:space="preserve">
-    <value>NicAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Def_NicAudioTextBox.Name" xml:space="preserve">
-    <value>Def_NicAudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_NicAudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_NicAudioTextBox.Parent" xml:space="preserve">
-    <value>NicAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_NicAudioTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTextBox.Name" xml:space="preserve">
-    <value>NicAudioTextBox</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTextBox.Parent" xml:space="preserve">
-    <value>NicAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="NicAudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="NicAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="NicAudioTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="NicAudioTabPage.Text" xml:space="preserve">
-    <value>NicAudio</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTabPage.Name" xml:space="preserve">
-    <value>NicAudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;NicAudioTabPage.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Name" xml:space="preserve">
-    <value>ChannelLabel</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Parent" xml:space="preserve">
-    <value>ChannelScriptTabPage</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ChannelScriptTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="ChannelScriptTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 336</value>
-  </data>
-  <data name="ChannelScriptTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ChannelScriptTabPage.Text" xml:space="preserve">
-    <value>Channel</value>
-  </data>
-  <data name="&gt;&gt;ChannelScriptTabPage.Name" xml:space="preserve">
-    <value>ChannelScriptTabPage</value>
-  </data>
-  <data name="&gt;&gt;ChannelScriptTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChannelScriptTabPage.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;ChannelScriptTabPage.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 43</value>
-  </data>
-  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>810, 363</value>
-  </data>
-  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="ScriptTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -1378,6 +860,45 @@ ConvertToYV12()
   <data name="&gt;&gt;ScriptTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Name" xml:space="preserve">
+    <value>Def_FFmpegSourceTextBox</value>
+  </data>
+  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Def_FFmpegSourceTextBox.Parent" xml:space="preserve">
+    <value>FFmpegSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;Def_FFmpegSourceTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FFmpegSourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="FFmpegSourceTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="FFmpegSourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>802, 336</value>
+  </data>
+  <data name="FFmpegSourceTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="FFmpegSourceTabPage.Text" xml:space="preserve">
+    <value>FFmpegSource</value>
+  </data>
+  <data name="&gt;&gt;FFmpegSourceTabPage.Name" xml:space="preserve">
+    <value>FFmpegSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;FFmpegSourceTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFmpegSourceTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;FFmpegSourceTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="Def_FFmpegSourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
   </data>
@@ -1399,7 +920,7 @@ ConvertToYV12()
   <data name="Def_FFmpegSourceTextBox.Text" xml:space="preserve">
     <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=1, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
+V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=auto, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
 A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, adjustdelay=-3, cache=true, cachefile="#&lt;cachefile&gt;")
 AudioDub(V,A)
 #&lt;deinterlace&gt;
@@ -1439,62 +960,53 @@ ConvertToYV12()
   <data name="&gt;&gt;Def_FFmpegSourceTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="FFmpegSourceLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Name" xml:space="preserve">
+    <value>Def_DirectShowSourceTextBox</value>
   </data>
-  <data name="FFmpegSourceLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
+  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="FFmpegSourceLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 14</value>
-  </data>
-  <data name="FFmpegSourceLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="FFmpegSourceLabel.Text" xml:space="preserve">
-    <value>동영상 파일, 오디오 RM 파일</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceLabel.Name" xml:space="preserve">
-    <value>FFmpegSourceLabel</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceLabel.Parent" xml:space="preserve">
-    <value>FFmpegSourceTabPage</value>
-  </data>
-  <data name="&gt;&gt;FFmpegSourceLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DirectShowSourceLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DirectShowSourceLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="DirectShowSourceLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
-  </data>
-  <data name="DirectShowSourceLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 14</value>
-  </data>
-  <data name="DirectShowSourceLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="DirectShowSourceLabel.Text" xml:space="preserve">
-    <value>ASF 파일 - 기본 오디오 스트림으로 인코딩됩니다.</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Name" xml:space="preserve">
-    <value>DirectShowSourceLabel</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Def_DirectShowSourceTextBox.Parent" xml:space="preserve">
     <value>DirectShowSourceTabPage</value>
   </data>
-  <data name="&gt;&gt;DirectShowSourceLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Def_DirectShowSourceTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTextBox.Name" xml:space="preserve">
+    <value>DirectShowSourceTextBox</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTextBox.Parent" xml:space="preserve">
+    <value>DirectShowSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DirectShowSourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="DirectShowSourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>802, 336</value>
+  </data>
+  <data name="DirectShowSourceTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="DirectShowSourceTabPage.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Name" xml:space="preserve">
+    <value>DirectShowSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;DirectShowSourceTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="Def_DirectShowSourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
@@ -1518,7 +1030,7 @@ ConvertToYV12()
     <value>LoadPlugin("#&lt;pluginpath&gt;DirectShowSource.dll")
 LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
-DirectShowSource("#&lt;source&gt;", fps=#&lt;fps&gt;, convertfps=true).ChangeFPS(#&lt;fps&gt;)
+DirectShowSource("#&lt;source&gt;", fps=#&lt;fps&gt;, seekzero=true, convertfps=true).ChangeFPS(#&lt;fps&gt;)
 #&lt;deinterlace&gt;
 #&lt;channel&gt;
 #&lt;crop&gt;
@@ -1553,13 +1065,13 @@ ConvertToYV12()
     <value>DirectShowSourceTabPage</value>
   </data>
   <data name="&gt;&gt;Def_DirectShowSourceTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="DirectShowSourceTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="DirectShowSourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 0</value>
   </data>
   <data name="DirectShowSourceTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>2147483647</value>
@@ -1571,7 +1083,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="DirectShowSourceTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
+    <value>802, 336</value>
   </data>
   <data name="DirectShowSourceTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -1589,34 +1101,55 @@ ConvertToYV12()
     <value>DirectShowSourceTabPage</value>
   </data>
   <data name="&gt;&gt;DirectShowSourceTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
-  <data name="MPEG2SourceLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Name" xml:space="preserve">
+    <value>Def_MPEG2SourceTextBox</value>
   </data>
-  <data name="MPEG2SourceLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
+  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="MPEG2SourceLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>514, 14</value>
-  </data>
-  <data name="MPEG2SourceLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="MPEG2SourceLabel.Text" xml:space="preserve">
-    <value>MPEG/MPEGTS 파일(AVC, VC1제외) - MPEGTS 파일은 기본 오디오 스트림으로 인코딩됩니다.</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Name" xml:space="preserve">
-    <value>MPEG2SourceLabel</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Def_MPEG2SourceTextBox.Parent" xml:space="preserve">
     <value>MPEG2SourceTabPage</value>
   </data>
-  <data name="&gt;&gt;MPEG2SourceLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Def_MPEG2SourceTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTextBox.Name" xml:space="preserve">
+    <value>MPEG2SourceTextBox</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTextBox.Parent" xml:space="preserve">
+    <value>MPEG2SourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MPEG2SourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="MPEG2SourceTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>802, 336</value>
+  </data>
+  <data name="MPEG2SourceTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="MPEG2SourceTabPage.Text" xml:space="preserve">
+    <value>MPEG2Source</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Name" xml:space="preserve">
+    <value>MPEG2SourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;MPEG2SourceTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="Def_MPEG2SourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
@@ -1681,13 +1214,13 @@ ConvertToYV12()
     <value>MPEG2SourceTabPage</value>
   </data>
   <data name="&gt;&gt;Def_MPEG2SourceTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="MPEG2SourceTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="MPEG2SourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 0</value>
   </data>
   <data name="MPEG2SourceTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>2147483647</value>
@@ -1699,7 +1232,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="MPEG2SourceTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
+    <value>802, 336</value>
   </data>
   <data name="MPEG2SourceTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -1717,284 +1250,58 @@ ConvertToYV12()
     <value>MPEG2SourceTabPage</value>
   </data>
   <data name="&gt;&gt;MPEG2SourceTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AVCLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AVCLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
-  </data>
-  <data name="AVCLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 14</value>
-  </data>
-  <data name="AVCLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="AVCLabel.Text" xml:space="preserve">
-    <value>MPEG/MPEGTS AVC 파일 - 기본 오디오 스트림으로 인코딩됩니다.</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Name" xml:space="preserve">
-    <value>AVCLabel</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;AVCLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Def_AVCTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
-  </data>
-  <data name="Def_AVCTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="Def_AVCTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Def_AVCTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="Def_AVCTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 58</value>
-  </data>
-  <data name="Def_AVCTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="Def_AVCTextBox.Text" xml:space="preserve">
-    <value>LoadPlugin("#&lt;pluginpath&gt;DirectShowSource.dll")
-LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
-
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=-1, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
-A=DirectShowSource("#&lt;source&gt;", timeout=6000, video=false)
-AudioDub(V,A)
-#&lt;deinterlace&gt;
-#&lt;delayaudio2&gt;
-#&lt;channel&gt;
-#&lt;crop&gt;
-#&lt;turn&gt;
-#&lt;image&gt;
-ConvertToYV12()
-#&lt;coloryuv&gt;
-#&lt;sharpen&gt;
-#&lt;tweak&gt;
-#&lt;coloryuv_analyze&gt;
-#&lt;textsub&gt;
-#&lt;trim&gt;
-#&lt;normalize&gt;
-#&lt;amplifydb&gt;
-#&lt;supereq&gt;
-#&lt;audio_analyze&gt;
-#&lt;rate&gt;</value>
-  </data>
-  <data name="Def_AVCTextBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="Def_AVCTextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Name" xml:space="preserve">
-    <value>Def_AVCTextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_AVCTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="AVCTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="&gt;&gt;Def_BassAudioTextBox.Name" xml:space="preserve">
+    <value>Def_BassAudioTextBox</value>
   </data>
-  <data name="AVCTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
-  </data>
-  <data name="AVCTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="AVCTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AVCTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="AVCTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
-  </data>
-  <data name="AVCTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="AVCTextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.Name" xml:space="preserve">
-    <value>AVCTextBox</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;Def_BassAudioTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AVCTextBox.Parent" xml:space="preserve">
-    <value>AVCTabPage</value>
-  </data>
-  <data name="&gt;&gt;AVCTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="VC1Label.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="VC1Label.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
-  </data>
-  <data name="VC1Label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 14</value>
-  </data>
-  <data name="VC1Label.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="VC1Label.Text" xml:space="preserve">
-    <value>MPEG/MPEGTS VC1 파일 - 기본 오디오 스트림으로 인코딩됩니다.</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Name" xml:space="preserve">
-    <value>VC1Label</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;VC1Label.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Def_VC1TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
-  </data>
-  <data name="Def_VC1TextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="Def_VC1TextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Def_VC1TextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="Def_VC1TextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 58</value>
-  </data>
-  <data name="Def_VC1TextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="Def_VC1TextBox.Text" xml:space="preserve">
-    <value>LoadPlugin("#&lt;pluginpath&gt;DirectShowSource.dll")
-LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
-
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=-1, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
-A=DirectShowSource("#&lt;source&gt;", timeout=6000, video=false)
-AudioDub(V,A)
-#&lt;deinterlace&gt;
-#&lt;delayaudio2&gt;
-#&lt;channel&gt;
-#&lt;crop&gt;
-#&lt;turn&gt;
-#&lt;image&gt;
-ConvertToYV12()
-#&lt;coloryuv&gt;
-#&lt;sharpen&gt;
-#&lt;tweak&gt;
-#&lt;coloryuv_analyze&gt;
-#&lt;textsub&gt;
-#&lt;trim&gt;
-#&lt;normalize&gt;
-#&lt;amplifydb&gt;
-#&lt;supereq&gt;
-#&lt;audio_analyze&gt;
-#&lt;rate&gt;</value>
-  </data>
-  <data name="Def_VC1TextBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="Def_VC1TextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Name" xml:space="preserve">
-    <value>Def_VC1TextBox</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;Def_VC1TextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="VC1TextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="VC1TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
-  </data>
-  <data name="VC1TextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="VC1TextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="VC1TextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="VC1TextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
-  </data>
-  <data name="VC1TextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="VC1TextBox.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Name" xml:space="preserve">
-    <value>VC1TextBox</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.Parent" xml:space="preserve">
-    <value>VC1TabPage</value>
-  </data>
-  <data name="&gt;&gt;VC1TextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="BassAudioLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="BassAudioLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
-  </data>
-  <data name="BassAudioLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 14</value>
-  </data>
-  <data name="BassAudioLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="BassAudioLabel.Text" xml:space="preserve">
-    <value>오디오 파일</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Name" xml:space="preserve">
-    <value>BassAudioLabel</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BassAudioLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Def_BassAudioTextBox.Parent" xml:space="preserve">
     <value>BassAudioTabPage</value>
   </data>
-  <data name="&gt;&gt;BassAudioLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Def_BassAudioTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTextBox.Name" xml:space="preserve">
+    <value>BassAudioTextBox</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTextBox.Parent" xml:space="preserve">
+    <value>BassAudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BassAudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="BassAudioTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="BassAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>802, 336</value>
+  </data>
+  <data name="BassAudioTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BassAudioTabPage.Text" xml:space="preserve">
+    <value>BassAudio</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Name" xml:space="preserve">
+    <value>BassAudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;BassAudioTabPage.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="Def_BassAudioTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
@@ -2044,13 +1351,13 @@ ConvertToYV12()
     <value>BassAudioTabPage</value>
   </data>
   <data name="&gt;&gt;Def_BassAudioTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="BassAudioTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="BassAudioTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 0</value>
   </data>
   <data name="BassAudioTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>2147483647</value>
@@ -2062,7 +1369,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="BassAudioTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
+    <value>802, 336</value>
   </data>
   <data name="BassAudioTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -2080,34 +1387,55 @@ ConvertToYV12()
     <value>BassAudioTabPage</value>
   </data>
   <data name="&gt;&gt;BassAudioTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
-  <data name="NicAudioLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;Def_NicAudioTextBox.Name" xml:space="preserve">
+    <value>Def_NicAudioTextBox</value>
   </data>
-  <data name="NicAudioLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
+  <data name="&gt;&gt;Def_NicAudioTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="NicAudioLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 14</value>
-  </data>
-  <data name="NicAudioLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="NicAudioLabel.Text" xml:space="preserve">
-    <value>AC3, DTS 파일</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Name" xml:space="preserve">
-    <value>NicAudioLabel</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NicAudioLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Def_NicAudioTextBox.Parent" xml:space="preserve">
     <value>NicAudioTabPage</value>
   </data>
-  <data name="&gt;&gt;NicAudioLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Def_NicAudioTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTextBox.Name" xml:space="preserve">
+    <value>NicAudioTextBox</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTextBox.Parent" xml:space="preserve">
+    <value>NicAudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NicAudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="NicAudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>802, 336</value>
+  </data>
+  <data name="NicAudioTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="NicAudioTabPage.Text" xml:space="preserve">
+    <value>NicAudio</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Name" xml:space="preserve">
+    <value>NicAudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;NicAudioTabPage.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="Def_NicAudioTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
@@ -2158,13 +1486,13 @@ ConvertToYV12()
     <value>NicAudioTabPage</value>
   </data>
   <data name="&gt;&gt;Def_NicAudioTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="NicAudioTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="NicAudioTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 0</value>
   </data>
   <data name="NicAudioTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>2147483647</value>
@@ -2176,7 +1504,7 @@ ConvertToYV12()
     <value>Both</value>
   </data>
   <data name="NicAudioTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>802, 301</value>
+    <value>802, 336</value>
   </data>
   <data name="NicAudioTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -2194,41 +1522,131 @@ ConvertToYV12()
     <value>NicAudioTabPage</value>
   </data>
   <data name="&gt;&gt;NicAudioTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ChannelScriptTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="ChannelScriptTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>802, 336</value>
+  </data>
+  <data name="ChannelScriptTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="ChannelLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="ChannelScriptTabPage.Text" xml:space="preserve">
+    <value>Channel</value>
   </data>
-  <data name="ChannelLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 8</value>
-  </data>
-  <data name="ChannelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 14</value>
-  </data>
-  <data name="ChannelLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="ChannelLabel.Text" xml:space="preserve">
-    <value>채널 스크립트</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Name" xml:space="preserve">
-    <value>ChannelLabel</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChannelLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ChannelScriptTabPage.Name" xml:space="preserve">
     <value>ChannelScriptTabPage</value>
   </data>
-  <data name="&gt;&gt;ChannelLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;ChannelScriptTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;ChannelScriptTabPage.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <metadata name="ProcessDetTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 17</value>
   </metadata>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 0</value>
+    <value>17, 17</value>
   </metadata>
+  <data name="FolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="FolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>폴더(&amp;F)</value>
+  </data>
+  <data name="InitializationToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="InitializationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 20</value>
+  </data>
+  <data name="InitializationToolStripMenuItem.Text" xml:space="preserve">
+    <value>스크립트 초기화</value>
+  </data>
+  <data name="PresetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="PresetToolStripMenuItem.Text" xml:space="preserve">
+    <value>프리셋</value>
+  </data>
+  <data name="AllMovieFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="AllMovieFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>모든 동영상 파일</value>
+  </data>
+  <data name="MPEGTSMPEGFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="MPEGTSMPEGFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>MPEGTS/MPEG 파일</value>
+  </data>
+  <data name="ASFFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="ASFFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>ASF 파일</value>
+  </data>
+  <data name="M2TSFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="M2TSFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>M2TS 파일</value>
+  </data>
+  <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 6</value>
+  </data>
+  <data name="AllAudioFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="AllAudioFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>모든 오디오 파일</value>
+  </data>
+  <data name="AC3DTSFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="AC3DTSFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>AC3, DTS 파일</value>
+  </data>
+  <data name="RMAMRFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="RMAMRFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>RM, AMR 파일</value>
+  </data>
+  <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 6</value>
+  </data>
+  <data name="InitializationDSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="InitializationDSToolStripMenuItem.Text" xml:space="preserve">
+    <value>디코더 설정 초기화(최적)</value>
+  </data>
+  <data name="AllICToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="AllICToolStripMenuItem.Text" xml:space="preserve">
+    <value>모두 내장코덱으로(FFmpeg)</value>
+  </data>
+  <data name="AllOCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="AllOCToolStripMenuItem.Text" xml:space="preserve">
+    <value>모두 외부코덱으로(DShow)</value>
+  </data>
+  <data name="디코드설정ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 20</value>
+  </data>
+  <data name="디코드설정ToolStripMenuItem.Text" xml:space="preserve">
+    <value>디코더 설정</value>
+  </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2253,12 +1671,6 @@ ConvertToYV12()
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="FolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
-  </data>
-  <data name="FolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>폴더(&amp;F)</value>
-  </data>
   <data name="PluginToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 22</value>
   </data>
@@ -2271,20 +1683,113 @@ ConvertToYV12()
   <data name="ToolsToolStripMenuItem.Text" xml:space="preserve">
     <value>도구</value>
   </data>
-  <data name="InitializationToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="AllMovieFilesFFmpegSourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="InitializationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 20</value>
+  <data name="AllMovieFilesFFmpegSourceToolStripMenuItem.Text" xml:space="preserve">
+    <value>FFmpegSource</value>
   </data>
-  <data name="InitializationToolStripMenuItem.Text" xml:space="preserve">
-    <value>스크립트 초기화</value>
+  <data name="AllMovieFilesDirectShowSourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="PresetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 20</value>
+  <data name="AllMovieFilesDirectShowSourceToolStripMenuItem.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
   </data>
-  <data name="PresetToolStripMenuItem.Text" xml:space="preserve">
-    <value>프리셋</value>
+  <data name="MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Text" xml:space="preserve">
+    <value>FFmpegSource</value>
+  </data>
+  <data name="MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Text" xml:space="preserve">
+    <value>MPEG2Source</value>
+  </data>
+  <data name="ASFFilesFFmpegSourceToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ASFFilesFFmpegSourceToolStripMenuItem2.Text" xml:space="preserve">
+    <value>FFmpegSource</value>
+  </data>
+  <data name="ASFFilesDirectShowSourceToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ASFFilesDirectShowSourceToolStripMenuItem1.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
+  </data>
+  <data name="M2TSFilesFFmpegSourceToolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="M2TSFilesFFmpegSourceToolStripMenuItem6.Text" xml:space="preserve">
+    <value>FFmpegSource</value>
+  </data>
+  <data name="AllAudioFilesFFmpegSourceToolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="AllAudioFilesFFmpegSourceToolStripMenuItem3.Text" xml:space="preserve">
+    <value>FFmpegSource</value>
+  </data>
+  <data name="AllAudioFilesBassAudioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="AllAudioFilesBassAudioToolStripMenuItem.Text" xml:space="preserve">
+    <value>BassAudio</value>
+  </data>
+  <data name="AC3DTSFilesFFmpegSourceToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="AC3DTSFilesFFmpegSourceToolStripMenuItem4.Text" xml:space="preserve">
+    <value>FFmpegSource</value>
+  </data>
+  <data name="AC3DTSFilesNicAudioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="AC3DTSFilesNicAudioToolStripMenuItem.Text" xml:space="preserve">
+    <value>NicAudio</value>
+  </data>
+  <data name="RMAMRFilesFFmpegSourceToolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="RMAMRFilesFFmpegSourceToolStripMenuItem5.Text" xml:space="preserve">
+    <value>FFmpegSource</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AVSPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AVSPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="AVSPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>832, 449</value>
+  </data>
+  <data name="AVSPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Name" xml:space="preserve">
+    <value>AVSPanel</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AVSPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;StatusLabel.Name" xml:space="preserve">
     <value>StatusLabel</value>
@@ -2332,30 +1837,6 @@ ConvertToYV12()
     <value>AVSPanel</value>
   </data>
   <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AVSPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="AVSPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="AVSPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>832, 449</value>
-  </data>
-  <data name="AVSPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Name" xml:space="preserve">
-    <value>AVSPanel</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;AVSPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="StatusLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -2481,6 +1962,36 @@ ConvertToYV12()
   <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
+  </data>
+  <data name="M2TSFilesDirectShowSourceToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="M2TSFilesDirectShowSourceToolStripMenuItem1.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
+  </data>
+  <data name="AllAudioFilesDirectShowSourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="AllAudioFilesDirectShowSourceToolStripMenuItem.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
+  </data>
+  <data name="AC3DTSFilesDirectShowSourceToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="AC3DTSFilesDirectShowSourceToolStripMenuItem1.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
+  </data>
+  <data name="RMAMRFilesDirectShowSourceToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="RMAMRFilesDirectShowSourceToolStripMenuItem2.Text" xml:space="preserve">
+    <value>DirectShowSource</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2492,9 +2003,6 @@ ConvertToYV12()
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -2560,6 +2068,186 @@ ConvertToYV12()
     <value>PresetToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;PresetToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;디코드설정ToolStripMenuItem.Name" xml:space="preserve">
+    <value>디코드설정ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;디코드설정ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllMovieFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>AllMovieFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AllMovieFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllMovieFilesFFmpegSourceToolStripMenuItem.Name" xml:space="preserve">
+    <value>AllMovieFilesFFmpegSourceToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AllMovieFilesFFmpegSourceToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllMovieFilesDirectShowSourceToolStripMenuItem.Name" xml:space="preserve">
+    <value>AllMovieFilesDirectShowSourceToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AllMovieFilesDirectShowSourceToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPEGTSMPEGFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>MPEGTSMPEGFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;MPEGTSMPEGFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Name" xml:space="preserve">
+    <value>MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Name" xml:space="preserve">
+    <value>MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ASFFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>ASFFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ASFFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ASFFilesFFmpegSourceToolStripMenuItem2.Name" xml:space="preserve">
+    <value>ASFFilesFFmpegSourceToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;ASFFilesFFmpegSourceToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ASFFilesDirectShowSourceToolStripMenuItem1.Name" xml:space="preserve">
+    <value>ASFFilesDirectShowSourceToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;ASFFilesDirectShowSourceToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;M2TSFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>M2TSFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;M2TSFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;M2TSFilesFFmpegSourceToolStripMenuItem6.Name" xml:space="preserve">
+    <value>M2TSFilesFFmpegSourceToolStripMenuItem6</value>
+  </data>
+  <data name="&gt;&gt;M2TSFilesFFmpegSourceToolStripMenuItem6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem1.Name" xml:space="preserve">
+    <value>ToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllAudioFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>AllAudioFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AllAudioFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllAudioFilesFFmpegSourceToolStripMenuItem3.Name" xml:space="preserve">
+    <value>AllAudioFilesFFmpegSourceToolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;AllAudioFilesFFmpegSourceToolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllAudioFilesBassAudioToolStripMenuItem.Name" xml:space="preserve">
+    <value>AllAudioFilesBassAudioToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AllAudioFilesBassAudioToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AC3DTSFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>AC3DTSFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AC3DTSFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AC3DTSFilesFFmpegSourceToolStripMenuItem4.Name" xml:space="preserve">
+    <value>AC3DTSFilesFFmpegSourceToolStripMenuItem4</value>
+  </data>
+  <data name="&gt;&gt;AC3DTSFilesFFmpegSourceToolStripMenuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AC3DTSFilesNicAudioToolStripMenuItem.Name" xml:space="preserve">
+    <value>AC3DTSFilesNicAudioToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AC3DTSFilesNicAudioToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RMAMRFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>RMAMRFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;RMAMRFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RMAMRFilesFFmpegSourceToolStripMenuItem5.Name" xml:space="preserve">
+    <value>RMAMRFilesFFmpegSourceToolStripMenuItem5</value>
+  </data>
+  <data name="&gt;&gt;RMAMRFilesFFmpegSourceToolStripMenuItem5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem2.Name" xml:space="preserve">
+    <value>ToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InitializationDSToolStripMenuItem.Name" xml:space="preserve">
+    <value>InitializationDSToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;InitializationDSToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Name" xml:space="preserve">
+    <value>MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;M2TSFilesDirectShowSourceToolStripMenuItem1.Name" xml:space="preserve">
+    <value>M2TSFilesDirectShowSourceToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;M2TSFilesDirectShowSourceToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllAudioFilesDirectShowSourceToolStripMenuItem.Name" xml:space="preserve">
+    <value>AllAudioFilesDirectShowSourceToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AllAudioFilesDirectShowSourceToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AC3DTSFilesDirectShowSourceToolStripMenuItem1.Name" xml:space="preserve">
+    <value>AC3DTSFilesDirectShowSourceToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;AC3DTSFilesDirectShowSourceToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RMAMRFilesDirectShowSourceToolStripMenuItem2.Name" xml:space="preserve">
+    <value>RMAMRFilesDirectShowSourceToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;RMAMRFilesDirectShowSourceToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllICToolStripMenuItem.Name" xml:space="preserve">
+    <value>AllICToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AllICToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllOCToolStripMenuItem.Name" xml:space="preserve">
+    <value>AllOCToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AllOCToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

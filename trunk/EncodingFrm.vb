@@ -98,6 +98,22 @@ Public Class EncodingFrm
     'Win7진행바
     Dim _ITaskbarList3 As WinAPI.ITaskbarList3
 
+    '오버라이드
+    Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
+        Const WM_SYSCOMMAND As Integer = &H112
+        Const SC_MINIMIZE As Integer = &HF020
+
+        Select Case m.Msg
+            Case WM_SYSCOMMAND
+                If m.WParam.ToInt32() = SC_MINIMIZE Then
+                    MainFrm.WindowState = FormWindowState.Minimized
+                    Exit Sub
+                End If
+        End Select
+
+        MyBase.WndProc(m)
+    End Sub
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -493,19 +509,19 @@ Public Class EncodingFrm
             Dim ThreadSTR As New Threading.Thread(AddressOf OutputInfo)
             ThreadSTR.IsBackground = True
             ThreadSTR.Start()
+
+            Do Until ProcessEChkB = True
+                Application.DoEvents()
+                Threading.Thread.Sleep(10)
+            Loop
+        Else
+            Exit Sub
         End If
 
-        '---------------------------------------
+            '---------------------------------------
 
-        Do Until ProcessEChkB = True
-            Application.DoEvents()
-            Threading.Thread.Sleep(10)
-        Loop
-
-        '---------------------------------------
-
-        '타이머
-        TimeElapsedTimer.Enabled = False
+            '타이머
+            TimeElapsedTimer.Enabled = False
 
     End Sub
 
@@ -715,14 +731,11 @@ Public Class EncodingFrm
 
         '--------------
 
-        For Me.EncindexI = 0 To MainFrm.EncListListView.Items.Count - 1
+        Dim EncI As Integer = MainFrm.EncListListView.Items.Count
+        Me.EncindexI = 0
+        Do Until EncI <= Me.EncindexI
 
             Try
-
-                '인덱스 초과 방지
-                If EncindexI > MainFrm.EncListListView.Items.Count - 1 Then
-                    Exit For
-                End If
 
                 '체크여부 확인
                 If MainFrm.EncListListView.Items(EncindexI).Checked = False Then
@@ -1352,30 +1365,11 @@ ImageSkip:
                         _BottomCV = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(15).Text, ",")(3)
                     Catch ex As Exception
                     End Try
-                    If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
 
-                        '오디오만 있는경우를 생각 -ㅂ-;
-                        If (MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text = "None" AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text <> "None") OrElse MainFrm.EncListListView.Items(EncindexI).SubItems(5).Text = "V_None" Then '오디오만 있는 경우
-                            VF_AspectV = ""
-                        Else
-                            If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본
-                                '회전
-                                If ImagePPFrm.TurnCheckBox.Checked = True AndAlso (ImagePPFrm.TurnLeftRadioButton.Checked = True OrElse ImagePPFrm.TurnRightRadioButton.Checked = True) Then
-                                    VF_AspectV = ", aspect=" & Val(OriginH) - _TopCV - _BottomCV & ":" & Val(OriginW) - _LeftCV - _RightCV
-                                Else
-                                    VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
-                                End If
-                            Else
-                                VF_AspectV = ", aspect=" & ImagePPFrm.AviSynthImageSizeWidthTextBox.Text & ":" & ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
-                            End If
-                        End If
+                    '비율공통 설정
+                    VF_AspectV = ", setsar=1:1"
 
-                    Else
-                        If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본
-                            VF_AspectV = ", aspect=" & Val(OriginW) - _LeftCV - _RightCV & ":" & Val(OriginH) - _TopCV - _BottomCV
-                        Else
-                            VF_AspectV = ", aspect=" & EncSetFrm.ImageSizeWidthTextBox.Text & ":" & EncSetFrm.ImageSizeHeightTextBox.Text
-                        End If
+                    If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안함
 
                         '======================================================
                         'PAR 1:1 아닌경우 원본사이즈 비율적용//
@@ -1411,6 +1405,7 @@ ImageSkip:
                         '======================================================
 
                     End If
+
                 End If
 
                 '---------------------------------
@@ -1699,7 +1694,7 @@ ImageSkip:
 
 
 
-       
+
                 '===========================================
 
 
@@ -1866,7 +1861,11 @@ ImageSkip:
             End Try
 
 SKIP:
-        Next
+            '갱신
+            EncI = MainFrm.EncListListView.Items.Count
+            Me.EncindexI += 1
+        Loop
+
         '-------------------------------------------------------------------------------------
         ' 작업종료
         '-------------------------------------------------------------------------------------
