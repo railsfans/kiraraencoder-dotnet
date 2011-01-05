@@ -29,7 +29,7 @@ Public Class MainFrm
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
 
     'Beta여부
-    Dim BetaStrB As Boolean = True
+    Dim BetaStrB As Boolean = False
 
     '-------------------------------
 
