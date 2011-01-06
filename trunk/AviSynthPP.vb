@@ -88,17 +88,17 @@ Public Class AviSynthPP
                 End If
 
                 If fpsV = 14.99 OrElse fpsV = 14.985 Then
-                    fpsnumV = 15000
-                    fpsdenV = 1001
+                    fpsnumV = 14985
+                    fpsdenV = 1000
                 ElseIf fpsV = 23.98 OrElse fpsV = 23.976 Then
-                    fpsnumV = 24000
-                    fpsdenV = 1001
+                    fpsnumV = 23976
+                    fpsdenV = 1000
                 ElseIf fpsV = 29.97 Then
-                    fpsnumV = 30000
-                    fpsdenV = 1001
+                    fpsnumV = 2997
+                    fpsdenV = 100
                 ElseIf fpsV = 59.94 Then
-                    fpsnumV = 60000
-                    fpsdenV = 1001
+                    fpsnumV = 5994
+                    fpsdenV = 100
                 Else
                     If InStr(Str(fpsV), ".", CompareMethod.Text) <> 0 Then ' 소수점이 있으면
                         Dim FN As String = "0" '소수점 이하 숫자 구함(문자열로)
