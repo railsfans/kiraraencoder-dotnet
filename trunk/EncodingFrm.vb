@@ -910,9 +910,10 @@ Public Class EncodingFrm
                                         Dim DARtes As String = ""
                                         If InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) Then
                                             DAR00 = InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) + 4
-                                            If InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
-                                                DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                                            If InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, " ", CompareMethod.Text) Then
+                                                DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, " ", CompareMethod.Text) + 1
                                                 DARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, DAR00, DAR0 - DAR00 - 1)
+                                                DARtes = Replace(Replace(DARtes, ",", ""), "]", "")
                                             End If
                                         Else
                                             DAR0 = DAR0 + 1
@@ -988,9 +989,10 @@ Public Class EncodingFrm
                                         Dim DARtes As String = ""
                                         If InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) Then
                                             DAR00 = InStr(DAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "DAR ", CompareMethod.Text) + 4
-                                            If InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
-                                                DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                                            If InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, " ", CompareMethod.Text) Then
+                                                DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, " ", CompareMethod.Text) + 1
                                                 DARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, DAR00, DAR0 - DAR00 - 1)
+                                                DARtes = Replace(Replace(DARtes, ",", ""), "]", "")
                                             End If
                                         Else
                                             DAR0 = DAR0 + 1
@@ -1377,16 +1379,17 @@ ImageSkip:
                         Dim PARtes As String = ""
                         If InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) Then
                             PAR00 = InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) + 4
-                            If InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) Then
-                                PAR0 = InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                            If InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, " ", CompareMethod.Text) Then
+                                PAR0 = InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, " ", CompareMethod.Text) + 1
                                 PARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, PAR00, PAR0 - PAR00 - 1)
+                                PARtes = Replace(Replace(PARtes, ",", ""), "]", "")
                             End If
                         Else
                             PAR0 = PAR0 + 1
                         End If
                         If PARtes <> "" Then
                             Dim LP, RP As String
-                            If InStr(PARtes, " ", CompareMethod.Text) <> 0 AndAlso InStr(PARtes, ":", CompareMethod.Text) <> 0 Then
+                            If InStr(PARtes, ":", CompareMethod.Text) <> 0 Then
                                 Try
                                     PARtes = Split(PARtes, " ")(0)
                                     LP = Split(PARtes, ":")(0)
@@ -1856,8 +1859,11 @@ ImageSkip:
                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainDoneStr
 
             Catch ex As Exception
-                MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
+                Try
+                    MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
+                    MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
+                Catch ex2 As Exception
+                End Try
             End Try
 
 SKIP:
@@ -1982,7 +1988,6 @@ ENC_STOP:
         MainFrm.AVSGroupBox.Enabled = True
         MainFrm.EncSetGroupBox.Enabled = True
         MainFrm.EncSButton.Enabled = True
-        MainFrm.AllRemoveButton.Enabled = True
         MainFrm.StreamSelPanel.Enabled = True
         MainFrm.LangToolStripMenuItem.Enabled = True
         MainFrm.InChkToolStripMenuItem.Enabled = True

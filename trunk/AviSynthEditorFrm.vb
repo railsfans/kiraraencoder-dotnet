@@ -271,6 +271,17 @@ RELOAD:
                     ListenButton.Text = ListenButtonSTR
                 End If
                 If XTR.Name = "AviSynthEditorInitializationQ" Then LangCls.AviSynthEditorInitializationQ = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmSetDecToolStripMenuItem" Then SetDecToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmAllMovieFilesToolStripMenuItem" Then AllMovieFilesToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmMPEGTSMPEGFilesToolStripMenuItem" Then MPEGTSMPEGFilesToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmASFFilesToolStripMenuItem" Then ASFFilesToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmM2TSFilesToolStripMenuItem" Then M2TSFilesToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmAllAudioFilesToolStripMenuItem" Then AllAudioFilesToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmAC3DTSFilesToolStripMenuItem" Then AC3DTSFilesToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmRMAMRFilesToolStripMenuItem" Then RMAMRFilesToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmInitializationDSToolStripMenuItem" Then InitializationDSToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmAllICToolStripMenuItem" Then AllICToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmAllOCToolStripMenuItem" Then AllOCToolStripMenuItem.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception

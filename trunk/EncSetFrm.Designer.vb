@@ -428,6 +428,7 @@ Partial Class EncSetFrm
         'QuantizerCQPTrackBar
         '
         resources.ApplyResources(Me.QuantizerCQPTrackBar, "QuantizerCQPTrackBar")
+        Me.QuantizerCQPTrackBar.BackColor = System.Drawing.Color.White
         Me.QuantizerCQPTrackBar.Maximum = 51
         Me.QuantizerCQPTrackBar.Name = "QuantizerCQPTrackBar"
         Me.QuantizerCQPTrackBar.TickFrequency = 0
@@ -475,6 +476,7 @@ Partial Class EncSetFrm
         'QualityTrackBar
         '
         resources.ApplyResources(Me.QualityTrackBar, "QualityTrackBar")
+        Me.QualityTrackBar.BackColor = System.Drawing.Color.White
         Me.QualityTrackBar.Maximum = 510
         Me.QualityTrackBar.Minimum = 1
         Me.QualityTrackBar.Name = "QualityTrackBar"
@@ -500,6 +502,7 @@ Partial Class EncSetFrm
         'QuantizerTrackBar
         '
         resources.ApplyResources(Me.QuantizerTrackBar, "QuantizerTrackBar")
+        Me.QuantizerTrackBar.BackColor = System.Drawing.Color.White
         Me.QuantizerTrackBar.Maximum = 310
         Me.QuantizerTrackBar.Minimum = 10
         Me.QuantizerTrackBar.Name = "QuantizerTrackBar"
@@ -766,6 +769,7 @@ Partial Class EncSetFrm
         'ChromaEffectSTrackBar
         '
         resources.ApplyResources(Me.ChromaEffectSTrackBar, "ChromaEffectSTrackBar")
+        Me.ChromaEffectSTrackBar.BackColor = System.Drawing.Color.White
         Me.ChromaEffectSTrackBar.Maximum = 50
         Me.ChromaEffectSTrackBar.Minimum = -20
         Me.ChromaEffectSTrackBar.Name = "ChromaEffectSTrackBar"
@@ -790,6 +794,7 @@ Partial Class EncSetFrm
         'ChromaMatrixVSTrackBar
         '
         resources.ApplyResources(Me.ChromaMatrixVSTrackBar, "ChromaMatrixVSTrackBar")
+        Me.ChromaMatrixVSTrackBar.BackColor = System.Drawing.Color.White
         Me.ChromaMatrixVSTrackBar.Maximum = 13
         Me.ChromaMatrixVSTrackBar.Minimum = 3
         Me.ChromaMatrixVSTrackBar.Name = "ChromaMatrixVSTrackBar"
@@ -814,6 +819,7 @@ Partial Class EncSetFrm
         'ChromaMatrixHSTrackBar
         '
         resources.ApplyResources(Me.ChromaMatrixHSTrackBar, "ChromaMatrixHSTrackBar")
+        Me.ChromaMatrixHSTrackBar.BackColor = System.Drawing.Color.White
         Me.ChromaMatrixHSTrackBar.Maximum = 13
         Me.ChromaMatrixHSTrackBar.Minimum = 3
         Me.ChromaMatrixHSTrackBar.Name = "ChromaMatrixHSTrackBar"
@@ -830,6 +836,7 @@ Partial Class EncSetFrm
         'LumaEffectSTrackBar
         '
         resources.ApplyResources(Me.LumaEffectSTrackBar, "LumaEffectSTrackBar")
+        Me.LumaEffectSTrackBar.BackColor = System.Drawing.Color.White
         Me.LumaEffectSTrackBar.Maximum = 50
         Me.LumaEffectSTrackBar.Minimum = -20
         Me.LumaEffectSTrackBar.Name = "LumaEffectSTrackBar"
@@ -854,6 +861,7 @@ Partial Class EncSetFrm
         'LumaMatrixVSTrackBar
         '
         resources.ApplyResources(Me.LumaMatrixVSTrackBar, "LumaMatrixVSTrackBar")
+        Me.LumaMatrixVSTrackBar.BackColor = System.Drawing.Color.White
         Me.LumaMatrixVSTrackBar.Maximum = 13
         Me.LumaMatrixVSTrackBar.Minimum = 3
         Me.LumaMatrixVSTrackBar.Name = "LumaMatrixVSTrackBar"
@@ -878,6 +886,7 @@ Partial Class EncSetFrm
         'LumaMatrixHSTrackBar
         '
         resources.ApplyResources(Me.LumaMatrixHSTrackBar, "LumaMatrixHSTrackBar")
+        Me.LumaMatrixHSTrackBar.BackColor = System.Drawing.Color.White
         Me.LumaMatrixHSTrackBar.Maximum = 13
         Me.LumaMatrixHSTrackBar.Minimum = 3
         Me.LumaMatrixHSTrackBar.Name = "LumaMatrixHSTrackBar"
@@ -979,6 +988,7 @@ Partial Class EncSetFrm
         'AudioVolTrackBar
         '
         resources.ApplyResources(Me.AudioVolTrackBar, "AudioVolTrackBar")
+        Me.AudioVolTrackBar.BackColor = System.Drawing.Color.White
         Me.AudioVolTrackBar.Maximum = 3840
         Me.AudioVolTrackBar.Name = "AudioVolTrackBar"
         Me.AudioVolTrackBar.TickFrequency = 0
@@ -1069,6 +1079,7 @@ Partial Class EncSetFrm
         'VorbisQTrackBar
         '
         resources.ApplyResources(Me.VorbisQTrackBar, "VorbisQTrackBar")
+        Me.VorbisQTrackBar.BackColor = System.Drawing.Color.White
         Me.VorbisQTrackBar.Minimum = -1
         Me.VorbisQTrackBar.Name = "VorbisQTrackBar"
         Me.VorbisQTrackBar.TickFrequency = 0
@@ -1120,6 +1131,7 @@ Partial Class EncSetFrm
         'NeroAACQTrackBar
         '
         resources.ApplyResources(Me.NeroAACQTrackBar, "NeroAACQTrackBar")
+        Me.NeroAACQTrackBar.BackColor = System.Drawing.Color.White
         Me.NeroAACQTrackBar.Maximum = 100
         Me.NeroAACQTrackBar.Name = "NeroAACQTrackBar"
         Me.NeroAACQTrackBar.TickFrequency = 0
@@ -1162,6 +1174,7 @@ Partial Class EncSetFrm
         'NeroAACBitrateTrackBar
         '
         resources.ApplyResources(Me.NeroAACBitrateTrackBar, "NeroAACBitrateTrackBar")
+        Me.NeroAACBitrateTrackBar.BackColor = System.Drawing.Color.White
         Me.NeroAACBitrateTrackBar.Maximum = 640
         Me.NeroAACBitrateTrackBar.Minimum = 8
         Me.NeroAACBitrateTrackBar.Name = "NeroAACBitrateTrackBar"

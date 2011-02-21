@@ -164,9 +164,10 @@ Public Class AviSynthPP
                                 Dim DARtes As String = ""
                                 If InStr(DAR0, MainFrm.EncListListView.Items(index).SubItems(8).Text, "DAR ", CompareMethod.Text) Then
                                     DAR00 = InStr(DAR0, MainFrm.EncListListView.Items(index).SubItems(8).Text, "DAR ", CompareMethod.Text) + 4
-                                    If InStr(DAR00, MainFrm.EncListListView.Items(index).SubItems(8).Text, "]", CompareMethod.Text) Then
-                                        DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(index).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                                    If InStr(DAR00, MainFrm.EncListListView.Items(index).SubItems(8).Text, " ", CompareMethod.Text) Then
+                                        DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(index).SubItems(8).Text, " ", CompareMethod.Text) + 1
                                         DARtes = Mid(MainFrm.EncListListView.Items(index).SubItems(8).Text, DAR00, DAR0 - DAR00 - 1)
+                                        DARtes = Replace(Replace(DARtes, ",", ""), "]", "")
                                     End If
                                 Else
                                     DAR0 = DAR0 + 1
@@ -249,9 +250,10 @@ Public Class AviSynthPP
                                 Dim DARtes As String = ""
                                 If InStr(DAR0, MainFrm.EncListListView.Items(index).SubItems(8).Text, "DAR ", CompareMethod.Text) Then
                                     DAR00 = InStr(DAR0, MainFrm.EncListListView.Items(index).SubItems(8).Text, "DAR ", CompareMethod.Text) + 4
-                                    If InStr(DAR00, MainFrm.EncListListView.Items(index).SubItems(8).Text, "]", CompareMethod.Text) Then
-                                        DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(index).SubItems(8).Text, "]", CompareMethod.Text) + 1
+                                    If InStr(DAR00, MainFrm.EncListListView.Items(index).SubItems(8).Text, " ", CompareMethod.Text) Then
+                                        DAR0 = InStr(DAR00, MainFrm.EncListListView.Items(index).SubItems(8).Text, " ", CompareMethod.Text) + 1
                                         DARtes = Mid(MainFrm.EncListListView.Items(index).SubItems(8).Text, DAR00, DAR0 - DAR00 - 1)
+                                        DARtes = Replace(Replace(DARtes, ",", ""), "]", "")
                                     End If
                                 Else
                                     DAR0 = DAR0 + 1
@@ -907,14 +909,26 @@ ERRSKIP:
                     If (InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "h264", CompareMethod.Text) <> 0) OrElse (InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "vc1", CompareMethod.Text) <> 0) Then 'M2TSFiles
                         If AviSynthEditorFrm.M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
-                            AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+
+                            If StartHMSV = EndHMSV Then
+                                AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+                            Else
+                                AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=1")
+                            End If
+
                         ElseIf AviSynthEditorFrm.M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
                         End If
                     Else
                         If AviSynthEditorFrm.MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
-                            AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+
+                            If StartHMSV = EndHMSV Then
+                                AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+                            Else
+                                AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=1")
+                            End If
+
                         ElseIf AviSynthEditorFrm.MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
                         ElseIf AviSynthEditorFrm.MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = True Then
@@ -926,7 +940,13 @@ ERRSKIP:
 
                     If AviSynthEditorFrm.ASFFilesFFmpegSourceToolStripMenuItem2.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
-                        AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+
+                        If StartHMSV = EndHMSV Then
+                            AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+                        Else
+                            AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=1")
+                        End If
+
                     ElseIf AviSynthEditorFrm.ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
                     End If

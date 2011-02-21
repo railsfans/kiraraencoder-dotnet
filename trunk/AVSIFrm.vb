@@ -123,41 +123,51 @@ LANG_SKIP:
             InfoLabel.ForeColor = Color.Red
             AVSOK = False
             Exit Sub
-        End If
-        '----------------------------------- P1
-        Dim AVSFV As String = ""
-        Try
-            AVSFV = Diagnostics.FileVersionInfo.GetVersionInfo(MainFrm.PubAVSPATHStr).FileVersion
-            AVSFV = Replace(AVSFV, ",", ".")
-            AVSFV = Replace(AVSFV, " ", "")
-        Catch ex As Exception
-            AVSFV = ""
-        End Try
-        If AVSFV = "" Then
-            InfoLabel.Text = LangCls.AVSIInfoLabelNot
-            InfoLabel.ForeColor = Color.Red
-            AVSOK = False
-            Exit Sub
-        End If
-        '----------------------------------- P2
-        Dim AVSPV As String = ""
-        Try
-            AVSPV = Diagnostics.FileVersionInfo.GetVersionInfo(MainFrm.PubAVSPATHStr).ProductVersion
-            AVSPV = Replace(AVSPV, ",", ".")
-            AVSPV = Replace(AVSPV, " ", "")
-        Catch ex As Exception
-            AVSPV = ""
-        End Try
-        ProductVersionLabel.Text = LangCls.AVSIProductVersion & ": " & AVSPV
-        FileVersionLabel.Text = LangCls.AVSIFileVersion & ": " & AVSFV
-        If AVSFV < "2.5.8.5" Then '버전 검사
-            InfoLabel.Text = LangCls.AVSIInfoLabelOld
-            InfoLabel.ForeColor = Color.OrangeRed
-            AVSOK = True
         Else
-            InfoLabel.Text = LangCls.AVSIInfoLabelOK
-            InfoLabel.ForeColor = Color.Green
-            AVSOK = True
+            '버전정보가 없을경우 그냥스킵 (lib)
+            Dim FV As String = Diagnostics.FileVersionInfo.GetVersionInfo(MainFrm.PubAVSPATHStr).FileVersion
+            Dim PV As String = Diagnostics.FileVersionInfo.GetVersionInfo(MainFrm.PubAVSPATHStr).ProductVersion
+            If FV = "" OrElse PV = "" Then
+                InfoLabel.Text = LangCls.AVSIInfoLabelOK
+                InfoLabel.ForeColor = Color.Green
+                AVSOK = True
+                Exit Sub
+            End If
+            '----------------------------------- P1
+            Dim AVSFV As String = ""
+            Try
+                AVSFV = Diagnostics.FileVersionInfo.GetVersionInfo(MainFrm.PubAVSPATHStr).FileVersion
+                AVSFV = Replace(AVSFV, ",", ".")
+                AVSFV = Replace(AVSFV, " ", "")
+            Catch ex As Exception
+                AVSFV = ""
+            End Try
+            If AVSFV = "" Then
+                InfoLabel.Text = LangCls.AVSIInfoLabelNot
+                InfoLabel.ForeColor = Color.Red
+                AVSOK = False
+                Exit Sub
+            End If
+            '----------------------------------- P2
+            Dim AVSPV As String = ""
+            Try
+                AVSPV = Diagnostics.FileVersionInfo.GetVersionInfo(MainFrm.PubAVSPATHStr).ProductVersion
+                AVSPV = Replace(AVSPV, ",", ".")
+                AVSPV = Replace(AVSPV, " ", "")
+            Catch ex As Exception
+                AVSPV = ""
+            End Try
+            ProductVersionLabel.Text = LangCls.AVSIProductVersion & ": " & AVSPV
+            FileVersionLabel.Text = LangCls.AVSIFileVersion & ": " & AVSFV
+            If AVSFV < "2.5.8.5" Then '버전 검사
+                InfoLabel.Text = LangCls.AVSIInfoLabelOld
+                InfoLabel.ForeColor = Color.OrangeRed
+                AVSOK = True
+            Else
+                InfoLabel.Text = LangCls.AVSIInfoLabelOK
+                InfoLabel.ForeColor = Color.Green
+                AVSOK = True
+            End If
         End If
         '////////////////////////////
 

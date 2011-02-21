@@ -2352,30 +2352,37 @@ UAC:
             Catch ex As Exception
             End Try
             Exit Sub
-        End If
-        '----------------------------------- P1
-        Dim AVSFV As String = ""
-        Try
-            AVSFV = Diagnostics.FileVersionInfo.GetVersionInfo(Me.PubAVSPATHStr).FileVersion
-            AVSFV = Replace(AVSFV, ",", ".")
-            AVSFV = Replace(AVSFV, " ", "")
-        Catch ex As Exception
-            AVSFV = ""
-        End Try
-        If AVSFV = "" Then
+        Else
+            '버전정보가 없을경우 그냥스킵 (lib)
+            Dim FV As String = Diagnostics.FileVersionInfo.GetVersionInfo(PubAVSPATHStr).FileVersion
+            Dim PV As String = Diagnostics.FileVersionInfo.GetVersionInfo(PubAVSPATHStr).ProductVersion
+            If FV = "" OrElse PV = "" Then
+                Exit Sub
+            End If
+            '----------------------------------- P1
+            Dim AVSFV As String = ""
             Try
-                AVSIFrm.ShowDialog(Me)
+                AVSFV = Diagnostics.FileVersionInfo.GetVersionInfo(Me.PubAVSPATHStr).FileVersion
+                AVSFV = Replace(AVSFV, ",", ".")
+                AVSFV = Replace(AVSFV, " ", "")
             Catch ex As Exception
+                AVSFV = ""
             End Try
-            Exit Sub
-        End If
-        '----------------------------------- P2
-        If AVSFV < "2.5.8.5" Then '버전 검사
-            If AVSIFrm.OldVerCheckBox.Checked = False Then
+            If AVSFV = "" Then
                 Try
                     AVSIFrm.ShowDialog(Me)
                 Catch ex As Exception
                 End Try
+                Exit Sub
+            End If
+            '----------------------------------- P2
+            If AVSFV < "2.5.8.5" Then '버전 검사
+                If AVSIFrm.OldVerCheckBox.Checked = False Then
+                    Try
+                        AVSIFrm.ShowDialog(Me)
+                    Catch ex As Exception
+                    End Try
+                End If
             End If
         End If
         '////////////////////////////
@@ -2453,7 +2460,6 @@ UAC:
         AVSGroupBox.Enabled = False
         EncSetGroupBox.Enabled = False
         EncSButton.Enabled = False
-        AllRemoveButton.Enabled = False
         StreamSelPanel.Enabled = False
         LangToolStripMenuItem.Enabled = False
         InChkToolStripMenuItem.Enabled = False
@@ -6100,6 +6106,8 @@ RELOAD:
         Else
             If EncodingFrm.EncProcBool = False Then '인코딩중이 아닐때만 활성화
                 AllRemoveButton.Enabled = True
+            Else
+                AllRemoveButton.Enabled = False
             End If
         End If
 
