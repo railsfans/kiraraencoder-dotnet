@@ -46,7 +46,7 @@ Public Class FLoadFrm
             If FileCheckB = True Then
                 Dim FILEV As String = My.Computer.FileSystem.GetFileInfo(FileName).Extension 'ex) .abc
                 FILEV = LCase(FILEV) '소문자로 변환
-                If FILEV = ".3gp" OrElse FILEV = ".asf" OrElse FILEV = ".avi" OrElse FILEV = ".flv" OrElse FILEV = ".k3g" OrElse FILEV = ".m2t" OrElse FILEV = ".m2ts" OrElse FILEV = ".mkv" OrElse _
+                If FILEV = ".3g2" OrElse FILEV = ".3gp" OrElse FILEV = ".asf" OrElse FILEV = ".avi" OrElse FILEV = ".flv" OrElse FILEV = ".k3g" OrElse FILEV = ".m2t" OrElse FILEV = ".m2ts" OrElse FILEV = ".mkv" OrElse _
                     FILEV = ".mov" OrElse FILEV = ".mpg" OrElse FILEV = ".mpeg" OrElse FILEV = ".mp4" OrElse FILEV = ".mts" OrElse FILEV = ".rm" OrElse FILEV = ".skm" OrElse FILEV = ".wmv" OrElse _
                     FILEV = ".tp" OrElse FILEV = ".ts" OrElse FILEV = ".trp" OrElse FILEV = ".m2ts" OrElse FILEV = ".m2v" OrElse FILEV = ".mpv" OrElse FILEV = ".pva" OrElse FILEV = ".rmvb" OrElse _
                     FILEV = ".vob" OrElse FILEV = ".vro" OrElse FILEV = ".aac" OrElse FILEV = ".ac3" OrElse FILEV = ".dts" OrElse FILEV = ".flac" OrElse FILEV = ".m4a" OrElse FILEV = ".mp2" OrElse _

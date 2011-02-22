@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("Kirara Player")> 
-<Assembly: AssemblyCopyright("Copyright © 2008-2010 LEE KIWON")> 
+<Assembly: AssemblyCopyright("Copyright © 2008-2011 LEE KIWON")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 지정되도록 할 수 있습니다.
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.1.0.1")> 
-<Assembly: AssemblyFileVersion("1.1.0.1")> 
+<Assembly: AssemblyVersion("1.1.0.2")> 
+<Assembly: AssemblyFileVersion("1.1.0.2")> 
