@@ -32,12 +32,16 @@ Partial Class AVSIFrm
         Me.InfoLabel = New System.Windows.Forms.Label
         Me.FileVersionLabel = New System.Windows.Forms.Label
         Me.OldVerCheckBox = New System.Windows.Forms.CheckBox
+        Me.AVSOFFCheckBox = New System.Windows.Forms.CheckBox
+        Me.AVSOFFLabel = New System.Windows.Forms.Label
         Me.AVSIPanel.SuspendLayout()
         Me.IGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'AVSIPanel
         '
+        Me.AVSIPanel.Controls.Add(Me.AVSOFFLabel)
+        Me.AVSIPanel.Controls.Add(Me.AVSOFFCheckBox)
         Me.AVSIPanel.Controls.Add(Me.InstallButton)
         Me.AVSIPanel.Controls.Add(Me.RefBTN)
         Me.AVSIPanel.Controls.Add(Me.OKBTN)
@@ -94,6 +98,18 @@ Partial Class AVSIFrm
         Me.OldVerCheckBox.Name = "OldVerCheckBox"
         Me.OldVerCheckBox.UseVisualStyleBackColor = True
         '
+        'AVSOFFCheckBox
+        '
+        resources.ApplyResources(Me.AVSOFFCheckBox, "AVSOFFCheckBox")
+        Me.AVSOFFCheckBox.Name = "AVSOFFCheckBox"
+        Me.AVSOFFCheckBox.UseVisualStyleBackColor = True
+        '
+        'AVSOFFLabel
+        '
+        resources.ApplyResources(Me.AVSOFFLabel, "AVSOFFLabel")
+        Me.AVSOFFLabel.ForeColor = System.Drawing.Color.Green
+        Me.AVSOFFLabel.Name = "AVSOFFLabel"
+        '
         'AVSIFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -122,4 +138,6 @@ Partial Class AVSIFrm
     Friend WithEvents IGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents ProductVersionLabel As System.Windows.Forms.Label
     Friend WithEvents InstallButton As System.Windows.Forms.Button
+    Friend WithEvents AVSOFFCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents AVSOFFLabel As System.Windows.Forms.Label
 End Class

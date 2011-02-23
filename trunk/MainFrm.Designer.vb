@@ -60,6 +60,8 @@ Partial Class MainFrm
         Me.AudioTextBox = New System.Windows.Forms.TextBox
         Me.VideoTextBox = New System.Windows.Forms.TextBox
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.PlayPanel = New System.Windows.Forms.Panel
+        Me.PlayButton = New System.Windows.Forms.Button
         Me.RemovePanel = New System.Windows.Forms.Panel
         Me.RemoveButton = New System.Windows.Forms.Button
         Me.MovePanel = New System.Windows.Forms.Panel
@@ -106,8 +108,9 @@ Partial Class MainFrm
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.LangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DecSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AviSynthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ErrToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PresetContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -115,10 +118,16 @@ Partial Class MainFrm
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
+        Me.AviSynthContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ImgToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AudToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.SubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.EtcToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.EncListGroupBox.SuspendLayout()
         Me.ListviewContextMenuStrip.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.PlayPanel.SuspendLayout()
         Me.RemovePanel.SuspendLayout()
         Me.MovePanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -135,6 +144,7 @@ Partial Class MainFrm
         Me.Panel7.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.MainPanel.SuspendLayout()
+        Me.AviSynthContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncListGroupBox
@@ -317,6 +327,7 @@ Partial Class MainFrm
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PlayPanel)
         Me.Panel1.Controls.Add(Me.RemovePanel)
         Me.Panel1.Controls.Add(Me.MovePanel)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -324,6 +335,18 @@ Partial Class MainFrm
         Me.Panel1.Controls.Add(Me.AllRemoveButton)
         resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
+        '
+        'PlayPanel
+        '
+        Me.PlayPanel.Controls.Add(Me.PlayButton)
+        resources.ApplyResources(Me.PlayPanel, "PlayPanel")
+        Me.PlayPanel.Name = "PlayPanel"
+        '
+        'PlayButton
+        '
+        resources.ApplyResources(Me.PlayButton, "PlayButton")
+        Me.PlayButton.Name = "PlayButton"
+        Me.PlayButton.UseVisualStyleBackColor = True
         '
         'RemovePanel
         '
@@ -607,7 +630,8 @@ Partial Class MainFrm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.ErrToolStripMenuItem2, Me.InChkToolStripMenuItem, Me.AboutToolStripMenuItem, Me.TrayToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ErrToolStripMenuItem2, Me.AboutToolStripMenuItem, Me.TrayToolStripMenuItem})
+        Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -616,15 +640,20 @@ Partial Class MainFrm
         Me.LangToolStripMenuItem.Name = "LangToolStripMenuItem"
         resources.ApplyResources(Me.LangToolStripMenuItem, "LangToolStripMenuItem")
         '
+        'DecSToolStripMenuItem
+        '
+        Me.DecSToolStripMenuItem.Name = "DecSToolStripMenuItem"
+        resources.ApplyResources(Me.DecSToolStripMenuItem, "DecSToolStripMenuItem")
+        '
+        'AviSynthToolStripMenuItem
+        '
+        Me.AviSynthToolStripMenuItem.Name = "AviSynthToolStripMenuItem"
+        resources.ApplyResources(Me.AviSynthToolStripMenuItem, "AviSynthToolStripMenuItem")
+        '
         'ErrToolStripMenuItem2
         '
         Me.ErrToolStripMenuItem2.Name = "ErrToolStripMenuItem2"
         resources.ApplyResources(Me.ErrToolStripMenuItem2, "ErrToolStripMenuItem2")
-        '
-        'InChkToolStripMenuItem
-        '
-        Me.InChkToolStripMenuItem.Name = "InChkToolStripMenuItem"
-        resources.ApplyResources(Me.InChkToolStripMenuItem, "InChkToolStripMenuItem")
         '
         'AboutToolStripMenuItem
         '
@@ -656,6 +685,32 @@ Partial Class MainFrm
         '
         Me.Timer.Enabled = True
         '
+        'AviSynthContextMenuStrip
+        '
+        Me.AviSynthContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImgToolStripMenuItem, Me.AudToolStripMenuItem, Me.SubToolStripMenuItem, Me.EtcToolStripMenuItem})
+        Me.AviSynthContextMenuStrip.Name = "AviSynthContextMenuStrip"
+        resources.ApplyResources(Me.AviSynthContextMenuStrip, "AviSynthContextMenuStrip")
+        '
+        'ImgToolStripMenuItem
+        '
+        Me.ImgToolStripMenuItem.Name = "ImgToolStripMenuItem"
+        resources.ApplyResources(Me.ImgToolStripMenuItem, "ImgToolStripMenuItem")
+        '
+        'AudToolStripMenuItem
+        '
+        Me.AudToolStripMenuItem.Name = "AudToolStripMenuItem"
+        resources.ApplyResources(Me.AudToolStripMenuItem, "AudToolStripMenuItem")
+        '
+        'SubToolStripMenuItem
+        '
+        Me.SubToolStripMenuItem.Name = "SubToolStripMenuItem"
+        resources.ApplyResources(Me.SubToolStripMenuItem, "SubToolStripMenuItem")
+        '
+        'EtcToolStripMenuItem
+        '
+        Me.EtcToolStripMenuItem.Name = "EtcToolStripMenuItem"
+        resources.ApplyResources(Me.EtcToolStripMenuItem, "EtcToolStripMenuItem")
+        '
         'MainFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -669,6 +724,7 @@ Partial Class MainFrm
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.PlayPanel.ResumeLayout(False)
         Me.RemovePanel.ResumeLayout(False)
         Me.MovePanel.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -689,6 +745,7 @@ Partial Class MainFrm
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.MainPanel.ResumeLayout(False)
+        Me.AviSynthContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -781,8 +838,16 @@ Partial Class MainFrm
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents OutPlayToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OutInfoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents InChkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AVSPanel As System.Windows.Forms.Panel
     Friend WithEvents ErrToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AviSynthContextMenuStrip As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents ImgToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AudToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SubToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EtcToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PlayButton As System.Windows.Forms.Button
+    Friend WithEvents DecSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PlayPanel As System.Windows.Forms.Panel
+    Friend WithEvents AviSynthToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

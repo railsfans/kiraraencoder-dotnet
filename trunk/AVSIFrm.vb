@@ -1,6 +1,6 @@
 ﻿' ---------------------------------------------------------------------------------------
 ' 
-' Copyright (C) 2008-2010 LEE KIWON
+' Copyright (C) 2008-2011 LEE KIWON
 ' 
 ' This program is free software; you can redistribute it and/or
 ' modify it under the terms of the GNU General Public License
@@ -27,12 +27,14 @@ Public Class AVSIFrm
     Private Sub AVSIFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
 
         MainFrm.OldVerCheckBoxAVSIFrmV = OldVerCheckBox.Checked
+        MainFrm.AVSOFFCheckBoxAVSIFrmV = AVSOFFCheckBox.Checked
 
     End Sub
 
     Private Sub AVSIFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         OldVerCheckBox.Checked = MainFrm.OldVerCheckBoxAVSIFrmV
+        AVSOFFCheckBox.Checked = MainFrm.AVSOFFCheckBoxAVSIFrmV
 
         '=========================================
         'Rev 1.1
@@ -81,6 +83,8 @@ Public Class AVSIFrm
                 If XTR.Name = "AVSIFrmOldVerCheckBox" Then OldVerCheckBox.Text = XTR.ReadString
                 If XTR.Name = "AVSIFrmRefBTN" Then RefBTN.Text = XTR.ReadString
                 If XTR.Name = "AVSIFrmInstallButton" Then InstallButton.Text = XTR.ReadString
+                If XTR.Name = "AVSIFrmAVSOFFCheckBox" Then AVSOFFCheckBox.Text = XTR.ReadString
+                If XTR.Name = "AVSIFrmAVSOFFLabel" Then AVSOFFLabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -105,7 +109,7 @@ LANG_SKIP:
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
         '버전 체크
         RefBTN_Click(Nothing, Nothing)
-        If AVSOK = False Then
+        If AVSOK = False OrElse AVSOFFCheckBox.Checked = True Then
             MainFrm.AVSPanel.Enabled = False
             MainFrm.AVSCheckBox.Checked = False
         Else
@@ -180,4 +184,11 @@ LANG_SKIP:
         End Try
     End Sub
 
+    Private Sub OldVerCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OldVerCheckBox.CheckedChanged
+
+    End Sub
+
+    Private Sub AVSOFFCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSOFFCheckBox.CheckedChanged
+
+    End Sub
 End Class

@@ -64,9 +64,16 @@ Partial Class AviSynthEditorFrm
         Me.FolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PluginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.InitializationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PresetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SetDecToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.PresetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.InitializationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AVSPanel = New System.Windows.Forms.Panel
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.StatusLabel = New System.Windows.Forms.Label
+        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.CancelBTN = New System.Windows.Forms.Button
+        Me.OKBTN = New System.Windows.Forms.Button
+        Me.DecContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.AllMovieFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AllMovieFilesFFmpegSourceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AllMovieFilesDirectShowSourceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -96,12 +103,6 @@ Partial Class AviSynthEditorFrm
         Me.InitializationDSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AllICToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AllOCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.AVSPanel = New System.Windows.Forms.Panel
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.StatusLabel = New System.Windows.Forms.Label
-        Me.Panel3 = New System.Windows.Forms.Panel
-        Me.CancelBTN = New System.Windows.Forms.Button
-        Me.OKBTN = New System.Windows.Forms.Button
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.ConPanel.SuspendLayout()
@@ -117,6 +118,7 @@ Partial Class AviSynthEditorFrm
         Me.AVSPanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.DecContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -363,7 +365,7 @@ Partial Class AviSynthEditorFrm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FolderToolStripMenuItem, Me.InitializationToolStripMenuItem, Me.PresetToolStripMenuItem, Me.SetDecToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FolderToolStripMenuItem, Me.SetDecToolStripMenuItem, Me.PresetToolStripMenuItem, Me.InitializationToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -383,21 +385,66 @@ Partial Class AviSynthEditorFrm
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
         resources.ApplyResources(Me.ToolsToolStripMenuItem, "ToolsToolStripMenuItem")
         '
-        'InitializationToolStripMenuItem
+        'SetDecToolStripMenuItem
         '
-        resources.ApplyResources(Me.InitializationToolStripMenuItem, "InitializationToolStripMenuItem")
-        Me.InitializationToolStripMenuItem.Name = "InitializationToolStripMenuItem"
+        Me.SetDecToolStripMenuItem.Name = "SetDecToolStripMenuItem"
+        resources.ApplyResources(Me.SetDecToolStripMenuItem, "SetDecToolStripMenuItem")
         '
         'PresetToolStripMenuItem
         '
         Me.PresetToolStripMenuItem.Name = "PresetToolStripMenuItem"
         resources.ApplyResources(Me.PresetToolStripMenuItem, "PresetToolStripMenuItem")
         '
-        'SetDecToolStripMenuItem
+        'InitializationToolStripMenuItem
         '
-        Me.SetDecToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AllMovieFilesToolStripMenuItem, Me.MPEGTSMPEGFilesToolStripMenuItem, Me.ASFFilesToolStripMenuItem, Me.M2TSFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.AllAudioFilesToolStripMenuItem, Me.AC3DTSFilesToolStripMenuItem, Me.RMAMRFilesToolStripMenuItem, Me.ToolStripMenuItem2, Me.InitializationDSToolStripMenuItem, Me.AllICToolStripMenuItem, Me.AllOCToolStripMenuItem})
-        Me.SetDecToolStripMenuItem.Name = "SetDecToolStripMenuItem"
-        resources.ApplyResources(Me.SetDecToolStripMenuItem, "SetDecToolStripMenuItem")
+        resources.ApplyResources(Me.InitializationToolStripMenuItem, "InitializationToolStripMenuItem")
+        Me.InitializationToolStripMenuItem.Name = "InitializationToolStripMenuItem"
+        '
+        'AVSPanel
+        '
+        Me.AVSPanel.Controls.Add(Me.Panel2)
+        Me.AVSPanel.Controls.Add(Me.Panel1)
+        Me.AVSPanel.Controls.Add(Me.TabControl1)
+        resources.ApplyResources(Me.AVSPanel, "AVSPanel")
+        Me.AVSPanel.Name = "AVSPanel"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.StatusLabel)
+        Me.Panel2.Controls.Add(Me.Panel3)
+        resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.Name = "Panel2"
+        '
+        'StatusLabel
+        '
+        resources.ApplyResources(Me.StatusLabel, "StatusLabel")
+        Me.StatusLabel.ForeColor = System.Drawing.Color.Green
+        Me.StatusLabel.Name = "StatusLabel"
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.CancelBTN)
+        Me.Panel3.Controls.Add(Me.OKBTN)
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
+        '
+        'CancelBTN
+        '
+        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
+        Me.CancelBTN.Name = "CancelBTN"
+        Me.CancelBTN.UseVisualStyleBackColor = True
+        '
+        'OKBTN
+        '
+        resources.ApplyResources(Me.OKBTN, "OKBTN")
+        Me.OKBTN.Name = "OKBTN"
+        Me.OKBTN.UseVisualStyleBackColor = True
+        '
+        'DecContextMenuStrip
+        '
+        Me.DecContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AllMovieFilesToolStripMenuItem, Me.MPEGTSMPEGFilesToolStripMenuItem, Me.ASFFilesToolStripMenuItem, Me.M2TSFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.AllAudioFilesToolStripMenuItem, Me.AC3DTSFilesToolStripMenuItem, Me.RMAMRFilesToolStripMenuItem, Me.ToolStripMenuItem2, Me.InitializationDSToolStripMenuItem, Me.AllICToolStripMenuItem, Me.AllOCToolStripMenuItem})
+        Me.DecContextMenuStrip.Name = "ContextMenuStrip1"
+        resources.ApplyResources(Me.DecContextMenuStrip, "DecContextMenuStrip")
         '
         'AllMovieFilesToolStripMenuItem
         '
@@ -551,46 +598,6 @@ Partial Class AviSynthEditorFrm
         Me.AllOCToolStripMenuItem.Name = "AllOCToolStripMenuItem"
         resources.ApplyResources(Me.AllOCToolStripMenuItem, "AllOCToolStripMenuItem")
         '
-        'AVSPanel
-        '
-        Me.AVSPanel.Controls.Add(Me.Panel2)
-        Me.AVSPanel.Controls.Add(Me.Panel1)
-        Me.AVSPanel.Controls.Add(Me.TabControl1)
-        resources.ApplyResources(Me.AVSPanel, "AVSPanel")
-        Me.AVSPanel.Name = "AVSPanel"
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.StatusLabel)
-        Me.Panel2.Controls.Add(Me.Panel3)
-        resources.ApplyResources(Me.Panel2, "Panel2")
-        Me.Panel2.Name = "Panel2"
-        '
-        'StatusLabel
-        '
-        resources.ApplyResources(Me.StatusLabel, "StatusLabel")
-        Me.StatusLabel.ForeColor = System.Drawing.Color.Green
-        Me.StatusLabel.Name = "StatusLabel"
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.CancelBTN)
-        Me.Panel3.Controls.Add(Me.OKBTN)
-        resources.ApplyResources(Me.Panel3, "Panel3")
-        Me.Panel3.Name = "Panel3"
-        '
-        'CancelBTN
-        '
-        resources.ApplyResources(Me.CancelBTN, "CancelBTN")
-        Me.CancelBTN.Name = "CancelBTN"
-        Me.CancelBTN.UseVisualStyleBackColor = True
-        '
-        'OKBTN
-        '
-        resources.ApplyResources(Me.OKBTN, "OKBTN")
-        Me.OKBTN.Name = "OKBTN"
-        Me.OKBTN.UseVisualStyleBackColor = True
-        '
         'AviSynthEditorFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -627,6 +634,7 @@ Partial Class AviSynthEditorFrm
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.DecContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -679,34 +687,35 @@ Partial Class AviSynthEditorFrm
     Friend WithEvents Def_FFmpegSourceTextBox As System.Windows.Forms.TextBox
     Friend WithEvents StatusLabel As System.Windows.Forms.Label
     Friend WithEvents EtcSButton As System.Windows.Forms.Button
+    Friend WithEvents DecContextMenuStrip As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents SetDecToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AllMovieFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AllMovieFilesFFmpegSourceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AllMovieFilesDirectShowSourceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MPEGTSMPEGFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ASFFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ASFFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ASFFilesFFmpegSourceToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ASFFilesDirectShowSourceToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents M2TSFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents M2TSFilesFFmpegSourceToolStripMenuItem6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents M2TSFilesDirectShowSourceToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents AllAudioFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AllAudioFilesFFmpegSourceToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AllAudioFilesBassAudioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AllAudioFilesDirectShowSourceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AC3DTSFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AC3DTSFilesFFmpegSourceToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AC3DTSFilesNicAudioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AC3DTSFilesDirectShowSourceToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RMAMRFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RMAMRFilesFFmpegSourceToolStripMenuItem5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RMAMRFilesDirectShowSourceToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents InitializationDSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents M2TSFilesDirectShowSourceToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AllAudioFilesDirectShowSourceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AC3DTSFilesDirectShowSourceToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RMAMRFilesDirectShowSourceToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AllICToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AllOCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

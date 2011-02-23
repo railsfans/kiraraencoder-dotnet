@@ -887,6 +887,30 @@
   <data name="&gt;&gt;BorderStyleGroupBox.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="FDgButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 21</value>
+  </data>
+  <data name="FDgButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 23</value>
+  </data>
+  <data name="FDgButton.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="FDgButton.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;FDgButton.Name" xml:space="preserve">
+    <value>FDgButton</value>
+  </data>
+  <data name="&gt;&gt;FDgButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FDgButton.Parent" xml:space="preserve">
+    <value>FontGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FDgButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="UnderlineCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -912,7 +936,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;UnderlineCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="StrikeOutCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -939,7 +963,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;StrikeOutCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="PreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>252, 101</value>
@@ -963,7 +987,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;PreviewLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="FontLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -990,7 +1014,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;FontLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="FontComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 49</value>
@@ -1011,7 +1035,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;FontComboBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="SizeLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1038,7 +1062,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;SizeLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="StyleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1065,7 +1089,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;StyleLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="SizeUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>250, 48</value>
@@ -1086,7 +1110,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;SizeUpDown.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="BoldCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1113,7 +1137,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;BoldCheckBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="PreviewLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1140,7 +1164,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;PreviewLabel2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="ItalicCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1167,7 +1191,7 @@
     <value>FontGroupBox</value>
   </data>
   <data name="&gt;&gt;ItalicCheckBox.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="FontGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 41</value>
@@ -2385,6 +2409,9 @@
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="FontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>142, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2408,6 +2435,12 @@
   </data>
   <data name="&gt;&gt;ColorDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FontDialog1.Name" xml:space="preserve">
+    <value>FontDialog1</value>
+  </data>
+  <data name="&gt;&gt;FontDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FontDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SubtitleFrm</value>

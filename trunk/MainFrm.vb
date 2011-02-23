@@ -1,6 +1,6 @@
 ﻿' ---------------------------------------------------------------------------------------
 ' 
-' Copyright (C) 2008-2010 LEE KIWON
+' Copyright (C) 2008-2011 LEE KIWON
 ' 
 ' This program is free software; you can redistribute it and/or
 ' modify it under the terms of the GNU General Public License
@@ -109,6 +109,7 @@ Public Class MainFrm
     Public AspectOriginToolStripMenuItemStreamFrmV As Boolean = True
     Public SizeOriginToolStripMenuItemStreamFrmV As Boolean = False
     Public OldVerCheckBoxAVSIFrmV As Boolean = False
+    Public AVSOFFCheckBoxAVSIFrmV As Boolean = False
     Public PriorityComboBoxEncodingFrmV As Integer = 2
 
     '설정
@@ -129,6 +130,11 @@ Public Class MainFrm
     '진행중여부
     Dim SLangB As Boolean = False
     Public SPreB As Boolean = False
+
+    'wait
+    Dim shellpid As Integer
+    Dim shellpidexename As String
+    Dim shellpidstarttime As String
 
 #Region "프론트엔드 코어"
 
@@ -658,7 +664,7 @@ Public Class MainFrm
         Dim MSGV = MessageBox.Show(LangCls.MainSetEncAVSStr & vbNewLine & LangCls.MainInitializationQ, sender.ToString, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If MSGV = Windows.Forms.DialogResult.Yes Then
             '설정초기화
-            DefSUB()
+            DefSUB(True)
             '설정저장
             XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
             '프리셋 표시
@@ -696,7 +702,7 @@ Public Class MainFrm
         Try
             If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\preset\" & PathV) = True Then
                 '기본값 - 새로운 설정이 나올때 기본값을 안 해버리면 그대로 이전 설정 나오게 됨
-                DefSUB()
+                DefSUB(False)
                 '설정열고저장
                 XML_LOAD(My.Application.Info.DirectoryPath & "\preset\" & PathV)
                 XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
@@ -845,11 +851,36 @@ Public Class MainFrm
                 If XTR.Name = "MainInInfoToolStripMenuItem" Then InInfoToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainOutPlayToolStripMenuItem" Then OutPlayToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainOutInfoToolStripMenuItem" Then OutInfoToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "MainFrmInChkToolStripMenuItem" Then InChkToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainDirectoryNotFound" Then LangCls.MainDirectoryNotFound = XTR.ReadString
                 If XTR.Name = "MainFileSame" Then LangCls.MainFileSame = XTR.ReadString
                 If XTR.Name = "MainFileNotFound" Then LangCls.MainFileNotFound = XTR.ReadString
                 If XTR.Name = "MainFileSizeIsTooLow" Then LangCls.MainFileSizeIsTooLow = XTR.ReadString
+                If XTR.Name = "MainFrmAvsToolStripMenuItem" Then AviSynthToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "MainFrmImgToolStripMenuItem" Then ImgToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "MainFrmAudToolStripMenuItem" Then AudToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "MainFrmSubToolStripMenuItem" Then SubToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "MainFrmEtcToolStripMenuItem" Then EtcToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "MainFrmPlayButton" Then PlayButton.Text = XTR.ReadString
+                If XTR.Name = "MainFrmAVSGroupBox" Then AVSGroupBox.Text = XTR.ReadString
+
+                '외부언어//
+                With AviSynthEditorFrm
+                    If XTR.Name = "AviSynthEditorFrmSetDecToolStripMenuItem" Then
+                        .SetDecToolStripMenuItem.Text = XTR.ReadString
+                        DecSToolStripMenuItem.Text = .SetDecToolStripMenuItem.Text
+                    End If
+                    If XTR.Name = "AviSynthEditorFrmAllMovieFilesToolStripMenuItem" Then .AllMovieFilesToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmMPEGTSMPEGFilesToolStripMenuItem" Then .MPEGTSMPEGFilesToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmASFFilesToolStripMenuItem" Then .ASFFilesToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmM2TSFilesToolStripMenuItem" Then .M2TSFilesToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmAllAudioFilesToolStripMenuItem" Then .AllAudioFilesToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmAC3DTSFilesToolStripMenuItem" Then .AC3DTSFilesToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmRMAMRFilesToolStripMenuItem" Then .RMAMRFilesToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmInitializationDSToolStripMenuItem" Then .InitializationDSToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmAllICToolStripMenuItem" Then .AllICToolStripMenuItem.Text = XTR.ReadString
+                    If XTR.Name = "AviSynthEditorFrmAllOCToolStripMenuItem" Then .AllOCToolStripMenuItem.Text = XTR.ReadString
+                End With
+                If XTR.Name = "MainFrmInChkToolStripMenuItem" Then PInfoFrm.InChkToolStripMenuItem.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -1593,6 +1624,23 @@ LANG_SKIP:
 
         '----------------------------------------------------
 
+        '닫기
+        If shellpid <> 0 Then
+            Try
+                If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
+                    If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
+                        If Process.GetProcessById(shellpid).HasExited = False Then
+                            Process.GetProcessById(shellpid).Kill()
+                            shellpid = 0
+                        End If
+                    End If
+                End If
+            Catch ex As Exception
+                Debug.Print("프로세스 실행중이지 않음!")
+                shellpid = 0
+            End Try
+        End If
+
         '폼 위치 크기 저장
         MainX = RzX
         MainY = RzY
@@ -1628,16 +1676,6 @@ LANG_SKIP:
         Next
 
         '작업한 파일 삭제 2단계//
-        Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs")
-        Catch ex As Exception
-        End Try
-        Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN.avs") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN.avs")
-        Catch ex As Exception
-        End Try
         Try
             If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Equalizer.feq") = True Then _
                My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Equalizer.feq")
@@ -1765,6 +1803,9 @@ LANG_SKIP:
         End If
         '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        '설정활성화 여부
+        AVSACTIVE()
+
         '언어파일 불러옴
         LangToolStripMenuItem.DropDownItems.Add("Auto-select", Nothing, AddressOf OutSelectLang)
         For Each IOGF As IO.FileInfo In New IO.DirectoryInfo(My.Application.Info.DirectoryPath & "\lang").GetFiles("*.xml")
@@ -1890,16 +1931,16 @@ LANG_SKIP:
         '****************************************************************
         '설정
         If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\settings.xml") = False Then '설정파일이 없으면
-            DefSUB()
+            DefSUB(True)
             XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
         Else
-            DefSUB()
+            DefSUB(True)
             XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
             If OpenErrV = False Then XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml") '오류가 없다면 파일기록, 새롭게 추가된 부분 저장관련..
         End If
         '설정파일 오류처리
         If OpenErrV = True Then
-            DefSUB()
+            DefSUB(True)
             XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
             OpenErrV = False
         End If
@@ -1940,7 +1981,7 @@ LANG_SKIP:
 
         '어플리케이션 설정
         Dim BetaStr As String = ""
-        If BetaStrB = True Then  BetaStr = " Beta"
+        If BetaStrB = True Then BetaStr = " Beta"
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
             Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
@@ -2346,44 +2387,51 @@ UAC:
 
         '////////////////////////////
         'AviSynth 검사//
-        If My.Computer.FileSystem.FileExists(Me.PubAVSPATHStr) = False Then
-            Try
-                AVSIFrm.ShowDialog(Me)
-            Catch ex As Exception
-            End Try
+        If AVSOFFCheckBoxAVSIFrmV = True Then 'AviSynth 사용 안 함
+            AVSPanel.Enabled = False
             Exit Sub
         Else
-            '버전정보가 없을경우 그냥스킵 (lib)
-            Dim FV As String = Diagnostics.FileVersionInfo.GetVersionInfo(PubAVSPATHStr).FileVersion
-            Dim PV As String = Diagnostics.FileVersionInfo.GetVersionInfo(PubAVSPATHStr).ProductVersion
-            If FV = "" OrElse PV = "" Then
-                Exit Sub
-            End If
-            '----------------------------------- P1
-            Dim AVSFV As String = ""
-            Try
-                AVSFV = Diagnostics.FileVersionInfo.GetVersionInfo(Me.PubAVSPATHStr).FileVersion
-                AVSFV = Replace(AVSFV, ",", ".")
-                AVSFV = Replace(AVSFV, " ", "")
-            Catch ex As Exception
-                AVSFV = ""
-            End Try
-            If AVSFV = "" Then
+
+            If My.Computer.FileSystem.FileExists(Me.PubAVSPATHStr) = False Then
                 Try
                     AVSIFrm.ShowDialog(Me)
                 Catch ex As Exception
                 End Try
                 Exit Sub
-            End If
-            '----------------------------------- P2
-            If AVSFV < "2.5.8.5" Then '버전 검사
-                If AVSIFrm.OldVerCheckBox.Checked = False Then
+            Else
+                '버전정보가 없을경우 그냥스킵 (lib)
+                Dim FV As String = Diagnostics.FileVersionInfo.GetVersionInfo(PubAVSPATHStr).FileVersion
+                Dim PV As String = Diagnostics.FileVersionInfo.GetVersionInfo(PubAVSPATHStr).ProductVersion
+                If FV = "" OrElse PV = "" Then
+                    Exit Sub
+                End If
+                '----------------------------------- P1
+                Dim AVSFV As String = ""
+                Try
+                    AVSFV = Diagnostics.FileVersionInfo.GetVersionInfo(Me.PubAVSPATHStr).FileVersion
+                    AVSFV = Replace(AVSFV, ",", ".")
+                    AVSFV = Replace(AVSFV, " ", "")
+                Catch ex As Exception
+                    AVSFV = ""
+                End Try
+                If AVSFV = "" Then
                     Try
                         AVSIFrm.ShowDialog(Me)
                     Catch ex As Exception
                     End Try
+                    Exit Sub
+                End If
+                '----------------------------------- P2
+                If AVSFV < "2.5.8.5" Then '버전 검사
+                    If AVSIFrm.OldVerCheckBox.Checked = False Then
+                        Try
+                            AVSIFrm.ShowDialog(Me)
+                        Catch ex As Exception
+                        End Try
+                    End If
                 End If
             End If
+
         End If
         '////////////////////////////
 
@@ -2462,10 +2510,28 @@ UAC:
         EncSButton.Enabled = False
         StreamSelPanel.Enabled = False
         LangToolStripMenuItem.Enabled = False
-        InChkToolStripMenuItem.Enabled = False
         SavePathTextBox.Enabled = False
         SetFolderButton.Enabled = False
         AboutToolStripMenuItem.Enabled = False
+        DecSToolStripMenuItem.Enabled = False
+        AviSynthToolStripMenuItem.Enabled = False
+
+        '재생
+        If shellpid <> 0 Then
+            Try
+                If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
+                    If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
+                        If Process.GetProcessById(shellpid).HasExited = False Then
+                            Process.GetProcessById(shellpid).Kill()
+                            shellpid = 0
+                        End If
+                    End If
+                End If
+            Catch ex As Exception
+                Debug.Print("프로세스 실행중이지 않음!")
+                shellpid = 0
+            End Try
+        End If
 
         Try
             EncodingFrm.Show(Me)
@@ -2533,6 +2599,7 @@ UAC:
         EncListListView.Columns(0).Width = 240
 
         OldVerCheckBoxAVSIFrmV = False
+        AVSOFFCheckBoxAVSIFrmV = False
 
         PriorityComboBoxEncodingFrmV = 2
 
@@ -2540,7 +2607,7 @@ UAC:
 
     End Sub
 
-    Private Sub DefSUB()
+    Private Sub DefSUB(ByVal AVSCHANBOOL As Boolean)
 
         '//////////////////////////////////////////////////////////// EncSetFrm
         With EncSetFrm
@@ -2607,7 +2674,13 @@ UAC:
             .SizeEncCheckBox.Checked = False
             .SizeEncTextBox.Text = "0"
             '예외
-            AVSCheckBox.Checked = True
+            If AVSCHANBOOL = True Then
+                If AVSOFFCheckBoxAVSIFrmV = False Then
+                    AVSCheckBox.Checked = True
+                Else
+                    AVSCheckBox.Checked = False
+                End If
+            End If
 
         End With
 
@@ -2973,6 +3046,11 @@ RELOAD:
                 If XTR.Name = "OldVerCheckBoxAVSIFrmV" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then OldVerCheckBoxAVSIFrmV = XTRSTR Else OldVerCheckBoxAVSIFrmV = False
+                End If
+
+                If XTR.Name = "AVSOFFCheckBoxAVSIFrmV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then AVSOFFCheckBoxAVSIFrmV = XTRSTR Else AVSOFFCheckBoxAVSIFrmV = False
                 End If
 
                 If XTR.Name = "PriorityComboBoxEncodingFrmV" Then
@@ -4556,9 +4634,13 @@ RELOAD:
                 End With
 
                 '예외
-                If XTR.Name = "AVSCheckBox" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = True
+                If AVSOFFCheckBoxAVSIFrmV = False Then
+                    If XTR.Name = "AVSCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = True
+                    End If
+                Else
+                    AVSCheckBox.Checked = False
                 End If
 
             Loop
@@ -4684,6 +4766,10 @@ RELOAD:
 
             XTWriter.WriteStartElement("OldVerCheckBoxAVSIFrmV")
             XTWriter.WriteString(OldVerCheckBoxAVSIFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("AVSOFFCheckBoxAVSIFrmV")
+            XTWriter.WriteString(AVSOFFCheckBoxAVSIFrmV)
             XTWriter.WriteEndElement()
 
             XTWriter.WriteStartElement("PriorityComboBoxEncodingFrmV")
@@ -5974,9 +6060,13 @@ RELOAD:
             End With
 
             '예외
-            XTWriter.WriteStartElement("AVSCheckBox")
-            XTWriter.WriteString(AVSCheckBox.Checked)
-            XTWriter.WriteEndElement()
+            If AVSOFFCheckBoxAVSIFrmV = False Then
+                XTWriter.WriteStartElement("AVSCheckBox")
+                XTWriter.WriteString(AVSCheckBox.Checked)
+                XTWriter.WriteEndElement()
+            Else
+                AVSCheckBox.Checked = False
+            End If
 
             XTWriter.WriteEndDocument()
 
@@ -5997,11 +6087,7 @@ RELOAD:
     Private Sub AVSSetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSSetButton.Click
 
         If SPreB = True Then Exit Sub
-
-        Try
-            AviSynthEditorFrm.ShowDialog(Me)
-        Catch ex As Exception
-        End Try
+        AviSynthContextMenuStrip.Show(Control.MousePosition)
 
     End Sub
 
@@ -6010,14 +6096,26 @@ RELOAD:
         PresetContextMenuStrip.Show(Control.MousePosition)
     End Sub
 
+    Private Sub AVSACTIVE()
+
+        If AVSCheckBox.Checked = True Then
+            AVSSetButton.Enabled = True
+            PlayPanel.Visible = True
+            DecSToolStripMenuItem.Visible = True
+            AviSynthToolStripMenuItem.Visible = True
+        Else
+            AVSSetButton.Enabled = False
+            PlayPanel.Visible = False
+            DecSToolStripMenuItem.Visible = False
+            AviSynthToolStripMenuItem.Visible = False
+        End If
+
+    End Sub
+
     Private Sub AVSCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSCheckBox.CheckedChanged
 
         '설정활성화 여부
-        If AVSCheckBox.Checked = True Then
-            AVSSetButton.Enabled = True
-        Else
-            AVSSetButton.Enabled = False
-        End If
+        AVSACTIVE()
 
         '-------------------------------------------------------------------------
 
@@ -6103,11 +6201,18 @@ RELOAD:
         If EncListListView.Items.Count = 0 Then
             SelIndex = -1
             AllRemoveButton.Enabled = False
+            PlayButton.Enabled = False
         Else
             If EncodingFrm.EncProcBool = False Then '인코딩중이 아닐때만 활성화
                 AllRemoveButton.Enabled = True
+                If EncListListView.SelectedItems.Count = 0 Then
+                    PlayButton.Enabled = False
+                Else
+                    PlayButton.Enabled = True
+                End If
             Else
                 AllRemoveButton.Enabled = False
+                PlayButton.Enabled = False
             End If
         End If
 
@@ -6304,13 +6409,6 @@ RELOAD:
         End Try
     End Sub
 
-    Private Sub InChkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InChkToolStripMenuItem.Click
-        Try
-            AVSIFrm.ShowDialog(Me)
-        Catch ex As Exception
-        End Try
-    End Sub
-
     Private Sub ErrToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ErrToolStripMenuItem2.Click
         ErrToolStripMenuItem_Click(Nothing, Nothing)
     End Sub
@@ -6322,5 +6420,121 @@ RELOAD:
 
     Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub AvsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        If SPreB = True Then Exit Sub
+
+        Try
+            AviSynthEditorFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub ImgToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImgToolStripMenuItem.Click
+        If SPreB = True Then Exit Sub
+
+        Try
+            ImagePPFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub AudToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AudToolStripMenuItem.Click
+        If SPreB = True Then Exit Sub
+
+        Try
+            AudioPPFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub SubToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SubToolStripMenuItem.Click
+        If SPreB = True Then Exit Sub
+
+        Try
+            SubtitleFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub EtcToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EtcToolStripMenuItem.Click
+        If SPreB = True Then Exit Sub
+
+        Try
+            ETCPPFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub PlayButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayButton.Click
+        If SPreB = True Then Exit Sub
+        EncListListView.Focus()
+
+        If shellpid <> 0 Then
+            Try
+                If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
+                    If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
+                        If Process.GetProcessById(shellpid).HasExited = False Then
+                            Process.GetProcessById(shellpid).Kill()
+                            shellpid = 0
+                        End If
+                    End If
+                End If
+            Catch ex As Exception
+                Debug.Print("프로세스 실행중이지 않음!")
+                shellpid = 0
+            End Try
+        End If
+
+        '선택된 아이템이 없으면 종료
+        If EncListListView.SelectedItems.Count = 0 Then
+            MsgBox(LangCls.MainSelectListA)
+            Exit Sub
+        End If
+
+        PlayButton.Enabled = False
+        Try
+            AviSynthPP.AviSynthPreprocess(SelIndex, True, Nothing, False, True)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            PlayButton.Enabled = True
+            Exit Sub
+        End Try
+
+        If AviSynthPP.INDEX_ProcessStopChk = True Then
+            AviSynthPP.INDEX_ProcessStopChk = False
+        Else
+            Dim MSGB As String = ""
+            MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
+           " -identify -noquiet -nofontconfig -vo direct3d"
+            shellpid = Shell(MSGB, AppWinStyle.NormalFocus)
+            shellpidexename = Process.GetProcessById(shellpid).ProcessName
+            shellpidstarttime = Process.GetProcessById(shellpid).StartTime
+        End If
+        PlayButton.Enabled = True
+
+    End Sub
+
+    Private Sub AllMovieFilesFFmpegSourceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub 디코더설정ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        AviSynthEditorFrm.SetDecToolStripMenuItem.Visible = True
+    End Sub
+
+    Private Sub DecSToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecSToolStripMenuItem.Click
+        If SPreB = True Then Exit Sub
+        AviSynthEditorFrm.DecContextMenuStrip.Show(Control.MousePosition)
+    End Sub
+
+    Private Sub AviSynthToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AviSynthToolStripMenuItem.Click
+        If SPreB = True Then Exit Sub
+
+        Try
+            AviSynthEditorFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

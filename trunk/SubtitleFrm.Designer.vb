@@ -93,6 +93,8 @@ Partial Class SubtitleFrm
         Me.OKBTN = New System.Windows.Forms.Button
         Me.DefBTN = New System.Windows.Forms.Button
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog
+        Me.FontDialog1 = New System.Windows.Forms.FontDialog
+        Me.FDgButton = New System.Windows.Forms.Button
         Me.SubPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.SubtitleTabPage.SuspendLayout()
@@ -299,6 +301,7 @@ Partial Class SubtitleFrm
         'SecondaryColourTrackBar
         '
         resources.ApplyResources(Me.SecondaryColourTrackBar, "SecondaryColourTrackBar")
+        Me.SecondaryColourTrackBar.BackColor = System.Drawing.Color.White
         Me.SecondaryColourTrackBar.Maximum = 255
         Me.SecondaryColourTrackBar.Name = "SecondaryColourTrackBar"
         Me.SecondaryColourTrackBar.TickFrequency = 0
@@ -336,6 +339,7 @@ Partial Class SubtitleFrm
         'PrimaryColourTrackBar
         '
         resources.ApplyResources(Me.PrimaryColourTrackBar, "PrimaryColourTrackBar")
+        Me.PrimaryColourTrackBar.BackColor = System.Drawing.Color.White
         Me.PrimaryColourTrackBar.Maximum = 255
         Me.PrimaryColourTrackBar.Name = "PrimaryColourTrackBar"
         Me.PrimaryColourTrackBar.TickFrequency = 0
@@ -376,6 +380,7 @@ Partial Class SubtitleFrm
         'BackColourTrackBar
         '
         resources.ApplyResources(Me.BackColourTrackBar, "BackColourTrackBar")
+        Me.BackColourTrackBar.BackColor = System.Drawing.Color.White
         Me.BackColourTrackBar.Maximum = 255
         Me.BackColourTrackBar.Name = "BackColourTrackBar"
         Me.BackColourTrackBar.TickFrequency = 0
@@ -385,6 +390,7 @@ Partial Class SubtitleFrm
         'OutlineColourTrackBar
         '
         resources.ApplyResources(Me.OutlineColourTrackBar, "OutlineColourTrackBar")
+        Me.OutlineColourTrackBar.BackColor = System.Drawing.Color.White
         Me.OutlineColourTrackBar.Maximum = 255
         Me.OutlineColourTrackBar.Name = "OutlineColourTrackBar"
         Me.OutlineColourTrackBar.TickFrequency = 0
@@ -518,6 +524,7 @@ Partial Class SubtitleFrm
         '
         'FontGroupBox
         '
+        Me.FontGroupBox.Controls.Add(Me.FDgButton)
         Me.FontGroupBox.Controls.Add(Me.UnderlineCheckBox)
         Me.FontGroupBox.Controls.Add(Me.StrikeOutCheckBox)
         Me.FontGroupBox.Controls.Add(Me.PreviewLabel)
@@ -615,6 +622,12 @@ Partial Class SubtitleFrm
         resources.ApplyResources(Me.DefBTN, "DefBTN")
         Me.DefBTN.Name = "DefBTN"
         Me.DefBTN.UseVisualStyleBackColor = True
+        '
+        'FDgButton
+        '
+        resources.ApplyResources(Me.FDgButton, "FDgButton")
+        Me.FDgButton.Name = "FDgButton"
+        Me.FDgButton.UseVisualStyleBackColor = True
         '
         'SubtitleFrm
         '
@@ -730,4 +743,6 @@ Partial Class SubtitleFrm
     Friend WithEvents ScaleYLabel As System.Windows.Forms.Label
     Friend WithEvents ScaleXNumericUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents ScaleXLabel As System.Windows.Forms.Label
+    Friend WithEvents FDgButton As System.Windows.Forms.Button
+    Friend WithEvents FontDialog1 As System.Windows.Forms.FontDialog
 End Class

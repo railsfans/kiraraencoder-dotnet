@@ -1,6 +1,6 @@
 ﻿' ---------------------------------------------------------------------------------------
 ' 
-' Copyright (C) 2008-2010 LEE KIWON
+' Copyright (C) 2008-2011 LEE KIWON
 ' 
 ' This program is free software; you can redistribute it and/or
 ' modify it under the terms of the GNU General Public License
@@ -1474,7 +1474,7 @@ ImageSkip:
                     End If
                     'EncToolStripStatusLabel.Text = LangCls.EncodingCreatingD2V or EncodingCreatingFFINDEX // 아래에서
                     Try
-                        AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True)
+                        AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True, False)
                     Catch ex As Exception
                         MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
                         MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
@@ -1488,8 +1488,8 @@ ImageSkip:
                         AviSynthPP.INDEX_ProcessStopChk = False
                         GoTo ENC_STOP
                     Else
-                        InputFilePath = My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs"
-                        InputFilePathN = My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN.avs"
+                        InputFilePath = My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs"
+                        InputFilePathN = My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs"
                     End If
 
                 Else
@@ -1911,7 +1911,7 @@ ENC_STOP:
             Try
                 Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
                 Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs")
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs")
                 _AviSynthClip.IDisposable_Dispose()
 
                 If InStr(InfoTextBox.Text, "Duration: 00:00:10.00", CompareMethod.Text) <> 0 Then '오류를 못 찾았지만 10초일경우 오류로 처리// (YV12에러는 못 찾음.)
@@ -1990,10 +1990,11 @@ ENC_STOP:
         MainFrm.EncSButton.Enabled = True
         MainFrm.StreamSelPanel.Enabled = True
         MainFrm.LangToolStripMenuItem.Enabled = True
-        MainFrm.InChkToolStripMenuItem.Enabled = True
         MainFrm.SavePathTextBox.Enabled = True
         MainFrm.SetFolderButton.Enabled = True
         MainFrm.AboutToolStripMenuItem.Enabled = True
+        MainFrm.DecSToolStripMenuItem.Enabled = True
+        MainFrm.AviSynthToolStripMenuItem.Enabled = True
 
         '********************************
 

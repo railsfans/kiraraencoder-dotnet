@@ -1,6 +1,6 @@
 ﻿' ---------------------------------------------------------------------------------------
 ' 
-' Copyright (C) 2008-2010 LEE KIWON
+' Copyright (C) 2008-2011 LEE KIWON
 ' 
 ' This program is free software; you can redistribute it and/or
 ' modify it under the terms of the GNU General Public License
@@ -30,9 +30,8 @@ Public Class AviSynthEditorFrm
     'wait
     Public waitbool As Boolean = False
     Dim shellpid As Integer
-
-    'ListenButtonP
-    Public ListenButtonP As Boolean = False
+    Dim shellpidexename As String
+    Dim shellpidstarttime As String
 
     Private Sub ImgSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImgSButton.Click
 
@@ -82,7 +81,7 @@ Public Class AviSynthEditorFrm
         PreviewButton.Enabled = False
 
         Try
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
         Catch ex As Exception
             MsgBox(ex.Message)
             PreviewButton.Enabled = True
@@ -128,10 +127,17 @@ Public Class AviSynthEditorFrm
 
         If shellpid <> 0 Then
             Try
-                If Process.GetProcessById(shellpid).HasExited = False Then
-                    Process.GetProcessById(shellpid).Kill()
+                If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
+                    If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
+                        If Process.GetProcessById(shellpid).HasExited = False Then
+                            Process.GetProcessById(shellpid).Kill()
+                            shellpid = 0
+                        End If
+                    End If
                 End If
             Catch ex As Exception
+                Debug.Print("프로세스 실행중이지 않음!")
+                shellpid = 0
             End Try
         End If
         
@@ -271,17 +277,6 @@ RELOAD:
                     ListenButton.Text = ListenButtonSTR
                 End If
                 If XTR.Name = "AviSynthEditorInitializationQ" Then LangCls.AviSynthEditorInitializationQ = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmSetDecToolStripMenuItem" Then SetDecToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmAllMovieFilesToolStripMenuItem" Then AllMovieFilesToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmMPEGTSMPEGFilesToolStripMenuItem" Then MPEGTSMPEGFilesToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmASFFilesToolStripMenuItem" Then ASFFilesToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmM2TSFilesToolStripMenuItem" Then M2TSFilesToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmAllAudioFilesToolStripMenuItem" Then AllAudioFilesToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmAC3DTSFilesToolStripMenuItem" Then AC3DTSFilesToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmRMAMRFilesToolStripMenuItem" Then RMAMRFilesToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmInitializationDSToolStripMenuItem" Then InitializationDSToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmAllICToolStripMenuItem" Then AllICToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmAllOCToolStripMenuItem" Then AllOCToolStripMenuItem.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -305,6 +300,22 @@ LANG_SKIP:
 
         If MainFrm.SPreB = True Then Exit Sub
 
+        If shellpid <> 0 Then
+            Try
+                If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
+                    If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
+                        If Process.GetProcessById(shellpid).HasExited = False Then
+                            Process.GetProcessById(shellpid).Kill()
+                            shellpid = 0
+                        End If
+                    End If
+                End If
+            Catch ex As Exception
+                Debug.Print("프로세스 실행중이지 않음!")
+                shellpid = 0
+            End Try
+        End If
+
         TabControl1.Focus()
 
         '선택된 아이템이 없으면 종료
@@ -313,40 +324,41 @@ LANG_SKIP:
             Exit Sub
         End If
 
-        ListenButtonP = True
         Try
             ListenButton.Enabled = False
             Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
             Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
 
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
             If AviSynthPP.INDEX_ProcessStopChk = True Then
                 AviSynthPP.INDEX_ProcessStopChk = False
                 ListenButton.Enabled = True
             Else
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs")
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs")
                 _AviSynthClip.IDisposable_Dispose()
                 Dim MSGB As String = ""
 
                 If MainFrm.SEEKMODEM1B = True Then
                     ListenButton.Text = "Playback"
-                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs" & Chr(34) & _
+                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
                     " -identify -noquiet -nofontconfig -vo direct3d"
                 Else
                     ListenButton.Text = ListenButtonSTR
-                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs" & Chr(34) & _
+                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
                     " -identify -noquiet -nofontconfig -novideo"
                 End If
 
                 shellpid = Shell(MSGB, AppWinStyle.NormalFocus)
+                shellpidexename = Process.GetProcessById(shellpid).ProcessName
+                shellpidstarttime = Process.GetProcessById(shellpid).StartTime
                 ProcessDetTimer.Enabled = True
             End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
-            ListenButton.Enabled = True
         End Try
-        ListenButtonP = False
+        ListenButton.Enabled = True
+
     End Sub
 
     Private Sub FFmpegSourceTextBox_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles FFmpegSourceTextBox.KeyDown
@@ -462,16 +474,16 @@ LANG_SKIP:
     End Sub
 
     Private Sub ProcessDetTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProcessDetTimer.Tick
-        Try
-            If Process.GetProcessById(shellpid).HasExited = False Then
-                ListenButton.Enabled = False
-            End If
-        Catch ex As Exception
-            Debug.Print("재생 끝 " & ex.Message)
-            shellpid = 0
-            ProcessDetTimer.Enabled = False
-            ListenButton.Enabled = True
-        End Try
+        'Try
+        '    If Process.GetProcessById(shellpid).HasExited = False Then
+        '        ListenButton.Enabled = False
+        '    End If
+        'Catch ex As Exception
+        '    Debug.Print("재생 끝 " & ex.Message)
+        '    shellpid = 0
+        '    ProcessDetTimer.Enabled = False
+        '    ListenButton.Enabled = True
+        'End Try
     End Sub
 
     Private Sub MPEG2SourceTextBox_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MPEG2SourceTextBox.KeyDown
@@ -776,4 +788,10 @@ LANG_SKIP:
         AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True
         RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = True
     End Sub
+
+    Private Sub SetDecToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetDecToolStripMenuItem.Click
+        If MainFrm.SPreB = True Then Exit Sub
+        DecContextMenuStrip.Show(Control.MousePosition)
+    End Sub
+
 End Class

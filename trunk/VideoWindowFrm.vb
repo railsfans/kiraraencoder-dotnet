@@ -1,6 +1,6 @@
 ﻿' ---------------------------------------------------------------------------------------
 ' 
-' Copyright (C) 2008-2010 LEE KIWON
+' Copyright (C) 2008-2011 LEE KIWON
 ' 
 ' This program is free software; you can redistribute it and/or
 ' modify it under the terms of the GNU General Public License
@@ -54,9 +54,9 @@ Public Class VideoWindowFrm
 
         Try
             '_AviSynthClip = _AviSynthScriptEnvironment.ParseScript(AviSynthEditorFrm.AVTextBox.Text, AvisynthWrapper.AviSynthColorspace.RGB32)
-            '_AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs", AvisynthWrapper.AviSynthColorspace.RGB32)
+            '_AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "AVS파일", AvisynthWrapper.AviSynthColorspace.RGB32)
             If BitMapB = False Then
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs", AvisynthWrapper.AviSynthColorspace.RGB32)
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
                 BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
                 BitMapB = True
             Else
@@ -66,7 +66,7 @@ Public Class VideoWindowFrm
                 If BitmapV IsNot Nothing Then
                     BitmapV.Dispose()
                 End If
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript.avs", AvisynthWrapper.AviSynthColorspace.RGB32)
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
                 BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
             End If
             VideoPictureBox.Image = BitmapV
@@ -112,7 +112,7 @@ Public Class VideoWindowFrm
             PLAYVL = False
             '---------------
             '새로고침
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
             'SEEKMODE 체크
             If MainFrm.SEEKMODEM1B = True Then Throw New Exception(AviSynthEditorFrm.StatusLabel.Text)
             '열기
@@ -229,10 +229,13 @@ LANG_SKIP:
 
     End Sub
 
+    Private Sub RCTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
     Private Sub FrameTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FrameTimer.Tick
 
         If Me.CanFocus = False Then Exit Sub
-        If AviSynthEditorFrm.ListenButtonP = True Then Exit Sub
 
         '-----------------------------------------------------
 
@@ -348,4 +351,5 @@ LANG_SKIP:
     Private Sub VideoTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VideoTrackBar.Scroll
 
     End Sub
+
 End Class

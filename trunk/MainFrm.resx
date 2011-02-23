@@ -336,6 +336,18 @@
   <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;PlayPanel.Name" xml:space="preserve">
+    <value>PlayPanel</value>
+  </data>
+  <data name="&gt;&gt;PlayPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlayPanel.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;PlayPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;RemovePanel.Name" xml:space="preserve">
     <value>RemovePanel</value>
   </data>
@@ -346,7 +358,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;RemovePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;MovePanel.Name" xml:space="preserve">
     <value>MovePanel</value>
@@ -358,7 +370,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;MovePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
     <value>Panel2</value>
@@ -370,7 +382,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;AddButton.Name" xml:space="preserve">
     <value>AddButton</value>
@@ -382,7 +394,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;AddButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;AllRemoveButton.Name" xml:space="preserve">
     <value>AllRemoveButton</value>
@@ -394,7 +406,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;AllRemoveButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -555,6 +567,69 @@
   <data name="&gt;&gt;VideoTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;PlayButton.Name" xml:space="preserve">
+    <value>PlayButton</value>
+  </data>
+  <data name="&gt;&gt;PlayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlayButton.Parent" xml:space="preserve">
+    <value>PlayPanel</value>
+  </data>
+  <data name="&gt;&gt;PlayButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PlayPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="PlayPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>496, 0</value>
+  </data>
+  <data name="PlayPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 35</value>
+  </data>
+  <data name="PlayPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;PlayPanel.Name" xml:space="preserve">
+    <value>PlayPanel</value>
+  </data>
+  <data name="&gt;&gt;PlayPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlayPanel.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;PlayPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PlayButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PlayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 2</value>
+  </data>
+  <data name="PlayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 25</value>
+  </data>
+  <data name="PlayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="PlayButton.Text" xml:space="preserve">
+    <value>재생</value>
+  </data>
+  <data name="&gt;&gt;PlayButton.Name" xml:space="preserve">
+    <value>PlayButton</value>
+  </data>
+  <data name="&gt;&gt;PlayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlayButton.Parent" xml:space="preserve">
+    <value>PlayPanel</value>
+  </data>
+  <data name="&gt;&gt;PlayButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;RemoveButton.Name" xml:space="preserve">
     <value>RemoveButton</value>
   </data>
@@ -586,7 +661,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;RemovePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="RemoveButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 2</value>
@@ -679,7 +754,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;MovePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="BBListButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 10pt</value>
@@ -829,10 +904,10 @@
     <value>Right</value>
   </data>
   <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 0</value>
+    <value>574, 0</value>
   </data>
   <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>390, 35</value>
+    <value>380, 35</value>
   </data>
   <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -847,7 +922,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;StreamSelButton.Name" xml:space="preserve">
     <value>StreamSelButton</value>
@@ -865,7 +940,7 @@
     <value>Right</value>
   </data>
   <data name="StreamSelPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 0</value>
+    <value>118, 0</value>
   </data>
   <data name="StreamSelPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 35</value>
@@ -910,7 +985,7 @@
     <value>0</value>
   </data>
   <data name="FileInfoButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 2</value>
+    <value>4, 2</value>
   </data>
   <data name="FileInfoButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 25</value>
@@ -955,7 +1030,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;AddButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="AllRemoveButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 2</value>
@@ -979,7 +1054,7 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;AllRemoveButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="CleanUpListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1579,7 +1654,7 @@
     <value>12</value>
   </data>
   <data name="AVSGroupBox.Text" xml:space="preserve">
-    <value>AviSynth</value>
+    <value>AviSynth 디코딩</value>
   </data>
   <data name="&gt;&gt;AVSGroupBox.Name" xml:space="preserve">
     <value>AVSGroupBox</value>
@@ -2064,6 +2139,48 @@
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
+  <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 20</value>
+  </data>
+  <data name="LangToolStripMenuItem.Text" xml:space="preserve">
+    <value>언어(Language)</value>
+  </data>
+  <data name="DecSToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DecSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 20</value>
+  </data>
+  <data name="DecSToolStripMenuItem.Text" xml:space="preserve">
+    <value>디코더 설정(&amp;D)</value>
+  </data>
+  <data name="AviSynthToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="AviSynthToolStripMenuItem.Text" xml:space="preserve">
+    <value>AviSynth 스크립트(&amp;S)</value>
+  </data>
+  <data name="ErrToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 20</value>
+  </data>
+  <data name="ErrToolStripMenuItem2.Text" xml:space="preserve">
+    <value>오류로그 보기</value>
+  </data>
+  <data name="ErrToolStripMenuItem2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 20</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>프로그램 정보</value>
+  </data>
+  <data name="TrayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="TrayToolStripMenuItem.Text" xml:space="preserve">
+    <value>트레이</value>
+  </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2086,37 +2203,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 20</value>
-  </data>
-  <data name="LangToolStripMenuItem.Text" xml:space="preserve">
-    <value>언어(Language)</value>
-  </data>
-  <data name="ErrToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 20</value>
-  </data>
-  <data name="ErrToolStripMenuItem2.Text" xml:space="preserve">
-    <value>오류로그 보기</value>
-  </data>
-  <data name="InChkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="InChkToolStripMenuItem.Text" xml:space="preserve">
-    <value>설치 확인</value>
-  </data>
-  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 20</value>
-  </data>
-  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>프로그램 정보</value>
-  </data>
-  <data name="TrayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 20</value>
-  </data>
-  <data name="TrayToolStripMenuItem.Text" xml:space="preserve">
-    <value>트레이</value>
+    <value>4</value>
   </data>
   <metadata name="PresetContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>277, 17</value>
@@ -2152,7 +2239,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="FolderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>464, 17</value>
@@ -2166,6 +2253,42 @@
   <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>747, 17</value>
   </metadata>
+  <metadata name="AviSynthContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1026, 17</value>
+  </metadata>
+  <data name="AviSynthContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 92</value>
+  </data>
+  <data name="&gt;&gt;AviSynthContextMenuStrip.Name" xml:space="preserve">
+    <value>AviSynthContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;AviSynthContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ImgToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="ImgToolStripMenuItem.Text" xml:space="preserve">
+    <value>영상 설정</value>
+  </data>
+  <data name="AudToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="AudToolStripMenuItem.Text" xml:space="preserve">
+    <value>음성 설정</value>
+  </data>
+  <data name="SubToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="SubToolStripMenuItem.Text" xml:space="preserve">
+    <value>자막 설정</value>
+  </data>
+  <data name="EtcToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="EtcToolStripMenuItem.Text" xml:space="preserve">
+    <value>기타 설정</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -8360,16 +8483,22 @@
   <data name="&gt;&gt;LangToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;DecSToolStripMenuItem.Name" xml:space="preserve">
+    <value>DecSToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DecSToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AviSynthToolStripMenuItem.Name" xml:space="preserve">
+    <value>AviSynthToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AviSynthToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ErrToolStripMenuItem2.Name" xml:space="preserve">
     <value>ErrToolStripMenuItem2</value>
   </data>
   <data name="&gt;&gt;ErrToolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InChkToolStripMenuItem.Name" xml:space="preserve">
-    <value>InChkToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;InChkToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;AboutToolStripMenuItem.Name" xml:space="preserve">
@@ -8401,6 +8530,30 @@
   </data>
   <data name="&gt;&gt;Timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImgToolStripMenuItem.Name" xml:space="preserve">
+    <value>ImgToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ImgToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudToolStripMenuItem.Name" xml:space="preserve">
+    <value>AudToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AudToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SubToolStripMenuItem.Name" xml:space="preserve">
+    <value>SubToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;SubToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EtcToolStripMenuItem.Name" xml:space="preserve">
+    <value>EtcToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;EtcToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrm</value>

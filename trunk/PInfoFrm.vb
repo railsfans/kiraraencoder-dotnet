@@ -1,6 +1,6 @@
 ﻿' ---------------------------------------------------------------------------------------
 ' 
-' Copyright (C) 2008-2010 LEE KIWON
+' Copyright (C) 2008-2011 LEE KIWON
 ' 
 ' This program is free software; you can redistribute it and/or
 ' modify it under the terms of the GNU General Public License
@@ -116,5 +116,12 @@ LANG_SKIP:
 
     Private Sub BittalkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BittalkToolStripMenuItem.Click
         System.Diagnostics.Process.Start("http://bittalk.org")
+    End Sub
+
+    Private Sub InChkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InChkToolStripMenuItem.Click
+        Try
+            AVSIFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

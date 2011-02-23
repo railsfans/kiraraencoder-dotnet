@@ -41,14 +41,17 @@ Partial Class PInfoFrm
         Me.OfficialKiraraEncoderWebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.DownloadSourceCodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BitDonGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BittalkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.BitDonGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
+        Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TabControl1.SuspendLayout()
         Me.InfoTabPage.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LicenseTabPage.SuspendLayout()
         Me.PPanel.SuspendLayout()
         Me.WebsiteContextMenuStrip.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -157,22 +160,35 @@ Partial Class PInfoFrm
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
         '
-        'BitDonGToolStripMenuItem
-        '
-        Me.BitDonGToolStripMenuItem.Name = "BitDonGToolStripMenuItem"
-        resources.ApplyResources(Me.BitDonGToolStripMenuItem, "BitDonGToolStripMenuItem")
-        '
         'BittalkToolStripMenuItem
         '
         Me.BittalkToolStripMenuItem.Name = "BittalkToolStripMenuItem"
         resources.ApplyResources(Me.BittalkToolStripMenuItem, "BittalkToolStripMenuItem")
         '
+        'BitDonGToolStripMenuItem
+        '
+        Me.BitDonGToolStripMenuItem.Name = "BitDonGToolStripMenuItem"
+        resources.ApplyResources(Me.BitDonGToolStripMenuItem, "BitDonGToolStripMenuItem")
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InChkToolStripMenuItem})
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
+        Me.MenuStrip1.Name = "MenuStrip1"
+        '
+        'InChkToolStripMenuItem
+        '
+        Me.InChkToolStripMenuItem.Name = "InChkToolStripMenuItem"
+        resources.ApplyResources(Me.InChkToolStripMenuItem, "InChkToolStripMenuItem")
+        '
         'PInfoFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.PPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "PInfoFrm"
@@ -186,7 +202,10 @@ Partial Class PInfoFrm
         Me.LicenseTabPage.PerformLayout()
         Me.PPanel.ResumeLayout(False)
         Me.WebsiteContextMenuStrip.ResumeLayout(False)
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
@@ -208,4 +227,6 @@ Partial Class PInfoFrm
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BitDonGToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BittalkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents InChkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

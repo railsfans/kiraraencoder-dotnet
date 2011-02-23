@@ -1,6 +1,6 @@
 ﻿' ---------------------------------------------------------------------------------------
 ' 
-' Copyright (C) 2008-2010 LEE KIWON
+' Copyright (C) 2008-2011 LEE KIWON
 ' 
 ' This program is free software; you can redistribute it and/or
 ' modify it under the terms of the GNU General Public License
@@ -573,4 +573,12 @@ LANG_SKIP:
 
     End Sub
 
+    Private Sub FDgButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FDgButton.Click
+
+        Try
+            FontDialog1.ShowDialog()
+        Catch ex As Exception
+        End Try
+
+    End Sub
 End Class

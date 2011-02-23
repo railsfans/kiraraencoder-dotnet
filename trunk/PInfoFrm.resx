@@ -180,62 +180,63 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAzaSURBVFhHpZh3UFZXGsZvNqPJzmYmu2smk92Z3Z1sMpnZ
-        zR+bTVETNUaS2DEmmsQYjT0ae0PsSpFVUJqKiCgCUkQRUSxIFUSwgQgqvffem8C7v/vdLygIH2jOnLnc
-        73LuOc99zvO2o8hvbg0NDZW6VldX95snE+U5pigpKbl+/fqVK1dCQ0NjYmJu3rx5+/ZtrnFxcVevXr10
-        6dKFCxciIyNzcnKeY/JnANTU1HTt2rXo6OjMzMyKioqysrL8/Py0tLSkpKSEhIQ7d+4AKz4+PjExkSc0
-        QIMM3OXl5QNHNiBALS0tERERDx8+BBNbk5GRcf/+/WRdY+F79+6B49atW5AEYVFRUeHh4SEhIUCBp9jY
-        2MuXLwcGBg4QVv+AWIblHz16VFpaCh+pqanaFRyAAAHbxBXywAHuriuAYOjs2bOgCQsL4yY4OLhfqgwB
-        AgSzt7a21tTUsE0QwxVW2DWeg4Dd4UlhYSE7CHNoq6CgALhsH9xoYtIw+fr6njx5MigoyNvbm702AKtP
-        QLwGAbzJGtnZ2bm5ufCEivnWBw8eANHwt7a1tYEPbQErICDA39/fx8fn2LFjfn5+np6eTNXX670D4qNZ
-        lUmxFKDQ4APC4aOzs7Nf2p8cUF9fDywwwZCXl9fhw4ddXV1BhgX0Ok8vgFAfX4CQs7KygMJO8ZW8zw4+
-        E5QnB8M3koIbNzc3BweH/fv3Hzp0CBU+PWFPQLCCO+GqoYGn8+fPc/PcULpe5HtwBNBz8OBBa2trW1tb
-        Ozu7oqKiHjP3BMR3MELbKdAgQwT75DulxYUFGSmFWWn5mSk1xb24Pna0tKxMG1OcnVqVcaehorhrhhs3
-        bjg6OgLI0tJy3759wOqhgW6AsHC4QUCgwVjOnTuH7TyJprgwP2P6X8snvlRu/PvKsYPDFk6p6+j2heVN
-        rcnuNnnT/lIxaXDT1BcLPlOcP3o/NlQ1jq6GAe7SNXNzc5Bhd0/+9zEgRMOm1tbWavRcvHgR+3pyKJ/+
-        0G1X50hFJigyUakfrvhYuLf/OqJJJCUmJG3R0JZPdQO+VGL+84r1tO3B4VVt3c0ASvAC27ZtA9DOnTt3
-        7NjxZJB5DAiT7ujowMLz8vLwNJhGj92taGzKmf22jFVkstojRr15J6VRG5OXn5dsuaDyc0W+UMRYyRiu
-        2BnNdj2WWtWHGeA1du/evXXrVmCZmZmxcV1r6QE1NjaiGOwLLRMiUBLgegBKDfZrGq1H82i04r3KjBGV
-        bR3JvgfyvnlD+NckpWLcYJeRoy0topNr+zEDBL5u3brNmzdv0LX09HTtBT0g3D9bhoXDEK7v6UDd0Cnp
-        a4zESAfIWEke+efg2JrCpNi0paPUPRqnPqSnjHk1cPKoPMuZ2Y4rcxJiDLgsjA4BrVmzZv369Rs3bjxw
-        4EA3QMSg6upqhIwHIiw87f2y7t2q/vJ3SEcFNFE5Nu7ziG1LS0cqHR8p7aOVttFKK7CAO0U3gJuRSvaE
-        P+Tl5BsgCmEsXbp07dq1q1atWr16NZFbzxDOAGJoAGJQSkpKj1naEOyeReqm6Ogp+eyFgyZ2Aaa7ji+1
-        Pr7K1k3rq+2PL95cNvFlTWH0W6NeT3xgKPHAiW/atGn58uW//PLLsmXLSBP0gLhDZUgHKEibcT0AFRYX
-        FU39o4zX0xP05bB0nW/CxJCR1tmd+/EJlV8MQkmg6TRSvBeure8ywj6IcnFxWbBgwc8//wxVuG89ICwc
-        f0MYx7KIWT3eVa3dw/oRO6Kjp36E4m3m+vT8rSJp5jPlM/2wlGGDLwb2GUG7Xkcqc+bMWbhwIZhMTU31
-        gEimcDmkWqQ1d+/e7bZYW0t5aVHJzDdUWeBdxivRw1+LS+wl1OelJjUgbZwCwz5X/KZMKm7ox9D4N9Ea
-        NPPmzZs/f/7ixYuRkYJ5wwpWR3IDXkbop2l/JDcvSElmaXaq/zfGXuOn+E76ytNo4lET5+beFsqOizw1
-        babP9/NOzpjrNmlO4On+6WGa2rpaNARJc+fOnT17NtatoB4ihrZfUFWoeeeacjm4Qh7GaUsXd0h2peRU
-        SValNPTh66qra8McHcL27Q23sw2zs009bpPhZpFuoB8zz/Swys/KXGdiAkNg+vHHH8GgkEaRiLFTXPFA
-        5TV10tIoG8bIzYtSni8WM2STsSRHGGYf7Wa4bpWhOoPXOpobZbCPUK59/HpsQuGWrZvQNYBgCM0o2Dz5
-        Bkkn15DQ0IrmdrH+QRwXqwgWviPDVI8iEwZJVqIBTACKsvuf38Tp/tNnnPl2xlnjyf7jxhruPiONvMy9
-        a1o7TU03ICMNEOJRyC7wPdDDjwsR0SVXfGTqYKmvlvICNTBhw7jgTxQ5aWUAUPHDhFu2ZpcsdwVb7bqw
-        0zz2dlFOg2g9t1GyqiS9tGdPLZamdmlqrNu4cZMGaNasWYhHIYdHOqQpEVejgkPCqmf9Q0xGqGu3Nsvy
-        /6oMYckgQ+B9NDXOm0xQR2JiY5WCocpFJ+fS5JiixGh6cXxkS2Wf+R3hgUC2aNEiRI2GKGbUWEaZArTQ
-        8PCAi8Fxo14U52X6pcvyxHKGrBgu5xwN0JOTmlw5fpA+qugiWvsEpWOs0k4fp5S8r4Qedu/rdWL5ihUr
-        cEKYPQ13qAI6ffo0GqKcCwiLPvX1u3J0fS/v75gibpuefo56UhzWdP7qNlvGK9eHvXYDXzVsyI1hQ2I/
-        +tOJD96705vf0qYiSOB+lixZwpWIxhMVEKUTgMhWz4dGuK2c2WCnUzStrkKueEtipHrvslaclj8NqKSy
-        snD662q01wXdkPFDT5wvi4ypCo+upIdGlt+822KA3aNHj2qBbOXKlVZWqkxVQER40g9gBZ4POmK/94Hp
-        NHWKikKZ+7YM11mZx3b9pGcdZO67smaMpMdrT1JOObVp9ExW6j994fDG/eRsLdLR1ZvlUWVDY0W9vlfW
-        N7S3E2bURna6ZcsWoj27RrSnVNIDam9vP3XqFE6Ics7jdMDZJZOkuV4uHlZ1iiaQKrZWXyWpN1Vw+BiM
-        bs7fpamupl1yF79HtqolQ60TXsj6/q2yeW8X//TP3vuct3Km/u2mj6cGiOQaKIQwsiL8tVaB6BM0AGH2
-        XH3PnD20ZVXp6QOSFKEC0gUm+eol1RGEuquEsTZZEXZXmJp242rOB0r5x0r5J2qvHKEm2jUfGurX3lHC
-        LqeyMNXEnj17SM1IGuGJ/FpDqQdEHo2tQRo1wGFP7/PzjCQzXo5ukC9elMkvi5eZOrY0V74dIh/rGFry
-        b2mtLyko9F5v72552sPKfyDdzdzPyym6RZeTIGcMHt2Q55NcE0a7AeKHh4cHDunEiRPuXj4OVmYZs/4l
-        FblSmie5yXoB8Sf3vtjMF9v5kq9L4uICpbZnpfd4cN93mDdQ9u7dS61IIkuq35WjPq46iLRUJzQ3t2OH
-        PH2PrPihwfhVudGHP2xpEu9dcj1Q9Z/5aZIYLpG+cuGQ+NuJn43a/fcJFhB0SILdJNJP4oIkIVxSbvEl
-        HXVV7p6eVBru7u4U1JQfJM1d4LsVihxQUBxS7R454mJ77IT/PKMORLN6uPjbSlKU5NyXjAS55i/2C2Xy
-        IPluiJiOkRlvyJSXxfgl9ee8N2XZh7LOSDZPkp1fi9V3YjVDdv8k+xaI4zJxMRVPC2zliqvjfmcXKvQz
-        Z86ACSU9SWU3QAjNyckJkgB+0OnQbifX4AWjVVETxkFGTo2Jff2KrBshzqvkjJ0q84QwdU/L8qW2ArtT
-        M4WWBmlukMZa1TCrSqQkR/Ieqm4iKUbiQ675url6+UZHRRGscDQ2NjYUyn0C4h9UQuS5HJc42Nvb2jtY
-        7bWLcNkrMf4SfETtCaFS1624HohitDHk3VdvJZzwO8XRHzELQMePH8fX9Jihl+MYnKSzszNnFIhuj7XN
-        ditrz4CgvmrQAQJCxewRfo5qnW8mEeNYDQN6+vXeD6wgkzMKe3t7bIFjCooVrmQpz3FERP1JpgUZlBIU
-        NuTKoAEcm9Drx/R5pEc1jdw4McFPbN++HX+Kd8dE4a/f8zxtpaqqKpwtZFOVgoYigmqdxAvT4eSqL2oN
-        HXryKRyaoDsNEH6MgEwsxL1iiTh+KgISGjgg+NCam5vZGjjAy0GAhYUFJxvQDAI+D9vmqoEzsNH9HAsT
-        /6jf8KTwRBFO0IEngjMplVa48JMNBTEDtEhJVNIKZB7CMQd4nCsiF67w/biq6QNUP4C0tzj8Zj0TExO4
-        gSSWBBONPIbcihSdBkR+8hCI2vmBFqFUy9izhzMXdDkQCxgQIG0i9ohdAA08aScELA8ZbCKNG37yXw0Q
-        tAGIG74EZ4uHGwgaxjwDIG1GwjBJAZ9OSgU9NHCQRWi0sYk8ASv7hRdGxQPE0TXsmQF1vYmKOfkjGUeq
-        OBUap8dsLm4GdT8rjq7x/wckLLzRVpc2kgAAAABJRU5ErkJggg==
+        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
 </value>
   </data>
   <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
@@ -595,7 +596,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>1</value>
   </data>
   <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 14</value>
+    <value>10, 34</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 187</value>
@@ -619,7 +620,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>NoControl</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 207</value>
+    <value>263, 227</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 25</value>
@@ -643,7 +644,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>2</value>
   </data>
   <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 207</value>
+    <value>10, 227</value>
   </data>
   <data name="Button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 25</value>
@@ -673,7 +674,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>0, 0</value>
   </data>
   <data name="PPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>390, 245</value>
+    <value>389, 262</value>
   </data>
   <data name="PPanel.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -688,46 +689,79 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="WebsiteContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="OfficialKiraraEncoderWebsiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="OfficialKiraraEncoderWebsiteToolStripMenuItem.Text" xml:space="preserve">
     <value>Official Kirara Encoder Website</value>
   </data>
   <data name="DownloadSourceCodeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="DownloadSourceCodeToolStripMenuItem.Text" xml:space="preserve">
     <value>Download source code</value>
   </data>
   <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 6</value>
+    <value>247, 6</value>
   </data>
   <data name="BittalkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="BittalkToolStripMenuItem.Text" xml:space="preserve">
     <value>Bittalk</value>
   </data>
   <data name="BitDonGToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="BitDonGToolStripMenuItem.Text" xml:space="preserve">
     <value>BitDonG</value>
   </data>
   <data name="WebsiteContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 120</value>
+    <value>251, 98</value>
   </data>
   <data name="&gt;&gt;WebsiteContextMenuStrip.Name" xml:space="preserve">
     <value>WebsiteContextMenuStrip</value>
   </data>
   <data name="&gt;&gt;WebsiteContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>215, 17</value>
+  </metadata>
+  <data name="InChkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 20</value>
+  </data>
+  <data name="InChkToolStripMenuItem.Text" xml:space="preserve">
+    <value>설치 확인</value>
+  </data>
+  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>389, 24</value>
+  </data>
+  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="MenuStrip1.Text" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -736,7 +770,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>390, 245</value>
+    <value>389, 262</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
@@ -765,16 +799,22 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
   <data name="&gt;&gt;ToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;BittalkToolStripMenuItem.Name" xml:space="preserve">
+    <value>BittalkToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;BittalkToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;BitDonGToolStripMenuItem.Name" xml:space="preserve">
     <value>BitDonGToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;BitDonGToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BittalkToolStripMenuItem.Name" xml:space="preserve">
-    <value>BittalkToolStripMenuItem</value>
+  <data name="&gt;&gt;InChkToolStripMenuItem.Name" xml:space="preserve">
+    <value>InChkToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;BittalkToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;InChkToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
