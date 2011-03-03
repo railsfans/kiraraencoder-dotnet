@@ -117,44 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CopyrightLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CopyrightLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LinkLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="CopyrightLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 134</value>
+  <data name="LinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 126</value>
   </data>
-  <data name="CopyrightLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 14</value>
+  <data name="LinkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 14</value>
   </data>
-  <data name="CopyrightLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="LinkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="CopyrightLabel.Text" xml:space="preserve">
-    <value>Copyright</value>
+  <data name="LinkLabel1.Text" xml:space="preserve">
+    <value>Developer: LEE KIWON - http://www.kiraraencoder.pe.kr</value>
   </data>
-  <data name="&gt;&gt;CopyrightLabel.Name" xml:space="preserve">
-    <value>CopyrightLabel</value>
+  <data name="&gt;&gt;LinkLabel1.Name" xml:space="preserve">
+    <value>LinkLabel1</value>
   </data>
-  <data name="&gt;&gt;CopyrightLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;LinkLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CopyrightLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LinkLabel1.Parent" xml:space="preserve">
     <value>InfoTabPage</value>
   </data>
-  <data name="&gt;&gt;CopyrightLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LinkLabel1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="LinkLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LinkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 146</value>
+  </data>
+  <data name="LinkLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 14</value>
+  </data>
+  <data name="LinkLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LinkLabel2.Text" xml:space="preserve">
+    <value>Icon: IriyaSviel - http://iriyasviel.tistory.com</value>
+  </data>
+  <data name="&gt;&gt;LinkLabel2.Name" xml:space="preserve">
+    <value>LinkLabel2</value>
+  </data>
+  <data name="&gt;&gt;LinkLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LinkLabel2.Parent" xml:space="preserve">
+    <value>InfoTabPage</value>
+  </data>
+  <data name="&gt;&gt;LinkLabel2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 71</value>
+    <value>10, 91</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 14</value>
@@ -175,76 +198,234 @@
     <value>InfoTabPage</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
   <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 14</value>
+    <value>13, 14</value>
   </data>
   <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 48</value>
+    <value>64, 64</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
   </data>
@@ -261,36 +442,6 @@
     <value>InfoTabPage</value>
   </data>
   <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 90</value>
-  </data>
-  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 14</value>
-  </data>
-  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>Icon: N.S.H</value>
-  </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
-    <value>InfoTabPage</value>
-  </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="VersionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -300,16 +451,16 @@
     <value>True</value>
   </data>
   <data name="VersionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 36</value>
+    <value>94, 36</value>
   </data>
   <data name="VersionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 14</value>
+    <value>63, 14</value>
   </data>
   <data name="VersionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="VersionLabel.Text" xml:space="preserve">
-    <value>버전 -.-.-</value>
+    <value>버전 -.-.-.-</value>
   </data>
   <data name="&gt;&gt;VersionLabel.Name" xml:space="preserve">
     <value>VersionLabel</value>
@@ -330,7 +481,7 @@
     <value>True</value>
   </data>
   <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 14</value>
+    <value>94, 14</value>
   </data>
   <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 14</value>
@@ -360,7 +511,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="InfoTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 160</value>
+    <value>436, 174</value>
   </data>
   <data name="InfoTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -380,29 +531,34 @@
   <data name="&gt;&gt;InfoTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="FileInfoTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="TextBox0.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="FileInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TextBox0.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 7</value>
   </data>
-  <data name="FileInfoTextBox.MaxLength" type="System.Int32, mscorlib">
+  <data name="TextBox0.MaxLength" type="System.Int32, mscorlib">
     <value>2147483647</value>
   </data>
-  <data name="FileInfoTextBox.Multiline" type="System.Boolean, mscorlib">
+  <data name="TextBox0.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="FileInfoTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+  <data name="TextBox0.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Both</value>
   </data>
-  <data name="FileInfoTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 147</value>
+  <data name="TextBox0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>424, 161</value>
   </data>
-  <data name="FileInfoTextBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="TextBox0.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="FileInfoTextBox.Text" xml:space="preserve">
-    <value>FFmpeg
+  <data name="TextBox0.Text" xml:space="preserve">
+    <value>Kirara Encoder
+Licensed under the GPL v2
+Download source code: http://code.google.com/p/kiraraencoder-dotnet
+Homepage: http://www.kiraraencoder.pe.kr
+
+FFmpeg
 Licensed under the GPL v3
 Download source code: svn://svn.ffmpeg.org/ffmpeg/trunk
 Homepage: http://www.ffmpeg.org
@@ -553,19 +709,19 @@ Download: http://www.nero.com/eng/downloads-nerodigital-nero-aac-codec.php
 Homepage: http://www.nero.com
 Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
   </data>
-  <data name="FileInfoTextBox.WordWrap" type="System.Boolean, mscorlib">
+  <data name="TextBox0.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;FileInfoTextBox.Name" xml:space="preserve">
-    <value>FileInfoTextBox</value>
+  <data name="&gt;&gt;TextBox0.Name" xml:space="preserve">
+    <value>TextBox0</value>
   </data>
-  <data name="&gt;&gt;FileInfoTextBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;TextBox0.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;FileInfoTextBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TextBox0.Parent" xml:space="preserve">
     <value>LicenseTabPage</value>
   </data>
-  <data name="&gt;&gt;FileInfoTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TextBox0.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="LicenseTabPage.Location" type="System.Drawing.Point, System.Drawing">
@@ -575,7 +731,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="LicenseTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 160</value>
+    <value>436, 174</value>
   </data>
   <data name="LicenseTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -595,11 +751,412 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
   <data name="&gt;&gt;LicenseTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="TextBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="TextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 7</value>
+  </data>
+  <data name="TextBox1.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="TextBox1.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TextBox1.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="TextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>424, 161</value>
+  </data>
+  <data name="TextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TextBox1.Text" xml:space="preserve">
+    <value>		    GNU GENERAL PUBLIC LICENSE
+		       Version 2, June 1991
+
+ Copyright (C) 1989, 1991 Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+			    Preamble
+
+  The licenses for most software are designed to take away your
+freedom to share and change it.  By contrast, the GNU General Public
+License is intended to guarantee your freedom to share and change free
+software--to make sure the software is free for all its users.  This
+General Public License applies to most of the Free Software
+Foundation's software and to any other program whose authors commit to
+using it.  (Some other Free Software Foundation software is covered by
+the GNU Lesser General Public License instead.)  You can apply it to
+your programs, too.
+
+  When we speak of free software, we are referring to freedom, not
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+this service if you wish), that you receive source code or can get it
+if you want it, that you can change the software or use pieces of it
+in new free programs; and that you know you can do these things.
+
+  To protect your rights, we need to make restrictions that forbid
+anyone to deny you these rights or to ask you to surrender the rights.
+These restrictions translate to certain responsibilities for you if you
+distribute copies of the software, or if you modify it.
+
+  For example, if you distribute copies of such a program, whether
+gratis or for a fee, you must give the recipients all the rights that
+you have.  You must make sure that they, too, receive or can get the
+source code.  And you must show them these terms so they know their
+rights.
+
+  We protect your rights with two steps: (1) copyright the software, and
+(2) offer you this license which gives you legal permission to copy,
+distribute and/or modify the software.
+
+  Also, for each author's protection and ours, we want to make certain
+that everyone understands that there is no warranty for this free
+software.  If the software is modified by someone else and passed on, we
+want its recipients to know that what they have is not the original, so
+that any problems introduced by others will not reflect on the original
+authors' reputations.
+
+  Finally, any free program is threatened constantly by software
+patents.  We wish to avoid the danger that redistributors of a free
+program will individually obtain patent licenses, in effect making the
+program proprietary.  To prevent this, we have made it clear that any
+patent must be licensed for everyone's free use or not licensed at all.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.
+
+		    GNU GENERAL PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. This License applies to any program or other work which contains
+a notice placed by the copyright holder saying it may be distributed
+under the terms of this General Public License.  The "Program", below,
+refers to any such program or work, and a "work based on the Program"
+means either the Program or any derivative work under copyright law:
+that is to say, a work containing the Program or a portion of it,
+either verbatim or with modifications and/or translated into another
+language.  (Hereinafter, translation is included without limitation in
+the term "modification".)  Each licensee is addressed as "you".
+
+Activities other than copying, distribution and modification are not
+covered by this License; they are outside its scope.  The act of
+running the Program is not restricted, and the output from the Program
+is covered only if its contents constitute a work based on the
+Program (independent of having been made by running the Program).
+Whether that is true depends on what the Program does.
+
+  1. You may copy and distribute verbatim copies of the Program's
+source code as you receive it, in any medium, provided that you
+conspicuously and appropriately publish on each copy an appropriate
+copyright notice and disclaimer of warranty; keep intact all the
+notices that refer to this License and to the absence of any warranty;
+and give any other recipients of the Program a copy of this License
+along with the Program.
+
+You may charge a fee for the physical act of transferring a copy, and
+you may at your option offer warranty protection in exchange for a fee.
+
+  2. You may modify your copy or copies of the Program or any portion
+of it, thus forming a work based on the Program, and copy and
+distribute such modifications or work under the terms of Section 1
+above, provided that you also meet all of these conditions:
+
+    a) You must cause the modified files to carry prominent notices
+    stating that you changed the files and the date of any change.
+
+    b) You must cause any work that you distribute or publish, that in
+    whole or in part contains or is derived from the Program or any
+    part thereof, to be licensed as a whole at no charge to all third
+    parties under the terms of this License.
+
+    c) If the modified program normally reads commands interactively
+    when run, you must cause it, when started running for such
+    interactive use in the most ordinary way, to print or display an
+    announcement including an appropriate copyright notice and a
+    notice that there is no warranty (or else, saying that you provide
+    a warranty) and that users may redistribute the program under
+    these conditions, and telling the user how to view a copy of this
+    License.  (Exception: if the Program itself is interactive but
+    does not normally print such an announcement, your work based on
+    the Program is not required to print an announcement.)
+
+These requirements apply to the modified work as a whole.  If
+identifiable sections of that work are not derived from the Program,
+and can be reasonably considered independent and separate works in
+themselves, then this License, and its terms, do not apply to those
+sections when you distribute them as separate works.  But when you
+distribute the same sections as part of a whole which is a work based
+on the Program, the distribution of the whole must be on the terms of
+this License, whose permissions for other licensees extend to the
+entire whole, and thus to each and every part regardless of who wrote it.
+
+Thus, it is not the intent of this section to claim rights or contest
+your rights to work written entirely by you; rather, the intent is to
+exercise the right to control the distribution of derivative or
+collective works based on the Program.
+
+In addition, mere aggregation of another work not based on the Program
+with the Program (or with a work based on the Program) on a volume of
+a storage or distribution medium does not bring the other work under
+the scope of this License.
+
+  3. You may copy and distribute the Program (or a work based on it,
+under Section 2) in object code or executable form under the terms of
+Sections 1 and 2 above provided that you also do one of the following:
+
+    a) Accompany it with the complete corresponding machine-readable
+    source code, which must be distributed under the terms of Sections
+    1 and 2 above on a medium customarily used for software interchange; or,
+
+    b) Accompany it with a written offer, valid for at least three
+    years, to give any third party, for a charge no more than your
+    cost of physically performing source distribution, a complete
+    machine-readable copy of the corresponding source code, to be
+    distributed under the terms of Sections 1 and 2 above on a medium
+    customarily used for software interchange; or,
+
+    c) Accompany it with the information you received as to the offer
+    to distribute corresponding source code.  (This alternative is
+    allowed only for noncommercial distribution and only if you
+    received the program in object code or executable form with such
+    an offer, in accord with Subsection b above.)
+
+The source code for a work means the preferred form of the work for
+making modifications to it.  For an executable work, complete source
+code means all the source code for all modules it contains, plus any
+associated interface definition files, plus the scripts used to
+control compilation and installation of the executable.  However, as a
+special exception, the source code distributed need not include
+anything that is normally distributed (in either source or binary
+form) with the major components (compiler, kernel, and so on) of the
+operating system on which the executable runs, unless that component
+itself accompanies the executable.
+
+If distribution of executable or object code is made by offering
+access to copy from a designated place, then offering equivalent
+access to copy the source code from the same place counts as
+distribution of the source code, even though third parties are not
+compelled to copy the source along with the object code.
+
+  4. You may not copy, modify, sublicense, or distribute the Program
+except as expressly provided under this License.  Any attempt
+otherwise to copy, modify, sublicense or distribute the Program is
+void, and will automatically terminate your rights under this License.
+However, parties who have received copies, or rights, from you under
+this License will not have their licenses terminated so long as such
+parties remain in full compliance.
+
+  5. You are not required to accept this License, since you have not
+signed it.  However, nothing else grants you permission to modify or
+distribute the Program or its derivative works.  These actions are
+prohibited by law if you do not accept this License.  Therefore, by
+modifying or distributing the Program (or any work based on the
+Program), you indicate your acceptance of this License to do so, and
+all its terms and conditions for copying, distributing or modifying
+the Program or works based on it.
+
+  6. Each time you redistribute the Program (or any work based on the
+Program), the recipient automatically receives a license from the
+original licensor to copy, distribute or modify the Program subject to
+these terms and conditions.  You may not impose any further
+restrictions on the recipients' exercise of the rights granted herein.
+You are not responsible for enforcing compliance by third parties to
+this License.
+
+  7. If, as a consequence of a court judgment or allegation of patent
+infringement or for any other reason (not limited to patent issues),
+conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot
+distribute so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you
+may not distribute the Program at all.  For example, if a patent
+license would not permit royalty-free redistribution of the Program by
+all those who receive copies directly or indirectly through you, then
+the only way you could satisfy both it and this License would be to
+refrain entirely from distribution of the Program.
+
+If any portion of this section is held invalid or unenforceable under
+any particular circumstance, the balance of the section is intended to
+apply and the section as a whole is intended to apply in other
+circumstances.
+
+It is not the purpose of this section to induce you to infringe any
+patents or other property right claims or to contest validity of any
+such claims; this section has the sole purpose of protecting the
+integrity of the free software distribution system, which is
+implemented by public license practices.  Many people have made
+generous contributions to the wide range of software distributed
+through that system in reliance on consistent application of that
+system; it is up to the author/donor to decide if he or she is willing
+to distribute software through any other system and a licensee cannot
+impose that choice.
+
+This section is intended to make thoroughly clear what is believed to
+be a consequence of the rest of this License.
+
+  8. If the distribution and/or use of the Program is restricted in
+certain countries either by patents or by copyrighted interfaces, the
+original copyright holder who places the Program under this License
+may add an explicit geographical distribution limitation excluding
+those countries, so that distribution is permitted only in or among
+countries not thus excluded.  In such case, this License incorporates
+the limitation as if written in the body of this License.
+
+  9. The Free Software Foundation may publish revised and/or new versions
+of the General Public License from time to time.  Such new versions will
+be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+
+Each version is given a distinguishing version number.  If the Program
+specifies a version number of this License which applies to it and "any
+later version", you have the option of following the terms and conditions
+either of that version or of any later version published by the Free
+Software Foundation.  If the Program does not specify a version number of
+this License, you may choose any version ever published by the Free Software
+Foundation.
+
+  10. If you wish to incorporate parts of the Program into other free
+programs whose distribution conditions are different, write to the author
+to ask for permission.  For software which is copyrighted by the Free
+Software Foundation, write to the Free Software Foundation; we sometimes
+make exceptions for this.  Our decision will be guided by the two goals
+of preserving the free status of all derivatives of our free software and
+of promoting the sharing and reuse of software generally.
+
+			    NO WARRANTY
+
+  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
+TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
+PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
+REPAIR OR CORRECTION.
+
+  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
+OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
+TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
+YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
+PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+		     END OF TERMS AND CONDITIONS
+
+	    How to Apply These Terms to Your New Programs
+
+  If you develop a new program, and you want it to be of the greatest
+possible use to the public, the best way to achieve this is to make it
+free software which everyone can redistribute and change under these terms.
+
+  To do so, attach the following notices to the program.  It is safest
+to attach them to the start of each source file to most effectively
+convey the exclusion of warranty; and each file should have at least
+the "copyright" line and a pointer to where the full notice is found.
+
+    &lt;one line to give the program's name and a brief idea of what it does.&gt;
+    Copyright (C) &lt;year&gt;  &lt;name of author&gt;
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+Also add information on how to contact you by electronic and paper mail.
+
+If the program is interactive, make it output a short notice like this
+when it starts in an interactive mode:
+
+    Gnomovision version 69, Copyright (C) year name of author
+    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c' for details.
+
+The hypothetical commands `show w' and `show c' should show the appropriate
+parts of the General Public License.  Of course, the commands you use may
+be called something other than `show w' and `show c'; they could even be
+mouse-clicks or menu items--whatever suits your program.
+
+You should also get your employer (if you work as a programmer) or your
+school, if any, to sign a "copyright disclaimer" for the program, if
+necessary.  Here is a sample; alter the names:
+
+  Yoyodyne, Inc., hereby disclaims all copyright interest in the program
+  `Gnomovision' (which makes passes at compilers) written by James Hacker.
+
+  &lt;signature of Ty Coon&gt;, 1 April 1989
+  Ty Coon, President of Vice
+
+This General Public License does not permit incorporating your program into
+proprietary programs.  If your program is a subroutine library, you may
+consider it more useful to permit linking proprietary applications with the
+library.  If this is what you want to do, use the GNU Lesser General
+Public License instead of this License.</value>
+  </data>
+  <data name="TextBox1.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.Name" xml:space="preserve">
+    <value>TextBox1</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>436, 174</value>
+  </data>
+  <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TabPage1.Text" xml:space="preserve">
+    <value>GPL v2</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 34</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 187</value>
+    <value>444, 201</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -616,17 +1173,47 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
   <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="CopyrightLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="CopyrightLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CopyrightLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 252</value>
+  </data>
+  <data name="CopyrightLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="CopyrightLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="CopyrightLabel.Text" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="&gt;&gt;CopyrightLabel.Name" xml:space="preserve">
+    <value>CopyrightLabel</value>
+  </data>
+  <data name="&gt;&gt;CopyrightLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CopyrightLabel.Parent" xml:space="preserve">
+    <value>PPanel</value>
+  </data>
+  <data name="&gt;&gt;CopyrightLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="OKBTN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 227</value>
+    <value>350, 241</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 25</value>
+    <value>100, 25</value>
   </data>
   <data name="OKBTN.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="OKBTN.Text" xml:space="preserve">
     <value>확인</value>
@@ -641,30 +1228,6 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>PPanel</value>
   </data>
   <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 227</value>
-  </data>
-  <data name="Button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 25</value>
-  </data>
-  <data name="Button1.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="Button1.Text" xml:space="preserve">
-    <value>Website</value>
-  </data>
-  <data name="&gt;&gt;Button1.Name" xml:space="preserve">
-    <value>Button1</value>
-  </data>
-  <data name="&gt;&gt;Button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Button1.Parent" xml:space="preserve">
-    <value>PPanel</value>
-  </data>
-  <data name="&gt;&gt;Button1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="PPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -674,7 +1237,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>0, 0</value>
   </data>
   <data name="PPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>389, 262</value>
+    <value>466, 280</value>
   </data>
   <data name="PPanel.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -689,49 +1252,10 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="WebsiteContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="OfficialKiraraEncoderWebsiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
-  </data>
-  <data name="OfficialKiraraEncoderWebsiteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Official Kirara Encoder Website</value>
-  </data>
-  <data name="DownloadSourceCodeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
-  </data>
-  <data name="DownloadSourceCodeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Download source code</value>
-  </data>
-  <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
-  </data>
-  <data name="BittalkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
-  </data>
-  <data name="BittalkToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bittalk</value>
-  </data>
-  <data name="BitDonGToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
-  </data>
-  <data name="BitDonGToolStripMenuItem.Text" xml:space="preserve">
-    <value>BitDonG</value>
-  </data>
-  <data name="WebsiteContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 98</value>
-  </data>
-  <data name="&gt;&gt;WebsiteContextMenuStrip.Name" xml:space="preserve">
-    <value>WebsiteContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;WebsiteContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>1</value>
   </data>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>215, 17</value>
+    <value>0, 0</value>
   </metadata>
   <data name="InChkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 20</value>
@@ -743,7 +1267,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>0, 0</value>
   </data>
   <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>389, 24</value>
+    <value>466, 24</value>
   </data>
   <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -761,7 +1285,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -770,7 +1294,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>389, 262</value>
+    <value>466, 280</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
@@ -780,36 +1304,6 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>키라라 인코더 정보</value>
-  </data>
-  <data name="&gt;&gt;OfficialKiraraEncoderWebsiteToolStripMenuItem.Name" xml:space="preserve">
-    <value>OfficialKiraraEncoderWebsiteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;OfficialKiraraEncoderWebsiteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DownloadSourceCodeToolStripMenuItem.Name" xml:space="preserve">
-    <value>DownloadSourceCodeToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;DownloadSourceCodeToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripMenuItem1.Name" xml:space="preserve">
-    <value>ToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;ToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BittalkToolStripMenuItem.Name" xml:space="preserve">
-    <value>BittalkToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;BittalkToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BitDonGToolStripMenuItem.Name" xml:space="preserve">
-    <value>BitDonGToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;BitDonGToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;InChkToolStripMenuItem.Name" xml:space="preserve">
     <value>InChkToolStripMenuItem</value>

@@ -342,6 +342,111 @@
   <data name="&gt;&gt;ImageTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Name" xml:space="preserve">
+    <value>LAMEMP3QLabel2</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Name" xml:space="preserve">
+    <value>LAMEMP3QComboBox</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Name" xml:space="preserve">
+    <value>LAMEMP3QTrackBar</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Name" xml:space="preserve">
+    <value>LAMEMP3QNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Name" xml:space="preserve">
+    <value>LAMEMP3QLabel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LAMEMP3QPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 362</value>
+  </data>
+  <data name="LAMEMP3QPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 33</value>
+  </data>
+  <data name="LAMEMP3QPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QPanel.Name" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QPanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;SamplerateCheckBox.Name" xml:space="preserve">
     <value>SamplerateCheckBox</value>
   </data>
@@ -409,7 +514,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;SampleratePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;AudioBitrateNLabel.Name" xml:space="preserve">
     <value>AudioBitrateNLabel</value>
@@ -442,7 +547,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;BitrateNPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="AudioVolNLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -469,7 +574,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AudioVolNLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="AudioVolButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>359, 149</value>
@@ -493,7 +598,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AudioVolButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="AudioVolTrackBar.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -517,7 +622,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AudioVolTrackBar.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="AudioVolNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>287, 150</value>
@@ -538,7 +643,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AudioVolNumericUpDown.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="AudioVolLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 151</value>
@@ -565,7 +670,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AudioVolLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="FFmpegChComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 117</value>
@@ -586,7 +691,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;FFmpegChComboBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="FFmpegChLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 120</value>
@@ -613,7 +718,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;FFmpegChLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;AMRBitrateComboBox.Name" xml:space="preserve">
     <value>AMRBitrateComboBox</value>
@@ -670,7 +775,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;AudioBitrateComboBox.Name" xml:space="preserve">
     <value>AudioBitrateComboBox</value>
@@ -727,19 +832,31 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AbitratePanel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
-  <data name="VorbisQTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
   </data>
-  <data name="VorbisQTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 5</value>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="VorbisQTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
   </data>
-  <data name="VorbisQTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;VorbisQTrackBar.Name" xml:space="preserve">
     <value>VorbisQTrackBar</value>
@@ -751,16 +868,7 @@
     <value>AVorbisQPanel</value>
   </data>
   <data name="&gt;&gt;VorbisQTrackBar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="VorbisQNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 7</value>
-  </data>
-  <data name="VorbisQNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 22</value>
-  </data>
-  <data name="VorbisQNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;VorbisQNumericUpDown.Name" xml:space="preserve">
     <value>VorbisQNumericUpDown</value>
@@ -772,22 +880,7 @@
     <value>AVorbisQPanel</value>
   </data>
   <data name="&gt;&gt;VorbisQNumericUpDown.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="VorbisQLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 9</value>
-  </data>
-  <data name="VorbisQLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="VorbisQLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="VorbisQLabel.Text" xml:space="preserve">
-    <value>Vorbis Q:</value>
-  </data>
-  <data name="VorbisQLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;VorbisQLabel.Name" xml:space="preserve">
     <value>VorbisQLabel</value>
@@ -799,7 +892,7 @@
     <value>AVorbisQPanel</value>
   </data>
   <data name="&gt;&gt;VorbisQLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="AVorbisQPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 228</value>
@@ -820,7 +913,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AVorbisQPanel.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="AudioCodecComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 23</value>
@@ -841,7 +934,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AudioCodecComboBox.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="ACodecLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 23</value>
@@ -868,7 +961,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;ACodecLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="AudioGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 10</value>
@@ -894,6 +987,30 @@
   <data name="&gt;&gt;AudioGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;NeroAACQTrackBar.Name" xml:space="preserve">
     <value>NeroAACQTrackBar</value>
   </data>
@@ -904,7 +1021,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACQTrackBar.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;NeroAACQNumericUpDown.Name" xml:space="preserve">
     <value>NeroAACQNumericUpDown</value>
@@ -916,7 +1033,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACQNumericUpDown.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;NeroAACQLabel.Name" xml:space="preserve">
     <value>NeroAACQLabel</value>
@@ -928,7 +1045,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACQLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;NeroAACVBRRadioButton.Name" xml:space="preserve">
     <value>NeroAACVBRRadioButton</value>
@@ -940,7 +1057,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACVBRRadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;NeroAACCBRRadioButton.Name" xml:space="preserve">
     <value>NeroAACCBRRadioButton</value>
@@ -952,7 +1069,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACCBRRadioButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;NeroAACABRRadioButton.Name" xml:space="preserve">
     <value>NeroAACABRRadioButton</value>
@@ -964,7 +1081,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACABRRadioButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateTrackBar.Name" xml:space="preserve">
     <value>NeroAACBitrateTrackBar</value>
@@ -976,7 +1093,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateTrackBar.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Name" xml:space="preserve">
     <value>NeroAACBitrateNumericUpDown</value>
@@ -988,7 +1105,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateNumericUpDown.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateLabel.Name" xml:space="preserve">
     <value>NeroAACBitrateLabel</value>
@@ -1000,7 +1117,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;NeroAACSALabel.Name" xml:space="preserve">
     <value>NeroAACSALabel</value>
@@ -1012,7 +1129,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACSALabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;NeroAACProfileComboBox.Name" xml:space="preserve">
     <value>NeroAACProfileComboBox</value>
@@ -1024,7 +1141,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACProfileComboBox.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;NeroAACProfileLabel.Name" xml:space="preserve">
     <value>NeroAACProfileLabel</value>
@@ -1036,13 +1153,13 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACProfileLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="NeroAACGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 228</value>
   </data>
   <data name="NeroAACGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 214</value>
+    <value>480, 227</value>
   </data>
   <data name="NeroAACGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1243,18 +1360,21 @@
     <value>[WMV] - Windows Media Video</value>
   </data>
   <data name="OutFComboBox.Items8" xml:space="preserve">
-    <value>[MPEG] - Moving Picture Experts Group</value>
+    <value>[RM] - RealMedia</value>
   </data>
   <data name="OutFComboBox.Items9" xml:space="preserve">
-    <value>[FLV] - Flash Video</value>
+    <value>[MPEG] - Moving Picture Experts Group</value>
   </data>
   <data name="OutFComboBox.Items10" xml:space="preserve">
-    <value>[SWF] - Shock Wave Flash</value>
+    <value>[FLV] - Flash Video</value>
   </data>
   <data name="OutFComboBox.Items11" xml:space="preserve">
-    <value>[WEBM] - WebM</value>
+    <value>[SWF] - Shock Wave Flash</value>
   </data>
   <data name="OutFComboBox.Items12" xml:space="preserve">
+    <value>[WEBM] - WebM</value>
+  </data>
+  <data name="OutFComboBox.Items13" xml:space="preserve">
     <value>[AUDIO] - Audio Only</value>
   </data>
   <data name="OutFComboBox.Location" type="System.Drawing.Point, System.Drawing">
@@ -4196,6 +4316,84 @@
   <data name="&gt;&gt;LumaMatrixHSButton.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <data name="LAMEMP3QTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 5</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 25</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Name" xml:space="preserve">
+    <value>LAMEMP3QTrackBar</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 7</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 22</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Name" xml:space="preserve">
+    <value>LAMEMP3QNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LAMEMP3QLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 9</value>
+  </data>
+  <data name="LAMEMP3QLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="LAMEMP3QLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LAMEMP3QLabel.Text" xml:space="preserve">
+    <value>LAME MP3 Q:</value>
+  </data>
+  <data name="LAMEMP3QLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Name" xml:space="preserve">
+    <value>LAMEMP3QLabel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="SamplerateCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4589,6 +4787,78 @@
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="VorbisQTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="VorbisQTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 5</value>
+  </data>
+  <data name="VorbisQTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 25</value>
+  </data>
+  <data name="VorbisQTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Name" xml:space="preserve">
+    <value>VorbisQTrackBar</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="VorbisQNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 7</value>
+  </data>
+  <data name="VorbisQNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 22</value>
+  </data>
+  <data name="VorbisQNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Name" xml:space="preserve">
+    <value>VorbisQNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="VorbisQLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
+  <data name="VorbisQLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="VorbisQLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="VorbisQLabel.Text" xml:space="preserve">
+    <value>Vorbis Q:</value>
+  </data>
+  <data name="VorbisQLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Name" xml:space="preserve">
+    <value>VorbisQLabel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="NeroAACQTrackBar.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -4611,7 +4881,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACQTrackBar.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="NeroAACQNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>383, 169</value>
@@ -4632,7 +4902,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACQNumericUpDown.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="NeroAACQLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 167</value>
@@ -4660,7 +4930,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACQLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="NeroAACVBRRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4687,7 +4957,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACVBRRadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="NeroAACCBRRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4714,7 +4984,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACCBRRadioButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="NeroAACABRRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4741,7 +5011,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACABRRadioButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="NeroAACBitrateTrackBar.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4765,7 +5035,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateTrackBar.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="NeroAACBitrateNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>383, 106</value>
@@ -4786,7 +5056,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateNumericUpDown.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="NeroAACBitrateLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 104</value>
@@ -4814,7 +5084,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACBitrateLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="NeroAACSALabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4844,7 +5114,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACSALabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="NeroAACProfileComboBox.Items" xml:space="preserve">
     <value>Automatically</value>
@@ -4877,7 +5147,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACProfileComboBox.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="NeroAACProfileLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 24</value>
@@ -4904,7 +5174,7 @@
     <value>NeroAACGroupBox</value>
   </data>
   <data name="&gt;&gt;NeroAACProfileLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;SizeButton.Name" xml:space="preserve">
     <value>SizeButton</value>
@@ -5781,6 +6051,273 @@
   </data>
   <data name="BDDL46900MBToolStripMenuItem.Text" xml:space="preserve">
     <value>BD-DL (46900MB)</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items1" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items2" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items3" xml:space="preserve">
+    <value>56</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items4" xml:space="preserve">
+    <value>64</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items5" xml:space="preserve">
+    <value>80</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items6" xml:space="preserve">
+    <value>96</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items7" xml:space="preserve">
+    <value>112</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items8" xml:space="preserve">
+    <value>128</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items9" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items10" xml:space="preserve">
+    <value>192</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items11" xml:space="preserve">
+    <value>224</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items12" xml:space="preserve">
+    <value>256</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Items13" xml:space="preserve">
+    <value>320</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 7</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 22</value>
+  </data>
+  <data name="LAMEMP3QComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Name" xml:space="preserve">
+    <value>LAMEMP3QComboBox</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LAMEMP3QLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAMEMP3QLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>394, 9</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 14</value>
+  </data>
+  <data name="LAMEMP3QLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Text" xml:space="preserve">
+    <value>Kbit/s</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Name" xml:space="preserve">
+    <value>LAMEMP3QLabel2</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 201</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 14</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 201</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 14</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>322, 9</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 14</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 9</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 14</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 9</value>
+  </data>
+  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 14</value>
+  </data>
+  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 9</value>
+  </data>
+  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

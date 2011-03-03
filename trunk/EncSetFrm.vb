@@ -40,15 +40,22 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Microsoft MPEG-4 v3")
             VideoCodecComboBox.Items.Add("ITU-T H.263 Version 2(H.263+)")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
+            VideoCodecComboBox.Items.Add("Theora Video Codec")
+            VideoCodecComboBox.Items.Add("VP8 Codec(libvpx)")
+            VideoCodecComboBox.Items.Add("Windows Media Video 7")
+            VideoCodecComboBox.Items.Add("Windows Media Video 8")
+            VideoCodecComboBox.Items.Add("Huffyuv Lossless Video Codec")
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 2(MP2)")
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("Windows Media Audio 1")
             AudioCodecComboBox.Items.Add("Windows Media Audio 2")
+            AudioCodecComboBox.Items.Add("signed 16-bit little-endian PCM")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 Then
 
@@ -95,6 +102,8 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 2(MP2)")
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
+            AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("FAAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("Vorbis")
@@ -113,6 +122,8 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
+            AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("FAAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
@@ -124,9 +135,11 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Clear()
             VideoCodecComboBox.Items.Add("Xvid MPEG-4 Codec")
             VideoCodecComboBox.Items.Add("Xvid MPEG-4 Codec(Xvid Core)")
+            VideoCodecComboBox.Items.Add("DivX 3 Codec")
             VideoCodecComboBox.Items.Add("DivX 4 Codec(Open Divx)")
             VideoCodecComboBox.Items.Add("DivX 5 Codec")
             VideoCodecComboBox.Items.Add("Microsoft MPEG-4 v2")
+            VideoCodecComboBox.Items.Add("Microsoft MPEG-4 v3")
             VideoCodecComboBox.Items.Add("ITU-T H.263 Version 2(H.263+)")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
             VideoCodecComboBox.Items.Add("Theora Video Codec")
@@ -141,6 +154,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 2(MP2)")
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("FAAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
@@ -148,6 +162,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("Windows Media Audio 1")
             AudioCodecComboBox.Items.Add("Windows Media Audio 2")
             AudioCodecComboBox.Items.Add("Free Lossless Audio Codec(FLAC)")
+            AudioCodecComboBox.Items.Add("signed 16-bit little-endian PCM")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 Then
 
@@ -199,6 +214,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 2(MP2)")
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 Then
 
@@ -211,6 +227,7 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("FAAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
 
@@ -224,6 +241,7 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[WEBM]", CompareMethod.Text) <> 0 Then
 
@@ -247,6 +265,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("[MP2] MPEG-1 Audio layer 2(MP2)")
             AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("[MP4] FAAC")
             AudioCodecComboBox.Items.Add("[M4A] FAAC")
             AudioCodecComboBox.Items.Add("[MP4] Nero AAC")
@@ -445,7 +464,7 @@ Public Class EncSetFrm
         OKBTNCLK = False
 
         '=========================================
-        'Rev 1.1
+        'Rev 1.2
         '언어로드
 
         '함수에서 언어파일 선택
@@ -572,6 +591,7 @@ Public Class EncSetFrm
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 LANG_SKIP:
         '=========================================
@@ -755,6 +775,8 @@ LANG_SKIP:
         NeroAACABRRadioButton.Checked = True
         NeroAACCBRRadioButton.Checked = False
         NeroAACVBRRadioButton.Checked = False
+        LAMEMP3QNumericUpDown.Value = 4
+        LAMEMP3QComboBox.Text = "128"
         '기타
         HeaderTextBox.Text = "[KIRARA]"
         ExtensionTextBox.Text = ""
@@ -967,6 +989,7 @@ LANG_SKIP:
             AAMRBitratePanel.Top = 48
             NeroAACGroupBox.Visible = False
             SampleratePanel.Enabled = False
+            LAMEMP3QPanel.Visible = False
             '채널
             AudioPPFrm.AviSynthChGroupBox.Enabled = False
             FFmpegChComboBox.Enabled = False
@@ -982,10 +1005,35 @@ LANG_SKIP:
             AVorbisQPanel.Top = 48
             NeroAACGroupBox.Visible = False
             SampleratePanel.Enabled = True
+            LAMEMP3QPanel.Visible = False
             '채널
             AudioPPFrm.AviSynthChGroupBox.Enabled = True
             FFmpegChComboBox.Enabled = True
             FFmpegChLabel.Enabled = True
+
+        ElseIf AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)" OrElse AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
+
+            AbitratePanel.Visible = False
+            AVorbisQPanel.Visible = False
+            AAMRBitratePanel.Visible = False
+            BitrateNPanel.Visible = False
+            LAMEMP3QPanel.Left = 15
+            LAMEMP3QPanel.Top = 48
+            NeroAACGroupBox.Visible = False
+            SampleratePanel.Enabled = True
+            LAMEMP3QPanel.Visible = True
+            '채널
+            AudioPPFrm.AviSynthChGroupBox.Enabled = True
+            FFmpegChComboBox.Enabled = True
+            FFmpegChLabel.Enabled = True
+            'LAME
+            If AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
+                LAMEMP3QComboBox.Enabled = False
+                LAMEMP3QLabel2.Enabled = False
+            Else
+                LAMEMP3QComboBox.Enabled = True
+                LAMEMP3QLabel2.Enabled = True
+            End If
 
         ElseIf AudioCodecComboBox.Text = "Nero AAC" OrElse AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
 
@@ -998,6 +1046,7 @@ LANG_SKIP:
             NeroAACGroupBox.Visible = True
             AudioBitrateNLabel.Text = LangCls.EncSetNeroAACBP
             SampleratePanel.Enabled = True
+            LAMEMP3QPanel.Visible = False
             '채널
             AudioPPFrm.AviSynthChGroupBox.Enabled = True
             FFmpegChComboBox.Enabled = True
@@ -1014,12 +1063,13 @@ LANG_SKIP:
             NeroAACGroupBox.Visible = False
             AudioBitrateNLabel.Text = LangCls.EncSetFLACBP
             SampleratePanel.Enabled = True
+            LAMEMP3QPanel.Visible = False
             '채널
             AudioPPFrm.AviSynthChGroupBox.Enabled = True
             FFmpegChComboBox.Enabled = True
             FFmpegChLabel.Enabled = True
 
-        ElseIf AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then
+        ElseIf AudioCodecComboBox.Text = "signed 16-bit little-endian PCM" OrElse AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then
 
             AbitratePanel.Visible = False
             AVorbisQPanel.Visible = False
@@ -1030,6 +1080,7 @@ LANG_SKIP:
             NeroAACGroupBox.Visible = False
             AudioBitrateNLabel.Text = LangCls.EncSetPCMBP
             SampleratePanel.Enabled = True
+            LAMEMP3QPanel.Visible = False
             '채널
             AudioPPFrm.AviSynthChGroupBox.Enabled = True
             FFmpegChComboBox.Enabled = True
@@ -1045,6 +1096,7 @@ LANG_SKIP:
             AbitratePanel.Top = 48
             NeroAACGroupBox.Visible = False
             SampleratePanel.Enabled = True
+            LAMEMP3QPanel.Visible = False
             '채널
             AudioPPFrm.AviSynthChGroupBox.Enabled = True
             FFmpegChComboBox.Enabled = True
@@ -1537,6 +1589,16 @@ RELOAD:
                     If XTRSTR <> "" Then NeroAACVBRRadioButton.Checked = XTRSTR Else NeroAACVBRRadioButton.Checked = False
                 End If
 
+                If XTR.Name = "EncSetFrm_LAMEMP3QNumericUpDown" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then LAMEMP3QNumericUpDown.Value = XTRSTR Else LAMEMP3QNumericUpDown.Value = 4
+                End If
+
+                If XTR.Name = "EncSetFrm_LAMEMP3QComboBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then LAMEMP3QComboBox.Text = XTRSTR Else LAMEMP3QComboBox.Text = "128"
+                End If
+
                 '기타
                 If XTR.Name = "EncSetFrm_HeaderTextBox" Then
                     Dim XTRSTR As String = XTR.ReadString
@@ -1589,6 +1651,7 @@ RELOAD:
             MsgBox("XML_LOAD_ERROR :" & ex.Message)
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 
     End Sub
@@ -2190,7 +2253,7 @@ RELOAD:
         Dim AudioCodecComboBoxV As String = ""
         If AudioCodecComboBox.Text = "MPEG-1 Audio layer 2(MP2)" OrElse AudioCodecComboBox.Text = "[MP2] MPEG-1 Audio layer 2(MP2)" Then
             AudioCodecComboBoxV = " -acodec mp2"
-        ElseIf AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame" Then
+        ElseIf AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)" OrElse AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
             AudioCodecComboBoxV = " -acodec libmp3lame"
         ElseIf AudioCodecComboBox.Text = "FAAC" OrElse AudioCodecComboBox.Text = "[MP4] FAAC" OrElse AudioCodecComboBox.Text = "[M4A] FAAC" Then
             AudioCodecComboBoxV = " -acodec libfaac"
@@ -2246,7 +2309,7 @@ RELOAD:
 
             If SamplerateCheckBox.Checked = False Then
                 'FLV 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
-                If InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 AndAlso AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" Then
+                If InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 AndAlso (AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)") Then
                     If Val(SamplerateComboBox.Text) >= 44100 Then
                         SamplerateComboBoxV = " -ar 44100"
                     ElseIf Val(SamplerateComboBox.Text) >= 22050 Then
@@ -2279,6 +2342,12 @@ RELOAD:
 
         ElseIf AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then
             AudioBitrateComboBoxV = " -ab " & AMRBitrateComboBox.Text & "k"
+
+        ElseIf AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
+            AudioBitrateComboBoxV = " -aq " & LAMEMP3QNumericUpDown.Value & " -ab " & LAMEMP3QComboBox.Text & "k"
+
+        ElseIf AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
+            AudioBitrateComboBoxV = " -aq " & LAMEMP3QNumericUpDown.Value
 
         Else
             AudioBitrateComboBoxV = " -ab " & AudioBitrateComboBox.Text & "k"
@@ -2327,7 +2396,7 @@ RELOAD:
 
             If AudioCodecComboBox.Text = "[MP2] MPEG-1 Audio layer 2(MP2)" Then
                 FormatV = " -f mp2"
-            ElseIf AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame" Then
+            ElseIf AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
                 FormatV = " -f mp3"
             ElseIf AudioCodecComboBox.Text = "[MP4] FAAC" Then
                 FormatV = " -f mp4"
@@ -2357,11 +2426,8 @@ RELOAD:
         ' 용량 제한
         '***********************************
         Dim SizeLimitTextBoxV As String = ""
-        If AudioCodecComboBox.Text = "Nero AAC" Then 'Nero AAC 는 MUX 때 용량 제한.
-        Else
-            If Val(SizeLimitTextBox.Text) <> 0 Then
-                SizeLimitTextBoxV = " -fs " & Val(SizeLimitTextBox.Text) * Val(1048576)
-            End If
+        If Val(SizeLimitTextBox.Text) <> 0 AndAlso SizeLimitCheckBox.Checked = True Then
+            SizeLimitTextBoxV = " -fs " & Val(SizeLimitTextBox.Text) * Val(1048576)
         End If
 
         '***********************************
@@ -2934,5 +3000,13 @@ RELOAD:
 
     Private Sub SizeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SizeButton.Click
         TargetContextMenuStrip.Show(Control.MousePosition)
+    End Sub
+
+    Private Sub LAMEMP3QTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LAMEMP3QTrackBar.Scroll
+        LAMEMP3QNumericUpDown.Value = LAMEMP3QTrackBar.Value / 100
+    End Sub
+
+    Private Sub LAMEMP3QNumericUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LAMEMP3QNumericUpDown.ValueChanged
+        LAMEMP3QTrackBar.Value = LAMEMP3QNumericUpDown.Value * 100
     End Sub
 End Class

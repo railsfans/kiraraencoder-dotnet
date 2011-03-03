@@ -27,12 +27,21 @@ Public Class WinAPI
     Public Const WM_NCLBUTTONDOWN As Integer = &HA1
     Public Const WM_KEYDOWN = &H100
     Public Const WM_CLOSE = &H10
+    Public Const GW_HWNDNEXT = 2
+    Public Const GWL_STYLE = (-16)
+    Public Const WS_BORDER = &H800000
+    Public Const WS_DLGFRAME = &H400000
+    Public Const WS_THICKFRAME = &H40000
+    Public Const WS_MAXIMIZEBOX = &H10000
+    Public Const WS_MINIMIZEBOX = &H20000
     Public Declare Auto Function GetShortPathName Lib "kernel32.dll" (ByVal strLongPath As String, ByVal objStringBuilder As System.Text.StringBuilder, ByVal intBufferSize As Integer) As Integer
     Public Declare Auto Function GetLongPathName Lib "kernel32.dll" (ByVal strShortPath As String, ByVal objStringBuilder As System.Text.StringBuilder, ByVal intBufferSize As Integer) As Integer
     Public Declare Function ReleaseCapture Lib "user32" () As Long
     Public Declare Function SendMessage Lib "user32" Alias "SendMessageW" (ByVal hwnd As Integer, ByVal uMgs As Integer, ByVal wParam As Long, ByVal lParam As Long) As Long
     Public Declare Function IsHungAppWindow Lib "user32.dll" (ByVal hWnd As Long) As Boolean
     Public Declare Function GetWindowThreadProcessId Lib "user32.dll" (ByVal hwnd As Long, ByVal lpdwProcessId As Long) As Long
+    Public Declare Function SetWindowLongW Lib "user32" (ByVal hwnd As Integer, ByVal nIndex As Integer, ByVal dwNewLong As Integer) As Integer
+    Public Declare Function GetWindowLongW Lib "user32" (ByVal hwnd As Integer, ByVal nIndex As Integer) As Integer
 
 #Region "프론트엔드 코어"
 
@@ -249,6 +258,18 @@ Public Class WinAPI
 
     <DllImport("user32.dll", CharSet:=CharSet.Auto)> _
     Public Shared Function FindWindowW(ByVal lpClassName As String, ByVal lpWindowName As String) As Integer
+    End Function
+
+    <DllImport("user32")> _
+    Public Shared Function GetParent(ByVal hwnd As Integer) As Integer
+    End Function
+
+    <DllImport("user32")> _
+    Public Shared Function GetWindow(ByVal hwnd As Integer, ByVal wCmd As Integer) As Integer
+    End Function
+
+    <DllImport("user32")> _
+    Public Shared Function GetWindowThreadProcessId(ByVal hwnd As Integer, ByRef lpdwprocessid As Integer) As Integer
     End Function
 
 End Class

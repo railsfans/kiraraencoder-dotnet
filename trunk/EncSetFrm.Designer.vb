@@ -111,6 +111,10 @@ Partial Class EncSetFrm
         Me.LumaMatrixHSButton = New System.Windows.Forms.Button
         Me.AudioTabPage = New System.Windows.Forms.TabPage
         Me.AudioGroupBox = New System.Windows.Forms.GroupBox
+        Me.LAMEMP3QPanel = New System.Windows.Forms.Panel
+        Me.LAMEMP3QTrackBar = New System.Windows.Forms.TrackBar
+        Me.LAMEMP3QNumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.LAMEMP3QLabel = New System.Windows.Forms.Label
         Me.SampleratePanel = New System.Windows.Forms.Panel
         Me.SamplerateCheckBox = New System.Windows.Forms.CheckBox
         Me.SamplerateLabel2 = New System.Windows.Forms.Label
@@ -190,6 +194,14 @@ Partial Class EncSetFrm
         Me.DVDDLOrBD98145MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BD23450MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BDDL46900MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.LAMEMP3QComboBox = New System.Windows.Forms.ComboBox
+        Me.LAMEMP3QLabel2 = New System.Windows.Forms.Label
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.Label7 = New System.Windows.Forms.Label
         Me.EncSetPanel.SuspendLayout()
         Me.OutFGroupBox.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
@@ -225,6 +237,9 @@ Partial Class EncSetFrm
         CType(Me.LumaMatrixHSTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AudioTabPage.SuspendLayout()
         Me.AudioGroupBox.SuspendLayout()
+        Me.LAMEMP3QPanel.SuspendLayout()
+        CType(Me.LAMEMP3QTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LAMEMP3QNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SampleratePanel.SuspendLayout()
         Me.BitrateNPanel.SuspendLayout()
         CType(Me.AudioVolTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -270,7 +285,7 @@ Partial Class EncSetFrm
         '
         Me.OutFComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.OutFComboBox.FormattingEnabled = True
-        Me.OutFComboBox.Items.AddRange(New Object() {resources.GetString("OutFComboBox.Items"), resources.GetString("OutFComboBox.Items1"), resources.GetString("OutFComboBox.Items2"), resources.GetString("OutFComboBox.Items3"), resources.GetString("OutFComboBox.Items4"), resources.GetString("OutFComboBox.Items5"), resources.GetString("OutFComboBox.Items6"), resources.GetString("OutFComboBox.Items7"), resources.GetString("OutFComboBox.Items8"), resources.GetString("OutFComboBox.Items9"), resources.GetString("OutFComboBox.Items10"), resources.GetString("OutFComboBox.Items11"), resources.GetString("OutFComboBox.Items12")})
+        Me.OutFComboBox.Items.AddRange(New Object() {resources.GetString("OutFComboBox.Items"), resources.GetString("OutFComboBox.Items1"), resources.GetString("OutFComboBox.Items2"), resources.GetString("OutFComboBox.Items3"), resources.GetString("OutFComboBox.Items4"), resources.GetString("OutFComboBox.Items5"), resources.GetString("OutFComboBox.Items6"), resources.GetString("OutFComboBox.Items7"), resources.GetString("OutFComboBox.Items8"), resources.GetString("OutFComboBox.Items9"), resources.GetString("OutFComboBox.Items10"), resources.GetString("OutFComboBox.Items11"), resources.GetString("OutFComboBox.Items12"), resources.GetString("OutFComboBox.Items13")})
         resources.ApplyResources(Me.OutFComboBox, "OutFComboBox")
         Me.OutFComboBox.Name = "OutFComboBox"
         '
@@ -911,6 +926,7 @@ Partial Class EncSetFrm
         '
         'AudioGroupBox
         '
+        Me.AudioGroupBox.Controls.Add(Me.LAMEMP3QPanel)
         Me.AudioGroupBox.Controls.Add(Me.SampleratePanel)
         Me.AudioGroupBox.Controls.Add(Me.BitrateNPanel)
         Me.AudioGroupBox.Controls.Add(Me.AudioVolNLabel)
@@ -928,6 +944,42 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.AudioGroupBox, "AudioGroupBox")
         Me.AudioGroupBox.Name = "AudioGroupBox"
         Me.AudioGroupBox.TabStop = False
+        '
+        'LAMEMP3QPanel
+        '
+        Me.LAMEMP3QPanel.Controls.Add(Me.Label7)
+        Me.LAMEMP3QPanel.Controls.Add(Me.Label6)
+        Me.LAMEMP3QPanel.Controls.Add(Me.LAMEMP3QLabel2)
+        Me.LAMEMP3QPanel.Controls.Add(Me.LAMEMP3QComboBox)
+        Me.LAMEMP3QPanel.Controls.Add(Me.LAMEMP3QTrackBar)
+        Me.LAMEMP3QPanel.Controls.Add(Me.LAMEMP3QNumericUpDown)
+        Me.LAMEMP3QPanel.Controls.Add(Me.LAMEMP3QLabel)
+        resources.ApplyResources(Me.LAMEMP3QPanel, "LAMEMP3QPanel")
+        Me.LAMEMP3QPanel.Name = "LAMEMP3QPanel"
+        '
+        'LAMEMP3QTrackBar
+        '
+        resources.ApplyResources(Me.LAMEMP3QTrackBar, "LAMEMP3QTrackBar")
+        Me.LAMEMP3QTrackBar.BackColor = System.Drawing.Color.White
+        Me.LAMEMP3QTrackBar.Maximum = 1000
+        Me.LAMEMP3QTrackBar.Name = "LAMEMP3QTrackBar"
+        Me.LAMEMP3QTrackBar.TickFrequency = 0
+        Me.LAMEMP3QTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        Me.LAMEMP3QTrackBar.Value = 400
+        '
+        'LAMEMP3QNumericUpDown
+        '
+        Me.LAMEMP3QNumericUpDown.DecimalPlaces = 2
+        Me.LAMEMP3QNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        resources.ApplyResources(Me.LAMEMP3QNumericUpDown, "LAMEMP3QNumericUpDown")
+        Me.LAMEMP3QNumericUpDown.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.LAMEMP3QNumericUpDown.Name = "LAMEMP3QNumericUpDown"
+        Me.LAMEMP3QNumericUpDown.Value = New Decimal(New Integer() {4, 0, 0, 0})
+        '
+        'LAMEMP3QLabel
+        '
+        resources.ApplyResources(Me.LAMEMP3QLabel, "LAMEMP3QLabel")
+        Me.LAMEMP3QLabel.Name = "LAMEMP3QLabel"
         '
         'SampleratePanel
         '
@@ -1070,6 +1122,8 @@ Partial Class EncSetFrm
         '
         'AVorbisQPanel
         '
+        Me.AVorbisQPanel.Controls.Add(Me.Label5)
+        Me.AVorbisQPanel.Controls.Add(Me.Label4)
         Me.AVorbisQPanel.Controls.Add(Me.VorbisQTrackBar)
         Me.AVorbisQPanel.Controls.Add(Me.VorbisQNumericUpDown)
         Me.AVorbisQPanel.Controls.Add(Me.VorbisQLabel)
@@ -1112,6 +1166,8 @@ Partial Class EncSetFrm
         '
         'NeroAACGroupBox
         '
+        Me.NeroAACGroupBox.Controls.Add(Me.Label2)
+        Me.NeroAACGroupBox.Controls.Add(Me.Label1)
         Me.NeroAACGroupBox.Controls.Add(Me.NeroAACQTrackBar)
         Me.NeroAACGroupBox.Controls.Add(Me.NeroAACQNumericUpDown)
         Me.NeroAACGroupBox.Controls.Add(Me.NeroAACQLabel)
@@ -1440,6 +1496,48 @@ Partial Class EncSetFrm
         Me.BDDL46900MBToolStripMenuItem.Name = "BDDL46900MBToolStripMenuItem"
         resources.ApplyResources(Me.BDDL46900MBToolStripMenuItem, "BDDL46900MBToolStripMenuItem")
         '
+        'LAMEMP3QComboBox
+        '
+        Me.LAMEMP3QComboBox.FormattingEnabled = True
+        Me.LAMEMP3QComboBox.Items.AddRange(New Object() {resources.GetString("LAMEMP3QComboBox.Items"), resources.GetString("LAMEMP3QComboBox.Items1"), resources.GetString("LAMEMP3QComboBox.Items2"), resources.GetString("LAMEMP3QComboBox.Items3"), resources.GetString("LAMEMP3QComboBox.Items4"), resources.GetString("LAMEMP3QComboBox.Items5"), resources.GetString("LAMEMP3QComboBox.Items6"), resources.GetString("LAMEMP3QComboBox.Items7"), resources.GetString("LAMEMP3QComboBox.Items8"), resources.GetString("LAMEMP3QComboBox.Items9"), resources.GetString("LAMEMP3QComboBox.Items10"), resources.GetString("LAMEMP3QComboBox.Items11"), resources.GetString("LAMEMP3QComboBox.Items12"), resources.GetString("LAMEMP3QComboBox.Items13")})
+        resources.ApplyResources(Me.LAMEMP3QComboBox, "LAMEMP3QComboBox")
+        Me.LAMEMP3QComboBox.Name = "LAMEMP3QComboBox"
+        '
+        'LAMEMP3QLabel2
+        '
+        resources.ApplyResources(Me.LAMEMP3QLabel2, "LAMEMP3QLabel2")
+        Me.LAMEMP3QLabel2.Name = "LAMEMP3QLabel2"
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
+        'Label2
+        '
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
+        '
+        'Label4
+        '
+        resources.ApplyResources(Me.Label4, "Label4")
+        Me.Label4.Name = "Label4"
+        '
+        'Label5
+        '
+        resources.ApplyResources(Me.Label5, "Label5")
+        Me.Label5.Name = "Label5"
+        '
+        'Label6
+        '
+        resources.ApplyResources(Me.Label6, "Label6")
+        Me.Label6.Name = "Label6"
+        '
+        'Label7
+        '
+        resources.ApplyResources(Me.Label7, "Label7")
+        Me.Label7.Name = "Label7"
+        '
         'EncSetFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -1494,6 +1592,10 @@ Partial Class EncSetFrm
         Me.AudioTabPage.ResumeLayout(False)
         Me.AudioGroupBox.ResumeLayout(False)
         Me.AudioGroupBox.PerformLayout()
+        Me.LAMEMP3QPanel.ResumeLayout(False)
+        Me.LAMEMP3QPanel.PerformLayout()
+        CType(Me.LAMEMP3QTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LAMEMP3QNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SampleratePanel.ResumeLayout(False)
         Me.SampleratePanel.PerformLayout()
         Me.BitrateNPanel.ResumeLayout(False)
@@ -1505,6 +1607,7 @@ Partial Class EncSetFrm
         Me.AbitratePanel.ResumeLayout(False)
         Me.AbitratePanel.PerformLayout()
         Me.AVorbisQPanel.ResumeLayout(False)
+        Me.AVorbisQPanel.PerformLayout()
         CType(Me.VorbisQTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VorbisQNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NeroAACGroupBox.ResumeLayout(False)
@@ -1694,4 +1797,16 @@ Partial Class EncSetFrm
     Friend WithEvents DVDDLOrBD98145MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BD23450MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BDDL46900MBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LAMEMP3QPanel As System.Windows.Forms.Panel
+    Friend WithEvents LAMEMP3QTrackBar As System.Windows.Forms.TrackBar
+    Friend WithEvents LAMEMP3QNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents LAMEMP3QLabel As System.Windows.Forms.Label
+    Friend WithEvents LAMEMP3QLabel2 As System.Windows.Forms.Label
+    Friend WithEvents LAMEMP3QComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

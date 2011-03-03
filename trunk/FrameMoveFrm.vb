@@ -30,7 +30,7 @@ Public Class FrameMoveFrm
     Private Sub FrameMoveFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         '=========================================
-        'Rev 1.1
+        'Rev 1.2
         '언어로드
 
         '함수에서 언어파일 선택
@@ -72,6 +72,7 @@ Public Class FrameMoveFrm
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 LANG_SKIP:
         '=========================================

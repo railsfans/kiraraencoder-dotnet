@@ -214,6 +214,7 @@ RELOAD:
             MsgBox("XML_LOAD_ERROR :" & ex.Message)
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 
     End Sub
@@ -223,7 +224,7 @@ RELOAD:
         OKBTNCLK = False
 
         '=========================================
-        'Rev 1.1
+        'Rev 1.2
         '언어로드
 
         '함수에서 언어파일 선택
@@ -283,6 +284,7 @@ RELOAD:
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 LANG_SKIP:
         '=========================================
@@ -791,6 +793,56 @@ LANG_SKIP:
 
     Private Sub SetDecToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetDecToolStripMenuItem.Click
         If MainFrm.SPreB = True Then Exit Sub
+
+        '윈도우 2000 일경우 MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem 설정제한
+        If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
+            MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Enabled = False
+            If MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True Then
+                MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = False
+                MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True
+            End If
+        End If
+
+        With Me
+
+            If .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True AndAlso _
+                .MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True AndAlso _
+                .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
+                .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True AndAlso _
+                .AllAudioFilesBassAudioToolStripMenuItem.Checked = True AndAlso _
+                .AC3DTSFilesNicAudioToolStripMenuItem.Checked = True AndAlso _
+                .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True Then
+                .InitializationDSToolStripMenuItem.Checked = True
+                .AllICToolStripMenuItem.Checked = False
+                .AllOCToolStripMenuItem.Checked = False
+            ElseIf .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True AndAlso _
+                .MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True AndAlso _
+                .ASFFilesFFmpegSourceToolStripMenuItem2.Checked = True AndAlso _
+                .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True AndAlso _
+                .AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = True AndAlso _
+                .AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = True AndAlso _
+                .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True Then
+                .InitializationDSToolStripMenuItem.Checked = False
+                .AllICToolStripMenuItem.Checked = True
+                .AllOCToolStripMenuItem.Checked = False
+            ElseIf .AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = True AndAlso _
+                .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
+                .MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = True AndAlso _
+                .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
+                .AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = True AndAlso _
+                .AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
+                .RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = True Then
+                .InitializationDSToolStripMenuItem.Checked = False
+                .AllICToolStripMenuItem.Checked = False
+                .AllOCToolStripMenuItem.Checked = True
+            Else
+                .InitializationDSToolStripMenuItem.Checked = False
+                .AllICToolStripMenuItem.Checked = False
+                .AllOCToolStripMenuItem.Checked = False
+            End If
+
+        End With
+
         DecContextMenuStrip.Show(Control.MousePosition)
     End Sub
 

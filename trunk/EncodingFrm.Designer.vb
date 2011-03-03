@@ -89,7 +89,6 @@ Partial Class EncodingFrm
         '
         'GroupBox1
         '
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.TimeRemainingTXTLabel)
         Me.GroupBox1.Controls.Add(Me.TimeRemainingLabel)
         Me.GroupBox1.Controls.Add(Me.TimeElapsedTXTLabel)
@@ -106,6 +105,7 @@ Partial Class EncodingFrm
         Me.GroupBox1.Controls.Add(Me.FrameLabel)
         Me.GroupBox1.Controls.Add(Me.PositionDurationTXTLabel)
         Me.GroupBox1.Controls.Add(Me.PositionDurationLabel)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
         '
@@ -246,9 +246,9 @@ Partial Class EncodingFrm
         '
         'PriorityComboBox
         '
-        resources.ApplyResources(Me.PriorityComboBox, "PriorityComboBox")
         Me.PriorityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.PriorityComboBox.FormattingEnabled = True
+        resources.ApplyResources(Me.PriorityComboBox, "PriorityComboBox")
         Me.PriorityComboBox.Name = "PriorityComboBox"
         '
         'SuspendResumeButton

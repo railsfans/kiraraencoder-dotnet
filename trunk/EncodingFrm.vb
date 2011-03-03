@@ -127,12 +127,9 @@ Public Class EncodingFrm
             Catch ex As Exception
             End Try
         Else
-            '캐리지리턴/라인피드 처리(윈도우2000 대비//)
-            If InStr(MsgV, vbCr & vbCr & vbLf & vbLf) <> 0 Then MsgV = Replace(MsgV, vbCr & vbCr & vbLf & vbLf, vbNewLine)
 
-            '=====================================================
             If EncNMStartB = False Then
-                InfoTextBox.AppendText(Replace(MsgV, vbCr, vbCrLf))
+                InfoTextBox.AppendText(Replace(MsgV, vbLf, vbCrLf))
             End If
 
             '정보가져오기
@@ -176,7 +173,7 @@ Public Class EncodingFrm
                     Dim EMTextBoxV As String = "00"
                     Dim ESTextBoxV As String = "00"
                     Dim EMSTextBoxV As String = "00"
-
+                    Dim PlayHMSV As Single = 0.0
                     '시작시간
                     Dim i As Long = 1
                     Dim ii As Long = 0
@@ -223,6 +220,26 @@ Public Class EncodingFrm
                         Catch ex As Exception
                         End Try
                     End If
+                    '재생시간
+                    i = 1
+                    ii = 0
+                    t = ""
+                    If InStr(i, PTimeInfo, "", CompareMethod.Text) Then
+                        ii = InStr(i, PTimeInfo, "", CompareMethod.Text)
+                        If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
+                            i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
+                            t = Mid(PTimeInfo, ii, i - ii - 1)
+                        End If
+                    Else
+                        i = i + 1
+                    End If
+                    If t <> "" Then
+                        Try
+                            PlayHMSV = Val((Split(t, ":")(0) * 3600)) + Val((Split(t, ":")(1) * 60)) + Val(Split(Split(t, ":")(2), ".")(0)) + Val("0." & Split(t, ".")(1))
+                        Catch ex As Exception
+                        End Try
+                    End If
+
                     Dim STimeV As Single = (Val(SHTextBoxV) * 3600) + (Val(SMTextBoxV) * 60) + Val(SSTextBoxV) + Val("0." & SMSTextBoxV)
                     Dim ETimeV As Single = (Val(EHTextBoxV) * 3600) + (Val(EMTextBoxV) * 60) + Val(ESTextBoxV) + Val("0." & EMSTextBoxV)
                     Dim _TimeV As Double = 0.0
@@ -249,8 +266,13 @@ Public Class EncodingFrm
                             _TimeV = 0.0
                         End Try
                     End If
-                    EncDuration = FunctionCls.TIME_TO_HMSMSTIME(_TimeV, True)
-                    EncDurationD = _TimeV
+                    If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" AndAlso EncToolStripStatusLabel.Text <> LangCls.EncodingVEncoding AndAlso MainFrm.AVSCheckBox.Checked = False Then '네로 AAC 사용하고 FFmpeg 면은 뭐.. mux 가 사라졋으니.
+                        EncDuration = MainFrm.EncListListView.Items(EncindexI).SubItems(11).Text
+                        EncDurationD = PlayHMSV
+                    Else
+                        EncDuration = FunctionCls.TIME_TO_HMSMSTIME(_TimeV, True)
+                        EncDurationD = _TimeV
+                    End If
                     ProgressBar.Maximum = EncDurationD
                 End If
                 '------------------
@@ -338,11 +360,8 @@ Public Class EncodingFrm
                 Application.DoEvents()
             Loop
 
-            If PipeMode = True Then
-                HWNDV = WinAPI.FindWindowW(vbNullString, Environ("ComSpec"))
-            Else
-                HWNDV = WinAPI.FindWindowW(vbNullString, My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe")
-            End If
+            If HWNDV = 0 Then HWNDV = GetHwndFromPid(ProcessID_EI)
+
             Dim WaitOnHandles(1) As IntPtr
             WaitOnHandles(0) = ProcessHandle_EI
             WaitOnHandles(1) = ThreadSignal_EI.SafeWaitHandle.DangerousGetHandle
@@ -355,6 +374,37 @@ Public Class EncodingFrm
         Loop
 
     End Sub
+
+#Region "HWND-PID // 출처: http://kchon.blog111.fc2.com/blog-entry-128.html"
+
+    Public Function GetPidFromHwnd(ByVal hwnd As Integer) As Integer
+
+        Dim pid As Integer
+        Call WinAPI.GetWindowThreadProcessId(hwnd, pid)
+        GetPidFromHwnd = pid
+    End Function
+
+    Public Function GetHwndFromPid(ByVal pid As Integer) As Integer
+
+        Dim hwnd As Integer
+        If PipeMode = True Then
+            hwnd = WinAPI.FindWindowW(vbNullString, Environ("ComSpec"))
+        Else
+            hwnd = WinAPI.FindWindowW(vbNullString, My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe")
+        End If
+        Do While hwnd <> 0
+            If WinAPI.GetParent(hwnd) = 0 Then
+                If pid = GetPidFromHwnd(hwnd) Then
+                    Return hwnd
+                End If
+            End If
+            hwnd = WinAPI.GetWindow(hwnd, WinAPI.GW_HWNDNEXT)
+        Loop
+        Return hwnd
+
+    End Function
+
+#End Region
 
     Private Sub EndOfProcess()
 
@@ -421,25 +471,22 @@ Public Class EncodingFrm
 
     End Sub
 
-    Public Sub EncSub(ByVal InPATHV As String, ByVal CommandV As String, ByVal OutPATHV As String, ByVal FFMODE As Boolean, ByVal MUXMODE As Boolean)
+    Public Sub EncSub(ByVal InPATHV As String, ByVal CommandV As String, ByVal OutPATHV As String, ByVal FFMODE As Boolean)
 
         Dim MSGB As String = ""
         If FFMODE = True Then
 
             PipeMode = False
-            MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+            If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '네로AAC 설정일경우 맵을 복사//
+                Dim RCMeta As String = ""
+                If MainFrm.AVSCheckBox.Checked = True Then RCMeta = "-map_chapters -1 "
+                MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
+                                                            " -map 0.0 -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+            Else
+                MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+            End If
 
-        ElseIf MUXMODE = True Then
-
-            PipeMode = False
-            Try
-                MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & Split(InPATHV, "|")(0) & Chr(34) & " -i " & Chr(34) & Split(InPATHV, "|")(1) & Chr(34) & _
-                       " -map 0.0 -map 1.0 -vcodec copy -acodec copy " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
-            Catch ex As Exception
-                Exit Sub
-            End Try
-
-        ElseIf FFMODE = False AndAlso MUXMODE = False Then
+        ElseIf FFMODE = False Then
 
             PipeMode = True
             MSGB = Chr(34) & InPATHV & Chr(34)
@@ -518,10 +565,10 @@ Public Class EncodingFrm
             Exit Sub
         End If
 
-            '---------------------------------------
+        '---------------------------------------
 
-            '타이머
-            TimeElapsedTimer.Enabled = False
+        '타이머
+        TimeElapsedTimer.Enabled = False
 
     End Sub
 
@@ -1257,7 +1304,7 @@ ImageSkip:
                             Dim AKByteV As Single = Val(EncSetFrm.AudioBitrateComboBox.Text) / 8
                             '코덱
                             If ExAudioB = False Then
-                                If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then 'WAV
+                                If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" OrElse EncSetFrm.AudioCodecComboBox.Text = "signed 16-bit little-endian PCM" Then 'WAV
                                     Dim ACHV As Integer = 0
                                     If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
                                         If AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPdolbypComboBox Then
@@ -1548,7 +1595,7 @@ ImageSkip:
                 End If
 
                 '---------------------------------
-                ' FLV 원본 샘플링 가변적//
+                ' FLV, SWF 원본 샘플링 가변적//
                 '=================================
                 Dim AudioListV As String = MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text
                 Dim FLVSamplerateV As String = ""
@@ -1556,7 +1603,7 @@ ImageSkip:
                 Dim _ii As Long = 0
                 Dim _t As String = ""
                 'FLV 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
-                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 AndAlso EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" Then
+                If (InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0) AndAlso EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" Then
                     If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플레이트 체크
                         _i = 1
                         _ii = 0
@@ -1627,7 +1674,11 @@ ImageSkip:
                     If MainFrm.AVSCheckBox.Checked = True Then 'AviSynth 사용
                         CommandV = MainFrm.NeroAACSTRAviSynth & NeroAACPath & MainFrm.NeroAACSTRNEP
                     Else 'AviSynth 사용 안 함
-                        CommandV = NeroAACAudioMapV & SSTV & MainFrm.NeroAACSTRFFmpeg & NeroAACPath & MainFrm.NeroAACSTRNEP
+                        If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '비디오 + 오디오
+                            CommandV = NeroAACAudioMapV & MainFrm.NeroAACSTRFFmpeg & NeroAACPath & MainFrm.NeroAACSTRNEP
+                        Else
+                            CommandV = NeroAACAudioMapV & SSTV & MainFrm.NeroAACSTRFFmpeg & NeroAACPath & MainFrm.NeroAACSTRNEP
+                        End If
                     End If
 
                     Dim MSGB As String = Chr(34) & My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe" & Chr(34) & " -y -i " & Chr(34) & InPATHV & Chr(34) & CommandV & Chr(34) & OutPATHV & Chr(34)
@@ -1648,7 +1699,7 @@ ImageSkip:
 
                     '실행
                     EncToolStripStatusLabel.Text = LangCls.EncodingNeroAACEncoding
-                    EncSub(NeroBATCMDPathV, Nothing, Nothing, False, False)
+                    EncSub(NeroBATCMDPathV, Nothing, Nothing, False)
                     EncToolStripStatusLabel.Text = ""
                     If EncSTOPBool = True Then GoTo ENC_STOP
                     If EncERRBool(EncindexI) = True Then
@@ -1658,42 +1709,6 @@ ImageSkip:
                 End If
                 '네로 AAC 인코딩 부분//
 
-
-                '***********************************
-                ' 출력 형식 NeroAAC MUX용 -f 는 확장자 뒤에 붙은 V 와 A 를 합칠때 쓴다 mp4V + mp4A = 각 포맷으로 , 지정을 안 하면 오류발생../ 지우지 말것.
-                '***********************************
-                Dim OUTPUTFORMAT As String = ""
-                Dim OUTPUTFORMAT2 As String = ""
-                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then
-                    Try
-                        OUTPUTFORMAT = LCase(Replace(Split(EncSetFrm.OutFComboBox.Text, "]")(0), "[", ""))
-                        If OUTPUTFORMAT = "3gp" Then
-                            OUTPUTFORMAT2 = " -f 3gp"
-                        ElseIf OUTPUTFORMAT = "3g2" Then
-                            OUTPUTFORMAT2 = " -f 3g2"
-                        ElseIf OUTPUTFORMAT = "mp4" Then
-                            OUTPUTFORMAT2 = " -f mp4"
-                        ElseIf OUTPUTFORMAT = "mov" Then
-                            OUTPUTFORMAT2 = " -f mov"
-                        ElseIf OUTPUTFORMAT = "mkv" Then
-                            OUTPUTFORMAT2 = " -f matroska"
-                        ElseIf OUTPUTFORMAT = "flv" Then
-                            OUTPUTFORMAT2 = " -f flv"
-                        End If
-                    Catch ex As Exception
-                        OUTPUTFORMAT = ""
-                        OUTPUTFORMAT2 = ""
-                    End Try
-                End If
-                '***********************************
-                ' 용량 제한 NeroAAC MUX용
-                '***********************************
-                Dim SizeLimitTextBoxV As String = ""
-                If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then
-                    If Val(EncSetFrm.SizeLimitTextBox.Text) <> 0 Then
-                        SizeLimitTextBoxV = " -fs " & Val(EncSetFrm.SizeLimitTextBox.Text) * Val(1048576)
-                    End If
-                End If
 
 
 
@@ -1707,15 +1722,9 @@ ImageSkip:
                 '오디오 비디오 인코딩 // MP4 Nero AAC 예외를 준 이유는 위에서 이미 인코딩을 진행했기 때문./ 일반 Nero AAC 코덱은 아래와 같이 진행./ 비디오 인코딩 및 MUX 과정을 행함.
                 If EncSetFrm.AudioCodecComboBox.Text <> "[MP4] Nero AAC" Then
 
-                    Dim VextV As String = ""
-                    Dim AnV As String = ""
                     If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '네로 에에씨 인코딩이면, -an 과(2-1패스는 제외), 파일 확장자뒤에 V를 붙어줌.
-                        VextV = "V"
-                        AnV = " -an"
                         EncToolStripStatusLabel.Text = LangCls.EncodingVEncoding
                     Else
-                        VextV = ""
-                        AnV = ""
                         If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
                             EncToolStripStatusLabel.Text = LangCls.EncodingAVEncoding
                         Else
@@ -1731,7 +1740,7 @@ ImageSkip:
                         If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
 
                             EncPassStr = "[1/2Pass]"
-                            EncSub(InputFilePath, VideoFilterV & timestampV & MainFrm.AviSynthCommand2PassStr & CalcVideoBitrateStr, SavePathStr & VextV, True, False)
+                            EncSub(InputFilePath, VideoFilterV & timestampV & MainFrm.AviSynthCommand2PassStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1739,7 +1748,7 @@ ImageSkip:
                             End If
 
                             EncPassStr = "[2/2Pass]"
-                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr & AnV, SavePathStr & VextV, True, False)
+                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1751,7 +1760,7 @@ ImageSkip:
 
                         Else
 
-                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr & AnV, SavePathStr & VextV, True, False)
+                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1765,7 +1774,7 @@ ImageSkip:
                         If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
 
                             EncPassStr = "[1/2Pass]"
-                            EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr & CalcVideoBitrateStr & FramerateStr, SavePathStr & VextV, True, False)
+                            EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr & CalcVideoBitrateStr & FramerateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1773,7 +1782,7 @@ ImageSkip:
                             End If
 
                             EncPassStr = "[2/2Pass]"
-                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
+                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1785,7 +1794,7 @@ ImageSkip:
 
                         Else
 
-                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr & AnV, SavePathStr & VextV, True, False)
+                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1804,50 +1813,16 @@ ImageSkip:
                     '---------------------------------------------------------
                     '=========================================================
 
-                    If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'Nero AAC 비디오 인코딩 MUX
+                    If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'Nero AAC 인코딩모드고 A파일이 있으면
 
-                        '유니코드처리용//
-                        If UnicodeMPATHV <> "" Then
-                            If My.Computer.FileSystem.FileExists(SavePathStr) = False Then
-                                'NULL파일 생성(유니코드처리용)
-                                Try
-                                    Dim _StreamWriter As New StreamWriter(UnicodeMPATHV, False, System.Text.Encoding.Default)
-                                    _StreamWriter.Write("")
-                                    _StreamWriter.Close()
-                                Catch ex As Exception
-                                    MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                                    MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
-                                    GoTo SKIP
-                                End Try
-                                '저장경로지정
-                                SavePathStr = WinAPI.GetShortPathName(UnicodeMPATHV)
-                            End If
-                        End If
-
-                        EncToolStripStatusLabel.Text = LangCls.EncodingAVMux
-                        EncSub(SavePathStr & "V|" & SavePathStr & "A", _
-                               OUTPUTFORMAT2 & timestampV & SizeLimitTextBoxV, _
-                               SavePathStr, False, True)
-                        EncToolStripStatusLabel.Text = ""
-                        If EncSTOPBool = True Then GoTo ENC_STOP
-                        If EncERRBool(EncindexI) = True Then
-                            MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
-                            GoTo SKIP
-                        End If
+                        '클린업//
+                        Try
+                            If My.Computer.FileSystem.FileExists(SavePathStr & "A") = True Then _
+                               My.Computer.FileSystem.DeleteFile(SavePathStr & "A")
+                        Catch ex As Exception
+                        End Try
 
                     End If
-
-                    '클린업//
-                    Try
-                        If My.Computer.FileSystem.FileExists(SavePathStr & "A") = True Then _
-                           My.Computer.FileSystem.DeleteFile(SavePathStr & "A")
-                    Catch ex As Exception
-                    End Try
-                    Try
-                        If My.Computer.FileSystem.FileExists(SavePathStr & "V") = True Then _
-                           My.Computer.FileSystem.DeleteFile(SavePathStr & "V")
-                    Catch ex As Exception
-                    End Try
 
                     '---------------------------------------------------------
                     '=========================================================
@@ -1985,14 +1960,14 @@ ENC_STOP:
         End Try
 
         '활성화
-        MainFrm.AVSGroupBox.Enabled = True
-        MainFrm.EncSetGroupBox.Enabled = True
+        MainFrm.AVSCheckBox.Enabled = True
+        MainFrm.PresetButton.Enabled = True
+        MainFrm.EncSetButton.Enabled = True
         MainFrm.EncSButton.Enabled = True
-        MainFrm.StreamSelPanel.Enabled = True
+        MainFrm.StreamSelToolStripMenuItem.Enabled = True
         MainFrm.LangToolStripMenuItem.Enabled = True
         MainFrm.SavePathTextBox.Enabled = True
         MainFrm.SetFolderButton.Enabled = True
-        MainFrm.AboutToolStripMenuItem.Enabled = True
         MainFrm.DecSToolStripMenuItem.Enabled = True
         MainFrm.AviSynthToolStripMenuItem.Enabled = True
 
@@ -2011,7 +1986,7 @@ ENC_STOP:
     Private Sub EncodingFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         '=========================================
-        'Rev 1.1
+        'Rev 1.2
         '언어로드
 
         '함수에서 언어파일 선택
@@ -2084,6 +2059,7 @@ ENC_STOP:
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 LANG_SKIP:
         '=========================================

@@ -25,6 +25,9 @@ Imports System.Xml
 
 Public Class MainFrm
 
+    '배포일
+    Public PDATA = "[2011.03.03]"
+
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
 
@@ -124,8 +127,8 @@ Public Class MainFrm
     Public SEEKMODEM1B As Boolean = False
 
     'Mutex
-    Dim STMutexBool As Boolean
-    Dim STMutex As New System.Threading.Mutex(True, "KiraraEncoderMutex" & My.Application.Info.Version.Major & My.Application.Info.Version.Minor & My.Application.Info.Version.Revision & Environ("PROCESSOR_ARCHITECTURE"), STMutexBool)
+    'Dim STMutexBool As Boolean
+    'Dim STMutex As New System.Threading.Mutex(True, "KiraraEncoderMutex" & My.Application.Info.Version.Major & My.Application.Info.Version.Minor & My.Application.Info.Version.Revision & Environ("PROCESSOR_ARCHITECTURE"), STMutexBool)
 
     '진행중여부
     Dim SLangB As Boolean = False
@@ -135,6 +138,12 @@ Public Class MainFrm
     Dim shellpid As Integer
     Dim shellpidexename As String
     Dim shellpidstarttime As String
+
+    '리사이즈
+    Dim ResizeYV, ResizeHV As Integer
+    Dim ResizeXV, ResizeWV As Integer
+    Dim ResizeWidthM As Integer = 12
+    Dim ResizeHeightM As Integer = 12
 
 #Region "프론트엔드 코어"
 
@@ -728,7 +737,7 @@ Public Class MainFrm
     Private Sub MAINLANGLOAD()
         '=========================================
 
-        'Rev 1.1
+        'Rev 1.2
         '언어로드
 
         '함수에서 언어파일 선택
@@ -765,7 +774,7 @@ Public Class MainFrm
 
                 If XTR.Name = "MainFrmLangToolStripMenuItem" Then LangToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmAboutToolStripMenuItem" Then AboutToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "MainFrmEncListGroupBox" Then EncListGroupBox.Text = XTR.ReadString
+                'If XTR.Name = "MainFrmEncListGroupBox" Then EncListGroupBox.Text = XTR.ReadString
                 If XTR.Name = "MainFrmEncListListView0" Then EncListListView.Columns(0).Text = XTR.ReadString
                 If XTR.Name = "MainFrmEncListListView1" Then EncListListView.Columns(1).Text = XTR.ReadString
                 If XTR.Name = "MainFrmEncListListView2" Then EncListListView.Columns(2).Text = XTR.ReadString
@@ -776,20 +785,17 @@ Public Class MainFrm
                 If XTR.Name = "MainFrmAddButton" Then AddButton.Text = XTR.ReadString
                 If XTR.Name = "MainFrmRemoveButton" Then RemoveButton.Text = XTR.ReadString
                 If XTR.Name = "MainFrmAllRemoveButton" Then AllRemoveButton.Text = XTR.ReadString
-                If XTR.Name = "MainFrmFileInfoButton" Then FileInfoButton.Text = XTR.ReadString
-                If XTR.Name = "MainFrmStreamSelButton" Then StreamSelButton.Text = XTR.ReadString
-                If XTR.Name = "MainFrmOutputGroupBox" Then OutputGroupBox.Text = XTR.ReadString
+                'If XTR.Name = "MainFrmFileInfoButton" Then FileInfoButton.Text = XTR.ReadString
+                If XTR.Name = "MainFrmStreamSelButton" Then StreamSelToolStripMenuItem.Text = XTR.ReadString
+                'If XTR.Name = "MainFrmOutputGroupBox" Then OutputGroupBox.Text = XTR.ReadString
                 If XTR.Name = "MainFrm_FileLabel" Then _FileLabel.Text = XTR.ReadString
                 If XTR.Name = "MainFrm_VideoLabel" Then _VideoLabel.Text = XTR.ReadString
                 If XTR.Name = "MainFrm_AudioLabel" Then _AudioLabel.Text = XTR.ReadString
                 If XTR.Name = "MainFrmAVSCheckBox" Then AVSCheckBox.Text = XTR.ReadString
-                If XTR.Name = "MainFrmSetButton" Then
-                    AVSSetButton.Text = XTR.ReadString
-                    EncSetButton.Text = AVSSetButton.Text
-                End If
-                If XTR.Name = "MainFrmEncSetGroupBox" Then EncSetGroupBox.Text = XTR.ReadString
+                If XTR.Name = "MainFrmSetButton" Then EncSetButton.Text = XTR.ReadString
+                'If XTR.Name = "MainFrmEncSetGroupBox" Then EncSetGroupBox.Text = XTR.ReadString
                 If XTR.Name = "MainFrmPresetButton" Then PresetButton.Text = XTR.ReadString
-                If XTR.Name = "MainFrmSaveFolderGroupBox" Then SaveFolderGroupBox.Text = XTR.ReadString
+                If XTR.Name = "MainFrmSaveFolderGroupBox" Then SaveFolderLabel.Text = XTR.ReadString
                 If XTR.Name = "MainFrmSetFolderButton" Then SetFolderButton.Text = XTR.ReadString
                 If XTR.Name = "MainFrmOpenFolderButton" Then OpenFolderButton.Text = XTR.ReadString
                 If XTR.Name = "MainFrmEncSButton" Then EncSButton.Text = XTR.ReadString
@@ -861,9 +867,10 @@ Public Class MainFrm
                 If XTR.Name = "MainFrmSubToolStripMenuItem" Then SubToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmEtcToolStripMenuItem" Then EtcToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmPlayButton" Then PlayButton.Text = XTR.ReadString
-                If XTR.Name = "MainFrmAVSGroupBox" Then AVSGroupBox.Text = XTR.ReadString
+                'If XTR.Name = "MainFrmAVSGroupBox" Then AVSGroupBox.Text = XTR.ReadString
 
                 '외부언어//
+                If XTR.Name = "EncSetFrm" Then EncToolStripMenuItem.Text = XTR.ReadString
                 With AviSynthEditorFrm
                     If XTR.Name = "AviSynthEditorFrmSetDecToolStripMenuItem" Then
                         .SetDecToolStripMenuItem.Text = XTR.ReadString
@@ -880,41 +887,49 @@ Public Class MainFrm
                     If XTR.Name = "AviSynthEditorFrmAllICToolStripMenuItem" Then .AllICToolStripMenuItem.Text = XTR.ReadString
                     If XTR.Name = "AviSynthEditorFrmAllOCToolStripMenuItem" Then .AllOCToolStripMenuItem.Text = XTR.ReadString
                 End With
-                If XTR.Name = "MainFrmInChkToolStripMenuItem" Then PInfoFrm.InChkToolStripMenuItem.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 LANG_SKIP:
 
         '=========================================
+
+        '굵게설정하기위한. SaveFolderLabel
+        SaveFolderLabel.Font = New Font(SaveFolderLabel.Font.Name, SaveFolderLabel.Font.Size, FontStyle.Bold)
+
     End Sub
 
     Private Sub GET_AVINFO(ByVal index As Integer)
 
         'AV정보
+        Dim VideoV, AudioV As String
         If EncListListView.Items(index).SubItems(8).Text = "None" Then
-            VideoTextBox.Text = LangCls.MainVideoStr & ": " & "None"
+            VideoV = LangCls.MainVideoStr & vbNewLine & "None"
         Else
             If InStrRev(EncListListView.Items(index).SubItems(8).Text, " |") <> 0 Then
-                VideoTextBox.Text = LangCls.MainVideoStr & ": " & Strings.Left(EncListListView.Items(index).SubItems(8).Text, InStrRev(EncListListView.Items(index).SubItems(8).Text, " |") - 1)
+                VideoV = LangCls.MainVideoStr & vbNewLine & Strings.Left(EncListListView.Items(index).SubItems(8).Text, InStrRev(EncListListView.Items(index).SubItems(8).Text, " |") - 1)
             Else
-                VideoTextBox.Text = LangCls.MainVideoStr & ": " & "None"
+                VideoV = LangCls.MainVideoStr & vbNewLine & "None"
             End If
         End If
 
         If EncListListView.Items(index).SubItems(9).Text = "None" Then
-            AudioTextBox.Text = LangCls.MainAudioStr & ": " & "None"
+            AudioV = LangCls.MainAudioStr & vbNewLine & "None"
         Else
             If InStrRev(EncListListView.Items(index).SubItems(9).Text, " |") <> 0 Then
-                AudioTextBox.Text = LangCls.MainAudioStr & ": " & Strings.Left(EncListListView.Items(index).SubItems(9).Text, InStrRev(EncListListView.Items(index).SubItems(9).Text, " |") - 1)
+                AudioV = LangCls.MainAudioStr & vbNewLine & Strings.Left(EncListListView.Items(index).SubItems(9).Text, InStrRev(EncListListView.Items(index).SubItems(9).Text, " |") - 1)
+                AudioV = Replace(AudioV, " | ", vbNewLine)
             Else
-                AudioTextBox.Text = LangCls.MainAudioStr & ": " & "None"
+                AudioV = LangCls.MainAudioStr & vbNewLine & "None"
             End If
         End If
+
+        AVTextBox.Text = VideoV & vbNewLine & vbNewLine & AudioV
 
     End Sub
 
@@ -1081,7 +1096,7 @@ LANG_SKIP:
         Dim AKByteV As Single = Val(EncSetFrm.AudioBitrateComboBox.Text) / 8
         '코덱
         If ExAudioB = False Then
-            If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then 'WAV
+            If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" OrElse EncSetFrm.AudioCodecComboBox.Text = "signed 16-bit little-endian PCM" Then 'WAV
                 Dim ACHV As Integer = 0
                 If AVSCheckBox.Checked = True Then 'AviSynth 사용
                     If AudioPPFrm.AviSynthChComboBox.Text = LangCls.AudioPPdolbypComboBox Then
@@ -1480,7 +1495,7 @@ LANG_SKIP:
         '=================================
         Dim AudioBitrateV As String = ""
         '예외코덱
-        If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then 'WAV
+        If EncSetFrm.AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" OrElse EncSetFrm.AudioCodecComboBox.Text = "signed 16-bit little-endian PCM" Then 'WAV
             AudioBitrateV = LangCls.MainNSABitrateStr
         ElseIf EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'NeroAAC
             If EncSetFrm.NeroAACABRRadioButton.Checked = True Then
@@ -1496,6 +1511,10 @@ LANG_SKIP:
             AudioBitrateV = "Q=" & EncSetFrm.VorbisQNumericUpDown.Value
         ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC
             AudioBitrateV = LangCls.MainNSABitrateStr
+        ElseIf EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
+            AudioBitrateV = "Q=" & EncSetFrm.LAMEMP3QNumericUpDown.Value & ", " & EncSetFrm.LAMEMP3QComboBox.Text & " Kbit/s"
+        ElseIf EncSetFrm.AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
+            AudioBitrateV = "Q=" & EncSetFrm.LAMEMP3QNumericUpDown.Value
         Else
             AudioBitrateV = EncSetFrm.AudioBitrateComboBox.Text & " Kbit/s"
         End If
@@ -1571,13 +1590,10 @@ LANG_SKIP:
             TListButton.Enabled = False
             BListButton.Enabled = False
             BBListButton.Enabled = False
-            FileInfoButton.Enabled = False
-            StreamSelButton.Enabled = False
             AviSynthEditorFrm.ConPanel.Enabled = False
 
             '비어있게
-            VideoTextBox.Text = ""
-            AudioTextBox.Text = ""
+            AVTextBox.Text = ""
             _FileLabel1.Text = ""
             _FileLabel2.Text = ""
             _VideoLabel1.Text = ""
@@ -1593,19 +1609,162 @@ LANG_SKIP:
             TListButton.Enabled = True
             BListButton.Enabled = True
             BBListButton.Enabled = True
-            FileInfoButton.Enabled = True
-            StreamSelButton.Enabled = True
             AviSynthEditorFrm.ConPanel.Enabled = True
         End If
     End Sub
 
 #End Region
 
+#Region "리사이즈"
+
+    '----------------------------------------------------------------------------
+    ' 제    목: 리사이즈
+    ' 제 작 일: 2010 11 15
+    ' 제 작 자: 이기원
+    ' 버    전: r3
+    '-----------------------------------------------------------------------------
+    Private Sub BottomPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BottomPanel.MouseMove
+        If e.Button = MouseButtons.Left Then
+            Me.SetBounds(Me.Location.X, Me.Location.Y, Me.Width, MousePosition.Y - Me.Top)
+        End If
+    End Sub
+
+    Private Sub TopPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TopPanel.MouseDown, TopPanel2.MouseDown, TopPanel3.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ResizeYV = Me.Top
+            ResizeHV = Me.Height
+        End If
+    End Sub
+
+    Private Sub TopPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TopPanel.MouseMove, TopPanel2.MouseMove, TopPanel3.MouseMove
+        If e.Button = MouseButtons.Left Then
+            If ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height Then
+                Me.SetBounds(Me.Location.X, ResizeYV - Me.MinimumSize.Height + ResizeHV, Me.Width, Me.MinimumSize.Height)
+            ElseIf ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM) Then
+                Me.SetBounds(Me.Location.X, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, Me.Width, (SystemInformation.VirtualScreen.Height + ResizeHeightM))
+            Else
+                Me.SetBounds(Me.Location.X, MousePosition.Y, Me.Width, ResizeYV - MousePosition.Y + ResizeHV)
+            End If
+        End If
+    End Sub
+
+    Private Sub RightPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles RightPanel.MouseMove, RightPanel2.MouseMove
+        If e.Button = MouseButtons.Left Then
+            Me.SetBounds(Me.Location.X, Me.Location.Y, MousePosition.X - Me.Left, Me.Height)
+        End If
+    End Sub
+
+    Private Sub LeftPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles LeftPanel.MouseDown, LeftPanel2.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ResizeXV = Me.Left
+            ResizeWV = Me.Width
+        End If
+    End Sub
+
+    Private Sub LeftPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles LeftPanel.MouseMove, LeftPanel2.MouseMove
+        If e.Button = MouseButtons.Left Then
+            If ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width Then
+                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, Me.Location.Y, Me.MinimumSize.Width, Me.Height)
+            ElseIf ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM) Then
+                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, Me.Location.Y, (SystemInformation.VirtualScreen.Width + ResizeWidthM), Me.Height)
+            Else
+                Me.SetBounds(MousePosition.X, Me.Location.Y, ResizeXV - MousePosition.X + ResizeWV, Me.Height)
+            End If
+        End If
+    End Sub
+
+    Private Sub BRPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BRPanel.MouseMove
+        If e.Button = MouseButtons.Left Then
+            Me.SetBounds(Me.Location.X, Me.Location.Y, MousePosition.X - Me.Left, MousePosition.Y - Me.Top)
+        End If
+    End Sub
+
+    Private Sub TLPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TLPanel.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ResizeXV = Me.Left
+            ResizeWV = Me.Width
+            ResizeYV = Me.Top
+            ResizeHV = Me.Height
+        End If
+    End Sub
+
+    Private Sub TLPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TLPanel.MouseMove
+        If e.Button = MouseButtons.Left Then
+            If (ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width) AndAlso (ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM)) Then
+                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, Me.MinimumSize.Width, (SystemInformation.VirtualScreen.Height + ResizeHeightM))
+            ElseIf (ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height) AndAlso (ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM)) Then
+                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, ResizeYV - Me.MinimumSize.Height + ResizeHV, (SystemInformation.VirtualScreen.Width + ResizeWidthM), Me.MinimumSize.Height)
+            ElseIf ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width AndAlso ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height Then
+                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, ResizeYV - Me.MinimumSize.Height + ResizeHV, Me.MinimumSize.Width, Me.MinimumSize.Height)
+            ElseIf ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width Then
+                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, MousePosition.Y, Me.MinimumSize.Width, ResizeYV - MousePosition.Y + ResizeHV)
+            ElseIf ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height Then
+                Me.SetBounds(MousePosition.X, ResizeYV - Me.MinimumSize.Height + ResizeHV, ResizeXV - MousePosition.X + ResizeWV, Me.MinimumSize.Height)
+            ElseIf ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM) AndAlso ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM) Then
+                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, (SystemInformation.VirtualScreen.Width + ResizeWidthM), (SystemInformation.VirtualScreen.Height + ResizeHeightM))
+            ElseIf ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM) Then
+                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, MousePosition.Y, (SystemInformation.VirtualScreen.Width + ResizeWidthM), ResizeYV - MousePosition.Y + ResizeHV)
+            ElseIf ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM) Then
+                Me.SetBounds(MousePosition.X, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, ResizeXV - MousePosition.X + ResizeWV, (SystemInformation.VirtualScreen.Height + ResizeHeightM))
+            Else
+                Me.SetBounds(MousePosition.X, MousePosition.Y, ResizeXV - MousePosition.X + ResizeWV, ResizeYV - MousePosition.Y + ResizeHV)
+            End If
+        End If
+    End Sub
+
+    Private Sub BLPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BLPanel.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ResizeXV = Me.Left
+            ResizeWV = Me.Width
+        End If
+    End Sub
+
+    Private Sub BLPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BLPanel.MouseMove
+        If e.Button = MouseButtons.Left Then
+            If ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width Then
+                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, Me.Location.Y, Me.MinimumSize.Width, MousePosition.Y - Me.Top)
+            ElseIf ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM) Then
+                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, Me.Location.Y, (SystemInformation.VirtualScreen.Width + ResizeWidthM), MousePosition.Y - Me.Top)
+            Else
+                Me.SetBounds(MousePosition.X, Me.Location.Y, ResizeXV - MousePosition.X + ResizeWV, MousePosition.Y - Me.Top)
+            End If
+        End If
+    End Sub
+
+    Private Sub TRPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TRPanel.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ResizeYV = Me.Top
+            ResizeHV = Me.Height
+        End If
+    End Sub
+
+    Private Sub TRPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TRPanel.MouseMove
+        If e.Button = MouseButtons.Left Then
+            If ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height Then
+                Me.SetBounds(Me.Location.X, ResizeYV - Me.MinimumSize.Height + ResizeHV, MousePosition.X - Me.Left, Me.MinimumSize.Height)
+            ElseIf ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM) Then
+                Me.SetBounds(Me.Location.X, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, MousePosition.X - Me.Left, (SystemInformation.VirtualScreen.Height + ResizeHeightM))
+            Else
+                Me.SetBounds(Me.Location.X, MousePosition.Y, MousePosition.X - Me.Left, ResizeYV - MousePosition.Y + ResizeHV)
+            End If
+        End If
+    End Sub
+
+#End Region
+
+    Private Sub MainFrm_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
+        '새로고침
+        Me.Refresh()
+    End Sub
+
     Private Sub MainForm_SizeChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.SizeChanged
         '폼이 일반 상태일때 기억한다
         If Me.WindowState = FormWindowState.Normal Then
             RzWidth = Me.Size.Width
             RzHeight = Me.Size.Height
+        Else
+            Me.Width = RzWidth
+            Me.Height = RzHeight
         End If
     End Sub
 
@@ -1727,7 +1886,7 @@ LANG_SKIP:
         Catch ex As Exception
         End Try
 
-        STMutex.ReleaseMutex()
+        'STMutex.ReleaseMutex()
 
     End Sub
 
@@ -1738,17 +1897,17 @@ LANG_SKIP:
             MsgBox("Kirara Encoder is not supported on this operating system.")
             Close()
         Else
-            If (Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0) OrElse Environment.OSVersion.Version.Major < 5 Then '윈도우 XP 이상의 운영체제가 아닐경우
+            If Environment.OSVersion.Version.Major < 5 Then '윈도우 2000 이상의 운영체제가 아닐경우
                 MsgBox("Kirara Encoder is not supported on this operating system.")
                 Close()
             End If
         End If
 
         '인스턴스검사(뮤텍스는 NT5.0 윈도우 2000 이상에서 사용가능)
-        If STMutexBool = False Then
-            MessageBox.Show("Kirara Encoder is already running.", "Kirara Encoder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Process.GetCurrentProcess.Kill()
-        End If
+        'If STMutexBool = False Then
+        '    MessageBox.Show("Kirara Encoder is already running.", "Kirara Encoder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    Process.GetCurrentProcess.Kill()
+        'End If
 
         '==================================================
 
@@ -1983,15 +2142,9 @@ LANG_SKIP:
         Dim BetaStr As String = ""
         If BetaStrB = True Then BetaStr = " Beta"
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
-            Me.Text = "Kirara Encoder" & BetaStr & " v" & _
-            My.Application.Info.Version.Major & "." & _
-            My.Application.Info.Version.Minor & "." & _
-            My.Application.Info.Version.Revision & " x64"
+            Me.Text = "Kirara Encoder" & BetaStr & "x64"
         Else
-            Me.Text = "Kirara Encoder" & BetaStr & " v" & _
-            My.Application.Info.Version.Major & "." & _
-            My.Application.Info.Version.Minor & "." & _
-            My.Application.Info.Version.Revision
+            Me.Text = "Kirara Encoder" & BetaStr
         End If
 
         'MPLAYEREXESTR 설정
@@ -2037,9 +2190,24 @@ LANG_SKIP:
             Me.Location = New System.Drawing.Point(Me.Location.X, Screen.GetBounds(Me).Bottom - Me.Height)
         End If
 
+        '캡션
+        TitleLabel.Text = Me.Text
+
+        '웹브라우저
+        WebBrowser1.Navigate("http://www.kiraraencoder.pe.kr/kemainfrm")
+
+        '스타일
+        Me.Hide()
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable
+
+        '창틀무
+        Dim lStyle As Integer = WinAPI.GetWindowLongW(Me.Handle, WinAPI.GWL_STYLE)
+        lStyle = lStyle And Not (WinAPI.WS_BORDER Or WinAPI.WS_DLGFRAME Or WinAPI.WS_THICKFRAME Or WinAPI.WS_MAXIMIZEBOX)
+        WinAPI.SetWindowLongW(Me.Handle, WinAPI.GWL_STYLE, lStyle)
+
         '아래 코드부터 폼이 보여짐.
         If MainWindowState <> "" Then
-            If MainWindowState = FormWindowState.Minimized Then
+            If MainWindowState = FormWindowState.Minimized OrElse MainWindowState = FormWindowState.Maximized Then
                 Me.WindowState = FormWindowState.Normal
             Else
                 Me.WindowState = MainWindowState
@@ -2090,9 +2258,9 @@ UAC:
     Private Sub AddButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddButton.Click
 
         OpenFileDialog1.FileName = ""
-        OpenFileDialog1.Filter = LangCls.MainSupportedFilesStr & "|*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.ts;*.trp;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.webm;*.wma;*.wv;|" & _
-                                 LangCls.MainVideoFilesStr & "|*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.ts;*.trp;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.webm;|" & _
-                                 LangCls.MainAudioFilesStr & "|*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.wma;*.wv;|" & _
+        OpenFileDialog1.Filter = LangCls.MainSupportedFilesStr & "|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.tta;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.webm;*.wma;*.wv;|" & _
+                                 LangCls.MainVideoFilesStr & "|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.webm;|" & _
+                                 LangCls.MainAudioFilesStr & "|*.avs;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.tta;*.wav;*.wma;*.wv;|" & _
                                  LangCls.MainAllFilesStr & "(*.*)|*.*"
         OpenFileDialog1.ShowDialog(Me)
 
@@ -2359,26 +2527,7 @@ UAC:
 
     End Sub
 
-    Private Sub StreamSelButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StreamSelButton.Click
 
-        '선택된 아이템이 없으면 종료
-        If EncListListView.SelectedItems.Count = 0 Then
-            MsgBox(LangCls.MainSelectListA)
-            Exit Sub
-        End If
-
-        Try
-            StreamFrm.ShowDialog(Me)
-
-            'SAVE용 - 구간 설정/스트림 선택/잘라내기 예외적용
-            If EncListListView.SelectedItems.Count <> 0 Then
-                Dim index As Integer = EncListListView.SelectedItems(index).Index
-                GET_OutputINFO(index)  '출력정보
-            End If
-        Catch ex As Exception
-        End Try
-
-    End Sub
 
     Private Sub MainFrm_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
 
@@ -2437,34 +2586,16 @@ UAC:
 
     End Sub
 
-    Private Sub FileInfoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FileInfoButton.Click
-
-        '선택된 아이템이 없으면 종료
-        If EncListListView.SelectedItems.Count = 0 Then
-            MsgBox(LangCls.MainSelectListA)
-            Exit Sub
-        End If
-
-        If My.Computer.FileSystem.FileExists(EncListListView.Items(SelIndex).SubItems(10).Text) = False Then
-            MsgBox(LangCls.MainFileNotFound)
-            Exit Sub
-        End If
-
-        If FileInfoFrm.Visible = True Then
-            FileInfoFrm.GET_TXT(WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text))
-        Else
-            FileInfoFrm.Show(Me)
-            FileInfoFrm.GET_TXT(WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text))
-        End If
-
-    End Sub
-
     Private Sub EncSetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncSetButton.Click
 
         If SPreB = True Then Exit Sub
 
         Try
-            EncSetFrm.ShowDialog(Me)
+            If AVSCheckBox.Checked = True Then
+                AviSynthContextMenuStrip.Show(Control.MousePosition)
+            Else
+                EncSetFrm.ShowDialog(Me)
+            End If
         Catch ex As Exception
         End Try
 
@@ -2505,14 +2636,14 @@ UAC:
         '===============================
 
         '활성화
-        AVSGroupBox.Enabled = False
-        EncSetGroupBox.Enabled = False
+        AVSCheckBox.Enabled = False
+        PresetButton.Enabled = False
+        EncSetButton.Enabled = False
         EncSButton.Enabled = False
-        StreamSelPanel.Enabled = False
+        StreamSelToolStripMenuItem.Enabled = False
         LangToolStripMenuItem.Enabled = False
         SavePathTextBox.Enabled = False
         SetFolderButton.Enabled = False
-        AboutToolStripMenuItem.Enabled = False
         DecSToolStripMenuItem.Enabled = False
         AviSynthToolStripMenuItem.Enabled = False
 
@@ -2536,6 +2667,18 @@ UAC:
         Try
             EncodingFrm.Show(Me)
         Catch ex As Exception
+            MsgBox(ex.Message)
+            '활성화
+            AVSCheckBox.Enabled = True
+            PresetButton.Enabled = True
+            EncSetButton.Enabled = True
+            EncSButton.Enabled = True
+            StreamSelToolStripMenuItem.Enabled = True
+            LangToolStripMenuItem.Enabled = True
+            SavePathTextBox.Enabled = True
+            SetFolderButton.Enabled = True
+            DecSToolStripMenuItem.Enabled = True
+            AviSynthToolStripMenuItem.Enabled = True
         End Try
 
     End Sub
@@ -2663,6 +2806,8 @@ UAC:
             .NeroAACABRRadioButton.Checked = True
             .NeroAACCBRRadioButton.Checked = False
             .NeroAACVBRRadioButton.Checked = False
+            .LAMEMP3QNumericUpDown.Value = 4
+            .LAMEMP3QComboBox.Text = "128"
             '기타
             .HeaderTextBox.Text = "[KIRARA]"
             .ExtensionTextBox.Text = ""
@@ -2912,6 +3057,34 @@ UAC:
             .RateCheckBox.Checked = False
             .RateNumericUpDown.Value = 1.0
             .RatePCheckBox.Checked = True
+            '로고
+            .LogoCheckBox.Checked = False
+            .LogoImgTextBox.Text = ""
+            .AlphaCheckBox.Checked = False
+            .LSCheckBox.Checked = False
+            .LECheckBox.Checked = False
+            .LogoTrPaCheckBox.Checked = False
+            .FadeCheckBox.Checked = False
+            .LSHTextBox.Text = "00"
+            .LSMTextBox.Text = "00"
+            .LSSTextBox.Text = "00"
+            .LEHTextBox.Text = "00"
+            .LEMTextBox.Text = "00"
+            .LESTextBox.Text = "00"
+            .LogoTrPaTrackBar.Value = 100
+            .fadeinNumericUpDown.Value = 0.0
+            .fadeoutNumericUpDown.Value = 0.0
+            .LAlignment5RadioButton.Checked = False
+            .LAlignment6RadioButton.Checked = False
+            .LAlignment4RadioButton.Checked = False
+            .LAlignment9RadioButton.Checked = False
+            .LAlignment7RadioButton.Checked = True
+            .LAlignment8RadioButton.Checked = False
+            .LAlignment1RadioButton.Checked = False
+            .LAlignment2RadioButton.Checked = False
+            .LAlignment3RadioButton.Checked = False
+            .XNumericUpDown.Value = 0
+            .YNumericUpDown.Value = 0
 
         End With
 
@@ -3071,6 +3244,7 @@ RELOAD:
             APP_OpenErrV = True
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 
     End Sub
@@ -3224,6 +3398,7 @@ RELOAD:
             AVS_OpenErrV = True
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 
     End Sub
@@ -3539,6 +3714,16 @@ RELOAD:
                     If XTR.Name = "EncSetFrm_NeroAACVBRRadioButton" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .NeroAACVBRRadioButton.Checked = XTRSTR Else .NeroAACVBRRadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_LAMEMP3QNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAMEMP3QNumericUpDown.Value = XTRSTR Else .LAMEMP3QNumericUpDown.Value = 4
+                    End If
+
+                    If XTR.Name = "EncSetFrm_LAMEMP3QComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAMEMP3QComboBox.Text = XTRSTR Else .LAMEMP3QComboBox.Text = "128"
                     End If
 
                     '기타
@@ -4631,6 +4816,142 @@ RELOAD:
                         If XTRSTR <> "" Then .RatePCheckBox.Checked = XTRSTR Else .RatePCheckBox.Checked = True
                     End If
 
+                    '로고
+                    If XTR.Name = "ETCPPFrm_LogoCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LogoCheckBox.Checked = XTRSTR Else .LogoCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LogoImgTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> vbNullChar Then .LogoImgTextBox.Text = XTRSTR Else .LogoImgTextBox.Text = ""
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_AlphaCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AlphaCheckBox.Checked = XTRSTR Else .AlphaCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LSCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LSCheckBox.Checked = XTRSTR Else .LSCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LECheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LECheckBox.Checked = XTRSTR Else .LECheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LogoTrPaCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LogoTrPaCheckBox.Checked = XTRSTR Else .LogoTrPaCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_FadeCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FadeCheckBox.Checked = XTRSTR Else .FadeCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LSHTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LSHTextBox.Text = XTRSTR Else .LSHTextBox.Text = "00"
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LSMTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LSMTextBox.Text = XTRSTR Else .LSMTextBox.Text = "00"
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LSSTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LSSTextBox.Text = XTRSTR Else .LSSTextBox.Text = "00"
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LEHTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LEHTextBox.Text = XTRSTR Else .LEHTextBox.Text = "00"
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LEMTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LEMTextBox.Text = XTRSTR Else .LEMTextBox.Text = "00"
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LESTextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LESTextBox.Text = XTRSTR Else .LESTextBox.Text = "00"
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_LogoTrPaTrackBar" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LogoTrPaTrackBar.Value = XTRSTR Else .LogoTrPaTrackBar.Value = 100
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_fadeinNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .fadeinNumericUpDown.Value = XTRSTR Else .fadeinNumericUpDown.Value = 0.0
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_fadeoutNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .fadeoutNumericUpDown.Value = XTRSTR Else .fadeoutNumericUpDown.Value = 0.0
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment5RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment5RadioButton.Checked = XTRSTR Else .LAlignment5RadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment6RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment6RadioButton.Checked = XTRSTR Else .LAlignment6RadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment4RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment4RadioButton.Checked = XTRSTR Else .LAlignment4RadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment9RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment9RadioButton.Checked = XTRSTR Else .LAlignment9RadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment7RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment7RadioButton.Checked = XTRSTR Else .LAlignment7RadioButton.Checked = True
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment8RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment8RadioButton.Checked = XTRSTR Else .LAlignment8RadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment1RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment1RadioButton.Checked = XTRSTR Else .LAlignment1RadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment2RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment2RadioButton.Checked = XTRSTR Else .LAlignment2RadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_Alignment3RadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .LAlignment3RadioButton.Checked = XTRSTR Else .LAlignment3RadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_XNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .XNumericUpDown.Value = XTRSTR Else .XNumericUpDown.Value = 0
+                    End If
+
+                    If XTR.Name = "ETCPPFrm_YNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .YNumericUpDown.Value = XTRSTR Else .YNumericUpDown.Value = 0
+                    End If
+
                 End With
 
                 '예외
@@ -4651,6 +4972,7 @@ RELOAD:
             OpenErrV = True
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 
     End Sub
@@ -5181,6 +5503,14 @@ RELOAD:
 
                 XTWriter.WriteStartElement("EncSetFrm_NeroAACVBRRadioButton")
                 XTWriter.WriteString(.NeroAACVBRRadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_LAMEMP3QNumericUpDown")
+                XTWriter.WriteString(.LAMEMP3QNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_LAMEMP3QComboBox")
+                XTWriter.WriteString(.LAMEMP3QComboBox.Text)
                 XTWriter.WriteEndElement()
 
                 '기타
@@ -6057,6 +6387,115 @@ RELOAD:
                 XTWriter.WriteString(.RatePCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
+                '로고
+                XTWriter.WriteStartElement("ETCPPFrm_LogoCheckBox")
+                XTWriter.WriteString(.LogoCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LogoImgTextBox")
+                XTWriter.WriteString(.LogoImgTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_AlphaCheckBox")
+                XTWriter.WriteString(.AlphaCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LSCheckBox")
+                XTWriter.WriteString(.LSCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LECheckBox")
+                XTWriter.WriteString(.LECheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LogoTrPaCheckBox")
+                XTWriter.WriteString(.LogoTrPaCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_FadeCheckBox")
+                XTWriter.WriteString(.FadeCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LSHTextBox")
+                XTWriter.WriteString(.LSHTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LSMTextBox")
+                XTWriter.WriteString(.LSMTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LSSTextBox")
+                XTWriter.WriteString(.LSSTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LEHTextBox")
+                XTWriter.WriteString(.LEHTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LEMTextBox")
+                XTWriter.WriteString(.LEMTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LESTextBox")
+                XTWriter.WriteString(.LESTextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_LogoTrPaTrackBar")
+                XTWriter.WriteString(.LogoTrPaTrackBar.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_fadeinNumericUpDown")
+                XTWriter.WriteString(.fadeinNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_fadeoutNumericUpDown")
+                XTWriter.WriteString(.fadeoutNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment5RadioButton")
+                XTWriter.WriteString(.LAlignment5RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment6RadioButton")
+                XTWriter.WriteString(.LAlignment6RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment4RadioButton")
+                XTWriter.WriteString(.LAlignment4RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment9RadioButton")
+                XTWriter.WriteString(.LAlignment9RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment7RadioButton")
+                XTWriter.WriteString(.LAlignment7RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment8RadioButton")
+                XTWriter.WriteString(.LAlignment8RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment1RadioButton")
+                XTWriter.WriteString(.LAlignment1RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment2RadioButton")
+                XTWriter.WriteString(.LAlignment2RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_Alignment3RadioButton")
+                XTWriter.WriteString(.LAlignment3RadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_XNumericUpDown")
+                XTWriter.WriteString(.XNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("ETCPPFrm_YNumericUpDown")
+                XTWriter.WriteString(.YNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
             End With
 
             '예외
@@ -6084,13 +6523,6 @@ RELOAD:
 
     End Sub
 
-    Private Sub AVSSetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSSetButton.Click
-
-        If SPreB = True Then Exit Sub
-        AviSynthContextMenuStrip.Show(Control.MousePosition)
-
-    End Sub
-
     Private Sub PresetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresetButton.Click
         If SPreB = True Then Exit Sub
         PresetContextMenuStrip.Show(Control.MousePosition)
@@ -6099,12 +6531,10 @@ RELOAD:
     Private Sub AVSACTIVE()
 
         If AVSCheckBox.Checked = True Then
-            AVSSetButton.Enabled = True
             PlayPanel.Visible = True
             DecSToolStripMenuItem.Visible = True
             AviSynthToolStripMenuItem.Visible = True
         Else
-            AVSSetButton.Enabled = False
             PlayPanel.Visible = False
             DecSToolStripMenuItem.Visible = False
             AviSynthToolStripMenuItem.Visible = False
@@ -6229,6 +6659,8 @@ RELOAD:
         '=====================================
         '오류로그
         ErrToolStripMenuItem2.Enabled = ErrToolStripMenuItem.Enabled
+        '캡션
+        TitleLabel.Text = Me.Text
 
     End Sub
 
@@ -6250,7 +6682,23 @@ RELOAD:
 
     Private Sub IInfoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InInfoToolStripMenuItem.Click
 
-        FileInfoButton_Click(Nothing, Nothing)
+        '선택된 아이템이 없으면 종료
+        If EncListListView.SelectedItems.Count = 0 Then
+            MsgBox(LangCls.MainSelectListA)
+            Exit Sub
+        End If
+
+        If My.Computer.FileSystem.FileExists(EncListListView.Items(SelIndex).SubItems(10).Text) = False Then
+            MsgBox(LangCls.MainFileNotFound)
+            Exit Sub
+        End If
+
+        If FileInfoFrm.Visible = True Then
+            FileInfoFrm.GET_TXT(WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text))
+        Else
+            FileInfoFrm.Show(Me)
+            FileInfoFrm.GET_TXT(WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text))
+        End If
 
     End Sub
 
@@ -6404,7 +6852,7 @@ RELOAD:
 
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         Try
-            PInfoFrm.ShowDialog(Me)
+            PInfoFrm.Show(Me)
         Catch ex As Exception
         End Try
     End Sub
@@ -6526,6 +6974,56 @@ RELOAD:
 
     Private Sub DecSToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecSToolStripMenuItem.Click
         If SPreB = True Then Exit Sub
+
+        '윈도우 2000 일경우 MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem 설정제한
+        If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
+            AviSynthEditorFrm.MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Enabled = False
+            If AviSynthEditorFrm.MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True Then
+                AviSynthEditorFrm.MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = False
+                AviSynthEditorFrm.MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True
+            End If
+        End If
+
+        With AviSynthEditorFrm
+
+            If .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True AndAlso _
+                .MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True AndAlso _
+                .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
+                .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True AndAlso _
+                .AllAudioFilesBassAudioToolStripMenuItem.Checked = True AndAlso _
+                .AC3DTSFilesNicAudioToolStripMenuItem.Checked = True AndAlso _
+                .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True Then
+                .InitializationDSToolStripMenuItem.Checked = True
+                .AllICToolStripMenuItem.Checked = False
+                .AllOCToolStripMenuItem.Checked = False
+            ElseIf .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True AndAlso _
+                .MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True AndAlso _
+                .ASFFilesFFmpegSourceToolStripMenuItem2.Checked = True AndAlso _
+                .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True AndAlso _
+                .AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = True AndAlso _
+                .AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = True AndAlso _
+                .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True Then
+                .InitializationDSToolStripMenuItem.Checked = False
+                .AllICToolStripMenuItem.Checked = True
+                .AllOCToolStripMenuItem.Checked = False
+            ElseIf .AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = True AndAlso _
+                .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
+                .MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = True AndAlso _
+                .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
+                .AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = True AndAlso _
+                .AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
+                .RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = True Then
+                .InitializationDSToolStripMenuItem.Checked = False
+                .AllICToolStripMenuItem.Checked = False
+                .AllOCToolStripMenuItem.Checked = True
+            Else
+                .InitializationDSToolStripMenuItem.Checked = False
+                .AllICToolStripMenuItem.Checked = False
+                .AllOCToolStripMenuItem.Checked = False
+            End If
+
+        End With
+
         AviSynthEditorFrm.DecContextMenuStrip.Show(Control.MousePosition)
     End Sub
 
@@ -6537,4 +7035,111 @@ RELOAD:
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub TitlePanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TitlePanel.MouseDown
+
+        'If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.Clicks > 1 Then
+        '    If Me.WindowState = FormWindowState.Maximized Then
+        '        Me.WindowState = FormWindowState.Normal
+        '    Else
+        '        Me.WindowState = FormWindowState.Maximized
+        '    End If
+        '    Exit Sub
+        'End If
+
+        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Me.WindowState = FormWindowState.Normal Then
+            WinAPI.ReleaseCapture()
+            WinAPI.SendMessage(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, WinAPI.HTCAPTION, 0)
+        End If
+
+    End Sub
+
+    Private Sub TitleLabel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TitleLabel.MouseDown
+
+        'If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.Clicks > 1 Then
+        '    If Me.WindowState = FormWindowState.Maximized Then
+        '        Me.WindowState = FormWindowState.Normal
+        '    Else
+        '        Me.WindowState = FormWindowState.Maximized
+        '    End If
+        '    Exit Sub
+        'End If
+
+        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Me.WindowState = FormWindowState.Normal Then
+            WinAPI.ReleaseCapture()
+            WinAPI.SendMessage(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, WinAPI.HTCAPTION, 0)
+        End If
+
+    End Sub
+
+    Private Sub MinPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MinPictureBox.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub ExitPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitPictureBox.Click
+        Close()
+    End Sub
+
+    Private Sub MaxPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        If Me.WindowState = FormWindowState.Normal Then
+            Me.WindowState = FormWindowState.Maximized
+        Else
+            Me.WindowState = FormWindowState.Normal
+        End If
+    End Sub
+
+    Private Sub MinPictureBox_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles MinPictureBox.MouseEnter
+        MinPictureBox.Image = My.Resources.mb
+    End Sub
+
+    Private Sub MinPictureBox_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles MinPictureBox.MouseLeave
+        MinPictureBox.Image = My.Resources.ma
+    End Sub
+
+    Private Sub ExitPictureBox_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles ExitPictureBox.MouseEnter
+        ExitPictureBox.Image = My.Resources.xb
+    End Sub
+
+    Private Sub ExitPictureBox_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles ExitPictureBox.MouseLeave
+        ExitPictureBox.Image = My.Resources.xa
+    End Sub
+
+    Private Sub TrayLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrayLabel.Click
+        TrayToolStripMenuItem_Click(Nothing, Nothing)
+    End Sub
+
+    Private Sub TitlePanel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles TitlePanel.Paint
+
+    End Sub
+
+    Private Sub StreamSelToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StreamSelToolStripMenuItem.Click
+
+        '선택된 아이템이 없으면 종료
+        If EncListListView.SelectedItems.Count = 0 Then
+            MsgBox(LangCls.MainSelectListA)
+            Exit Sub
+        End If
+
+        Try
+            StreamFrm.ShowDialog(Me)
+
+            'SAVE용 - 구간 설정/스트림 선택/잘라내기 예외적용
+            If EncListListView.SelectedItems.Count <> 0 Then
+                Dim index As Integer = EncListListView.SelectedItems(index).Index
+                GET_OutputINFO(index)  '출력정보
+            End If
+        Catch ex As Exception
+        End Try
+
+    End Sub
+
+    Private Sub EncToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncToolStripMenuItem.Click
+        If SPreB = True Then Exit Sub
+
+        Try
+            EncSetFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+    End Sub
+
 End Class

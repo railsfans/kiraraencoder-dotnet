@@ -37,7 +37,7 @@ Public Class PInfoFrm
         Dim VersionLabelV As String = "버전"
 
         '=========================================
-        'Rev 1.1
+        'Rev 1.2
         '언어로드
 
         '함수에서 언어파일 선택
@@ -79,12 +79,14 @@ Public Class PInfoFrm
                 If XTR.Name = "PInfoFrmNameLabel" Then NameLabelV = XTR.ReadString
                 If XTR.Name = "PInfoFrmNameLabel2" Then NameLabel2V = XTR.ReadString
                 If XTR.Name = "PInfoFrmVersionLabel" Then VersionLabelV = XTR.ReadString
+                If XTR.Name = "PInfoFrmInChkToolStripMenuItem" Then InChkToolStripMenuItem.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
         Finally
             XTR.Close()
+            SR.Close()
         End Try
 LANG_SKIP:
         '=========================================
@@ -94,28 +96,9 @@ LANG_SKIP:
         VersionLabel.Text = VersionLabelV & " " & _
         My.Application.Info.Version.Major & "." & _
         My.Application.Info.Version.Minor & "." & _
-        My.Application.Info.Version.Revision
+        My.Application.Info.Version.Revision & "." & _
+        My.Application.Info.Version.Build & " " & MainFrm.PDATA
 
-    End Sub
-
-    Private Sub OfficialKiraraEncoderWebsiteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OfficialKiraraEncoderWebsiteToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("http://www.kiraraencoder.pe.kr")
-    End Sub
-
-    Private Sub DownloadSourceCodeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DownloadSourceCodeToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("http://code.google.com/p/kiraraencoder-dotnet")
-    End Sub
-
-    Private Sub BitDonGToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BitDonGToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("http://bitdong.org")
-    End Sub
-
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        WebsiteContextMenuStrip.Show(Control.MousePosition)
-    End Sub
-
-    Private Sub BittalkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BittalkToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("http://bittalk.org")
     End Sub
 
     Private Sub InChkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InChkToolStripMenuItem.Click
@@ -123,5 +106,21 @@ LANG_SKIP:
             AVSIFrm.ShowDialog(Me)
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://www.kiraraencoder.pe.kr")
+        ie = Nothing
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://iriyasviel.tistory.com")
+        ie = Nothing
     End Sub
 End Class

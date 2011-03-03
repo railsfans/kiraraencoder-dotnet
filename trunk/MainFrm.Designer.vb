@@ -24,7 +24,6 @@ Partial Class MainFrm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
-        Me.EncListGroupBox = New System.Windows.Forms.GroupBox
         Me.EncListListView = New System.Windows.Forms.ListView
         Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader
@@ -56,55 +55,41 @@ Partial Class MainFrm
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator
         Me.OutPlayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.OutInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator
+        Me.StreamSelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.Panel6 = New System.Windows.Forms.Panel
-        Me.AudioTextBox = New System.Windows.Forms.TextBox
-        Me.VideoTextBox = New System.Windows.Forms.TextBox
-        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.AddButton = New System.Windows.Forms.Button
         Me.PlayPanel = New System.Windows.Forms.Panel
         Me.PlayButton = New System.Windows.Forms.Button
         Me.RemovePanel = New System.Windows.Forms.Panel
         Me.RemoveButton = New System.Windows.Forms.Button
+        Me.AllRemoveButton = New System.Windows.Forms.Button
         Me.MovePanel = New System.Windows.Forms.Panel
         Me.BBListButton = New System.Windows.Forms.Button
         Me.TTListButton = New System.Windows.Forms.Button
         Me.TListButton = New System.Windows.Forms.Button
         Me.BListButton = New System.Windows.Forms.Button
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.StreamSelPanel = New System.Windows.Forms.Panel
-        Me.StreamSelButton = New System.Windows.Forms.Button
-        Me.FileInfoButton = New System.Windows.Forms.Button
-        Me.AddButton = New System.Windows.Forms.Button
-        Me.AllRemoveButton = New System.Windows.Forms.Button
+        Me.AVTextBox = New System.Windows.Forms.TextBox
         Me.CleanUpListBox = New System.Windows.Forms.ListBox
         Me.OutputBox_GI = New System.Windows.Forms.TextBox
         Me.BPanel = New System.Windows.Forms.Panel
-        Me.OutputGroupBox = New System.Windows.Forms.GroupBox
+        Me.Panel11 = New System.Windows.Forms.Panel
+        Me.Panel12 = New System.Windows.Forms.Panel
+        Me._FileLabel = New System.Windows.Forms.Label
+        Me._FileLabel2 = New System.Windows.Forms.Label
         Me._AudioLabel2 = New System.Windows.Forms.Label
+        Me._VideoLabel1 = New System.Windows.Forms.Label
+        Me._FileLabel1 = New System.Windows.Forms.Label
+        Me._AudioLabel = New System.Windows.Forms.Label
         Me._AudioLabel1 = New System.Windows.Forms.Label
         Me._VideoLabel2 = New System.Windows.Forms.Label
-        Me._VideoLabel1 = New System.Windows.Forms.Label
-        Me._FileLabel2 = New System.Windows.Forms.Label
-        Me._AudioLabel = New System.Windows.Forms.Label
         Me._VideoLabel = New System.Windows.Forms.Label
-        Me._FileLabel1 = New System.Windows.Forms.Label
-        Me._FileLabel = New System.Windows.Forms.Label
-        Me.Panel4 = New System.Windows.Forms.Panel
-        Me.AVSPanel = New System.Windows.Forms.Panel
-        Me.AVSGroupBox = New System.Windows.Forms.GroupBox
-        Me.AVSCheckBox = New System.Windows.Forms.CheckBox
-        Me.AVSSetButton = New System.Windows.Forms.Button
-        Me.EncSetGroupBox = New System.Windows.Forms.GroupBox
         Me.PresetLabel = New System.Windows.Forms.Label
-        Me.EncSetButton = New System.Windows.Forms.Button
+        Me.AVSPanel = New System.Windows.Forms.Panel
+        Me.AVSCheckBox = New System.Windows.Forms.CheckBox
         Me.PresetButton = New System.Windows.Forms.Button
-        Me.Panel3 = New System.Windows.Forms.Panel
-        Me.Panel5 = New System.Windows.Forms.Panel
-        Me.EncSButton = New System.Windows.Forms.Button
-        Me.SaveFolderGroupBox = New System.Windows.Forms.GroupBox
-        Me.Panel7 = New System.Windows.Forms.Panel
-        Me.OpenFolderButton = New System.Windows.Forms.Button
-        Me.SetFolderButton = New System.Windows.Forms.Button
-        Me.SavePathTextBox = New System.Windows.Forms.TextBox
+        Me.EncSetButton = New System.Windows.Forms.Button
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.LangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -115,46 +100,73 @@ Partial Class MainFrm
         Me.TrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PresetContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser
+        Me.Panel10 = New System.Windows.Forms.Panel
+        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.Panel4 = New System.Windows.Forms.Panel
+        Me.SavePathTextBox = New System.Windows.Forms.TextBox
+        Me.SaveFolderLabel = New System.Windows.Forms.Label
+        Me.Panel7 = New System.Windows.Forms.Panel
+        Me.OpenFolderButton = New System.Windows.Forms.Button
+        Me.SetFolderButton = New System.Windows.Forms.Button
+        Me.Panel5 = New System.Windows.Forms.Panel
+        Me.EncSButton = New System.Windows.Forms.Button
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.AviSynthContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EncToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator
         Me.ImgToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AudToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.EtcToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.EncListGroupBox.SuspendLayout()
+        Me.RightPanel = New System.Windows.Forms.Panel
+        Me.LeftPanel = New System.Windows.Forms.Panel
+        Me.BottomPanel = New System.Windows.Forms.Panel
+        Me.BLPanel = New System.Windows.Forms.Panel
+        Me.BRPanel = New System.Windows.Forms.Panel
+        Me.TitlePanel = New System.Windows.Forms.Panel
+        Me.TitleLabel = New System.Windows.Forms.Label
+        Me.TopPanel = New System.Windows.Forms.Panel
+        Me.Panel9 = New System.Windows.Forms.Panel
+        Me.TrayLabel = New System.Windows.Forms.Label
+        Me.RightPanel2 = New System.Windows.Forms.Panel
+        Me.TopPanel3 = New System.Windows.Forms.Panel
+        Me.TRPanel = New System.Windows.Forms.Panel
+        Me.ExitPictureBox = New System.Windows.Forms.PictureBox
+        Me.MinPictureBox = New System.Windows.Forms.PictureBox
+        Me.Panel8 = New System.Windows.Forms.Panel
+        Me.LeftPanel2 = New System.Windows.Forms.Panel
+        Me.TopPanel2 = New System.Windows.Forms.Panel
+        Me.TLPanel = New System.Windows.Forms.Panel
         Me.ListviewContextMenuStrip.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.PlayPanel.SuspendLayout()
         Me.RemovePanel.SuspendLayout()
         Me.MovePanel.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.StreamSelPanel.SuspendLayout()
         Me.BPanel.SuspendLayout()
-        Me.OutputGroupBox.SuspendLayout()
-        Me.Panel4.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.Panel12.SuspendLayout()
         Me.AVSPanel.SuspendLayout()
-        Me.AVSGroupBox.SuspendLayout()
-        Me.EncSetGroupBox.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        Me.SaveFolderGroupBox.SuspendLayout()
-        Me.Panel7.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.MainPanel.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.AviSynthContextMenuStrip.SuspendLayout()
+        Me.BottomPanel.SuspendLayout()
+        Me.TitlePanel.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        CType(Me.ExitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MinPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'EncListGroupBox
-        '
-        resources.ApplyResources(Me.EncListGroupBox, "EncListGroupBox")
-        Me.EncListGroupBox.Controls.Add(Me.EncListListView)
-        Me.EncListGroupBox.Controls.Add(Me.Panel6)
-        Me.EncListGroupBox.Controls.Add(Me.Panel1)
-        Me.EncListGroupBox.Name = "EncListGroupBox"
-        Me.EncListGroupBox.TabStop = False
         '
         'EncListListView
         '
@@ -243,7 +255,7 @@ Partial Class MainFrm
         '
         'ListviewContextMenuStrip
         '
-        Me.ListviewContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.ErrToolStripMenuItem, Me.ToolStripMenuItem1, Me.CheckAllToolStripMenuItem, Me.UncheckAllToolStripMenuItem, Me.ToolStripMenuItem2, Me.InPlayToolStripMenuItem, Me.InInfoToolStripMenuItem, Me.ToolStripMenuItem3, Me.OutPlayToolStripMenuItem, Me.OutInfoToolStripMenuItem})
+        Me.ListviewContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.ErrToolStripMenuItem, Me.ToolStripMenuItem1, Me.CheckAllToolStripMenuItem, Me.UncheckAllToolStripMenuItem, Me.ToolStripMenuItem2, Me.InPlayToolStripMenuItem, Me.InInfoToolStripMenuItem, Me.ToolStripMenuItem3, Me.OutPlayToolStripMenuItem, Me.OutInfoToolStripMenuItem, Me.ToolStripMenuItem4, Me.StreamSelToolStripMenuItem})
         Me.ListviewContextMenuStrip.Name = "ListviewContextMenuStrip"
         resources.ApplyResources(Me.ListviewContextMenuStrip, "ListviewContextMenuStrip")
         '
@@ -302,39 +314,39 @@ Partial Class MainFrm
         Me.OutInfoToolStripMenuItem.Name = "OutInfoToolStripMenuItem"
         resources.ApplyResources(Me.OutInfoToolStripMenuItem, "OutInfoToolStripMenuItem")
         '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        resources.ApplyResources(Me.ToolStripMenuItem4, "ToolStripMenuItem4")
+        '
+        'StreamSelToolStripMenuItem
+        '
+        Me.StreamSelToolStripMenuItem.Name = "StreamSelToolStripMenuItem"
+        resources.ApplyResources(Me.StreamSelToolStripMenuItem, "StreamSelToolStripMenuItem")
+        '
         'Panel6
         '
-        Me.Panel6.Controls.Add(Me.AudioTextBox)
-        Me.Panel6.Controls.Add(Me.VideoTextBox)
+        Me.Panel6.Controls.Add(Me.Panel2)
+        Me.Panel6.Controls.Add(Me.RemovePanel)
+        Me.Panel6.Controls.Add(Me.AllRemoveButton)
+        Me.Panel6.Controls.Add(Me.MovePanel)
         resources.ApplyResources(Me.Panel6, "Panel6")
         Me.Panel6.Name = "Panel6"
         '
-        'AudioTextBox
+        'Panel2
         '
-        resources.ApplyResources(Me.AudioTextBox, "AudioTextBox")
-        Me.AudioTextBox.BackColor = System.Drawing.SystemColors.Control
-        Me.AudioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.AudioTextBox.Name = "AudioTextBox"
-        Me.AudioTextBox.ReadOnly = True
+        Me.Panel2.Controls.Add(Me.AddButton)
+        Me.Panel2.Controls.Add(Me.PlayPanel)
+        resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.Name = "Panel2"
         '
-        'VideoTextBox
+        'AddButton
         '
-        resources.ApplyResources(Me.VideoTextBox, "VideoTextBox")
-        Me.VideoTextBox.BackColor = System.Drawing.SystemColors.Control
-        Me.VideoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.VideoTextBox.Name = "VideoTextBox"
-        Me.VideoTextBox.ReadOnly = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.PlayPanel)
-        Me.Panel1.Controls.Add(Me.RemovePanel)
-        Me.Panel1.Controls.Add(Me.MovePanel)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.AddButton)
-        Me.Panel1.Controls.Add(Me.AllRemoveButton)
-        resources.ApplyResources(Me.Panel1, "Panel1")
-        Me.Panel1.Name = "Panel1"
+        Me.AddButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        resources.ApplyResources(Me.AddButton, "AddButton")
+        Me.AddButton.Name = "AddButton"
+        Me.AddButton.UseVisualStyleBackColor = False
         '
         'PlayPanel
         '
@@ -344,9 +356,11 @@ Partial Class MainFrm
         '
         'PlayButton
         '
+        Me.PlayButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PlayButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         resources.ApplyResources(Me.PlayButton, "PlayButton")
         Me.PlayButton.Name = "PlayButton"
-        Me.PlayButton.UseVisualStyleBackColor = True
+        Me.PlayButton.UseVisualStyleBackColor = False
         '
         'RemovePanel
         '
@@ -356,9 +370,19 @@ Partial Class MainFrm
         '
         'RemoveButton
         '
+        Me.RemoveButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.RemoveButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         resources.ApplyResources(Me.RemoveButton, "RemoveButton")
         Me.RemoveButton.Name = "RemoveButton"
-        Me.RemoveButton.UseVisualStyleBackColor = True
+        Me.RemoveButton.UseVisualStyleBackColor = False
+        '
+        'AllRemoveButton
+        '
+        Me.AllRemoveButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.AllRemoveButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        resources.ApplyResources(Me.AllRemoveButton, "AllRemoveButton")
+        Me.AllRemoveButton.Name = "AllRemoveButton"
+        Me.AllRemoveButton.UseVisualStyleBackColor = False
         '
         'MovePanel
         '
@@ -371,64 +395,42 @@ Partial Class MainFrm
         '
         'BBListButton
         '
+        Me.BBListButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.BBListButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         resources.ApplyResources(Me.BBListButton, "BBListButton")
         Me.BBListButton.Name = "BBListButton"
-        Me.BBListButton.UseVisualStyleBackColor = True
+        Me.BBListButton.UseVisualStyleBackColor = False
         '
         'TTListButton
         '
+        Me.TTListButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TTListButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         resources.ApplyResources(Me.TTListButton, "TTListButton")
         Me.TTListButton.Name = "TTListButton"
-        Me.TTListButton.UseVisualStyleBackColor = True
+        Me.TTListButton.UseVisualStyleBackColor = False
         '
         'TListButton
         '
+        Me.TListButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TListButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         resources.ApplyResources(Me.TListButton, "TListButton")
         Me.TListButton.Name = "TListButton"
-        Me.TListButton.UseVisualStyleBackColor = True
+        Me.TListButton.UseVisualStyleBackColor = False
         '
         'BListButton
         '
+        Me.BListButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.BListButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         resources.ApplyResources(Me.BListButton, "BListButton")
         Me.BListButton.Name = "BListButton"
-        Me.BListButton.UseVisualStyleBackColor = True
+        Me.BListButton.UseVisualStyleBackColor = False
         '
-        'Panel2
+        'AVTextBox
         '
-        Me.Panel2.Controls.Add(Me.StreamSelPanel)
-        Me.Panel2.Controls.Add(Me.FileInfoButton)
-        resources.ApplyResources(Me.Panel2, "Panel2")
-        Me.Panel2.Name = "Panel2"
-        '
-        'StreamSelPanel
-        '
-        Me.StreamSelPanel.Controls.Add(Me.StreamSelButton)
-        resources.ApplyResources(Me.StreamSelPanel, "StreamSelPanel")
-        Me.StreamSelPanel.Name = "StreamSelPanel"
-        '
-        'StreamSelButton
-        '
-        resources.ApplyResources(Me.StreamSelButton, "StreamSelButton")
-        Me.StreamSelButton.Name = "StreamSelButton"
-        Me.StreamSelButton.UseVisualStyleBackColor = True
-        '
-        'FileInfoButton
-        '
-        resources.ApplyResources(Me.FileInfoButton, "FileInfoButton")
-        Me.FileInfoButton.Name = "FileInfoButton"
-        Me.FileInfoButton.UseVisualStyleBackColor = True
-        '
-        'AddButton
-        '
-        resources.ApplyResources(Me.AddButton, "AddButton")
-        Me.AddButton.Name = "AddButton"
-        Me.AddButton.UseVisualStyleBackColor = True
-        '
-        'AllRemoveButton
-        '
-        resources.ApplyResources(Me.AllRemoveButton, "AllRemoveButton")
-        Me.AllRemoveButton.Name = "AllRemoveButton"
-        Me.AllRemoveButton.UseVisualStyleBackColor = True
+        Me.AVTextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.AVTextBox, "AVTextBox")
+        Me.AVTextBox.Name = "AVTextBox"
+        Me.AVTextBox.ReadOnly = True
         '
         'CleanUpListBox
         '
@@ -445,31 +447,62 @@ Partial Class MainFrm
         '
         'BPanel
         '
-        Me.BPanel.Controls.Add(Me.OutputGroupBox)
-        Me.BPanel.Controls.Add(Me.Panel4)
-        Me.BPanel.Controls.Add(Me.Panel3)
+        Me.BPanel.Controls.Add(Me.Panel11)
         resources.ApplyResources(Me.BPanel, "BPanel")
         Me.BPanel.Name = "BPanel"
         '
-        'OutputGroupBox
+        'Panel11
         '
-        resources.ApplyResources(Me.OutputGroupBox, "OutputGroupBox")
-        Me.OutputGroupBox.Controls.Add(Me._AudioLabel2)
-        Me.OutputGroupBox.Controls.Add(Me._AudioLabel1)
-        Me.OutputGroupBox.Controls.Add(Me._VideoLabel2)
-        Me.OutputGroupBox.Controls.Add(Me._VideoLabel1)
-        Me.OutputGroupBox.Controls.Add(Me._FileLabel2)
-        Me.OutputGroupBox.Controls.Add(Me._AudioLabel)
-        Me.OutputGroupBox.Controls.Add(Me._VideoLabel)
-        Me.OutputGroupBox.Controls.Add(Me._FileLabel1)
-        Me.OutputGroupBox.Controls.Add(Me._FileLabel)
-        Me.OutputGroupBox.Name = "OutputGroupBox"
-        Me.OutputGroupBox.TabStop = False
+        resources.ApplyResources(Me.Panel11, "Panel11")
+        Me.Panel11.BackColor = System.Drawing.Color.DarkGray
+        Me.Panel11.Controls.Add(Me.Panel12)
+        Me.Panel11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel11.Name = "Panel11"
+        '
+        'Panel12
+        '
+        resources.ApplyResources(Me.Panel12, "Panel12")
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.Panel12.Controls.Add(Me._FileLabel)
+        Me.Panel12.Controls.Add(Me._FileLabel2)
+        Me.Panel12.Controls.Add(Me._AudioLabel2)
+        Me.Panel12.Controls.Add(Me._VideoLabel1)
+        Me.Panel12.Controls.Add(Me._FileLabel1)
+        Me.Panel12.Controls.Add(Me._AudioLabel)
+        Me.Panel12.Controls.Add(Me._AudioLabel1)
+        Me.Panel12.Controls.Add(Me._VideoLabel2)
+        Me.Panel12.Controls.Add(Me._VideoLabel)
+        Me.Panel12.Name = "Panel12"
+        '
+        '_FileLabel
+        '
+        resources.ApplyResources(Me._FileLabel, "_FileLabel")
+        Me._FileLabel.Name = "_FileLabel"
+        '
+        '_FileLabel2
+        '
+        resources.ApplyResources(Me._FileLabel2, "_FileLabel2")
+        Me._FileLabel2.Name = "_FileLabel2"
         '
         '_AudioLabel2
         '
         resources.ApplyResources(Me._AudioLabel2, "_AudioLabel2")
         Me._AudioLabel2.Name = "_AudioLabel2"
+        '
+        '_VideoLabel1
+        '
+        resources.ApplyResources(Me._VideoLabel1, "_VideoLabel1")
+        Me._VideoLabel1.Name = "_VideoLabel1"
+        '
+        '_FileLabel1
+        '
+        resources.ApplyResources(Me._FileLabel1, "_FileLabel1")
+        Me._FileLabel1.Name = "_FileLabel1"
+        '
+        '_AudioLabel
+        '
+        resources.ApplyResources(Me._AudioLabel, "_AudioLabel")
+        Me._AudioLabel.Name = "_AudioLabel"
         '
         '_AudioLabel1
         '
@@ -481,56 +514,21 @@ Partial Class MainFrm
         resources.ApplyResources(Me._VideoLabel2, "_VideoLabel2")
         Me._VideoLabel2.Name = "_VideoLabel2"
         '
-        '_VideoLabel1
-        '
-        resources.ApplyResources(Me._VideoLabel1, "_VideoLabel1")
-        Me._VideoLabel1.Name = "_VideoLabel1"
-        '
-        '_FileLabel2
-        '
-        resources.ApplyResources(Me._FileLabel2, "_FileLabel2")
-        Me._FileLabel2.Name = "_FileLabel2"
-        '
-        '_AudioLabel
-        '
-        resources.ApplyResources(Me._AudioLabel, "_AudioLabel")
-        Me._AudioLabel.Name = "_AudioLabel"
-        '
         '_VideoLabel
         '
         resources.ApplyResources(Me._VideoLabel, "_VideoLabel")
         Me._VideoLabel.Name = "_VideoLabel"
         '
-        '_FileLabel1
+        'PresetLabel
         '
-        resources.ApplyResources(Me._FileLabel1, "_FileLabel1")
-        Me._FileLabel1.Name = "_FileLabel1"
-        '
-        '_FileLabel
-        '
-        resources.ApplyResources(Me._FileLabel, "_FileLabel")
-        Me._FileLabel.Name = "_FileLabel"
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.AVSPanel)
-        Me.Panel4.Controls.Add(Me.EncSetGroupBox)
-        resources.ApplyResources(Me.Panel4, "Panel4")
-        Me.Panel4.Name = "Panel4"
+        resources.ApplyResources(Me.PresetLabel, "PresetLabel")
+        Me.PresetLabel.Name = "PresetLabel"
         '
         'AVSPanel
         '
-        Me.AVSPanel.Controls.Add(Me.AVSGroupBox)
+        Me.AVSPanel.Controls.Add(Me.AVSCheckBox)
         resources.ApplyResources(Me.AVSPanel, "AVSPanel")
         Me.AVSPanel.Name = "AVSPanel"
-        '
-        'AVSGroupBox
-        '
-        Me.AVSGroupBox.Controls.Add(Me.AVSCheckBox)
-        Me.AVSGroupBox.Controls.Add(Me.AVSSetButton)
-        resources.ApplyResources(Me.AVSGroupBox, "AVSGroupBox")
-        Me.AVSGroupBox.Name = "AVSGroupBox"
-        Me.AVSGroupBox.TabStop = False
         '
         'AVSCheckBox
         '
@@ -538,90 +536,21 @@ Partial Class MainFrm
         Me.AVSCheckBox.Name = "AVSCheckBox"
         Me.AVSCheckBox.UseVisualStyleBackColor = True
         '
-        'AVSSetButton
+        'PresetButton
         '
-        resources.ApplyResources(Me.AVSSetButton, "AVSSetButton")
-        Me.AVSSetButton.Name = "AVSSetButton"
-        Me.AVSSetButton.UseVisualStyleBackColor = True
-        '
-        'EncSetGroupBox
-        '
-        Me.EncSetGroupBox.Controls.Add(Me.CleanUpListBox)
-        Me.EncSetGroupBox.Controls.Add(Me.OutputBox_GI)
-        Me.EncSetGroupBox.Controls.Add(Me.PresetLabel)
-        Me.EncSetGroupBox.Controls.Add(Me.EncSetButton)
-        Me.EncSetGroupBox.Controls.Add(Me.PresetButton)
-        resources.ApplyResources(Me.EncSetGroupBox, "EncSetGroupBox")
-        Me.EncSetGroupBox.Name = "EncSetGroupBox"
-        Me.EncSetGroupBox.TabStop = False
-        '
-        'PresetLabel
-        '
-        resources.ApplyResources(Me.PresetLabel, "PresetLabel")
-        Me.PresetLabel.Name = "PresetLabel"
+        Me.PresetButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PresetButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        resources.ApplyResources(Me.PresetButton, "PresetButton")
+        Me.PresetButton.Name = "PresetButton"
+        Me.PresetButton.UseVisualStyleBackColor = False
         '
         'EncSetButton
         '
+        Me.EncSetButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.EncSetButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         resources.ApplyResources(Me.EncSetButton, "EncSetButton")
         Me.EncSetButton.Name = "EncSetButton"
-        Me.EncSetButton.UseVisualStyleBackColor = True
-        '
-        'PresetButton
-        '
-        resources.ApplyResources(Me.PresetButton, "PresetButton")
-        Me.PresetButton.Name = "PresetButton"
-        Me.PresetButton.UseVisualStyleBackColor = True
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Panel5)
-        Me.Panel3.Controls.Add(Me.SaveFolderGroupBox)
-        resources.ApplyResources(Me.Panel3, "Panel3")
-        Me.Panel3.Name = "Panel3"
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.EncSButton)
-        resources.ApplyResources(Me.Panel5, "Panel5")
-        Me.Panel5.Name = "Panel5"
-        '
-        'EncSButton
-        '
-        resources.ApplyResources(Me.EncSButton, "EncSButton")
-        Me.EncSButton.Name = "EncSButton"
-        Me.EncSButton.UseVisualStyleBackColor = True
-        '
-        'SaveFolderGroupBox
-        '
-        resources.ApplyResources(Me.SaveFolderGroupBox, "SaveFolderGroupBox")
-        Me.SaveFolderGroupBox.Controls.Add(Me.Panel7)
-        Me.SaveFolderGroupBox.Controls.Add(Me.SavePathTextBox)
-        Me.SaveFolderGroupBox.Name = "SaveFolderGroupBox"
-        Me.SaveFolderGroupBox.TabStop = False
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.OpenFolderButton)
-        Me.Panel7.Controls.Add(Me.SetFolderButton)
-        resources.ApplyResources(Me.Panel7, "Panel7")
-        Me.Panel7.Name = "Panel7"
-        '
-        'OpenFolderButton
-        '
-        resources.ApplyResources(Me.OpenFolderButton, "OpenFolderButton")
-        Me.OpenFolderButton.Name = "OpenFolderButton"
-        Me.OpenFolderButton.UseVisualStyleBackColor = True
-        '
-        'SetFolderButton
-        '
-        resources.ApplyResources(Me.SetFolderButton, "SetFolderButton")
-        Me.SetFolderButton.Name = "SetFolderButton"
-        Me.SetFolderButton.UseVisualStyleBackColor = True
-        '
-        'SavePathTextBox
-        '
-        resources.ApplyResources(Me.SavePathTextBox, "SavePathTextBox")
-        Me.SavePathTextBox.Name = "SavePathTextBox"
+        Me.EncSetButton.UseVisualStyleBackColor = False
         '
         'OpenFileDialog1
         '
@@ -630,10 +559,11 @@ Partial Class MainFrm
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(222, Byte), Integer))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ErrToolStripMenuItem2, Me.AboutToolStripMenuItem, Me.TrayToolStripMenuItem})
-        Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         '
         'LangToolStripMenuItem
         '
@@ -672,10 +602,115 @@ Partial Class MainFrm
         '
         'MainPanel
         '
+        Me.MainPanel.BackColor = System.Drawing.Color.Transparent
+        Me.MainPanel.Controls.Add(Me.Panel6)
+        Me.MainPanel.Controls.Add(Me.CleanUpListBox)
+        Me.MainPanel.Controls.Add(Me.OutputBox_GI)
+        Me.MainPanel.Controls.Add(Me.EncListListView)
         Me.MainPanel.Controls.Add(Me.BPanel)
-        Me.MainPanel.Controls.Add(Me.EncListGroupBox)
+        Me.MainPanel.Controls.Add(Me.Panel1)
+        Me.MainPanel.Controls.Add(Me.Panel3)
+        Me.MainPanel.Controls.Add(Me.MenuStrip1)
         resources.ApplyResources(Me.MainPanel, "MainPanel")
         Me.MainPanel.Name = "MainPanel"
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.WebBrowser1)
+        Me.Panel1.Controls.Add(Me.AVTextBox)
+        Me.Panel1.Controls.Add(Me.Panel10)
+        resources.ApplyResources(Me.Panel1, "Panel1")
+        Me.Panel1.Name = "Panel1"
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
+        resources.ApplyResources(Me.WebBrowser1, "WebBrowser1")
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.ScrollBarsEnabled = False
+        Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.AVSPanel)
+        Me.Panel10.Controls.Add(Me.EncSetButton)
+        Me.Panel10.Controls.Add(Me.PresetLabel)
+        Me.Panel10.Controls.Add(Me.PresetButton)
+        resources.ApplyResources(Me.Panel10, "Panel10")
+        Me.Panel10.Name = "Panel10"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Panel4)
+        Me.Panel3.Controls.Add(Me.SaveFolderLabel)
+        Me.Panel3.Controls.Add(Me.Panel7)
+        Me.Panel3.Controls.Add(Me.Panel5)
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
+        '
+        'Panel4
+        '
+        resources.ApplyResources(Me.Panel4, "Panel4")
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(115, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(115, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.SavePathTextBox)
+        Me.Panel4.Name = "Panel4"
+        '
+        'SavePathTextBox
+        '
+        resources.ApplyResources(Me.SavePathTextBox, "SavePathTextBox")
+        Me.SavePathTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(115, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(115, Byte), Integer))
+        Me.SavePathTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SavePathTextBox.ForeColor = System.Drawing.Color.White
+        Me.SavePathTextBox.Name = "SavePathTextBox"
+        '
+        'SaveFolderLabel
+        '
+        resources.ApplyResources(Me.SaveFolderLabel, "SaveFolderLabel")
+        Me.SaveFolderLabel.ForeColor = System.Drawing.Color.White
+        Me.SaveFolderLabel.Name = "SaveFolderLabel"
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.OpenFolderButton)
+        Me.Panel7.Controls.Add(Me.SetFolderButton)
+        resources.ApplyResources(Me.Panel7, "Panel7")
+        Me.Panel7.Name = "Panel7"
+        '
+        'OpenFolderButton
+        '
+        Me.OpenFolderButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.OpenFolderButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray
+        resources.ApplyResources(Me.OpenFolderButton, "OpenFolderButton")
+        Me.OpenFolderButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.OpenFolderButton.Name = "OpenFolderButton"
+        Me.OpenFolderButton.UseVisualStyleBackColor = True
+        '
+        'SetFolderButton
+        '
+        Me.SetFolderButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.SetFolderButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray
+        resources.ApplyResources(Me.SetFolderButton, "SetFolderButton")
+        Me.SetFolderButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.SetFolderButton.Name = "SetFolderButton"
+        Me.SetFolderButton.UseVisualStyleBackColor = True
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.EncSButton)
+        resources.ApplyResources(Me.Panel5, "Panel5")
+        Me.Panel5.Name = "Panel5"
+        '
+        'EncSButton
+        '
+        Me.EncSButton.BackColor = System.Drawing.Color.Orange
+        Me.EncSButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.EncSButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray
+        resources.ApplyResources(Me.EncSButton, "EncSButton")
+        Me.EncSButton.ForeColor = System.Drawing.Color.Black
+        Me.EncSButton.Name = "EncSButton"
+        Me.EncSButton.UseVisualStyleBackColor = False
         '
         'NotifyIcon
         '
@@ -687,9 +722,19 @@ Partial Class MainFrm
         '
         'AviSynthContextMenuStrip
         '
-        Me.AviSynthContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImgToolStripMenuItem, Me.AudToolStripMenuItem, Me.SubToolStripMenuItem, Me.EtcToolStripMenuItem})
+        Me.AviSynthContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EncToolStripMenuItem, Me.ToolStripMenuItem5, Me.ImgToolStripMenuItem, Me.AudToolStripMenuItem, Me.SubToolStripMenuItem, Me.EtcToolStripMenuItem})
         Me.AviSynthContextMenuStrip.Name = "AviSynthContextMenuStrip"
         resources.ApplyResources(Me.AviSynthContextMenuStrip, "AviSynthContextMenuStrip")
+        '
+        'EncToolStripMenuItem
+        '
+        Me.EncToolStripMenuItem.Name = "EncToolStripMenuItem"
+        resources.ApplyResources(Me.EncToolStripMenuItem, "EncToolStripMenuItem")
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        resources.ApplyResources(Me.ToolStripMenuItem5, "ToolStripMenuItem5")
         '
         'ImgToolStripMenuItem
         '
@@ -711,46 +756,200 @@ Partial Class MainFrm
         Me.EtcToolStripMenuItem.Name = "EtcToolStripMenuItem"
         resources.ApplyResources(Me.EtcToolStripMenuItem, "EtcToolStripMenuItem")
         '
+        'RightPanel
+        '
+        Me.RightPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.R
+        Me.RightPanel.Cursor = System.Windows.Forms.Cursors.SizeWE
+        resources.ApplyResources(Me.RightPanel, "RightPanel")
+        Me.RightPanel.Name = "RightPanel"
+        '
+        'LeftPanel
+        '
+        Me.LeftPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.L
+        Me.LeftPanel.Cursor = System.Windows.Forms.Cursors.SizeWE
+        resources.ApplyResources(Me.LeftPanel, "LeftPanel")
+        Me.LeftPanel.Name = "LeftPanel"
+        '
+        'BottomPanel
+        '
+        Me.BottomPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.bottomM
+        Me.BottomPanel.Controls.Add(Me.BLPanel)
+        Me.BottomPanel.Controls.Add(Me.BRPanel)
+        Me.BottomPanel.Cursor = System.Windows.Forms.Cursors.SizeNS
+        resources.ApplyResources(Me.BottomPanel, "BottomPanel")
+        Me.BottomPanel.Name = "BottomPanel"
+        '
+        'BLPanel
+        '
+        Me.BLPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.bottomL
+        Me.BLPanel.Cursor = System.Windows.Forms.Cursors.SizeNESW
+        resources.ApplyResources(Me.BLPanel, "BLPanel")
+        Me.BLPanel.Name = "BLPanel"
+        '
+        'BRPanel
+        '
+        Me.BRPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.bottomR
+        Me.BRPanel.Cursor = System.Windows.Forms.Cursors.SizeNWSE
+        resources.ApplyResources(Me.BRPanel, "BRPanel")
+        Me.BRPanel.Name = "BRPanel"
+        '
+        'TitlePanel
+        '
+        Me.TitlePanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TM
+        Me.TitlePanel.Controls.Add(Me.TitleLabel)
+        Me.TitlePanel.Controls.Add(Me.TopPanel)
+        Me.TitlePanel.Controls.Add(Me.Panel9)
+        Me.TitlePanel.Controls.Add(Me.Panel8)
+        resources.ApplyResources(Me.TitlePanel, "TitlePanel")
+        Me.TitlePanel.Name = "TitlePanel"
+        '
+        'TitleLabel
+        '
+        resources.ApplyResources(Me.TitleLabel, "TitleLabel")
+        Me.TitleLabel.BackColor = System.Drawing.Color.Transparent
+        Me.TitleLabel.ForeColor = System.Drawing.Color.White
+        Me.TitleLabel.Name = "TitleLabel"
+        '
+        'TopPanel
+        '
+        Me.TopPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTM
+        Me.TopPanel.Cursor = System.Windows.Forms.Cursors.SizeNS
+        resources.ApplyResources(Me.TopPanel, "TopPanel")
+        Me.TopPanel.Name = "TopPanel"
+        '
+        'Panel9
+        '
+        Me.Panel9.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TM
+        Me.Panel9.Controls.Add(Me.TrayLabel)
+        Me.Panel9.Controls.Add(Me.RightPanel2)
+        Me.Panel9.Controls.Add(Me.TopPanel3)
+        Me.Panel9.Controls.Add(Me.TRPanel)
+        Me.Panel9.Controls.Add(Me.ExitPictureBox)
+        Me.Panel9.Controls.Add(Me.MinPictureBox)
+        resources.ApplyResources(Me.Panel9, "Panel9")
+        Me.Panel9.Name = "Panel9"
+        '
+        'TrayLabel
+        '
+        resources.ApplyResources(Me.TrayLabel, "TrayLabel")
+        Me.TrayLabel.BackColor = System.Drawing.Color.Transparent
+        Me.TrayLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TrayLabel.ForeColor = System.Drawing.Color.White
+        Me.TrayLabel.Name = "TrayLabel"
+        '
+        'RightPanel2
+        '
+        Me.RightPanel2.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TR
+        Me.RightPanel2.Cursor = System.Windows.Forms.Cursors.SizeWE
+        resources.ApplyResources(Me.RightPanel2, "RightPanel2")
+        Me.RightPanel2.Name = "RightPanel2"
+        '
+        'TopPanel3
+        '
+        Me.TopPanel3.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTM
+        Me.TopPanel3.Cursor = System.Windows.Forms.Cursors.SizeNS
+        resources.ApplyResources(Me.TopPanel3, "TopPanel3")
+        Me.TopPanel3.Name = "TopPanel3"
+        '
+        'TRPanel
+        '
+        Me.TRPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTR
+        Me.TRPanel.Cursor = System.Windows.Forms.Cursors.SizeNESW
+        resources.ApplyResources(Me.TRPanel, "TRPanel")
+        Me.TRPanel.Name = "TRPanel"
+        '
+        'ExitPictureBox
+        '
+        Me.ExitPictureBox.Image = Global.KiraraEncoder.My.Resources.Resources.xa
+        resources.ApplyResources(Me.ExitPictureBox, "ExitPictureBox")
+        Me.ExitPictureBox.Name = "ExitPictureBox"
+        Me.ExitPictureBox.TabStop = False
+        '
+        'MinPictureBox
+        '
+        Me.MinPictureBox.Image = Global.KiraraEncoder.My.Resources.Resources.ma
+        resources.ApplyResources(Me.MinPictureBox, "MinPictureBox")
+        Me.MinPictureBox.Name = "MinPictureBox"
+        Me.MinPictureBox.TabStop = False
+        '
+        'Panel8
+        '
+        Me.Panel8.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TM
+        Me.Panel8.Controls.Add(Me.LeftPanel2)
+        Me.Panel8.Controls.Add(Me.TopPanel2)
+        Me.Panel8.Controls.Add(Me.TLPanel)
+        resources.ApplyResources(Me.Panel8, "Panel8")
+        Me.Panel8.Name = "Panel8"
+        '
+        'LeftPanel2
+        '
+        Me.LeftPanel2.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TL
+        Me.LeftPanel2.Cursor = System.Windows.Forms.Cursors.SizeWE
+        resources.ApplyResources(Me.LeftPanel2, "LeftPanel2")
+        Me.LeftPanel2.Name = "LeftPanel2"
+        '
+        'TopPanel2
+        '
+        Me.TopPanel2.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTM
+        Me.TopPanel2.Cursor = System.Windows.Forms.Cursors.SizeNS
+        resources.ApplyResources(Me.TopPanel2, "TopPanel2")
+        Me.TopPanel2.Name = "TopPanel2"
+        '
+        'TLPanel
+        '
+        Me.TLPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTL
+        Me.TLPanel.Cursor = System.Windows.Forms.Cursors.SizeNWSE
+        resources.ApplyResources(Me.TLPanel, "TLPanel")
+        Me.TLPanel.Name = "TLPanel"
+        '
         'MainFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Controls.Add(Me.RightPanel)
+        Me.Controls.Add(Me.LeftPanel)
+        Me.Controls.Add(Me.BottomPanel)
         Me.Controls.Add(Me.MainPanel)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.TitlePanel)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"
-        Me.EncListGroupBox.ResumeLayout(False)
         Me.ListviewContextMenuStrip.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.PlayPanel.ResumeLayout(False)
         Me.RemovePanel.ResumeLayout(False)
         Me.MovePanel.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.StreamSelPanel.ResumeLayout(False)
         Me.BPanel.ResumeLayout(False)
-        Me.OutputGroupBox.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
         Me.AVSPanel.ResumeLayout(False)
-        Me.AVSGroupBox.ResumeLayout(False)
-        Me.AVSGroupBox.PerformLayout()
-        Me.EncSetGroupBox.ResumeLayout(False)
-        Me.EncSetGroupBox.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
-        Me.SaveFolderGroupBox.ResumeLayout(False)
-        Me.SaveFolderGroupBox.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
+        Me.AVSPanel.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.MainPanel.ResumeLayout(False)
+        Me.MainPanel.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         Me.AviSynthContextMenuStrip.ResumeLayout(False)
+        Me.BottomPanel.ResumeLayout(False)
+        Me.TitlePanel.ResumeLayout(False)
+        Me.TitlePanel.PerformLayout()
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        CType(Me.ExitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MinPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents EncListGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents EncListListView As System.Windows.Forms.ListView
     Friend WithEvents BPanel As System.Windows.Forms.Panel
     Friend WithEvents AllRemoveButton As System.Windows.Forms.Button
@@ -775,10 +974,8 @@ Partial Class MainFrm
     Friend WithEvents BListButton As System.Windows.Forms.Button
     Friend WithEvents TListButton As System.Windows.Forms.Button
     Friend WithEvents TTListButton As System.Windows.Forms.Button
-    Friend WithEvents StreamSelButton As System.Windows.Forms.Button
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents LangToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents FileInfoButton As System.Windows.Forms.Button
     Friend WithEvents EncSButton As System.Windows.Forms.Button
     Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader15 As System.Windows.Forms.ColumnHeader
@@ -789,21 +986,13 @@ Partial Class MainFrm
     Friend WithEvents PresetContextMenuStrip As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents AVSCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents EncSetButton As System.Windows.Forms.Button
-    Friend WithEvents AVSSetButton As System.Windows.Forms.Button
-    Friend WithEvents EncSetGroupBox As System.Windows.Forms.GroupBox
-    Friend WithEvents AVSGroupBox As System.Windows.Forms.GroupBox
-    Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents PresetButton As System.Windows.Forms.Button
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
     Friend WithEvents MainPanel As System.Windows.Forms.Panel
     Friend WithEvents PresetLabel As System.Windows.Forms.Label
     Friend WithEvents Panel6 As System.Windows.Forms.Panel
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents AudioTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents VideoTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents OutputGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents AVTextBox As System.Windows.Forms.TextBox
     Friend WithEvents _FileLabel1 As System.Windows.Forms.Label
     Friend WithEvents _FileLabel As System.Windows.Forms.Label
     Friend WithEvents _AudioLabel2 As System.Windows.Forms.Label
@@ -814,7 +1003,6 @@ Partial Class MainFrm
     Friend WithEvents _AudioLabel As System.Windows.Forms.Label
     Friend WithEvents _VideoLabel As System.Windows.Forms.Label
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SaveFolderGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents OpenFolderButton As System.Windows.Forms.Button
     Friend WithEvents SetFolderButton As System.Windows.Forms.Button
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
@@ -822,7 +1010,6 @@ Partial Class MainFrm
     Friend WithEvents Panel7 As System.Windows.Forms.Panel
     Friend WithEvents TrayToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NotifyIcon As System.Windows.Forms.NotifyIcon
-    Friend WithEvents StreamSelPanel As System.Windows.Forms.Panel
     Friend WithEvents MovePanel As System.Windows.Forms.Panel
     Friend WithEvents RemovePanel As System.Windows.Forms.Panel
     Friend WithEvents Timer As System.Windows.Forms.Timer
@@ -849,5 +1036,36 @@ Partial Class MainFrm
     Friend WithEvents DecSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PlayPanel As System.Windows.Forms.Panel
     Friend WithEvents AviSynthToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TitlePanel As System.Windows.Forms.Panel
+    Friend WithEvents TopPanel As System.Windows.Forms.Panel
+    Friend WithEvents Panel9 As System.Windows.Forms.Panel
+    Friend WithEvents RightPanel2 As System.Windows.Forms.Panel
+    Friend WithEvents TopPanel3 As System.Windows.Forms.Panel
+    Friend WithEvents TRPanel As System.Windows.Forms.Panel
+    Friend WithEvents ExitPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents MinPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents Panel8 As System.Windows.Forms.Panel
+    Friend WithEvents LeftPanel2 As System.Windows.Forms.Panel
+    Friend WithEvents TopPanel2 As System.Windows.Forms.Panel
+    Friend WithEvents TLPanel As System.Windows.Forms.Panel
+    Friend WithEvents TitleLabel As System.Windows.Forms.Label
+    Friend WithEvents RightPanel As System.Windows.Forms.Panel
+    Friend WithEvents LeftPanel As System.Windows.Forms.Panel
+    Friend WithEvents BottomPanel As System.Windows.Forms.Panel
+    Friend WithEvents BLPanel As System.Windows.Forms.Panel
+    Friend WithEvents BRPanel As System.Windows.Forms.Panel
+    Friend WithEvents TrayLabel As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents StreamSelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Panel10 As System.Windows.Forms.Panel
+    Friend WithEvents EncToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem5 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents SaveFolderLabel As System.Windows.Forms.Label
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
+    Friend WithEvents Panel11 As System.Windows.Forms.Panel
+    Friend WithEvents Panel12 As System.Windows.Forms.Panel
 
 End Class

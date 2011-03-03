@@ -74,6 +74,7 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="AudioPPFrm.Designer.vb">
       <DependentUpon>AudioPPFrm.vb</DependentUpon>
     </Compile>
@@ -379,6 +380,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />
+    <None Include="Resources\bottom.PNG" />
+    <None Include="Resources\fa.PNG" />
+    <None Include="Resources\fb.PNG" />
+    <None Include="Resources\xb.PNG" />
+    <None Include="Resources\xa.PNG" />
+    <None Include="Resources\ma.PNG" />
+    <None Include="Resources\mb.PNG" />
+    <None Include="Resources\bottomL.PNG" />
+    <None Include="Resources\bottomM.PNG" />
+    <None Include="Resources\bottomR.PNG" />
+    <None Include="Resources\topTR.PNG" />
+    <None Include="Resources\TL.PNG" />
+    <None Include="Resources\topTL.PNG" />
+    <None Include="Resources\TR.PNG" />
+    <None Include="Resources\L.PNG" />
+    <None Include="Resources\R.PNG" />
+    <None Include="Resources\topTM.PNG" />
+    <None Include="Resources\TM.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

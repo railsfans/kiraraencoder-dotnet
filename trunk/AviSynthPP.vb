@@ -22,6 +22,9 @@ Imports System.IO
 
 Public Class AviSynthPP
 
+    Private Shared _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
+    Private Shared _AviSynthClip As AvisynthWrapper.AviSynthClip
+
     Public Shared INDEX_ProcessStopChk As Boolean = False
     Public Shared INDEX_ProcessEChk As Boolean = False
     Public Shared INDEX_PStr As String = ""
@@ -543,6 +546,39 @@ RECOPY:
                             End Try
                             SubFileExistsV = True
                             MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV) '클린업
+
+                            'SAMI해더 존재확인//
+                            If SubExtenV = "smi" Then
+                                Dim SMIPATHV As String = My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV
+                                Using SR As StreamReader = New StreamReader(SMIPATHV, System.Text.Encoding.Default)
+
+                                    Dim RL As String = SR.ReadLine
+                                    Dim STRTEMP As String = RL
+                                    Do While (Not RL Is Nothing)
+                                        STRTEMP += vbNewLine
+                                        RL = SR.ReadLine
+                                        STRTEMP += RL
+                                        If InStr(RL, "<sync start", CompareMethod.Text) <> 0 Then
+                                            Exit Do
+                                        End If
+                                    Loop
+                                    '해더있음?
+                                    If InStr(STRTEMP, "<sami>", CompareMethod.Text) <> 0 Then
+                                        SR.Close()
+                                    Else
+                                        Dim STRMEM As String = SR.ReadToEnd
+                                        SR.Close()
+                                        Dim SW As New StreamWriter(SMIPATHV, False, System.Text.Encoding.Unicode)
+                                        SW.Write("<SAMI>" & vbNewLine & STRTEMP & vbNewLine & STRMEM)
+                                        SW.Close()
+                                        STRMEM = ""
+                                    End If
+                                    STRTEMP = ""
+
+                                End Using
+                            End If
+
+
                         Else
 ERRSKIP:
                             SubFileExistsV = False
@@ -887,6 +923,16 @@ ERRSKIP:
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
                     End If
 
+                    '------------- 여기서부터 MATROSKA, AVI 등의 컨테이너일경우 FFmpegSource로
+                ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "AVI" OrElse _
+                        MainFrm.EncListListView.Items(index).SubItems(3).Text = "MATROSKA,WEBM" OrElse _
+                        MainFrm.EncListListView.Items(index).SubItems(3).Text = "ASF" OrElse _
+                        MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEG" OrElse _
+                        MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEGTS" OrElse _
+                        MainFrm.EncListListView.Items(index).SubItems(3).Text = "FLV" OrElse _
+                        MainFrm.EncListListView.Items(index).SubItems(3).Text = "SWF" Then
+                    AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+
                 Else
 
                     If AviSynthEditorFrm.AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = True Then
@@ -910,7 +956,7 @@ ERRSKIP:
                 '================================================== 비디오 + 오디오 or 비디오
                 If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEGTS" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEG" Then
 
-                    If (InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "h264", CompareMethod.Text) <> 0) OrElse (InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "vc1", CompareMethod.Text) <> 0) Then 'M2TSFiles
+                    If InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "Video: h264", CompareMethod.Text) <> 0 OrElse InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "Video: vc1", CompareMethod.Text) <> 0 Then 'M2TSFiles
                         If AviSynthEditorFrm.M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
 
@@ -934,7 +980,19 @@ ERRSKIP:
                             End If
 
                         ElseIf AviSynthEditorFrm.MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True Then
-                            AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
+
+                            '윈도우 2000일경우 FFmpegSource로 대체된다.
+                            If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
+                                AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                                If StartHMSV = EndHMSV Then
+                                    AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
+                                Else
+                                    AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=1")
+                                End If
+                            Else
+                                AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
+                            End If
+
                         ElseIf AviSynthEditorFrm.MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
                         End If
@@ -948,12 +1006,17 @@ ERRSKIP:
                         If StartHMSV = EndHMSV Then
                             AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
                         Else
-                            AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=1")
+                            AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
                         End If
 
                     ElseIf AviSynthEditorFrm.ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
                     End If
+
+                    '------------- 여기서부터 알려진FFmpegSource로 디코딩 문제 있는 부분은 DShow으로 '----------
+                ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "AVI" AndAlso (InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "Video: mpeg1video", CompareMethod.Text) <> 0 OrElse InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "Video: rawvideo", CompareMethod.Text) <> 0) Then
+
+                    AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
 
                 Else
 
@@ -1697,6 +1760,197 @@ DelayAudioSkip2:
                         AVTextBoxV = Replace(AVTextBoxV, "#<turn>", "Turn180()")
                     End If
                 End If
+
+                '#<logo>
+                With ETCPPFrm
+                    If .LogoCheckBox.Checked = True AndAlso .LogoImgTextBox.Text <> "" AndAlso My.Computer.FileSystem.FileExists(.LogoImgTextBox.Text) = True Then
+
+                        '유니코드처리...
+                        Dim MPATHV As String = .LogoImgTextBox.Text
+                        Dim FNGBytes() As Byte = System.Text.Encoding.Default.GetBytes(MPATHV)
+                        If InStr(System.Text.Encoding.Default.GetString(FNGBytes), "?") <> 0 Then
+                            MPATHV = WinAPI.GetShortPathName(MPATHV)
+                        End If
+
+                        'StartFrameIS = <#StartFrameIS>
+                        Dim StartFrameISV = 0
+                        If .LSCheckBox.Checked = True Then
+                            StartFrameISV = Int(((Val(.LSHTextBox.Text) * 3600) + (Val(.LSMTextBox.Text) * 60) + Val(.LSSTextBox.Text)) * fpsV * bobv)
+                        End If
+
+                        'EndFrameIS = <#EndFrameIS>
+                        Dim EndFrameISV = 0
+                        If EndHMSV - StartHMSV = 0 Then
+                            EndFrameISV = Int(PlayHMSV * fpsV * bobv)
+                        Else
+                            EndFrameISV = Int((EndHMSV - StartHMSV) * fpsV * bobv)
+                        End If
+
+                        If .LECheckBox.Checked = True AndAlso Int(((Val(.LEHTextBox.Text) * 3600) + (Val(.LEMTextBox.Text) * 60) + Val(.LESTextBox.Text)) * fpsV * bobv) <> 0 Then
+                            EndFrameISV = Int(((Val(.LEHTextBox.Text) * 3600) + (Val(.LEMTextBox.Text) * 60) + Val(.LESTextBox.Text)) * fpsV * bobv)
+                        End If
+
+                        'FadeInIS = <#FadeInIS>
+                        'FadeOutIS = <#FadeOutIS>
+                        Dim FadeInISV = 0
+                        Dim FadeOutISV = 0
+                        If .FadeCheckBox.Checked = True Then
+                            FadeInISV = Int(.fadeinNumericUpDown.Value * fpsV * bobv)
+                            FadeOutISV = Int(.fadeoutNumericUpDown.Value * fpsV * bobv)
+                        End If
+
+                        '지정된 시작시간 합(일반적인 합)
+                        Dim SumStartT = Val(.LSHTextBox.Text) + Val(.LSMTextBox.Text) + Val(.LSSTextBox.Text)
+
+                        'URL
+                        AVTextBoxV = Replace(AVTextBoxV, "#<logo>", "ISPATH = " & Chr(34) & MPATHV & Chr(34) & vbNewLine & "#<logo>")
+                        '적용
+                        If (.LSCheckBox.Checked = False OrElse SumStartT = 0) AndAlso .fadeinNumericUpDown.Value = 0 Then  '#0프레임부터 시작(페이드 시작 부분 생략)
+                            AVTextBoxV = Replace(AVTextBoxV, "#<logo>", .Logo0FrameTextBox.Text)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#EndFrameIS>", EndFrameISV)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#FadeOutIS>", FadeOutISV)
+
+                        ElseIf (.LSCheckBox.Checked = False OrElse SumStartT = 0) Then '#1프레임부터 시작(시작 부분을 지정할 수 없지만 페이드 기능 사용 가능)
+                            AVTextBoxV = Replace(AVTextBoxV, "#<logo>", .Logo1FrameTextBox.Text)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#EndFrameIS>", EndFrameISV)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#FadeInIS>", FadeInISV)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#FadeOutIS>", FadeOutISV)
+
+                        Else '#3프레임부터 설정 가능하지만 모든 기능 사용 가능
+                            AVTextBoxV = Replace(AVTextBoxV, "#<logo>", .Logo3FrameTextBox.Text)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#StartFrameIS>", StartFrameISV)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#EndFrameIS>", EndFrameISV)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#FadeInIS>", FadeInISV)
+                            AVTextBoxV = Replace(AVTextBoxV, "<#FadeOutIS>", FadeOutISV)
+
+                        End If
+
+                        '기타
+                        '/AlphaCheckBox
+                        If .AlphaCheckBox.Checked = False Then '알파채널삭제
+                            AVTextBoxV = Replace(AVTextBoxV, "maskclip = Mask(IS, IS.GreyScale.Levels(0, 1, 75, 0, 255))", "maskclip = IS")
+                        End If
+                        '/LogoTrPaCheckBox
+                        If .LogoTrPaCheckBox.Checked = True Then
+                            AVTextBoxV = Replace(AVTextBoxV, "<#opacity>", .LogoTrPaTrackBar.Value / 100)
+                        Else
+                            AVTextBoxV = Replace(AVTextBoxV, "<#opacity>", "1")
+                        End If
+
+                        '///////////////////////////////////////
+                        '좌표관련 셋업
+                        ' 7  8  9
+                        ' 4  5  6
+                        ' 1  2  3  
+                        '----------
+                        Dim XV As Integer = 0
+                        Dim YV As Integer = 0
+                        Dim AVSWidth As Integer = 0
+                        Dim AVSHeight As Integer = 0
+                        Dim IMGWidth As Integer = 0
+                        Dim IMGHeight As Integer = 0
+
+                        '1차
+                        Try
+                            _AviSynthClip = _AviSynthScriptEnvironment.ParseScript("ImageSource(" & Chr(34) & MPATHV & Chr(34) & ")", AvisynthWrapper.AviSynthColorspace.RGB32)
+                            IMGWidth = _AviSynthClip.VideoWidth
+                            IMGHeight = _AviSynthClip.VideoHeight
+                            _AviSynthClip.IDisposable_Dispose()
+                        Catch ex As Exception
+                        End Try
+
+                        '2차
+                        If IMGWidth = 0 OrElse IMGHeight = 0 Then
+                            Try
+                                IMGWidth = Image.FromFile(MPATHV).Width
+                                IMGHeight = Image.FromFile(MPATHV).Height
+                            Catch ex As Exception
+                            End Try
+                        End If
+
+
+                        '잘라내기값
+                        Dim LeftCV, TopCV, RightCV, BottomCV, SourceWidthV, SourceHeightV As Integer
+                        Try
+                            LeftCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(0)
+                            TopCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(1)
+                            RightCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(2)
+                            BottomCV = Split(MainFrm.EncListListView.Items(index).SubItems(15).Text, ",")(3)
+                        Catch ex As Exception
+                            LeftCV = 0
+                            TopCV = 0
+                            RightCV = 0
+                            BottomCV = 0
+                        End Try
+                        '원본사이즈
+                        Try
+                            SourceWidthV = Split(Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(0), "x")(0)
+                            SourceHeightV = Split(Split(MainFrm.EncListListView.Items(index).SubItems(12).Text, ",")(0), "x")(1)
+                        Catch ex As Exception
+                            SourceWidthV = 0
+                            SourceHeightV = 0
+                        End Try
+
+                        If ImagePPFrm.AviSynthImageSizeCheckBox.Checked = True Then '원본영상사이즈
+                            Try
+                                '회전
+                                If ImagePPFrm.TurnCheckBox.Checked = True AndAlso (ImagePPFrm.TurnLeftRadioButton.Checked = True OrElse ImagePPFrm.TurnRightRadioButton.Checked = True) Then
+                                    AVSWidth = (SourceHeightV - TopCV - BottomCV)
+                                    AVSHeight = (SourceWidthV - LeftCV - RightCV)
+                                Else
+                                    AVSWidth = (SourceWidthV - LeftCV - RightCV)
+                                    AVSHeight = (SourceHeightV - TopCV - BottomCV)
+                                End If
+                            Catch ex As Exception
+                            End Try
+                        Else
+                            AVSWidth = ImagePPFrm.AviSynthImageSizeWidthTextBox.Text
+                            AVSHeight = ImagePPFrm.AviSynthImageSizeHeightTextBox.Text
+                        End If
+
+                        '위치 계산
+                        Try
+                            If .LAlignment7RadioButton.Checked = True Then
+                                XV = 0
+                                YV = 0
+                            ElseIf .LAlignment8RadioButton.Checked = True Then
+                                XV = Int((AVSWidth / 2) - (IMGWidth / 2))
+                                YV = 0
+                            ElseIf .LAlignment9RadioButton.Checked = True Then
+                                XV = Int(AVSWidth - IMGWidth)
+                                YV = 0
+                            ElseIf .LAlignment4RadioButton.Checked = True Then
+                                XV = 0
+                                YV = Int((AVSHeight / 2) - (IMGHeight / 2))
+                            ElseIf .LAlignment5RadioButton.Checked = True Then
+                                XV = Int((AVSWidth / 2) - (IMGWidth / 2))
+                                YV = Int((AVSHeight / 2) - (IMGHeight / 2))
+                            ElseIf .LAlignment6RadioButton.Checked = True Then
+                                XV = Int(AVSWidth - IMGWidth)
+                                YV = Int((AVSHeight / 2) - (IMGHeight / 2))
+                            ElseIf .LAlignment1RadioButton.Checked = True Then
+                                XV = 0
+                                YV = Int(AVSHeight - IMGHeight)
+                            ElseIf .LAlignment2RadioButton.Checked = True Then
+                                XV = Int((AVSWidth / 2) - (IMGWidth / 2))
+                                YV = Int(AVSHeight - IMGHeight)
+                            ElseIf .LAlignment3RadioButton.Checked = True Then
+                                XV = Int(AVSWidth - IMGWidth)
+                                YV = Int(AVSHeight - IMGHeight)
+                            End If
+                        Catch ex As Exception
+                            XV = 0
+                            YV = 0
+                        End Try
+
+                        AVTextBoxV = Replace(AVTextBoxV, "<#LogoXA>", XV + .XNumericUpDown.Value)
+                        AVTextBoxV = Replace(AVTextBoxV, "<#LogoYB>", YV + .YNumericUpDown.Value)
+
+                        '///////////////////////////////////////
+
+
+                    End If
+                End With
 
             End If
 

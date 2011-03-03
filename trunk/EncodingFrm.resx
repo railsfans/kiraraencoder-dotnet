@@ -213,9 +213,6 @@
   <data name="&gt;&gt;InfoTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="GroupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="TimeRemainingTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 180</value>
   </data>
@@ -250,7 +247,7 @@
     <value>138, 180</value>
   </data>
   <data name="TimeRemainingLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>180, 20</value>
   </data>
   <data name="TimeRemainingLabel.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -307,7 +304,7 @@
     <value>138, 157</value>
   </data>
   <data name="TimeElapsedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>180, 20</value>
   </data>
   <data name="TimeElapsedLabel.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -364,7 +361,7 @@
     <value>138, 134</value>
   </data>
   <data name="ProcessingRateLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>180, 20</value>
   </data>
   <data name="ProcessingRateLabel.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -421,7 +418,7 @@
     <value>138, 111</value>
   </data>
   <data name="BitrateLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>180, 20</value>
   </data>
   <data name="BitrateLabel.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
@@ -478,7 +475,7 @@
     <value>138, 88</value>
   </data>
   <data name="QLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>180, 20</value>
   </data>
   <data name="QLabel.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -535,7 +532,7 @@
     <value>138, 65</value>
   </data>
   <data name="FilesizeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>180, 20</value>
   </data>
   <data name="FilesizeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -592,7 +589,7 @@
     <value>138, 42</value>
   </data>
   <data name="FrameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>180, 20</value>
   </data>
   <data name="FrameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -649,7 +646,7 @@
     <value>138, 19</value>
   </data>
   <data name="PositionDurationLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>180, 20</value>
   </data>
   <data name="PositionDurationLabel.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -676,7 +673,7 @@
     <value>12, 5</value>
   </data>
   <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 210</value>
+    <value>331, 210</value>
   </data>
   <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -693,14 +690,11 @@
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="ProgressBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="ProgressBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 220</value>
   </data>
   <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 23</value>
+    <value>192, 23</value>
   </data>
   <data name="ProgressBar.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -772,16 +766,16 @@
     <value>MiddleLeft</value>
   </data>
   <data name="EncToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>343, 17</value>
+    <value>341, 17</value>
   </data>
   <data name="EncToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 344</value>
+    <value>0, 348</value>
   </data>
   <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 22</value>
+    <value>356, 22</value>
   </data>
   <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
@@ -801,14 +795,11 @@
   <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="PriorityComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="PriorityComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 249</value>
   </data>
   <data name="PriorityComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
+    <value>192, 22</value>
   </data>
   <data name="PriorityComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
@@ -937,7 +928,7 @@
     <value>0, 0</value>
   </data>
   <data name="EncPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 366</value>
+    <value>356, 370</value>
   </data>
   <data name="EncPanel.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -967,7 +958,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>358, 366</value>
+    <value>356, 370</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
