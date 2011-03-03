@@ -7142,4 +7142,7 @@ RELOAD:
         End Try
     End Sub
 
+    Private Sub NotifyIcon_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles NotifyIcon.MouseDoubleClick
+
+    End Sub
 End Class

@@ -13,6 +13,19 @@
 
             MessageBox.Show("Kirara Encoder is already running.", "Kirara Encoder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
+            '최소화시 -> 일반상태로
+            If MainFrm.WindowState = FormWindowState.Minimized Then MainFrm.WindowState = FormWindowState.Normal
+
+            '트레이시 -> 일반상태로
+            If MainFrm.NotifyIcon.Visible = True Then
+                If EncodingFrm.EncProcBool = True Then
+                    EncodingFrm.Show()
+                End If
+                MainFrm.Show()
+                MainFrm.NotifyIcon.Visible = False
+            End If
+
+            '시야밖일경우 시야내로
             If MainFrm.Location.X < Screen.GetBounds(MainFrm).Left Then
                 MainFrm.Location = New System.Drawing.Point(Screen.GetBounds(MainFrm).Left, MainFrm.Location.Y)
             End If

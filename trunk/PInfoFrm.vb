@@ -96,8 +96,8 @@ LANG_SKIP:
         VersionLabel.Text = VersionLabelV & " " & _
         My.Application.Info.Version.Major & "." & _
         My.Application.Info.Version.Minor & "." & _
-        My.Application.Info.Version.Revision & "." & _
-        My.Application.Info.Version.Build & " " & MainFrm.PDATA
+        My.Application.Info.Version.Build & "." & _
+        My.Application.Info.Version.Revision & " " & MainFrm.PDATA
 
     End Sub
 
