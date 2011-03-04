@@ -1500,6 +1500,8 @@ LANG_SKIP:
                                                                         RightNumericUpDown.Value & "," & _
                                                                         BottomNumericUpDown.Value
 
+        '새로고침
+        MainFrm.GET_AVINFO(MainFrm.SelIndex)
         Me.Close()
 
     End Sub

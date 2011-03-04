@@ -78,6 +78,7 @@ Partial Class SubtitleFrm
         Me.BorderStyle3 = New System.Windows.Forms.RadioButton
         Me.BorderStyle1 = New System.Windows.Forms.RadioButton
         Me.FontGroupBox = New System.Windows.Forms.GroupBox
+        Me.FDgButton = New System.Windows.Forms.Button
         Me.UnderlineCheckBox = New System.Windows.Forms.CheckBox
         Me.StrikeOutCheckBox = New System.Windows.Forms.CheckBox
         Me.PreviewLabel = New System.Windows.Forms.Label
@@ -94,7 +95,6 @@ Partial Class SubtitleFrm
         Me.DefBTN = New System.Windows.Forms.Button
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog
         Me.FontDialog1 = New System.Windows.Forms.FontDialog
-        Me.FDgButton = New System.Windows.Forms.Button
         Me.SubPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.SubtitleTabPage.SuspendLayout()
@@ -540,6 +540,12 @@ Partial Class SubtitleFrm
         Me.FontGroupBox.Name = "FontGroupBox"
         Me.FontGroupBox.TabStop = False
         '
+        'FDgButton
+        '
+        resources.ApplyResources(Me.FDgButton, "FDgButton")
+        Me.FDgButton.Name = "FDgButton"
+        Me.FDgButton.UseVisualStyleBackColor = True
+        '
         'UnderlineCheckBox
         '
         resources.ApplyResources(Me.UnderlineCheckBox, "UnderlineCheckBox")
@@ -622,12 +628,6 @@ Partial Class SubtitleFrm
         resources.ApplyResources(Me.DefBTN, "DefBTN")
         Me.DefBTN.Name = "DefBTN"
         Me.DefBTN.UseVisualStyleBackColor = True
-        '
-        'FDgButton
-        '
-        resources.ApplyResources(Me.FDgButton, "FDgButton")
-        Me.FDgButton.Name = "FDgButton"
-        Me.FDgButton.UseVisualStyleBackColor = True
         '
         'SubtitleFrm
         '

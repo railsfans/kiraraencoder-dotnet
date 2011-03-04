@@ -11,7 +11,7 @@
 
         Private Sub MyApplication_StartupNextInstance(ByVal sender As Object, ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
 
-            MessageBox.Show("Kirara Encoder is already running.", "Kirara Encoder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            'MessageBox.Show("Kirara Encoder is already running.", "Kirara Encoder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             '최소화시 -> 일반상태로
             If MainFrm.WindowState = FormWindowState.Minimized Then MainFrm.WindowState = FormWindowState.Normal

@@ -478,11 +478,30 @@ Public Class EncodingFrm
 
             PipeMode = False
             If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '네로AAC 설정일경우 맵을 복사//
-                Dim RCMeta As String = ""
+
+                Dim RCMeta As String = "" '챕터 메타데이터 삭제
                 If MainFrm.AVSCheckBox.Checked = True Then RCMeta = "-map_chapters -1 "
-                MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
-                                                            " -map 0.0 -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+
+                '2패스 처리관련
+                If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
+
+                    If EncPassStr = "[1/2Pass]" Then
+                        '同-2
+                        MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+                    Else
+                        '同-1
+                        MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
+                                            " -map 0.0 -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+                    End If
+
+                Else
+                    '同-1
+                    MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
+                                        " -map 0.0 -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+                End If
+
             Else
+                '同-2
                 MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
             End If
 
@@ -494,6 +513,10 @@ Public Class EncodingFrm
         Else
             Exit Sub
         End If
+
+
+        '======================================================================
+
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
         Dim TempInputHandle As SafeFileHandle = Nothing

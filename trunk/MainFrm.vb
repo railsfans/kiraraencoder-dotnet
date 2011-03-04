@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.03.03]"
+    Public PDATA = "[2011.03.04]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -904,7 +904,7 @@ LANG_SKIP:
 
     End Sub
 
-    Private Sub GET_AVINFO(ByVal index As Integer)
+    Public Sub GET_AVINFO(ByVal index As Integer)
 
         'AV정보
         Dim VideoV, AudioV As String
@@ -922,14 +922,16 @@ LANG_SKIP:
             AudioV = LangCls.MainAudioStr & vbNewLine & "None"
         Else
             If InStrRev(EncListListView.Items(index).SubItems(9).Text, " |") <> 0 Then
-                AudioV = LangCls.MainAudioStr & vbNewLine & Strings.Left(EncListListView.Items(index).SubItems(9).Text, InStrRev(EncListListView.Items(index).SubItems(9).Text, " |") - 1)
+                AudioV = LangCls.MainAudioStr & " -> " & Replace(EncListListView.Items(index).SubItems(4).Text, "Stream ", "") & _
+                 vbNewLine & _
+                Strings.Left(EncListListView.Items(index).SubItems(9).Text, InStrRev(EncListListView.Items(index).SubItems(9).Text, " |") - 1)
                 AudioV = Replace(AudioV, " | ", vbNewLine)
             Else
                 AudioV = LangCls.MainAudioStr & vbNewLine & "None"
             End If
         End If
 
-        AVTextBox.Text = VideoV & vbNewLine & vbNewLine & AudioV
+        AVTextBox.Text = "libavcodec: " & EncListListView.Items(index).SubItems(5).Text & vbNewLine & vbNewLine & VideoV & vbNewLine & vbNewLine & AudioV
 
     End Sub
 
@@ -2142,9 +2144,15 @@ LANG_SKIP:
         Dim BetaStr As String = ""
         If BetaStrB = True Then BetaStr = " Beta"
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
-            Me.Text = "Kirara Encoder" & BetaStr & "x64"
+            Me.Text = "Kirara Encoder" & BetaStr & " v" & _
+            My.Application.Info.Version.Major & "." & _
+            My.Application.Info.Version.Minor & "." & _
+            My.Application.Info.Version.Build & " x64"
         Else
-            Me.Text = "Kirara Encoder" & BetaStr
+            Me.Text = "Kirara Encoder" & BetaStr & " v" & _
+            My.Application.Info.Version.Major & "." & _
+            My.Application.Info.Version.Minor & "." & _
+            My.Application.Info.Version.Build
         End If
 
         'MPLAYEREXESTR 설정
@@ -2164,6 +2172,15 @@ LANG_SKIP:
         End If
 
         '----------------------------------------------------------------------------------------
+
+        '캡션
+        TitleLabel.Text = Me.Text
+
+        '창틀무
+        Dim lStyle As Integer = WinAPI.GetWindowLongW(Me.Handle, WinAPI.GWL_STYLE)
+        lStyle = lStyle And Not (WinAPI.WS_BORDER Or WinAPI.WS_DLGFRAME Or WinAPI.WS_THICKFRAME Or WinAPI.WS_MAXIMIZEBOX)
+        WinAPI.SetWindowLongW(Me.Handle, WinAPI.GWL_STYLE, lStyle)
+        WinAPI.SetWindowPos(Me.Handle, 0, 0, 0, 0, 0, WinAPI.SWP_FRAMECHANGED Or WinAPI.SWP_NOMOVE Or WinAPI.SWP_NOSIZE Or WinAPI.SWP_NOZORDER) '이 코드를 제거하면 윈도우 2000 문제발생.
 
         '저장된 폼의 위치와 크기를 적용한다
         If MainWidth <> "" AndAlso MainHeight <> "" Then
@@ -2189,21 +2206,6 @@ LANG_SKIP:
         If Me.Location.Y > Screen.GetBounds(Me).Bottom - Me.Height Then
             Me.Location = New System.Drawing.Point(Me.Location.X, Screen.GetBounds(Me).Bottom - Me.Height)
         End If
-
-        '캡션
-        TitleLabel.Text = Me.Text
-
-        '웹브라우저
-        WebBrowser1.Navigate("http://www.kiraraencoder.pe.kr/kemainfrm")
-
-        '스타일
-        Me.Hide()
-        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable
-
-        '창틀무
-        Dim lStyle As Integer = WinAPI.GetWindowLongW(Me.Handle, WinAPI.GWL_STYLE)
-        lStyle = lStyle And Not (WinAPI.WS_BORDER Or WinAPI.WS_DLGFRAME Or WinAPI.WS_THICKFRAME Or WinAPI.WS_MAXIMIZEBOX)
-        WinAPI.SetWindowLongW(Me.Handle, WinAPI.GWL_STYLE, lStyle)
 
         '아래 코드부터 폼이 보여짐.
         If MainWindowState <> "" Then

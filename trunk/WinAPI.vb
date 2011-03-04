@@ -34,6 +34,10 @@ Public Class WinAPI
     Public Const WS_THICKFRAME = &H40000
     Public Const WS_MAXIMIZEBOX = &H10000
     Public Const WS_MINIMIZEBOX = &H20000
+    Public Const SWP_NOSIZE = &H1
+    Public Const SWP_NOMOVE = &H2
+    Public Const SWP_FRAMECHANGED = &H20
+    Public Const SWP_NOZORDER = &H4
     Public Declare Auto Function GetShortPathName Lib "kernel32.dll" (ByVal strLongPath As String, ByVal objStringBuilder As System.Text.StringBuilder, ByVal intBufferSize As Integer) As Integer
     Public Declare Auto Function GetLongPathName Lib "kernel32.dll" (ByVal strShortPath As String, ByVal objStringBuilder As System.Text.StringBuilder, ByVal intBufferSize As Integer) As Integer
     Public Declare Function ReleaseCapture Lib "user32" () As Long
@@ -42,6 +46,8 @@ Public Class WinAPI
     Public Declare Function GetWindowThreadProcessId Lib "user32.dll" (ByVal hwnd As Long, ByVal lpdwProcessId As Long) As Long
     Public Declare Function SetWindowLongW Lib "user32" (ByVal hwnd As Integer, ByVal nIndex As Integer, ByVal dwNewLong As Integer) As Integer
     Public Declare Function GetWindowLongW Lib "user32" (ByVal hwnd As Integer, ByVal nIndex As Integer) As Integer
+    Public Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long,ByVal hWndInsertAfter As Long, ByVal X As Long, ByVal Y As Long, ByValcx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
+
 
 #Region "프론트엔드 코어"
 

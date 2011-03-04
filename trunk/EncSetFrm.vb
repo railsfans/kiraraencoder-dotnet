@@ -459,6 +459,10 @@ Public Class EncSetFrm
         If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
     End Sub
 
+    Private Sub EncSetFrm_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Leave
+
+    End Sub
+
     Public Sub EncSetFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         OKBTNCLK = False
@@ -682,6 +686,24 @@ LANG_SKIP:
                 ImageTabControl.TabPages.Add(ImgPPTabPage)
             End If
 
+        End If
+
+        '윈도우 2000 디자이너
+        If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
+            QuantizerTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            QuantizerCQPTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            QualityTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            LumaMatrixHSTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            LumaMatrixVSTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            LumaEffectSTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            ChromaMatrixHSTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            ChromaMatrixVSTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            ChromaEffectSTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            AudioVolTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            NeroAACBitrateTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            NeroAACQTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            VorbisQTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            LAMEMP3QTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
         End If
 
     End Sub

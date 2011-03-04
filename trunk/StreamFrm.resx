@@ -2059,7 +2059,7 @@
     <value>1023, 17</value>
   </metadata>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 452</value>
+    <value>0, 456</value>
   </metadata>
   <data name="ToolStripStatusLabel1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

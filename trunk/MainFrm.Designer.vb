@@ -624,12 +624,14 @@ Partial Class MainFrm
         '
         'WebBrowser1
         '
+        Me.WebBrowser1.AllowNavigation = False
+        Me.WebBrowser1.AllowWebBrowserDrop = False
         Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
         resources.ApplyResources(Me.WebBrowser1, "WebBrowser1")
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.ScrollBarsEnabled = False
-        Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
+        Me.WebBrowser1.Url = New System.Uri("http://www.kiraraencoder.pe.kr/kemainfrm", System.UriKind.Absolute)
         '
         'Panel10
         '
@@ -912,7 +914,6 @@ Partial Class MainFrm
         Me.Controls.Add(Me.BottomPanel)
         Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.TitlePanel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"
         Me.ListviewContextMenuStrip.ResumeLayout(False)

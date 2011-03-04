@@ -458,6 +458,14 @@ LANG_SKIP:
 
         XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
 
+        '윈도우 2000 디자이너
+        If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
+            PrimaryColourTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            SecondaryColourTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            OutlineColourTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            BackColourTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+        End If
+
     End Sub
 
     Private Sub OutlineUpDown_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles OutlineUpDown.LostFocus
