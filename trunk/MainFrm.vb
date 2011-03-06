@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.03.04]"
+    Public PDATA = "[2011.03.07]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -125,10 +125,6 @@ Public Class MainFrm
 
     'SEEKMODE = -1?
     Public SEEKMODEM1B As Boolean = False
-
-    'Mutex
-    'Dim STMutexBool As Boolean
-    'Dim STMutex As New System.Threading.Mutex(True, "KiraraEncoderMutex" & My.Application.Info.Version.Major & My.Application.Info.Version.Minor & My.Application.Info.Version.Revision & Environ("PROCESSOR_ARCHITECTURE"), STMutexBool)
 
     '진행중여부
     Dim SLangB As Boolean = False
@@ -371,7 +367,13 @@ Public Class MainFrm
             If ta2 <> "" Then
                 ta2 = Mid(ta2, InStrRev(ta2, ": ") + 2)
             End If
-            ELVI.SubItems(1).Text = ta2
+
+            '재생시간 미디어 인포
+            ELVI.SubItems(1).Text = _MI.Get_(StreamKind.Visual, 0, "Duration/String3")
+
+            If ELVI.SubItems(1).Text = "" Then
+                ELVI.SubItems(1).Text = ta2 & "0"
+            End If
             ELVI.SubItems(11).Text = ta2 & " [00:00:00.00 - 00:00:00.00]"
 
             '화면크기 미디어 인포
@@ -1621,9 +1623,9 @@ LANG_SKIP:
 
     '----------------------------------------------------------------------------
     ' 제    목: 리사이즈
-    ' 제 작 일: 2010 11 15
+    ' 제 작 일: 2011 03 05
     ' 제 작 자: 이기원
-    ' 버    전: r3
+    ' 버    전: r4
     '-----------------------------------------------------------------------------
     Private Sub BottomPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BottomPanel.MouseMove
         If e.Button = MouseButtons.Left Then
@@ -1648,6 +1650,10 @@ LANG_SKIP:
                 Me.SetBounds(Me.Location.X, MousePosition.Y, Me.Width, ResizeYV - MousePosition.Y + ResizeHV)
             End If
         End If
+    End Sub
+
+    Private Sub TopPanel_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TopPanel.MouseUp
+
     End Sub
 
     Private Sub RightPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles RightPanel.MouseMove, RightPanel2.MouseMove
@@ -1775,6 +1781,8 @@ LANG_SKIP:
         If Me.WindowState = FormWindowState.Normal Then
             RzX = Me.Location.X
             RzY = Me.Location.Y
+        Else
+            Me.Location = New System.Drawing.Point(RzX, RzY)
         End If
     End Sub
 
@@ -1824,7 +1832,6 @@ LANG_SKIP:
 
 
         '-----------------------------------------------------------
-
 
 
 
@@ -1888,8 +1895,6 @@ LANG_SKIP:
         Catch ex As Exception
         End Try
 
-        'STMutex.ReleaseMutex()
-
     End Sub
 
     Private Sub MainFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -1904,12 +1909,6 @@ LANG_SKIP:
                 Close()
             End If
         End If
-
-        '인스턴스검사(뮤텍스는 NT5.0 윈도우 2000 이상에서 사용가능)
-        'If STMutexBool = False Then
-        '    MessageBox.Show("Kirara Encoder is already running.", "Kirara Encoder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    Process.GetCurrentProcess.Kill()
-        'End If
 
         '==================================================
 
@@ -2147,12 +2146,14 @@ LANG_SKIP:
             Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
-            My.Application.Info.Version.Build & " x64"
+            My.Application.Info.Version.Build & "." & _
+            My.Application.Info.Version.Revision & " x64"
         Else
             Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
-            My.Application.Info.Version.Build
+            My.Application.Info.Version.Build & "." & _
+            My.Application.Info.Version.Revision
         End If
 
         'MPLAYEREXESTR 설정
@@ -2348,6 +2349,9 @@ UAC:
             Exit Sub
         End If
 
+        '인덱스 -1 에러방지
+        If SelIndex = -1 Then Exit Sub
+
         If LogFrm.Visible = True Then
             LogFrm.GET_TXT()
         Else
@@ -2382,6 +2386,8 @@ UAC:
         If EncListListView.SelectedItems.Count = 0 Then
             Exit Sub
         End If
+        '인덱스 -1 에러방지
+        If SelIndex = -1 Then Exit Sub
         '인코딩중이 아니면
         If EncodingFrm.EncProcBool = False Then
             Try
@@ -3087,6 +3093,7 @@ UAC:
             .LAlignment3RadioButton.Checked = False
             .XNumericUpDown.Value = 0
             .YNumericUpDown.Value = 0
+            .ModeComboBox.Text = "Blend"
 
         End With
 
@@ -4954,6 +4961,11 @@ RELOAD:
                         If XTRSTR <> "" Then .YNumericUpDown.Value = XTRSTR Else .YNumericUpDown.Value = 0
                     End If
 
+                    If XTR.Name = "ETCPPFrm_ModeComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .ModeComboBox.Text = XTRSTR Else .ModeComboBox.Text = "Blend"
+                    End If
+
                 End With
 
                 '예외
@@ -6498,6 +6510,10 @@ RELOAD:
                 XTWriter.WriteString(.YNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
+                XTWriter.WriteStartElement("ETCPPFrm_ModeComboBox")
+                XTWriter.WriteString(.ModeComboBox.Text)
+                XTWriter.WriteEndElement()
+
             End With
 
             '예외
@@ -6690,6 +6706,9 @@ RELOAD:
             Exit Sub
         End If
 
+        '인덱스 -1 에러방지
+        If SelIndex = -1 Then Exit Sub
+
         If My.Computer.FileSystem.FileExists(EncListListView.Items(SelIndex).SubItems(10).Text) = False Then
             MsgBox(LangCls.MainFileNotFound)
             Exit Sub
@@ -6711,6 +6730,9 @@ RELOAD:
             MsgBox(LangCls.MainSelectListA)
             Exit Sub
         End If
+
+        '인덱스 -1 에러방지
+        If SelIndex = -1 Then Exit Sub
 
         '파일
         '---------------------------------
@@ -6772,6 +6794,9 @@ RELOAD:
             Exit Sub
         End If
 
+        '인덱스 -1 에러방지
+        If SelIndex = -1 Then Exit Sub
+
         '캐시예외
         Dim CACHEV As String = ""
         If EncListListView.Items(SelIndex).SubItems(3).Text = "MPEGTS" Then CACHEV = " -demuxer lavf -cache 8192"
@@ -6792,6 +6817,9 @@ RELOAD:
             MsgBox(LangCls.MainSelectListA)
             Exit Sub
         End If
+
+        '인덱스 -1 에러방지
+        If SelIndex = -1 Then Exit Sub
 
         '파일
         '---------------------------------
@@ -6943,6 +6971,9 @@ RELOAD:
             Exit Sub
         End If
 
+        '인덱스 -1 에러방지
+        If SelIndex = -1 Then Exit Sub
+
         PlayButton.Enabled = False
         Try
             AviSynthPP.AviSynthPreprocess(SelIndex, True, Nothing, False, True)
@@ -7038,34 +7069,7 @@ RELOAD:
         End Try
     End Sub
 
-    Private Sub TitlePanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TitlePanel.MouseDown
-
-        'If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.Clicks > 1 Then
-        '    If Me.WindowState = FormWindowState.Maximized Then
-        '        Me.WindowState = FormWindowState.Normal
-        '    Else
-        '        Me.WindowState = FormWindowState.Maximized
-        '    End If
-        '    Exit Sub
-        'End If
-
-        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Me.WindowState = FormWindowState.Normal Then
-            WinAPI.ReleaseCapture()
-            WinAPI.SendMessage(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, WinAPI.HTCAPTION, 0)
-        End If
-
-    End Sub
-
-    Private Sub TitleLabel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TitleLabel.MouseDown
-
-        'If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.Clicks > 1 Then
-        '    If Me.WindowState = FormWindowState.Maximized Then
-        '        Me.WindowState = FormWindowState.Normal
-        '    Else
-        '        Me.WindowState = FormWindowState.Maximized
-        '    End If
-        '    Exit Sub
-        'End If
+    Private Sub TitleLabel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TitleLabel.MouseDown, FormMovePanel.MouseDown
 
         If e.Button = Windows.Forms.MouseButtons.Left AndAlso Me.WindowState = FormWindowState.Normal Then
             WinAPI.ReleaseCapture()
@@ -7122,6 +7126,9 @@ RELOAD:
             Exit Sub
         End If
 
+        '인덱스 -1 에러방지
+        If SelIndex = -1 Then Exit Sub
+
         Try
             StreamFrm.ShowDialog(Me)
 
@@ -7145,6 +7152,22 @@ RELOAD:
     End Sub
 
     Private Sub NotifyIcon_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles NotifyIcon.MouseDoubleClick
+
+    End Sub
+
+    Private Sub TopPanel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles TopPanel.Paint
+
+    End Sub
+
+    Private Sub TopPanel2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles TopPanel2.Paint
+
+    End Sub
+
+    Private Sub TitleLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TitleLabel.Click
+
+    End Sub
+
+    Private Sub FormMovePanel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles FormMovePanel.Paint
 
     End Sub
 End Class

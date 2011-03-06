@@ -78,6 +78,9 @@ Public Class AviSynthEditorFrm
             Exit Sub
         End If
 
+        '인덱스 -1 에러방지
+        If MainFrm.SelIndex = -1 Then Exit Sub
+
         PreviewButton.Enabled = False
 
         Try
@@ -325,6 +328,9 @@ LANG_SKIP:
             MsgBox(LangCls.MainSelectListA)
             Exit Sub
         End If
+
+        '인덱스 -1 에러방지
+        If MainFrm.SelIndex = -1 Then Exit Sub
 
         Try
             ListenButton.Enabled = False

@@ -298,81 +298,62 @@ Public Class FunctionCls
     '----------------------------------------------------------------------------
     ' 함수이름: TIME_TO_HMSMSTIME
     ' 제 작 일: 2008년 / 함수화: 2010 09 26
+    ' 수 정 일: 2011년 3월 6일
     ' 설    명: hh:mm:ss:ms 로 변환
     ' 제 작 자: 이기원
     '-----------------------------------------------------------------------------
-    Public Shared Function TIME_TO_HMSMSTIME(ByVal TimeV As Double, ByVal PointB As Boolean) As String
+    Public Shared Function TIME_TO_HMSMSTIME(ByVal TimeV As Single, ByVal PointB As Boolean) As String
 
         Dim Minute As Single
         Dim Hour As Single
         Dim hmsValue As String = ""
 
-        If TimeV < 0 Then
+
+        If TimeV < 0 OrElse Single.IsInfinity(TimeV) Then
+
             If PointB = False Then
                 Return "00:00:00"
             Else
-                Return "00:00:00.00"
+                Return "00:00:00.000"
             End If
-        End If
 
-        If TimeV < 60 Then
+        ElseIf TimeV < 60 Then
+
             If TimeV < 0 Then
-                hmsValue = "00:" & "00:" & "00.00"
-            ElseIf Format(TimeV, "0.00") < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(TimeV, "0.00")
+                hmsValue = "00:" & "00:" & "00.000"
             Else
-                hmsValue = "00:" & "00:" & Format(TimeV, "0.00")
+                hmsValue = "00:" & "00:" & Format(TimeV, "00.000")
             End If
-        End If
 
-        If TimeV > 59 Then
+        ElseIf Split(TimeV, ".")(0) / 60 < 60 Then
+
             Minute = TimeV / 60
-            If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                End If
+            Dim T2 As String = Split(Minute, ".")(0) & ":" & Format(TimeV - Val(60) * Split(Minute, ".")(0), "00.000")
+            If Split(Minute, ".")(0) < 10 Then
+                hmsValue = "00:" & "0" & T2
             Else
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                End If
+                hmsValue = "00:" & T2
             End If
-        End If
 
-        If Split(Minute, ".")(0) > 59 Then
+        Else
+
+            Minute = TimeV / 60
             Hour = Split(Minute, ".")(0) / 60
+            Dim T3 As String = Int(Minute - Val(60) * Split(Hour, ".")(0)) & ":" & Format(TimeV - Val(60) * Split(Minute, ".")(0), "00.000")
             If Split(Hour, ".")(0) < 10 Then
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
+
+                If Int(Minute - Val(60) * Split(Hour, ".")(0)) < 10 Then
+                    hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & T3
                 Else
-                    If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
+                    hmsValue = "0" & Split(Hour, ".")(0) & ":" & T3
                 End If
 
             Else
 
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
+                If Int(Minute - Val(60) * Split(Hour, ".")(0)) < 10 Then
+                    hmsValue = Split(Hour, ".")(0) & ":" & "0" & T3
                 Else
-                    If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
+                    hmsValue = Split(Hour, ".")(0) & ":" & T3
                 End If
 
             End If
@@ -382,7 +363,7 @@ Public Class FunctionCls
         If PointB = False Then
             Return Split(hmsValue, ".")(0)
         Else
-            Return hmsValue
+            Return Strings.Left(hmsValue, 11)
         End If
 
 

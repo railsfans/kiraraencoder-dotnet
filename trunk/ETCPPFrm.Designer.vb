@@ -76,6 +76,8 @@ Partial Class ETCPPFrm
         Me.LESTextBox = New System.Windows.Forms.TextBox
         Me.LogoCheckBox = New System.Windows.Forms.CheckBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.ModeComboBox = New System.Windows.Forms.ComboBox
         Me.RateGroupBox.SuspendLayout()
         CType(Me.RateNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EPP_Panel.SuspendLayout()
@@ -181,6 +183,8 @@ Partial Class ETCPPFrm
         '
         'LogoPanel
         '
+        Me.LogoPanel.Controls.Add(Me.ModeComboBox)
+        Me.LogoPanel.Controls.Add(Me.Label1)
         Me.LogoPanel.Controls.Add(Me.LogoTrPaLabel)
         Me.LogoPanel.Controls.Add(Me.GroupBox3)
         Me.LogoPanel.Controls.Add(Me.GroupBox2)
@@ -467,6 +471,19 @@ Partial Class ETCPPFrm
         '
         resources.ApplyResources(Me.OpenFileDialog1, "OpenFileDialog1")
         '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
+        'ModeComboBox
+        '
+        Me.ModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ModeComboBox.FormattingEnabled = True
+        Me.ModeComboBox.Items.AddRange(New Object() {resources.GetString("ModeComboBox.Items"), resources.GetString("ModeComboBox.Items1"), resources.GetString("ModeComboBox.Items2"), resources.GetString("ModeComboBox.Items3"), resources.GetString("ModeComboBox.Items4"), resources.GetString("ModeComboBox.Items5"), resources.GetString("ModeComboBox.Items6"), resources.GetString("ModeComboBox.Items7"), resources.GetString("ModeComboBox.Items8"), resources.GetString("ModeComboBox.Items9"), resources.GetString("ModeComboBox.Items10"), resources.GetString("ModeComboBox.Items11")})
+        resources.ApplyResources(Me.ModeComboBox, "ModeComboBox")
+        Me.ModeComboBox.Name = "ModeComboBox"
+        '
         'ETCPPFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -552,4 +569,6 @@ Partial Class ETCPPFrm
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents XNumericUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents LogoTrPaLabel As System.Windows.Forms.Label
+    Friend WithEvents ModeComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

@@ -301,78 +301,10 @@ Public Class DGIndexFrm
 
     Private Sub TLabelTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TLabelTimer.Tick
 
-        Dim Minute As Single
-        Dim Hour As Single
         Dim hmsValue As String = ""
         Dim NowTimeSec = R_OnePV
-
         If NowTimeSec < 0 Then Exit Sub
-
-        If NowTimeSec < 60 Then
-            If NowTimeSec < 0 Then
-                hmsValue = "00:" & "00:" & "00.00"
-            ElseIf Format(NowTimeSec, "0.00") < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
-            Else
-                hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")
-            End If
-        End If
-
-        If NowTimeSec > 59 Then
-            Minute = NowTimeSec / 60
-            If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            Else
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            End If
-        End If
-
-        If Split(Minute, ".")(0) > 59 Then
-            Hour = Split(Minute, ".")(0) / 60
-            If Split(Hour, ".")(0) < 10 Then
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            Else
-
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            End If
-
-        End If
-
-        hmsValue = Split(hmsValue, ".")(0)
+        hmsValue = FunctionCls.TIME_TO_HMSMSTIME(NowTimeSec, False)
         If hmsValue <> "00:00:00" AndAlso ProgressBar.Value > 0 Then
             TLabel.Text = hmsValue
             AviSynthPP.INDEX_PVStr = hmsValue

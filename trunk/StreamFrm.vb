@@ -431,7 +431,7 @@ Public Class StreamFrm
 
         SubTask = True
         PlayPauseBTN.Enabled = False '활성/비활성(재생)
-        Totalhms.Text = "/ " & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(1).Text & " "
+        Totalhms.Text = "/ " & Strings.Left(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(1).Text, 11) & " "
         Try
             SeekTrackBar.Maximum = (Split(Mid(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(1).Text, 1, 10), ":")(0) * "60" + _
                                     Split(Mid(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(1).Text, 1, 10), ":")(1)) * "60" + _
@@ -1185,78 +1185,8 @@ LANG_SKIP:
 
     Private Sub NowhmsTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NowhmsTimer.Tick
 
-        Dim Minute As Single
-        Dim Hour As Single
-        Dim hmsValue As String = ""
+        Nowhms.Text = FunctionCls.TIME_TO_HMSMSTIME(NowTimeSec, True)
 
-        If NowTimeSec < 0 Then Exit Sub
-
-        If NowTimeSec < 60 Then
-            If NowTimeSec < 0 Then
-                hmsValue = "00:" & "00:" & "00.00"
-            ElseIf Format(NowTimeSec, "0.00") < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
-            Else
-                hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")
-            End If
-        End If
-
-        If NowTimeSec > 59 Then
-            Minute = NowTimeSec / 60
-            If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            Else
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            End If
-        End If
-
-        If Split(Minute, ".")(0) > 59 Then
-            Hour = Split(Minute, ".")(0) / 60
-            If Split(Hour, ".")(0) < 10 Then
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            Else
-
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            End If
-
-        End If
-
-
-        Nowhms.Text = hmsValue
 
     End Sub
 
@@ -1969,6 +1899,10 @@ LANG_SKIP:
     End Sub
 
     Private Sub InTPrePanel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles InTPrePanel.Paint
+
+    End Sub
+
+    Private Sub Nowhms_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nowhms.Click
 
     End Sub
 End Class

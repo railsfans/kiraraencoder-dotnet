@@ -44,6 +44,10 @@ Public Class FFMSIndexFrm
     Dim OnePV As Single = 0.0
     Dim R_OnePV As Single = 0.0
 
+    '디먹서 선택
+    Dim DEMUXER As String = "default"
+    Public DEStr As String = "" '그냥 보여주기위한...
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -193,13 +197,37 @@ Public Class FFMSIndexFrm
 
 #End Region
 
-    Public Sub IDSTR(ByVal IN_PATHV As String, ByVal OUT_PATHV As String, ByVal PriorityInt As Integer, ByVal VideoOnly As Boolean)
+    Public Sub IDSTR(ByVal IN_PATHV As String, ByVal OUT_PATHV As String, ByVal PriorityInt As Integer, ByVal VideoOnly As Boolean, ByVal index As Integer, ByVal MATROSKAERR As Integer)
 
         Dim MSGB As String = ""
+
+        '디먹서 선택
+        If InStr(MainFrm.EncListListView.Items(index).SubItems(3).Text, "matroska", CompareMethod.Text) <> 0 AndAlso MATROSKAERR = 1 Then
+            DEMUXER = "lavf"
+            '---
+            DEStr = "libavformat"
+        Else
+            DEMUXER = "default"
+            '---
+            If InStr(MainFrm.EncListListView.Items(index).SubItems(3).Text, "matroska", CompareMethod.Text) <> 0 Then
+                DEStr = "matroska"
+            Else
+                DEStr = "libavformat"
+            End If
+        End If
+
+        '인덱스파일 이미 있으면 삭제
+        If My.Computer.FileSystem.FileExists(OUT_PATHV) = True Then
+            Try
+                My.Computer.FileSystem.DeleteFile(OUT_PATHV)
+            Catch ex As Exception
+            End Try
+        End If
+
         If VideoOnly = False Then
-            MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -m lavf -f -t -1 -s 3 -d 0 " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
+            MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t -1 -s 3 -d 0 " & "-m " & DEMUXER & " " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
         Else '비디오 부분만 인덱스//
-            MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -m lavf -f -t 0 -s 3 -d 0 " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
+            MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t 0 -s 3 -d 0 " & "-m " & DEMUXER & " " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
         End If
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
@@ -307,7 +335,7 @@ Public Class FFMSIndexFrm
 LANG_SKIP:
         '=========================================
 
-        Me.Text = LangCls.AVSIndexingV & " - FFmpegSource"
+        Me.Text = LangCls.AVSIndexingV & " - FFmpegSource, " & DEStr
 
     End Sub
 
@@ -318,78 +346,10 @@ LANG_SKIP:
 
     Private Sub TLabelTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TLabelTimer.Tick
 
-        Dim Minute As Single
-        Dim Hour As Single
         Dim hmsValue As String = ""
         Dim NowTimeSec = R_OnePV
-
         If NowTimeSec < 0 Then Exit Sub
-
-        If NowTimeSec < 60 Then
-            If NowTimeSec < 0 Then
-                hmsValue = "00:" & "00:" & "00.00"
-            ElseIf Format(NowTimeSec, "0.00") < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
-            Else
-                hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")
-            End If
-        End If
-
-        If NowTimeSec > 59 Then
-            Minute = NowTimeSec / 60
-            If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            Else
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            End If
-        End If
-
-        If Split(Minute, ".")(0) > 59 Then
-            Hour = Split(Minute, ".")(0) / 60
-            If Split(Hour, ".")(0) < 10 Then
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            Else
-
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            End If
-
-        End If
-
-        hmsValue = Split(hmsValue, ".")(0)
+        hmsValue = FunctionCls.TIME_TO_HMSMSTIME(NowTimeSec, False)
         If hmsValue <> "00:00:00" AndAlso ProgressBar.Value > 0 Then
             TLabel.Text = hmsValue
             AviSynthPP.INDEX_PVStr = hmsValue

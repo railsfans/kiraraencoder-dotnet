@@ -196,6 +196,11 @@ RELOAD:
                     If XTRSTR <> "" Then YNumericUpDown.Value = XTRSTR Else YNumericUpDown.Value = 0
                 End If
 
+                If XTR.Name = "ETCPPFrm_ModeComboBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then ModeComboBox.Text = XTRSTR Else ModeComboBox.Text = "Blend"
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -316,6 +321,7 @@ LANG_SKIP:
         LAlignment3RadioButton.Checked = False
         XNumericUpDown.Value = 0
         YNumericUpDown.Value = 0
+        ModeComboBox.Text = "Blend"
     End Sub
 
     Private Sub CancelBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBTN.Click

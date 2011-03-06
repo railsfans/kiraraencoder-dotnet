@@ -757,30 +757,28 @@ Public Class EncodingFrm
         '------------------
         '속도
         '------------------
-        'ia2 = 1
-        'iia2 = 0
-        'ta2 = ""
-        'If InStr(ia2, MSGV, "fps=", CompareMethod.Text) Then
-        '    iia2 = InStr(ia2, MSGV, "fps=", CompareMethod.Text)
-        '    If InStr(iia2, MSGV, "q=", CompareMethod.Text) Then
-        '        ia2 = InStr(iia2, MSGV, "q=", CompareMethod.Text) + 1
-        '        ta2 = Mid(MSGV, iia2, ia2 - iia2 - 1)
-        '    End If
-        'Else
-        '    ia2 = ia2 + 1
-        'End If
-        'If ta2 <> "" Then
-        '    ta2 = Trim(Replace(ta2, "fps=", ""))
-        '    If IsNumeric(ta2) = True Then
-        '        ProcessingRateLabel.Text = ta2 & " fps"
-        '        TimeRemainingLabel.Text = FunctionCls.TIME_TO_HMSMSTIME((EncDurationD - EncPositionD) / (Val(ta2) / FPSv), False)
-        '    End If
-        'End If
-        '------------------
-        '남은시간
-        '------------------
-        If SpeedV > 0 Then
-            TimeRemainingLabel.Text = FunctionCls.TIME_TO_HMSMSTIME(((EncDurationD - EncPositionD) / SpeedV), False)
+        ia2 = 1
+        iia2 = 0
+        ta2 = ""
+        If InStr(ia2, MSGV, "fps=", CompareMethod.Text) Then
+            iia2 = InStr(ia2, MSGV, "fps=", CompareMethod.Text)
+            If InStr(iia2, MSGV, "q=", CompareMethod.Text) Then
+                ia2 = InStr(iia2, MSGV, "q=", CompareMethod.Text) + 1
+                ta2 = Mid(MSGV, iia2, ia2 - iia2 - 1)
+            End If
+        Else
+            ia2 = ia2 + 1
+        End If
+        If ta2 <> "" Then
+            ta2 = Trim(Replace(ta2, "fps=", ""))
+            If IsNumeric(ta2) = True Then
+                'ProcessingRateLabel.Text = ta2 & " fps"
+                TimeRemainingLabel.Text = FunctionCls.TIME_TO_HMSMSTIME((EncDurationD - EncPositionD) / (Val(ta2) / FPSv), False)
+            End If
+        Else
+            If SpeedV > 0 Then
+                TimeRemainingLabel.Text = FunctionCls.TIME_TO_HMSMSTIME(((EncDurationD - EncPositionD) / SpeedV), False)
+            End If
         End If
 
     End Sub
@@ -1625,9 +1623,11 @@ ImageSkip:
                 Dim _i As Long = 1
                 Dim _ii As Long = 0
                 Dim _t As String = ""
-                'FLV 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
-                If (InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0) AndAlso EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" Then
-                    If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플레이트 체크
+                If EncSetFrm.SamplerateCheckBox.Checked = True Then '원본 샘플레이트 체크
+                    'FLV, SWF 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
+                    If (InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0) AndAlso _
+                        (EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" OrElse EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)") Then
+
                         _i = 1
                         _ii = 0
                         _t = ""
@@ -2152,80 +2152,7 @@ LANG_SKIP:
 
         TimeS = EncPositionD
         TimeElapsed += 1
-
-        Dim Minute As Single
-        Dim Hour As Single
-        Dim hmsValue As String = ""
-        Dim NowTimeSec = TimeElapsed
-
-        If NowTimeSec < 0 Then Exit Sub
-
-        If NowTimeSec < 60 Then
-            If NowTimeSec < 0 Then
-                hmsValue = "00:" & "00:" & "00.00"
-            ElseIf Format(NowTimeSec, "0.00") < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(NowTimeSec, "0.00")
-            Else
-                hmsValue = "00:" & "00:" & Format(NowTimeSec, "0.00")
-            End If
-        End If
-
-        If NowTimeSec > 59 Then
-            Minute = NowTimeSec / 60
-            If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            Else
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            End If
-        End If
-
-        If Split(Minute, ".")(0) > 59 Then
-            Hour = Split(Minute, ".")(0) / 60
-            If Split(Hour, ".")(0) < 10 Then
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            Else
-
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(NowTimeSec - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(NowTimeSec - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            End If
-
-        End If
-
-        hmsValue = Split(hmsValue, ".")(0)
-        TimeElapsedLabel.Text = hmsValue
+        TimeElapsedLabel.Text = FunctionCls.TIME_TO_HMSMSTIME(TimeElapsed, False)
 
     End Sub
 

@@ -2136,6 +2136,16 @@ RELOAD:
             MPEG4optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
         End If
 
+
+
+        '***********************************
+        '  VP8 고급설정
+        '***********************************
+        Dim VP8optsV As String = ""
+        If VideoCodecComboBox.Text = "VP8 Codec(libvpx)" Then
+            VP8optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
+        End If
+
         '***********************************
         '  비디오 코덱
         '***********************************
@@ -2329,9 +2339,11 @@ RELOAD:
             SamplerateComboBoxV = " -ar 8000"
         Else
 
-            If SamplerateCheckBox.Checked = False Then
-                'FLV 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
-                If InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 AndAlso (AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)") Then
+            If SamplerateCheckBox.Checked = False Then '원본 샘플레이트 아님
+                'FLV, SWF 일경우 [libmp3lame @ 0x170a530] flv does not support that sample rate, choose from (44100, 22050, 11025).
+                If (InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse InStr(OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0) AndAlso _
+                    (AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)") Then
+
                     If Val(SamplerateComboBox.Text) >= 44100 Then
                         SamplerateComboBoxV = " -ar 44100"
                     ElseIf Val(SamplerateComboBox.Text) >= 22050 Then
@@ -2569,22 +2581,22 @@ RELOAD:
                                             PSPMP4CheckBoxV & _
                                             AudioCodecComboBoxV & SamplerateComboBoxV & AviSynthChComboBoxV & AudioBitrateComboBoxV & _
                                             SizeLimitTextBoxV & FFmpegCommandTextBoxV & _
-                                            x264optsV & MPEG4optsV
+                                            x264optsV & MPEG4optsV & VP8optsV
 
             MainFrm.AviSynthCommand2PassStr = FormatV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                                  FFmpegCommandTextBoxV & _
-                                                 x264opts_2passV & MPEG4optsV
+                                                 x264opts_2passV & MPEG4optsV & VP8optsV
 
             MainFrm.FFmpegCommandStr = FormatV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                             PSPMP4CheckBoxV & SwscaleV & _
                                             AudioCodecComboBoxV & SamplerateComboBoxV & FFmpegChComboBoxV & AudioBitrateComboBoxV & AudioVolNumericUpDownV & _
                                             SizeLimitTextBoxV & DeinterlaceCheckBoxV & FFmpegCommandTextBoxV & _
-                                            x264optsV & MPEG4optsV
+                                            x264optsV & MPEG4optsV & VP8optsV
 
             MainFrm.FFmpegCommand2PassStr = FormatV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                                  SwscaleV & _
                                                  DeinterlaceCheckBoxV & FFmpegCommandTextBoxV & _
-                                                 x264opts_2passV & MPEG4optsV
+                                                 x264opts_2passV & MPEG4optsV & VP8optsV
 
         End If
 

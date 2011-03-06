@@ -129,6 +129,7 @@ Partial Class MainFrm
         Me.BRPanel = New System.Windows.Forms.Panel
         Me.TitlePanel = New System.Windows.Forms.Panel
         Me.TitleLabel = New System.Windows.Forms.Label
+        Me.FormMovePanel = New System.Windows.Forms.Panel
         Me.TopPanel = New System.Windows.Forms.Panel
         Me.Panel9 = New System.Windows.Forms.Panel
         Me.TrayLabel = New System.Windows.Forms.Label
@@ -799,6 +800,7 @@ Partial Class MainFrm
         '
         Me.TitlePanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TM
         Me.TitlePanel.Controls.Add(Me.TitleLabel)
+        Me.TitlePanel.Controls.Add(Me.FormMovePanel)
         Me.TitlePanel.Controls.Add(Me.TopPanel)
         Me.TitlePanel.Controls.Add(Me.Panel9)
         Me.TitlePanel.Controls.Add(Me.Panel8)
@@ -811,6 +813,12 @@ Partial Class MainFrm
         Me.TitleLabel.BackColor = System.Drawing.Color.Transparent
         Me.TitleLabel.ForeColor = System.Drawing.Color.White
         Me.TitleLabel.Name = "TitleLabel"
+        '
+        'FormMovePanel
+        '
+        resources.ApplyResources(Me.FormMovePanel, "FormMovePanel")
+        Me.FormMovePanel.BackColor = System.Drawing.Color.Transparent
+        Me.FormMovePanel.Name = "FormMovePanel"
         '
         'TopPanel
         '
@@ -1068,5 +1076,6 @@ Partial Class MainFrm
     Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
     Friend WithEvents Panel12 As System.Windows.Forms.Panel
+    Friend WithEvents FormMovePanel As System.Windows.Forms.Panel
 
 End Class

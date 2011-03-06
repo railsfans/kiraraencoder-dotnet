@@ -41,8 +41,6 @@ Public Class AviSynthPP
         IDLE_PRIORITY_CLASS = &H40
     End Enum
 
-
-
     Public Shared Sub AviSynthPreprocess(ByVal index As Integer, ByVal ShowModeV As Boolean, ByVal PriorityInt As Integer, ByVal ShowStatus As Boolean, ByVal PrePlayingMode As Boolean)
 
         Dim SelAudioStreamStr As String = ""
@@ -1132,32 +1130,79 @@ ERRSKIP:
                     End If
                 End If
 
+                Dim INDEXCntI As Integer = 0
                 If ShowModeV = True Then
+REINDE_ShowMode:
                     '----------------
                     'ShowMode
                     '----------------
                     INDEX_PStr = ""
-                    FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly)
+                    FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly, index, INDEXCntI)
                     Try
                         FFMSIndexFrm.ShowDialog()
                     Catch ex As Exception
                     End Try
+                    '마트로스카 인덱스 검사
+                    If InStr(MainFrm.EncListListView.Items(index).SubItems(3).Text, "matroska", CompareMethod.Text) AndAlso INDEXCntI = 0 AndAlso INDEX_ProcessStopChk = False Then
+                        Try
+                            Dim SCRIPTV As String = AviSynthEditorFrm.MATROSKACHKTextBox.Text
+                            SCRIPTV = Replace(SCRIPTV, "#<toolspath>", My.Application.Info.DirectoryPath & "\tools\")
+                            SCRIPTV = Replace(SCRIPTV, "#<source>", MainFrm.EncListListView.Items(index).SubItems(10).Text)
+                            SCRIPTV = Replace(SCRIPTV, "#<cachefile>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
+                            _AviSynthClip = _AviSynthScriptEnvironment.ParseScript(SCRIPTV, AvisynthWrapper.AviSynthColorspace.RGB32)
+                            _AviSynthClip.IDisposable_Dispose()
+                        Catch ex As Exception
+                            'MATROSKA 재시도.
+                            INDEXCntI = 1
+                            GoTo REINDE_ShowMode
+                        End Try
+                    End If
+                    '마트로스카 인덱스 검사 끝
+
                 Else
+REINDE_HideMode:
                     '----------------
                     'HideMode
                     '----------------
                     INDEX_ProcessEChk = False
                     INDEX_PStr = ""
-                    FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly)
-                    If ShowStatus = True Then EncodingFrm.EncToolStripStatusLabel.Text = LangCls.EncodingCreatingFFINDEX
+                    FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly, index, INDEXCntI)
+                    If ShowStatus = True Then EncodingFrm.EncToolStripStatusLabel.Text = LangCls.EncodingCreatingFFINDEX & ", demuxer: " & FFMSIndexFrm.DEStr
                     Do Until INDEX_ProcessEChk = True
                         Application.DoEvents()
                         Threading.Thread.Sleep(10)
                     Loop
+                    '마트로스카 인덱스 검사
+                    If InStr(MainFrm.EncListListView.Items(index).SubItems(3).Text, "matroska", CompareMethod.Text) AndAlso INDEXCntI = 0 AndAlso INDEX_ProcessStopChk = False Then
+                        Try
+                            Dim SCRIPTV As String = AviSynthEditorFrm.MATROSKACHKTextBox.Text
+                            SCRIPTV = Replace(SCRIPTV, "#<toolspath>", My.Application.Info.DirectoryPath & "\tools\")
+                            SCRIPTV = Replace(SCRIPTV, "#<source>", MainFrm.EncListListView.Items(index).SubItems(10).Text)
+                            SCRIPTV = Replace(SCRIPTV, "#<cachefile>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
+                            _AviSynthClip = _AviSynthScriptEnvironment.ParseScript(SCRIPTV, AvisynthWrapper.AviSynthColorspace.RGB32)
+                            _AviSynthClip.IDisposable_Dispose()
+                        Catch ex As Exception
+                            'MATROSKA 재시도.
+                            INDEXCntI = 1
+                            GoTo REINDE_HideMode
+                        End Try
+                    End If
+                    '마트로스카 인덱스 검사 끝
+
                 End If
 
                 If INDEX_ProcessStopChk = True Then
+
+                    '인덱스파일 이미 있으면 삭제
+                    If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") = True Then
+                        Try
+                            My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
+                        Catch ex As Exception
+                        End Try
+                    End If
+
                     Exit Sub '중지됨//
+
                 Else
                     MainFrm.EncListListView.Items(index).SubItems(14).Text = My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString
                     MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") '클린업
@@ -1581,11 +1626,16 @@ skip2:
                                 ta3 = UCase(Strings.Right(Split(Split(MainFrm.EncListListView.Items(index).SubItems(4).Text, "[0x")(1), "]")(0), 2))
                             Catch ex As Exception
                             End Try
-                            Dim hex3 As String = Strings.Right(Hex(ta2v2), 2)
+                            Dim hex3 As String = ""
+                            Try
+                                hex3 = Strings.Right(Hex(ta2v2), 2)
+                            Catch ex As Exception
+                            End Try
                             If ta3 = hex3 Then
                                 SN = i2
                                 Exit For
                             End If
+
                         End If
                     Next
 
@@ -1945,6 +1995,9 @@ DelayAudioSkip2:
 
                         AVTextBoxV = Replace(AVTextBoxV, "<#LogoXA>", XV + .XNumericUpDown.Value)
                         AVTextBoxV = Replace(AVTextBoxV, "<#LogoYB>", YV + .YNumericUpDown.Value)
+
+                        '<#logomode>
+                        AVTextBoxV = Replace(AVTextBoxV, "<#logomode>", Chr(34) & .ModeComboBox.Text & Chr(34))
 
                         '///////////////////////////////////////
 

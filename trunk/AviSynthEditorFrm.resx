@@ -199,7 +199,7 @@
     <value>FFmpegSourceTabPage</value>
   </data>
   <data name="&gt;&gt;FFmpegSourceTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="PreviewButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 9</value>
@@ -647,6 +647,48 @@ Try {
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="MATROSKACHKTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 35</value>
+  </data>
+  <data name="MATROSKACHKTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="MATROSKACHKTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MATROSKACHKTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="MATROSKACHKTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 58</value>
+  </data>
+  <data name="MATROSKACHKTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="MATROSKACHKTextBox.Text" xml:space="preserve">
+    <value>LoadPlugin("#&lt;toolspath&gt;ffms\ffms2.dll")
+V=FFVideoSource(source="#&lt;source&gt;", cache=true, cachefile="#&lt;cachefile&gt;")
+A=FFAudioSource(source="#&lt;source&gt;", cache=true, cachefile="#&lt;cachefile&gt;")
+AudioDub(V,A)</value>
+  </data>
+  <data name="MATROSKACHKTextBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="MATROSKACHKTextBox.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;MATROSKACHKTextBox.Name" xml:space="preserve">
+    <value>MATROSKACHKTextBox</value>
+  </data>
+  <data name="&gt;&gt;MATROSKACHKTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MATROSKACHKTextBox.Parent" xml:space="preserve">
+    <value>FFmpegSourceTabPage</value>
+  </data>
+  <data name="&gt;&gt;MATROSKACHKTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="Def_FFmpegSourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
   </data>
@@ -707,7 +749,7 @@ ConvertToYV12()
     <value>FFmpegSourceTabPage</value>
   </data>
   <data name="&gt;&gt;Def_FFmpegSourceTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="FFmpegSourceTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
