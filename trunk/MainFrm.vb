@@ -366,15 +366,13 @@ Public Class MainFrm
             End If
             If ta2 <> "" Then
                 ta2 = Mid(ta2, InStrRev(ta2, ": ") + 2)
+                ELVI.SubItems(1).Text = ta2
+                ELVI.SubItems(11).Text = ta2 & " [00:00:00.00 - 00:00:00.00]"
+            Else
+                '재생시간 미디어 인포
+                ELVI.SubItems(1).Text = Strings.Left(_MI.Get_(StreamKind.Visual, 0, "Duration/String3"), 11)
+                ELVI.SubItems(11).Text = ELVI.SubItems(1).Text & " [00:00:00.00 - 00:00:00.00]"
             End If
-
-            '재생시간 미디어 인포
-            ELVI.SubItems(1).Text = _MI.Get_(StreamKind.Visual, 0, "Duration/String3")
-
-            If ELVI.SubItems(1).Text = "" Then
-                ELVI.SubItems(1).Text = ta2 & "0"
-            End If
-            ELVI.SubItems(11).Text = ta2 & " [00:00:00.00 - 00:00:00.00]"
 
             '화면크기 미디어 인포
             ELVI.SubItems(12).Text = _MI.Get_(StreamKind.Visual, 0, "Width") & "x" & _MI.Get_(StreamKind.Visual, 0, "Height")
