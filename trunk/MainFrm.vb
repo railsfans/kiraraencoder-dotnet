@@ -2146,13 +2146,11 @@ LANG_SKIP:
             Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
-            My.Application.Info.Version.Build & "." & _
             My.Application.Info.Version.Revision & " x64"
         Else
             Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
-            My.Application.Info.Version.Build & "." & _
             My.Application.Info.Version.Revision
         End If
 

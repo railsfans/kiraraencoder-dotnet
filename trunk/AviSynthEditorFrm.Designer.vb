@@ -45,6 +45,7 @@ Partial Class AviSynthEditorFrm
         Me.TabPage1 = New System.Windows.Forms.TabPage
         Me.ScriptTextBox = New System.Windows.Forms.TextBox
         Me.FFmpegSourceTabPage = New System.Windows.Forms.TabPage
+        Me.MATROSKACHKTextBox = New System.Windows.Forms.TextBox
         Me.Def_FFmpegSourceTextBox = New System.Windows.Forms.TextBox
         Me.DirectShowSourceTabPage = New System.Windows.Forms.TabPage
         Me.Def_DirectShowSourceTextBox = New System.Windows.Forms.TextBox
@@ -103,7 +104,6 @@ Partial Class AviSynthEditorFrm
         Me.InitializationDSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AllICToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AllOCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.MATROSKACHKTextBox = New System.Windows.Forms.TextBox
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.ConPanel.SuspendLayout()
@@ -266,6 +266,12 @@ Partial Class AviSynthEditorFrm
         resources.ApplyResources(Me.FFmpegSourceTabPage, "FFmpegSourceTabPage")
         Me.FFmpegSourceTabPage.Name = "FFmpegSourceTabPage"
         Me.FFmpegSourceTabPage.UseVisualStyleBackColor = True
+        '
+        'MATROSKACHKTextBox
+        '
+        Me.MATROSKACHKTextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.MATROSKACHKTextBox, "MATROSKACHKTextBox")
+        Me.MATROSKACHKTextBox.Name = "MATROSKACHKTextBox"
         '
         'Def_FFmpegSourceTextBox
         '
@@ -599,12 +605,6 @@ Partial Class AviSynthEditorFrm
         '
         Me.AllOCToolStripMenuItem.Name = "AllOCToolStripMenuItem"
         resources.ApplyResources(Me.AllOCToolStripMenuItem, "AllOCToolStripMenuItem")
-        '
-        'MATROSKACHKTextBox
-        '
-        Me.MATROSKACHKTextBox.BackColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.MATROSKACHKTextBox, "MATROSKACHKTextBox")
-        Me.MATROSKACHKTextBox.Name = "MATROSKACHKTextBox"
         '
         'AviSynthEditorFrm
         '
