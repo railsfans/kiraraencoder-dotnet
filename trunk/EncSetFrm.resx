@@ -1011,45 +1011,6 @@
   <data name="&gt;&gt;QuantizerLabel.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="BitrateComboBox.Items" xml:space="preserve">
-    <value>50</value>
-  </data>
-  <data name="BitrateComboBox.Items1" xml:space="preserve">
-    <value>100</value>
-  </data>
-  <data name="BitrateComboBox.Items2" xml:space="preserve">
-    <value>150</value>
-  </data>
-  <data name="BitrateComboBox.Items3" xml:space="preserve">
-    <value>200</value>
-  </data>
-  <data name="BitrateComboBox.Items4" xml:space="preserve">
-    <value>250</value>
-  </data>
-  <data name="BitrateComboBox.Items5" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="BitrateComboBox.Items6" xml:space="preserve">
-    <value>400</value>
-  </data>
-  <data name="BitrateComboBox.Items7" xml:space="preserve">
-    <value>500</value>
-  </data>
-  <data name="BitrateComboBox.Items8" xml:space="preserve">
-    <value>700</value>
-  </data>
-  <data name="BitrateComboBox.Items9" xml:space="preserve">
-    <value>1000</value>
-  </data>
-  <data name="BitrateComboBox.Items10" xml:space="preserve">
-    <value>2000</value>
-  </data>
-  <data name="BitrateComboBox.Items11" xml:space="preserve">
-    <value>5000</value>
-  </data>
-  <data name="BitrateComboBox.Items12" xml:space="preserve">
-    <value>10000</value>
-  </data>
   <data name="BitrateComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>181, 82</value>
   </data>
@@ -2489,48 +2450,6 @@
   <data name="&gt;&gt;LAMEMP3QLabel2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="LAMEMP3QComboBox.Items" xml:space="preserve">
-    <value>32</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items1" xml:space="preserve">
-    <value>40</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items2" xml:space="preserve">
-    <value>48</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items3" xml:space="preserve">
-    <value>56</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items4" xml:space="preserve">
-    <value>64</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items5" xml:space="preserve">
-    <value>80</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items6" xml:space="preserve">
-    <value>96</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items7" xml:space="preserve">
-    <value>112</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items8" xml:space="preserve">
-    <value>128</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items9" xml:space="preserve">
-    <value>160</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items10" xml:space="preserve">
-    <value>192</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items11" xml:space="preserve">
-    <value>224</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items12" xml:space="preserve">
-    <value>256</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Items13" xml:space="preserve">
-    <value>320</value>
-  </data>
   <data name="LAMEMP3QComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>325, 7</value>
   </data>
@@ -3148,60 +3067,6 @@
   </data>
   <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items" xml:space="preserve">
-    <value>32</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items1" xml:space="preserve">
-    <value>40</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items2" xml:space="preserve">
-    <value>48</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items3" xml:space="preserve">
-    <value>56</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items4" xml:space="preserve">
-    <value>64</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items5" xml:space="preserve">
-    <value>80</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items6" xml:space="preserve">
-    <value>96</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items7" xml:space="preserve">
-    <value>112</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items8" xml:space="preserve">
-    <value>128</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items9" xml:space="preserve">
-    <value>160</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items10" xml:space="preserve">
-    <value>192</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items11" xml:space="preserve">
-    <value>224</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items12" xml:space="preserve">
-    <value>256</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items13" xml:space="preserve">
-    <value>320</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items14" xml:space="preserve">
-    <value>384</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items15" xml:space="preserve">
-    <value>448</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items16" xml:space="preserve">
-    <value>512</value>
-  </data>
-  <data name="AudioBitrateComboBox.Items17" xml:space="preserve">
-    <value>640</value>
   </data>
   <data name="AudioBitrateComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 6</value>

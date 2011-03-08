@@ -533,7 +533,6 @@ Partial Class EncSetFrm
         'BitrateComboBox
         '
         Me.BitrateComboBox.FormattingEnabled = True
-        Me.BitrateComboBox.Items.AddRange(New Object() {resources.GetString("BitrateComboBox.Items"), resources.GetString("BitrateComboBox.Items1"), resources.GetString("BitrateComboBox.Items2"), resources.GetString("BitrateComboBox.Items3"), resources.GetString("BitrateComboBox.Items4"), resources.GetString("BitrateComboBox.Items5"), resources.GetString("BitrateComboBox.Items6"), resources.GetString("BitrateComboBox.Items7"), resources.GetString("BitrateComboBox.Items8"), resources.GetString("BitrateComboBox.Items9"), resources.GetString("BitrateComboBox.Items10"), resources.GetString("BitrateComboBox.Items11"), resources.GetString("BitrateComboBox.Items12")})
         resources.ApplyResources(Me.BitrateComboBox, "BitrateComboBox")
         Me.BitrateComboBox.Name = "BitrateComboBox"
         '
@@ -975,7 +974,6 @@ Partial Class EncSetFrm
         'LAMEMP3QComboBox
         '
         Me.LAMEMP3QComboBox.FormattingEnabled = True
-        Me.LAMEMP3QComboBox.Items.AddRange(New Object() {resources.GetString("LAMEMP3QComboBox.Items"), resources.GetString("LAMEMP3QComboBox.Items1"), resources.GetString("LAMEMP3QComboBox.Items2"), resources.GetString("LAMEMP3QComboBox.Items3"), resources.GetString("LAMEMP3QComboBox.Items4"), resources.GetString("LAMEMP3QComboBox.Items5"), resources.GetString("LAMEMP3QComboBox.Items6"), resources.GetString("LAMEMP3QComboBox.Items7"), resources.GetString("LAMEMP3QComboBox.Items8"), resources.GetString("LAMEMP3QComboBox.Items9"), resources.GetString("LAMEMP3QComboBox.Items10"), resources.GetString("LAMEMP3QComboBox.Items11"), resources.GetString("LAMEMP3QComboBox.Items12"), resources.GetString("LAMEMP3QComboBox.Items13")})
         resources.ApplyResources(Me.LAMEMP3QComboBox, "LAMEMP3QComboBox")
         Me.LAMEMP3QComboBox.Name = "LAMEMP3QComboBox"
         '
@@ -1128,7 +1126,6 @@ Partial Class EncSetFrm
         'AudioBitrateComboBox
         '
         Me.AudioBitrateComboBox.FormattingEnabled = True
-        Me.AudioBitrateComboBox.Items.AddRange(New Object() {resources.GetString("AudioBitrateComboBox.Items"), resources.GetString("AudioBitrateComboBox.Items1"), resources.GetString("AudioBitrateComboBox.Items2"), resources.GetString("AudioBitrateComboBox.Items3"), resources.GetString("AudioBitrateComboBox.Items4"), resources.GetString("AudioBitrateComboBox.Items5"), resources.GetString("AudioBitrateComboBox.Items6"), resources.GetString("AudioBitrateComboBox.Items7"), resources.GetString("AudioBitrateComboBox.Items8"), resources.GetString("AudioBitrateComboBox.Items9"), resources.GetString("AudioBitrateComboBox.Items10"), resources.GetString("AudioBitrateComboBox.Items11"), resources.GetString("AudioBitrateComboBox.Items12"), resources.GetString("AudioBitrateComboBox.Items13"), resources.GetString("AudioBitrateComboBox.Items14"), resources.GetString("AudioBitrateComboBox.Items15"), resources.GetString("AudioBitrateComboBox.Items16"), resources.GetString("AudioBitrateComboBox.Items17")})
         resources.ApplyResources(Me.AudioBitrateComboBox, "AudioBitrateComboBox")
         Me.AudioBitrateComboBox.Name = "AudioBitrateComboBox"
         '

@@ -2079,6 +2079,18 @@ LANG_SKIP:
             .AviSynthChComboBox.Items.Add(LangCls.AudioPPdolbypComboBox)
         End With
 
+        '비트레이트, 오디오 비트레이트 콤보박스 재설정.
+        With EncSetFrm
+            .BitrateComboBox.Items.Clear()
+            .BitrateComboBox.Items.AddRange(New Object() {"50", "100", "150", "200", "250", "300", "400", "500", "700", "1000", "2000", "5000", "10000"})
+
+            .AudioBitrateComboBox.Items.Clear()
+            .AudioBitrateComboBox.Items.AddRange(New Object() {"32", "40", "48", "56", "64", "80", "96", "112", "128", "160", "192", "224", "256", "320", "384", "448", "512", "640"})
+
+            .LAMEMP3QComboBox.Items.Clear()
+            .LAMEMP3QComboBox.Items.AddRange(New Object() {"32", "40", "48", "56", "64", "80", "96", "112", "128", "160", "192", "224", "256", "320"})
+        End With
+
         'Def_FFmpegSourceTextBox 초기화 32 / 64
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text

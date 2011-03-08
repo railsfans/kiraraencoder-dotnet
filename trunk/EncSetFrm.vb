@@ -638,6 +638,16 @@ LANG_SKIP:
         FFmpegChComboBox.Items.Add(LangCls.EncSetch20ComboBox)
         FFmpegChComboBox.Items.Add(LangCls.EncSetch51ComboBox)
 
+        '비트레이트, 오디오 비트레이트 콤보박스 재설정.
+        BitrateComboBox.Items.Clear()
+        BitrateComboBox.Items.AddRange(New Object() {"50", "100", "150", "200", "250", "300", "400", "500", "700", "1000", "2000", "5000", "10000"})
+
+        AudioBitrateComboBox.Items.Clear()
+        AudioBitrateComboBox.Items.AddRange(New Object() {"32", "40", "48", "56", "64", "80", "96", "112", "128", "160", "192", "224", "256", "320", "384", "448", "512", "640"})
+
+        LAMEMP3QComboBox.Items.Clear()
+        LAMEMP3QComboBox.Items.AddRange(New Object() {"32", "40", "48", "56", "64", "80", "96", "112", "128", "160", "192", "224", "256", "320"})
+
         '------------------------
 
         '언어관련
