@@ -1371,6 +1371,8 @@ ImageSkip:
                                     ExAudioB = True
                                 ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC
                                     ExAudioB = True
+                                ElseIf EncSetFrm.AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" OrElse EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then 'VBR MP3
+                                    ExAudioB = True
                                 End If
                             End If
                             '///

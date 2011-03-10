@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.03.07]"
+    Public PDATA = "[2011.03.10]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -135,11 +135,7 @@ Public Class MainFrm
     Dim shellpidexename As String
     Dim shellpidstarttime As String
 
-    '리사이즈
-    Dim ResizeYV, ResizeHV As Integer
-    Dim ResizeXV, ResizeWV As Integer
-    Dim ResizeWidthM As Integer = 12
-    Dim ResizeHeightM As Integer = 12
+
 
 #Region "프론트엔드 코어"
 
@@ -1144,6 +1140,8 @@ LANG_SKIP:
                 ExAudioB = True
             ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC
                 ExAudioB = True
+            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" OrElse EncSetFrm.AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then 'VBR MP3
+                ExAudioB = True
             End If
         End If
         '//////////////
@@ -1619,149 +1617,103 @@ LANG_SKIP:
 
 #Region "리사이즈"
 
-    '----------------------------------------------------------------------------
-    ' 제    목: 리사이즈
-    ' 제 작 일: 2011 03 05
-    ' 제 작 자: 이기원
-    ' 버    전: r4
-    '-----------------------------------------------------------------------------
-    Private Sub BottomPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BottomPanel.MouseMove
-        If e.Button = MouseButtons.Left Then
-            Me.SetBounds(Me.Location.X, Me.Location.Y, Me.Width, MousePosition.Y - Me.Top)
+    Private Sub APIReSizeSTART()
+        Dim lStyle As Integer = WinAPI.GetWindowLongW(Me.Handle, WinAPI.GWL_STYLE)
+        WinAPI.SetWindowLongW(Me.Handle, WinAPI.GWL_STYLE, lStyle And Not WinAPI.WS_SYSMENU)
+    End Sub
+
+    Private Sub APIReSizeEND()
+        Dim lStyle As Integer = WinAPI.GetWindowLongW(Me.Handle, WinAPI.GWL_STYLE)
+        WinAPI.SetWindowLongW(Me.Handle, WinAPI.GWL_STYLE, lStyle Or WinAPI.WS_SYSMENU)
+    End Sub
+
+    Private Sub BottomPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BottomPanel.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            APIReSizeSTART()
+            BottomPanel.Capture = False
+            Dim msg As Message = Message.Create(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, CType(WinAPI.HTBOTTOM, IntPtr), IntPtr.Zero)
+            Me.DefWndProc(msg)
+            APIReSizeEND()
         End If
     End Sub
 
-    Private Sub TopPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TopPanel.MouseDown, TopPanel2.MouseDown, TopPanel3.MouseDown
-        If e.Button = MouseButtons.Left Then
-            ResizeYV = Me.Top
-            ResizeHV = Me.Height
-        End If
-    End Sub
-
-    Private Sub TopPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TopPanel.MouseMove, TopPanel2.MouseMove, TopPanel3.MouseMove
-        If e.Button = MouseButtons.Left Then
-            If ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height Then
-                Me.SetBounds(Me.Location.X, ResizeYV - Me.MinimumSize.Height + ResizeHV, Me.Width, Me.MinimumSize.Height)
-            ElseIf ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM) Then
-                Me.SetBounds(Me.Location.X, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, Me.Width, (SystemInformation.VirtualScreen.Height + ResizeHeightM))
-            Else
-                Me.SetBounds(Me.Location.X, MousePosition.Y, Me.Width, ResizeYV - MousePosition.Y + ResizeHV)
-            End If
-        End If
-    End Sub
-
-    Private Sub TopPanel_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TopPanel.MouseUp
-
-    End Sub
-
-    Private Sub RightPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles RightPanel.MouseMove, RightPanel2.MouseMove
-        If e.Button = MouseButtons.Left Then
-            Me.SetBounds(Me.Location.X, Me.Location.Y, MousePosition.X - Me.Left, Me.Height)
-        End If
-    End Sub
-
-    Private Sub LeftPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles LeftPanel.MouseDown, LeftPanel2.MouseDown
-        If e.Button = MouseButtons.Left Then
-            ResizeXV = Me.Left
-            ResizeWV = Me.Width
-        End If
-    End Sub
-
-    Private Sub LeftPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles LeftPanel.MouseMove, LeftPanel2.MouseMove
-        If e.Button = MouseButtons.Left Then
-            If ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width Then
-                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, Me.Location.Y, Me.MinimumSize.Width, Me.Height)
-            ElseIf ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM) Then
-                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, Me.Location.Y, (SystemInformation.VirtualScreen.Width + ResizeWidthM), Me.Height)
-            Else
-                Me.SetBounds(MousePosition.X, Me.Location.Y, ResizeXV - MousePosition.X + ResizeWV, Me.Height)
-            End If
-        End If
-    End Sub
-
-    Private Sub BRPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BRPanel.MouseMove
-        If e.Button = MouseButtons.Left Then
-            Me.SetBounds(Me.Location.X, Me.Location.Y, MousePosition.X - Me.Left, MousePosition.Y - Me.Top)
-        End If
-    End Sub
-
-    Private Sub TLPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TLPanel.MouseDown
-        If e.Button = MouseButtons.Left Then
-            ResizeXV = Me.Left
-            ResizeWV = Me.Width
-            ResizeYV = Me.Top
-            ResizeHV = Me.Height
-        End If
-    End Sub
-
-    Private Sub TLPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TLPanel.MouseMove
-        If e.Button = MouseButtons.Left Then
-            If (ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width) AndAlso (ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM)) Then
-                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, Me.MinimumSize.Width, (SystemInformation.VirtualScreen.Height + ResizeHeightM))
-            ElseIf (ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height) AndAlso (ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM)) Then
-                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, ResizeYV - Me.MinimumSize.Height + ResizeHV, (SystemInformation.VirtualScreen.Width + ResizeWidthM), Me.MinimumSize.Height)
-            ElseIf ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width AndAlso ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height Then
-                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, ResizeYV - Me.MinimumSize.Height + ResizeHV, Me.MinimumSize.Width, Me.MinimumSize.Height)
-            ElseIf ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width Then
-                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, MousePosition.Y, Me.MinimumSize.Width, ResizeYV - MousePosition.Y + ResizeHV)
-            ElseIf ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height Then
-                Me.SetBounds(MousePosition.X, ResizeYV - Me.MinimumSize.Height + ResizeHV, ResizeXV - MousePosition.X + ResizeWV, Me.MinimumSize.Height)
-            ElseIf ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM) AndAlso ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM) Then
-                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, (SystemInformation.VirtualScreen.Width + ResizeWidthM), (SystemInformation.VirtualScreen.Height + ResizeHeightM))
-            ElseIf ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM) Then
-                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, MousePosition.Y, (SystemInformation.VirtualScreen.Width + ResizeWidthM), ResizeYV - MousePosition.Y + ResizeHV)
-            ElseIf ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM) Then
-                Me.SetBounds(MousePosition.X, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, ResizeXV - MousePosition.X + ResizeWV, (SystemInformation.VirtualScreen.Height + ResizeHeightM))
-            Else
-                Me.SetBounds(MousePosition.X, MousePosition.Y, ResizeXV - MousePosition.X + ResizeWV, ResizeYV - MousePosition.Y + ResizeHV)
-            End If
+    Private Sub BRPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BRPanel.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            APIReSizeSTART()
+            BRPanel.Capture = False
+            Dim msg As Message = Message.Create(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, CType(WinAPI.HTBOTTOMRIGHT, IntPtr), IntPtr.Zero)
+            Me.DefWndProc(msg)
+            APIReSizeEND()
         End If
     End Sub
 
     Private Sub BLPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BLPanel.MouseDown
-        If e.Button = MouseButtons.Left Then
-            ResizeXV = Me.Left
-            ResizeWV = Me.Width
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            APIReSizeSTART()
+            BLPanel.Capture = False
+            Dim msg As Message = Message.Create(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, CType(WinAPI.HTBOTTOMLEFT, IntPtr), IntPtr.Zero)
+            Me.DefWndProc(msg)
+            APIReSizeEND()
         End If
     End Sub
 
-    Private Sub BLPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BLPanel.MouseMove
-        If e.Button = MouseButtons.Left Then
-            If ResizeXV - MousePosition.X + ResizeWV <= Me.MinimumSize.Width Then
-                Me.SetBounds(ResizeXV - Me.MinimumSize.Width + ResizeWV, Me.Location.Y, Me.MinimumSize.Width, MousePosition.Y - Me.Top)
-            ElseIf ResizeXV - MousePosition.X + ResizeWV >= (SystemInformation.VirtualScreen.Width + ResizeWidthM) Then
-                Me.SetBounds(ResizeXV - (SystemInformation.VirtualScreen.Width + ResizeWidthM) + ResizeWV, Me.Location.Y, (SystemInformation.VirtualScreen.Width + ResizeWidthM), MousePosition.Y - Me.Top)
-            Else
-                Me.SetBounds(MousePosition.X, Me.Location.Y, ResizeXV - MousePosition.X + ResizeWV, MousePosition.Y - Me.Top)
-            End If
+    Private Sub LeftPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles LeftPanel.MouseDown, LeftPanel2.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            APIReSizeSTART()
+            LeftPanel.Capture = False
+            LeftPanel2.Capture = False
+            Dim msg As Message = Message.Create(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, CType(WinAPI.HTLEFT, IntPtr), IntPtr.Zero)
+            Me.DefWndProc(msg)
+            APIReSizeEND()
+        End If
+    End Sub
+
+    Private Sub RightPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles RightPanel.MouseDown, RightPanel2.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            APIReSizeSTART()
+            RightPanel.Capture = False
+            RightPanel2.Capture = False
+            Dim msg As Message = Message.Create(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, CType(WinAPI.HTRIGHT, IntPtr), IntPtr.Zero)
+            Me.DefWndProc(msg)
+            APIReSizeEND()
+        End If
+    End Sub
+
+    Private Sub TLPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TLPanel.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            APIReSizeSTART()
+            TLPanel.Capture = False
+            Dim msg As Message = Message.Create(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, CType(WinAPI.HTTOPLEFT, IntPtr), IntPtr.Zero)
+            Me.DefWndProc(msg)
+            APIReSizeEND()
         End If
     End Sub
 
     Private Sub TRPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TRPanel.MouseDown
-        If e.Button = MouseButtons.Left Then
-            ResizeYV = Me.Top
-            ResizeHV = Me.Height
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            APIReSizeSTART()
+            TRPanel.Capture = False
+            Dim msg As Message = Message.Create(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, CType(WinAPI.HTTOPRIGHT, IntPtr), IntPtr.Zero)
+            Me.DefWndProc(msg)
+            APIReSizeEND()
         End If
     End Sub
 
-    Private Sub TRPanel_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TRPanel.MouseMove
-        If e.Button = MouseButtons.Left Then
-            If ResizeYV - MousePosition.Y + ResizeHV <= Me.MinimumSize.Height Then
-                Me.SetBounds(Me.Location.X, ResizeYV - Me.MinimumSize.Height + ResizeHV, MousePosition.X - Me.Left, Me.MinimumSize.Height)
-            ElseIf ResizeYV - MousePosition.Y + ResizeHV >= (SystemInformation.VirtualScreen.Height + ResizeHeightM) Then
-                Me.SetBounds(Me.Location.X, ResizeYV - (SystemInformation.VirtualScreen.Height + ResizeHeightM) + ResizeHV, MousePosition.X - Me.Left, (SystemInformation.VirtualScreen.Height + ResizeHeightM))
-            Else
-                Me.SetBounds(Me.Location.X, MousePosition.Y, MousePosition.X - Me.Left, ResizeYV - MousePosition.Y + ResizeHV)
-            End If
+    Private Sub TopPanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TopPanel.MouseDown, TopPanel2.MouseDown, TopPanel3.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            APIReSizeSTART()
+            TopPanel.Capture = False
+            TopPanel2.Capture = False
+            TopPanel3.Capture = False
+            Dim msg As Message = Message.Create(Me.Handle, WinAPI.WM_NCLBUTTONDOWN, CType(WinAPI.HTTOP, IntPtr), IntPtr.Zero)
+            Me.DefWndProc(msg)
+            APIReSizeEND()
         End If
     End Sub
 
 #End Region
 
-    Private Sub MainFrm_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
-        '새로고침
-        Me.Refresh()
-    End Sub
+
 
     Private Sub MainForm_SizeChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.SizeChanged
         '폼이 일반 상태일때 기억한다
@@ -7159,23 +7111,4 @@ RELOAD:
         End Try
     End Sub
 
-    Private Sub NotifyIcon_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles NotifyIcon.MouseDoubleClick
-
-    End Sub
-
-    Private Sub TopPanel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles TopPanel.Paint
-
-    End Sub
-
-    Private Sub TopPanel2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles TopPanel2.Paint
-
-    End Sub
-
-    Private Sub TitleLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TitleLabel.Click
-
-    End Sub
-
-    Private Sub FormMovePanel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles FormMovePanel.Paint
-
-    End Sub
 End Class

@@ -23,21 +23,55 @@ Imports Microsoft.Win32.SafeHandles
 
 Public Class WinAPI
 
+    Public Const HTBORDER As Integer = 18
+    Public Const HTBOTTOM As Integer = 15
+    Public Const HTBOTTOMLEFT As Integer = 16
+    Public Const HTBOTTOMRIGHT As Integer = 17
     Public Const HTCAPTION As Integer = 2
+    Public Const HTCLOSE As Integer = 20
+    Public Const HTGROWBOX As Integer = 4
+    Public Const HTLEFT As Integer = 10
+    Public Const HTMAXBUTTON As Integer = 9
+    Public Const HTMINBUTTON As Integer = 8
+    Public Const HTRIGHT As Integer = 11
+    Public Const HTSYSMENU As Integer = 3
+    Public Const HTTOP As Integer = 12
+    Public Const HTTOPLEFT As Integer = 13
+    Public Const HTTOPRIGHT As Integer = 14
+
     Public Const WM_NCLBUTTONDOWN As Integer = &HA1
     Public Const WM_KEYDOWN = &H100
     Public Const WM_CLOSE = &H10
+
     Public Const GW_HWNDNEXT = 2
     Public Const GWL_STYLE = (-16)
+
+    Public Const WS_OVERLAPPED = &H0
+    Public Const WS_POPUP = &H80000000
+    Public Const WS_CHILD = &H40000000
+    Public Const WS_MINIMIZE = &H20000000
+    Public Const WS_VISIBLE = &H10000000
+    Public Const WS_DISABLED = &H8000000
+    Public Const WS_CLIPSIBLINGS = &H4000000
+    Public Const WS_CLIPCHILDREN = &H2000000
+    Public Const WS_MAXIMIZE = &H1000000
+    Public Const WS_CAPTION = &HC00000
     Public Const WS_BORDER = &H800000
     Public Const WS_DLGFRAME = &H400000
+    Public Const WS_VSCROLL = &H200000
+    Public Const WS_HSCROLL = &H100000
+    Public Const WS_SYSMENU = &H80000
     Public Const WS_THICKFRAME = &H40000
-    Public Const WS_MAXIMIZEBOX = &H10000
+    Public Const WS_GROUP = &H20000
+    Public Const WS_TABSTOP = &H10000
     Public Const WS_MINIMIZEBOX = &H20000
+    Public Const WS_MAXIMIZEBOX = &H10000
+
     Public Const SWP_NOSIZE = &H1
     Public Const SWP_NOMOVE = &H2
     Public Const SWP_FRAMECHANGED = &H20
     Public Const SWP_NOZORDER = &H4
+
     Public Declare Auto Function GetShortPathName Lib "kernel32.dll" (ByVal strLongPath As String, ByVal objStringBuilder As System.Text.StringBuilder, ByVal intBufferSize As Integer) As Integer
     Public Declare Auto Function GetLongPathName Lib "kernel32.dll" (ByVal strShortPath As String, ByVal objStringBuilder As System.Text.StringBuilder, ByVal intBufferSize As Integer) As Integer
     Public Declare Function ReleaseCapture Lib "user32" () As Long
@@ -47,7 +81,6 @@ Public Class WinAPI
     Public Declare Function SetWindowLongW Lib "user32" (ByVal hwnd As Integer, ByVal nIndex As Integer, ByVal dwNewLong As Integer) As Integer
     Public Declare Function GetWindowLongW Lib "user32" (ByVal hwnd As Integer, ByVal nIndex As Integer) As Integer
     Public Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long,ByVal hWndInsertAfter As Long, ByVal X As Long, ByVal Y As Long, ByValcx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
-
 
 #Region "프론트엔드 코어"
 
@@ -276,6 +309,10 @@ Public Class WinAPI
 
     <DllImport("user32")> _
     Public Shared Function GetWindowThreadProcessId(ByVal hwnd As Integer, ByRef lpdwprocessid As Integer) As Integer
+    End Function
+
+    <DllImport("user32.dll", SetLastError:=True)> _
+    Public Shared Function MoveWindow(ByVal hWnd As IntPtr, ByVal X As Integer, ByVal Y As Integer, ByVal nWidth As Integer, ByVal nHeight As Integer, ByVal bRepaint As Boolean) As Boolean
     End Function
 
 End Class

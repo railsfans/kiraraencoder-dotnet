@@ -123,7 +123,6 @@ Partial Class MainFrm
         Me.SubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.EtcToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.RightPanel = New System.Windows.Forms.Panel
-        Me.LeftPanel = New System.Windows.Forms.Panel
         Me.BottomPanel = New System.Windows.Forms.Panel
         Me.BLPanel = New System.Windows.Forms.Panel
         Me.BRPanel = New System.Windows.Forms.Panel
@@ -142,6 +141,7 @@ Partial Class MainFrm
         Me.LeftPanel2 = New System.Windows.Forms.Panel
         Me.TopPanel2 = New System.Windows.Forms.Panel
         Me.TLPanel = New System.Windows.Forms.Panel
+        Me.LeftPanel = New System.Windows.Forms.Panel
         Me.ListviewContextMenuStrip.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -766,13 +766,6 @@ Partial Class MainFrm
         resources.ApplyResources(Me.RightPanel, "RightPanel")
         Me.RightPanel.Name = "RightPanel"
         '
-        'LeftPanel
-        '
-        Me.LeftPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.L
-        Me.LeftPanel.Cursor = System.Windows.Forms.Cursors.SizeWE
-        resources.ApplyResources(Me.LeftPanel, "LeftPanel")
-        Me.LeftPanel.Name = "LeftPanel"
-        '
         'BottomPanel
         '
         Me.BottomPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.bottomM
@@ -912,6 +905,13 @@ Partial Class MainFrm
         resources.ApplyResources(Me.TLPanel, "TLPanel")
         Me.TLPanel.Name = "TLPanel"
         '
+        'LeftPanel
+        '
+        Me.LeftPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.L
+        Me.LeftPanel.Cursor = System.Windows.Forms.Cursors.SizeWE
+        resources.ApplyResources(Me.LeftPanel, "LeftPanel")
+        Me.LeftPanel.Name = "LeftPanel"
+        '
         'MainFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -920,8 +920,8 @@ Partial Class MainFrm
         Me.Controls.Add(Me.RightPanel)
         Me.Controls.Add(Me.LeftPanel)
         Me.Controls.Add(Me.BottomPanel)
-        Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.TitlePanel)
+        Me.Controls.Add(Me.MainPanel)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"
         Me.ListviewContextMenuStrip.ResumeLayout(False)
@@ -1059,7 +1059,6 @@ Partial Class MainFrm
     Friend WithEvents TLPanel As System.Windows.Forms.Panel
     Friend WithEvents TitleLabel As System.Windows.Forms.Label
     Friend WithEvents RightPanel As System.Windows.Forms.Panel
-    Friend WithEvents LeftPanel As System.Windows.Forms.Panel
     Friend WithEvents BottomPanel As System.Windows.Forms.Panel
     Friend WithEvents BLPanel As System.Windows.Forms.Panel
     Friend WithEvents BRPanel As System.Windows.Forms.Panel
@@ -1077,5 +1076,6 @@ Partial Class MainFrm
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
     Friend WithEvents Panel12 As System.Windows.Forms.Panel
     Friend WithEvents FormMovePanel As System.Windows.Forms.Panel
+    Friend WithEvents LeftPanel As System.Windows.Forms.Panel
 
 End Class
