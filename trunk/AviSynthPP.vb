@@ -1728,9 +1728,9 @@ DelayAudioSkip2:
                 End If
             End With
             If PlayHMSV = EndHMSV Then '파일의 시간과 종료시간이 같으면 종료부분은 0으로 처리.
-                AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & ",0)")
+                AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Format(StartHMSV * fpsV * bobv, 0) & ",0)")
             Else
-                AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Int(StartHMSV * fpsV * bobv) & "," & Int(EndHMSV * fpsV * bobv) & ")")
+                AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Format(StartHMSV * fpsV * bobv, 0) & "," & Format(EndHMSV * fpsV * bobv, 0) & ")")
             End If
 
             '#<delayaudio2>

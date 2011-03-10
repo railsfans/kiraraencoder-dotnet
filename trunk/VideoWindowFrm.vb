@@ -30,6 +30,7 @@ Public Class VideoWindowFrm
     Dim PLAYVL As Boolean = False
     Dim GETIMG As Boolean = False
     Public TR As Boolean = False
+    Dim TTIME As String = ""
 
 #Region "코어"
 
@@ -80,6 +81,8 @@ Public Class VideoWindowFrm
             VideoTrackBar.Maximum = _AviSynthClip.num_frames
             '프레임 설정
             FrameTimer.Interval = 1000 / (_AviSynthClip.raten / _AviSynthClip.rated)
+            '재생시간 표시
+            TTIME = FunctionCls.TIME_TO_HMSMSTIME(VideoTrackBar.Maximum / (_AviSynthClip.raten / _AviSynthClip.rated), True)
             '실시간 타이머 온
             RealtimeTimer.Enabled = True
             '활성
@@ -225,7 +228,11 @@ LANG_SKIP:
         If FrameI <= VideoTrackBar.Maximum Then
             VideoTrackBar.Value = FrameI
         End If
-        Me.Text = LangCls.VideoWindowFrmV & " - [ " & FrameI & " / " & VideoTrackBar.Maximum & " ]" '폼 제목
+
+        Me.Text = LangCls.VideoWindowFrmV & " - " & _
+        FunctionCls.TIME_TO_HMSMSTIME(FrameI / (_AviSynthClip.raten / _AviSynthClip.rated), True) & " / " & TTIME & _
+        " [ " & FrameI & " / " & VideoTrackBar.Maximum & " ] "
+
         If FrameTimer.Enabled = True Then PLAYVL = True Else PLAYVL = False
 
     End Sub
@@ -273,7 +280,10 @@ LANG_SKIP:
     Private Sub VideoTrackBar_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles VideoTrackBar.MouseMove
         If e.Button = Windows.Forms.MouseButtons.Left Then
             FrameI = VideoTrackBar.Value
-            Me.Text = LangCls.VideoWindowFrmV & " - [ " & FrameI & " / " & VideoTrackBar.Maximum & " ]" '폼 제목
+
+            Me.Text = LangCls.VideoWindowFrmV & " - " & _
+            FunctionCls.TIME_TO_HMSMSTIME(FrameI / (_AviSynthClip.raten / _AviSynthClip.rated), True) & " / " & TTIME & _
+            " [ " & FrameI & " / " & VideoTrackBar.Maximum & " ] "
         End If
     End Sub
 

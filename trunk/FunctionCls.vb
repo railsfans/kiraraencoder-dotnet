@@ -298,7 +298,7 @@ Public Class FunctionCls
     '----------------------------------------------------------------------------
     ' 함수이름: TIME_TO_HMSMSTIME
     ' 제 작 일: 2008년 / 함수화: 2010 09 26
-    ' 수 정 일: 2011년 3월 6일
+    ' 수 정 일: 2011년 3월 10일
     ' 설    명: hh:mm:ss:ms 로 변환
     ' 제 작 자: 이기원
     '-----------------------------------------------------------------------------
@@ -314,21 +314,21 @@ Public Class FunctionCls
             If PointB = False Then
                 Return "00:00:00"
             Else
-                Return "00:00:00.000"
+                Return "00:00:00.00"
             End If
 
         ElseIf TimeV < 60 Then
 
             If TimeV < 0 Then
-                hmsValue = "00:" & "00:" & "00.000"
+                hmsValue = "00:" & "00:" & "00.00"
             Else
-                hmsValue = "00:" & "00:" & Format(TimeV, "00.000")
+                hmsValue = "00:" & "00:" & Format(TimeV, "00.00")
             End If
 
         ElseIf Split(TimeV, ".")(0) / 60 < 60 Then
 
             Minute = TimeV / 60
-            Dim T2 As String = Split(Minute, ".")(0) & ":" & Format(TimeV - Val(60) * Split(Minute, ".")(0), "00.000")
+            Dim T2 As String = Split(Minute, ".")(0) & ":" & Format(TimeV - Val(60) * Split(Minute, ".")(0), "00.00")
             If Split(Minute, ".")(0) < 10 Then
                 hmsValue = "00:" & "0" & T2
             Else
@@ -339,7 +339,7 @@ Public Class FunctionCls
 
             Minute = TimeV / 60
             Hour = Split(Minute, ".")(0) / 60
-            Dim T3 As String = Int(Minute - Val(60) * Split(Hour, ".")(0)) & ":" & Format(TimeV - Val(60) * Split(Minute, ".")(0), "00.000")
+            Dim T3 As String = Int(Minute - Val(60) * Split(Hour, ".")(0)) & ":" & Format(TimeV - Val(60) * Split(Minute, ".")(0), "00.00")
             If Split(Hour, ".")(0) < 10 Then
 
                 If Int(Minute - Val(60) * Split(Hour, ".")(0)) < 10 Then
@@ -363,7 +363,7 @@ Public Class FunctionCls
         If PointB = False Then
             Return Split(hmsValue, ".")(0)
         Else
-            Return Strings.Left(hmsValue, 11)
+            Return hmsValue
         End If
 
 
