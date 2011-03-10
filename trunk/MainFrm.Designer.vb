@@ -793,10 +793,10 @@ Partial Class MainFrm
         '
         Me.TitlePanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TM
         Me.TitlePanel.Controls.Add(Me.TitleLabel)
-        Me.TitlePanel.Controls.Add(Me.FormMovePanel)
         Me.TitlePanel.Controls.Add(Me.TopPanel)
         Me.TitlePanel.Controls.Add(Me.Panel9)
         Me.TitlePanel.Controls.Add(Me.Panel8)
+        Me.TitlePanel.Controls.Add(Me.FormMovePanel)
         resources.ApplyResources(Me.TitlePanel, "TitlePanel")
         Me.TitlePanel.Name = "TitlePanel"
         '
@@ -917,11 +917,11 @@ Partial Class MainFrm
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.RightPanel)
         Me.Controls.Add(Me.LeftPanel)
         Me.Controls.Add(Me.BottomPanel)
         Me.Controls.Add(Me.TitlePanel)
-        Me.Controls.Add(Me.MainPanel)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"
         Me.ListviewContextMenuStrip.ResumeLayout(False)
