@@ -50,6 +50,9 @@ Public Class DGIndexFrm
     Private Declare Function GetPriorityClass Lib "kernel32" (ByVal HPROCESS As Integer) As Integer
     Dim PRIORITYCnt As Integer = 0
 
+    '종료여부
+    Dim ExitBool As Boolean = False
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -182,7 +185,8 @@ Public Class DGIndexFrm
             TLabelTimer.Enabled = False
             '프로세스 종료
             AviSynthPP.INDEX_ProcessEChk = True
-            If Me.Visible = True Then Close()
+            ExitBool = True
+            Close()
         End If
 
     End Sub
@@ -208,6 +212,9 @@ Public Class DGIndexFrm
 #End Region
 
     Public Sub IDSTR(ByVal IN_PATHV As String, ByVal OUT_PATHV As String, ByVal index As Integer, ByVal PriorityInt As Integer)
+
+        '종료여부
+        ExitBool = False
 
         '오디오 스트림 선택
         Dim TNV As String = "0"
@@ -292,6 +299,9 @@ Public Class DGIndexFrm
     Private Sub CancelBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBTN.Click
         AviSynthPP.INDEX_ProcessStopChk = True
         WinAPI.TerminateProcess(ProcessHandle_ID, 0&)
+        If ExitBool = True Then
+            Close()
+        End If
     End Sub
 
     Private Sub OnePTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OnePTimer.Tick

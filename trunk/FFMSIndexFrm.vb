@@ -48,6 +48,9 @@ Public Class FFMSIndexFrm
     Dim DEMUXER As String = "default"
     Public DEStr As String = "" '그냥 보여주기위한...
 
+    '종료여부
+    Dim ExitBool As Boolean = False
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -172,7 +175,8 @@ Public Class FFMSIndexFrm
             TLabelTimer.Enabled = False
             '프로세스 종료
             AviSynthPP.INDEX_ProcessEChk = True
-            If Me.Visible = True Then Close()
+            ExitBool = True
+            Close()
         End If
 
     End Sub
@@ -198,6 +202,9 @@ Public Class FFMSIndexFrm
 #End Region
 
     Public Sub IDSTR(ByVal IN_PATHV As String, ByVal OUT_PATHV As String, ByVal PriorityInt As Integer, ByVal VideoOnly As Boolean, ByVal index As Integer, ByVal MATROSKAERR As Integer)
+
+        '종료여부
+        ExitBool = False
 
         Dim MSGB As String = ""
 
@@ -282,6 +289,9 @@ Public Class FFMSIndexFrm
     Private Sub CancelBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBTN.Click
         AviSynthPP.INDEX_ProcessStopChk = True
         WinAPI.TerminateProcess(ProcessHandle_ID, 0&)
+        If ExitBool = True Then
+            Close()
+        End If
     End Sub
 
     Private Sub IndexFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

@@ -397,7 +397,7 @@ Namespace AvisynthWrapper
             If 0 <> dimzon_avs_init_2(_avs, func, arg, _vi, _colorSpace, _sampleType, _
              forceColorspace.ToString()) Then
                 Dim err As String = getLastError()
-                cleanup(False)
+                'cleanup(False)
                 Throw New AviSynthException(err)
             End If
         End Sub
