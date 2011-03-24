@@ -133,7 +133,7 @@ Public Class AviSynthEditorFrm
                 If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
                     If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
                         If Process.GetProcessById(shellpid).HasExited = False Then
-                            Process.GetProcessById(shellpid).Kill()
+                            Process.GetProcessById(shellpid).CloseMainWindow()
                             shellpid = 0
                         End If
                     End If
@@ -310,7 +310,7 @@ LANG_SKIP:
                 If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
                     If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
                         If Process.GetProcessById(shellpid).HasExited = False Then
-                            Process.GetProcessById(shellpid).Kill()
+                            Process.GetProcessById(shellpid).CloseMainWindow()
                             shellpid = 0
                         End If
                     End If
@@ -352,8 +352,13 @@ LANG_SKIP:
                     " -identify -noquiet -nofontconfig -vo direct3d"
                 Else
                     ListenButton.Text = ListenButtonSTR
-                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
-                    " -identify -noquiet -nofontconfig -novideo"
+                    If MainFrm.DECSTR = "DSHOW" Then
+                        MSGB = My.Application.Info.DirectoryPath & "\kiraraplayer.exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34)
+                    Else
+                        MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
+                                      " -identify -noquiet -nofontconfig -novideo"
+                    End If
+
                 End If
 
                 shellpid = Shell(MSGB, AppWinStyle.NormalFocus)

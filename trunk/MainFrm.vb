@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.03.11]"
+    Public PDATA = "[2011.03.24]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -135,6 +135,8 @@ Public Class MainFrm
     Dim shellpidexename As String
     Dim shellpidstarttime As String
 
+    'DEC
+    Public DECSTR As String = "FFMPEG"
 
 
 #Region "프론트엔드 코어"
@@ -1749,7 +1751,7 @@ LANG_SKIP:
                 If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
                     If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
                         If Process.GetProcessById(shellpid).HasExited = False Then
-                            Process.GetProcessById(shellpid).Kill()
+                            Process.GetProcessById(shellpid).CloseMainWindow()
                             shellpid = 0
                         End If
                     End If
@@ -2621,7 +2623,7 @@ UAC:
                 If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
                     If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
                         If Process.GetProcessById(shellpid).HasExited = False Then
-                            Process.GetProcessById(shellpid).Kill()
+                            Process.GetProcessById(shellpid).CloseMainWindow()
                             shellpid = 0
                         End If
                     End If
@@ -6914,7 +6916,7 @@ RELOAD:
                 If Process.GetProcessById(shellpid).ProcessName = shellpidexename Then '잘못된 프로그램 종료 방지를 위해 프로세스 이름 비교
                     If InStr(Process.GetProcessById(shellpid).StartTime, shellpidstarttime, CompareMethod.Text) = 1 Then '잘못된 프로그램 종료 방지를 위해 프로세스 시작 시간 비교
                         If Process.GetProcessById(shellpid).HasExited = False Then
-                            Process.GetProcessById(shellpid).Kill()
+                            Process.GetProcessById(shellpid).CloseMainWindow()
                             shellpid = 0
                         End If
                     End If
@@ -6947,8 +6949,14 @@ RELOAD:
             AviSynthPP.INDEX_ProcessStopChk = False
         Else
             Dim MSGB As String = ""
-            MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
-           " -identify -noquiet -nofontconfig -vo direct3d"
+
+            If DECSTR = "DSHOW" Then
+                MSGB = My.Application.Info.DirectoryPath & "\kiraraplayer.exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34)
+            Else
+                MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
+                      " -identify -noquiet -nofontconfig -vo direct3d"
+            End If
+
             shellpid = Shell(MSGB, AppWinStyle.NormalFocus)
             shellpidexename = Process.GetProcessById(shellpid).ProcessName
             shellpidstarttime = Process.GetProcessById(shellpid).StartTime
@@ -7109,6 +7117,14 @@ RELOAD:
             EncSetFrm.ShowDialog(Me)
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub WebBrowser1_DocumentCompleted(ByVal sender As System.Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+        If WebBrowser1.Document.Title <> "kemainfrm" Then
+            WebBrowser1.Visible = False
+        Else
+            WebBrowser1.Visible = True
+        End If
     End Sub
 
 End Class

@@ -128,7 +128,6 @@ Partial Class MainFrm
         Me.BRPanel = New System.Windows.Forms.Panel
         Me.TitlePanel = New System.Windows.Forms.Panel
         Me.TitleLabel = New System.Windows.Forms.Label
-        Me.FormMovePanel = New System.Windows.Forms.Panel
         Me.TopPanel = New System.Windows.Forms.Panel
         Me.Panel9 = New System.Windows.Forms.Panel
         Me.TrayLabel = New System.Windows.Forms.Label
@@ -141,6 +140,7 @@ Partial Class MainFrm
         Me.LeftPanel2 = New System.Windows.Forms.Panel
         Me.TopPanel2 = New System.Windows.Forms.Panel
         Me.TLPanel = New System.Windows.Forms.Panel
+        Me.FormMovePanel = New System.Windows.Forms.Panel
         Me.LeftPanel = New System.Windows.Forms.Panel
         Me.ListviewContextMenuStrip.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -807,12 +807,6 @@ Partial Class MainFrm
         Me.TitleLabel.ForeColor = System.Drawing.Color.White
         Me.TitleLabel.Name = "TitleLabel"
         '
-        'FormMovePanel
-        '
-        resources.ApplyResources(Me.FormMovePanel, "FormMovePanel")
-        Me.FormMovePanel.BackColor = System.Drawing.Color.Transparent
-        Me.FormMovePanel.Name = "FormMovePanel"
-        '
         'TopPanel
         '
         Me.TopPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTM
@@ -904,6 +898,12 @@ Partial Class MainFrm
         Me.TLPanel.Cursor = System.Windows.Forms.Cursors.SizeNWSE
         resources.ApplyResources(Me.TLPanel, "TLPanel")
         Me.TLPanel.Name = "TLPanel"
+        '
+        'FormMovePanel
+        '
+        resources.ApplyResources(Me.FormMovePanel, "FormMovePanel")
+        Me.FormMovePanel.BackColor = System.Drawing.Color.Transparent
+        Me.FormMovePanel.Name = "FormMovePanel"
         '
         'LeftPanel
         '

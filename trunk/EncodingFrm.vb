@@ -480,6 +480,21 @@ Public Class EncodingFrm
             If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '네로AAC 설정일경우 맵을 복사//
 
                 Dim RCMeta As String = "" '챕터 메타데이터 삭제
+                Dim VIDMAP As String = "0.0" '비디오맵
+                Dim VIDTEMP As String = MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text
+                VIDTEMP = Replace(Strings.Left(VIDTEMP, InStr(VIDTEMP, ":") - 1), "Stream #", "")
+                If IsNumeric(VIDTEMP) = False Then
+                    If InStr(VIDTEMP, "(", CompareMethod.Text) <> 0 Then
+                        Try
+                            VIDTEMP = Split(VIDTEMP, "(")(0)
+                        Catch ex As Exception
+                        End Try
+                    End If
+                End If
+                If IsNumeric(VIDTEMP) = True Then
+                    VIDMAP = VIDTEMP
+                End If
+
                 If MainFrm.AVSCheckBox.Checked = True Then RCMeta = "-map_chapters -1 "
 
                 '2패스 처리관련
@@ -491,13 +506,13 @@ Public Class EncodingFrm
                     Else
                         '同-1
                         MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
-                                            " -map 0.0 -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+                                            " -map " & VIDMAP & " -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
                     End If
 
                 Else
                     '同-1
                     MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
-                                        " -map 0.0 -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+                                        " -map " & VIDMAP & " -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
                 End If
 
             Else

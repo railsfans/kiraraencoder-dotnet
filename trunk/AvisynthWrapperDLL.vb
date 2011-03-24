@@ -397,13 +397,17 @@ Namespace AvisynthWrapper
             If 0 <> dimzon_avs_init_2(_avs, func, arg, _vi, _colorSpace, _sampleType, _
              forceColorspace.ToString()) Then
                 Dim err As String = getLastError()
-                'cleanup(False)
+                cleanup(False)
                 Throw New AviSynthException(err)
             End If
         End Sub
 
         Private Sub cleanup(ByVal disposing As Boolean)
-            dimzon_avs_destroy(_avs)
+            System.Threading.Thread.Sleep(100)
+            Try
+                dimzon_avs_destroy(_avs)
+            Catch ex As Exception
+            End Try
             _avs = New IntPtr(0)
             If disposing Then
                 GC.SuppressFinalize(Me)

@@ -957,6 +957,7 @@ ERRSKIP:
                     If InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "Video: h264", CompareMethod.Text) <> 0 OrElse InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "Video: vc1", CompareMethod.Text) <> 0 Then 'M2TSFiles
                         If AviSynthEditorFrm.M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                            MainFrm.DECSTR = "FFMPEG"
 
                             If StartHMSV = EndHMSV Then
                                 AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
@@ -966,10 +967,12 @@ ERRSKIP:
 
                         ElseIf AviSynthEditorFrm.M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                            MainFrm.DECSTR = "DSHOW"
                         End If
                     Else
                         If AviSynthEditorFrm.MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                            MainFrm.DECSTR = "FFMPEG"
 
                             If StartHMSV = EndHMSV Then
                                 AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
@@ -982,6 +985,8 @@ ERRSKIP:
                             '윈도우 2000일경우 FFmpegSource로 대체된다.
                             If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
                                 AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                                MainFrm.DECSTR = "FFMPEG"
+
                                 If StartHMSV = EndHMSV Then
                                     AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
                                 Else
@@ -989,10 +994,12 @@ ERRSKIP:
                                 End If
                             Else
                                 AVTextBoxV = AviSynthEditorFrm.MPEG2SourceTextBox.Text
+                                MainFrm.DECSTR = "MPEG2"
                             End If
 
                         ElseIf AviSynthEditorFrm.MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = True Then
                             AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                            MainFrm.DECSTR = "DSHOW"
                         End If
                     End If
 
@@ -1000,6 +1007,7 @@ ERRSKIP:
 
                     If AviSynthEditorFrm.ASFFilesFFmpegSourceToolStripMenuItem2.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                        MainFrm.DECSTR = "FFMPEG"
 
                         If StartHMSV = EndHMSV Then
                             AVTextBoxV = Replace(AVTextBoxV, "seekmode=auto", "seekmode=-1")
@@ -1009,19 +1017,23 @@ ERRSKIP:
 
                     ElseIf AviSynthEditorFrm.ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                        MainFrm.DECSTR = "DSHOW"
                     End If
 
                     '------------- 여기서부터 알려진FFmpegSource로 디코딩 문제 있는 부분은 DShow으로 '----------
                 ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "AVI" AndAlso (InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "Video: mpeg1video", CompareMethod.Text) <> 0 OrElse InStr(MainFrm.EncListListView.Items(index).SubItems(8).Text, "Video: rawvideo", CompareMethod.Text) <> 0) Then
 
                     AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                    MainFrm.DECSTR = "DSHOW"
 
                 Else
 
                     If AviSynthEditorFrm.AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                        MainFrm.DECSTR = "FFMPEG"
                     ElseIf AviSynthEditorFrm.AllMovieFilesDirectShowSourceToolStripMenuItem.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                        MainFrm.DECSTR = "DSHOW"
                     End If
 
                 End If

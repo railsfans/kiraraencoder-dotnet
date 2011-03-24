@@ -3174,13 +3174,13 @@
     <value>114, 9</value>
   </data>
   <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 14</value>
+    <value>30, 14</value>
   </data>
   <data name="Label5.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
   <data name="Label5.Text" xml:space="preserve">
-    <value>High</value>
+    <value>Low</value>
   </data>
   <data name="&gt;&gt;Label5.Name" xml:space="preserve">
     <value>Label5</value>
@@ -3201,13 +3201,13 @@
     <value>322, 9</value>
   </data>
   <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 14</value>
+    <value>31, 14</value>
   </data>
   <data name="Label4.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="Label4.Text" xml:space="preserve">
-    <value>Low</value>
+    <value>High</value>
   </data>
   <data name="&gt;&gt;Label4.Name" xml:space="preserve">
     <value>Label4</value>

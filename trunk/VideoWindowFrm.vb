@@ -218,6 +218,8 @@ LANG_SKIP:
             BitmapV.UnlockBits(BitmapDataV)
             BitmapV.RotateFlip(RotateFlipType.Rotate180FlipX)
         Catch ex As Exception
+            MsgBox(ex.Message)
+            Me.Close()
         End Try
         GETIMG = False
 
