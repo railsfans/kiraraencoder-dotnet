@@ -267,7 +267,7 @@ Public Class EncodingFrm
                         End Try
                     End If
                     If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" AndAlso EncToolStripStatusLabel.Text <> LangCls.EncodingVEncoding AndAlso MainFrm.AVSCheckBox.Checked = False Then '네로 AAC 사용하고 FFmpeg 면은 뭐.. mux 가 사라졋으니.
-                        EncDuration = MainFrm.EncListListView.Items(EncindexI).SubItems(11).Text
+                        EncDuration = MainFrm.EncListListView.Items(EncindexI).SubItems(1).Text
                         EncDurationD = PlayHMSV
                     Else
                         EncDuration = FunctionCls.TIME_TO_HMSMSTIME(_TimeV, True)
@@ -491,8 +491,10 @@ Public Class EncodingFrm
                         End Try
                     End If
                 End If
-                If IsNumeric(VIDTEMP) = True Then
+                If IsNumeric(VIDTEMP) = True AndAlso MainFrm.AVSCheckBox.Checked = False Then '가져온맵이 계산가능하고, AviSynth비사용
                     VIDMAP = VIDTEMP
+                Else
+                    VIDMAP = "0.0"
                 End If
 
                 If MainFrm.AVSCheckBox.Checked = True Then RCMeta = "-map_chapters -1 "

@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.03.24]"
+    Public PDATA = "[2011.03.26]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -427,6 +427,21 @@ Public Class MainFrm
                 End If
             End If
 
+            '명목상프레임레이트로 재 검색
+            If ta2 = "" Then
+                ta2 = _MI.Get_(StreamKind.Visual, 0, "FrameRate_Nominal")
+                If IsNumeric(ta2) = False Then
+                    If InStr(ta2, " ") <> 0 Then
+                        ta2 = Split(ta2, " ")(0)
+                        If IsNumeric(ta2) = False Then
+                            ta2 = ""
+                        End If
+                    Else
+                        ta2 = ""
+                    End If
+                End If
+            End If
+
             '비디오프레임 fps
             If ta2 = "" Then
                 ia2 = 1
@@ -468,8 +483,8 @@ Public Class MainFrm
                     End If
                 End If
             End If
-            If ta2 = "" Then
-                ta2 = 0
+            If ta2 = "" Then '30으로 처리.?
+                ta2 = 30
             End If
             ELVI.SubItems(12).Text = ELVI.SubItems(12).Text & "," & ta2
 
@@ -2941,6 +2956,7 @@ UAC:
             .AngleNumericUpDown.Value = 0
             .ScaleXNumericUpDown.Value = 100.0
             .ScaleYNumericUpDown.Value = 100.0
+            .CCComboBox.Text = "All Language"
 
         End With
 
@@ -4354,6 +4370,11 @@ RELOAD:
                     If XTR.Name = "SubtitleFrm_ScaleYNumericUpDown" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .ScaleYNumericUpDown.Value = XTRSTR Else .ScaleYNumericUpDown.Value = 100.0
+                    End If
+
+                    If XTR.Name = "SubtitleFrm_CCComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .CCComboBox.Text = XTRSTR Else .CCComboBox.Text = "All Language"
                     End If
 
                 End With
@@ -6021,6 +6042,10 @@ RELOAD:
 
                 XTWriter.WriteStartElement("SubtitleFrm_ScaleYNumericUpDown")
                 XTWriter.WriteString(.ScaleYNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("SubtitleFrm_CCComboBox")
+                XTWriter.WriteString(.CCComboBox.Text)
                 XTWriter.WriteEndElement()
 
             End With

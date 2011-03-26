@@ -95,6 +95,7 @@ Partial Class SubtitleFrm
         Me.DefBTN = New System.Windows.Forms.Button
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog
         Me.FontDialog1 = New System.Windows.Forms.FontDialog
+        Me.CCComboBox = New System.Windows.Forms.ComboBox
         Me.SubPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.SubtitleTabPage.SuspendLayout()
@@ -138,6 +139,7 @@ Partial Class SubtitleFrm
         '
         'SubtitleTabPage
         '
+        Me.SubtitleTabPage.Controls.Add(Me.CCComboBox)
         Me.SubtitleTabPage.Controls.Add(Me.ScaleGroupBox)
         Me.SubtitleTabPage.Controls.Add(Me.SubtitleCheckBox)
         Me.SubtitleTabPage.Controls.Add(Me.EncComboBox)
@@ -629,6 +631,13 @@ Partial Class SubtitleFrm
         Me.DefBTN.Name = "DefBTN"
         Me.DefBTN.UseVisualStyleBackColor = True
         '
+        'CCComboBox
+        '
+        Me.CCComboBox.FormattingEnabled = True
+        Me.CCComboBox.Items.AddRange(New Object() {resources.GetString("CCComboBox.Items"), resources.GetString("CCComboBox.Items1"), resources.GetString("CCComboBox.Items2"), resources.GetString("CCComboBox.Items3")})
+        resources.ApplyResources(Me.CCComboBox, "CCComboBox")
+        Me.CCComboBox.Name = "CCComboBox"
+        '
         'SubtitleFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -745,4 +754,5 @@ Partial Class SubtitleFrm
     Friend WithEvents ScaleXLabel As System.Windows.Forms.Label
     Friend WithEvents FDgButton As System.Windows.Forms.Button
     Friend WithEvents FontDialog1 As System.Windows.Forms.FontDialog
+    Friend WithEvents CCComboBox As System.Windows.Forms.ComboBox
 End Class

@@ -1231,99 +1231,6 @@ Public Class MainFrm
 
     End Sub
 
-    '----------------------------------------------------------------------------
-    ' 함수이름: TIME_TO_HMSMSTIME
-    ' 제 작 일: 2008년 / 함수화: 2010 09 26
-    ' 설    명: hh:mm:ss:ms 로 변환
-    ' 제 작 자: 이기원
-    '-----------------------------------------------------------------------------
-    Public Shared Function TIME_TO_HMSMSTIME(ByVal TimeV As Double, ByVal PointB As Boolean) As String
-
-        Dim Minute As Single
-        Dim Hour As Single
-        Dim hmsValue As String = ""
-
-        If TimeV < 0 Then
-            If PointB = False Then
-                Return "00:00:00"
-            Else
-                Return "00:00:00.00"
-            End If
-        End If
-
-        If TimeV < 60 Then
-            If TimeV < 0 Then
-                hmsValue = "00:" & "00:" & "00.00"
-            ElseIf Format(TimeV, "0.00") < 10 Then
-                hmsValue = "00:" & "00:" & "0" & Format(TimeV, "0.00")
-            Else
-                hmsValue = "00:" & "00:" & Format(TimeV, "0.00")
-            End If
-        End If
-
-        If TimeV > 59 Then
-            Minute = TimeV / 60
-            If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            Else
-                If Split(Minute, ".")(0) < 10 Then
-                    hmsValue = "00:" & "0" & Split(Minute, ".")(0) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                Else
-                    hmsValue = "00:" & Split(Minute, ".")(0) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                End If
-            End If
-        End If
-
-        If Split(Minute, ".")(0) > 59 Then
-            Hour = Split(Minute, ".")(0) / 60
-            If Split(Hour, ".")(0) < 10 Then
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = "0" & Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            Else
-
-                If Int(Minute - "60" * Split(Hour, ".")(0)) < 10 Then
-                    If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & "0" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                Else
-                    If Int(TimeV - "60" * Split(Minute, ".")(0)) < 10 Then
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & "0" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    Else
-                        hmsValue = Split(Hour, ".")(0) & ":" & Int(Minute - "60" * Split(Hour, ".")(0)) & ":" & Format(TimeV - "60" * Split(Minute, ".")(0), "0.00")
-                    End If
-                End If
-
-            End If
-
-        End If
-
-        If PointB = False Then
-            Return Split(hmsValue, ".")(0)
-        Else
-            Return hmsValue
-        End If
-
-
-    End Function
-
     Private Sub MovePanel_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MovePanel.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Left Then
             ReleaseCapture()
@@ -1534,5 +1441,79 @@ Public Class MainFrm
     Private Sub RefreshToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshToolStripMenuItem.Click
         DMRefresh()
     End Sub
+
+    '----------------------------------------------------------------------------
+    ' 함수이름: TIME_TO_HMSMSTIME
+    ' 제 작 일: 2008년 / 함수화: 2010 09 26
+    ' 수 정 일: 2011년 3월 10일
+    ' 설    명: hh:mm:ss:ms 로 변환
+    ' 제 작 자: 이기원
+    '-----------------------------------------------------------------------------
+    Public Shared Function TIME_TO_HMSMSTIME(ByVal TimeV As Single, ByVal PointB As Boolean) As String
+
+        Dim Minute As Single
+        Dim Hour As Single
+        Dim hmsValue As String = ""
+
+
+        If TimeV < 0 OrElse Single.IsInfinity(TimeV) Then
+
+            If PointB = False Then
+                Return "00:00:00"
+            Else
+                Return "00:00:00.00"
+            End If
+
+        ElseIf TimeV < 60 Then
+
+            If TimeV < 0 Then
+                hmsValue = "00:" & "00:" & "00.00"
+            Else
+                hmsValue = "00:" & "00:" & Format(TimeV, "00.00")
+            End If
+
+        ElseIf Split(TimeV, ".")(0) / 60 < 60 Then
+
+            Minute = TimeV / 60
+            Dim T2 As String = Split(Minute, ".")(0) & ":" & Format(TimeV - Val(60) * Split(Minute, ".")(0), "00.00")
+            If Split(Minute, ".")(0) < 10 Then
+                hmsValue = "00:" & "0" & T2
+            Else
+                hmsValue = "00:" & T2
+            End If
+
+        Else
+
+            Minute = TimeV / 60
+            Hour = Split(Minute, ".")(0) / 60
+            Dim T3 As String = Int(Minute - Val(60) * Split(Hour, ".")(0)) & ":" & Format(TimeV - Val(60) * Split(Minute, ".")(0), "00.00")
+            If Split(Hour, ".")(0) < 10 Then
+
+                If Int(Minute - Val(60) * Split(Hour, ".")(0)) < 10 Then
+                    hmsValue = "0" & Split(Hour, ".")(0) & ":" & "0" & T3
+                Else
+                    hmsValue = "0" & Split(Hour, ".")(0) & ":" & T3
+                End If
+
+            Else
+
+                If Int(Minute - Val(60) * Split(Hour, ".")(0)) < 10 Then
+                    hmsValue = Split(Hour, ".")(0) & ":" & "0" & T3
+                Else
+                    hmsValue = Split(Hour, ".")(0) & ":" & T3
+                End If
+
+            End If
+
+        End If
+
+        If PointB = False Then
+            Return Split(hmsValue, ".")(0)
+        Else
+            Return hmsValue
+        End If
+
+
+    End Function
 
 End Class

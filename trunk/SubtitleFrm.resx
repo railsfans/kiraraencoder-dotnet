@@ -117,14 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CCComboBox.Items" xml:space="preserve">
+    <value>All Language</value>
+  </data>
+  <data name="CCComboBox.Items1" xml:space="preserve">
+    <value>ENCC</value>
+  </data>
+  <data name="CCComboBox.Items2" xml:space="preserve">
+    <value>JNCC</value>
+  </data>
+  <data name="CCComboBox.Items3" xml:space="preserve">
+    <value>KRCC</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CCComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 36</value>
+  </data>
+  <data name="CCComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CCComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="&gt;&gt;CCComboBox.Name" xml:space="preserve">
+    <value>CCComboBox</value>
+  </data>
+  <data name="&gt;&gt;CCComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CCComboBox.Parent" xml:space="preserve">
+    <value>SubtitleTabPage</value>
+  </data>
+  <data name="&gt;&gt;CCComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ScaleYNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>331, 54</value>
   </data>
   <data name="ScaleYNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 22</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ScaleYNumericUpDown.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
   </data>
@@ -312,7 +345,7 @@
     <value>7</value>
   </data>
   <data name="ScaleGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 400</value>
+    <value>277, 421</value>
   </data>
   <data name="ScaleGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>418, 93</value>
@@ -333,13 +366,13 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;ScaleGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="SubtitleCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="SubtitleCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 14</value>
+    <value>19, 11</value>
   </data>
   <data name="SubtitleCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 18</value>
@@ -360,7 +393,7 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;SubtitleCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EncComboBox.Items" xml:space="preserve">
     <value>ANSI (0)</value>
@@ -420,10 +453,10 @@
     <value>BALTIC (186)</value>
   </data>
   <data name="EncComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>505, 14</value>
+    <value>355, 36</value>
   </data>
   <data name="EncComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
+    <value>187, 22</value>
   </data>
   <data name="EncComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -438,7 +471,7 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;EncComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="MarginRLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -585,7 +618,7 @@
     <value>5</value>
   </data>
   <data name="MarginGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 224</value>
+    <value>398, 245</value>
   </data>
   <data name="MarginGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 110</value>
@@ -606,7 +639,7 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;MarginGroupBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="SecondaryColourTrackBar.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1047,7 +1080,7 @@
     <value>17</value>
   </data>
   <data name="ColorGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 224</value>
+    <value>15, 245</value>
   </data>
   <data name="ColorGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 269</value>
@@ -1068,7 +1101,7 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;ColorGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="Alignment3RadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1287,7 +1320,7 @@
     <value>8</value>
   </data>
   <data name="AlignmentGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 224</value>
+    <value>277, 245</value>
   </data>
   <data name="AlignmentGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 110</value>
@@ -1308,19 +1341,19 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;AlignmentGroupBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="EncLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, 12</value>
+    <value>17, 36</value>
   </data>
   <data name="EncLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 23</value>
+    <value>323, 22</value>
   </data>
   <data name="EncLabel.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
   </data>
   <data name="EncLabel.Text" xml:space="preserve">
-    <value>문자인코딩:</value>
+    <value>문자인코딩/선호언어:</value>
   </data>
   <data name="EncLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -1335,7 +1368,7 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;EncLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="BorderStyle3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1392,7 +1425,7 @@
     <value>1</value>
   </data>
   <data name="BorderStyleGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 342</value>
+    <value>277, 363</value>
   </data>
   <data name="BorderStyleGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>418, 52</value>
@@ -1413,7 +1446,7 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;BorderStyleGroupBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="FDgButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 21</value>
@@ -1722,7 +1755,7 @@
     <value>11</value>
   </data>
   <data name="FontGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 41</value>
+    <value>15, 62</value>
   </data>
   <data name="FontGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>680, 175</value>
@@ -1743,7 +1776,7 @@
     <value>SubtitleTabPage</value>
   </data>
   <data name="&gt;&gt;FontGroupBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="SubtitleTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -1753,7 +1786,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="SubtitleTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>708, 506</value>
+    <value>708, 529</value>
   </data>
   <data name="SubtitleTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1777,7 +1810,7 @@
     <value>12, 14</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>716, 533</value>
+    <value>716, 556</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -1795,7 +1828,7 @@
     <value>0</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>628, 553</value>
+    <value>628, 576</value>
   </data>
   <data name="CancelBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -1819,7 +1852,7 @@
     <value>1</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>521, 553</value>
+    <value>521, 576</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -1843,7 +1876,7 @@
     <value>2</value>
   </data>
   <data name="DefBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 553</value>
+    <value>12, 576</value>
   </data>
   <data name="DefBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -1873,7 +1906,7 @@
     <value>0, 0</value>
   </data>
   <data name="SubPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>740, 591</value>
+    <value>740, 613</value>
   </data>
   <data name="SubPanel.TabIndex" type="System.Int32, mscorlib">
     <value>72</value>
@@ -1903,7 +1936,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>740, 591</value>
+    <value>740, 613</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

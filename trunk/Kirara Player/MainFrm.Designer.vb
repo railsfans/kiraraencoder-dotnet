@@ -33,6 +33,7 @@ Partial Class MainFrm
         Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
         Me.RendererToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DefaultRendererToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.OverlayMixerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VideoMixingRenderer7WindowlessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VideoMixingRenderer9WindowedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -44,7 +45,6 @@ Partial Class MainFrm
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.DefaultRendererToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.DMVideoWindow = New KiraraPlayer.DMControl
         Me.MovePanel.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -97,6 +97,13 @@ Partial Class MainFrm
         Me.RendererToolStripMenuItem.Name = "RendererToolStripMenuItem"
         resources.ApplyResources(Me.RendererToolStripMenuItem, "RendererToolStripMenuItem")
         '
+        'DefaultRendererToolStripMenuItem
+        '
+        Me.DefaultRendererToolStripMenuItem.Checked = True
+        Me.DefaultRendererToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.DefaultRendererToolStripMenuItem.Name = "DefaultRendererToolStripMenuItem"
+        resources.ApplyResources(Me.DefaultRendererToolStripMenuItem, "DefaultRendererToolStripMenuItem")
+        '
         'OverlayMixerToolStripMenuItem
         '
         Me.OverlayMixerToolStripMenuItem.Name = "OverlayMixerToolStripMenuItem"
@@ -124,13 +131,13 @@ Partial Class MainFrm
         '
         'HaaliVideoRendererToolStripMenuItem
         '
-        Me.HaaliVideoRendererToolStripMenuItem.Name = "HaaliVideoRendererToolStripMenuItem"
         resources.ApplyResources(Me.HaaliVideoRendererToolStripMenuItem, "HaaliVideoRendererToolStripMenuItem")
+        Me.HaaliVideoRendererToolStripMenuItem.Name = "HaaliVideoRendererToolStripMenuItem"
         '
         'madVRToolStripMenuItem
         '
-        Me.madVRToolStripMenuItem.Name = "madVRToolStripMenuItem"
         resources.ApplyResources(Me.madVRToolStripMenuItem, "madVRToolStripMenuItem")
+        Me.madVRToolStripMenuItem.Name = "madVRToolStripMenuItem"
         '
         'FilterControlToolStripMenuItem
         '
@@ -151,13 +158,6 @@ Partial Class MainFrm
         '
         Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
         resources.ApplyResources(Me.QuitToolStripMenuItem, "QuitToolStripMenuItem")
-        '
-        'DefaultRendererToolStripMenuItem
-        '
-        Me.DefaultRendererToolStripMenuItem.Checked = True
-        Me.DefaultRendererToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.DefaultRendererToolStripMenuItem.Name = "DefaultRendererToolStripMenuItem"
-        resources.ApplyResources(Me.DefaultRendererToolStripMenuItem, "DefaultRendererToolStripMenuItem")
         '
         'DMVideoWindow
         '

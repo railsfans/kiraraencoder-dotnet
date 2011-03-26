@@ -64,6 +64,7 @@ Public Class SubtitleFrm
         AngleNumericUpDown.Value = 0
         ScaleXNumericUpDown.Value = 100.0
         ScaleYNumericUpDown.Value = 100.0
+        CCComboBox.Text = "All Language"
 
         '============================
         '폰트미리보기
@@ -326,6 +327,11 @@ RELOAD:
                 If XTR.Name = "SubtitleFrm_ScaleYNumericUpDown" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then ScaleYNumericUpDown.Value = XTRSTR Else ScaleYNumericUpDown.Value = 100.0
+                End If
+
+                If XTR.Name = "SubtitleFrm_CCComboBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then CCComboBox.Text = XTRSTR Else CCComboBox.Text = "All Language"
                 End If
 
             Loop

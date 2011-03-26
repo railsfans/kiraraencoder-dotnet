@@ -145,7 +145,7 @@
     <value>DMVideoWindow</value>
   </data>
   <data name="&gt;&gt;DMVideoWindow.Type" xml:space="preserve">
-    <value>KiraraPlayer.DMControl, KiraraPlayer, Version=1.1.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>KiraraPlayer.DMControl, KiraraPlayer, Version=1.1.0.3, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;DMVideoWindow.Parent" xml:space="preserve">
     <value>MovePanel</value>
@@ -187,7 +187,7 @@
     <value>F2</value>
   </data>
   <data name="OpenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="OpenToolStripMenuItem.Text" xml:space="preserve">
     <value>Open</value>
@@ -196,7 +196,7 @@
     <value>F4</value>
   </data>
   <data name="CloseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="CloseToolStripMenuItem.Text" xml:space="preserve">
     <value>Close</value>
@@ -205,82 +205,94 @@
     <value>F5</value>
   </data>
   <data name="RefreshToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="RefreshToolStripMenuItem.Text" xml:space="preserve">
     <value>Refresh</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>134, 6</value>
   </data>
   <data name="DefaultRendererToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 22</value>
+    <value>321, 22</value>
   </data>
   <data name="DefaultRendererToolStripMenuItem.Text" xml:space="preserve">
     <value>Default</value>
   </data>
   <data name="OverlayMixerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 22</value>
+    <value>321, 22</value>
   </data>
   <data name="OverlayMixerToolStripMenuItem.Text" xml:space="preserve">
     <value>Overlay Mixer</value>
   </data>
   <data name="VideoMixingRenderer7WindowlessToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 22</value>
+    <value>321, 22</value>
   </data>
   <data name="VideoMixingRenderer7WindowlessToolStripMenuItem.Text" xml:space="preserve">
     <value>Video Mixing Renderer 7 Windowless</value>
   </data>
   <data name="VideoMixingRenderer9WindowedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 22</value>
+    <value>321, 22</value>
   </data>
   <data name="VideoMixingRenderer9WindowedToolStripMenuItem.Text" xml:space="preserve">
     <value>Video Mixing Renderer 9 Windowed</value>
   </data>
   <data name="VideoMixingRenderer9WindowlessToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 22</value>
+    <value>321, 22</value>
   </data>
   <data name="VideoMixingRenderer9WindowlessToolStripMenuItem.Text" xml:space="preserve">
     <value>Video Mixing Renderer 9 Windowless</value>
   </data>
   <data name="EnhancedVideoRendererToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 22</value>
+    <value>321, 22</value>
   </data>
   <data name="EnhancedVideoRendererToolStripMenuItem.Text" xml:space="preserve">
     <value>Enhanced Video Renderer (.NET 3.0/Vista)</value>
   </data>
+  <data name="HaaliVideoRendererToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="HaaliVideoRendererToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 22</value>
+    <value>321, 22</value>
   </data>
   <data name="HaaliVideoRendererToolStripMenuItem.Text" xml:space="preserve">
     <value>Haali Video Renderer</value>
   </data>
+  <data name="HaaliVideoRendererToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="madVRToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="madVRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 22</value>
+    <value>321, 22</value>
   </data>
   <data name="madVRToolStripMenuItem.Text" xml:space="preserve">
     <value>madVR</value>
   </data>
+  <data name="madVRToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="RendererToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="RendererToolStripMenuItem.Text" xml:space="preserve">
     <value>Renderer</value>
   </data>
   <data name="FilterControlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="FilterControlToolStripMenuItem.Text" xml:space="preserve">
     <value>Filter</value>
   </data>
   <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>134, 6</value>
   </data>
   <data name="AboutToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
   </data>
   <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
@@ -289,13 +301,13 @@
     <value>Q</value>
   </data>
   <data name="QuitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="QuitToolStripMenuItem.Text" xml:space="preserve">
     <value>Quit</value>
   </data>
   <data name="ContextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 192</value>
+    <value>138, 170</value>
   </data>
   <data name="&gt;&gt;ContextMenuStrip1.Name" xml:space="preserve">
     <value>ContextMenuStrip1</value>
@@ -366,6 +378,12 @@
   <data name="&gt;&gt;RendererToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;DefaultRendererToolStripMenuItem.Name" xml:space="preserve">
+    <value>DefaultRendererToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DefaultRendererToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;OverlayMixerToolStripMenuItem.Name" xml:space="preserve">
     <value>OverlayMixerToolStripMenuItem</value>
   </data>
@@ -430,12 +448,6 @@
     <value>QuitToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;QuitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DefaultRendererToolStripMenuItem.Name" xml:space="preserve">
-    <value>DefaultRendererToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;DefaultRendererToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

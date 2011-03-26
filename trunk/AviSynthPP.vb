@@ -533,7 +533,7 @@ RECOPY:
                                 RECOPY += 1
                                 Debug.Print("파일복사실패 " & RECOPY & " : " & ex.Message)
                                 If RECOPY > 1000 Then '1000번(100초) = 1분 40초
-                                    Dim MessageBoxV = MessageBox.Show("File copy failed, Retry?", "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+                                    Dim MessageBoxV = MessageBox.Show("File copy failed, Retry?" & vbNewLine & ex.Message, "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
                                     If MessageBoxV = DialogResult.Yes Then
                                         GoTo RECOPY
                                     Else
@@ -545,9 +545,10 @@ RECOPY:
                             SubFileExistsV = True
                             MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV) '클린업
 
-                            'SAMI해더 존재확인//
+                            Dim SMIPATHV As String = My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV
                             If SubExtenV = "smi" Then
-                                Dim SMIPATHV As String = My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV
+
+                                'SAMI해더 존재확인//
                                 Using SR As StreamReader = New StreamReader(SMIPATHV, System.Text.Encoding.Default)
 
                                     Dim RL As String = SR.ReadLine
@@ -566,16 +567,113 @@ RECOPY:
                                     Else
                                         Dim STRMEM As String = SR.ReadToEnd
                                         SR.Close()
-                                        Dim SW As New StreamWriter(SMIPATHV, False, System.Text.Encoding.Unicode)
-                                        SW.Write("<SAMI>" & vbNewLine & STRTEMP & vbNewLine & STRMEM)
-                                        SW.Close()
+
+                                        '저장
+                                        Dim CNTSAVE As Integer = 0
+CNTSAVEerr:
+                                        If CNTSAVE < 100 Then
+                                            Try
+                                                Dim SW As New StreamWriter(SMIPATHV, False, System.Text.Encoding.Unicode)
+                                                SW.Write("<SAMI>" & vbNewLine & STRTEMP & vbNewLine & STRMEM)
+                                                SW.Close()
+                                            Catch ex As Exception
+                                                Threading.Thread.Sleep(100)
+                                                If CNTSAVE = 99 Then
+                                                    Dim MessageBoxV = MessageBox.Show("File copy failed, Retry?" & vbNewLine & ex.Message, "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+                                                    If MessageBoxV = DialogResult.Yes Then
+                                                        CNTSAVE = 98
+                                                    Else
+                                                        GoTo ERRSKIP
+                                                    End If
+                                                End If
+                                                CNTSAVE += 1
+                                                Debug.Print("파일저장실패(1) " & CNTSAVE & " : " & ex.Message)
+                                                GoTo CNTSAVEerr
+                                            End Try
+                                        End If
+
                                         STRMEM = ""
                                     End If
                                     STRTEMP = ""
 
                                 End Using
-                            End If
 
+                                '선호언어 선택.
+                                If SubtitleFrm.CCComboBox.Text <> "All Language" AndAlso SubtitleFrm.CCComboBox.Text <> "" Then
+                                    Using SR2 As StreamReader = New StreamReader(SMIPATHV, System.Text.Encoding.Default)
+                                        Dim STRMEM2 As String = SR2.ReadToEnd
+                                        SR2.Close()
+
+                                        'CC
+                                        Dim CC As String = "<p class=" & SubtitleFrm.CCComboBox.Text & ">"
+                                        Dim CC2 As String = "<p class=" & Chr(34) & SubtitleFrm.CCComboBox.Text & Chr(34) & ">"
+
+                                        '찾기(시작)
+                                        Dim FIRSTLN As Integer = InStr(STRMEM2, CC, CompareMethod.Text)
+                                        If FIRSTLN = 0 Then FIRSTLN = InStr(STRMEM2, CC2, CompareMethod.Text)
+
+                                        '없으면 스킵
+                                        If FIRSTLN = 0 Then
+                                            STRMEM2 = ""
+                                            GoTo SelCCLangSkip
+                                        End If
+
+                                        '찾기(시작 앞 부분)
+                                        Dim FIRSTLNSTR As Integer = InStrRev(STRMEM2, "<sync start", FIRSTLN, CompareMethod.Text)
+
+                                        '----------
+                                        '적용(시작부터 끝부분까지)
+                                        STRMEM2 = Strings.Mid(STRMEM2, FIRSTLNSTR)
+
+                                        '찾기(끝)
+                                        Dim LASTLN As Integer = InStrRev(STRMEM2, CC, -1, CompareMethod.Text)
+                                        If LASTLN = 0 Then LASTLN = InStrRev(STRMEM2, CC2, -1, CompareMethod.Text)
+
+                                        '다른 언어 자막이 있는지 확인
+                                        If InStr(Strings.Mid(STRMEM2, LASTLN), "<sync start", CompareMethod.Text) <> 0 Then
+
+                                            '끝 문자열 가져오기
+                                            Dim LASTTLNSTR As String = Strings.Left(Strings.Mid(STRMEM2, LASTLN), InStr(Strings.Mid(STRMEM2, LASTLN), "<sync start", CompareMethod.Text) - 1) '-1 // <sync '<' 삭제
+
+                                            '있으면 거기까지(바디랑 사미 넣어줌)
+                                            STRMEM2 = Strings.Left(STRMEM2, LASTLN - 1) & LASTTLNSTR & vbNewLine & "</BODY>" & vbNewLine & "</SAMI>" '-1 // <p '<' 삭제
+
+                                        End If
+
+                                        '정리
+                                        STRMEM2 = "<SAMI>" & vbNewLine & "<BODY>" & vbNewLine & STRMEM2
+
+                                        '저장
+                                        Dim CNTSAVE2 As Integer = 0
+CNTSAVEerr2:
+                                        If CNTSAVE2 < 100 Then
+                                            Try
+                                                Dim SW2 As New StreamWriter(SMIPATHV, False, System.Text.Encoding.Unicode)
+                                                SW2.Write(STRMEM2)
+                                                SW2.Close()
+                                            Catch ex As Exception
+                                                Threading.Thread.Sleep(100)
+                                                If CNTSAVE2 = 99 Then
+                                                    Dim MessageBoxV = MessageBox.Show("File copy failed, Retry?" & vbNewLine & ex.Message, "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+                                                    If MessageBoxV = DialogResult.Yes Then
+                                                        CNTSAVE2 = 98
+                                                    Else
+                                                        GoTo ERRSKIP
+                                                    End If
+                                                End If
+                                                CNTSAVE2 += 1
+                                                Debug.Print("파일저장실패(2) " & CNTSAVE2 & " : " & ex.Message)
+                                                GoTo CNTSAVEerr2
+                                            End Try
+                                        End If
+
+                                        STRMEM2 = ""
+                                    End Using
+                                End If
+
+SelCCLangSkip:
+
+                            End If
 
                         Else
 ERRSKIP:
