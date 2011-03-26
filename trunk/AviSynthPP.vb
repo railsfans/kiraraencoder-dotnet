@@ -989,34 +989,42 @@ ERRSKIP:
 
                     If AviSynthEditorFrm.AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                        MainFrm.DECSTR = "FFMPEG"
                     ElseIf AviSynthEditorFrm.AC3DTSFilesNicAudioToolStripMenuItem.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.NicAudioTextBox.Text
+                        MainFrm.DECSTR = "NIC"
                         AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcename>", "AC3")
                         AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcelength>", Int(PlayHMSV * 25) + 1)
                         AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcefps>", "25")
                     ElseIf AviSynthEditorFrm.AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                        MainFrm.DECSTR = "DSHOW"
                     End If
 
                 ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "DTS" Then
 
                     If AviSynthEditorFrm.AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                        MainFrm.DECSTR = "FFMPEG"
                     ElseIf AviSynthEditorFrm.AC3DTSFilesNicAudioToolStripMenuItem.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.NicAudioTextBox.Text
+                        MainFrm.DECSTR = "NIC"
                         AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcename>", "DTS")
                         AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcelength>", Int(PlayHMSV * 25) + 1)
                         AVTextBoxV = Replace(AVTextBoxV, "#<nicsourcefps>", "25")
                     ElseIf AviSynthEditorFrm.AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                        MainFrm.DECSTR = "DSHOW"
                     End If
 
                 ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "RM" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "AMR" Then
 
                     If AviSynthEditorFrm.RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                        MainFrm.DECSTR = "FFMPEG"
                     ElseIf AviSynthEditorFrm.RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                        MainFrm.DECSTR = "DSHOW"
                     End If
 
                     '------------- 여기서부터 MATROSKA, AVI 등의 컨테이너일경우 FFmpegSource로
@@ -1028,15 +1036,19 @@ ERRSKIP:
                         MainFrm.EncListListView.Items(index).SubItems(3).Text = "FLV" OrElse _
                         MainFrm.EncListListView.Items(index).SubItems(3).Text = "SWF" Then
                     AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                    MainFrm.DECSTR = "FFMPEG"
 
                 Else
 
                     If AviSynthEditorFrm.AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.FFmpegSourceTextBox.Text
+                        MainFrm.DECSTR = "FFMPEG"
                     ElseIf AviSynthEditorFrm.AllAudioFilesBassAudioToolStripMenuItem.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.BassAudioTextBox.Text
+                        MainFrm.DECSTR = "BASS"
                     ElseIf AviSynthEditorFrm.AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = True Then
                         AVTextBoxV = AviSynthEditorFrm.DirectShowSourceTextBox.Text
+                        MainFrm.DECSTR = "DSHOW"
                     End If
 
                 End If

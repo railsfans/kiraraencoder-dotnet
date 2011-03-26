@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.03.26]"
+    Public PDATA = "[2011.03.27]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
