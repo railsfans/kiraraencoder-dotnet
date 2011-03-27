@@ -1455,46 +1455,30 @@ ImageSkip:
                     Catch ex As Exception
                     End Try
 
-                    '비율공통 설정
+                    '비율공통 설정(XVID CORE 인코딩용: [libxvid @ 01c605e0] Invalid pixel aspect ratio 0/1), 삭제시 인코딩 안 됨.
                     VF_AspectV = ", setsar=1:1"
 
-                    If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안함
 
-                        '======================================================
-                        'PAR 1:1 아닌경우 원본사이즈 비율적용//
-                        Dim PAR0 As Integer = 1, PAR00 As Integer = 0
-                        Dim PARtes As String = ""
-                        If InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) Then
-                            PAR00 = InStr(PAR0, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, "PAR ", CompareMethod.Text) + 4
-                            If InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, " ", CompareMethod.Text) Then
-                                PAR0 = InStr(PAR00, MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, " ", CompareMethod.Text) + 1
-                                PARtes = Mid(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, PAR00, PAR0 - PAR00 - 1)
-                                PARtes = Replace(Replace(PARtes, ",", ""), "]", "")
-                            End If
+
+                    '===================================================================
+                    'FFmpeg모드용 아스팩트 깔끔하게 계산(PAR 1:1, DAR 출력비율)
+                    If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+
+                        If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본영상사이즈
+                            Try
+                                AspectV = " -aspect " & (OriginW - _LeftCV - _RightCV) & ":" & (OriginH - _TopCV - _BottomCV)
+                            Catch ex As Exception
+                            End Try
                         Else
-                            PAR0 = PAR0 + 1
+                            AspectV = " -aspect " & EncSetFrm.ImageSizeWidthTextBox.Text & ":" & EncSetFrm.ImageSizeHeightTextBox.Text
                         End If
-                        If PARtes <> "" Then
-                            Dim LP, RP As String
-                            If InStr(PARtes, ":", CompareMethod.Text) <> 0 Then
-                                Try
-                                    PARtes = Split(PARtes, " ")(0)
-                                    LP = Split(PARtes, ":")(0)
-                                    RP = Split(PARtes, ":")(1)
-                                Catch ex As Exception
-                                    PARtes = "1:1"
-                                    LP = 1
-                                    RP = 1
-                                End Try
-                                If LP = "1" AndAlso RP = "1" Then
-                                Else
-                                    AspectV = " -aspect " & Val(OriginW) & ":" & Val(OriginH)
-                                End If
-                            End If
-                        End If
-                        '======================================================
 
                     End If
+                    '===================================================================
+
+
+
+
 
                 End If
 

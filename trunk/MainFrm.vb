@@ -6974,14 +6974,7 @@ RELOAD:
             AviSynthPP.INDEX_ProcessStopChk = False
         Else
             Dim MSGB As String = ""
-
-            If DECSTR = "DSHOW" Then
-                MSGB = My.Application.Info.DirectoryPath & "\kiraraplayer.exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34)
-            Else
-                MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
-                      " -identify -noquiet -nofontconfig -vo direct3d"
-            End If
-
+            MSGB = My.Application.Info.DirectoryPath & "\kiraraplayer.exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34)
             shellpid = Shell(MSGB, AppWinStyle.NormalFocus)
             shellpidexename = Process.GetProcessById(shellpid).ProcessName
             shellpidstarttime = Process.GetProcessById(shellpid).StartTime
