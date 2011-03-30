@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.03.27]"
+    Public PDATA = "[2011.03.31]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -785,6 +785,7 @@ Public Class MainFrm
                 End If
                 'EncListListView.Font = New Font(Me.Font.Name, Me.Font.Size)
 
+                If XTR.Name = "MainFrmNewVerToolStripMenuItem" Then NewVerToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmLangToolStripMenuItem" Then LangToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmAboutToolStripMenuItem" Then AboutToolStripMenuItem.Text = XTR.ReadString
                 'If XTR.Name = "MainFrmEncListGroupBox" Then EncListGroupBox.Text = XTR.ReadString
@@ -881,6 +882,8 @@ Public Class MainFrm
                 If XTR.Name = "MainFrmEtcToolStripMenuItem" Then EtcToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmPlayButton" Then PlayButton.Text = XTR.ReadString
                 'If XTR.Name = "MainFrmAVSGroupBox" Then AVSGroupBox.Text = XTR.ReadString
+                If XTR.Name = "MainDeleteERR" Then LangCls.MainDeleteERR = XTR.ReadString
+                If XTR.Name = "MainDeleteERRCap" Then LangCls.MainDeleteERRCap = XTR.ReadString
 
                 '외부언어//
                 If XTR.Name = "EncSetFrm" Then EncToolStripMenuItem.Text = XTR.ReadString
@@ -1306,6 +1309,17 @@ LANG_SKIP:
                     ImageSizeV = EncSetFrm.ImageSizeWidthTextBox.Text & "x" & EncSetFrm.ImageSizeHeightTextBox.Text
                 End If
             End If
+
+            'FFmpeg회전 처리관련
+            If EncSetFrm.FFTurnCheckBox.Checked = True AndAlso (EncSetFrm.FFTurnLeftRadioButton.Checked = True OrElse EncSetFrm.FFTurnRightRadioButton.Checked = True) Then
+                Try
+                    Dim ImgSV As String = Split(ImageSizeV, "x")(0)
+                    ImageSizeV = Split(ImageSizeV, "x")(1) & "x" & ImgSV
+                Catch ex As Exception
+                    ImageSizeV = "ERR"
+                End Try
+            End If
+
             '---------------------------------
             ' 비율
             '=================================
@@ -1570,18 +1584,23 @@ LANG_SKIP:
             '    _VideoLabel1.Text = ""
             '    _VideoLabel2.Text = ""
             'Else
-            If AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
-                If EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
-                EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 FFmpeg 인코딩
-                    _VideoLabel1.Text = ""
-                    _VideoLabel2.Text = ""
+            If EncSetFrm.VideoCodecComboBox.Text = "Direct Stream Copy" Then
+                _VideoLabel1.Text = EncSetFrm.VideoCodecComboBox.Text
+                _VideoLabel2.Text = ""
+            Else
+                If AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+                    If EncListListView.Items(index).SubItems(8).Text = "None" AndAlso _
+                    EncListListView.Items(index).SubItems(9).Text <> "None" Then '오디오 파일 FFmpeg 인코딩
+                        _VideoLabel1.Text = ""
+                        _VideoLabel2.Text = ""
+                    Else
+                        _VideoLabel1.Text = EncSetFrm.VideoCodecComboBox.Text
+                        _VideoLabel2.Text = ImageSizeV & ", " & ImageAspectV & ", " & ImageFramerateV & ", " & VideoBitrateV
+                    End If
                 Else
                     _VideoLabel1.Text = EncSetFrm.VideoCodecComboBox.Text
                     _VideoLabel2.Text = ImageSizeV & ", " & ImageAspectV & ", " & ImageFramerateV & ", " & VideoBitrateV
                 End If
-            Else
-                _VideoLabel1.Text = EncSetFrm.VideoCodecComboBox.Text
-                _VideoLabel2.Text = ImageSizeV & ", " & ImageAspectV & ", " & ImageFramerateV & ", " & VideoBitrateV
             End If
             'End If
         End If
@@ -1590,7 +1609,11 @@ LANG_SKIP:
         '    _AudioLabel2.Text = ""
         'Else
         _AudioLabel1.Text = EncSetFrm.AudioCodecComboBox.Text
-        _AudioLabel2.Text = SamplerateV & ", " & ChannelV & ", " & AudioBitrateV & ", " & AmplifyV
+        If EncSetFrm.AudioCodecComboBox.Text = "Direct Stream Copy" Then
+            _AudioLabel2.Text = ""
+        Else
+            _AudioLabel2.Text = SamplerateV & ", " & ChannelV & ", " & AudioBitrateV & ", " & AmplifyV
+        End If
         'End If
 
 
@@ -1793,6 +1816,10 @@ LANG_SKIP:
 
         '최종 파일에 설정저장
         APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
+
+        'AVS설정저장
+        AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+
         '예외저장
         XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
 
@@ -1804,9 +1831,14 @@ LANG_SKIP:
 
         '작업한 파일삭제
         For i = 0 To CleanUpListBox.Items.Count - 1
+ReDel:
             Try
                 If My.Computer.FileSystem.FileExists(CleanUpListBox.Items(i)) = True Then My.Computer.FileSystem.DeleteFile(CleanUpListBox.Items(i))
             Catch ex As Exception
+                Dim MSGV = MessageBox.Show(CleanUpListBox.Items(i) & vbNewLine & LangCls.MainDeleteERR, LangCls.MainDeleteERRCap, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If MSGV = Windows.Forms.DialogResult.Yes Then
+                    GoTo ReDel
+                End If
             End Try
         Next
 
@@ -1866,6 +1898,20 @@ LANG_SKIP:
 
     Private Sub MainFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+
+
+
+
+
+        '------------------ 작업로그 시작
+        LoadingFrm.LOADSTR = "Loading..."
+        '------------------ 작업로그 끝
+
+
+
+
+
+
         '운영체제검사
         If Environment.OSVersion.Platform <> PlatformID.Win32NT Then '윈도우 NT 운영체제가 아닐경우
             MsgBox("Kirara Encoder is not supported on this operating system.")
@@ -1911,6 +1957,21 @@ LANG_SKIP:
 
         '-----------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+        '------------------ 작업로그 시작
+        LoadingFrm.LOADSTR = "Loading application settings"
+        '------------------ 작업로그 끝
+
+
+
+
+
+
         '설정로드
         '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         '프로그램 설정
@@ -1932,6 +1993,21 @@ LANG_SKIP:
 
         '설정활성화 여부
         AVSACTIVE()
+
+
+
+
+
+
+
+        '------------------ 작업로그 시작
+        LoadingFrm.LOADSTR = "Loading language files"
+        '------------------ 작업로그 끝
+
+
+
+
+
 
         '언어파일 불러옴
         LangToolStripMenuItem.DropDownItems.Add("Auto-select", Nothing, AddressOf OutSelectLang)
@@ -1955,6 +2031,22 @@ LANG_SKIP:
 
         '언어파일 적용
         MAINLANGLOAD()
+
+
+
+
+
+
+
+        '------------------ 작업로그 시작
+        LoadingFrm.LOADSTR = "Loading preset files"
+        '------------------ 작업로그 끝
+
+
+
+
+
+
 
         '프리셋 불러옴
         RefPreset()
@@ -2067,6 +2159,24 @@ LANG_SKIP:
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
         End If
 
+
+
+
+
+
+
+
+        '------------------ 작업로그 시작
+        LoadingFrm.LOADSTR = "Loading encoding settings"
+        '------------------ 작업로그 끝
+
+
+
+
+
+
+
+
         '****************************************************************
         '설정
         If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\settings.xml") = False Then '설정파일이 없으면
@@ -2104,6 +2214,19 @@ LANG_SKIP:
         '-----------------------------------------------------------------------
         ' 그 외 설정
         '-----------------------------------------------------------------------
+
+
+
+
+
+
+        '------------------ 작업로그 시작
+        LoadingFrm.LOADSTR = ""
+        '------------------ 작업로그 끝
+
+
+
+
 
         '활성화 지역
         EnableArea()
@@ -2184,6 +2307,9 @@ LANG_SKIP:
         If Me.Location.Y > Screen.GetBounds(Me).Bottom - Me.Height Then
             Me.Location = New System.Drawing.Point(Me.Location.X, Screen.GetBounds(Me).Bottom - Me.Height)
         End If
+
+        '로딩폼 닫고
+        LoadingFrm.Close()
 
         '아래 코드부터 폼이 보여짐.
         If MainWindowState <> "" Then
@@ -2618,6 +2744,12 @@ UAC:
             If My.Computer.FileSystem.DirectoryExists(SavePathTextBox.Text) = False Then Exit Sub
         End If
 
+        '코덱 복사관련 체크
+        If (EncSetFrm.VideoCodecComboBox.Text = "Direct Stream Copy" OrElse EncSetFrm.AudioCodecComboBox.Text = "Direct Stream Copy") AndAlso AVSCheckBox.Checked = True Then
+            MsgBox("Direct Stream Copy: Can't select AviSynth")
+            AVSCheckBox.Checked = False
+        End If
+
         '===============================
 
         '활성화
@@ -2685,14 +2817,14 @@ UAC:
             .MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True
             .ASFFilesFFmpegSourceToolStripMenuItem2.Checked = False
             .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True
-            .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True
+            .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = False
             .AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = False
             .AllAudioFilesBassAudioToolStripMenuItem.Checked = True
             .AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = False
             .AC3DTSFilesNicAudioToolStripMenuItem.Checked = True
             .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True
             .MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = False
-            .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+            .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True
             .AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = False
             .AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = False
             .RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = False
@@ -2770,12 +2902,26 @@ UAC:
             .FFmpegImageUnsharpCheckBox.Checked = False
             .LumaMatrixHSNumericUpDown.Value = 5
             .LumaMatrixVSNumericUpDown.Value = 5
-            .LumaEffectSNumericUpDown.Value = 1.0
-            .ChromaMatrixHSNumericUpDown.Value = 5
-            .ChromaMatrixVSNumericUpDown.Value = 5
-            .ChromaEffectSNumericUpDown.Value = 1.0
+            .LumaEffectSNumericUpDown.Value = 0.0
+            .ChromaMatrixHSNumericUpDown.Value = 0
+            .ChromaMatrixVSNumericUpDown.Value = 0
+            .ChromaEffectSNumericUpDown.Value = 0.0
             .hflipCheckBox.Checked = False
             .vflipCheckBox.Checked = False
+            .FFTurnCheckBox.Checked = False
+            .FFTurnLeftRadioButton.Checked = True
+            .FFTurnRightRadioButton.Checked = False
+            .FFVerticallyCheckBox.Checked = False
+            .DeinterlaceCheckBox.Checked = False
+            .DeinterlaceModeComboBox.Text = "0 - output 1 frame for each frame"
+            .DeinterlaceParityComboBox.Text = "Automatic Detection"
+            .hqdn3dUseCheckBox.Checked = False
+            .hqdn3dAutomodeCheckBox.Checked = True
+            .hqdn3d_auto_NumericUpDown.Value = 4.0
+            .hqdn3d_manual_TextBox.Text = "4:3:6:4.5"
+            .gradfunCheckBox.Checked = False
+            .gradfun_strengthNumericUpDown.Value = 1.2
+            .gradfun_radiusNumericUpDown.Value = 16
             '오디오
             .AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame"
             .AudioBitrateComboBox.Text = "128"
@@ -2798,7 +2944,6 @@ UAC:
             .ExtensionTextBox.Text = ""
             .SizeLimitTextBox.Text = "0"
             .SizeLimitCheckBox.Checked = False
-            .DeinterlaceCheckBox.Checked = False
             .FFmpegCommandTextBox.Text = ""
             .SubtitleRecordingCheckBox.Checked = False
             .SizeEncCheckBox.Checked = False
@@ -2806,7 +2951,7 @@ UAC:
             '예외
             If AVSCHANBOOL = True Then
                 If AVSOFFCheckBoxAVSIFrmV = False Then
-                    AVSCheckBox.Checked = True
+                    AVSCheckBox.Checked = False '원래 True 지만 기본 값을 False로 변경.
                 Else
                     AVSCheckBox.Checked = False
                 End If
@@ -3322,7 +3467,7 @@ RELOAD:
 
                     If XTR.Name = "M2TSFilesFFmpegSourceToolStripMenuItem6" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = XTRSTR Else .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True
+                        If XTRSTR <> "" Then .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = XTRSTR Else .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = False
                     End If
 
                     If XTR.Name = "AllAudioFilesFFmpegSourceToolStripMenuItem3" Then
@@ -3357,7 +3502,7 @@ RELOAD:
 
                     If XTR.Name = "M2TSFilesDirectShowSourceToolStripMenuItem1" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = XTRSTR Else .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+                        If XTRSTR <> "" Then .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = XTRSTR Else .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True
                     End If
 
                     If XTR.Name = "AllAudioFilesDirectShowSourceToolStripMenuItem" Then
@@ -3579,34 +3724,34 @@ RELOAD:
                         If XTRSTR <> "" Then .FFmpegImageUnsharpCheckBox.Checked = XTRSTR Else .FFmpegImageUnsharpCheckBox.Checked = False
                     End If
 
-                    If XTR.Name = "EncSetFrm_LumaMatrixHSNumericUpDown" Then
+                    If XTR.Name = "EncSetFrm_LumaMatrixHSNumericUpDown2" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .LumaMatrixHSNumericUpDown.Value = XTRSTR Else .LumaMatrixHSNumericUpDown.Value = 5
                     End If
 
-                    If XTR.Name = "EncSetFrm_LumaMatrixVSNumericUpDown" Then
+                    If XTR.Name = "EncSetFrm_LumaMatrixVSNumericUpDown2" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .LumaMatrixVSNumericUpDown.Value = XTRSTR Else .LumaMatrixVSNumericUpDown.Value = 5
                     End If
 
-                    If XTR.Name = "EncSetFrm_LumaEffectSNumericUpDown" Then
+                    If XTR.Name = "EncSetFrm_LumaEffectSNumericUpDown2" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .LumaEffectSNumericUpDown.Value = XTRSTR Else .LumaEffectSNumericUpDown.Value = 1.0
+                        If XTRSTR <> "" Then .LumaEffectSNumericUpDown.Value = XTRSTR Else .LumaEffectSNumericUpDown.Value = 0.0
                     End If
 
-                    If XTR.Name = "EncSetFrm_ChromaMatrixHSNumericUpDown" Then
+                    If XTR.Name = "EncSetFrm_ChromaMatrixHSNumericUpDown2" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .ChromaMatrixHSNumericUpDown.Value = XTRSTR Else .ChromaMatrixHSNumericUpDown.Value = 5
+                        If XTRSTR <> "" Then .ChromaMatrixHSNumericUpDown.Value = XTRSTR Else .ChromaMatrixHSNumericUpDown.Value = 0
                     End If
 
-                    If XTR.Name = "EncSetFrm_ChromaMatrixVSNumericUpDown" Then
+                    If XTR.Name = "EncSetFrm_ChromaMatrixVSNumericUpDown2" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .ChromaMatrixVSNumericUpDown.Value = XTRSTR Else .ChromaMatrixVSNumericUpDown.Value = 5
+                        If XTRSTR <> "" Then .ChromaMatrixVSNumericUpDown.Value = XTRSTR Else .ChromaMatrixVSNumericUpDown.Value = 0
                     End If
 
-                    If XTR.Name = "EncSetFrm_ChromaEffectSNumericUpDown" Then
+                    If XTR.Name = "EncSetFrm_ChromaEffectSNumericUpDown2" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .ChromaEffectSNumericUpDown.Value = XTRSTR Else .ChromaEffectSNumericUpDown.Value = 1.0
+                        If XTRSTR <> "" Then .ChromaEffectSNumericUpDown.Value = XTRSTR Else .ChromaEffectSNumericUpDown.Value = 0.0
                     End If
 
                     If XTR.Name = "EncSetFrm_hflipCheckBox" Then
@@ -3617,6 +3762,76 @@ RELOAD:
                     If XTR.Name = "EncSetFrm_vflipCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .vflipCheckBox.Checked = XTRSTR Else .vflipCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_FFTurnCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFTurnCheckBox.Checked = XTRSTR Else .FFTurnCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_FFTurnLeftRadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFTurnLeftRadioButton.Checked = XTRSTR Else .FFTurnLeftRadioButton.Checked = True
+                    End If
+
+                    If XTR.Name = "EncSetFrm_FFTurnRightRadioButton" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFTurnRightRadioButton.Checked = XTRSTR Else .FFTurnRightRadioButton.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_FFVerticallyCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFVerticallyCheckBox.Checked = XTRSTR Else .FFVerticallyCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_DeinterlaceCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .DeinterlaceCheckBox.Checked = XTRSTR Else .DeinterlaceCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_DeinterlaceModeComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .DeinterlaceModeComboBox.Text = XTRSTR Else .DeinterlaceModeComboBox.Text = "0 - output 1 frame for each frame"
+                    End If
+
+                    If XTR.Name = "EncSetFrm_DeinterlaceParityComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .DeinterlaceParityComboBox.Text = XTRSTR Else .DeinterlaceParityComboBox.Text = "Automatic Detection"
+                    End If
+
+                    If XTR.Name = "EncSetFrm_hqdn3dUseCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .hqdn3dUseCheckBox.Checked = XTRSTR Else .hqdn3dUseCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_hqdn3dAutomodeCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .hqdn3dAutomodeCheckBox.Checked = XTRSTR Else .hqdn3dAutomodeCheckBox.Checked = True
+                    End If
+
+                    If XTR.Name = "EncSetFrm_hqdn3d_auto_NumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .hqdn3d_auto_NumericUpDown.Value = XTRSTR Else .hqdn3d_auto_NumericUpDown.Value = 4.0
+                    End If
+
+                    If XTR.Name = "EncSetFrm_hqdn3d_manual_TextBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .hqdn3d_manual_TextBox.Text = XTRSTR Else .hqdn3d_manual_TextBox.Text = "4:3:6:4.5"
+                    End If
+
+                    If XTR.Name = "EncSetFrm_gradfunCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .gradfunCheckBox.Checked = XTRSTR Else .gradfunCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_gradfun_strengthNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .gradfun_strengthNumericUpDown.Value = XTRSTR Else .gradfun_strengthNumericUpDown.Value = 1.2
+                    End If
+
+                    If XTR.Name = "EncSetFrm_gradfun_radiusNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .gradfun_radiusNumericUpDown.Value = XTRSTR Else .gradfun_radiusNumericUpDown.Value = 16
                     End If
 
                     '오디오
@@ -3732,11 +3947,6 @@ RELOAD:
                     If XTR.Name = "EncSetFrm_SizeLimitCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .SizeLimitCheckBox.Checked = XTRSTR Else .SizeLimitCheckBox.Checked = False
-                    End If
-
-                    If XTR.Name = "EncSetFrm_DeinterlaceCheckBox" Then
-                        Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .DeinterlaceCheckBox.Checked = XTRSTR Else .DeinterlaceCheckBox.Checked = False
                     End If
 
                     If XTR.Name = "EncSetFrm_FFmpegCommandTextBox" Then
@@ -4955,7 +5165,7 @@ RELOAD:
                 If AVSOFFCheckBoxAVSIFrmV = False Then
                     If XTR.Name = "AVSCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = True
+                        If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = False
                     End If
                 Else
                     AVSCheckBox.Checked = False
@@ -5403,27 +5613,27 @@ RELOAD:
                 XTWriter.WriteString(.FFmpegImageUnsharpCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("EncSetFrm_LumaMatrixHSNumericUpDown")
+                XTWriter.WriteStartElement("EncSetFrm_LumaMatrixHSNumericUpDown2")
                 XTWriter.WriteString(.LumaMatrixHSNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("EncSetFrm_LumaMatrixVSNumericUpDown")
+                XTWriter.WriteStartElement("EncSetFrm_LumaMatrixVSNumericUpDown2")
                 XTWriter.WriteString(.LumaMatrixVSNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("EncSetFrm_LumaEffectSNumericUpDown")
+                XTWriter.WriteStartElement("EncSetFrm_LumaEffectSNumericUpDown2")
                 XTWriter.WriteString(.LumaEffectSNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("EncSetFrm_ChromaMatrixHSNumericUpDown")
+                XTWriter.WriteStartElement("EncSetFrm_ChromaMatrixHSNumericUpDown2")
                 XTWriter.WriteString(.ChromaMatrixHSNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("EncSetFrm_ChromaMatrixVSNumericUpDown")
+                XTWriter.WriteStartElement("EncSetFrm_ChromaMatrixVSNumericUpDown2")
                 XTWriter.WriteString(.ChromaMatrixVSNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("EncSetFrm_ChromaEffectSNumericUpDown")
+                XTWriter.WriteStartElement("EncSetFrm_ChromaEffectSNumericUpDown2")
                 XTWriter.WriteString(.ChromaEffectSNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
@@ -5433,6 +5643,62 @@ RELOAD:
 
                 XTWriter.WriteStartElement("EncSetFrm_vflipCheckBox")
                 XTWriter.WriteString(.vflipCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_FFTurnCheckBox")
+                XTWriter.WriteString(.FFTurnCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_FFTurnLeftRadioButton")
+                XTWriter.WriteString(.FFTurnLeftRadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_FFTurnRightRadioButton")
+                XTWriter.WriteString(.FFTurnRightRadioButton.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_FFVerticallyCheckBox")
+                XTWriter.WriteString(.FFVerticallyCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_DeinterlaceCheckBox")
+                XTWriter.WriteString(.DeinterlaceCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_DeinterlaceModeComboBox")
+                XTWriter.WriteString(.DeinterlaceModeComboBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_DeinterlaceParityComboBox")
+                XTWriter.WriteString(.DeinterlaceParityComboBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_hqdn3dUseCheckBox")
+                XTWriter.WriteString(.hqdn3dUseCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_hqdn3dAutomodeCheckBox")
+                XTWriter.WriteString(.hqdn3dAutomodeCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_hqdn3d_auto_NumericUpDown")
+                XTWriter.WriteString(.hqdn3d_auto_NumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_hqdn3d_manual_TextBox")
+                XTWriter.WriteString(.hqdn3d_manual_TextBox.Text)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_gradfunCheckBox")
+                XTWriter.WriteString(.gradfunCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_gradfun_strengthNumericUpDown")
+                XTWriter.WriteString(.gradfun_strengthNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_gradfun_radiusNumericUpDown")
+                XTWriter.WriteString(.gradfun_radiusNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
                 '오디오
@@ -5525,10 +5791,6 @@ RELOAD:
 
                 XTWriter.WriteStartElement("EncSetFrm_SizeLimitCheckBox")
                 XTWriter.WriteString(.SizeLimitCheckBox.Checked)
-                XTWriter.WriteEndElement()
-
-                XTWriter.WriteStartElement("EncSetFrm_DeinterlaceCheckBox")
-                XTWriter.WriteString(.DeinterlaceCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
                 XTWriter.WriteStartElement("EncSetFrm_FFmpegCommandTextBox")
@@ -7008,7 +7270,7 @@ RELOAD:
             If .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True AndAlso _
                 .MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True AndAlso _
                 .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
-                .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True AndAlso _
+                .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
                 .AllAudioFilesBassAudioToolStripMenuItem.Checked = True AndAlso _
                 .AC3DTSFilesNicAudioToolStripMenuItem.Checked = True AndAlso _
                 .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True Then
@@ -7138,11 +7400,30 @@ RELOAD:
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(ByVal sender As System.Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
-        If WebBrowser1.Document.Title <> "kemainfrm" Then
+        If WebBrowser1.Document.Title <> "kemainfrm2" Then
             WebBrowser1.Visible = False
         Else
             WebBrowser1.Visible = True
         End If
     End Sub
 
+    Private Sub VerWebBrowser_DocumentCompleted(ByVal sender As System.Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles VerWebBrowser.DocumentCompleted
+        If VerWebBrowser.Document.Title = "verchk" Then
+            Dim DnVerStr As String = Replace(VerWebBrowser.DocumentText, "<title>verchk</title>", "")
+            If DnVerStr > My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Revision Then
+                NewVerToolStripMenuItem.Visible = True
+            Else
+                NewVerToolStripMenuItem.Visible = False
+            End If
+        End If
+    End Sub
+
+    Private Sub NewVerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewVerToolStripMenuItem.Click
+        '새로운 버전 다운로드
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://www.kiraraencoder.pe.kr/newverdown")
+        ie = Nothing
+    End Sub
 End Class

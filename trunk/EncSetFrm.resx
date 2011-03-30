@@ -142,21 +142,24 @@
     <value>[WMV] - Windows Media Video</value>
   </data>
   <data name="OutFComboBox.Items8" xml:space="preserve">
-    <value>[RM] - RealMedia</value>
-  </data>
-  <data name="OutFComboBox.Items9" xml:space="preserve">
     <value>[MPEG] - Moving Picture Experts Group</value>
   </data>
+  <data name="OutFComboBox.Items9" xml:space="preserve">
+    <value>[TS] - MPEG Transport Stream</value>
+  </data>
   <data name="OutFComboBox.Items10" xml:space="preserve">
-    <value>[FLV] - Flash Video</value>
+    <value>[RM] - RealMedia</value>
   </data>
   <data name="OutFComboBox.Items11" xml:space="preserve">
-    <value>[SWF] - Shock Wave Flash</value>
+    <value>[FLV] - Flash Video</value>
   </data>
   <data name="OutFComboBox.Items12" xml:space="preserve">
-    <value>[WEBM] - WebM</value>
+    <value>[SWF] - Shock Wave Flash</value>
   </data>
   <data name="OutFComboBox.Items13" xml:space="preserve">
+    <value>[WEBM] - WebM</value>
+  </data>
+  <data name="OutFComboBox.Items14" xml:space="preserve">
     <value>[AUDIO] - Audio Only</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -1206,11 +1209,113 @@
   <data name="&gt;&gt;VideoTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ParityLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ParityLabel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ParityLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ParityLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 80</value>
+  </data>
+  <data name="ParityLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 14</value>
+  </data>
+  <data name="ParityLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="ParityLabel.Text" xml:space="preserve">
+    <value>Parity:</value>
+  </data>
+  <data name="&gt;&gt;ParityLabel.Name" xml:space="preserve">
+    <value>ParityLabel</value>
+  </data>
+  <data name="&gt;&gt;ParityLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ParityLabel.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;ParityLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DeinterlaceParityComboBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DeinterlaceParityComboBox.Items" xml:space="preserve">
+    <value>Top Field First</value>
+  </data>
+  <data name="DeinterlaceParityComboBox.Items1" xml:space="preserve">
+    <value>Bottom Field First</value>
+  </data>
+  <data name="DeinterlaceParityComboBox.Items2" xml:space="preserve">
+    <value>Automatic Detection</value>
+  </data>
+  <data name="DeinterlaceParityComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 105</value>
+  </data>
+  <data name="DeinterlaceParityComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 22</value>
+  </data>
+  <data name="DeinterlaceParityComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;DeinterlaceParityComboBox.Name" xml:space="preserve">
+    <value>DeinterlaceParityComboBox</value>
+  </data>
+  <data name="&gt;&gt;DeinterlaceParityComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeinterlaceParityComboBox.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;DeinterlaceParityComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DeinterlaceModeComboBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DeinterlaceModeComboBox.Items" xml:space="preserve">
+    <value>0 - output 1 frame for each frame</value>
+  </data>
+  <data name="DeinterlaceModeComboBox.Items1" xml:space="preserve">
+    <value>1 - output 1 frame for each field</value>
+  </data>
+  <data name="DeinterlaceModeComboBox.Items2" xml:space="preserve">
+    <value>2 - like 0 but skips spatial interlacing check</value>
+  </data>
+  <data name="DeinterlaceModeComboBox.Items3" xml:space="preserve">
+    <value>3 - like 1 but skips spatial interlacing check</value>
+  </data>
+  <data name="DeinterlaceModeComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 50</value>
+  </data>
+  <data name="DeinterlaceModeComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 22</value>
+  </data>
+  <data name="DeinterlaceModeComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;DeinterlaceModeComboBox.Name" xml:space="preserve">
+    <value>DeinterlaceModeComboBox</value>
+  </data>
+  <data name="&gt;&gt;DeinterlaceModeComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeinterlaceModeComboBox.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;DeinterlaceModeComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="DeinterlaceCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="DeinterlaceCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 195</value>
+    <value>18, 23</value>
   </data>
   <data name="DeinterlaceCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 18</value>
@@ -1228,10 +1333,1381 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;DeinterlaceCheckBox.Parent" xml:space="preserve">
-    <value>ImageGroupBox</value>
+    <value>GroupBox3</value>
   </data>
   <data name="&gt;&gt;DeinterlaceCheckBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 145</value>
+  </data>
+  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="GroupBox3.Text" xml:space="preserve">
+    <value>yadif</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="FFmpegImageUnsharpCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FFmpegImageUnsharpCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 27</value>
+  </data>
+  <data name="FFmpegImageUnsharpCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 18</value>
+  </data>
+  <data name="FFmpegImageUnsharpCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="FFmpegImageUnsharpCheckBox.Text" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Name" xml:space="preserve">
+    <value>FFmpegImageUnsharpCheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FFmpegImageUnsharpLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FFmpegImageUnsharpLabel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="FFmpegImageUnsharpLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 91</value>
+  </data>
+  <data name="FFmpegImageUnsharpLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>374, 14</value>
+  </data>
+  <data name="FFmpegImageUnsharpLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="FFmpegImageUnsharpLabel.Text" xml:space="preserve">
+    <value>luma effect strength 0 보다 크면 날카롭게, 0 보다 작으면 부드럽게</value>
+  </data>
+  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Name" xml:space="preserve">
+    <value>FFmpegImageUnsharpLabel</value>
+  </data>
+  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFmpegImageUnsharpLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LumaEffectSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaEffectSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>393, 56</value>
+  </data>
+  <data name="LumaEffectSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="LumaEffectSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSNumericUpDown.Name" xml:space="preserve">
+    <value>LumaEffectSNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSNumericUpDown.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSNumericUpDown.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ChromaEffectSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaEffectSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 248</value>
+  </data>
+  <data name="ChromaEffectSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="ChromaEffectSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Name" xml:space="preserve">
+    <value>ChromaEffectSNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSNumericUpDown.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ChromaEffectSTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaEffectSTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaEffectSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 245</value>
+  </data>
+  <data name="ChromaEffectSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="ChromaEffectSTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSTrackBar.Name" xml:space="preserve">
+    <value>ChromaEffectSTrackBar</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSTrackBar.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSTrackBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ChromaEffectSButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaEffectSButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 245</value>
+  </data>
+  <data name="ChromaEffectSButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="ChromaEffectSButton.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="ChromaEffectSButton.Text" xml:space="preserve">
+    <value>chroma effect strength</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSButton.Name" xml:space="preserve">
+    <value>ChromaEffectSButton</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSButton.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaEffectSButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ChromaMatrixVSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaMatrixVSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 217</value>
+  </data>
+  <data name="ChromaMatrixVSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="ChromaMatrixVSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Name" xml:space="preserve">
+    <value>ChromaMatrixVSNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ChromaMatrixVSTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaMatrixVSTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaMatrixVSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 214</value>
+  </data>
+  <data name="ChromaMatrixVSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="ChromaMatrixVSTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Name" xml:space="preserve">
+    <value>ChromaMatrixVSTrackBar</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSTrackBar.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ChromaMatrixVSButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaMatrixVSButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 214</value>
+  </data>
+  <data name="ChromaMatrixVSButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="ChromaMatrixVSButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="ChromaMatrixVSButton.Text" xml:space="preserve">
+    <value>chroma matrix vertical size</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSButton.Name" xml:space="preserve">
+    <value>ChromaMatrixVSButton</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSButton.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixVSButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ChromaMatrixHSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaMatrixHSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 186</value>
+  </data>
+  <data name="ChromaMatrixHSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="ChromaMatrixHSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Name" xml:space="preserve">
+    <value>ChromaMatrixHSNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ChromaMatrixHSTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaMatrixHSTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaMatrixHSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 183</value>
+  </data>
+  <data name="ChromaMatrixHSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="ChromaMatrixHSTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Name" xml:space="preserve">
+    <value>ChromaMatrixHSTrackBar</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSTrackBar.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ChromaMatrixHSButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChromaMatrixHSButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 183</value>
+  </data>
+  <data name="ChromaMatrixHSButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="ChromaMatrixHSButton.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="ChromaMatrixHSButton.Text" xml:space="preserve">
+    <value>chroma matrix horizontal size</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSButton.Name" xml:space="preserve">
+    <value>ChromaMatrixHSButton</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSButton.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ChromaMatrixHSButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="LumaEffectSTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaEffectSTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaEffectSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 53</value>
+  </data>
+  <data name="LumaEffectSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="LumaEffectSTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSTrackBar.Name" xml:space="preserve">
+    <value>LumaEffectSTrackBar</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSTrackBar.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSTrackBar.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="LumaEffectSButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaEffectSButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 53</value>
+  </data>
+  <data name="LumaEffectSButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="LumaEffectSButton.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LumaEffectSButton.Text" xml:space="preserve">
+    <value>luma effect strength</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSButton.Name" xml:space="preserve">
+    <value>LumaEffectSButton</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSButton.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaEffectSButton.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="LumaMatrixVSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaMatrixVSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 153</value>
+  </data>
+  <data name="LumaMatrixVSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="LumaMatrixVSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Name" xml:space="preserve">
+    <value>LumaMatrixVSNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="LumaMatrixVSTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaMatrixVSTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaMatrixVSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 150</value>
+  </data>
+  <data name="LumaMatrixVSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="LumaMatrixVSTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSTrackBar.Name" xml:space="preserve">
+    <value>LumaMatrixVSTrackBar</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSTrackBar.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSTrackBar.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="LumaMatrixVSButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaMatrixVSButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 149</value>
+  </data>
+  <data name="LumaMatrixVSButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="LumaMatrixVSButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="LumaMatrixVSButton.Text" xml:space="preserve">
+    <value>luma matrix vertical size</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSButton.Name" xml:space="preserve">
+    <value>LumaMatrixVSButton</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSButton.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixVSButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="LumaMatrixHSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaMatrixHSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 121</value>
+  </data>
+  <data name="LumaMatrixHSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="LumaMatrixHSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Name" xml:space="preserve">
+    <value>LumaMatrixHSNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="LumaMatrixHSTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaMatrixHSTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaMatrixHSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 118</value>
+  </data>
+  <data name="LumaMatrixHSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="LumaMatrixHSTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSTrackBar.Name" xml:space="preserve">
+    <value>LumaMatrixHSTrackBar</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSTrackBar.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSTrackBar.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="LumaMatrixHSButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LumaMatrixHSButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 118</value>
+  </data>
+  <data name="LumaMatrixHSButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="LumaMatrixHSButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="LumaMatrixHSButton.Text" xml:space="preserve">
+    <value>luma matrix horizontal size</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSButton.Name" xml:space="preserve">
+    <value>LumaMatrixHSButton</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSButton.Parent" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LumaMatrixHSButton.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="ImagePPGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 156</value>
+  </data>
+  <data name="ImagePPGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 285</value>
+  </data>
+  <data name="ImagePPGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="ImagePPGroupBox.Text" xml:space="preserve">
+    <value>unsharp</value>
+  </data>
+  <data name="&gt;&gt;ImagePPGroupBox.Name" xml:space="preserve">
+    <value>ImagePPGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ImagePPGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImagePPGroupBox.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;ImagePPGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="TabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 447</value>
+  </data>
+  <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPage1.Text" xml:space="preserve">
+    <value>yadif/unsharp</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="hqdn3d_2TextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="hqdn3d_2TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 75</value>
+  </data>
+  <data name="hqdn3d_2TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="hqdn3d_2TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_2TextBox.Name" xml:space="preserve">
+    <value>hqdn3d_2TextBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_2TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_2TextBox.Parent" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_2TextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label9.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 78</value>
+  </data>
+  <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 14</value>
+  </data>
+  <data name="Label9.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="Label9.Text" xml:space="preserve">
+    <value>chroma_spatial(auto):</value>
+  </data>
+  <data name="&gt;&gt;Label9.Name" xml:space="preserve">
+    <value>Label9</value>
+  </data>
+  <data name="&gt;&gt;Label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label9.Parent" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label11.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 110</value>
+  </data>
+  <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 14</value>
+  </data>
+  <data name="Label11.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>luma_tmp(auto):</value>
+  </data>
+  <data name="&gt;&gt;Label11.Name" xml:space="preserve">
+    <value>Label11</value>
+  </data>
+  <data name="&gt;&gt;Label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label11.Parent" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="hqdn3d_3TextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="hqdn3d_3TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 107</value>
+  </data>
+  <data name="hqdn3d_3TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="hqdn3d_3TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_3TextBox.Name" xml:space="preserve">
+    <value>hqdn3d_3TextBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_3TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_3TextBox.Parent" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_3TextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="hqdn3d_auto_NumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 39</value>
+  </data>
+  <data name="hqdn3d_auto_NumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="hqdn3d_auto_NumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_auto_NumericUpDown.Name" xml:space="preserve">
+    <value>hqdn3d_auto_NumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_auto_NumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_auto_NumericUpDown.Parent" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_auto_NumericUpDown.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 42</value>
+  </data>
+  <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 14</value>
+  </data>
+  <data name="Label8.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>luma_spatial:</value>
+  </data>
+  <data name="&gt;&gt;Label8.Name" xml:space="preserve">
+    <value>Label8</value>
+  </data>
+  <data name="&gt;&gt;Label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label8.Parent" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="hqdn3d_4TextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="hqdn3d_4TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 139</value>
+  </data>
+  <data name="hqdn3d_4TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="hqdn3d_4TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_4TextBox.Name" xml:space="preserve">
+    <value>hqdn3d_4TextBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_4TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_4TextBox.Parent" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_4TextBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label12.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 142</value>
+  </data>
+  <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 14</value>
+  </data>
+  <data name="Label12.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>chroma_tmp(auto):</value>
+  </data>
+  <data name="&gt;&gt;Label12.Name" xml:space="preserve">
+    <value>Label12</value>
+  </data>
+  <data name="&gt;&gt;Label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label12.Parent" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label12.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="hqdn3dAutGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="hqdn3dAutGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 188</value>
+  </data>
+  <data name="hqdn3dAutGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="hqdn3dAutGroupBox.Text" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dAutGroupBox.Name" xml:space="preserve">
+    <value>hqdn3dAutGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dAutGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dAutGroupBox.Parent" xml:space="preserve">
+    <value>hqdn3dPanel</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dAutGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 28</value>
+  </data>
+  <data name="Label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 14</value>
+  </data>
+  <data name="Label13.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Label13.Text" xml:space="preserve">
+    <value>luma_spatial:chroma_spatial:luma_tmp:chroma_tmp</value>
+  </data>
+  <data name="&gt;&gt;Label13.Name" xml:space="preserve">
+    <value>Label13</value>
+  </data>
+  <data name="&gt;&gt;Label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label13.Parent" xml:space="preserve">
+    <value>hqdn3dManGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label13.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 81</value>
+  </data>
+  <data name="Label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 14</value>
+  </data>
+  <data name="Label14.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="Label14.Text" xml:space="preserve">
+    <value>default = 4:3:6:4.5</value>
+  </data>
+  <data name="&gt;&gt;Label14.Name" xml:space="preserve">
+    <value>Label14</value>
+  </data>
+  <data name="&gt;&gt;Label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label14.Parent" xml:space="preserve">
+    <value>hqdn3dManGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label14.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="hqdn3d_manual_TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 52</value>
+  </data>
+  <data name="hqdn3d_manual_TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="hqdn3d_manual_TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_manual_TextBox.Name" xml:space="preserve">
+    <value>hqdn3d_manual_TextBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_manual_TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_manual_TextBox.Parent" xml:space="preserve">
+    <value>hqdn3dManGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3d_manual_TextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="hqdn3dManGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="hqdn3dManGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 200</value>
+  </data>
+  <data name="hqdn3dManGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 113</value>
+  </data>
+  <data name="hqdn3dManGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="hqdn3dManGroupBox.Text" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dManGroupBox.Name" xml:space="preserve">
+    <value>hqdn3dManGroupBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dManGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dManGroupBox.Parent" xml:space="preserve">
+    <value>hqdn3dPanel</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dManGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="hqdn3dPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="hqdn3dPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 49</value>
+  </data>
+  <data name="hqdn3dPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 323</value>
+  </data>
+  <data name="hqdn3dPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dPanel.Name" xml:space="preserve">
+    <value>hqdn3dPanel</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dPanel.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="hqdn3dAutomodeCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="hqdn3dAutomodeCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="hqdn3dAutomodeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="hqdn3dAutomodeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 18</value>
+  </data>
+  <data name="hqdn3dAutomodeCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="hqdn3dAutomodeCheckBox.Text" xml:space="preserve">
+    <value>Auto Mode</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dAutomodeCheckBox.Name" xml:space="preserve">
+    <value>hqdn3dAutomodeCheckBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dAutomodeCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dAutomodeCheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dAutomodeCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="hqdn3dUseCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="hqdn3dUseCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 23</value>
+  </data>
+  <data name="hqdn3dUseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 18</value>
+  </data>
+  <data name="hqdn3dUseCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="hqdn3dUseCheckBox.Text" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dUseCheckBox.Name" xml:space="preserve">
+    <value>hqdn3dUseCheckBox</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dUseCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dUseCheckBox.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;hqdn3dUseCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 379</value>
+  </data>
+  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>hqdn3d</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="TabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 447</value>
+  </data>
+  <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TabPage2.Text" xml:space="preserve">
+    <value>hqdn3d</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Name" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gradfun_radiusNumericUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gradfun_radiusNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 83</value>
+  </data>
+  <data name="gradfun_radiusNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 22</value>
+  </data>
+  <data name="gradfun_radiusNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusNumericUpDown.Name" xml:space="preserve">
+    <value>gradfun_radiusNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusNumericUpDown.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusNumericUpDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gradfun_radiusTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gradfun_radiusTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gradfun_radiusTrackBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="gradfun_radiusTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 81</value>
+  </data>
+  <data name="gradfun_radiusTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="gradfun_radiusTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusTrackBar.Name" xml:space="preserve">
+    <value>gradfun_radiusTrackBar</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusTrackBar.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusTrackBar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gradfun_radiusButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gradfun_radiusButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="gradfun_radiusButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 81</value>
+  </data>
+  <data name="gradfun_radiusButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 25</value>
+  </data>
+  <data name="gradfun_radiusButton.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="gradfun_radiusButton.Text" xml:space="preserve">
+    <value>radius</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusButton.Name" xml:space="preserve">
+    <value>gradfun_radiusButton</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusButton.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;gradfun_radiusButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gradfun_strengthNumericUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gradfun_strengthNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 52</value>
+  </data>
+  <data name="gradfun_strengthNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 22</value>
+  </data>
+  <data name="gradfun_strengthNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthNumericUpDown.Name" xml:space="preserve">
+    <value>gradfun_strengthNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthNumericUpDown.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthNumericUpDown.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gradfun_strengthTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gradfun_strengthTrackBar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gradfun_strengthTrackBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="gradfun_strengthTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 50</value>
+  </data>
+  <data name="gradfun_strengthTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="gradfun_strengthTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthTrackBar.Name" xml:space="preserve">
+    <value>gradfun_strengthTrackBar</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthTrackBar.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthTrackBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="gradfun_strengthButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gradfun_strengthButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="gradfun_strengthButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 50</value>
+  </data>
+  <data name="gradfun_strengthButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 25</value>
+  </data>
+  <data name="gradfun_strengthButton.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="gradfun_strengthButton.Text" xml:space="preserve">
+    <value>strength</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthButton.Name" xml:space="preserve">
+    <value>gradfun_strengthButton</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthButton.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;gradfun_strengthButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="gradfunCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gradfunCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="gradfunCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 23</value>
+  </data>
+  <data name="gradfunCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 18</value>
+  </data>
+  <data name="gradfunCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="gradfunCheckBox.Text" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="&gt;&gt;gradfunCheckBox.Name" xml:space="preserve">
+    <value>gradfunCheckBox</value>
+  </data>
+  <data name="&gt;&gt;gradfunCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gradfunCheckBox.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;gradfunCheckBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="GroupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="GroupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 123</value>
+  </data>
+  <data name="GroupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupBox4.Text" xml:space="preserve">
+    <value>gradfun</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.Name" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.Parent" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="TabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 447</value>
+  </data>
+  <data name="TabPage3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TabPage3.Text" xml:space="preserve">
+    <value>gradfun</value>
+  </data>
+  <data name="&gt;&gt;TabPage3.Name" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;TabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage3.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 474</value>
+  </data>
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>VFTabPage</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="VFTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="VFTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 474</value>
+  </data>
+  <data name="VFTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="VFTabPage.Text" xml:space="preserve">
+    <value>비디오 필터</value>
+  </data>
+  <data name="&gt;&gt;VFTabPage.Name" xml:space="preserve">
+    <value>VFTabPage</value>
+  </data>
+  <data name="&gt;&gt;VFTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VFTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;VFTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="AspectSLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1264,7 +2740,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;AspectSLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="AspectHTextBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1294,7 +2770,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;AspectHTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="AspectWTextBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1324,7 +2800,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;AspectWTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="AspectComboBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 139</value>
@@ -1348,7 +2824,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;AspectComboBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="AspectComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 111</value>
@@ -1369,7 +2845,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;AspectComboBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="AspectLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 111</value>
@@ -1396,7 +2872,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;AspectLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="FFmpegResizeFilterComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 83</value>
@@ -1417,7 +2893,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;FFmpegResizeFilterComboBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="FFmpegResizeFilterLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 83</value>
@@ -1444,7 +2920,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;FFmpegResizeFilterLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="ImageSizeCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1471,7 +2947,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;ImageSizeCheckBox.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="ImageSizeSLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1501,7 +2977,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;ImageSizeSLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="ImageSizeHeightTextBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1528,7 +3004,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;ImageSizeHeightTextBox.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="ImageSizeWidthTextBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1555,7 +3031,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;ImageSizeWidthTextBox.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="ImageSizeComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 24</value>
@@ -1576,7 +3052,7 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;ImageSizeComboBox.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="ImageSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 24</value>
@@ -1604,16 +3080,19 @@
     <value>ImageGroupBox</value>
   </data>
   <data name="&gt;&gt;ImageSizeLabel.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="ImageGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 3</value>
+    <value>9, 10</value>
   </data>
   <data name="ImageGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 225</value>
+    <value>480, 205</value>
   </data>
   <data name="ImageGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="ImageGroupBox.Text" xml:space="preserve">
+    <value>영상</value>
   </data>
   <data name="&gt;&gt;ImageGroupBox.Name" xml:space="preserve">
     <value>ImageGroupBox</value>
@@ -1622,37 +3101,163 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ImageGroupBox.Parent" xml:space="preserve">
-    <value>ImgTabPage</value>
+    <value>ImageTabPage</value>
   </data>
   <data name="&gt;&gt;ImageGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ImgTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
+  <data name="FFVerticallyCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="ImgTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="FFVerticallyCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="ImgTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>485, 441</value>
+  <data name="FFVerticallyCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="ImgTabPage.TabIndex" type="System.Int32, mscorlib">
+  <data name="FFVerticallyCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 28</value>
+  </data>
+  <data name="FFVerticallyCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 18</value>
+  </data>
+  <data name="FFVerticallyCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="FFVerticallyCheckBox.Text" xml:space="preserve">
+    <value>수직 반전</value>
+  </data>
+  <data name="&gt;&gt;FFVerticallyCheckBox.Name" xml:space="preserve">
+    <value>FFVerticallyCheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFVerticallyCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFVerticallyCheckBox.Parent" xml:space="preserve">
+    <value>FFTurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFVerticallyCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ImgTabPage.Text" xml:space="preserve">
-    <value>영상</value>
+  <data name="FFTurnCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;ImgTabPage.Name" xml:space="preserve">
-    <value>ImgTabPage</value>
+  <data name="FFTurnCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;ImgTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="FFTurnCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 27</value>
   </data>
-  <data name="&gt;&gt;ImgTabPage.Parent" xml:space="preserve">
-    <value>ImageTabControl</value>
+  <data name="FFTurnCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 18</value>
   </data>
-  <data name="&gt;&gt;ImgTabPage.ZOrder" xml:space="preserve">
+  <data name="FFTurnCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="FFTurnCheckBox.Text" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="&gt;&gt;FFTurnCheckBox.Name" xml:space="preserve">
+    <value>FFTurnCheckBox</value>
+  </data>
+  <data name="&gt;&gt;FFTurnCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFTurnCheckBox.Parent" xml:space="preserve">
+    <value>FFTurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFTurnCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="FFTurnRightRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FFTurnRightRadioButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="FFTurnRightRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FFTurnRightRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 27</value>
+  </data>
+  <data name="FFTurnRightRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 18</value>
+  </data>
+  <data name="FFTurnRightRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="FFTurnRightRadioButton.Text" xml:space="preserve">
+    <value>오른쪽</value>
+  </data>
+  <data name="&gt;&gt;FFTurnRightRadioButton.Name" xml:space="preserve">
+    <value>FFTurnRightRadioButton</value>
+  </data>
+  <data name="&gt;&gt;FFTurnRightRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFTurnRightRadioButton.Parent" xml:space="preserve">
+    <value>FFTurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFTurnRightRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="FFTurnLeftRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FFTurnLeftRadioButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="FFTurnLeftRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FFTurnLeftRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 27</value>
+  </data>
+  <data name="FFTurnLeftRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 18</value>
+  </data>
+  <data name="FFTurnLeftRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="FFTurnLeftRadioButton.Text" xml:space="preserve">
+    <value>왼쪽</value>
+  </data>
+  <data name="&gt;&gt;FFTurnLeftRadioButton.Name" xml:space="preserve">
+    <value>FFTurnLeftRadioButton</value>
+  </data>
+  <data name="&gt;&gt;FFTurnLeftRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFTurnLeftRadioButton.Parent" xml:space="preserve">
+    <value>FFTurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFTurnLeftRadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="FFTurnGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 291</value>
+  </data>
+  <data name="FFTurnGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 63</value>
+  </data>
+  <data name="FFTurnGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="FFTurnGroupBox.Text" xml:space="preserve">
+    <value>회전</value>
+  </data>
+  <data name="&gt;&gt;FFTurnGroupBox.Name" xml:space="preserve">
+    <value>FFTurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFTurnGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFTurnGroupBox.Parent" xml:space="preserve">
+    <value>ImageTabPage</value>
+  </data>
+  <data name="&gt;&gt;FFTurnGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="hflipCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1661,7 +3266,7 @@
     <value>NoControl</value>
   </data>
   <data name="hflipCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 21</value>
+    <value>22, 25</value>
   </data>
   <data name="hflipCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 18</value>
@@ -1679,7 +3284,7 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;hflipCheckBox.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
+    <value>flipGroupBox</value>
   </data>
   <data name="&gt;&gt;hflipCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1691,7 +3296,7 @@
     <value>NoControl</value>
   </data>
   <data name="vflipCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 45</value>
+    <value>231, 25</value>
   </data>
   <data name="vflipCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 18</value>
@@ -1709,629 +3314,34 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;vflipCheckBox.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
+    <value>flipGroupBox</value>
   </data>
   <data name="&gt;&gt;vflipCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 268</value>
+  <data name="flipGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 224</value>
   </data>
-  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 75</value>
+  <data name="flipGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 58</value>
   </data>
-  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="flipGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
-    <value>GroupBox2</value>
+  <data name="flipGroupBox.Text" xml:space="preserve">
+    <value>반전</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
+  <data name="&gt;&gt;flipGroupBox.Name" xml:space="preserve">
+    <value>flipGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flipGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
-    <value>ImgPPTabPage</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="FFmpegImageUnsharpCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="FFmpegImageUnsharpCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 25</value>
-  </data>
-  <data name="FFmpegImageUnsharpCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 18</value>
-  </data>
-  <data name="FFmpegImageUnsharpCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="FFmpegImageUnsharpCheckBox.Text" xml:space="preserve">
-    <value>사용</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Name" xml:space="preserve">
-    <value>FFmpegImageUnsharpCheckBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="FFmpegImageUnsharpLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="FFmpegImageUnsharpLabel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="FFmpegImageUnsharpLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 24</value>
-  </data>
-  <data name="FFmpegImageUnsharpLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 28</value>
-  </data>
-  <data name="FFmpegImageUnsharpLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="FFmpegImageUnsharpLabel.Text" xml:space="preserve">
-    <value>luma effect strength, chroma effect strength 두 설정이
-1 보다 크면 날카롭게, 1 보다 작으면 부드럽게</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Name" xml:space="preserve">
-    <value>FFmpegImageUnsharpLabel</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpLabel.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegImageUnsharpLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LumaEffectSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaEffectSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 131</value>
-  </data>
-  <data name="LumaEffectSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
-  </data>
-  <data name="LumaEffectSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSNumericUpDown.Name" xml:space="preserve">
-    <value>LumaEffectSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ChromaEffectSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaEffectSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 224</value>
-  </data>
-  <data name="ChromaEffectSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
-  </data>
-  <data name="ChromaEffectSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Name" xml:space="preserve">
-    <value>ChromaEffectSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ChromaEffectSTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaEffectSTrackBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaEffectSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 221</value>
-  </data>
-  <data name="ChromaEffectSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 25</value>
-  </data>
-  <data name="ChromaEffectSTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSTrackBar.Name" xml:space="preserve">
-    <value>ChromaEffectSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSTrackBar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ChromaEffectSButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaEffectSButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 221</value>
-  </data>
-  <data name="ChromaEffectSButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 25</value>
-  </data>
-  <data name="ChromaEffectSButton.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="ChromaEffectSButton.Text" xml:space="preserve">
-    <value>chroma effect strength</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSButton.Name" xml:space="preserve">
-    <value>ChromaEffectSButton</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaEffectSButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="ChromaMatrixVSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaMatrixVSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 193</value>
-  </data>
-  <data name="ChromaMatrixVSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
-  </data>
-  <data name="ChromaMatrixVSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Name" xml:space="preserve">
-    <value>ChromaMatrixVSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="ChromaMatrixVSTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaMatrixVSTrackBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaMatrixVSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 190</value>
-  </data>
-  <data name="ChromaMatrixVSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 25</value>
-  </data>
-  <data name="ChromaMatrixVSTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Name" xml:space="preserve">
-    <value>ChromaMatrixVSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSTrackBar.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="ChromaMatrixVSButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaMatrixVSButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 190</value>
-  </data>
-  <data name="ChromaMatrixVSButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 25</value>
-  </data>
-  <data name="ChromaMatrixVSButton.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="ChromaMatrixVSButton.Text" xml:space="preserve">
-    <value>chroma matrix vertical size</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSButton.Name" xml:space="preserve">
-    <value>ChromaMatrixVSButton</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixVSButton.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="ChromaMatrixHSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaMatrixHSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 162</value>
-  </data>
-  <data name="ChromaMatrixHSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
-  </data>
-  <data name="ChromaMatrixHSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Name" xml:space="preserve">
-    <value>ChromaMatrixHSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="ChromaMatrixHSTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaMatrixHSTrackBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaMatrixHSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 159</value>
-  </data>
-  <data name="ChromaMatrixHSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 25</value>
-  </data>
-  <data name="ChromaMatrixHSTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Name" xml:space="preserve">
-    <value>ChromaMatrixHSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSTrackBar.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="ChromaMatrixHSButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ChromaMatrixHSButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 159</value>
-  </data>
-  <data name="ChromaMatrixHSButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 25</value>
-  </data>
-  <data name="ChromaMatrixHSButton.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="ChromaMatrixHSButton.Text" xml:space="preserve">
-    <value>chroma matrix horizontal size</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSButton.Name" xml:space="preserve">
-    <value>ChromaMatrixHSButton</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChromaMatrixHSButton.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="LumaEffectSTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaEffectSTrackBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaEffectSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 128</value>
-  </data>
-  <data name="LumaEffectSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 25</value>
-  </data>
-  <data name="LumaEffectSTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSTrackBar.Name" xml:space="preserve">
-    <value>LumaEffectSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSTrackBar.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="LumaEffectSButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaEffectSButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
-  </data>
-  <data name="LumaEffectSButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 25</value>
-  </data>
-  <data name="LumaEffectSButton.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LumaEffectSButton.Text" xml:space="preserve">
-    <value>luma effect strength</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSButton.Name" xml:space="preserve">
-    <value>LumaEffectSButton</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaEffectSButton.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="LumaMatrixVSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaMatrixVSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 101</value>
-  </data>
-  <data name="LumaMatrixVSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
-  </data>
-  <data name="LumaMatrixVSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Name" xml:space="preserve">
-    <value>LumaMatrixVSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="LumaMatrixVSTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaMatrixVSTrackBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaMatrixVSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 98</value>
-  </data>
-  <data name="LumaMatrixVSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 25</value>
-  </data>
-  <data name="LumaMatrixVSTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSTrackBar.Name" xml:space="preserve">
-    <value>LumaMatrixVSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSTrackBar.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="LumaMatrixVSButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaMatrixVSButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 97</value>
-  </data>
-  <data name="LumaMatrixVSButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 25</value>
-  </data>
-  <data name="LumaMatrixVSButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="LumaMatrixVSButton.Text" xml:space="preserve">
-    <value>luma matrix vertical size</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSButton.Name" xml:space="preserve">
-    <value>LumaMatrixVSButton</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixVSButton.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="LumaMatrixHSNumericUpDown.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaMatrixHSNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 69</value>
-  </data>
-  <data name="LumaMatrixHSNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
-  </data>
-  <data name="LumaMatrixHSNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Name" xml:space="preserve">
-    <value>LumaMatrixHSNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSNumericUpDown.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="LumaMatrixHSTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaMatrixHSTrackBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaMatrixHSTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 66</value>
-  </data>
-  <data name="LumaMatrixHSTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 25</value>
-  </data>
-  <data name="LumaMatrixHSTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSTrackBar.Name" xml:space="preserve">
-    <value>LumaMatrixHSTrackBar</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSTrackBar.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSTrackBar.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="LumaMatrixHSButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LumaMatrixHSButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 66</value>
-  </data>
-  <data name="LumaMatrixHSButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 25</value>
-  </data>
-  <data name="LumaMatrixHSButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="LumaMatrixHSButton.Text" xml:space="preserve">
-    <value>luma matrix horizontal size</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSButton.Name" xml:space="preserve">
-    <value>LumaMatrixHSButton</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSButton.Parent" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LumaMatrixHSButton.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="ImagePPGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 3</value>
-  </data>
-  <data name="ImagePPGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 264</value>
-  </data>
-  <data name="ImagePPGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Name" xml:space="preserve">
-    <value>ImagePPGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImagePPGroupBox.Parent" xml:space="preserve">
-    <value>ImgPPTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImagePPGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ImgPPTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="ImgPPTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="ImgPPTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>485, 441</value>
-  </data>
-  <data name="ImgPPTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ImgPPTabPage.Text" xml:space="preserve">
-    <value>영상 설정</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.Name" xml:space="preserve">
-    <value>ImgPPTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.Parent" xml:space="preserve">
-    <value>ImageTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImgPPTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ImageTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ImageTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="ImageTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 468</value>
-  </data>
-  <data name="ImageTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Name" xml:space="preserve">
-    <value>ImageTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageTabControl.Parent" xml:space="preserve">
+  <data name="&gt;&gt;flipGroupBox.Parent" xml:space="preserve">
     <value>ImageTabPage</value>
   </data>
-  <data name="&gt;&gt;ImageTabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;flipGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="ImageTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -2358,7 +3368,7 @@
     <value>SettingTabControl</value>
   </data>
   <data name="&gt;&gt;ImageTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3809,7 +4819,7 @@
     <value>SettingTabControl</value>
   </data>
   <data name="&gt;&gt;AudioTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="SizeButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4409,7 +5419,7 @@
     <value>SettingTabControl</value>
   </data>
   <data name="&gt;&gt;ETCTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="SettingTabControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 69</value>
@@ -4439,7 +5449,7 @@
     <value>0, 0</value>
   </data>
   <data name="EncSetPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 612</value>
+    <value>527, 612</value>
   </data>
   <data name="EncSetPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4552,17 +5562,17 @@
   <data name="&gt;&gt;TargetContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>524, 612</value>
+    <value>527, 612</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

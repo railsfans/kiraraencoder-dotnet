@@ -1406,9 +1406,6 @@ skip:
                     delayaudioV = ta2v1
                     'delayaudioV2 = ta2v1
                 End If
-                If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MATROSKA" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "MATROSKA,WEBM" Then 'FFmpegSource에 의해 어드저스트 딜레이 -3 설정은 자동싱크 조절 된다. 그러므로 0.
-                    delayaudioV = 0
-                End If
 DelayAudioSkip:
                 AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio>", "DelayAudio(" & delayaudioV & "/1000.0)")
 
@@ -1849,6 +1846,7 @@ DelayAudioSkip2:
                     End If
                 End If
             End With
+
             If PlayHMSV = EndHMSV Then '파일의 시간과 종료시간이 같으면 종료부분은 0으로 처리.
                 AVTextBoxV = Replace(AVTextBoxV, "#<trim>", "Trim(" & Format(StartHMSV * fpsV * bobv, 0) & ",0)")
             Else

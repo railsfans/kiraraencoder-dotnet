@@ -45,6 +45,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Windows Media Video 7")
             VideoCodecComboBox.Items.Add("Windows Media Video 8")
             VideoCodecComboBox.Items.Add("Huffyuv Lossless Video Codec")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
@@ -56,6 +57,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("Windows Media Audio 1")
             AudioCodecComboBox.Items.Add("Windows Media Audio 2")
             AudioCodecComboBox.Items.Add("signed 16-bit little-endian PCM")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 Then
 
@@ -65,6 +67,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Xvid MPEG-4 Codec(Xvid Core)")
             VideoCodecComboBox.Items.Add("ITU-T H.263")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
@@ -72,6 +75,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("FAAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 Then
 
@@ -81,6 +85,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Xvid MPEG-4 Codec(Xvid Core)")
             VideoCodecComboBox.Items.Add("ITU-T H.263")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
@@ -88,6 +93,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("FAAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 Then
 
@@ -96,6 +102,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("MPEG-4 Video")
             VideoCodecComboBox.Items.Add("Xvid MPEG-4 Codec(Xvid Core)")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
             MP4OptsGroupBox.Visible = True 'MP4 옵션
 
             '오디오->압축코덱
@@ -107,6 +114,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("FAAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("Vorbis")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
 
@@ -117,6 +125,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("ITU-T H.261")
             VideoCodecComboBox.Items.Add("ITU-T H.263")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
@@ -128,6 +137,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
             AudioCodecComboBox.Items.Add("Free Lossless Audio Codec(FLAC)")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[MKV]", CompareMethod.Text) <> 0 Then
 
@@ -147,7 +157,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Windows Media Video 7")
             VideoCodecComboBox.Items.Add("Windows Media Video 8")
             VideoCodecComboBox.Items.Add("Huffyuv Lossless Video Codec")
-
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
@@ -163,6 +173,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("Windows Media Audio 2")
             AudioCodecComboBox.Items.Add("Free Lossless Audio Codec(FLAC)")
             AudioCodecComboBox.Items.Add("signed 16-bit little-endian PCM")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 Then
 
@@ -170,12 +181,14 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Clear()
             VideoCodecComboBox.Items.Add("Microsoft MPEG-4 v2")
             VideoCodecComboBox.Items.Add("Microsoft MPEG-4 v3")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("Windows Media Audio 1")
             AudioCodecComboBox.Items.Add("Windows Media Audio 2")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 Then
 
@@ -183,12 +196,46 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Clear()
             VideoCodecComboBox.Items.Add("Windows Media Video 7")
             VideoCodecComboBox.Items.Add("Windows Media Video 8")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
             MP4OptsGroupBox.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("Windows Media Audio 1")
             AudioCodecComboBox.Items.Add("Windows Media Audio 2")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
+
+        ElseIf InStr(OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 Then
+
+            '비디오->압축코덱
+            VideoCodecComboBox.Items.Clear()
+            VideoCodecComboBox.Items.Add("MPEG-1 Video")
+            VideoCodecComboBox.Items.Add("MPEG-2 Video")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
+            MP4OptsGroupBox.Visible = False 'MP4 옵션
+
+            '오디오->압축코덱
+            AudioCodecComboBox.Items.Clear()
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 2(MP2)")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
+
+        ElseIf InStr(OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 Then
+
+            '비디오->압축코덱
+            VideoCodecComboBox.Items.Clear()
+            VideoCodecComboBox.Items.Add("MPEG-1 Video")
+            VideoCodecComboBox.Items.Add("MPEG-2 Video")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
+            MP4OptsGroupBox.Visible = False 'MP4 옵션
+
+            '오디오->압축코덱
+            AudioCodecComboBox.Items.Clear()
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 2(MP2)")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
+            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 Then
 
@@ -201,20 +248,6 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
-
-        ElseIf InStr(OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 Then
-
-            '비디오->압축코덱
-            VideoCodecComboBox.Items.Clear()
-            VideoCodecComboBox.Items.Add("MPEG-1 Video")
-            VideoCodecComboBox.Items.Add("MPEG-2 Video")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
-
-            '오디오->압축코덱
-            AudioCodecComboBox.Items.Clear()
-            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 2(MP2)")
-            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
-            AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 Then
 
@@ -295,14 +328,14 @@ Public Class EncSetFrm
 
         '오디오만 인코딩
         If InStr(OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 Then
-            '일반
             VideoTabPage.Enabled = False
+            VFTabPage.Enabled = False
             ImageTabPage.Enabled = False
             AudioTabPage.Enabled = True
             ETCTabPage.Enabled = True
         Else
-            '일반
             VideoTabPage.Enabled = True
+            VFTabPage.Enabled = True
             ImageTabPage.Enabled = True
             AudioTabPage.Enabled = True
             ETCTabPage.Enabled = True
@@ -334,6 +367,10 @@ Public Class EncSetFrm
         ElseIf InStr(VideoCodecComboBox.SelectedItem, "Huffyuv Lossless Video Codec", CompareMethod.Text) <> 0 Then
             VideoModeComboBox.Items.Clear()
             VideoModeComboBox.Items.Add("[LOSSLESS]")
+            VideoModeComboBox.SelectedIndex = 0
+        ElseIf InStr(VideoCodecComboBox.SelectedItem, "Direct Stream Copy", CompareMethod.Text) <> 0 Then
+            VideoModeComboBox.Items.Clear()
+            VideoModeComboBox.Items.Add("[COPY]")
             VideoModeComboBox.SelectedIndex = 0
         Else
             VideoModeComboBox.Items.Clear()
@@ -437,6 +474,19 @@ Public Class EncSetFrm
             QualityLabel.Enabled = False
             QualityTrackBar.Enabled = False
             QualityNumericUpDown.Enabled = False
+        ElseIf InStr(VideoModeComboBox.SelectedItem, "[COPY]", CompareMethod.Text) <> 0 Then
+            BitrateLabel.Enabled = False
+            BitrateComboBox.Enabled = False
+            BitrateLabel2.Enabled = False
+            QuantizerLabel.Enabled = False
+            QuantizerTrackBar.Enabled = False
+            QuantizerNumericUpDown.Enabled = False
+            QuantizerCQPLabel.Enabled = False
+            QuantizerCQPTrackBar.Enabled = False
+            QuantizerCQPNumericUpDown.Enabled = False
+            QualityLabel.Enabled = False
+            QualityTrackBar.Enabled = False
+            QualityNumericUpDown.Enabled = False
         End If
 
     End Sub
@@ -513,6 +563,8 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmImageTabPage" Then ImageTabPage.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmAudioTabPage" Then AudioTabPage.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmETCTabPage" Then ETCTabPage.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmVFTabPage" Then VFTabPage.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmhqdn3dUseCheckBox" Then hqdn3dUseCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmVideoGroupBox" Then VideoGroupBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmVCodecLabel" Then VCodecLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmBitrateLabel" Then BitrateLabel.Text = XTR.ReadString
@@ -532,8 +584,8 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmImageSizeCheckBox" Then ImageSizeCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFmpegResizeFilterLabel" Then FFmpegResizeFilterLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmAspectLabel" Then AspectLabel.Text = XTR.ReadString
-                If XTR.Name = "EncSetFrmImgTabPage" Then ImgTabPage.Text = XTR.ReadString
-                If XTR.Name = "EncSetFrmImgPPTabPage" Then ImgPPTabPage.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmImageGroupBox" Then ImageGroupBox.Text = XTR.ReadString
+                'If XTR.Name = "EncSetFrmImgPPTabPage" Then ImgPPTabPage.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFmpegImageUnsharpLabel" Then FFmpegImageUnsharpLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFmpegImageUnsharpCheckBox" Then FFmpegImageUnsharpCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmAudioGroupBox" Then AudioGroupBox.Text = XTR.ReadString
@@ -589,6 +641,13 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmSizeEncGroupBox" Then SizeEncGroupBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmSizeEncLabel" Then SizeEncLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmSizeEncCheckBox" Then SizeEncCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmflipGroupBox" Then flipGroupBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmFFTurnGroupBox" Then FFTurnGroupBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmFFTurnCheckBox" Then FFTurnCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmFFTurnLeftRadioButton" Then FFTurnLeftRadioButton.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmFFTurnRightRadioButton" Then FFTurnRightRadioButton.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmFFVerticallyCheckBox" Then FFVerticallyCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmgradfunCheckBox" Then gradfunCheckBox.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -669,11 +728,7 @@ LANG_SKIP:
             AudioGroupBox.Height = 115
             NeroAACGroupBox.Top = 132
 
-            If ImageTabControl.TabCount = 2 Then
-                ImageTabControl.TabPages.Remove(ImgTabPage)
-                ImageTabControl.TabPages.Remove(ImgPPTabPage)
-                ImageTabControl.TabPages.Add(ImgPPTabPage)
-            End If
+            ImageGroupBox.Enabled = False
 
         Else
             FramerateLabel.Visible = True
@@ -689,12 +744,7 @@ LANG_SKIP:
             AudioGroupBox.Height = 212
             NeroAACGroupBox.Top = 228
 
-            If ImageTabControl.TabCount = 1 Then
-                ImageTabControl.TabPages.Remove(ImgTabPage)
-                ImageTabControl.TabPages.Remove(ImgPPTabPage)
-                ImageTabControl.TabPages.Add(ImgTabPage)
-                ImageTabControl.TabPages.Add(ImgPPTabPage)
-            End If
+            ImageGroupBox.Enabled = True
 
         End If
 
@@ -786,12 +836,26 @@ LANG_SKIP:
         FFmpegImageUnsharpCheckBox.Checked = False
         LumaMatrixHSNumericUpDown.Value = 5
         LumaMatrixVSNumericUpDown.Value = 5
-        LumaEffectSNumericUpDown.Value = 1.0
-        ChromaMatrixHSNumericUpDown.Value = 5
-        ChromaMatrixVSNumericUpDown.Value = 5
-        ChromaEffectSNumericUpDown.Value = 1.0
+        LumaEffectSNumericUpDown.Value = 0.0
+        ChromaMatrixHSNumericUpDown.Value = 0
+        ChromaMatrixVSNumericUpDown.Value = 0
+        ChromaEffectSNumericUpDown.Value = 0.0
         hflipCheckBox.Checked = False
         vflipCheckBox.Checked = False
+        FFTurnCheckBox.Checked = False
+        FFTurnLeftRadioButton.Checked = True
+        FFTurnRightRadioButton.Checked = False
+        FFVerticallyCheckBox.Checked = False
+        DeinterlaceCheckBox.Checked = False
+        DeinterlaceModeComboBox.Text = "0 - output 1 frame for each frame"
+        DeinterlaceParityComboBox.Text = "Automatic Detection"
+        hqdn3dUseCheckBox.Checked = False
+        hqdn3dAutomodeCheckBox.Checked = True
+        hqdn3d_auto_NumericUpDown.Value = 4.0
+        hqdn3d_manual_TextBox.Text = "4:3:6:4.5"
+        gradfunCheckBox.Checked = False
+        gradfun_strengthNumericUpDown.Value = 1.2
+        gradfun_radiusNumericUpDown.Value = 16
         '오디오
         AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame"
         AudioBitrateComboBox.Text = "128"
@@ -814,7 +878,6 @@ LANG_SKIP:
         ExtensionTextBox.Text = ""
         SizeLimitTextBox.Text = "0"
         SizeLimitCheckBox.Checked = False
-        DeinterlaceCheckBox.Checked = False
         FFmpegCommandTextBox.Text = ""
         SubtitleRecordingCheckBox.Checked = False
         SizeEncCheckBox.Checked = False
@@ -1240,7 +1303,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub LumaEffectSTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LumaEffectSTrackBar.Scroll
-        LumaEffectSNumericUpDown.Value = LumaEffectSTrackBar.Value / 10
+        LumaEffectSNumericUpDown.Value = LumaEffectSTrackBar.Value / 100
     End Sub
 
     Private Sub LumaEffectSNumericUpDown_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles LumaEffectSNumericUpDown.LostFocus
@@ -1248,7 +1311,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub LumaEffectSNumericUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LumaEffectSNumericUpDown.ValueChanged
-        LumaEffectSTrackBar.Value = LumaEffectSNumericUpDown.Value * 10
+        LumaEffectSTrackBar.Value = LumaEffectSNumericUpDown.Value * 100
     End Sub
 
     Private Sub ChromaMatrixHSTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChromaMatrixHSTrackBar.Scroll
@@ -1296,19 +1359,19 @@ LANG_SKIP:
     End Sub
 
     Private Sub LumaEffectSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LumaEffectSButton.Click
-        LumaEffectSNumericUpDown.Value = 1.0
+        LumaEffectSNumericUpDown.Value = 0.0
     End Sub
 
     Private Sub ChromaMatrixHSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChromaMatrixHSButton.Click
-        ChromaMatrixHSNumericUpDown.Value = 5
+        ChromaMatrixHSNumericUpDown.Value = 0
     End Sub
 
     Private Sub ChromaMatrixVSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChromaMatrixVSButton.Click
-        ChromaMatrixVSNumericUpDown.Value = 5
+        ChromaMatrixVSNumericUpDown.Value = 0
     End Sub
 
     Private Sub ChromaEffectSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChromaEffectSButton.Click
-        ChromaEffectSNumericUpDown.Value = 1.0
+        ChromaEffectSNumericUpDown.Value = 0.0
     End Sub
 
     Private Sub XML_LOAD(ByVal src As String)
@@ -1497,34 +1560,34 @@ RELOAD:
                     If XTRSTR <> "" Then FFmpegImageUnsharpCheckBox.Checked = XTRSTR Else FFmpegImageUnsharpCheckBox.Checked = False
                 End If
 
-                If XTR.Name = "EncSetFrm_LumaMatrixHSNumericUpDown" Then
+                If XTR.Name = "EncSetFrm_LumaMatrixHSNumericUpDown2" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then LumaMatrixHSNumericUpDown.Value = XTRSTR Else LumaMatrixHSNumericUpDown.Value = 5
                 End If
 
-                If XTR.Name = "EncSetFrm_LumaMatrixVSNumericUpDown" Then
+                If XTR.Name = "EncSetFrm_LumaMatrixVSNumericUpDown2" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then LumaMatrixVSNumericUpDown.Value = XTRSTR Else LumaMatrixVSNumericUpDown.Value = 5
                 End If
 
-                If XTR.Name = "EncSetFrm_LumaEffectSNumericUpDown" Then
+                If XTR.Name = "EncSetFrm_LumaEffectSNumericUpDown2" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then LumaEffectSNumericUpDown.Value = XTRSTR Else LumaEffectSNumericUpDown.Value = 1.0
+                    If XTRSTR <> "" Then LumaEffectSNumericUpDown.Value = XTRSTR Else LumaEffectSNumericUpDown.Value = 0.0
                 End If
 
-                If XTR.Name = "EncSetFrm_ChromaMatrixHSNumericUpDown" Then
+                If XTR.Name = "EncSetFrm_ChromaMatrixHSNumericUpDown2" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then ChromaMatrixHSNumericUpDown.Value = XTRSTR Else ChromaMatrixHSNumericUpDown.Value = 5
+                    If XTRSTR <> "" Then ChromaMatrixHSNumericUpDown.Value = XTRSTR Else ChromaMatrixHSNumericUpDown.Value = 0
                 End If
 
-                If XTR.Name = "EncSetFrm_ChromaMatrixVSNumericUpDown" Then
+                If XTR.Name = "EncSetFrm_ChromaMatrixVSNumericUpDown2" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then ChromaMatrixVSNumericUpDown.Value = XTRSTR Else ChromaMatrixVSNumericUpDown.Value = 5
+                    If XTRSTR <> "" Then ChromaMatrixVSNumericUpDown.Value = XTRSTR Else ChromaMatrixVSNumericUpDown.Value = 0
                 End If
 
-                If XTR.Name = "EncSetFrm_ChromaEffectSNumericUpDown" Then
+                If XTR.Name = "EncSetFrm_ChromaEffectSNumericUpDown2" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then ChromaEffectSNumericUpDown.Value = XTRSTR Else ChromaEffectSNumericUpDown.Value = 1.0
+                    If XTRSTR <> "" Then ChromaEffectSNumericUpDown.Value = XTRSTR Else ChromaEffectSNumericUpDown.Value = 0.0
                 End If
 
                 If XTR.Name = "EncSetFrm_hflipCheckBox" Then
@@ -1535,6 +1598,76 @@ RELOAD:
                 If XTR.Name = "EncSetFrm_vflipCheckBox" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then vflipCheckBox.Checked = XTRSTR Else vflipCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_FFTurnCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFTurnCheckBox.Checked = XTRSTR Else FFTurnCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_FFTurnLeftRadioButton" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFTurnLeftRadioButton.Checked = XTRSTR Else FFTurnLeftRadioButton.Checked = True
+                End If
+
+                If XTR.Name = "EncSetFrm_FFTurnRightRadioButton" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFTurnRightRadioButton.Checked = XTRSTR Else FFTurnRightRadioButton.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_FFVerticallyCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFVerticallyCheckBox.Checked = XTRSTR Else FFVerticallyCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_DeinterlaceCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then DeinterlaceCheckBox.Checked = XTRSTR Else DeinterlaceCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_DeinterlaceModeComboBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then DeinterlaceModeComboBox.Text = XTRSTR Else DeinterlaceModeComboBox.Text = "0 - output 1 frame for each frame"
+                End If
+
+                If XTR.Name = "EncSetFrm_DeinterlaceParityComboBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then DeinterlaceParityComboBox.Text = XTRSTR Else DeinterlaceParityComboBox.Text = "Automatic Detection"
+                End If
+
+                If XTR.Name = "EncSetFrm_hqdn3dUseCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then hqdn3dUseCheckBox.Checked = XTRSTR Else hqdn3dUseCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_hqdn3dAutomodeCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then hqdn3dAutomodeCheckBox.Checked = XTRSTR Else hqdn3dAutomodeCheckBox.Checked = True
+                End If
+
+                If XTR.Name = "EncSetFrm_hqdn3d_auto_NumericUpDown" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then hqdn3d_auto_NumericUpDown.Value = XTRSTR Else hqdn3d_auto_NumericUpDown.Value = 4.0
+                End If
+
+                If XTR.Name = "EncSetFrm_hqdn3d_manual_TextBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then hqdn3d_manual_TextBox.Text = XTRSTR Else hqdn3d_manual_TextBox.Text = "4:3:6:4.5"
+                End If
+
+                If XTR.Name = "EncSetFrm_gradfunCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then gradfunCheckBox.Checked = XTRSTR Else gradfunCheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_gradfun_strengthNumericUpDown" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then gradfun_strengthNumericUpDown.Value = XTRSTR Else gradfun_strengthNumericUpDown.Value = 1.2
+                End If
+
+                If XTR.Name = "EncSetFrm_gradfun_radiusNumericUpDown" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then gradfun_radiusNumericUpDown.Value = XTRSTR Else gradfun_radiusNumericUpDown.Value = 16
                 End If
 
                 '오디오
@@ -1650,11 +1783,6 @@ RELOAD:
                 If XTR.Name = "EncSetFrm_SizeLimitCheckBox" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then SizeLimitCheckBox.Checked = XTRSTR Else SizeLimitCheckBox.Checked = False
-                End If
-
-                If XTR.Name = "EncSetFrm_DeinterlaceCheckBox" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then DeinterlaceCheckBox.Checked = XTRSTR Else DeinterlaceCheckBox.Checked = False
                 End If
 
                 If XTR.Name = "EncSetFrm_FFmpegCommandTextBox" Then
@@ -2200,6 +2328,8 @@ RELOAD:
             VideoCodecComboBoxV = " -vcodec rv10"
         ElseIf VideoCodecComboBox.Text = "RealVideo G2" Then
             VideoCodecComboBoxV = " -vcodec rv20"
+        ElseIf VideoCodecComboBox.Text = "Direct Stream Copy" Then
+            VideoCodecComboBoxV = " -vcodec copy"
         End If
         'Xvid 
         If VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" Then
@@ -2252,6 +2382,8 @@ RELOAD:
             End If
 
         ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[LOSSLESS]", -1) Then
+            VideoModeComboBoxV = ""
+        ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[COPY]", -1) Then
             VideoModeComboBoxV = ""
         End If
 
@@ -2315,6 +2447,8 @@ RELOAD:
             AudioCodecComboBoxV = " -acodec flac"
         ElseIf AudioCodecComboBox.Text = "signed 16-bit little-endian PCM" OrElse AudioCodecComboBox.Text = "[WAV] signed 16-bit little-endian PCM" Then
             AudioCodecComboBoxV = " -acodec pcm_s16le"
+        ElseIf AudioCodecComboBox.Text = "Direct Stream Copy" Then
+            AudioCodecComboBoxV = " -acodec copy"
         End If
 
         '***********************************
@@ -2426,10 +2560,12 @@ RELOAD:
             FormatV = " -f asf"
         ElseIf InStr(OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 Then
             FormatV = " -f asf"
-        ElseIf InStr(OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 Then
-            FormatV = " -f rm"
         ElseIf InStr(OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 Then
             FormatV = " -f mpeg"
+        ElseIf InStr(OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 Then
+            FormatV = " -f mpegts"
+        ElseIf InStr(OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 Then
+            FormatV = " -f rm"
         ElseIf InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 Then
             FormatV = " -f flv"
         ElseIf InStr(OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
@@ -2483,14 +2619,6 @@ RELOAD:
         End If
 
         '***********************************
-        ' 디인터레이스
-        '***********************************
-        Dim DeinterlaceCheckBoxV As String = ""
-        If DeinterlaceCheckBox.Checked = True Then
-            DeinterlaceCheckBoxV = " -deinterlace"
-        End If
-
-        '***********************************
         ' 비디오필터 unsharp
         '***********************************
         MainFrm.VF_TextBox = ""
@@ -2498,6 +2626,44 @@ RELOAD:
             MainFrm.VF_TextBox = ", unsharp=" & LumaMatrixHSNumericUpDown.Value & ":" & LumaMatrixVSNumericUpDown.Value & ":" & _
                                                LumaEffectSNumericUpDown.Value & ":" & ChromaMatrixHSNumericUpDown.Value & ":" & _
                                                ChromaMatrixVSNumericUpDown.Value & ":" & ChromaEffectSNumericUpDown.Value
+        End If
+
+        '***********************************
+        ' 비디오필터 yadif
+        '***********************************
+        If DeinterlaceCheckBox.Checked = True Then
+
+            ' DeinterlaceModeComboBox
+            '0 - output 1 frame for each frame
+            '1 - output 1 frame for each field
+            '2 - like 0 but skips spatial interlacing check
+            '3 - like 1 but skips spatial interlacing check
+            Dim DeinterlaceModeComboBoxV As String = "0"
+            If DeinterlaceModeComboBox.Text = "0 - output 1 frame for each frame" Then
+                DeinterlaceModeComboBoxV = "0"
+            ElseIf DeinterlaceModeComboBox.Text = "1 - output 1 frame for each field" Then
+                DeinterlaceModeComboBoxV = "1"
+            ElseIf DeinterlaceModeComboBox.Text = "2 - like 0 but skips spatial interlacing check" Then
+                DeinterlaceModeComboBoxV = "2"
+            ElseIf DeinterlaceModeComboBox.Text = "3 - like 1 but skips spatial interlacing check" Then
+                DeinterlaceModeComboBoxV = "3"
+            End If
+
+            ' DeinterlaceParityComboBox
+            '-1 - Automatic Detection
+            ' 0 - Bottom Field First
+            ' 1 - Top Field First
+            Dim DeinterlaceParityComboBoxV As String = "-1"
+            If DeinterlaceParityComboBox.Text = "Automatic Detection" Then
+                DeinterlaceParityComboBoxV = "-1"
+            ElseIf DeinterlaceParityComboBox.Text = "Bottom Field First" Then
+                DeinterlaceParityComboBoxV = "0"
+            ElseIf DeinterlaceParityComboBox.Text = "Top Field First" Then
+                DeinterlaceParityComboBoxV = "1"
+            End If
+
+            MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", yadif=" & DeinterlaceModeComboBoxV & ":" & DeinterlaceParityComboBoxV
+
         End If
 
         '***********************************
@@ -2512,6 +2678,50 @@ RELOAD:
         '***********************************
         If vflipCheckBox.Checked = True Then
             MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", vflip"
+        End If
+
+        '***********************************
+        ' 비디오필터 transpose
+        '***********************************
+        If FFTurnCheckBox.Checked = True Then
+            If FFTurnLeftRadioButton.Checked = True AndAlso FFVerticallyCheckBox.Checked = True Then
+                MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", transpose=0"
+            ElseIf FFTurnLeftRadioButton.Checked = True AndAlso FFVerticallyCheckBox.Checked = False Then
+                MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", transpose=2"
+            ElseIf FFTurnRightRadioButton.Checked = True AndAlso FFVerticallyCheckBox.Checked = True Then
+                MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", transpose=3"
+            ElseIf FFTurnRightRadioButton.Checked = True AndAlso FFVerticallyCheckBox.Checked = False Then
+                MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", transpose=1"
+            End If
+        End If
+
+        '***********************************
+        ' 비디오필터 hqdn3d
+        '***********************************
+        If hqdn3dUseCheckBox.Checked = True Then
+
+            '모드
+            If hqdn3dAutomodeCheckBox.Checked = True Then '자동
+
+                'hqdn기본값 계산
+                Dim hqdn2, hqdn3, hqdn4 As String
+                hqdn2 = 3.0 * hqdn3d_auto_NumericUpDown.Value / 4.0
+                hqdn3 = 6.0 * hqdn3d_auto_NumericUpDown.Value / 4.0
+                hqdn4 = Val(hqdn3) * Val(hqdn2) / hqdn3d_auto_NumericUpDown.Value
+
+                MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", hqdn3d=" & hqdn3d_auto_NumericUpDown.Value & ":" & hqdn2 & ":" & hqdn3 & ":" & hqdn4
+
+            Else '수동
+                MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", hqdn3d=" & hqdn3d_manual_TextBox.Text
+            End If
+
+        End If
+
+        '***********************************
+        ' 비디오필터 gradfun
+        '***********************************
+        If gradfunCheckBox.Checked = True Then
+            MainFrm.VF_TextBox = MainFrm.VF_TextBox & ", gradfun=" & gradfun_strengthNumericUpDown.Value & ":" & gradfun_radiusNumericUpDown.Value
         End If
 
         '***********************************
@@ -2600,12 +2810,12 @@ RELOAD:
             MainFrm.FFmpegCommandStr = FormatV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                             PSPMP4CheckBoxV & SwscaleV & _
                                             AudioCodecComboBoxV & SamplerateComboBoxV & FFmpegChComboBoxV & AudioBitrateComboBoxV & AudioVolNumericUpDownV & _
-                                            SizeLimitTextBoxV & DeinterlaceCheckBoxV & FFmpegCommandTextBoxV & _
+                                            SizeLimitTextBoxV & FFmpegCommandTextBoxV & _
                                             x264optsV & MPEG4optsV & VP8optsV
 
             MainFrm.FFmpegCommand2PassStr = FormatV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                                  SwscaleV & _
-                                                 DeinterlaceCheckBoxV & FFmpegCommandTextBoxV & _
+                                                 FFmpegCommandTextBoxV & _
                                                  x264opts_2passV & MPEG4optsV & VP8optsV
 
         End If
@@ -3052,5 +3262,102 @@ RELOAD:
 
     Private Sub LAMEMP3QNumericUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LAMEMP3QNumericUpDown.ValueChanged
         LAMEMP3QTrackBar.Value = LAMEMP3QNumericUpDown.Value * 100
+    End Sub
+
+    Private Sub FFTurnCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FFTurnCheckBox.CheckedChanged
+        If FFTurnCheckBox.Checked = True Then
+            FFTurnLeftRadioButton.Enabled = True
+            FFTurnRightRadioButton.Enabled = True
+            FFVerticallyCheckBox.Enabled = True
+        Else
+            FFTurnLeftRadioButton.Enabled = False
+            FFTurnRightRadioButton.Enabled = False
+            FFVerticallyCheckBox.Enabled = False
+        End If
+    End Sub
+
+    Private Sub DeinterlaceCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeinterlaceCheckBox.CheckedChanged
+        If DeinterlaceCheckBox.Checked = True Then
+            DeinterlaceModeComboBox.Enabled = True
+            ParityLabel.Enabled = True
+            DeinterlaceParityComboBox.Enabled = True
+        Else
+            DeinterlaceModeComboBox.Enabled = False
+            ParityLabel.Enabled = False
+            DeinterlaceParityComboBox.Enabled = False
+        End If
+    End Sub
+
+    Private Sub GroupBox2_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox2.Enter
+
+    End Sub
+
+    Private Sub hqdn3dNumericUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles hqdn3d_auto_NumericUpDown.ValueChanged
+        'hqdn기본값 계산
+        hqdn3d_2TextBox.Text = 3.0 * hqdn3d_auto_NumericUpDown.Value / 4.0
+        hqdn3d_3TextBox.Text = 6.0 * hqdn3d_auto_NumericUpDown.Value / 4.0
+        hqdn3d_4TextBox.Text = Val(hqdn3d_3TextBox.Text) * Val(hqdn3d_2TextBox.Text) / hqdn3d_auto_NumericUpDown.Value
+    End Sub
+
+    Private Sub hqdn3d_autoCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles hqdn3dAutomodeCheckBox.CheckedChanged
+        If hqdn3dAutomodeCheckBox.Checked = True Then
+            hqdn3dAutGroupBox.Enabled = True
+            hqdn3dManGroupBox.Enabled = False
+        Else
+            hqdn3dAutGroupBox.Enabled = False
+            hqdn3dManGroupBox.Enabled = True
+        End If
+    End Sub
+
+    Private Sub hqdn3dUseCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles hqdn3dUseCheckBox.CheckedChanged
+        If hqdn3dUseCheckBox.Checked = True Then
+            hqdn3dAutomodeCheckBox.Enabled = True
+            hqdn3dPanel.Enabled = True
+        Else
+            hqdn3dAutomodeCheckBox.Enabled = False
+            hqdn3dPanel.Enabled = False
+        End If
+    End Sub
+
+    Private Sub gradfun_strengthButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gradfun_strengthButton.Click
+        gradfun_strengthNumericUpDown.Value = 1.2
+    End Sub
+
+    Private Sub gradfun_radiusButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gradfun_radiusButton.Click
+        gradfun_radiusNumericUpDown.Value = 16
+    End Sub
+
+    Private Sub gradfun_strengthTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gradfun_strengthTrackBar.Scroll
+        gradfun_strengthNumericUpDown.Value = gradfun_strengthTrackBar.Value / 100
+    End Sub
+
+    Private Sub gradfun_radiusTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gradfun_radiusTrackBar.Scroll
+        gradfun_radiusNumericUpDown.Value = gradfun_radiusTrackBar.Value
+    End Sub
+
+    Private Sub gradfun_strengthNumericUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gradfun_strengthNumericUpDown.ValueChanged
+        gradfun_strengthTrackBar.Value = gradfun_strengthNumericUpDown.Value * 100
+    End Sub
+
+    Private Sub gradfun_radiusNumericUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gradfun_radiusNumericUpDown.ValueChanged
+        gradfun_radiusTrackBar.Value = gradfun_radiusNumericUpDown.Value
+    End Sub
+
+    Private Sub gradfunCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gradfunCheckBox.CheckedChanged
+        If gradfunCheckBox.Checked = True Then
+            gradfun_strengthButton.Enabled = True
+            gradfun_strengthTrackBar.Enabled = True
+            gradfun_strengthNumericUpDown.Enabled = True
+            gradfun_radiusButton.Enabled = True
+            gradfun_radiusTrackBar.Enabled = True
+            gradfun_radiusNumericUpDown.Enabled = True
+        Else
+            gradfun_strengthButton.Enabled = False
+            gradfun_strengthTrackBar.Enabled = False
+            gradfun_strengthNumericUpDown.Enabled = False
+            gradfun_radiusButton.Enabled = False
+            gradfun_radiusTrackBar.Enabled = False
+            gradfun_radiusNumericUpDown.Enabled = False
+        End If
     End Sub
 End Class

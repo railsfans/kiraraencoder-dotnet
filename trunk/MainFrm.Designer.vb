@@ -123,6 +123,7 @@ Partial Class MainFrm
         Me.SubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.EtcToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.RightPanel = New System.Windows.Forms.Panel
+        Me.LeftPanel = New System.Windows.Forms.Panel
         Me.BottomPanel = New System.Windows.Forms.Panel
         Me.BLPanel = New System.Windows.Forms.Panel
         Me.BRPanel = New System.Windows.Forms.Panel
@@ -141,7 +142,8 @@ Partial Class MainFrm
         Me.TopPanel2 = New System.Windows.Forms.Panel
         Me.TLPanel = New System.Windows.Forms.Panel
         Me.FormMovePanel = New System.Windows.Forms.Panel
-        Me.LeftPanel = New System.Windows.Forms.Panel
+        Me.VerWebBrowser = New System.Windows.Forms.WebBrowser
+        Me.NewVerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ListviewContextMenuStrip.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -561,7 +563,7 @@ Partial Class MainFrm
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ErrToolStripMenuItem2, Me.AboutToolStripMenuItem, Me.TrayToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ErrToolStripMenuItem2, Me.AboutToolStripMenuItem, Me.TrayToolStripMenuItem, Me.NewVerToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
@@ -604,6 +606,7 @@ Partial Class MainFrm
         'MainPanel
         '
         Me.MainPanel.BackColor = System.Drawing.Color.Transparent
+        Me.MainPanel.Controls.Add(Me.VerWebBrowser)
         Me.MainPanel.Controls.Add(Me.Panel6)
         Me.MainPanel.Controls.Add(Me.CleanUpListBox)
         Me.MainPanel.Controls.Add(Me.OutputBox_GI)
@@ -632,7 +635,7 @@ Partial Class MainFrm
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.ScrollBarsEnabled = False
-        Me.WebBrowser1.Url = New System.Uri("http://www.kiraraencoder.pe.kr/kemainfrm", System.UriKind.Absolute)
+        Me.WebBrowser1.Url = New System.Uri("http://www.kiraraencoder.pe.kr/kemainfrm2", System.UriKind.Absolute)
         '
         'Panel10
         '
@@ -765,6 +768,13 @@ Partial Class MainFrm
         Me.RightPanel.Cursor = System.Windows.Forms.Cursors.SizeWE
         resources.ApplyResources(Me.RightPanel, "RightPanel")
         Me.RightPanel.Name = "RightPanel"
+        '
+        'LeftPanel
+        '
+        Me.LeftPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.L
+        Me.LeftPanel.Cursor = System.Windows.Forms.Cursors.SizeWE
+        resources.ApplyResources(Me.LeftPanel, "LeftPanel")
+        Me.LeftPanel.Name = "LeftPanel"
         '
         'BottomPanel
         '
@@ -905,12 +915,17 @@ Partial Class MainFrm
         Me.FormMovePanel.BackColor = System.Drawing.Color.Transparent
         Me.FormMovePanel.Name = "FormMovePanel"
         '
-        'LeftPanel
+        'VerWebBrowser
         '
-        Me.LeftPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.L
-        Me.LeftPanel.Cursor = System.Windows.Forms.Cursors.SizeWE
-        resources.ApplyResources(Me.LeftPanel, "LeftPanel")
-        Me.LeftPanel.Name = "LeftPanel"
+        resources.ApplyResources(Me.VerWebBrowser, "VerWebBrowser")
+        Me.VerWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.VerWebBrowser.Name = "VerWebBrowser"
+        Me.VerWebBrowser.Url = New System.Uri("http://www.kiraraencoder.pe.kr/ver.htm", System.UriKind.Absolute)
+        '
+        'NewVerToolStripMenuItem
+        '
+        Me.NewVerToolStripMenuItem.Name = "NewVerToolStripMenuItem"
+        resources.ApplyResources(Me.NewVerToolStripMenuItem, "NewVerToolStripMenuItem")
         '
         'MainFrm
         '
@@ -1077,5 +1092,7 @@ Partial Class MainFrm
     Friend WithEvents Panel12 As System.Windows.Forms.Panel
     Friend WithEvents FormMovePanel As System.Windows.Forms.Panel
     Friend WithEvents LeftPanel As System.Windows.Forms.Panel
+    Friend WithEvents VerWebBrowser As System.Windows.Forms.WebBrowser
+    Friend WithEvents NewVerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

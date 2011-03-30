@@ -65,29 +65,14 @@ Partial Class EncSetFrm
         Me.VideoModeComboBox = New System.Windows.Forms.ComboBox
         Me.VideoCodecComboBox = New System.Windows.Forms.ComboBox
         Me.VCodecLabel = New System.Windows.Forms.Label
-        Me.ImageTabPage = New System.Windows.Forms.TabPage
-        Me.ImageTabControl = New System.Windows.Forms.TabControl
-        Me.ImgTabPage = New System.Windows.Forms.TabPage
-        Me.ImageGroupBox = New System.Windows.Forms.GroupBox
+        Me.VFTabPage = New System.Windows.Forms.TabPage
+        Me.TabControl1 = New System.Windows.Forms.TabControl
+        Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox
+        Me.ParityLabel = New System.Windows.Forms.Label
+        Me.DeinterlaceParityComboBox = New System.Windows.Forms.ComboBox
+        Me.DeinterlaceModeComboBox = New System.Windows.Forms.ComboBox
         Me.DeinterlaceCheckBox = New System.Windows.Forms.CheckBox
-        Me.AspectSLabel = New System.Windows.Forms.Label
-        Me.AspectHTextBox = New System.Windows.Forms.TextBox
-        Me.AspectWTextBox = New System.Windows.Forms.TextBox
-        Me.AspectComboBox2 = New System.Windows.Forms.ComboBox
-        Me.AspectComboBox = New System.Windows.Forms.ComboBox
-        Me.AspectLabel = New System.Windows.Forms.Label
-        Me.FFmpegResizeFilterComboBox = New System.Windows.Forms.ComboBox
-        Me.FFmpegResizeFilterLabel = New System.Windows.Forms.Label
-        Me.ImageSizeCheckBox = New System.Windows.Forms.CheckBox
-        Me.ImageSizeSLabel = New System.Windows.Forms.Label
-        Me.ImageSizeHeightTextBox = New System.Windows.Forms.TextBox
-        Me.ImageSizeWidthTextBox = New System.Windows.Forms.TextBox
-        Me.ImageSizeComboBox = New System.Windows.Forms.ComboBox
-        Me.ImageSizeLabel = New System.Windows.Forms.Label
-        Me.ImgPPTabPage = New System.Windows.Forms.TabPage
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.hflipCheckBox = New System.Windows.Forms.CheckBox
-        Me.vflipCheckBox = New System.Windows.Forms.CheckBox
         Me.ImagePPGroupBox = New System.Windows.Forms.GroupBox
         Me.FFmpegImageUnsharpCheckBox = New System.Windows.Forms.CheckBox
         Me.FFmpegImageUnsharpLabel = New System.Windows.Forms.Label
@@ -109,6 +94,57 @@ Partial Class EncSetFrm
         Me.LumaMatrixHSNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.LumaMatrixHSTrackBar = New System.Windows.Forms.TrackBar
         Me.LumaMatrixHSButton = New System.Windows.Forms.Button
+        Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.hqdn3dPanel = New System.Windows.Forms.Panel
+        Me.hqdn3dAutGroupBox = New System.Windows.Forms.GroupBox
+        Me.hqdn3d_2TextBox = New System.Windows.Forms.TextBox
+        Me.Label9 = New System.Windows.Forms.Label
+        Me.Label11 = New System.Windows.Forms.Label
+        Me.hqdn3d_3TextBox = New System.Windows.Forms.TextBox
+        Me.hqdn3d_auto_NumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.Label8 = New System.Windows.Forms.Label
+        Me.hqdn3d_4TextBox = New System.Windows.Forms.TextBox
+        Me.Label12 = New System.Windows.Forms.Label
+        Me.hqdn3dManGroupBox = New System.Windows.Forms.GroupBox
+        Me.Label13 = New System.Windows.Forms.Label
+        Me.Label14 = New System.Windows.Forms.Label
+        Me.hqdn3d_manual_TextBox = New System.Windows.Forms.TextBox
+        Me.hqdn3dAutomodeCheckBox = New System.Windows.Forms.CheckBox
+        Me.hqdn3dUseCheckBox = New System.Windows.Forms.CheckBox
+        Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox
+        Me.gradfun_radiusNumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.gradfun_radiusTrackBar = New System.Windows.Forms.TrackBar
+        Me.gradfun_radiusButton = New System.Windows.Forms.Button
+        Me.gradfun_strengthNumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.gradfun_strengthTrackBar = New System.Windows.Forms.TrackBar
+        Me.gradfun_strengthButton = New System.Windows.Forms.Button
+        Me.gradfunCheckBox = New System.Windows.Forms.CheckBox
+        Me.ImageTabPage = New System.Windows.Forms.TabPage
+        Me.ImageGroupBox = New System.Windows.Forms.GroupBox
+        Me.AspectSLabel = New System.Windows.Forms.Label
+        Me.AspectHTextBox = New System.Windows.Forms.TextBox
+        Me.AspectWTextBox = New System.Windows.Forms.TextBox
+        Me.AspectComboBox2 = New System.Windows.Forms.ComboBox
+        Me.AspectComboBox = New System.Windows.Forms.ComboBox
+        Me.AspectLabel = New System.Windows.Forms.Label
+        Me.FFmpegResizeFilterComboBox = New System.Windows.Forms.ComboBox
+        Me.FFmpegResizeFilterLabel = New System.Windows.Forms.Label
+        Me.ImageSizeCheckBox = New System.Windows.Forms.CheckBox
+        Me.ImageSizeSLabel = New System.Windows.Forms.Label
+        Me.ImageSizeHeightTextBox = New System.Windows.Forms.TextBox
+        Me.ImageSizeWidthTextBox = New System.Windows.Forms.TextBox
+        Me.ImageSizeComboBox = New System.Windows.Forms.ComboBox
+        Me.ImageSizeLabel = New System.Windows.Forms.Label
+        Me.FFTurnGroupBox = New System.Windows.Forms.GroupBox
+        Me.FFVerticallyCheckBox = New System.Windows.Forms.CheckBox
+        Me.FFTurnCheckBox = New System.Windows.Forms.CheckBox
+        Me.FFTurnRightRadioButton = New System.Windows.Forms.RadioButton
+        Me.FFTurnLeftRadioButton = New System.Windows.Forms.RadioButton
+        Me.flipGroupBox = New System.Windows.Forms.GroupBox
+        Me.hflipCheckBox = New System.Windows.Forms.CheckBox
+        Me.vflipCheckBox = New System.Windows.Forms.CheckBox
         Me.AudioTabPage = New System.Windows.Forms.TabPage
         Me.AudioGroupBox = New System.Windows.Forms.GroupBox
         Me.LAMEMP3QPanel = New System.Windows.Forms.Panel
@@ -216,12 +252,10 @@ Partial Class EncSetFrm
         CType(Me.QualityTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuantizerNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuantizerTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ImageTabPage.SuspendLayout()
-        Me.ImageTabControl.SuspendLayout()
-        Me.ImgTabPage.SuspendLayout()
-        Me.ImageGroupBox.SuspendLayout()
-        Me.ImgPPTabPage.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.VFTabPage.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.ImagePPGroupBox.SuspendLayout()
         CType(Me.LumaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChromaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -235,6 +269,22 @@ Partial Class EncSetFrm
         CType(Me.LumaMatrixVSTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LumaMatrixHSNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LumaMatrixHSTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.hqdn3dPanel.SuspendLayout()
+        Me.hqdn3dAutGroupBox.SuspendLayout()
+        CType(Me.hqdn3d_auto_NumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.hqdn3dManGroupBox.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.gradfun_radiusNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gradfun_radiusTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gradfun_strengthNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gradfun_strengthTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ImageTabPage.SuspendLayout()
+        Me.ImageGroupBox.SuspendLayout()
+        Me.FFTurnGroupBox.SuspendLayout()
+        Me.flipGroupBox.SuspendLayout()
         Me.AudioTabPage.SuspendLayout()
         Me.AudioGroupBox.SuspendLayout()
         Me.LAMEMP3QPanel.SuspendLayout()
@@ -285,7 +335,7 @@ Partial Class EncSetFrm
         '
         Me.OutFComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.OutFComboBox.FormattingEnabled = True
-        Me.OutFComboBox.Items.AddRange(New Object() {resources.GetString("OutFComboBox.Items"), resources.GetString("OutFComboBox.Items1"), resources.GetString("OutFComboBox.Items2"), resources.GetString("OutFComboBox.Items3"), resources.GetString("OutFComboBox.Items4"), resources.GetString("OutFComboBox.Items5"), resources.GetString("OutFComboBox.Items6"), resources.GetString("OutFComboBox.Items7"), resources.GetString("OutFComboBox.Items8"), resources.GetString("OutFComboBox.Items9"), resources.GetString("OutFComboBox.Items10"), resources.GetString("OutFComboBox.Items11"), resources.GetString("OutFComboBox.Items12"), resources.GetString("OutFComboBox.Items13")})
+        Me.OutFComboBox.Items.AddRange(New Object() {resources.GetString("OutFComboBox.Items"), resources.GetString("OutFComboBox.Items1"), resources.GetString("OutFComboBox.Items2"), resources.GetString("OutFComboBox.Items3"), resources.GetString("OutFComboBox.Items4"), resources.GetString("OutFComboBox.Items5"), resources.GetString("OutFComboBox.Items6"), resources.GetString("OutFComboBox.Items7"), resources.GetString("OutFComboBox.Items8"), resources.GetString("OutFComboBox.Items9"), resources.GetString("OutFComboBox.Items10"), resources.GetString("OutFComboBox.Items11"), resources.GetString("OutFComboBox.Items12"), resources.GetString("OutFComboBox.Items13"), resources.GetString("OutFComboBox.Items14")})
         resources.ApplyResources(Me.OutFComboBox, "OutFComboBox")
         Me.OutFComboBox.Name = "OutFComboBox"
         '
@@ -316,6 +366,7 @@ Partial Class EncSetFrm
         'SettingTabControl
         '
         Me.SettingTabControl.Controls.Add(Me.VideoTabPage)
+        Me.SettingTabControl.Controls.Add(Me.VFTabPage)
         Me.SettingTabControl.Controls.Add(Me.ImageTabPage)
         Me.SettingTabControl.Controls.Add(Me.AudioTabPage)
         Me.SettingTabControl.Controls.Add(Me.ETCTabPage)
@@ -565,32 +616,454 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.VCodecLabel, "VCodecLabel")
         Me.VCodecLabel.Name = "VCodecLabel"
         '
+        'VFTabPage
+        '
+        Me.VFTabPage.Controls.Add(Me.TabControl1)
+        resources.ApplyResources(Me.VFTabPage, "VFTabPage")
+        Me.VFTabPage.Name = "VFTabPage"
+        Me.VFTabPage.UseVisualStyleBackColor = True
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.GroupBox3)
+        Me.TabPage1.Controls.Add(Me.ImagePPGroupBox)
+        resources.ApplyResources(Me.TabPage1, "TabPage1")
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.ParityLabel)
+        Me.GroupBox3.Controls.Add(Me.DeinterlaceParityComboBox)
+        Me.GroupBox3.Controls.Add(Me.DeinterlaceModeComboBox)
+        Me.GroupBox3.Controls.Add(Me.DeinterlaceCheckBox)
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.TabStop = False
+        '
+        'ParityLabel
+        '
+        resources.ApplyResources(Me.ParityLabel, "ParityLabel")
+        Me.ParityLabel.Name = "ParityLabel"
+        '
+        'DeinterlaceParityComboBox
+        '
+        Me.DeinterlaceParityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        resources.ApplyResources(Me.DeinterlaceParityComboBox, "DeinterlaceParityComboBox")
+        Me.DeinterlaceParityComboBox.FormattingEnabled = True
+        Me.DeinterlaceParityComboBox.Items.AddRange(New Object() {resources.GetString("DeinterlaceParityComboBox.Items"), resources.GetString("DeinterlaceParityComboBox.Items1"), resources.GetString("DeinterlaceParityComboBox.Items2")})
+        Me.DeinterlaceParityComboBox.Name = "DeinterlaceParityComboBox"
+        '
+        'DeinterlaceModeComboBox
+        '
+        Me.DeinterlaceModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        resources.ApplyResources(Me.DeinterlaceModeComboBox, "DeinterlaceModeComboBox")
+        Me.DeinterlaceModeComboBox.FormattingEnabled = True
+        Me.DeinterlaceModeComboBox.Items.AddRange(New Object() {resources.GetString("DeinterlaceModeComboBox.Items"), resources.GetString("DeinterlaceModeComboBox.Items1"), resources.GetString("DeinterlaceModeComboBox.Items2"), resources.GetString("DeinterlaceModeComboBox.Items3")})
+        Me.DeinterlaceModeComboBox.Name = "DeinterlaceModeComboBox"
+        '
+        'DeinterlaceCheckBox
+        '
+        resources.ApplyResources(Me.DeinterlaceCheckBox, "DeinterlaceCheckBox")
+        Me.DeinterlaceCheckBox.Name = "DeinterlaceCheckBox"
+        Me.DeinterlaceCheckBox.UseVisualStyleBackColor = True
+        '
+        'ImagePPGroupBox
+        '
+        Me.ImagePPGroupBox.Controls.Add(Me.FFmpegImageUnsharpCheckBox)
+        Me.ImagePPGroupBox.Controls.Add(Me.FFmpegImageUnsharpLabel)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaEffectSNumericUpDown)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaEffectSNumericUpDown)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaEffectSTrackBar)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaEffectSButton)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixVSNumericUpDown)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixVSTrackBar)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixVSButton)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixHSNumericUpDown)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixHSTrackBar)
+        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixHSButton)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaEffectSTrackBar)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaEffectSButton)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixVSNumericUpDown)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixVSTrackBar)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixVSButton)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixHSNumericUpDown)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixHSTrackBar)
+        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixHSButton)
+        resources.ApplyResources(Me.ImagePPGroupBox, "ImagePPGroupBox")
+        Me.ImagePPGroupBox.Name = "ImagePPGroupBox"
+        Me.ImagePPGroupBox.TabStop = False
+        '
+        'FFmpegImageUnsharpCheckBox
+        '
+        resources.ApplyResources(Me.FFmpegImageUnsharpCheckBox, "FFmpegImageUnsharpCheckBox")
+        Me.FFmpegImageUnsharpCheckBox.Name = "FFmpegImageUnsharpCheckBox"
+        Me.FFmpegImageUnsharpCheckBox.UseVisualStyleBackColor = True
+        '
+        'FFmpegImageUnsharpLabel
+        '
+        resources.ApplyResources(Me.FFmpegImageUnsharpLabel, "FFmpegImageUnsharpLabel")
+        Me.FFmpegImageUnsharpLabel.ForeColor = System.Drawing.Color.Green
+        Me.FFmpegImageUnsharpLabel.Name = "FFmpegImageUnsharpLabel"
+        '
+        'LumaEffectSNumericUpDown
+        '
+        Me.LumaEffectSNumericUpDown.DecimalPlaces = 2
+        resources.ApplyResources(Me.LumaEffectSNumericUpDown, "LumaEffectSNumericUpDown")
+        Me.LumaEffectSNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.LumaEffectSNumericUpDown.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.LumaEffectSNumericUpDown.Minimum = New Decimal(New Integer() {2, 0, 0, -2147483648})
+        Me.LumaEffectSNumericUpDown.Name = "LumaEffectSNumericUpDown"
+        '
+        'ChromaEffectSNumericUpDown
+        '
+        Me.ChromaEffectSNumericUpDown.DecimalPlaces = 1
+        resources.ApplyResources(Me.ChromaEffectSNumericUpDown, "ChromaEffectSNumericUpDown")
+        Me.ChromaEffectSNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.ChromaEffectSNumericUpDown.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.ChromaEffectSNumericUpDown.Minimum = New Decimal(New Integer() {2, 0, 0, -2147483648})
+        Me.ChromaEffectSNumericUpDown.Name = "ChromaEffectSNumericUpDown"
+        '
+        'ChromaEffectSTrackBar
+        '
+        resources.ApplyResources(Me.ChromaEffectSTrackBar, "ChromaEffectSTrackBar")
+        Me.ChromaEffectSTrackBar.BackColor = System.Drawing.Color.White
+        Me.ChromaEffectSTrackBar.Maximum = 50
+        Me.ChromaEffectSTrackBar.Minimum = -20
+        Me.ChromaEffectSTrackBar.Name = "ChromaEffectSTrackBar"
+        Me.ChromaEffectSTrackBar.TickFrequency = 0
+        Me.ChromaEffectSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        '
+        'ChromaEffectSButton
+        '
+        resources.ApplyResources(Me.ChromaEffectSButton, "ChromaEffectSButton")
+        Me.ChromaEffectSButton.Name = "ChromaEffectSButton"
+        Me.ChromaEffectSButton.UseVisualStyleBackColor = True
+        '
+        'ChromaMatrixVSNumericUpDown
+        '
+        resources.ApplyResources(Me.ChromaMatrixVSNumericUpDown, "ChromaMatrixVSNumericUpDown")
+        Me.ChromaMatrixVSNumericUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
+        Me.ChromaMatrixVSNumericUpDown.Name = "ChromaMatrixVSNumericUpDown"
+        '
+        'ChromaMatrixVSTrackBar
+        '
+        resources.ApplyResources(Me.ChromaMatrixVSTrackBar, "ChromaMatrixVSTrackBar")
+        Me.ChromaMatrixVSTrackBar.BackColor = System.Drawing.Color.White
+        Me.ChromaMatrixVSTrackBar.Maximum = 13
+        Me.ChromaMatrixVSTrackBar.Name = "ChromaMatrixVSTrackBar"
+        Me.ChromaMatrixVSTrackBar.TickFrequency = 0
+        Me.ChromaMatrixVSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        '
+        'ChromaMatrixVSButton
+        '
+        resources.ApplyResources(Me.ChromaMatrixVSButton, "ChromaMatrixVSButton")
+        Me.ChromaMatrixVSButton.Name = "ChromaMatrixVSButton"
+        Me.ChromaMatrixVSButton.UseVisualStyleBackColor = True
+        '
+        'ChromaMatrixHSNumericUpDown
+        '
+        resources.ApplyResources(Me.ChromaMatrixHSNumericUpDown, "ChromaMatrixHSNumericUpDown")
+        Me.ChromaMatrixHSNumericUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
+        Me.ChromaMatrixHSNumericUpDown.Name = "ChromaMatrixHSNumericUpDown"
+        '
+        'ChromaMatrixHSTrackBar
+        '
+        resources.ApplyResources(Me.ChromaMatrixHSTrackBar, "ChromaMatrixHSTrackBar")
+        Me.ChromaMatrixHSTrackBar.BackColor = System.Drawing.Color.White
+        Me.ChromaMatrixHSTrackBar.Maximum = 13
+        Me.ChromaMatrixHSTrackBar.Name = "ChromaMatrixHSTrackBar"
+        Me.ChromaMatrixHSTrackBar.TickFrequency = 0
+        Me.ChromaMatrixHSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        '
+        'ChromaMatrixHSButton
+        '
+        resources.ApplyResources(Me.ChromaMatrixHSButton, "ChromaMatrixHSButton")
+        Me.ChromaMatrixHSButton.Name = "ChromaMatrixHSButton"
+        Me.ChromaMatrixHSButton.UseVisualStyleBackColor = True
+        '
+        'LumaEffectSTrackBar
+        '
+        resources.ApplyResources(Me.LumaEffectSTrackBar, "LumaEffectSTrackBar")
+        Me.LumaEffectSTrackBar.BackColor = System.Drawing.Color.White
+        Me.LumaEffectSTrackBar.Maximum = 500
+        Me.LumaEffectSTrackBar.Minimum = -200
+        Me.LumaEffectSTrackBar.Name = "LumaEffectSTrackBar"
+        Me.LumaEffectSTrackBar.TickFrequency = 0
+        Me.LumaEffectSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        '
+        'LumaEffectSButton
+        '
+        resources.ApplyResources(Me.LumaEffectSButton, "LumaEffectSButton")
+        Me.LumaEffectSButton.Name = "LumaEffectSButton"
+        Me.LumaEffectSButton.UseVisualStyleBackColor = True
+        '
+        'LumaMatrixVSNumericUpDown
+        '
+        resources.ApplyResources(Me.LumaMatrixVSNumericUpDown, "LumaMatrixVSNumericUpDown")
+        Me.LumaMatrixVSNumericUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
+        Me.LumaMatrixVSNumericUpDown.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
+        Me.LumaMatrixVSNumericUpDown.Name = "LumaMatrixVSNumericUpDown"
+        Me.LumaMatrixVSNumericUpDown.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        '
+        'LumaMatrixVSTrackBar
+        '
+        resources.ApplyResources(Me.LumaMatrixVSTrackBar, "LumaMatrixVSTrackBar")
+        Me.LumaMatrixVSTrackBar.BackColor = System.Drawing.Color.White
+        Me.LumaMatrixVSTrackBar.Maximum = 13
+        Me.LumaMatrixVSTrackBar.Minimum = 3
+        Me.LumaMatrixVSTrackBar.Name = "LumaMatrixVSTrackBar"
+        Me.LumaMatrixVSTrackBar.TickFrequency = 0
+        Me.LumaMatrixVSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        Me.LumaMatrixVSTrackBar.Value = 5
+        '
+        'LumaMatrixVSButton
+        '
+        resources.ApplyResources(Me.LumaMatrixVSButton, "LumaMatrixVSButton")
+        Me.LumaMatrixVSButton.Name = "LumaMatrixVSButton"
+        Me.LumaMatrixVSButton.UseVisualStyleBackColor = True
+        '
+        'LumaMatrixHSNumericUpDown
+        '
+        resources.ApplyResources(Me.LumaMatrixHSNumericUpDown, "LumaMatrixHSNumericUpDown")
+        Me.LumaMatrixHSNumericUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
+        Me.LumaMatrixHSNumericUpDown.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
+        Me.LumaMatrixHSNumericUpDown.Name = "LumaMatrixHSNumericUpDown"
+        Me.LumaMatrixHSNumericUpDown.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        '
+        'LumaMatrixHSTrackBar
+        '
+        resources.ApplyResources(Me.LumaMatrixHSTrackBar, "LumaMatrixHSTrackBar")
+        Me.LumaMatrixHSTrackBar.BackColor = System.Drawing.Color.White
+        Me.LumaMatrixHSTrackBar.Maximum = 13
+        Me.LumaMatrixHSTrackBar.Minimum = 3
+        Me.LumaMatrixHSTrackBar.Name = "LumaMatrixHSTrackBar"
+        Me.LumaMatrixHSTrackBar.TickFrequency = 0
+        Me.LumaMatrixHSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        Me.LumaMatrixHSTrackBar.Value = 5
+        '
+        'LumaMatrixHSButton
+        '
+        resources.ApplyResources(Me.LumaMatrixHSButton, "LumaMatrixHSButton")
+        Me.LumaMatrixHSButton.Name = "LumaMatrixHSButton"
+        Me.LumaMatrixHSButton.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.GroupBox2)
+        resources.ApplyResources(Me.TabPage2, "TabPage2")
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.hqdn3dPanel)
+        Me.GroupBox2.Controls.Add(Me.hqdn3dAutomodeCheckBox)
+        Me.GroupBox2.Controls.Add(Me.hqdn3dUseCheckBox)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.TabStop = False
+        '
+        'hqdn3dPanel
+        '
+        Me.hqdn3dPanel.Controls.Add(Me.hqdn3dAutGroupBox)
+        Me.hqdn3dPanel.Controls.Add(Me.hqdn3dManGroupBox)
+        resources.ApplyResources(Me.hqdn3dPanel, "hqdn3dPanel")
+        Me.hqdn3dPanel.Name = "hqdn3dPanel"
+        '
+        'hqdn3dAutGroupBox
+        '
+        Me.hqdn3dAutGroupBox.Controls.Add(Me.hqdn3d_2TextBox)
+        Me.hqdn3dAutGroupBox.Controls.Add(Me.Label9)
+        Me.hqdn3dAutGroupBox.Controls.Add(Me.Label11)
+        Me.hqdn3dAutGroupBox.Controls.Add(Me.hqdn3d_3TextBox)
+        Me.hqdn3dAutGroupBox.Controls.Add(Me.hqdn3d_auto_NumericUpDown)
+        Me.hqdn3dAutGroupBox.Controls.Add(Me.Label8)
+        Me.hqdn3dAutGroupBox.Controls.Add(Me.hqdn3d_4TextBox)
+        Me.hqdn3dAutGroupBox.Controls.Add(Me.Label12)
+        resources.ApplyResources(Me.hqdn3dAutGroupBox, "hqdn3dAutGroupBox")
+        Me.hqdn3dAutGroupBox.Name = "hqdn3dAutGroupBox"
+        Me.hqdn3dAutGroupBox.TabStop = False
+        '
+        'hqdn3d_2TextBox
+        '
+        resources.ApplyResources(Me.hqdn3d_2TextBox, "hqdn3d_2TextBox")
+        Me.hqdn3d_2TextBox.Name = "hqdn3d_2TextBox"
+        '
+        'Label9
+        '
+        resources.ApplyResources(Me.Label9, "Label9")
+        Me.Label9.Name = "Label9"
+        '
+        'Label11
+        '
+        resources.ApplyResources(Me.Label11, "Label11")
+        Me.Label11.Name = "Label11"
+        '
+        'hqdn3d_3TextBox
+        '
+        resources.ApplyResources(Me.hqdn3d_3TextBox, "hqdn3d_3TextBox")
+        Me.hqdn3d_3TextBox.Name = "hqdn3d_3TextBox"
+        '
+        'hqdn3d_auto_NumericUpDown
+        '
+        Me.hqdn3d_auto_NumericUpDown.DecimalPlaces = 1
+        Me.hqdn3d_auto_NumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        resources.ApplyResources(Me.hqdn3d_auto_NumericUpDown, "hqdn3d_auto_NumericUpDown")
+        Me.hqdn3d_auto_NumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.hqdn3d_auto_NumericUpDown.Name = "hqdn3d_auto_NumericUpDown"
+        Me.hqdn3d_auto_NumericUpDown.Value = New Decimal(New Integer() {4, 0, 0, 0})
+        '
+        'Label8
+        '
+        resources.ApplyResources(Me.Label8, "Label8")
+        Me.Label8.Name = "Label8"
+        '
+        'hqdn3d_4TextBox
+        '
+        resources.ApplyResources(Me.hqdn3d_4TextBox, "hqdn3d_4TextBox")
+        Me.hqdn3d_4TextBox.Name = "hqdn3d_4TextBox"
+        '
+        'Label12
+        '
+        resources.ApplyResources(Me.Label12, "Label12")
+        Me.Label12.Name = "Label12"
+        '
+        'hqdn3dManGroupBox
+        '
+        Me.hqdn3dManGroupBox.Controls.Add(Me.Label13)
+        Me.hqdn3dManGroupBox.Controls.Add(Me.Label14)
+        Me.hqdn3dManGroupBox.Controls.Add(Me.hqdn3d_manual_TextBox)
+        resources.ApplyResources(Me.hqdn3dManGroupBox, "hqdn3dManGroupBox")
+        Me.hqdn3dManGroupBox.Name = "hqdn3dManGroupBox"
+        Me.hqdn3dManGroupBox.TabStop = False
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'Label14
+        '
+        resources.ApplyResources(Me.Label14, "Label14")
+        Me.Label14.Name = "Label14"
+        '
+        'hqdn3d_manual_TextBox
+        '
+        resources.ApplyResources(Me.hqdn3d_manual_TextBox, "hqdn3d_manual_TextBox")
+        Me.hqdn3d_manual_TextBox.Name = "hqdn3d_manual_TextBox"
+        '
+        'hqdn3dAutomodeCheckBox
+        '
+        resources.ApplyResources(Me.hqdn3dAutomodeCheckBox, "hqdn3dAutomodeCheckBox")
+        Me.hqdn3dAutomodeCheckBox.Name = "hqdn3dAutomodeCheckBox"
+        Me.hqdn3dAutomodeCheckBox.UseVisualStyleBackColor = True
+        '
+        'hqdn3dUseCheckBox
+        '
+        resources.ApplyResources(Me.hqdn3dUseCheckBox, "hqdn3dUseCheckBox")
+        Me.hqdn3dUseCheckBox.Name = "hqdn3dUseCheckBox"
+        Me.hqdn3dUseCheckBox.UseVisualStyleBackColor = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.GroupBox4)
+        resources.ApplyResources(Me.TabPage3, "TabPage3")
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.gradfun_radiusNumericUpDown)
+        Me.GroupBox4.Controls.Add(Me.gradfun_radiusTrackBar)
+        Me.GroupBox4.Controls.Add(Me.gradfun_radiusButton)
+        Me.GroupBox4.Controls.Add(Me.gradfun_strengthNumericUpDown)
+        Me.GroupBox4.Controls.Add(Me.gradfun_strengthTrackBar)
+        Me.GroupBox4.Controls.Add(Me.gradfun_strengthButton)
+        Me.GroupBox4.Controls.Add(Me.gradfunCheckBox)
+        resources.ApplyResources(Me.GroupBox4, "GroupBox4")
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.TabStop = False
+        '
+        'gradfun_radiusNumericUpDown
+        '
+        resources.ApplyResources(Me.gradfun_radiusNumericUpDown, "gradfun_radiusNumericUpDown")
+        Me.gradfun_radiusNumericUpDown.Maximum = New Decimal(New Integer() {32, 0, 0, 0})
+        Me.gradfun_radiusNumericUpDown.Minimum = New Decimal(New Integer() {8, 0, 0, 0})
+        Me.gradfun_radiusNumericUpDown.Name = "gradfun_radiusNumericUpDown"
+        Me.gradfun_radiusNumericUpDown.Value = New Decimal(New Integer() {16, 0, 0, 0})
+        '
+        'gradfun_radiusTrackBar
+        '
+        resources.ApplyResources(Me.gradfun_radiusTrackBar, "gradfun_radiusTrackBar")
+        Me.gradfun_radiusTrackBar.BackColor = System.Drawing.Color.White
+        Me.gradfun_radiusTrackBar.Maximum = 32
+        Me.gradfun_radiusTrackBar.Minimum = 8
+        Me.gradfun_radiusTrackBar.Name = "gradfun_radiusTrackBar"
+        Me.gradfun_radiusTrackBar.TickFrequency = 0
+        Me.gradfun_radiusTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        Me.gradfun_radiusTrackBar.Value = 16
+        '
+        'gradfun_radiusButton
+        '
+        resources.ApplyResources(Me.gradfun_radiusButton, "gradfun_radiusButton")
+        Me.gradfun_radiusButton.Name = "gradfun_radiusButton"
+        Me.gradfun_radiusButton.UseVisualStyleBackColor = True
+        '
+        'gradfun_strengthNumericUpDown
+        '
+        Me.gradfun_strengthNumericUpDown.DecimalPlaces = 2
+        resources.ApplyResources(Me.gradfun_strengthNumericUpDown, "gradfun_strengthNumericUpDown")
+        Me.gradfun_strengthNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.gradfun_strengthNumericUpDown.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
+        Me.gradfun_strengthNumericUpDown.Minimum = New Decimal(New Integer() {51, 0, 0, 131072})
+        Me.gradfun_strengthNumericUpDown.Name = "gradfun_strengthNumericUpDown"
+        Me.gradfun_strengthNumericUpDown.Value = New Decimal(New Integer() {12, 0, 0, 65536})
+        '
+        'gradfun_strengthTrackBar
+        '
+        resources.ApplyResources(Me.gradfun_strengthTrackBar, "gradfun_strengthTrackBar")
+        Me.gradfun_strengthTrackBar.BackColor = System.Drawing.Color.White
+        Me.gradfun_strengthTrackBar.Maximum = 25500
+        Me.gradfun_strengthTrackBar.Minimum = 51
+        Me.gradfun_strengthTrackBar.Name = "gradfun_strengthTrackBar"
+        Me.gradfun_strengthTrackBar.TickFrequency = 0
+        Me.gradfun_strengthTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        Me.gradfun_strengthTrackBar.Value = 120
+        '
+        'gradfun_strengthButton
+        '
+        resources.ApplyResources(Me.gradfun_strengthButton, "gradfun_strengthButton")
+        Me.gradfun_strengthButton.Name = "gradfun_strengthButton"
+        Me.gradfun_strengthButton.UseVisualStyleBackColor = True
+        '
+        'gradfunCheckBox
+        '
+        resources.ApplyResources(Me.gradfunCheckBox, "gradfunCheckBox")
+        Me.gradfunCheckBox.Name = "gradfunCheckBox"
+        Me.gradfunCheckBox.UseVisualStyleBackColor = True
+        '
         'ImageTabPage
         '
         Me.ImageTabPage.BackColor = System.Drawing.Color.Transparent
-        Me.ImageTabPage.Controls.Add(Me.ImageTabControl)
+        Me.ImageTabPage.Controls.Add(Me.ImageGroupBox)
+        Me.ImageTabPage.Controls.Add(Me.FFTurnGroupBox)
+        Me.ImageTabPage.Controls.Add(Me.flipGroupBox)
         resources.ApplyResources(Me.ImageTabPage, "ImageTabPage")
         Me.ImageTabPage.Name = "ImageTabPage"
         Me.ImageTabPage.UseVisualStyleBackColor = True
         '
-        'ImageTabControl
-        '
-        Me.ImageTabControl.Controls.Add(Me.ImgTabPage)
-        Me.ImageTabControl.Controls.Add(Me.ImgPPTabPage)
-        resources.ApplyResources(Me.ImageTabControl, "ImageTabControl")
-        Me.ImageTabControl.Name = "ImageTabControl"
-        Me.ImageTabControl.SelectedIndex = 0
-        '
-        'ImgTabPage
-        '
-        Me.ImgTabPage.Controls.Add(Me.ImageGroupBox)
-        resources.ApplyResources(Me.ImgTabPage, "ImgTabPage")
-        Me.ImgTabPage.Name = "ImgTabPage"
-        Me.ImgTabPage.UseVisualStyleBackColor = True
-        '
         'ImageGroupBox
         '
-        Me.ImageGroupBox.Controls.Add(Me.DeinterlaceCheckBox)
         Me.ImageGroupBox.Controls.Add(Me.AspectSLabel)
         Me.ImageGroupBox.Controls.Add(Me.AspectHTextBox)
         Me.ImageGroupBox.Controls.Add(Me.AspectWTextBox)
@@ -608,12 +1081,6 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.ImageGroupBox, "ImageGroupBox")
         Me.ImageGroupBox.Name = "ImageGroupBox"
         Me.ImageGroupBox.TabStop = False
-        '
-        'DeinterlaceCheckBox
-        '
-        resources.ApplyResources(Me.DeinterlaceCheckBox, "DeinterlaceCheckBox")
-        Me.DeinterlaceCheckBox.Name = "DeinterlaceCheckBox"
-        Me.DeinterlaceCheckBox.UseVisualStyleBackColor = True
         '
         'AspectSLabel
         '
@@ -694,21 +1161,49 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.ImageSizeLabel, "ImageSizeLabel")
         Me.ImageSizeLabel.Name = "ImageSizeLabel"
         '
-        'ImgPPTabPage
+        'FFTurnGroupBox
         '
-        Me.ImgPPTabPage.Controls.Add(Me.GroupBox2)
-        Me.ImgPPTabPage.Controls.Add(Me.ImagePPGroupBox)
-        resources.ApplyResources(Me.ImgPPTabPage, "ImgPPTabPage")
-        Me.ImgPPTabPage.Name = "ImgPPTabPage"
-        Me.ImgPPTabPage.UseVisualStyleBackColor = True
+        Me.FFTurnGroupBox.Controls.Add(Me.FFVerticallyCheckBox)
+        Me.FFTurnGroupBox.Controls.Add(Me.FFTurnCheckBox)
+        Me.FFTurnGroupBox.Controls.Add(Me.FFTurnRightRadioButton)
+        Me.FFTurnGroupBox.Controls.Add(Me.FFTurnLeftRadioButton)
+        resources.ApplyResources(Me.FFTurnGroupBox, "FFTurnGroupBox")
+        Me.FFTurnGroupBox.Name = "FFTurnGroupBox"
+        Me.FFTurnGroupBox.TabStop = False
         '
-        'GroupBox2
+        'FFVerticallyCheckBox
         '
-        Me.GroupBox2.Controls.Add(Me.hflipCheckBox)
-        Me.GroupBox2.Controls.Add(Me.vflipCheckBox)
-        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.TabStop = False
+        resources.ApplyResources(Me.FFVerticallyCheckBox, "FFVerticallyCheckBox")
+        Me.FFVerticallyCheckBox.Name = "FFVerticallyCheckBox"
+        Me.FFVerticallyCheckBox.UseVisualStyleBackColor = True
+        '
+        'FFTurnCheckBox
+        '
+        resources.ApplyResources(Me.FFTurnCheckBox, "FFTurnCheckBox")
+        Me.FFTurnCheckBox.Name = "FFTurnCheckBox"
+        Me.FFTurnCheckBox.UseVisualStyleBackColor = True
+        '
+        'FFTurnRightRadioButton
+        '
+        resources.ApplyResources(Me.FFTurnRightRadioButton, "FFTurnRightRadioButton")
+        Me.FFTurnRightRadioButton.Name = "FFTurnRightRadioButton"
+        Me.FFTurnRightRadioButton.TabStop = True
+        Me.FFTurnRightRadioButton.UseVisualStyleBackColor = True
+        '
+        'FFTurnLeftRadioButton
+        '
+        resources.ApplyResources(Me.FFTurnLeftRadioButton, "FFTurnLeftRadioButton")
+        Me.FFTurnLeftRadioButton.Name = "FFTurnLeftRadioButton"
+        Me.FFTurnLeftRadioButton.TabStop = True
+        Me.FFTurnLeftRadioButton.UseVisualStyleBackColor = True
+        '
+        'flipGroupBox
+        '
+        Me.flipGroupBox.Controls.Add(Me.hflipCheckBox)
+        Me.flipGroupBox.Controls.Add(Me.vflipCheckBox)
+        resources.ApplyResources(Me.flipGroupBox, "flipGroupBox")
+        Me.flipGroupBox.Name = "flipGroupBox"
+        Me.flipGroupBox.TabStop = False
         '
         'hflipCheckBox
         '
@@ -721,198 +1216,6 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.vflipCheckBox, "vflipCheckBox")
         Me.vflipCheckBox.Name = "vflipCheckBox"
         Me.vflipCheckBox.UseVisualStyleBackColor = True
-        '
-        'ImagePPGroupBox
-        '
-        Me.ImagePPGroupBox.Controls.Add(Me.FFmpegImageUnsharpCheckBox)
-        Me.ImagePPGroupBox.Controls.Add(Me.FFmpegImageUnsharpLabel)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaEffectSNumericUpDown)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaEffectSNumericUpDown)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaEffectSTrackBar)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaEffectSButton)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixVSNumericUpDown)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixVSTrackBar)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixVSButton)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixHSNumericUpDown)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixHSTrackBar)
-        Me.ImagePPGroupBox.Controls.Add(Me.ChromaMatrixHSButton)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaEffectSTrackBar)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaEffectSButton)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixVSNumericUpDown)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixVSTrackBar)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixVSButton)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixHSNumericUpDown)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixHSTrackBar)
-        Me.ImagePPGroupBox.Controls.Add(Me.LumaMatrixHSButton)
-        resources.ApplyResources(Me.ImagePPGroupBox, "ImagePPGroupBox")
-        Me.ImagePPGroupBox.Name = "ImagePPGroupBox"
-        Me.ImagePPGroupBox.TabStop = False
-        '
-        'FFmpegImageUnsharpCheckBox
-        '
-        resources.ApplyResources(Me.FFmpegImageUnsharpCheckBox, "FFmpegImageUnsharpCheckBox")
-        Me.FFmpegImageUnsharpCheckBox.Name = "FFmpegImageUnsharpCheckBox"
-        Me.FFmpegImageUnsharpCheckBox.UseVisualStyleBackColor = True
-        '
-        'FFmpegImageUnsharpLabel
-        '
-        resources.ApplyResources(Me.FFmpegImageUnsharpLabel, "FFmpegImageUnsharpLabel")
-        Me.FFmpegImageUnsharpLabel.ForeColor = System.Drawing.Color.Green
-        Me.FFmpegImageUnsharpLabel.Name = "FFmpegImageUnsharpLabel"
-        '
-        'LumaEffectSNumericUpDown
-        '
-        Me.LumaEffectSNumericUpDown.DecimalPlaces = 1
-        resources.ApplyResources(Me.LumaEffectSNumericUpDown, "LumaEffectSNumericUpDown")
-        Me.LumaEffectSNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.LumaEffectSNumericUpDown.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.LumaEffectSNumericUpDown.Minimum = New Decimal(New Integer() {2, 0, 0, -2147483648})
-        Me.LumaEffectSNumericUpDown.Name = "LumaEffectSNumericUpDown"
-        Me.LumaEffectSNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'ChromaEffectSNumericUpDown
-        '
-        Me.ChromaEffectSNumericUpDown.DecimalPlaces = 1
-        resources.ApplyResources(Me.ChromaEffectSNumericUpDown, "ChromaEffectSNumericUpDown")
-        Me.ChromaEffectSNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.ChromaEffectSNumericUpDown.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.ChromaEffectSNumericUpDown.Minimum = New Decimal(New Integer() {2, 0, 0, -2147483648})
-        Me.ChromaEffectSNumericUpDown.Name = "ChromaEffectSNumericUpDown"
-        Me.ChromaEffectSNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'ChromaEffectSTrackBar
-        '
-        resources.ApplyResources(Me.ChromaEffectSTrackBar, "ChromaEffectSTrackBar")
-        Me.ChromaEffectSTrackBar.BackColor = System.Drawing.Color.White
-        Me.ChromaEffectSTrackBar.Maximum = 50
-        Me.ChromaEffectSTrackBar.Minimum = -20
-        Me.ChromaEffectSTrackBar.Name = "ChromaEffectSTrackBar"
-        Me.ChromaEffectSTrackBar.TickFrequency = 0
-        Me.ChromaEffectSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
-        Me.ChromaEffectSTrackBar.Value = 10
-        '
-        'ChromaEffectSButton
-        '
-        resources.ApplyResources(Me.ChromaEffectSButton, "ChromaEffectSButton")
-        Me.ChromaEffectSButton.Name = "ChromaEffectSButton"
-        Me.ChromaEffectSButton.UseVisualStyleBackColor = True
-        '
-        'ChromaMatrixVSNumericUpDown
-        '
-        resources.ApplyResources(Me.ChromaMatrixVSNumericUpDown, "ChromaMatrixVSNumericUpDown")
-        Me.ChromaMatrixVSNumericUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
-        Me.ChromaMatrixVSNumericUpDown.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
-        Me.ChromaMatrixVSNumericUpDown.Name = "ChromaMatrixVSNumericUpDown"
-        Me.ChromaMatrixVSNumericUpDown.Value = New Decimal(New Integer() {5, 0, 0, 0})
-        '
-        'ChromaMatrixVSTrackBar
-        '
-        resources.ApplyResources(Me.ChromaMatrixVSTrackBar, "ChromaMatrixVSTrackBar")
-        Me.ChromaMatrixVSTrackBar.BackColor = System.Drawing.Color.White
-        Me.ChromaMatrixVSTrackBar.Maximum = 13
-        Me.ChromaMatrixVSTrackBar.Minimum = 3
-        Me.ChromaMatrixVSTrackBar.Name = "ChromaMatrixVSTrackBar"
-        Me.ChromaMatrixVSTrackBar.TickFrequency = 0
-        Me.ChromaMatrixVSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
-        Me.ChromaMatrixVSTrackBar.Value = 5
-        '
-        'ChromaMatrixVSButton
-        '
-        resources.ApplyResources(Me.ChromaMatrixVSButton, "ChromaMatrixVSButton")
-        Me.ChromaMatrixVSButton.Name = "ChromaMatrixVSButton"
-        Me.ChromaMatrixVSButton.UseVisualStyleBackColor = True
-        '
-        'ChromaMatrixHSNumericUpDown
-        '
-        resources.ApplyResources(Me.ChromaMatrixHSNumericUpDown, "ChromaMatrixHSNumericUpDown")
-        Me.ChromaMatrixHSNumericUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
-        Me.ChromaMatrixHSNumericUpDown.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
-        Me.ChromaMatrixHSNumericUpDown.Name = "ChromaMatrixHSNumericUpDown"
-        Me.ChromaMatrixHSNumericUpDown.Value = New Decimal(New Integer() {5, 0, 0, 0})
-        '
-        'ChromaMatrixHSTrackBar
-        '
-        resources.ApplyResources(Me.ChromaMatrixHSTrackBar, "ChromaMatrixHSTrackBar")
-        Me.ChromaMatrixHSTrackBar.BackColor = System.Drawing.Color.White
-        Me.ChromaMatrixHSTrackBar.Maximum = 13
-        Me.ChromaMatrixHSTrackBar.Minimum = 3
-        Me.ChromaMatrixHSTrackBar.Name = "ChromaMatrixHSTrackBar"
-        Me.ChromaMatrixHSTrackBar.TickFrequency = 0
-        Me.ChromaMatrixHSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
-        Me.ChromaMatrixHSTrackBar.Value = 5
-        '
-        'ChromaMatrixHSButton
-        '
-        resources.ApplyResources(Me.ChromaMatrixHSButton, "ChromaMatrixHSButton")
-        Me.ChromaMatrixHSButton.Name = "ChromaMatrixHSButton"
-        Me.ChromaMatrixHSButton.UseVisualStyleBackColor = True
-        '
-        'LumaEffectSTrackBar
-        '
-        resources.ApplyResources(Me.LumaEffectSTrackBar, "LumaEffectSTrackBar")
-        Me.LumaEffectSTrackBar.BackColor = System.Drawing.Color.White
-        Me.LumaEffectSTrackBar.Maximum = 50
-        Me.LumaEffectSTrackBar.Minimum = -20
-        Me.LumaEffectSTrackBar.Name = "LumaEffectSTrackBar"
-        Me.LumaEffectSTrackBar.TickFrequency = 0
-        Me.LumaEffectSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
-        Me.LumaEffectSTrackBar.Value = 10
-        '
-        'LumaEffectSButton
-        '
-        resources.ApplyResources(Me.LumaEffectSButton, "LumaEffectSButton")
-        Me.LumaEffectSButton.Name = "LumaEffectSButton"
-        Me.LumaEffectSButton.UseVisualStyleBackColor = True
-        '
-        'LumaMatrixVSNumericUpDown
-        '
-        resources.ApplyResources(Me.LumaMatrixVSNumericUpDown, "LumaMatrixVSNumericUpDown")
-        Me.LumaMatrixVSNumericUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
-        Me.LumaMatrixVSNumericUpDown.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
-        Me.LumaMatrixVSNumericUpDown.Name = "LumaMatrixVSNumericUpDown"
-        Me.LumaMatrixVSNumericUpDown.Value = New Decimal(New Integer() {5, 0, 0, 0})
-        '
-        'LumaMatrixVSTrackBar
-        '
-        resources.ApplyResources(Me.LumaMatrixVSTrackBar, "LumaMatrixVSTrackBar")
-        Me.LumaMatrixVSTrackBar.BackColor = System.Drawing.Color.White
-        Me.LumaMatrixVSTrackBar.Maximum = 13
-        Me.LumaMatrixVSTrackBar.Minimum = 3
-        Me.LumaMatrixVSTrackBar.Name = "LumaMatrixVSTrackBar"
-        Me.LumaMatrixVSTrackBar.TickFrequency = 0
-        Me.LumaMatrixVSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
-        Me.LumaMatrixVSTrackBar.Value = 5
-        '
-        'LumaMatrixVSButton
-        '
-        resources.ApplyResources(Me.LumaMatrixVSButton, "LumaMatrixVSButton")
-        Me.LumaMatrixVSButton.Name = "LumaMatrixVSButton"
-        Me.LumaMatrixVSButton.UseVisualStyleBackColor = True
-        '
-        'LumaMatrixHSNumericUpDown
-        '
-        resources.ApplyResources(Me.LumaMatrixHSNumericUpDown, "LumaMatrixHSNumericUpDown")
-        Me.LumaMatrixHSNumericUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
-        Me.LumaMatrixHSNumericUpDown.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
-        Me.LumaMatrixHSNumericUpDown.Name = "LumaMatrixHSNumericUpDown"
-        Me.LumaMatrixHSNumericUpDown.Value = New Decimal(New Integer() {5, 0, 0, 0})
-        '
-        'LumaMatrixHSTrackBar
-        '
-        resources.ApplyResources(Me.LumaMatrixHSTrackBar, "LumaMatrixHSTrackBar")
-        Me.LumaMatrixHSTrackBar.BackColor = System.Drawing.Color.White
-        Me.LumaMatrixHSTrackBar.Maximum = 13
-        Me.LumaMatrixHSTrackBar.Minimum = 3
-        Me.LumaMatrixHSTrackBar.Name = "LumaMatrixHSTrackBar"
-        Me.LumaMatrixHSTrackBar.TickFrequency = 0
-        Me.LumaMatrixHSTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
-        Me.LumaMatrixHSTrackBar.Value = 5
-        '
-        'LumaMatrixHSButton
-        '
-        resources.ApplyResources(Me.LumaMatrixHSButton, "LumaMatrixHSButton")
-        Me.LumaMatrixHSButton.Name = "LumaMatrixHSButton"
-        Me.LumaMatrixHSButton.UseVisualStyleBackColor = True
         '
         'AudioTabPage
         '
@@ -1564,14 +1867,11 @@ Partial Class EncSetFrm
         CType(Me.QualityTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuantizerNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuantizerTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ImageTabPage.ResumeLayout(False)
-        Me.ImageTabControl.ResumeLayout(False)
-        Me.ImgTabPage.ResumeLayout(False)
-        Me.ImageGroupBox.ResumeLayout(False)
-        Me.ImageGroupBox.PerformLayout()
-        Me.ImgPPTabPage.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.VFTabPage.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ImagePPGroupBox.ResumeLayout(False)
         Me.ImagePPGroupBox.PerformLayout()
         CType(Me.LumaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1586,6 +1886,29 @@ Partial Class EncSetFrm
         CType(Me.LumaMatrixVSTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LumaMatrixHSNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LumaMatrixHSTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.hqdn3dPanel.ResumeLayout(False)
+        Me.hqdn3dAutGroupBox.ResumeLayout(False)
+        Me.hqdn3dAutGroupBox.PerformLayout()
+        CType(Me.hqdn3d_auto_NumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.hqdn3dManGroupBox.ResumeLayout(False)
+        Me.hqdn3dManGroupBox.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        CType(Me.gradfun_radiusNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gradfun_radiusTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gradfun_strengthNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gradfun_strengthTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ImageTabPage.ResumeLayout(False)
+        Me.ImageGroupBox.ResumeLayout(False)
+        Me.ImageGroupBox.PerformLayout()
+        Me.FFTurnGroupBox.ResumeLayout(False)
+        Me.FFTurnGroupBox.PerformLayout()
+        Me.flipGroupBox.ResumeLayout(False)
+        Me.flipGroupBox.PerformLayout()
         Me.AudioTabPage.ResumeLayout(False)
         Me.AudioGroupBox.ResumeLayout(False)
         Me.AudioGroupBox.PerformLayout()
@@ -1762,14 +2085,11 @@ Partial Class EncSetFrm
     Friend WithEvents AdvanOptsPanel As System.Windows.Forms.Panel
     Friend WithEvents OutFGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents PresetButton As System.Windows.Forms.Button
-    Friend WithEvents ImageTabControl As System.Windows.Forms.TabControl
-    Friend WithEvents ImgTabPage As System.Windows.Forms.TabPage
-    Friend WithEvents ImgPPTabPage As System.Windows.Forms.TabPage
     Friend WithEvents SamplerateCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents SampleratePanel As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents SubtitleRecordingCheckBox As System.Windows.Forms.CheckBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents flipGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents hflipCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents vflipCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents SizeEncGroupBox As System.Windows.Forms.GroupBox
@@ -1806,4 +2126,43 @@ Partial Class EncSetFrm
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents FFTurnGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents FFVerticallyCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FFTurnCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FFTurnRightRadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents FFTurnLeftRadioButton As System.Windows.Forms.RadioButton
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents ParityLabel As System.Windows.Forms.Label
+    Friend WithEvents DeinterlaceParityComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents DeinterlaceModeComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents VFTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents hqdn3d_auto_NumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents hqdn3dUseCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents hqdn3d_4TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents hqdn3d_3TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents hqdn3d_2TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents hqdn3dAutGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents hqdn3dAutomodeCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents hqdn3d_manual_TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents hqdn3dManGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents hqdn3dPanel As System.Windows.Forms.Panel
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents gradfun_radiusNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents gradfun_radiusTrackBar As System.Windows.Forms.TrackBar
+    Friend WithEvents gradfun_radiusButton As System.Windows.Forms.Button
+    Friend WithEvents gradfun_strengthNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents gradfun_strengthTrackBar As System.Windows.Forms.TrackBar
+    Friend WithEvents gradfun_strengthButton As System.Windows.Forms.Button
+    Friend WithEvents gradfunCheckBox As System.Windows.Forms.CheckBox
 End Class

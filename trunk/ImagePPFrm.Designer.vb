@@ -555,9 +555,9 @@ Partial Class ImagePPFrm
         'FieldorderComboBox
         '
         Me.FieldorderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        resources.ApplyResources(Me.FieldorderComboBox, "FieldorderComboBox")
         Me.FieldorderComboBox.FormattingEnabled = True
         Me.FieldorderComboBox.Items.AddRange(New Object() {resources.GetString("FieldorderComboBox.Items"), resources.GetString("FieldorderComboBox.Items1"), resources.GetString("FieldorderComboBox.Items2")})
-        resources.ApplyResources(Me.FieldorderComboBox, "FieldorderComboBox")
         Me.FieldorderComboBox.Name = "FieldorderComboBox"
         '
         'AVSMPEG2DeinterlaceComboBox
@@ -711,8 +711,8 @@ Partial Class ImagePPFrm
     Friend WithEvents FPSDOCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents VFR60CheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents TurnGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents TurnCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents Turn180RadioButton As System.Windows.Forms.RadioButton
     Friend WithEvents TurnRightRadioButton As System.Windows.Forms.RadioButton
     Friend WithEvents TurnLeftRadioButton As System.Windows.Forms.RadioButton
-    Friend WithEvents Turn180RadioButton As System.Windows.Forms.RadioButton
-    Friend WithEvents TurnCheckBox As System.Windows.Forms.CheckBox
 End Class

@@ -677,14 +677,14 @@ LANG_SKIP:
         MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True
         ASFFilesFFmpegSourceToolStripMenuItem2.Checked = False
         ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True
-        M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True
+        M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = False
         AllAudioFilesFFmpegSourceToolStripMenuItem3.Checked = False
         AllAudioFilesBassAudioToolStripMenuItem.Checked = True
         AC3DTSFilesFFmpegSourceToolStripMenuItem4.Checked = False
         AC3DTSFilesNicAudioToolStripMenuItem.Checked = True
         RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True
         MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Checked = False
-        M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = False
+        M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True
         AllAudioFilesDirectShowSourceToolStripMenuItem.Checked = False
         AC3DTSFilesDirectShowSourceToolStripMenuItem1.Checked = False
         RMAMRFilesDirectShowSourceToolStripMenuItem2.Checked = False
@@ -819,7 +819,7 @@ LANG_SKIP:
             If .AllMovieFilesFFmpegSourceToolStripMenuItem.Checked = True AndAlso _
                 .MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Checked = True AndAlso _
                 .ASFFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
-                .M2TSFilesFFmpegSourceToolStripMenuItem6.Checked = True AndAlso _
+                .M2TSFilesDirectShowSourceToolStripMenuItem1.Checked = True AndAlso _
                 .AllAudioFilesBassAudioToolStripMenuItem.Checked = True AndAlso _
                 .AC3DTSFilesNicAudioToolStripMenuItem.Checked = True AndAlso _
                 .RMAMRFilesFFmpegSourceToolStripMenuItem5.Checked = True Then

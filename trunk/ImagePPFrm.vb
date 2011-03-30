@@ -817,8 +817,12 @@ RELOAD:
     Private Sub AVSMPEG2DeinterlaceCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSMPEG2DeinterlaceCheckBox.CheckedChanged
         If AVSMPEG2DeinterlaceCheckBox.Checked = True Then
             AVSMPEG2DeinterlaceComboBox.Enabled = True
+            FieldorderLabel.Enabled = True
+            FieldorderComboBox.Enabled = True
         Else
             AVSMPEG2DeinterlaceComboBox.Enabled = False
+            FieldorderLabel.Enabled = False
+            FieldorderComboBox.Enabled = False
         End If
     End Sub
 

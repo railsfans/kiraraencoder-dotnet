@@ -114,6 +114,10 @@ Public Class EncodingFrm
         MyBase.WndProc(m)
     End Sub
 
+    '맵
+    Public VideoMapV As String = ""
+    Public AudioMapV As String = ""
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -134,6 +138,10 @@ Public Class EncodingFrm
 
             '정보가져오기
             If InStr(MsgV, "Press [q] to stop encoding", CompareMethod.Text) <> 0 Then
+
+                '타이머
+                TimeElapsedLabel.Text = "00:00:00"
+                TimeElapsedTimer.Enabled = True
 
                 '정보 가져오기 시작
                 Dim ia2 As Integer = 1, iia2 As Integer = 0
@@ -473,12 +481,15 @@ Public Class EncodingFrm
 
     Public Sub EncSub(ByVal InPATHV As String, ByVal CommandV As String, ByVal OutPATHV As String, ByVal FFMODE As Boolean)
 
+        Dim FFInPATHV As String = MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text '원본파일인풋
         Dim MSGB As String = ""
         If FFMODE = True Then
-
             PipeMode = False
+
             If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '네로AAC 설정일경우 맵을 복사//
 
+                '------------------------------------
+                '맵데이터
                 Dim RCMeta As String = "" '챕터 메타데이터 삭제
                 Dim VIDMAP As String = "0.0" '비디오맵
                 Dim VIDTEMP As String = MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text
@@ -512,10 +523,12 @@ Public Class EncodingFrm
                     End If
 
                 Else
+
                     '同-1
                     MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
                                         " -map " & VIDMAP & " -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
                 End If
+                '------------------------------------
 
             Else
                 '同-2
@@ -523,12 +536,10 @@ Public Class EncodingFrm
             End If
 
         ElseIf FFMODE = False Then
-
-            PipeMode = True
-            MSGB = Chr(34) & InPATHV & Chr(34)
-
+        PipeMode = True
+        MSGB = Chr(34) & InPATHV & Chr(34)
         Else
-            Exit Sub
+        Exit Sub
         End If
 
 
@@ -583,9 +594,6 @@ Public Class EncodingFrm
 
             LoadInitialization()
 
-            '타이머
-            TimeElapsedTimer.Enabled = True
-
             '프로세스 종료 확인
             ProcessEChkB = False
 
@@ -613,6 +621,13 @@ Public Class EncodingFrm
     End Sub
 
     Private Sub GETINFO(ByVal MSGV As String)
+
+        '구간버그 났는지 체크하는것
+        Dim PositionDurationLabelV, FrameLabelV, FilesizeLabelV, BitrateLabelV As String
+        PositionDurationLabelV = PositionDurationLabel.Text
+        FrameLabelV = FrameLabel.Text
+        FilesizeLabelV = FilesizeLabel.Text
+        BitrateLabelV = BitrateLabel.Text
 
         '정보 가져오기 시작
         Dim ia2 As Integer = 1, iia2 As Integer = 0
@@ -789,12 +804,21 @@ Public Class EncodingFrm
         If ta2 <> "" Then
             ta2 = Trim(Replace(ta2, "fps=", ""))
             If IsNumeric(ta2) = True Then
-                'ProcessingRateLabel.Text = ta2 & " fps"
+                ProcessingRateLabel.Text = ta2 & " fps"
                 TimeRemainingLabel.Text = FunctionCls.TIME_TO_HMSMSTIME((EncDurationD - EncPositionD) / (Val(ta2) / FPSv), False)
             End If
         Else
             If SpeedV > 0 Then
                 TimeRemainingLabel.Text = FunctionCls.TIME_TO_HMSMSTIME(((EncDurationD - EncPositionD) / SpeedV), False)
+            End If
+        End If
+
+        '구간버그 났는지 체크하는것
+        If PositionDurationLabelV = PositionDurationLabel.Text AndAlso FrameLabelV <> FrameLabel.Text AndAlso FilesizeLabelV = FilesizeLabel.Text AndAlso BitrateLabelV = BitrateLabel.Text Then
+            If MainFrm.AVSCheckBox.Checked = False Then
+                If InStr(MainFrm.EncListListView.Items(EncindexI).SubItems(11).Text, " [00:00:00.00 - 00:00:00.00]", CompareMethod.Text) = 0 Then
+                    WinAPI.PostMessageW(HWNDV, WinAPI.WM_KEYDOWN, Keys.Q, 0&)
+                End If
             End If
         End If
 
@@ -1171,26 +1195,24 @@ ImageSkip:
                 '***********************************
                 ' 비디오, 오디오 맵
                 '***********************************
-                Dim VideoMapV As String = ""
-                Dim AudioMapV As String = ""
+                Try
+                    VideoMapV = Split(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, ":")(0), "#")(1), "(")(0)
+                    If IsNumeric(VideoMapV) = False Then
+                        VideoMapV = Split(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, ":")(0), "#")(1), "[")(0)
+                    End If
+                Catch ex As Exception
+                End Try
+                Try
+                    AudioMapV = Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, "#")(1), "(")(0)
+                    If IsNumeric(AudioMapV) = False Then
+                        AudioMapV = Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, "#")(1), "[")(0)
+                    End If
+                Catch ex As Exception
+                End Try
+
                 Dim NeroAACAudioMapV As String = ""
                 Dim AVMapV As String = ""
                 If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
-
-                    Try
-                        VideoMapV = Split(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, ":")(0), "#")(1), "(")(0)
-                        If IsNumeric(VideoMapV) = False Then
-                            VideoMapV = Split(Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text, ":")(0), "#")(1), "[")(0)
-                        End If
-                    Catch ex As Exception
-                    End Try
-                    Try
-                        AudioMapV = Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, "#")(1), "(")(0)
-                        If IsNumeric(AudioMapV) = False Then
-                            AudioMapV = Split(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(4).Text, "#")(1), "[")(0)
-                        End If
-                    Catch ex As Exception
-                    End Try
 
                     If EncSetFrm.AudioCodecComboBox.Text <> "Nero AAC" Then '네로 AAC 가 아니면
                         If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) = 0 Then '오디오만 인코딩 아님//
@@ -1287,11 +1309,80 @@ ImageSkip:
                     End Try
                 End If
                 If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+
+                    '/////////////////////////////////////////////////////////////////////////////////// 미디어 인포 _MI 변수 구간
+                    '딜레이값을 가져옴........
+                    Dim delayaudioSingle As Single = 0.0
+                    Dim _MI As MediaInfo
+                    _MI = New MediaInfo
+                    Try
+                        _MI.Open(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text)
+                        '#<delayaudio>, '#<delayaudio2>
+                        Dim delayaudioV As String = "0"
+                        '미디어 인포 비디오딜레이값 검사
+                        Dim AudioStramCntStr As String = "0"
+                        AudioStramCntStr = _MI.Get_(StreamKind.Audio, 0, "StreamCount")
+                        If AudioStramCntStr = "" OrElse AudioStramCntStr = "0" Then
+                            GoTo DelayAudioSkip
+                        End If
+                        'SN구하기 (스트림 ID비교)//
+                        Dim SN As Integer = 0
+                        Dim i2 As Integer
+                        For i2 = 0 To AudioStramCntStr - 1
+                            Dim ta2v0 As String = _MI.Get_(StreamKind.Audio, i2, "ID")
+                            Dim AudioMapV2 As String = ""
+                            If ta2v0 <> "" Then
+                                If InStr(AudioMapV, ".", CompareMethod.Text) <> 0 Then
+                                    Try
+                                        AudioMapV2 = Split(AudioMapV, ".")(1)
+                                    Catch ex As Exception
+                                    End Try
+                                Else
+                                    AudioMapV2 = AudioMapV
+                                End If
+                                AudioMapV2 = Val(AudioMapV2) + 1
+                                If ta2v0 = AudioMapV2 Then
+                                    SN = i2
+                                    Exit For
+                                End If
+                            End If
+                        Next
+                        Dim ta2v1 As String = _MI.Get_(StreamKind.Audio, SN, "Video_Delay")
+                        If ta2v1 = "0" OrElse ta2v1 = "" Then
+                            delayaudioV = 0
+                            'delayaudioV2 = 0
+                        Else
+                            delayaudioV = ta2v1
+                            'delayaudioV2 = ta2v1
+                        End If
+DelayAudioSkip:
+                        delayaudioSingle = Val(delayaudioV) / 1000
+                        If delayaudioSingle < 0 Then delayaudioSingle *= -1
+                        If delayaudioSingle > 0 Then
+                            delayaudioSingle = Format(delayaudioSingle, "0.0") + 0.1
+                        End If
+                        _MI.Close()
+                    Catch ex As Exception
+                        _MI.Close()
+                    End Try
+                    '/////////////////////////////////////////////////////////////////////////////////// 미디어 인포 _MI 변수 구간
+
+
                     If StartHMSV = 0 AndAlso EndHMSV <> 0 Then '종료시간만
-                        SSTV = " -t " & EndHMSV
+                        SSTV = " -ss " & delayaudioSingle & " -t " & EndHMSV
                     ElseIf StartHMSV <> 0 AndAlso EndHMSV <> 0 Then '시작시간 or 시작시간과 종료시간
-                        SSTV = " -ss " & StartHMSV & " -t " & EndHMSV - StartHMSV
+
+                        If StartHMSV <= delayaudioSingle Then
+                            SSTV = " -ss " & delayaudioSingle & " -t " & EndHMSV - StartHMSV
+                        Else
+                            SSTV = " -ss " & StartHMSV & " -t " & EndHMSV - StartHMSV
+                        End If
+
+                    Else '그 외
+                        SSTV = " -ss " & delayaudioSingle
                     End If
+
+
                 End If
 
                 Dim _TimeV As Double = 0.0
@@ -1462,7 +1553,7 @@ ImageSkip:
 
                     '===================================================================
                     'FFmpeg모드용 아스팩트 깔끔하게 계산(PAR 1:1, DAR 출력비율)
-                    If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안 함
+                    If MainFrm.AVSCheckBox.Checked = False AndAlso EncSetFrm.VideoCodecComboBox.Text <> "Direct Stream Copy" Then 'AviSynth 사용 안 함, 비디오 코덱 복사 아님
 
                         If EncSetFrm.ImageSizeCheckBox.Checked = True Then '원본영상사이즈
                             Try
@@ -1471,6 +1562,15 @@ ImageSkip:
                             End Try
                         Else
                             AspectV = " -aspect " & EncSetFrm.ImageSizeWidthTextBox.Text & ":" & EncSetFrm.ImageSizeHeightTextBox.Text
+                        End If
+
+                        '회전관련 비율처리
+                        If EncSetFrm.FFTurnCheckBox.Checked = True AndAlso (EncSetFrm.FFTurnLeftRadioButton.Checked = True OrElse EncSetFrm.FFTurnRightRadioButton.Checked = True) Then
+                            Try
+                                Dim ImgSV As String = Replace(Split(AspectV, ":")(0), " -aspect ", "")
+                                AspectV = " -aspect " & Split(AspectV, ":")(1) & ":" & ImgSV
+                            Catch ex As Exception
+                            End Try
                         End If
 
                     End If
@@ -1503,6 +1603,7 @@ ImageSkip:
                         Else
                             VideoFilterV = Chr(34) & VF_CropV & VF_imageVTextBox & MainFrm.VF_TextBox & VF_AspectV & Chr(34)
                             VideoFilterV = " -vf " & Replace(VideoFilterV, ", ", "", 1, 1)
+                            'Debug.Print(VideoFilterV)
                         End If
 
                     End If
@@ -2149,7 +2250,9 @@ LANG_SKIP:
 
         '속도체크
         If EncPositionD <> TimeS AndAlso EncPositionD > TimeS Then
-            ProcessingRateLabel.Text = Format(EncPositionD - TimeS, "0.00") & "x"
+            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 OrElse EncToolStripStatusLabel.Text = LangCls.EncodingNeroAACEncoding Then '오디오만 인코딩, 네로AAC인코딩
+                ProcessingRateLabel.Text = Format(EncPositionD - TimeS, "0.00") & "x"
+            End If
             SpeedV = Format(EncPositionD - TimeS, "0.00")
         End If
 
