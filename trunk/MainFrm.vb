@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.03.31]"
+    Public PDATA = "[2011.04.06]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -687,6 +687,8 @@ Public Class MainFrm
         If MSGV = Windows.Forms.DialogResult.Yes Then
             '설정초기화
             DefSUB(True)
+            '인코딩 설정 보여질 부분 새로고침
+            EncSetFrm.EncSetREF()
             '설정저장
             XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
             '프리셋 표시
