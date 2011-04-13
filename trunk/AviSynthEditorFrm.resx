@@ -710,9 +710,10 @@ AudioDub(V,A)</value>
   <data name="Def_FFmpegSourceTextBox.Text" xml:space="preserve">
     <value>LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
-V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=auto, threads=0, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
+V=FFVideoSource(source="#&lt;source&gt;", track=#&lt;vtrack&gt;, seekmode=1, threads=0, fpsnum=#&lt;fpsnum&gt;, fpsden=#&lt;fpsden&gt;, cache=true, cachefile="#&lt;cachefile&gt;")#&lt;ffpp&gt;
 A=FFAudioSource(source="#&lt;source&gt;", track=#&lt;atrack&gt;, adjustdelay=-3, cache=true, cachefile="#&lt;cachefile&gt;")
 AudioDub(V,A)
+#&lt;mpeg_ts_fps&gt;
 #&lt;deinterlace&gt;
 #&lt;delayaudio&gt;
 #&lt;channel&gt;
@@ -727,6 +728,7 @@ ConvertToYV12()
 #&lt;textsub&gt;
 #&lt;trim&gt;
 #&lt;normalize&gt;
+#&lt;reverse&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
 #&lt;audio_analyze&gt;
@@ -801,6 +803,7 @@ ConvertToYV12()
 LoadPlugin("#&lt;pluginpath&gt;VSFilter.dll")
 
 DirectShowSource("#&lt;source&gt;", fps=#&lt;fps&gt;, convertfps=true).ChangeFPS(#&lt;fps&gt;)
+EnsureVBRMP3Sync()
 ConvertAudioTo16bit()
 #&lt;deinterlace&gt;
 #&lt;channel&gt;
@@ -815,6 +818,7 @@ ConvertToYV12()
 #&lt;textsub&gt;
 #&lt;trim&gt;
 #&lt;normalize&gt;
+#&lt;reverse&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
 #&lt;audio_analyze&gt;
@@ -941,6 +945,7 @@ ConvertToYV12()
 #&lt;textsub&gt;
 #&lt;trim&gt;
 #&lt;normalize&gt;
+#&lt;reverse&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
 #&lt;audio_analyze&gt;
@@ -1051,6 +1056,7 @@ PointResize(176,144)
 #&lt;channel&gt;
 #&lt;trim&gt;
 #&lt;normalize&gt;
+#&lt;reverse&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
 ConvertToYV12()
@@ -1165,6 +1171,7 @@ AudioDub(V,A)
 #&lt;channel&gt;
 #&lt;trim&gt;
 #&lt;normalize&gt;
+#&lt;reverse&gt;
 #&lt;amplifydb&gt;
 #&lt;supereq&gt;
 ConvertToYV12()
@@ -1301,31 +1308,31 @@ ConvertToYV12()
     <value>0, 0</value>
   </metadata>
   <data name="PluginToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
+    <value>122, 22</value>
   </data>
   <data name="PluginToolStripMenuItem.Text" xml:space="preserve">
     <value>플러그인</value>
   </data>
   <data name="ToolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
+    <value>122, 22</value>
   </data>
   <data name="ToolsToolStripMenuItem.Text" xml:space="preserve">
     <value>도구</value>
   </data>
   <data name="FolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
+    <value>57, 20</value>
   </data>
   <data name="FolderToolStripMenuItem.Text" xml:space="preserve">
     <value>폴더(&amp;F)</value>
   </data>
   <data name="SetDecToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 20</value>
+    <value>83, 20</value>
   </data>
   <data name="SetDecToolStripMenuItem.Text" xml:space="preserve">
     <value>디코더 설정</value>
   </data>
   <data name="PresetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 20</value>
+    <value>55, 20</value>
   </data>
   <data name="PresetToolStripMenuItem.Text" xml:space="preserve">
     <value>프리셋</value>
@@ -1334,7 +1341,7 @@ ConvertToYV12()
     <value>False</value>
   </data>
   <data name="InitializationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 20</value>
+    <value>107, 20</value>
   </data>
   <data name="InitializationToolStripMenuItem.Text" xml:space="preserve">
     <value>스크립트 초기화</value>
@@ -1514,175 +1521,175 @@ ConvertToYV12()
     <value>398, 17</value>
   </metadata>
   <data name="AllMovieFilesFFmpegSourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="AllMovieFilesFFmpegSourceToolStripMenuItem.Text" xml:space="preserve">
     <value>FFmpegSource</value>
   </data>
   <data name="AllMovieFilesDirectShowSourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="AllMovieFilesDirectShowSourceToolStripMenuItem.Text" xml:space="preserve">
     <value>DirectShowSource</value>
   </data>
   <data name="AllMovieFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="AllMovieFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>동영상 파일</value>
   </data>
   <data name="MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="MPEGTSMPEGFilesFFmpegSourceToolStripMenuItem1.Text" xml:space="preserve">
     <value>FFmpegSource</value>
   </data>
   <data name="MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="MPEGTSMPEGFilesMPEG2SourceToolStripMenuItem.Text" xml:space="preserve">
     <value>MPEG2Source</value>
   </data>
   <data name="MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="MPEGTSMPEGFilesDirectShowSourceToolStripMenuItem.Text" xml:space="preserve">
     <value>DirectShowSource</value>
   </data>
   <data name="MPEGTSMPEGFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="MPEGTSMPEGFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>MPEGTS/MPEG 형식</value>
   </data>
   <data name="ASFFilesFFmpegSourceToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="ASFFilesFFmpegSourceToolStripMenuItem2.Text" xml:space="preserve">
     <value>FFmpegSource</value>
   </data>
   <data name="ASFFilesDirectShowSourceToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="ASFFilesDirectShowSourceToolStripMenuItem1.Text" xml:space="preserve">
     <value>DirectShowSource</value>
   </data>
   <data name="ASFFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="ASFFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>ASF 형식</value>
   </data>
   <data name="M2TSFilesFFmpegSourceToolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="M2TSFilesFFmpegSourceToolStripMenuItem6.Text" xml:space="preserve">
     <value>FFmpegSource</value>
   </data>
   <data name="M2TSFilesDirectShowSourceToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="M2TSFilesDirectShowSourceToolStripMenuItem1.Text" xml:space="preserve">
     <value>DirectShowSource</value>
   </data>
   <data name="M2TSFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="M2TSFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>M2TS 파일</value>
   </data>
   <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 6</value>
+    <value>222, 6</value>
   </data>
   <data name="AllAudioFilesFFmpegSourceToolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="AllAudioFilesFFmpegSourceToolStripMenuItem3.Text" xml:space="preserve">
     <value>FFmpegSource</value>
   </data>
   <data name="AllAudioFilesBassAudioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="AllAudioFilesBassAudioToolStripMenuItem.Text" xml:space="preserve">
     <value>BassAudio</value>
   </data>
   <data name="AllAudioFilesDirectShowSourceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="AllAudioFilesDirectShowSourceToolStripMenuItem.Text" xml:space="preserve">
     <value>DirectShowSource</value>
   </data>
   <data name="AllAudioFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="AllAudioFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>오디오 파일</value>
   </data>
   <data name="AC3DTSFilesFFmpegSourceToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="AC3DTSFilesFFmpegSourceToolStripMenuItem4.Text" xml:space="preserve">
     <value>FFmpegSource</value>
   </data>
   <data name="AC3DTSFilesNicAudioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="AC3DTSFilesNicAudioToolStripMenuItem.Text" xml:space="preserve">
     <value>NicAudio</value>
   </data>
   <data name="AC3DTSFilesDirectShowSourceToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="AC3DTSFilesDirectShowSourceToolStripMenuItem1.Text" xml:space="preserve">
     <value>DirectShowSource</value>
   </data>
   <data name="AC3DTSFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="AC3DTSFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>AC3, DTS 형식</value>
   </data>
   <data name="RMAMRFilesFFmpegSourceToolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="RMAMRFilesFFmpegSourceToolStripMenuItem5.Text" xml:space="preserve">
     <value>FFmpegSource</value>
   </data>
   <data name="RMAMRFilesDirectShowSourceToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>173, 22</value>
   </data>
   <data name="RMAMRFilesDirectShowSourceToolStripMenuItem2.Text" xml:space="preserve">
     <value>DirectShowSource</value>
   </data>
   <data name="RMAMRFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="RMAMRFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>RM, AMR 형식</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 6</value>
+    <value>222, 6</value>
   </data>
   <data name="InitializationDSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="InitializationDSToolStripMenuItem.Text" xml:space="preserve">
     <value>디코더 설정 초기화(최적)</value>
   </data>
   <data name="AllICToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="AllICToolStripMenuItem.Text" xml:space="preserve">
     <value>모두 내장코덱으로(FFmpeg)</value>
   </data>
   <data name="AllOCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>225, 22</value>
   </data>
   <data name="AllOCToolStripMenuItem.Text" xml:space="preserve">
     <value>모두 외부코덱으로(DShow)</value>
   </data>
   <data name="DecContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 258</value>
+    <value>226, 236</value>
   </data>
   <data name="&gt;&gt;DecContextMenuStrip.Name" xml:space="preserve">
     <value>DecContextMenuStrip</value>

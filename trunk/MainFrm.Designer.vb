@@ -45,6 +45,7 @@ Partial Class MainFrm
         Me.ColumnHeader18 = New System.Windows.Forms.ColumnHeader
         Me.ListviewContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AudSelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ErrToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.CheckAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -95,11 +96,13 @@ Partial Class MainFrm
         Me.LangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.DecSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AviSynthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ErrToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.TrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.NewVerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PresetContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel
+        Me.DefPreviewImg = New System.Windows.Forms.Panel
+        Me.VerWebBrowser = New System.Windows.Forms.WebBrowser
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser
         Me.Panel10 = New System.Windows.Forms.Panel
@@ -128,7 +131,10 @@ Partial Class MainFrm
         Me.BLPanel = New System.Windows.Forms.Panel
         Me.BRPanel = New System.Windows.Forms.Panel
         Me.TitlePanel = New System.Windows.Forms.Panel
-        Me.TitleLabel = New System.Windows.Forms.Label
+        Me.Panel8 = New System.Windows.Forms.Panel
+        Me.LeftPanel2 = New System.Windows.Forms.Panel
+        Me.TLPanel = New System.Windows.Forms.Panel
+        Me.TopPanel2 = New System.Windows.Forms.Panel
         Me.TopPanel = New System.Windows.Forms.Panel
         Me.Panel9 = New System.Windows.Forms.Panel
         Me.TrayLabel = New System.Windows.Forms.Label
@@ -137,13 +143,8 @@ Partial Class MainFrm
         Me.TRPanel = New System.Windows.Forms.Panel
         Me.ExitPictureBox = New System.Windows.Forms.PictureBox
         Me.MinPictureBox = New System.Windows.Forms.PictureBox
-        Me.Panel8 = New System.Windows.Forms.Panel
-        Me.LeftPanel2 = New System.Windows.Forms.Panel
-        Me.TopPanel2 = New System.Windows.Forms.Panel
-        Me.TLPanel = New System.Windows.Forms.Panel
         Me.FormMovePanel = New System.Windows.Forms.Panel
-        Me.VerWebBrowser = New System.Windows.Forms.WebBrowser
-        Me.NewVerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.TitleLabel = New System.Windows.Forms.Label
         Me.ListviewContextMenuStrip.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -165,10 +166,11 @@ Partial Class MainFrm
         Me.AviSynthContextMenuStrip.SuspendLayout()
         Me.BottomPanel.SuspendLayout()
         Me.TitlePanel.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
         CType(Me.ExitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MinPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel8.SuspendLayout()
+        Me.FormMovePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncListListView
@@ -258,7 +260,7 @@ Partial Class MainFrm
         '
         'ListviewContextMenuStrip
         '
-        Me.ListviewContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.ErrToolStripMenuItem, Me.ToolStripMenuItem1, Me.CheckAllToolStripMenuItem, Me.UncheckAllToolStripMenuItem, Me.ToolStripMenuItem2, Me.InPlayToolStripMenuItem, Me.InInfoToolStripMenuItem, Me.ToolStripMenuItem3, Me.OutPlayToolStripMenuItem, Me.OutInfoToolStripMenuItem, Me.ToolStripMenuItem4, Me.StreamSelToolStripMenuItem})
+        Me.ListviewContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.AudSelToolStripMenuItem, Me.ErrToolStripMenuItem, Me.ToolStripMenuItem1, Me.CheckAllToolStripMenuItem, Me.UncheckAllToolStripMenuItem, Me.ToolStripMenuItem2, Me.InPlayToolStripMenuItem, Me.InInfoToolStripMenuItem, Me.ToolStripMenuItem3, Me.OutPlayToolStripMenuItem, Me.OutInfoToolStripMenuItem, Me.ToolStripMenuItem4, Me.StreamSelToolStripMenuItem})
         Me.ListviewContextMenuStrip.Name = "ListviewContextMenuStrip"
         resources.ApplyResources(Me.ListviewContextMenuStrip, "ListviewContextMenuStrip")
         '
@@ -266,6 +268,11 @@ Partial Class MainFrm
         '
         Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
         resources.ApplyResources(Me.AddToolStripMenuItem, "AddToolStripMenuItem")
+        '
+        'AudSelToolStripMenuItem
+        '
+        Me.AudSelToolStripMenuItem.Name = "AudSelToolStripMenuItem"
+        resources.ApplyResources(Me.AudSelToolStripMenuItem, "AudSelToolStripMenuItem")
         '
         'ErrToolStripMenuItem
         '
@@ -465,7 +472,7 @@ Partial Class MainFrm
         'Panel12
         '
         resources.ApplyResources(Me.Panel12, "Panel12")
-        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.Panel12.Controls.Add(Me._FileLabel)
         Me.Panel12.Controls.Add(Me._FileLabel2)
         Me.Panel12.Controls.Add(Me._AudioLabel2)
@@ -479,46 +486,55 @@ Partial Class MainFrm
         '
         '_FileLabel
         '
+        Me._FileLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         resources.ApplyResources(Me._FileLabel, "_FileLabel")
         Me._FileLabel.Name = "_FileLabel"
         '
         '_FileLabel2
         '
         resources.ApplyResources(Me._FileLabel2, "_FileLabel2")
+        Me._FileLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me._FileLabel2.Name = "_FileLabel2"
         '
         '_AudioLabel2
         '
         resources.ApplyResources(Me._AudioLabel2, "_AudioLabel2")
+        Me._AudioLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me._AudioLabel2.Name = "_AudioLabel2"
         '
         '_VideoLabel1
         '
         resources.ApplyResources(Me._VideoLabel1, "_VideoLabel1")
+        Me._VideoLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me._VideoLabel1.Name = "_VideoLabel1"
         '
         '_FileLabel1
         '
         resources.ApplyResources(Me._FileLabel1, "_FileLabel1")
+        Me._FileLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me._FileLabel1.Name = "_FileLabel1"
         '
         '_AudioLabel
         '
+        Me._AudioLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         resources.ApplyResources(Me._AudioLabel, "_AudioLabel")
         Me._AudioLabel.Name = "_AudioLabel"
         '
         '_AudioLabel1
         '
         resources.ApplyResources(Me._AudioLabel1, "_AudioLabel1")
+        Me._AudioLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me._AudioLabel1.Name = "_AudioLabel1"
         '
         '_VideoLabel2
         '
         resources.ApplyResources(Me._VideoLabel2, "_VideoLabel2")
+        Me._VideoLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me._VideoLabel2.Name = "_VideoLabel2"
         '
         '_VideoLabel
         '
+        Me._VideoLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         resources.ApplyResources(Me._VideoLabel, "_VideoLabel")
         Me._VideoLabel.Name = "_VideoLabel"
         '
@@ -562,8 +578,8 @@ Partial Class MainFrm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ErrToolStripMenuItem2, Me.AboutToolStripMenuItem, Me.TrayToolStripMenuItem, Me.NewVerToolStripMenuItem})
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ConfigToolStripMenuItem, Me.AboutToolStripMenuItem, Me.NewVerToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
@@ -583,20 +599,20 @@ Partial Class MainFrm
         Me.AviSynthToolStripMenuItem.Name = "AviSynthToolStripMenuItem"
         resources.ApplyResources(Me.AviSynthToolStripMenuItem, "AviSynthToolStripMenuItem")
         '
-        'ErrToolStripMenuItem2
+        'ConfigToolStripMenuItem
         '
-        Me.ErrToolStripMenuItem2.Name = "ErrToolStripMenuItem2"
-        resources.ApplyResources(Me.ErrToolStripMenuItem2, "ErrToolStripMenuItem2")
+        Me.ConfigToolStripMenuItem.Name = "ConfigToolStripMenuItem"
+        resources.ApplyResources(Me.ConfigToolStripMenuItem, "ConfigToolStripMenuItem")
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         resources.ApplyResources(Me.AboutToolStripMenuItem, "AboutToolStripMenuItem")
         '
-        'TrayToolStripMenuItem
+        'NewVerToolStripMenuItem
         '
-        Me.TrayToolStripMenuItem.Name = "TrayToolStripMenuItem"
-        resources.ApplyResources(Me.TrayToolStripMenuItem, "TrayToolStripMenuItem")
+        Me.NewVerToolStripMenuItem.Name = "NewVerToolStripMenuItem"
+        resources.ApplyResources(Me.NewVerToolStripMenuItem, "NewVerToolStripMenuItem")
         '
         'PresetContextMenuStrip
         '
@@ -606,6 +622,7 @@ Partial Class MainFrm
         'MainPanel
         '
         Me.MainPanel.BackColor = System.Drawing.Color.Transparent
+        Me.MainPanel.Controls.Add(Me.DefPreviewImg)
         Me.MainPanel.Controls.Add(Me.VerWebBrowser)
         Me.MainPanel.Controls.Add(Me.Panel6)
         Me.MainPanel.Controls.Add(Me.CleanUpListBox)
@@ -617,6 +634,19 @@ Partial Class MainFrm
         Me.MainPanel.Controls.Add(Me.MenuStrip1)
         resources.ApplyResources(Me.MainPanel, "MainPanel")
         Me.MainPanel.Name = "MainPanel"
+        '
+        'DefPreviewImg
+        '
+        Me.DefPreviewImg.BackColor = System.Drawing.Color.Black
+        resources.ApplyResources(Me.DefPreviewImg, "DefPreviewImg")
+        Me.DefPreviewImg.Name = "DefPreviewImg"
+        '
+        'VerWebBrowser
+        '
+        resources.ApplyResources(Me.VerWebBrowser, "VerWebBrowser")
+        Me.VerWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.VerWebBrowser.Name = "VerWebBrowser"
+        Me.VerWebBrowser.Url = New System.Uri("http://www.kiraraencoder.pe.kr/ver.htm", System.UriKind.Absolute)
         '
         'Panel1
         '
@@ -659,14 +689,14 @@ Partial Class MainFrm
         'Panel4
         '
         resources.ApplyResources(Me.Panel4, "Panel4")
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(115, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(115, Byte), Integer))
+        Me.Panel4.BackColor = System.Drawing.Color.Gray
         Me.Panel4.Controls.Add(Me.SavePathTextBox)
         Me.Panel4.Name = "Panel4"
         '
         'SavePathTextBox
         '
         resources.ApplyResources(Me.SavePathTextBox, "SavePathTextBox")
-        Me.SavePathTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(115, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(115, Byte), Integer))
+        Me.SavePathTextBox.BackColor = System.Drawing.Color.Gray
         Me.SavePathTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.SavePathTextBox.ForeColor = System.Drawing.Color.White
         Me.SavePathTextBox.Name = "SavePathTextBox"
@@ -802,20 +832,42 @@ Partial Class MainFrm
         'TitlePanel
         '
         Me.TitlePanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TM
-        Me.TitlePanel.Controls.Add(Me.TitleLabel)
+        Me.TitlePanel.Controls.Add(Me.Panel8)
         Me.TitlePanel.Controls.Add(Me.TopPanel)
         Me.TitlePanel.Controls.Add(Me.Panel9)
-        Me.TitlePanel.Controls.Add(Me.Panel8)
         Me.TitlePanel.Controls.Add(Me.FormMovePanel)
         resources.ApplyResources(Me.TitlePanel, "TitlePanel")
         Me.TitlePanel.Name = "TitlePanel"
         '
-        'TitleLabel
+        'Panel8
         '
-        resources.ApplyResources(Me.TitleLabel, "TitleLabel")
-        Me.TitleLabel.BackColor = System.Drawing.Color.Transparent
-        Me.TitleLabel.ForeColor = System.Drawing.Color.White
-        Me.TitleLabel.Name = "TitleLabel"
+        Me.Panel8.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TM
+        Me.Panel8.Controls.Add(Me.LeftPanel2)
+        Me.Panel8.Controls.Add(Me.TLPanel)
+        Me.Panel8.Controls.Add(Me.TopPanel2)
+        resources.ApplyResources(Me.Panel8, "Panel8")
+        Me.Panel8.Name = "Panel8"
+        '
+        'LeftPanel2
+        '
+        Me.LeftPanel2.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TL
+        Me.LeftPanel2.Cursor = System.Windows.Forms.Cursors.SizeWE
+        resources.ApplyResources(Me.LeftPanel2, "LeftPanel2")
+        Me.LeftPanel2.Name = "LeftPanel2"
+        '
+        'TLPanel
+        '
+        Me.TLPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTL
+        Me.TLPanel.Cursor = System.Windows.Forms.Cursors.SizeNWSE
+        resources.ApplyResources(Me.TLPanel, "TLPanel")
+        Me.TLPanel.Name = "TLPanel"
+        '
+        'TopPanel2
+        '
+        Me.TopPanel2.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTM
+        Me.TopPanel2.Cursor = System.Windows.Forms.Cursors.SizeNS
+        resources.ApplyResources(Me.TopPanel2, "TopPanel2")
+        Me.TopPanel2.Name = "TopPanel2"
         '
         'TopPanel
         '
@@ -838,10 +890,10 @@ Partial Class MainFrm
         '
         'TrayLabel
         '
-        resources.ApplyResources(Me.TrayLabel, "TrayLabel")
         Me.TrayLabel.BackColor = System.Drawing.Color.Transparent
         Me.TrayLabel.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TrayLabel.ForeColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.TrayLabel, "TrayLabel")
         Me.TrayLabel.Name = "TrayLabel"
         '
         'RightPanel2
@@ -879,59 +931,25 @@ Partial Class MainFrm
         Me.MinPictureBox.Name = "MinPictureBox"
         Me.MinPictureBox.TabStop = False
         '
-        'Panel8
-        '
-        Me.Panel8.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TM
-        Me.Panel8.Controls.Add(Me.LeftPanel2)
-        Me.Panel8.Controls.Add(Me.TopPanel2)
-        Me.Panel8.Controls.Add(Me.TLPanel)
-        resources.ApplyResources(Me.Panel8, "Panel8")
-        Me.Panel8.Name = "Panel8"
-        '
-        'LeftPanel2
-        '
-        Me.LeftPanel2.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.TL
-        Me.LeftPanel2.Cursor = System.Windows.Forms.Cursors.SizeWE
-        resources.ApplyResources(Me.LeftPanel2, "LeftPanel2")
-        Me.LeftPanel2.Name = "LeftPanel2"
-        '
-        'TopPanel2
-        '
-        Me.TopPanel2.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTM
-        Me.TopPanel2.Cursor = System.Windows.Forms.Cursors.SizeNS
-        resources.ApplyResources(Me.TopPanel2, "TopPanel2")
-        Me.TopPanel2.Name = "TopPanel2"
-        '
-        'TLPanel
-        '
-        Me.TLPanel.BackgroundImage = Global.KiraraEncoder.My.Resources.Resources.topTL
-        Me.TLPanel.Cursor = System.Windows.Forms.Cursors.SizeNWSE
-        resources.ApplyResources(Me.TLPanel, "TLPanel")
-        Me.TLPanel.Name = "TLPanel"
-        '
         'FormMovePanel
         '
         resources.ApplyResources(Me.FormMovePanel, "FormMovePanel")
         Me.FormMovePanel.BackColor = System.Drawing.Color.Transparent
+        Me.FormMovePanel.Controls.Add(Me.TitleLabel)
         Me.FormMovePanel.Name = "FormMovePanel"
         '
-        'VerWebBrowser
+        'TitleLabel
         '
-        resources.ApplyResources(Me.VerWebBrowser, "VerWebBrowser")
-        Me.VerWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.VerWebBrowser.Name = "VerWebBrowser"
-        Me.VerWebBrowser.Url = New System.Uri("http://www.kiraraencoder.pe.kr/ver.htm", System.UriKind.Absolute)
-        '
-        'NewVerToolStripMenuItem
-        '
-        Me.NewVerToolStripMenuItem.Name = "NewVerToolStripMenuItem"
-        resources.ApplyResources(Me.NewVerToolStripMenuItem, "NewVerToolStripMenuItem")
+        resources.ApplyResources(Me.TitleLabel, "TitleLabel")
+        Me.TitleLabel.BackColor = System.Drawing.Color.Transparent
+        Me.TitleLabel.ForeColor = System.Drawing.Color.White
+        Me.TitleLabel.Name = "TitleLabel"
         '
         'MainFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.RightPanel)
         Me.Controls.Add(Me.LeftPanel)
@@ -965,12 +983,11 @@ Partial Class MainFrm
         Me.AviSynthContextMenuStrip.ResumeLayout(False)
         Me.BottomPanel.ResumeLayout(False)
         Me.TitlePanel.ResumeLayout(False)
-        Me.TitlePanel.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
         CType(Me.ExitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MinPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel8.ResumeLayout(False)
+        Me.FormMovePanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1032,7 +1049,6 @@ Partial Class MainFrm
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents SavePathTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Panel7 As System.Windows.Forms.Panel
-    Friend WithEvents TrayToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NotifyIcon As System.Windows.Forms.NotifyIcon
     Friend WithEvents MovePanel As System.Windows.Forms.Panel
     Friend WithEvents RemovePanel As System.Windows.Forms.Panel
@@ -1050,7 +1066,6 @@ Partial Class MainFrm
     Friend WithEvents OutPlayToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OutInfoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AVSPanel As System.Windows.Forms.Panel
-    Friend WithEvents ErrToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AviSynthContextMenuStrip As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents ImgToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AudToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1094,5 +1109,8 @@ Partial Class MainFrm
     Friend WithEvents LeftPanel As System.Windows.Forms.Panel
     Friend WithEvents VerWebBrowser As System.Windows.Forms.WebBrowser
     Friend WithEvents NewVerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConfigToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DefPreviewImg As System.Windows.Forms.Panel
+    Friend WithEvents AudSelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

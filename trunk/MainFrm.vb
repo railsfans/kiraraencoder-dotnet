@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.04.06]"
+    Public PDATA = "[2011.04.14]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -114,6 +114,13 @@ Public Class MainFrm
     Public OldVerCheckBoxAVSIFrmV As Boolean = False
     Public AVSOFFCheckBoxAVSIFrmV As Boolean = False
     Public PriorityComboBoxEncodingFrmV As Integer = 2
+    Public InPRadioButtonV As Boolean = True
+    Public OutPRadioButtonV As Boolean = False
+    Public DebugCheckBoxV As Boolean = False
+    Public PreviewModeV As Integer = 2
+    Public BackColorPanelV As Color = Color.FromArgb(-16777216)
+    Public ImgTextBoxV As String = ""
+    Public ModeComboBoxV As String = "Center"
 
     '설정
     Dim MainWidth As String = ""
@@ -138,6 +145,11 @@ Public Class MainFrm
     'DEC
     Public DECSTR As String = "FFMPEG"
 
+    'Loading
+    Public LoadingBool As Boolean = False
+
+    'AVS_FPS
+    Public AVS_FPS As String = ""
 
 #Region "프론트엔드 코어"
 
@@ -252,7 +264,7 @@ Public Class MainFrm
     Public Sub GetInfo(ByVal MPATHV As String)
 
         'FFmpeg 없으면 통과//
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe") = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe") = False Then
             Exit Sub
         End If
 
@@ -265,7 +277,7 @@ Public Class MainFrm
         End If
 
         Dim MSGB As String = ""
-        MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & MPATHV & Chr(34)
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & MPATHV & Chr(34)
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
         Dim TempInputHandle As SafeFileHandle = Nothing
@@ -483,8 +495,8 @@ Public Class MainFrm
                     End If
                 End If
             End If
-            If ta2 = "" Then '30으로 처리.?
-                ta2 = 30
+            If ta2 = "" Then '120으로 처리.?
+                ta2 = 120
             End If
             ELVI.SubItems(12).Text = ELVI.SubItems(12).Text & "," & ta2
 
@@ -666,15 +678,15 @@ Public Class MainFrm
         PresetContextMenuStrip.Items.Add("-", Nothing, Nothing)
 
         '프리셋 폴더의 파일
-        For Each IOGF As IO.FileInfo In New IO.DirectoryInfo(My.Application.Info.DirectoryPath & "\preset").GetFiles("*.xml")
+        For Each IOGF As IO.FileInfo In New IO.DirectoryInfo(FunctionCls.AppInfoDirectoryPath & "\preset").GetFiles("*.xml")
             PresetContextMenuStrip.Items.Add(Strings.Left(IOGF.Name, InStrRev(IOGF.Name, ".") - 1), Nothing, AddressOf OutSelectPreset)
         Next
 
         '프리셋 폴더의 하위 폴더 및 하위 폴더의 파일
-        For Each IOGF As IO.DirectoryInfo In New IO.DirectoryInfo(My.Application.Info.DirectoryPath & "\preset").GetDirectories
+        For Each IOGF As IO.DirectoryInfo In New IO.DirectoryInfo(FunctionCls.AppInfoDirectoryPath & "\preset").GetDirectories
             Dim TSM As New ToolStripMenuItem
             TSM.Text = IOGF.Name
-            For Each IOGF2 As IO.FileInfo In New IO.DirectoryInfo(My.Application.Info.DirectoryPath & "\preset\" & IOGF.Name).GetFiles("*.xml")
+            For Each IOGF2 As IO.FileInfo In New IO.DirectoryInfo(FunctionCls.AppInfoDirectoryPath & "\preset\" & IOGF.Name).GetFiles("*.xml")
                 PresetContextMenuStrip.Items.Add(TSM)
                 TSM.DropDownItems.Add(Strings.Left(IOGF2.Name, InStrRev(IOGF2.Name, ".") - 1), Nothing, AddressOf OutSelectPreset)
             Next
@@ -690,7 +702,7 @@ Public Class MainFrm
             '인코딩 설정 보여질 부분 새로고침
             EncSetFrm.EncSetREF()
             '설정저장
-            XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+            XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
             '프리셋 표시
             PresetLabel.Text = LangCls.MainUserStr
             '명령어 받기
@@ -706,7 +718,7 @@ Public Class MainFrm
     End Sub
 
     Private Sub OpenPresetFolder(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Process.Start("explorer.exe", My.Application.Info.DirectoryPath & "\preset")
+        Process.Start("explorer.exe", FunctionCls.AppInfoDirectoryPath & "\preset")
     End Sub
 
     Private Sub OutSelectPreset(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -724,16 +736,16 @@ Public Class MainFrm
         End If
 
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\preset\" & PathV) = True Then
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\preset\" & PathV) = True Then
                 '기본값 - 새로운 설정이 나올때 기본값을 안 해버리면 그대로 이전 설정 나오게 됨
                 DefSUB(False)
                 '설정열고저장
-                XML_LOAD(My.Application.Info.DirectoryPath & "\preset\" & PathV)
-                XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+                XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\preset\" & PathV)
+                XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
                 '명령어 받기
                 EncSetFrm.GETFFCMD()
             Else
-                MsgBox(My.Application.Info.DirectoryPath & "\preset\" & PathV & " not found")
+                MsgBox(FunctionCls.AppInfoDirectoryPath & "\preset\" & PathV & " not found")
                 '새로고침
                 RefPreset()
             End If
@@ -764,12 +776,12 @@ Public Class MainFrm
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -861,11 +873,11 @@ Public Class MainFrm
                 If XTR.Name = "MainSInitializationStr" Then LangCls.MainSInitializationStr = XTR.ReadString
                 If XTR.Name = "MainSetEncAVSStr" Then LangCls.MainSetEncAVSStr = XTR.ReadString
                 If XTR.Name = "MainInitializationQ" Then LangCls.MainInitializationQ = XTR.ReadString
-                If XTR.Name = "MainTrayToolStripMenuItem" Then TrayToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "MainTrayLabel" Then TrayLabel.Text = XTR.ReadString
                 If XTR.Name = "MainAddToolStripMenuItem" Then AddToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainErrToolStripMenuItem" Then
                     ErrToolStripMenuItem.Text = XTR.ReadString
-                    ErrToolStripMenuItem2.Text = ErrToolStripMenuItem.Text
+                    'ErrToolStripMenuItem2.Text = ErrToolStripMenuItem.Text
                 End If
                 If XTR.Name = "MainCheckAllToolStripMenuItem" Then CheckAllToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainUncheckAllToolStripMenuItem" Then UncheckAllToolStripMenuItem.Text = XTR.ReadString
@@ -886,6 +898,7 @@ Public Class MainFrm
                 'If XTR.Name = "MainFrmAVSGroupBox" Then AVSGroupBox.Text = XTR.ReadString
                 If XTR.Name = "MainDeleteERR" Then LangCls.MainDeleteERR = XTR.ReadString
                 If XTR.Name = "MainDeleteERRCap" Then LangCls.MainDeleteERRCap = XTR.ReadString
+                If XTR.Name = "MainAudSelToolStripMenuItem" Then AudSelToolStripMenuItem.Text = XTR.ReadString
 
                 '외부언어//
                 If XTR.Name = "EncSetFrm" Then EncToolStripMenuItem.Text = XTR.ReadString
@@ -905,6 +918,7 @@ Public Class MainFrm
                     If XTR.Name = "AviSynthEditorFrmAllICToolStripMenuItem" Then .AllICToolStripMenuItem.Text = XTR.ReadString
                     If XTR.Name = "AviSynthEditorFrmAllOCToolStripMenuItem" Then .AllOCToolStripMenuItem.Text = XTR.ReadString
                 End With
+                If XTR.Name = "ConfigFrm" Then ConfigToolStripMenuItem.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -1427,12 +1441,76 @@ LANG_SKIP:
 
             Else
                 If EncSetFrm.FramerateCheckBox.Checked = True Then
-                    Try
-                        ImageFramerateV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(1) & " fps"
-                    Catch ex As Exception
-                    End Try
+
+                    'ASF WMV
+                    'MPEG TS
+                    'RM
+                    'FLV SWF
+                    '가변 보존 못하는 컨테이너, 60프레임으로 제한.
+                    If EncListListView.Items(index).SubItems(3).Text = "ASF" Then 'ASF형식은 예외로 가변 프레임처리
+
+                        If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
+                            ImageFramerateV = "60 fps"
+                        Else
+                            ImageFramerateV = "120 fps(VFR)"
+                        End If
+
+                    Else
+                        Dim OriginFPS As String = ""
+                        Try
+                            OriginFPS = Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)
+                        Catch ex As Exception
+                            OriginFPS = ""
+                        End Try
+                        If OriginFPS <> "" Then
+                            If Val(OriginFPS) > 60 Then
+
+                                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
+                                    ImageFramerateV = "60 fps"
+                                Else
+                                    ImageFramerateV = "120 fps(VFR)"
+                                End If
+
+                            Else
+
+                                Try
+                                    ImageFramerateV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(1) & " fps"
+                                Catch ex As Exception
+                                End Try
+
+                            End If
+                        End If
+                    End If
+
                 Else
-                    ImageFramerateV = EncSetFrm.FramerateComboBox.Text & " fps"
+
+                    Try
+                        If EncSetFrm.FFFPSDOCheckBox.Checked = True Then '선택한 fps보다 원본 파일의 fps가 작을 경우 원본 프레임 레이트 사용
+                            If Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) < Val(EncSetFrm.FramerateComboBox.Text) Then
+                                ImageFramerateV = Val(Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)) & " fps"
+                            Else
+                                ImageFramerateV = EncSetFrm.FramerateComboBox.Text & " fps"
+                            End If
+                        Else
+                            ImageFramerateV = EncSetFrm.FramerateComboBox.Text & " fps"
+                        End If
+                    Catch ex As Exception
+                        '에러나면 지정한 프레임 레이트로
+                        ImageFramerateV = EncSetFrm.FramerateComboBox.Text & " fps"
+                    End Try
+
                 End If
             End If
             '---------------------------------
@@ -1817,13 +1895,13 @@ LANG_SKIP:
         Next
 
         '최종 파일에 설정저장
-        APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
+        APP_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\app_settings.xml")
 
         'AVS설정저장
-        AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+        AVS_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml")
 
         '예외저장
-        XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+        XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
 
 
@@ -1846,53 +1924,61 @@ ReDel:
 
         '작업한 파일 삭제 2단계//
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Equalizer.feq") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Equalizer.feq")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Equalizer.feq") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Equalizer.feq")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.psb") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.psb")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.psb") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.psb")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.psb.style") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.psb.style")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.psb.style") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.psb.style")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.smi") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.smi")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi.style") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.smi.style")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.smi.style") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.smi.style")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.srt") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.srt")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.srt") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.srt")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.srt.style") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.srt.style")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.srt.style") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.srt.style")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.sub") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.sub")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.sub") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.sub")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle.sub.style") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\Subtitle.sub.style")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.sub.style") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle.sub.style")
         Catch ex As Exception
         End Try
         Try
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\CLIneroAacEnc.bat") = True Then _
-               My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\CLIneroAacEnc.bat")
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\CLIneroAacEnc.bat") = True Then _
+               My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\CLIneroAacEnc.bat")
+        Catch ex As Exception
+        End Try
+
+        '미리보기 이미지 삭제
+        Try
+            If My.Computer.FileSystem.FileExists(EncodingFrm.SnapshotImgFilePathV) = True Then
+                My.Computer.FileSystem.DeleteFile(EncodingFrm.SnapshotImgFilePathV)
+            End If
         Catch ex As Exception
         End Try
 
@@ -1930,34 +2016,35 @@ ReDel:
         '관리자모드 필요여부 검사
         Try
             '쓰기
-            My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\check.xml", "", False)
+            My.Computer.FileSystem.WriteAllText(FunctionCls.AppInfoDirectoryPath & "\check.xml", "", False)
             '삭제
-            My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\check.xml")
+            My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\check.xml")
         Catch ex As Exception
             GoTo UAC
         End Try
 
         '저장폴더 생성
-        If My.Computer.FileSystem.DirectoryExists(My.Application.Info.DirectoryPath & "\temp") = False Then
-            My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\temp")
+        If My.Computer.FileSystem.DirectoryExists(FunctionCls.AppInfoDirectoryPath & "\temp") = False Then
+            My.Computer.FileSystem.CreateDirectory(FunctionCls.AppInfoDirectoryPath & "\temp")
         End If
 
         '캐시 저장폴더 생성
-        If My.Computer.FileSystem.DirectoryExists(My.Application.Info.DirectoryPath & "\temp\caches") = False Then
-            My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\temp\caches")
+        If My.Computer.FileSystem.DirectoryExists(FunctionCls.AppInfoDirectoryPath & "\temp\caches") = False Then
+            My.Computer.FileSystem.CreateDirectory(FunctionCls.AppInfoDirectoryPath & "\temp\caches")
         End If
 
         '프리셋폴더 생성
-        If My.Computer.FileSystem.DirectoryExists(My.Application.Info.DirectoryPath & "\preset") = False Then
-            My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\preset")
+        If My.Computer.FileSystem.DirectoryExists(FunctionCls.AppInfoDirectoryPath & "\preset") = False Then
+            My.Computer.FileSystem.CreateDirectory(FunctionCls.AppInfoDirectoryPath & "\preset")
         End If
 
         '언어폴더 생성
-        If My.Computer.FileSystem.DirectoryExists(My.Application.Info.DirectoryPath & "\lang") = False Then
-            My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\lang")
+        If My.Computer.FileSystem.DirectoryExists(FunctionCls.AppInfoDirectoryPath & "\lang") = False Then
+            My.Computer.FileSystem.CreateDirectory(FunctionCls.AppInfoDirectoryPath & "\lang")
         End If
 
         '-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -1973,22 +2060,27 @@ ReDel:
 
 
 
+        '키라라 인코더 경로 유니코드 확인후 처리
+        Dim FNGBytes() As Byte = System.Text.Encoding.Default.GetBytes(FunctionCls.AppInfoDirectoryPath)
+        If InStr(System.Text.Encoding.Default.GetString(FNGBytes), "?") <> 0 Then
+            FunctionCls.AppInfoDirectoryPath = WinAPI.GetShortPathName(FunctionCls.AppInfoDirectoryPath)
+        End If
 
         '설정로드
         '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         '프로그램 설정
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\app_settings.xml") = False Then '설정파일이 없으면
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\app_settings.xml") = False Then '설정파일이 없으면
             APP_DefSUB()
-            APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
+            APP_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\app_settings.xml")
         Else
             APP_DefSUB()
-            APP_XML_LOAD(My.Application.Info.DirectoryPath & "\app_settings.xml")
-            If APP_OpenErrV = False Then APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml") '오류가 없다면 파일기록, 새롭게 추가된 부분 저장관련..
+            APP_XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\app_settings.xml")
+            If APP_OpenErrV = False Then APP_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\app_settings.xml") '오류가 없다면 파일기록, 새롭게 추가된 부분 저장관련..
         End If
         '프로그램 설정파일 오류처리
         If APP_OpenErrV = True Then
             APP_DefSUB()
-            APP_XML_SAVE(My.Application.Info.DirectoryPath & "\app_settings.xml")
+            APP_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\app_settings.xml")
             APP_OpenErrV = False
         End If
         '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -2013,7 +2105,7 @@ ReDel:
 
         '언어파일 불러옴
         LangToolStripMenuItem.DropDownItems.Add("Auto-select", Nothing, AddressOf OutSelectLang)
-        For Each IOGF As IO.FileInfo In New IO.DirectoryInfo(My.Application.Info.DirectoryPath & "\lang").GetFiles("*.xml")
+        For Each IOGF As IO.FileInfo In New IO.DirectoryInfo(FunctionCls.AppInfoDirectoryPath & "\lang").GetFiles("*.xml")
             LangToolStripMenuItem.DropDownItems.Add(IOGF.Name, Nothing, AddressOf OutSelectLang)
         Next
 
@@ -2181,34 +2273,34 @@ ReDel:
 
         '****************************************************************
         '설정
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\settings.xml") = False Then '설정파일이 없으면
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\settings.xml") = False Then '설정파일이 없으면
             DefSUB(True)
-            XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+            XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
         Else
             DefSUB(True)
-            XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
-            If OpenErrV = False Then XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml") '오류가 없다면 파일기록, 새롭게 추가된 부분 저장관련..
+            XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
+            If OpenErrV = False Then XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml") '오류가 없다면 파일기록, 새롭게 추가된 부분 저장관련..
         End If
         '설정파일 오류처리
         If OpenErrV = True Then
             DefSUB(True)
-            XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+            XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
             OpenErrV = False
         End If
         '****************************************************************
         'AviSynth 설정
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\avs_settings.xml") = False Then '설정파일이 없으면
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml") = False Then '설정파일이 없으면
             AVS_DefSUB()
-            AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+            AVS_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml")
         Else
             AVS_DefSUB()
-            AVS_XML_LOAD(My.Application.Info.DirectoryPath & "\avs_settings.xml")
-            If AVS_OpenErrV = False Then AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml") '오류가 없다면 파일기록, 새롭게 추가된 부분 저장관련..
+            AVS_XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml")
+            If AVS_OpenErrV = False Then AVS_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml") '오류가 없다면 파일기록, 새롭게 추가된 부분 저장관련..
         End If
         'AviSynth 설정파일 오류처리
         If AVS_OpenErrV = True Then
             AVS_DefSUB()
-            AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+            AVS_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml")
             AVS_OpenErrV = False
         End If
         '****************************************************************
@@ -2322,6 +2414,9 @@ ReDel:
             End If
         End If
 
+        '로드완료
+        LoadingBool = False
+
         '----------------------------------------------------------------------------------------
         Exit Sub
 UAC:
@@ -2366,9 +2461,9 @@ UAC:
     Private Sub AddButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddButton.Click
 
         OpenFileDialog1.FileName = ""
-        OpenFileDialog1.Filter = LangCls.MainSupportedFilesStr & "|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.tta;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.webm;*.wma;*.wv;|" & _
-                                 LangCls.MainVideoFilesStr & "|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.webm;|" & _
-                                 LangCls.MainAudioFilesStr & "|*.avs;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.tta;*.wav;*.wma;*.wv;|" & _
+        OpenFileDialog1.Filter = LangCls.MainSupportedFilesStr & "|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.tta;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.webm;*.wma;*.wv|" & _
+                                 LangCls.MainVideoFilesStr & "|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.webm|" & _
+                                 LangCls.MainAudioFilesStr & "|*.avs;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.tta;*.wav;*.wma;*.wv|" & _
                                  LangCls.MainAllFilesStr & "(*.*)|*.*"
         OpenFileDialog1.ShowDialog(Me)
 
@@ -2730,7 +2825,7 @@ UAC:
 
         'neroAacEnc.exe 체크 (Nero AAC 코덱 선택했으면)
         If EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then 'NeroAAC
-            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\tools\neroaac\neroAacEnc.exe") = False Then
+            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\tools\neroaac\neroAacEnc.exe") = False Then
                 Try
                     NeroAACNoticeFrm.ShowDialog(Me)
                 Catch ex As Exception
@@ -2761,10 +2856,10 @@ UAC:
         EncSButton.Enabled = False
         StreamSelToolStripMenuItem.Enabled = False
         LangToolStripMenuItem.Enabled = False
-        SavePathTextBox.Enabled = False
         SetFolderButton.Enabled = False
         DecSToolStripMenuItem.Enabled = False
         AviSynthToolStripMenuItem.Enabled = False
+        SavePathTextBox.ReadOnly = True
 
         '재생
         If shellpid <> 0 Then
@@ -2794,10 +2889,10 @@ UAC:
             EncSButton.Enabled = True
             StreamSelToolStripMenuItem.Enabled = True
             LangToolStripMenuItem.Enabled = True
-            SavePathTextBox.Enabled = True
             SetFolderButton.Enabled = True
             DecSToolStripMenuItem.Enabled = True
             AviSynthToolStripMenuItem.Enabled = True
+            SavePathTextBox.ReadOnly = False
         End Try
 
     End Sub
@@ -2864,6 +2959,14 @@ UAC:
         AVSOFFCheckBoxAVSIFrmV = False
 
         PriorityComboBoxEncodingFrmV = 2
+        InPRadioButtonV = True
+        OutPRadioButtonV = False
+        DebugCheckBoxV = False
+        PreviewModeV = 2
+
+        BackColorPanelV = Color.FromArgb(-16777216)
+        ImgTextBoxV = ""
+        ModeComboBoxV = "Center"
 
         LangToolStripMenuItemV = "Auto-select"
 
@@ -2883,13 +2986,14 @@ UAC:
             .QuantizerNumericUpDown.Value = 2.5
             .QuantizerCQPNumericUpDown.Value = 26
             .QualityNumericUpDown.Value = 26.0
-            .FramerateComboBox.Text = "23.976"
+            .FramerateComboBox.Text = "30"
             .FramerateCheckBox.Checked = False
             .AdvanOptsCheckBox.Checked = False
             .GOPSizeCheckBox.Checked = False
             .GOPSizeTextBox.Text = "250"
             .MinGOPSizeTextBox.Text = "25"
             .PSPMP4CheckBox.Checked = False
+            .FFFPSDOCheckBox.Checked = True
             '영상
             .ImageSizeComboBox.Text = "480 x 272"
             .ImageSizeWidthTextBox.Text = "480"
@@ -2950,10 +3054,11 @@ UAC:
             .SubtitleRecordingCheckBox.Checked = False
             .SizeEncCheckBox.Checked = False
             .SizeEncTextBox.Text = "0"
+            .RemoveMeatadataCheckBox.Checked = True
             '예외
             If AVSCHANBOOL = True Then
                 If AVSOFFCheckBoxAVSIFrmV = False Then
-                    AVSCheckBox.Checked = False '원래 True 지만 기본 값을 False로 변경.
+                    AVSCheckBox.Checked = True
                 Else
                     AVSCheckBox.Checked = False
                 End If
@@ -2999,6 +3104,8 @@ UAC:
             .UseMBTreeCheckBox.Checked = True
             .AdaptiveQuantizersModeComboBox.Text = "Variance AQ"
             .AdaptiveQuantizersStrengthNumericUpDown.Value = 1.0
+            .TempBlurofestFramecomplexityNumericUpDown.Value = 20.0
+            .TempBlurofQuantafterCCNumericUpDown.Value = 0.5
             'Analysis
             .ChromaMECheckBox.Checked = True
             .MERangeNumericUpDown.Value = 16
@@ -3035,6 +3142,7 @@ UAC:
             .TopFieldFirstCheckBox.Checked = False
             ._4MotionVectorCheckBox.Checked = False
             .QPELCheckBox.Checked = False
+            .GMCCheckBox.Checked = False
             'B-VOPs
             .BFramesCheckBox.Checked = False
             .BVOPsNumericUpDown.Value = 1
@@ -3219,6 +3327,8 @@ UAC:
             .XNumericUpDown.Value = 0
             .YNumericUpDown.Value = 0
             .ModeComboBox.Text = "Blend"
+            '기타
+            .reverseCheckBox.Checked = False
 
         End With
 
@@ -3363,6 +3473,41 @@ RELOAD:
                 If XTR.Name = "PriorityComboBoxEncodingFrmV" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then PriorityComboBoxEncodingFrmV = XTRSTR Else PriorityComboBoxEncodingFrmV = 2
+                End If
+
+                If XTR.Name = "InPRadioButtonV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then InPRadioButtonV = XTRSTR Else InPRadioButtonV = True
+                End If
+
+                If XTR.Name = "OutPRadioButtonV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then OutPRadioButtonV = XTRSTR Else OutPRadioButtonV = False
+                End If
+
+                If XTR.Name = "DebugCheckBoxV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then DebugCheckBoxV = XTRSTR Else DebugCheckBoxV = False
+                End If
+
+                If XTR.Name = "PreviewModeV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then PreviewModeV = XTRSTR Else PreviewModeV = 2
+                End If
+
+                If XTR.Name = "BackColorPanelV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then BackColorPanelV = Color.FromArgb(XTRSTR) Else BackColorPanelV = Color.FromArgb(-16777216)
+                End If
+
+                If XTR.Name = "ImgTextBoxV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> vbNullChar Then ImgTextBoxV = XTRSTR Else ImgTextBoxV = ""
+                End If
+
+                If XTR.Name = "ModeComboBoxV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then ModeComboBoxV = XTRSTR Else ModeComboBoxV = "Center"
                 End If
 
                 If XTR.Name = "LangToolStripMenuItemV" Then
@@ -3600,7 +3745,7 @@ RELOAD:
 
                     If XTR.Name = "EncSetFrm_FramerateComboBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .FramerateComboBox.Text = XTRSTR Else .FramerateComboBox.Text = "23.976"
+                        If XTRSTR <> "" Then .FramerateComboBox.Text = XTRSTR Else .FramerateComboBox.Text = "30"
                     End If
 
                     If XTR.Name = "EncSetFrm_FramerateCheckBox" Then
@@ -3631,6 +3776,11 @@ RELOAD:
                     If XTR.Name = "EncSetFrm_PSPMP4CheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .PSPMP4CheckBox.Checked = XTRSTR Else .PSPMP4CheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "EncSetFrm_FFFPSDOCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFFPSDOCheckBox.Checked = XTRSTR Else .FFFPSDOCheckBox.Checked = True
                     End If
 
                     '영상
@@ -3971,6 +4121,11 @@ RELOAD:
                         If XTRSTR <> "" Then .SizeEncTextBox.Text = XTRSTR Else .SizeEncTextBox.Text = "0"
                     End If
 
+                    If XTR.Name = "EncSetFrm_RemoveMeatadataCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .RemoveMeatadataCheckBox.Checked = XTRSTR Else .RemoveMeatadataCheckBox.Checked = True
+                    End If
+
                 End With
 
                 '//////////////////////////////////////////////////////////// x264optsFrm
@@ -4139,6 +4294,16 @@ RELOAD:
                         If XTRSTR <> "" Then .AdaptiveQuantizersStrengthNumericUpDown.Value = XTRSTR Else .AdaptiveQuantizersStrengthNumericUpDown.Value = 1.0
                     End If
 
+                    If XTR.Name = "x264optsFrm_TempBlurofestFramecomplexityNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TempBlurofestFramecomplexityNumericUpDown.Value = XTRSTR Else .TempBlurofestFramecomplexityNumericUpDown.Value = 20.0
+                    End If
+
+                    If XTR.Name = "x264optsFrm_TempBlurofQuantafterCCNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TempBlurofQuantafterCCNumericUpDown.Value = XTRSTR Else .TempBlurofQuantafterCCNumericUpDown.Value = 0.5
+                    End If
+
                     'Analysis
                     If XTR.Name = "x264optsFrm_ChromaMECheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
@@ -4284,6 +4449,11 @@ RELOAD:
                     If XTR.Name = "MPEG4optsFrm_QPELCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .QPELCheckBox.Checked = XTRSTR Else .QPELCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "MPEG4optsFrm_GMCCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .GMCCheckBox.Checked = XTRSTR Else .GMCCheckBox.Checked = False
                     End If
 
                     'B-VOPs
@@ -5161,13 +5331,19 @@ RELOAD:
                         If XTRSTR <> "" Then .ModeComboBox.Text = XTRSTR Else .ModeComboBox.Text = "Blend"
                     End If
 
+                    '기타
+                    If XTR.Name = "ETCPPFrm_reverseCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .reverseCheckBox.Checked = XTRSTR Else .reverseCheckBox.Checked = False
+                    End If
+
                 End With
 
                 '예외
                 If AVSOFFCheckBoxAVSIFrmV = False Then
                     If XTR.Name = "AVSCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = False
+                        If XTRSTR <> "" Then AVSCheckBox.Checked = XTRSTR Else AVSCheckBox.Checked = True
                     End If
                 Else
                     AVSCheckBox.Checked = False
@@ -5305,6 +5481,34 @@ RELOAD:
 
             XTWriter.WriteStartElement("PriorityComboBoxEncodingFrmV")
             XTWriter.WriteString(PriorityComboBoxEncodingFrmV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("InPRadioButtonV")
+            XTWriter.WriteString(InPRadioButtonV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("OutPRadioButtonV")
+            XTWriter.WriteString(OutPRadioButtonV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("DebugCheckBoxV")
+            XTWriter.WriteString(DebugCheckBoxV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("PreviewModeV")
+            XTWriter.WriteString(PreviewModeV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("BackColorPanelV")
+            XTWriter.WriteString(BackColorPanelV.ToArgb.ToString)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("ImgTextBoxV")
+            XTWriter.WriteString(ImgTextBoxV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("ModeComboBoxV")
+            XTWriter.WriteString(ModeComboBoxV)
             XTWriter.WriteEndElement()
 
             XTWriter.WriteStartElement("LangToolStripMenuItemV")
@@ -5541,6 +5745,10 @@ RELOAD:
 
                 XTWriter.WriteStartElement("EncSetFrm_PSPMP4CheckBox")
                 XTWriter.WriteString(.PSPMP4CheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("EncSetFrm_FFFPSDOCheckBox")
+                XTWriter.WriteString(.FFFPSDOCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
                 '영상
@@ -5811,6 +6019,10 @@ RELOAD:
                 XTWriter.WriteString(.SizeEncTextBox.Text)
                 XTWriter.WriteEndElement()
 
+                XTWriter.WriteStartElement("EncSetFrm_RemoveMeatadataCheckBox")
+                XTWriter.WriteString(.RemoveMeatadataCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
                 '===
 
             End With
@@ -5949,6 +6161,14 @@ RELOAD:
                 XTWriter.WriteString(.AdaptiveQuantizersStrengthNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
+                XTWriter.WriteStartElement("x264optsFrm_TempBlurofestFramecomplexityNumericUpDown")
+                XTWriter.WriteString(.TempBlurofestFramecomplexityNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("x264optsFrm_TempBlurofQuantafterCCNumericUpDown")
+                XTWriter.WriteString(.TempBlurofQuantafterCCNumericUpDown.Value)
+                XTWriter.WriteEndElement()
+
                 'Analysis
                 XTWriter.WriteStartElement("x264optsFrm_ChromaMECheckBox")
                 XTWriter.WriteString(.ChromaMECheckBox.Checked)
@@ -6066,6 +6286,10 @@ RELOAD:
 
                 XTWriter.WriteStartElement("MPEG4optsFrm_QPELCheckBox")
                 XTWriter.WriteString(.QPELCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("MPEG4optsFrm_GMCCheckBox")
+                XTWriter.WriteString(.GMCCheckBox.Checked)
                 XTWriter.WriteEndElement()
 
                 'B-VOPs
@@ -6765,6 +6989,11 @@ RELOAD:
                 XTWriter.WriteString(.ModeComboBox.Text)
                 XTWriter.WriteEndElement()
 
+                '기타
+                XTWriter.WriteStartElement("ETCPPFrm_reverseCheckBox")
+                XTWriter.WriteString(.reverseCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
             End With
 
             '예외
@@ -6836,17 +7065,6 @@ RELOAD:
         SavePathTextBox.Text = FolderBrowserDialog1.SelectedPath
     End Sub
 
-    Private Sub TrayToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrayToolStripMenuItem.Click
-        NotifyIcon.Icon = Me.Icon
-        NotifyIcon.Visible = True
-        If EncodingFrm.EncProcBool = True Then
-            EncodingFrm.Hide()
-        Else
-            NotifyIcon.Text = Strings.Left(Me.Text, 63)
-        End If
-        Me.Hide()
-    End Sub
-
     Public Sub NotifyIcon_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotifyIcon.Click
         If EncodingFrm.EncProcBool = True Then
             EncodingFrm.Show()
@@ -6858,39 +7076,57 @@ RELOAD:
     Private Sub EncListListView_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles EncListListView.MouseUp
         EncListListViewChkB = False
 
+        '同-ERRAUD0 START
         Try
-            '오류로그..
+            '오류로그, 오디오스트림
             If SelIndex <> -1 Then
+                '오류로그
                 If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
                     ErrToolStripMenuItem.Enabled = False
                 Else
                     ErrToolStripMenuItem.Enabled = True
                 End If
+                '오디오스트림
+                AudSelToolStripMenuItem.Enabled = True
             Else
+                '오류로그
                 ErrToolStripMenuItem.Enabled = False
+                '오디오스트림
+                AudSelToolStripMenuItem.DropDownItems.Clear()
+                AudSelToolStripMenuItem.Enabled = False
             End If
         Catch ex As Exception
             SelIndex = -1
         End Try
+        '同-ERRAUD0 END
 
     End Sub
 
     Private Sub EncListListView_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles EncListListView.KeyUp
 
+        '同-ERRAUD0 START
         Try
-            '오류로그..
+            '오류로그, 오디오스트림
             If SelIndex <> -1 Then
+                '오류로그
                 If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
                     ErrToolStripMenuItem.Enabled = False
                 Else
                     ErrToolStripMenuItem.Enabled = True
                 End If
+                '오디오스트림
+                AudSelToolStripMenuItem.Enabled = True
             Else
+                '오류로그
                 ErrToolStripMenuItem.Enabled = False
+                '오디오스트림
+                AudSelToolStripMenuItem.DropDownItems.Clear()
+                AudSelToolStripMenuItem.Enabled = False
             End If
         Catch ex As Exception
             SelIndex = -1
         End Try
+        '同-ERRAUD0 END
 
     End Sub
 
@@ -6926,8 +7162,6 @@ RELOAD:
             RemovePanel.Enabled = False
         End If
         '=====================================
-        '오류로그
-        ErrToolStripMenuItem2.Enabled = ErrToolStripMenuItem.Enabled
         '캡션
         TitleLabel.Text = Me.Text
 
@@ -7050,12 +7284,12 @@ RELOAD:
 
         '캐시예외
         Dim CACHEV As String = ""
-        If EncListListView.Items(SelIndex).SubItems(3).Text = "MPEGTS" Then CACHEV = " -demuxer lavf -cache 8192"
+        If EncListListView.Items(SelIndex).SubItems(3).Text = "MPEGTS" Then CACHEV = " -cache 8192"
         Dim ThreadV As String = ""
         If InStr(1, EncListListView.Items(SelIndex).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then ThreadV = " -lavdopts threads=" & Environ("NUMBER_OF_PROCESSORS")
 
         Dim MSGB As String = ""
-        MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & EncListListView.Items(SelIndex).SubItems(10).Text & Chr(34) & _
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & EncListListView.Items(SelIndex).SubItems(10).Text & Chr(34) & _
         " -identify -noquiet -nofontconfig -vo direct3d -idx" & CACHEV & ThreadV
         Shell(MSGB, AppWinStyle.NormalFocus)
 
@@ -7125,7 +7359,7 @@ RELOAD:
         End If
 
         Dim MSGB As String = ""
-        MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & MPATHV & Chr(34) & _
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & MPATHV & Chr(34) & _
         " -identify -noquiet -nofontconfig -vo direct3d -idx"
         Shell(MSGB, AppWinStyle.NormalFocus)
 
@@ -7138,17 +7372,9 @@ RELOAD:
         End Try
     End Sub
 
-    Private Sub ErrToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ErrToolStripMenuItem2.Click
-        ErrToolStripMenuItem_Click(Nothing, Nothing)
-    End Sub
-
     Private Sub AVSCheckBox_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AVSCheckBox.Click
         '프리셋 설정된 파일 표시 지우기 (저장은 프로그램이 종료될 때 하므로 여기에)
         PresetLabel.Text = LangCls.MainUserStr
-    End Sub
-
-    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
-
     End Sub
 
     Private Sub AvsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -7238,7 +7464,7 @@ RELOAD:
             AviSynthPP.INDEX_ProcessStopChk = False
         Else
             Dim MSGB As String = ""
-            MSGB = My.Application.Info.DirectoryPath & "\kiraraplayer.exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34)
+            MSGB = FunctionCls.AppInfoDirectoryPath & "\kiraraplayer.exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & EncListListView.Items(SelIndex).SubItems(13).Text & ").avs" & Chr(34)
             shellpid = Shell(MSGB, AppWinStyle.NormalFocus)
             shellpidexename = Process.GetProcessById(shellpid).ProcessName
             shellpidstarttime = Process.GetProcessById(shellpid).StartTime
@@ -7361,7 +7587,14 @@ RELOAD:
     End Sub
 
     Private Sub TrayLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrayLabel.Click
-        TrayToolStripMenuItem_Click(Nothing, Nothing)
+        NotifyIcon.Icon = Me.Icon
+        NotifyIcon.Visible = True
+        If EncodingFrm.EncProcBool = True Then
+            EncodingFrm.Hide()
+        Else
+            NotifyIcon.Text = Strings.Left(Me.Text, 63)
+        End If
+        Me.Hide()
     End Sub
 
     Private Sub TitlePanel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles TitlePanel.Paint
@@ -7427,5 +7660,113 @@ RELOAD:
         ie.visible = True
         ie.navigate("http://www.kiraraencoder.pe.kr/newverdown")
         ie = Nothing
+    End Sub
+
+    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub EncListListView_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles EncListListView.MouseClick
+
+        '인덱스
+        If EncListListView.SelectedItems.Count = 0 Then
+            SelIndex = -1
+        Else
+            Try
+                SelIndex = EncListListView.SelectedIndices.Item(0)
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        End If
+
+        Try
+            If SelIndex <> -1 Then
+                GET_AVINFO(SelIndex) 'AV정보
+                GET_OutputINFO(SelIndex)  '출력정보
+                EncListListView.Focus() '포커스
+            End If
+        Catch ex As Exception
+            SelIndex = -1
+        End Try
+
+        '==================================================
+        '오디오 스트림 표시
+        '--------------------------------------------------
+        If SelIndex <> -1 Then
+            '리스트뷰에 있는 오디오를 목록화
+            Dim LvAudioList As String = EncListListView.Items(SelIndex).SubItems(9).Text
+            Dim ia2 As Long = 0, iia2 As Long = 0
+            Dim ta2 As String = ""
+            Dim AudIndex As Integer = 0
+
+            AudSelToolStripMenuItem.DropDownItems.Clear()
+            Do
+                ia2 = 1
+                iia2 = 1
+                ta2 = ""
+                If InStr(ia2, LvAudioList, "Stream #", CompareMethod.Text) Then
+                    iia2 = InStr(ia2, LvAudioList, "Stream #", CompareMethod.Text)
+                    If InStr(iia2, LvAudioList, "|", CompareMethod.Text) Then
+                        ia2 = InStr(iia2, LvAudioList, "|", CompareMethod.Text)
+                        ta2 = Mid(LvAudioList, iia2, ia2 - iia2 - 1)
+                    End If
+                Else
+                    ia2 = ia2 + 1
+                End If
+
+                If ta2 <> "" Then
+                    AudSelToolStripMenuItem.DropDownItems.Add(ta2, Nothing, AddressOf OutSelectAudio)
+
+                    '스트림 체크표시
+                    If EncListListView.Items(SelIndex).SubItems(4).Text = Split(ta2, ":")(0) Then
+                        CType(AudSelToolStripMenuItem.DropDownItems(AudIndex), ToolStripMenuItem).Checked = True
+                    End If
+
+                    LvAudioList = Replace(LvAudioList, ta2, "")
+                End If
+
+                AudIndex += 1
+                Application.DoEvents()
+            Loop Until (ta2 = "")
+        End If
+        '==================================================
+
+    End Sub
+
+    Private Sub OutSelectAudio(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        '오디오 스트림 지정
+        Try
+            EncListListView.Items(SelIndex).SubItems(4).Text = Split(sender.ToString, ":")(0)
+        Catch ex As Exception
+        End Try
+
+        Try
+            If SelIndex <> -1 Then
+                GET_AVINFO(SelIndex) 'AV정보
+                GET_OutputINFO(SelIndex)  '출력정보
+                EncListListView.Focus() '포커스
+            End If
+        Catch ex As Exception
+            SelIndex = -1
+        End Try
+
+    End Sub
+
+    Private Sub ConfigToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConfigToolStripMenuItem.Click
+        If SPreB = True Then Exit Sub
+
+        Try
+            ConfigFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub Panel8_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel8.Paint
+
+    End Sub
+
+    Private Sub TitleLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TitleLabel.Click
+
     End Sub
 End Class

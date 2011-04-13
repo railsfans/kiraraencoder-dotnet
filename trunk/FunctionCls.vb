@@ -22,6 +22,9 @@ Imports System.IO
 
 Public Class FunctionCls
 
+    '어플리케이션 디렉토리 위치를 간단하게 사용.
+    Public Shared AppInfoDirectoryPath As String = My.Application.Info.DirectoryPath
+
     '----------------------------------------------------------------------------
     ' 함수이름: ColorToHEX
     ' 제 작 일: 2010 08 23
@@ -151,7 +154,7 @@ Public Class FunctionCls
             Dim LCID_GET_LANGV As String = LCID_GET_LANG(Globalization.CultureInfo.CurrentUICulture.LCID)
             If LCID_GET_LANGV <> "" Then
 
-                If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LCID_GET_LANGV & ".xml") = True Then
+                If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LCID_GET_LANGV & ".xml") = True Then
                     LangXMLFV = LCID_GET_LANGV & ".xml"
                 End If
 

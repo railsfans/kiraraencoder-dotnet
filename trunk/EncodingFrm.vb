@@ -118,6 +118,18 @@ Public Class EncodingFrm
     Public VideoMapV As String = ""
     Public AudioMapV As String = ""
 
+    '진행위치 백업
+    Dim SSV As String = "00:00:00.00"
+    Dim SSV2 As String = "00:00:00.00"
+
+    '경로
+    Public SnapshotImgFilePathV As String = FunctionCls.AppInfoDirectoryPath & "\temp\00000001.jpg"
+
+    'Touch
+    Dim TEXT_LT As Boolean = False
+    Dim TEXT_RT As Boolean = True
+    Dim WaitCnt As Integer = 0
+
 #Region "프론트엔드 코어"
 
     '=================================
@@ -133,7 +145,38 @@ Public Class EncodingFrm
         Else
 
             If EncNMStartB = False Then
-                InfoTextBox.AppendText(Replace(MsgV, vbLf, vbCrLf))
+
+                '미리보기 이미지 삭제
+                Try
+                    If My.Computer.FileSystem.FileExists(SnapshotImgFilePathV) = True Then
+                        My.Computer.FileSystem.DeleteFile(SnapshotImgFilePathV)
+                    End If
+                Catch ex As Exception
+                End Try
+
+                Dim ITBV As String = Replace(MsgV, vbLf, vbCrLf)
+                InfoTextBox.AppendText(ITBV)
+
+                '보여줄 부분
+                Try
+                    Dim ITBStart_Int As Integer = InStr(ITBV, "FFmpeg version", CompareMethod.Text)
+                    Dim ITBEnd_Int As Integer = InStrRev(ITBV, "size=", -1, CompareMethod.Text)
+                    If ITBStart_Int <> 0 AndAlso ITBEnd_Int <> 0 Then
+                        Dim ITBFEnd_Int As Integer = InStrRev(ITBV, "frame=", -1, CompareMethod.Text)
+                        Dim ITBV2 As String = ""
+                        If ITBFEnd_Int <> 0 Then
+                            ITBV2 = Strings.Left(Strings.Mid(ITBV, ITBStart_Int), ITBFEnd_Int - 1)
+                        Else
+                            ITBV2 = Strings.Left(Strings.Mid(ITBV, ITBStart_Int), ITBEnd_Int - 1)
+                        End If
+                        'Press [q] to stop encoding
+                        ITBV2 = Replace(ITBV2, "Press [q] to stop encoding", "Encoded date " & Format(Now, "yyyy-MM-dd HH:mm:ss"))
+                        PInfoTextBox.AppendText(ITBV2)
+                    End If
+                Catch ex As Exception
+                    PInfoTextBox.AppendText(ITBV)
+                End Try
+
             End If
 
             '정보가져오기
@@ -302,11 +345,29 @@ Public Class EncodingFrm
                         Catch ex As Exception
                         End Try
                     Else
-                        FPSv = EncSetFrm.FramerateComboBox.Text
+
+                        Try
+                            If EncSetFrm.FFFPSDOCheckBox.Checked = True Then '선택한 fps보다 원본 파일의 fps가 작을 경우 원본 프레임 레이트 사용
+                                If Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)) < Val(EncSetFrm.FramerateComboBox.Text) Then
+                                    FPSv = Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1))
+                                Else
+                                    FPSv = EncSetFrm.FramerateComboBox.Text
+                                End If
+                            Else
+                                FPSv = EncSetFrm.FramerateComboBox.Text
+                            End If
+                        Catch ex As Exception
+                            '에러나면 지정한 프레임 레이트로
+                            FPSv = EncSetFrm.FramerateComboBox.Text
+                        End Try
+
                     End If
                 End If
-                '일시 정지/재시작 버튼 활성화//
-                If PipeMode = False Then SuspendResumeButton.Enabled = True
+                '일시 정지/재시작, 로그 복사 버튼 활성화//
+                If PipeMode = False Then
+                    SuspendResumeButton.Enabled = True
+                    LCopyButton.Enabled = True
+                End If
             End If
             If InStr(MsgV, "global headers", CompareMethod.Text) <> 0 AndAlso InStr(MsgV, "muxing overhead", CompareMethod.Text) <> 0 AndAlso _
             InStr(InfoTextBox.Text, "global headers", CompareMethod.Text) = 0 AndAlso InStr(InfoTextBox.Text, "muxing overhead", CompareMethod.Text) = 0 Then
@@ -398,7 +459,7 @@ Public Class EncodingFrm
         If PipeMode = True Then
             hwnd = WinAPI.FindWindowW(vbNullString, Environ("ComSpec"))
         Else
-            hwnd = WinAPI.FindWindowW(vbNullString, My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe")
+            hwnd = WinAPI.FindWindowW(vbNullString, FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe")
         End If
         Do While hwnd <> 0
             If WinAPI.GetParent(hwnd) = 0 Then
@@ -447,18 +508,22 @@ Public Class EncodingFrm
 
     Private Sub LoadInitialization()
 
+        '== 미리보기 이미지 감춤
+        SnapshotFrm.ImagePP = Nothing
         '== 오브젝트
         OutputBox_EI.Text = ""
         InfoTextBox.Text = ""
+        PInfoTextBox.Text = ""
         SuspendResumeButton.Text = LangCls.EncodingSuspend
         SuspendResumeButton.Enabled = False
+        LCopyButton.Enabled = False
         '== 로그
         PositionDurationLabel.Text = "--- / ---"
         FrameLabel.Text = "---"
         FilesizeLabel.Text = "---"
         QLabel.Text = "---"
         BitrateLabel.Text = "---"
-        ProcessingRateLabel.Text = "---"
+        CPUToolStripStatusLabel.Text = ""
         TimeElapsedLabel.Text = "---"
         TimeRemainingLabel.Text = "---"
         '== 진행바
@@ -515,31 +580,31 @@ Public Class EncodingFrm
 
                     If EncPassStr = "[1/2Pass]" Then
                         '同-2
-                        MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+                        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
                     Else
                         '同-1
-                        MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
+                        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
                                             " -map " & VIDMAP & " -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
                     End If
 
                 Else
 
                     '同-1
-                    MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
+                    MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " -i " & Chr(34) & OutPATHV & "A" & Chr(34) & _
                                         " -map " & VIDMAP & " -map 1.0 -acodec copy " & RCMeta & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
                 End If
                 '------------------------------------
 
             Else
                 '同-2
-                MSGB = My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
+                MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe -y -i " & Chr(34) & InPATHV & Chr(34) & " " & CommandV & " " & Chr(34) & OutPATHV & Chr(34)
             End If
 
         ElseIf FFMODE = False Then
-        PipeMode = True
-        MSGB = Chr(34) & InPATHV & Chr(34)
+            PipeMode = True
+            MSGB = Chr(34) & InPATHV & Chr(34)
         Else
-        Exit Sub
+            Exit Sub
         End If
 
 
@@ -591,8 +656,6 @@ Public Class EncodingFrm
         WinAPI.CreateProcess(Nothing, MSGB, SecurityAttributes, SecurityAttributes, True, PPInt, IntPtr.Zero, Nothing, StartupInfo, ProcessInformation)
 
         If ProcessInformation.dwProcessId <> 0 AndAlso ProcessInformation.hProcess <> IntPtr.Zero Then
-
-            LoadInitialization()
 
             '프로세스 종료 확인
             ProcessEChkB = False
@@ -661,7 +724,8 @@ Public Class EncodingFrm
                     Else
                         ProgressBar.Value = ProgressBar.Maximum
                     End If
-                    PositionDurationLabel.Text = FunctionCls.TIME_TO_HMSMSTIME(ta2, True) & " / " & EncDuration
+                    SSV = FunctionCls.TIME_TO_HMSMSTIME(ta2, True)
+                    PositionDurationLabel.Text = SSV & " / " & EncDuration
                 End If
 
             End If
@@ -804,7 +868,7 @@ Public Class EncodingFrm
         If ta2 <> "" Then
             ta2 = Trim(Replace(ta2, "fps=", ""))
             If IsNumeric(ta2) = True Then
-                ProcessingRateLabel.Text = ta2 & " fps"
+                CPUToolStripStatusLabel.Text = SpeedV & "x (" & ta2 & "fps)"
                 TimeRemainingLabel.Text = FunctionCls.TIME_TO_HMSMSTIME((EncDurationD - EncPositionD) / (Val(ta2) / FPSv), False)
             End If
         Else
@@ -830,6 +894,8 @@ Public Class EncodingFrm
         MainFrmTitleBack = MainFrm.Text
         '캡션타이머온
         CapTimer.Enabled = True
+        '슬라이드타이머온
+        SlideTimer.Enabled = True
         '*************************************************
 
         '대기상태로
@@ -843,6 +909,9 @@ Public Class EncodingFrm
         Dim EncI As Integer = MainFrm.EncListListView.Items.Count
         Me.EncindexI = 0
         Do Until EncI <= Me.EncindexI
+
+            '초기화
+            LoadInitialization()
 
             Try
 
@@ -862,9 +931,6 @@ Public Class EncodingFrm
 
 
                 '++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
 
                 '---------------------------------
                 ' 원본 파일의 파일 이름만 추출
@@ -944,7 +1010,13 @@ Public Class EncodingFrm
 
                 '++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
+                'FileNameLabel 파일이름표시
+                FileNameLabel.Text = ""
+                FileNameLabel.Left = 10
+                TEXT_LT = False
+                TEXT_RT = True
+                WaitCnt = 0
+                FileNameLabel.Text = EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV
 
 
 
@@ -1660,8 +1732,8 @@ DelayAudioSkip:
                         AviSynthPP.INDEX_ProcessStopChk = False
                         GoTo ENC_STOP
                     Else
-                        InputFilePath = My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs"
-                        InputFilePathN = My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs"
+                        InputFilePath = FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs"
+                        InputFilePathN = FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScriptN(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs"
                     End If
 
                 Else
@@ -1699,24 +1771,11 @@ DelayAudioSkip:
                 Dim timestampV As String = ""
                 If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
                  InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
                  InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
                  InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
                     timestampV = " -timestamp now" ' & Chr(34) & Format(Now, "yyyy-MM-dd HH:mm:ss") & Chr(34)
-                End If
-
-                '---------------------------------
-                ' FFmpeg 프레임 레이트 지정(VBR전용)
-                '=================================
-                Dim FramerateStr As String = ""
-                If MainFrm.AVSCheckBox.Checked = False Then 'AviSynth 사용 안함
-                    If EncSetFrm.FramerateCheckBox.Checked = True Then
-                        Try
-                            If Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)) >= 119 Then
-                                FramerateStr = " -r " & Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
-                            End If
-                        Catch ex As Exception
-                        End Try
-                    End If
                 End If
 
                 '---------------------------------
@@ -1757,6 +1816,110 @@ DelayAudioSkip:
                     End If
                 End If
 
+                '***********************************
+                '  비디오 프레임
+                '***********************************
+                Dim FramerateComboBoxV As String = ""
+                If MainFrm.AVSCheckBox.Checked = True Then 'AVS사용
+
+                    If MainFrm.AVS_FPS <> "" AndAlso MainFrm.AVS_FPS <> 0 Then
+                        '더블프레임레이트 대처
+                        Dim bobv As Integer = 1
+                        With ImagePPFrm
+                            If .AVSMPEG2DeinterlaceCheckBox.Checked = True Then
+                                If .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=1 double framerate (bob)" OrElse .AVSMPEG2DeinterlaceComboBox.Text = "Yadif mode=3 double framerate (bob)" Then
+                                    If MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text = "None" AndAlso _
+                                    MainFrm.EncListListView.Items(EncindexI).SubItems(9).Text <> "None" Then '오디오 파일 AviSynth 인코딩
+                                    Else
+                                        bobv = 2
+                                    End If
+                                End If
+                            End If
+                        End With
+
+                        FramerateComboBoxV = " -r " & Val(MainFrm.AVS_FPS) * bobv
+                    End If
+
+                Else 'AviSynth 사용 안함
+
+                    If EncSetFrm.FramerateCheckBox.Checked = False Then '원본 프레임 아님
+
+                        Try
+                            If EncSetFrm.FFFPSDOCheckBox.Checked = True Then '선택한 fps보다 원본 파일의 fps가 작을 경우 원본 프레임 레이트 사용
+                                If Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)) < Val(EncSetFrm.FramerateComboBox.Text) Then
+                                    FramerateComboBoxV = " -r " & Val(Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1))
+                                Else
+                                    FramerateComboBoxV = " -r " & EncSetFrm.FramerateComboBox.Text
+                                End If
+                            Else
+                                FramerateComboBoxV = " -r " & EncSetFrm.FramerateComboBox.Text
+                            End If
+                        Catch ex As Exception
+                            '에러나면 지정한 프레임 레이트로
+                            FramerateComboBoxV = " -r " & EncSetFrm.FramerateComboBox.Text
+                        End Try
+
+                    Else '원본 프레임.
+
+                        'ASF WMV
+                        'MPEG TS
+                        'RM
+                        'FLV SWF
+                        '가변 보존 못하는 컨테이너, 60프레임으로 제한.
+                        If MainFrm.EncListListView.Items(EncindexI).SubItems(3).Text = "ASF" Then 'ASF형식은 예외로 가변 프레임처리
+
+                            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
+                                FramerateComboBoxV = " -r 60"
+                            Else
+                                FramerateComboBoxV = " -r 120"
+                            End If
+
+                        Else
+                            Dim OriginFPS As String = ""
+                            Try
+                                OriginFPS = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
+                            Catch ex As Exception
+                                OriginFPS = ""
+                            End Try
+                            If OriginFPS <> "" Then
+                                If Val(OriginFPS) > 60 Then
+
+                                    If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
+                                        FramerateComboBoxV = " -r 60"
+                                    Else
+                                        FramerateComboBoxV = " -r 120"
+                                    End If
+
+                                End If
+                            End If
+                        End If
+
+                    End If
+
+                End If
+                '프레임레이트 자세하게 체인지 v0.1!
+                If FramerateComboBoxV = " -r 14.985" Then
+                    FramerateComboBoxV = " -r 15000/1001"
+                ElseIf FramerateComboBoxV = " -r 23.976" Then
+                    FramerateComboBoxV = " -r 24000/1001"
+                ElseIf FramerateComboBoxV = " -r 29.97" Then
+                    FramerateComboBoxV = " -r 30000/1001"
+                ElseIf FramerateComboBoxV = " -r 59.94" Then
+                    FramerateComboBoxV = " -r 60000/1001"
+                End If
+
 
 
 
@@ -1786,7 +1949,7 @@ DelayAudioSkip:
                 '네로 AAC 인코딩 부분//
                 If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
 
-                    Dim NeroAACPath As String = Chr(34) & My.Application.Info.DirectoryPath & "\tools\neroaac\neroAacEnc.exe" & Chr(34)
+                    Dim NeroAACPath As String = Chr(34) & FunctionCls.AppInfoDirectoryPath & "\tools\neroaac\neroAacEnc.exe" & Chr(34)
                     Dim InPATHV As String = ""
                     Dim OutPATHV As String = ""
                     If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '비디오 + 오디오
@@ -1808,10 +1971,10 @@ DelayAudioSkip:
                         End If
                     End If
 
-                    Dim MSGB As String = Chr(34) & My.Application.Info.DirectoryPath & "\tools\ffmpeg\ffmpeg.exe" & Chr(34) & " -y -i " & Chr(34) & InPATHV & Chr(34) & CommandV & Chr(34) & OutPATHV & Chr(34)
+                    Dim MSGB As String = Chr(34) & FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe" & Chr(34) & " -y -i " & Chr(34) & InPATHV & Chr(34) & CommandV & Chr(34) & OutPATHV & Chr(34)
 
                     '경로
-                    Dim NeroBATCMDPathV As String = My.Application.Info.DirectoryPath & "\temp\CLIneroAacEnc.bat"
+                    Dim NeroBATCMDPathV As String = FunctionCls.AppInfoDirectoryPath & "\temp\CLIneroAacEnc.bat"
 
                     '저장
                     Try
@@ -1867,7 +2030,7 @@ DelayAudioSkip:
                         If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
 
                             EncPassStr = "[1/2Pass]"
-                            EncSub(InputFilePath, VideoFilterV & timestampV & MainFrm.AviSynthCommand2PassStr & CalcVideoBitrateStr, SavePathStr, True)
+                            EncSub(InputFilePath, VideoFilterV & timestampV & FramerateComboBoxV & MainFrm.AviSynthCommand2PassStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1875,7 +2038,7 @@ DelayAudioSkip:
                             End If
 
                             EncPassStr = "[2/2Pass]"
-                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr, SavePathStr, True)
+                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & FramerateComboBoxV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1887,7 +2050,7 @@ DelayAudioSkip:
 
                         Else
 
-                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr, SavePathStr, True)
+                            EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & FramerateComboBoxV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1901,7 +2064,7 @@ DelayAudioSkip:
                         If EncSetFrm.VideoModeComboBox.SelectedIndex = EncSetFrm.VideoModeComboBox.FindString("[2PASS-CBR]", -1) AndAlso MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text <> "None" Then
 
                             EncPassStr = "[1/2Pass]"
-                            EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & MainFrm.FFmpegCommand2PassStr & CalcVideoBitrateStr & FramerateStr, SavePathStr, True)
+                            EncSub(InputFilePath, SSTV & VideoFilterV & AspectV & timestampV & FramerateComboBoxV & MainFrm.FFmpegCommand2PassStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1909,7 +2072,7 @@ DelayAudioSkip:
                             End If
 
                             EncPassStr = "[2/2Pass]"
-                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr, SavePathStr, True)
+                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & FramerateComboBoxV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1921,7 +2084,7 @@ DelayAudioSkip:
 
                         Else
 
-                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr & FramerateStr, SavePathStr, True)
+                            EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & FramerateComboBoxV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr, SavePathStr, True)
                             If EncSTOPBool = True Then GoTo ENC_STOP
                             If EncERRBool(EncindexI) = True Then
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
@@ -1992,6 +2155,10 @@ ENC_STOP:
 
     Private Sub EncExitSub()
 
+        '미리 보기 작업 강제종료
+        SnapshotOff()
+        '슬라이드타이머오프
+        SlideTimer.Enabled = False
         '캡션타이머오프
         CapTimer.Enabled = False
         '메인폼타이틀
@@ -2013,7 +2180,7 @@ ENC_STOP:
             Try
                 Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
                 Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs")
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(EncindexI).SubItems(13).Text & ").avs")
                 _AviSynthClip.IDisposable_Dispose()
 
                 If InStr(InfoTextBox.Text, "Duration: 00:00:10.00", CompareMethod.Text) <> 0 Then '오류를 못 찾았지만 10초일경우 오류로 처리// (YV12에러는 못 찾음.)
@@ -2074,6 +2241,9 @@ ENC_STOP:
         '--------------------
 
         MainFrm.PriorityComboBoxEncodingFrmV = PriorityComboBox.SelectedIndex
+        MainFrm.InPRadioButtonV = InPRadioButton.Checked
+        MainFrm.OutPRadioButtonV = OutPRadioButton.Checked
+        MainFrm.DebugCheckBoxV = DebugCheckBox.Checked
 
         '---------------------
 
@@ -2093,10 +2263,10 @@ ENC_STOP:
         MainFrm.EncSButton.Enabled = True
         MainFrm.StreamSelToolStripMenuItem.Enabled = True
         MainFrm.LangToolStripMenuItem.Enabled = True
-        MainFrm.SavePathTextBox.Enabled = True
         MainFrm.SetFolderButton.Enabled = True
         MainFrm.DecSToolStripMenuItem.Enabled = True
         MainFrm.AviSynthToolStripMenuItem.Enabled = True
+        MainFrm.SavePathTextBox.ReadOnly = False
 
         '********************************
 
@@ -2125,12 +2295,12 @@ ENC_STOP:
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -2156,10 +2326,10 @@ ENC_STOP:
                 If XTR.Name = "EncodingFrmPositionDuration" Then PositionDurationTXTLabel.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmTimeElapsed" Then TimeElapsedTXTLabel.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmTimeRemaining" Then TimeRemainingTXTLabel.Text = XTR.ReadString
-                If XTR.Name = "EncodingFrmProcessingRate" Then ProcessingRateTXTLabel.Text = XTR.ReadString
+                'If XTR.Name = "EncodingFrmProcessingRate" Then ProcessingRateTXTLabel.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmFilesize" Then FilesizeTXTLabel.Text = XTR.ReadString
-                If XTR.Name = "EncodingFrmProgress" Then ProgressLabel.Text = XTR.ReadString
-                If XTR.Name = "EncodingFrmPriority" Then PriorityLabel.Text = XTR.ReadString
+                'If XTR.Name = "EncodingFrmProgress" Then ProgressLabel.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmPriority" Then PriorityGroupBox.Text = XTR.ReadString
                 If XTR.Name = "EncodingPriorityLow" Then LangCls.EncodingPriorityLow = XTR.ReadString
                 If XTR.Name = "EncodingPriorityBelowNormal" Then LangCls.EncodingPriorityBelowNormal = XTR.ReadString
                 If XTR.Name = "EncodingPriorityNormal" Then LangCls.EncodingPriorityNormal = XTR.ReadString
@@ -2180,6 +2350,17 @@ ENC_STOP:
                 If XTR.Name = "EncodingFrmForceStopButton" Then ForceStopButton.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmStopButton" Then StopButton.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmShutdownCheckBox" Then ShutdownCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmPreview" Then
+                    PreviewCheckBox.Text = XTR.ReadString
+                    PreviewToolStripMenuItem.Text = PreviewCheckBox.Text
+                End If
+                If XTR.Name = "EncodingFrmInPRadioButton" Then InPRadioButton.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmOutPRadioButton" Then OutPRadioButton.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmDebugCheckBox" Then DebugCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmLogToolStripMenuItem" Then LogToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmImageToolStripMenuItem" Then ImageToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmLCopyButton" Then LCopyButton.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmAlertLabel" Then AlertLabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -2211,6 +2392,68 @@ LANG_SKIP:
 
         '설정 불러옴
         PriorityComboBox.SelectedIndex = MainFrm.PriorityComboBoxEncodingFrmV
+        InPRadioButton.Checked = MainFrm.InPRadioButtonV
+        OutPRadioButton.Checked = MainFrm.OutPRadioButtonV
+        DebugCheckBox.Checked = MainFrm.DebugCheckBoxV
+
+        '로그
+        If MainFrm.PreviewModeV = 0 Then
+            PreviewCheckBox.Checked = True
+            ImgPanel.Visible = False
+            PInfoTextBox.Visible = False
+            InfoPanel.Visible = False
+            '-- 알림라벨
+            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
+                If OutPRadioButton.Checked = True Then
+                    AlertLabel.Visible = True
+                End If
+            End If
+            '--
+        ElseIf MainFrm.PreviewModeV = 1 Then
+            PreviewCheckBox.Checked = False
+            ImgPanel.Visible = False
+            PInfoTextBox.Visible = True
+            InfoPanel.Visible = True
+            AlertLabel.Visible = False
+        Else
+            PreviewCheckBox.Checked = False
+            ImgPanel.Visible = True
+            PInfoTextBox.Visible = False
+            InfoPanel.Visible = True
+            AlertLabel.Visible = False
+        End If
+
+        '======================
+        ' 미리보기 이미지
+        '----------------------
+        '이미지
+        If My.Computer.FileSystem.FileExists(MainFrm.ImgTextBoxV) = True Then
+            ImgPanel.BackgroundImage = Image.FromFile(MainFrm.ImgTextBoxV)
+        Else
+            ImgPanel.BackgroundImage = MainFrm.DefPreviewImg.BackgroundImage
+        End If
+        '배경색
+        ImgPanel.BackColor = MainFrm.BackColorPanelV
+        '모드
+        If MainFrm.ModeComboBoxV = "None" Then
+            ImgPanel.BackgroundImageLayout = ImageLayout.None
+        ElseIf MainFrm.ModeComboBoxV = "Tile" Then
+            ImgPanel.BackgroundImageLayout = ImageLayout.Tile
+        ElseIf MainFrm.ModeComboBoxV = "Center" Then
+            ImgPanel.BackgroundImageLayout = ImageLayout.Center
+        ElseIf MainFrm.ModeComboBoxV = "Stretch" Then
+            ImgPanel.BackgroundImageLayout = ImageLayout.Stretch
+        ElseIf MainFrm.ModeComboBoxV = "Zoom" Then
+            ImgPanel.BackgroundImageLayout = ImageLayout.Zoom
+        Else
+            ImgPanel.BackgroundImageLayout = ImageLayout.Center
+        End If
+        '======================
 
         '초기화
         LoadInitialization()
@@ -2251,7 +2494,7 @@ LANG_SKIP:
         '속도체크
         If EncPositionD <> TimeS AndAlso EncPositionD > TimeS Then
             If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0 OrElse EncToolStripStatusLabel.Text = LangCls.EncodingNeroAACEncoding Then '오디오만 인코딩, 네로AAC인코딩
-                ProcessingRateLabel.Text = Format(EncPositionD - TimeS, "0.00") & "x"
+                CPUToolStripStatusLabel.Text = Format(EncPositionD - TimeS, "0.00") & "x"
             End If
             SpeedV = Format(EncPositionD - TimeS, "0.00")
         End If
@@ -2300,6 +2543,11 @@ LANG_SKIP:
                 End If
             Catch ex As Exception
             End Try
+
+            '스냅샷
+            If PreviewCheckBox.Checked = True Then
+                SnapshotOff()
+            End If
         Else
             ResumeThread(ThreadHandle_EI)
             TimeElapsedTimer.Enabled = True
@@ -2313,6 +2561,11 @@ LANG_SKIP:
                 End If
             Catch ex As Exception
             End Try
+
+            '스냅샷
+            If PreviewCheckBox.Checked = True Then
+                SnapshotOn()
+            End If
         End If
     End Sub
 
@@ -2381,9 +2634,10 @@ LANG_SKIP:
             End If
         End If
 
-        Me.Text = LangCls.EncodingFrmV & ": " & PntS & " " & EncPassStr
+        Me.Text = LangCls.EncodingFrmV & " " & EncPassStr
         MainFrm.Text = PntS & " [" & EncindexI + 1 & "/" & MainFrm.EncListListView.Items.Count & "] " & MainFrm.EncListListView.Items(EncindexI).SubItems(0).Text & " - " & MainFrmTitleBack
         MainFrm.NotifyIcon.Text = Strings.Left(MainFrm.Text, 63)
+        PCNTToolStripStatusLabel.Text = " " & PntS
 
         'Win7진행바
         Try
@@ -2392,6 +2646,210 @@ LANG_SKIP:
             End If
         Catch ex As Exception
         End Try
+
     End Sub
 
+    Private Sub SlideTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SlideTimer.Tick
+
+        '파일이름표시관련 슬라이드
+        If FileNameLabel.Width > (InfoPanel.Width - 10) Then
+
+            WaitCnt += 1
+
+            If WaitCnt >= 100 Then
+
+                If FileNameLabel.Left > ((FileNameLabel.Width - InfoPanel.Width) * -1) - 10 AndAlso TEXT_LT = False AndAlso TEXT_RT = True Then
+                    FileNameLabel.Left -= 1
+                ElseIf FileNameLabel.Left < 10 AndAlso TEXT_RT = False AndAlso TEXT_LT = True Then
+                    FileNameLabel.Left += 1
+                End If
+
+                If FileNameLabel.Left = ((FileNameLabel.Width - InfoPanel.Width) * -1) - 10 Then
+                    TEXT_LT = True
+                    TEXT_RT = False
+                    WaitCnt = 0
+                    GoTo ScrSkip
+                ElseIf FileNameLabel.Left = 10 Then
+                    TEXT_LT = False
+                    TEXT_RT = True
+                    WaitCnt = 0
+                    GoTo ScrSkip
+                End If
+
+            End If
+ScrSkip:
+        End If
+
+    End Sub
+
+#Region "스냅샷 관련"
+
+    Private Sub SnapshotTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SnapshotTimer.Tick
+
+        '대기중일경우 스킵
+        If EncNMStartB = False Then Exit Sub
+        '최소화일경우 스킵
+        If MainFrm.WindowState = FormWindowState.Minimized Then Exit Sub
+        '트레이일경우 스킵
+        If MainFrm.Visible = False Then Exit Sub
+
+        If Not SnapshotPictureBox.Image Is SnapshotFrm.ImagePP Then
+            If PreviewCheckBox.Checked = True Then
+                SnapshotTimer.Enabled = False
+                SnapshotTimer.Enabled = True
+            End If
+        Else
+
+            'Snapshot
+            If SnapshotFrm.ImagePPExitB = True Then
+
+                If SSV <> SSV2 OrElse SSV = "00:00:00.00" Then
+
+                    '종료여부
+                    SnapshotFrm.ImagePPExitB = False
+
+                    If InPRadioButton.Checked = True Then
+                        '원본
+                        If My.Computer.FileSystem.FileExists(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text) = True Then
+                            SnapshotFrm.SFSTR(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text, SSV, SnapshotPictureBox.Width, SnapshotPictureBox.Height)
+                        End If
+                    Else
+                        '출력
+                        If My.Computer.FileSystem.FileExists(SavePathStr) = True Then
+                            SnapshotFrm.SFSTR(SavePathStr, SSV, SnapshotPictureBox.Width, SnapshotPictureBox.Height)
+                        End If
+                    End If
+
+                    SSV2 = SSV
+                End If
+
+            Else
+                If PreviewCheckBox.Checked = True Then
+                    SnapshotTimer.Enabled = False
+                    SnapshotTimer.Enabled = True
+                End If
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub SnapshotOn()
+        SnapshotTimer.Enabled = True
+        SFTimer.Enabled = True
+    End Sub
+
+    Private Sub SnapshotOff()
+        Try
+            If Process.GetProcessById(SnapshotFrm.ProcessID_SF).HasExited = False Then
+                WinAPI.TerminateProcess(SnapshotFrm.ProcessHandle_SF, 0&)
+            End If
+        Catch ex As Exception
+        End Try
+        SnapshotTimer.Enabled = False
+        SFTimer.Enabled = False
+    End Sub
+
+    Private Sub SFTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFTimer.Tick
+        '미리 보기 이미지 새로고침 용도
+        If PreviewCheckBox.Checked = True Then
+            If Not SnapshotPictureBox.Image Is SnapshotFrm.ImagePP Then
+                SnapshotPictureBox.Image = SnapshotFrm.ImagePP
+                DebugLabel.Text = Replace(DebugLabel.Text, "Start", "Finish")
+            ElseIf SnapshotPictureBox.Image Is Nothing Then
+                DebugLabel.Text = Replace(DebugLabel.Text, "Start", "Finish")
+            End If
+        End If
+    End Sub
+
+#End Region
+
+    Private Sub PreviewCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewCheckBox.CheckedChanged
+
+        '일시정지
+        If SuspendB = True Then Exit Sub
+
+        '미리보기
+        If PreviewCheckBox.Checked = True Then
+            SnapshotOn()
+        Else
+            SnapshotOff()
+        End If
+
+    End Sub
+
+    Private Sub DebugCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DebugCheckBox.CheckedChanged
+        If DebugCheckBox.Checked = True Then
+            DebugLabel.Visible = True
+        Else
+            DebugLabel.Visible = False
+        End If
+    End Sub
+
+    Private Sub PreviewToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewToolStripMenuItem.Click
+        MainFrm.PreviewModeV = 0
+        PreviewCheckBox.Checked = True
+        ImgPanel.Visible = False
+        PInfoTextBox.Visible = False
+        InfoPanel.Visible = False
+        '-- 알림라벨
+        If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
+            If OutPRadioButton.Checked = True Then
+                AlertLabel.Visible = True
+            End If
+        End If
+        '--
+    End Sub
+
+    Private Sub LogToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogToolStripMenuItem.Click
+        MainFrm.PreviewModeV = 1
+        PreviewCheckBox.Checked = False
+        ImgPanel.Visible = False
+        PInfoTextBox.Visible = True
+        InfoPanel.Visible = True
+        AlertLabel.Visible = False
+    End Sub
+
+    Private Sub ImageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImageToolStripMenuItem.Click
+        MainFrm.PreviewModeV = 2
+        PreviewCheckBox.Checked = False
+        ImgPanel.Visible = True
+        PInfoTextBox.Visible = False
+        InfoPanel.Visible = True
+        AlertLabel.Visible = False
+    End Sub
+
+    Private Sub LCopyButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LCopyButton.Click
+        Clipboard.SetText(PInfoTextBox.Text)
+    End Sub
+
+    Private Sub ShutdownCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownCheckBox.CheckedChanged
+
+    End Sub
+
+    Private Sub InPRadioButton_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InPRadioButton.CheckedChanged
+        AlertLabel.Visible = False
+    End Sub
+
+    Private Sub OutPRadioButton_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OutPRadioButton.CheckedChanged
+        If PreviewCheckBox.Checked = True Then
+            '-- 알림라벨
+            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
+                If OutPRadioButton.Checked = True Then
+                    AlertLabel.Visible = True
+                End If
+            End If
+            '--
+        End If
+    End Sub
 End Class

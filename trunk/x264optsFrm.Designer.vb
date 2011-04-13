@@ -139,6 +139,10 @@ Partial Class x264optsFrm
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.OKBTN = New System.Windows.Forms.Button
         Me.BPanel = New System.Windows.Forms.Panel
+        Me.TempBlurofQuantafterCCNumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.TempBlurofQuantafterCCLabel = New System.Windows.Forms.Label
+        Me.TempBlurofestFramecomplexityNumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.TempBlurofestFramecomplexityLabel = New System.Windows.Forms.Label
         Me.SettingTabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ffmpegPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -193,6 +197,8 @@ Partial Class x264optsFrm
         CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BPanel.SuspendLayout()
+        CType(Me.TempBlurofQuantafterCCNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TempBlurofestFramecomplexityNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SettingTabControl
@@ -487,6 +493,10 @@ Partial Class x264optsFrm
         '
         'RateControlGroupBox
         '
+        Me.RateControlGroupBox.Controls.Add(Me.TempBlurofQuantafterCCNumericUpDown)
+        Me.RateControlGroupBox.Controls.Add(Me.TempBlurofQuantafterCCLabel)
+        Me.RateControlGroupBox.Controls.Add(Me.TempBlurofestFramecomplexityNumericUpDown)
+        Me.RateControlGroupBox.Controls.Add(Me.TempBlurofestFramecomplexityLabel)
         Me.RateControlGroupBox.Controls.Add(Me.UseMBTreeCheckBox)
         Me.RateControlGroupBox.Controls.Add(Me.NumberofFramesforLookaheadNumericUpDown)
         Me.RateControlGroupBox.Controls.Add(Me.Label26)
@@ -1053,6 +1063,32 @@ Partial Class x264optsFrm
         resources.ApplyResources(Me.BPanel, "BPanel")
         Me.BPanel.Name = "BPanel"
         '
+        'TempBlurofQuantafterCCNumericUpDown
+        '
+        Me.TempBlurofQuantafterCCNumericUpDown.DecimalPlaces = 1
+        Me.TempBlurofQuantafterCCNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        resources.ApplyResources(Me.TempBlurofQuantafterCCNumericUpDown, "TempBlurofQuantafterCCNumericUpDown")
+        Me.TempBlurofQuantafterCCNumericUpDown.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.TempBlurofQuantafterCCNumericUpDown.Name = "TempBlurofQuantafterCCNumericUpDown"
+        '
+        'TempBlurofQuantafterCCLabel
+        '
+        resources.ApplyResources(Me.TempBlurofQuantafterCCLabel, "TempBlurofQuantafterCCLabel")
+        Me.TempBlurofQuantafterCCLabel.Name = "TempBlurofQuantafterCCLabel"
+        '
+        'TempBlurofestFramecomplexityNumericUpDown
+        '
+        Me.TempBlurofestFramecomplexityNumericUpDown.DecimalPlaces = 1
+        Me.TempBlurofestFramecomplexityNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        resources.ApplyResources(Me.TempBlurofestFramecomplexityNumericUpDown, "TempBlurofestFramecomplexityNumericUpDown")
+        Me.TempBlurofestFramecomplexityNumericUpDown.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
+        Me.TempBlurofestFramecomplexityNumericUpDown.Name = "TempBlurofestFramecomplexityNumericUpDown"
+        '
+        'TempBlurofestFramecomplexityLabel
+        '
+        resources.ApplyResources(Me.TempBlurofestFramecomplexityLabel, "TempBlurofestFramecomplexityLabel")
+        Me.TempBlurofestFramecomplexityLabel.Name = "TempBlurofestFramecomplexityLabel"
+        '
         'x264optsFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -1129,6 +1165,8 @@ Partial Class x264optsFrm
         CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BPanel.ResumeLayout(False)
+        CType(Me.TempBlurofQuantafterCCNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TempBlurofestFramecomplexityNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1248,4 +1286,8 @@ Partial Class x264optsFrm
     Friend WithEvents FastfirstpassCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents x264PictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents ffmpegPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents TempBlurofQuantafterCCNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents TempBlurofQuantafterCCLabel As System.Windows.Forms.Label
+    Friend WithEvents TempBlurofestFramecomplexityNumericUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents TempBlurofestFramecomplexityLabel As System.Windows.Forms.Label
 End Class

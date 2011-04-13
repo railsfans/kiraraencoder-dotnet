@@ -95,6 +95,12 @@
     <Compile Include="AVSIFrm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConfigFrm.Designer.vb">
+      <DependentUpon>ConfigFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DGIndexFrm.Designer.vb">
       <DependentUpon>DGIndexFrm.vb</DependentUpon>
     </Compile>
@@ -222,6 +228,12 @@
     <Compile Include="ShutdownFrm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SnapshotFrm.Designer.vb">
+      <DependentUpon>SnapshotFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SnapshotFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StreamFrm.Designer.vb">
       <DependentUpon>StreamFrm.vb</DependentUpon>
     </Compile>
@@ -264,6 +276,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AVSIFrm.resx">
       <DependentUpon>AVSIFrm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigFrm.resx">
+      <DependentUpon>ConfigFrm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DGIndexFrm.resx">
@@ -339,6 +355,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShutdownFrm.resx">
       <DependentUpon>ShutdownFrm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SnapshotFrm.resx">
+      <DependentUpon>SnapshotFrm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="StreamFrm.resx">

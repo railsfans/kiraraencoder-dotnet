@@ -117,6 +117,12 @@ Public Class AviSynthPP
                 End If
 
             End If
+            '메인창에 현재 설정한 프레임을 보고
+            If fpsV <> 0.0 Then
+                MainFrm.AVS_FPS = fpsV
+            Else
+                MainFrm.AVS_FPS = ""
+            End If
 
             '-----------------------------------------
             ' 프레임 #<changefps>
@@ -125,6 +131,12 @@ Public Class AviSynthPP
             If ImagePPFrm.AviSynthFramerateCheckBox.Checked = False Then
                 changefpsV = "ChangeFPS(" & fpsV & ")"
             End If
+
+            '-----------------------------------------
+            ' 프레임 #<mpeg_ts_fps>
+            '=========================================
+            Dim mpeg_ts_fpsV As String = "#<mpeg_ts_fps>"
+            mpeg_ts_fpsV = "ChangeFPS(" & fpsV & ")"
 
             '-----------------------------------------
             ' #<image>
@@ -400,10 +412,10 @@ ImageSkip:
                             .EQ16TrackBar.Value & vbNewLine & _
                             .EQ17TrackBar.Value & vbNewLine & _
                             .EQ18TrackBar.Value
-                    Dim _StreamWriter As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\Equalizer.feq", False, System.Text.Encoding.Default)
+                    Dim _StreamWriter As New StreamWriter(FunctionCls.AppInfoDirectoryPath & "\temp\Equalizer.feq", False, System.Text.Encoding.Default)
                     _StreamWriter.Write(EQV)
                     _StreamWriter.Close()
-                    SuperEqV = "SuperEq(" & Chr(34) & My.Application.Info.DirectoryPath & "\temp\Equalizer.feq" & Chr(34) & ")"
+                    SuperEqV = "SuperEq(" & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\Equalizer.feq" & Chr(34) & ")"
 
                 End If
             End With
@@ -515,8 +527,8 @@ ImageSkip:
                         .MarginLNumericUpDown.Value & "," & .MarginRNumericUpDown.Value & "," & .MarginVNumericUpDown.Value & "," & _
                         EncodingV
 
-                        Dim _StreamWriter As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV & ".style", False, System.Text.Encoding.Unicode)
-                        MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV & ".style") '클린업
+                        Dim _StreamWriter As New StreamWriter(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV & ".style", False, System.Text.Encoding.Unicode)
+                        MainFrm.CleanUpListBox.Items.Add(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV & ".style") '클린업
                         _StreamWriter.Write(ASSV)
                         _StreamWriter.Close()
 
@@ -527,7 +539,7 @@ ImageSkip:
                         If My.Computer.FileSystem.FileExists(SubPathV & SubExtenV) = True Then
                             Try
 RECOPY:
-                                My.Computer.FileSystem.CopyFile(SubPathV & SubExtenV, My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV, True)
+                                My.Computer.FileSystem.CopyFile(SubPathV & SubExtenV, FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV, True)
                             Catch ex As Exception
                                 Threading.Thread.Sleep(100)
                                 RECOPY += 1
@@ -543,9 +555,9 @@ RECOPY:
                                 GoTo RECOPY
                             End Try
                             SubFileExistsV = True
-                            MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV) '클린업
+                            MainFrm.CleanUpListBox.Items.Add(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV) '클린업
 
-                            Dim SMIPATHV As String = My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV
+                            Dim SMIPATHV As String = FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")." & SubExtenV
                             If SubExtenV = "smi" Then
 
                                 'SAMI해더 존재확인//
@@ -690,19 +702,19 @@ ERRSKIP:
                             If My.Computer.FileSystem.FileExists(SubPathV & "ass") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "ass" & Chr(34) & ")"
 
                         ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "PSB" Then '스타일 적용
-                            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").psb") = True Then TextSubV = "TextSub(" & Chr(34) & My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").psb" & Chr(34) & ")"
+                            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").psb") = True Then TextSubV = "TextSub(" & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").psb" & Chr(34) & ")"
 
                         ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SMI" Then '스타일 적용
-                            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").smi") = True Then TextSubV = "TextSub(" & Chr(34) & My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").smi" & Chr(34) & ")"
+                            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").smi") = True Then TextSubV = "TextSub(" & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").smi" & Chr(34) & ")"
 
                         ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SRT" Then '스타일 적용
-                            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").srt") = True Then TextSubV = "TextSub(" & Chr(34) & My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").srt" & Chr(34) & ")"
+                            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").srt") = True Then TextSubV = "TextSub(" & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").srt" & Chr(34) & ")"
 
                         ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SSA" Then
                             If My.Computer.FileSystem.FileExists(SubPathV & "ssa") = True Then TextSubV = "TextSub(" & Chr(34) & SubPathV & "ssa" & Chr(34) & ")"
 
                         ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "SUB" Then '스타일 적용
-                            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").sub") = True Then TextSubV = "TextSub(" & Chr(34) & My.Application.Info.DirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").sub" & Chr(34) & ")"
+                            If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").sub") = True Then TextSubV = "TextSub(" & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\Subtitle(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").sub" & Chr(34) & ")"
 
                         ElseIf MainFrm.EncListListView.Items(index).SubItems(2).Text = "IDX/SUB" Then
                             If My.Computer.FileSystem.FileExists(SubPathV & "idx") = True AndAlso My.Computer.FileSystem.FileExists(SubPathV & "sub") = True Then TextSubV = "VobSub(" & Chr(34) & SubPathV & "sub" & Chr(34) & ")"
@@ -918,24 +930,35 @@ ERRSKIP:
             '-------------------------
             ' 원본 샘플레이트 추출
             '=========================
-            Dim AudioListV As String = MainFrm.EncListListView.Items(index).SubItems(9).Text
-            Dim SSRCV As Integer = 48000
-            i = 1
-            ii = 0
-            t = ""
-            If InStr(i, AudioListV, MainFrm.EncListListView.Items(index).SubItems(4).Text, CompareMethod.Text) Then
-                ii = InStr(i, AudioListV, MainFrm.EncListListView.Items(index).SubItems(4).Text, CompareMethod.Text)
-                If InStr(ii, AudioListV, "Hz", CompareMethod.Text) Then
-                    i = InStr(ii, AudioListV, "Hz", CompareMethod.Text) + 1
-                    t = Mid(AudioListV, ii, i - ii - 1)
-                End If
-            Else
-                i = i + 1
-            End If
-            If t <> "" Then
-                SSRCV = Strings.Mid(RTrim(t), InStrRev(RTrim(t), " ") + 1)
-            End If
+            'Dim AudioListV As String = MainFrm.EncListListView.Items(index).SubItems(9).Text
+            'Dim SSRCV As Integer = 48000
+            'i = 1
+            'ii = 0
+            't = ""
+            'If InStr(i, AudioListV, MainFrm.EncListListView.Items(index).SubItems(4).Text, CompareMethod.Text) Then
+            '    ii = InStr(i, AudioListV, MainFrm.EncListListView.Items(index).SubItems(4).Text, CompareMethod.Text)
+            '    If InStr(ii, AudioListV, "Hz", CompareMethod.Text) Then
+            '        i = InStr(ii, AudioListV, "Hz", CompareMethod.Text) + 1
+            '        t = Mid(AudioListV, ii, i - ii - 1)
+            '    End If
+            'Else
+            '    i = i + 1
+            'End If
+            'If t <> "" Then
+            '    SSRCV = Strings.Mid(RTrim(t), InStrRev(RTrim(t), " ") + 1)
+            'End If
 
+            '-------------------------
+            ' #<ssrc>
+            '=========================
+            Dim SSRCV As String = ""
+            If EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR 일경우 예외로 8000Hz
+                SSRCV = "8000"
+            Else
+                If EncSetFrm.SamplerateCheckBox.Checked = False Then '원본 샘플 아님
+                    SSRCV = EncSetFrm.SamplerateComboBox.Text
+                End If
+            End If
 
             '-------------------------
             ' #<deinterlace>
@@ -961,11 +984,18 @@ ERRSKIP:
                     ElseIf .FieldorderComboBox.Text = "Varying field order" Then
                         FieldorderV = -1
                     End If
-                    DeinterlaceV = "Load_Stdcall_Plugin(" & Chr(34) & My.Application.Info.DirectoryPath & "\plugin\yadif.dll" & Chr(34) & ")" & vbNewLine & "Yadif(mode=" & ModeV & ",order=" & FieldorderV & ")"
+                    DeinterlaceV = "Load_Stdcall_Plugin(" & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\plugin\yadif.dll" & Chr(34) & ")" & vbNewLine & "Yadif(mode=" & ModeV & ",order=" & FieldorderV & ")"
                 End If
 
             End With
 
+            '-----------------------------------------
+            ' #<reverse>
+            '=========================================
+            Dim reverseV As String = "#<reverse>"
+            If ETCPPFrm.reverseCheckBox.Checked = True Then
+                reverseV = "reverse()"
+            End If
 
 
 
@@ -1229,7 +1259,7 @@ ERRSKIP:
                 '인덱스 생성관련
                 '===========================
                 If MainFrm.EncListListView.Items(index).SubItems(14).Text <> "" Then
-                    If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") = True Then '파일이 존재하면
+                    If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") = True Then '파일이 존재하면
                         If My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString = MainFrm.EncListListView.Items(index).SubItems(14).Text Then
                             GoTo skip
                         End If
@@ -1237,7 +1267,7 @@ ERRSKIP:
                 End If
 
                 '인덱스 프로그램이 없으면 스킵//
-                If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe") = False Then
+                If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\tools\ffms\ffmsindex.exe") = False Then
                     GoTo skip
                 End If
 
@@ -1259,7 +1289,7 @@ REINDE_ShowMode:
                     'ShowMode
                     '----------------
                     INDEX_PStr = ""
-                    FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly, index, INDEXCntI)
+                    FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly, index, INDEXCntI)
                     Try
                         FFMSIndexFrm.ShowDialog()
                     Catch ex As Exception
@@ -1268,9 +1298,9 @@ REINDE_ShowMode:
                     If InStr(MainFrm.EncListListView.Items(index).SubItems(3).Text, "matroska", CompareMethod.Text) AndAlso INDEXCntI = 0 AndAlso INDEX_ProcessStopChk = False Then
                         Try
                             Dim SCRIPTV As String = AviSynthEditorFrm.MATROSKACHKTextBox.Text
-                            SCRIPTV = Replace(SCRIPTV, "#<toolspath>", My.Application.Info.DirectoryPath & "\tools\")
+                            SCRIPTV = Replace(SCRIPTV, "#<toolspath>", FunctionCls.AppInfoDirectoryPath & "\tools\")
                             SCRIPTV = Replace(SCRIPTV, "#<source>", MainFrm.EncListListView.Items(index).SubItems(10).Text)
-                            SCRIPTV = Replace(SCRIPTV, "#<cachefile>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
+                            SCRIPTV = Replace(SCRIPTV, "#<cachefile>", FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
                             _AviSynthClip = _AviSynthScriptEnvironment.ParseScript(SCRIPTV, AvisynthWrapper.AviSynthColorspace.RGB32)
                             _AviSynthClip.IDisposable_Dispose()
                         Catch ex As Exception
@@ -1288,7 +1318,7 @@ REINDE_HideMode:
                     '----------------
                     INDEX_ProcessEChk = False
                     INDEX_PStr = ""
-                    FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly, index, INDEXCntI)
+                    FFMSIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex", PriorityInt, IndexVideoOnly, index, INDEXCntI)
                     If ShowStatus = True Then EncodingFrm.EncToolStripStatusLabel.Text = LangCls.EncodingCreatingFFINDEX & ", demuxer: " & FFMSIndexFrm.DEStr
                     Do Until INDEX_ProcessEChk = True
                         Application.DoEvents()
@@ -1298,9 +1328,9 @@ REINDE_HideMode:
                     If InStr(MainFrm.EncListListView.Items(index).SubItems(3).Text, "matroska", CompareMethod.Text) AndAlso INDEXCntI = 0 AndAlso INDEX_ProcessStopChk = False Then
                         Try
                             Dim SCRIPTV As String = AviSynthEditorFrm.MATROSKACHKTextBox.Text
-                            SCRIPTV = Replace(SCRIPTV, "#<toolspath>", My.Application.Info.DirectoryPath & "\tools\")
+                            SCRIPTV = Replace(SCRIPTV, "#<toolspath>", FunctionCls.AppInfoDirectoryPath & "\tools\")
                             SCRIPTV = Replace(SCRIPTV, "#<source>", MainFrm.EncListListView.Items(index).SubItems(10).Text)
-                            SCRIPTV = Replace(SCRIPTV, "#<cachefile>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
+                            SCRIPTV = Replace(SCRIPTV, "#<cachefile>", FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
                             _AviSynthClip = _AviSynthScriptEnvironment.ParseScript(SCRIPTV, AvisynthWrapper.AviSynthColorspace.RGB32)
                             _AviSynthClip.IDisposable_Dispose()
                         Catch ex As Exception
@@ -1316,9 +1346,9 @@ REINDE_HideMode:
                 If INDEX_ProcessStopChk = True Then
 
                     '인덱스파일 이미 있으면 삭제
-                    If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") = True Then
+                    If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") = True Then
                         Try
-                            My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
+                            My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
                         Catch ex As Exception
                         End Try
                     End If
@@ -1327,7 +1357,7 @@ REINDE_HideMode:
 
                 Else
                     MainFrm.EncListListView.Items(index).SubItems(14).Text = My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString
-                    MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") '클린업
+                    MainFrm.CleanUpListBox.Items.Add(FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex") '클린업
                 End If
                 '===========================
 
@@ -1446,7 +1476,7 @@ DelayAudioSkip:
                 AVTextBoxV = Replace(AVTextBoxV, "#<ffpp>", FFPPStr)
 
                 '#<cachefile>
-                AVTextBoxV = Replace(AVTextBoxV, "#<cachefile>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
+                AVTextBoxV = Replace(AVTextBoxV, "#<cachefile>", FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").ffindex")
 
                 '#<atrack>
                 AVTextBoxV = Replace(AVTextBoxV, "#<atrack>", AudioMapV)
@@ -1462,7 +1492,7 @@ DelayAudioSkip:
                 '인덱스 생성관련
                 '===========================
                 If MainFrm.EncListListView.Items(index).SubItems(16).Text <> "" Then
-                    If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") = True Then '파일이 존재하면
+                    If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") = True Then '파일이 존재하면
                         If My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString = MainFrm.EncListListView.Items(index).SubItems(16).Text Then
                             GoTo skip2
                         End If
@@ -1470,7 +1500,7 @@ DelayAudioSkip:
                 End If
 
                 '인덱스 프로그램이 없으면 스킵//
-                If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\tools\dgindex\dgindex.exe") = False Then
+                If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\tools\dgindex\dgindex.exe") = False Then
                     GoTo skip2
                 End If
 
@@ -1479,7 +1509,7 @@ DelayAudioSkip:
                     'ShowMode
                     '----------------
                     INDEX_PStr = ""
-                    DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
+                    DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
                     Try
                         DGIndexFrm.ShowDialog()
                     Catch ex As Exception
@@ -1490,7 +1520,7 @@ DelayAudioSkip:
                     '----------------
                     INDEX_ProcessEChk = False
                     INDEX_PStr = ""
-                    DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
+                    DGIndexFrm.IDSTR(MainFrm.EncListListView.Items(index).SubItems(10).Text, FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ")", index, PriorityInt)
                     If ShowStatus = True Then EncodingFrm.EncToolStripStatusLabel.Text = LangCls.EncodingCreatingD2V
                     Do Until INDEX_ProcessEChk = True
                         Application.DoEvents()
@@ -1551,9 +1581,9 @@ DelayAudioSkip:
 
                         Dim FileListBox1 As New ListBox
                         FileListBox1.Items.Clear()
-                        FileListBox1.Items.AddRange(Directory.GetFiles(My.Application.Info.DirectoryPath & "\temp\caches", EXV, SearchOption.TopDirectoryOnly))
+                        FileListBox1.Items.AddRange(Directory.GetFiles(FunctionCls.AppInfoDirectoryPath & "\temp\caches", EXV, SearchOption.TopDirectoryOnly))
                         If FileListBox1.Items.Count = 0 Then
-                            FileListBox1.Items.AddRange(Directory.GetFiles(My.Application.Info.DirectoryPath & "\temp\caches", EXV2, SearchOption.TopDirectoryOnly))
+                            FileListBox1.Items.AddRange(Directory.GetFiles(FunctionCls.AppInfoDirectoryPath & "\temp\caches", EXV2, SearchOption.TopDirectoryOnly))
                         End If
 
                         FileListBox2.Items.Clear()
@@ -1621,15 +1651,15 @@ DelayAudioSkip:
                 If INDEX_ProcessStopChk = True Then
                     '중지된 상태, 삭제(클린업)
                     Try
-                        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") = True Then
-                            My.Computer.FileSystem.DeleteFile(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
+                        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") = True Then
+                            My.Computer.FileSystem.DeleteFile(FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
                         End If
                     Catch ex As Exception
                     End Try
 
                     Exit Sub '중지됨//
                 Else
-                    MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") '클린업
+                    MainFrm.CleanUpListBox.Items.Add(FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v") '클린업
                     MainFrm.EncListListView.Items(index).SubItems(16).Text = My.Computer.FileSystem.GetFileInfo(MainFrm.EncListListView.Items(index).SubItems(10).Text).LastWriteTime.Ticks.ToString
                 End If
 
@@ -1654,7 +1684,7 @@ skip2:
                 End If
 
                 '#<d2vsource>
-                AVTextBoxV = Replace(AVTextBoxV, "#<d2vsource>", My.Application.Info.DirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
+                AVTextBoxV = Replace(AVTextBoxV, "#<d2vsource>", FunctionCls.AppInfoDirectoryPath & "\temp\caches\cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").d2v")
 
                 '===========================
                 Dim DGIndexAudioStramPathV As String = ""
@@ -1695,18 +1725,18 @@ skip2:
 
                     If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEGTS" Then
 
-                        DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\caches\" & AudioComboBox.Items(0)
+                        DGIndexAudioStramPathV = FunctionCls.AppInfoDirectoryPath & "\temp\caches\" & AudioComboBox.Items(0)
 
                         '여러스트림 선택용. (PID 앞에 0이 더 붙는 경우가 있다.)
                         'If InStr(AudioComboBox.Items(AudioStreamSelV - 1), "cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ") PID " & AudioStreamHEXV & " ", CompareMethod.Text) <> 0 Then
-                        '    DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\caches\" & AudioComboBox.Items(AudioStreamSelV - 1)
+                        '    DGIndexAudioStramPathV = Mainfrm.ApplicationInfoDirectoryPath & "\temp\caches\" & AudioComboBox.Items(AudioStreamSelV - 1)
                         'End If
 
 
                     ElseIf MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEG" Then
 
                         If InStr(AudioComboBox.Items(AudioStreamSelV - 1), "cache(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ") T" & AudioStreamHEXV & " ", CompareMethod.Text) <> 0 Then
-                            DGIndexAudioStramPathV = My.Application.Info.DirectoryPath & "\temp\caches\" & AudioComboBox.Items(AudioStreamSelV - 1)
+                            DGIndexAudioStramPathV = FunctionCls.AppInfoDirectoryPath & "\temp\caches\" & AudioComboBox.Items(AudioStreamSelV - 1)
                         End If
 
                     End If
@@ -1819,10 +1849,10 @@ DelayAudioSkip2:
             '-----------------------
 
             '#<pluginpath>
-            AVTextBoxV = Replace(AVTextBoxV, "#<pluginpath>", My.Application.Info.DirectoryPath & "\plugin\")
+            AVTextBoxV = Replace(AVTextBoxV, "#<pluginpath>", FunctionCls.AppInfoDirectoryPath & "\plugin\")
 
             '#<toolspath>
-            AVTextBoxV = Replace(AVTextBoxV, "#<toolspath>", My.Application.Info.DirectoryPath & "\tools\")
+            AVTextBoxV = Replace(AVTextBoxV, "#<toolspath>", FunctionCls.AppInfoDirectoryPath & "\tools\")
 
             '#<source>
             AVTextBoxV = Replace(AVTextBoxV, "#<source>", MainFrm.EncListListView.Items(index).SubItems(10).Text)
@@ -1866,6 +1896,9 @@ DelayAudioSkip2:
             End If
             AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio2>", "DelayAudio(" & delayaudioV2 & "/1000.0)")
 
+            '#<reverse>
+            AVTextBoxV = Replace(AVTextBoxV, "#<reverse>", reverseV)
+
             '------------------------
             '영상
             '------------------------
@@ -1875,11 +1908,16 @@ DelayAudioSkip2:
                 '#<fps>
                 AVTextBoxV = Replace(AVTextBoxV, "#<fps>", fpsV)
 
-                '#<fpsnum>
-                AVTextBoxV = Replace(AVTextBoxV, "#<fpsnum>", fpsnumV)
-
-                '#<fpsden>
-                AVTextBoxV = Replace(AVTextBoxV, "#<fpsden>", fpsdenV)
+                'FPS NUM=-1, DEN=1 설정 #<fpsnum> #<fpsden>
+                If MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEGTS" OrElse MainFrm.EncListListView.Items(index).SubItems(3).Text = "MPEG" Then
+                    AVTextBoxV = Replace(AVTextBoxV, "#<fpsnum>", -1)
+                    AVTextBoxV = Replace(AVTextBoxV, "#<fpsden>", 1)
+                    '#<mpeg_ts_fps> -1, 1특별
+                    AVTextBoxV = Replace(AVTextBoxV, "#<mpeg_ts_fps>", mpeg_ts_fpsV)
+                Else
+                    AVTextBoxV = Replace(AVTextBoxV, "#<fpsnum>", fpsnumV)
+                    AVTextBoxV = Replace(AVTextBoxV, "#<fpsden>", fpsdenV)
+                End If
 
                 '#<changefps>
                 AVTextBoxV = Replace(AVTextBoxV, "#<changefps>", changefpsV)
@@ -2200,8 +2238,8 @@ DelayAudioSkip2:
             '------------------------------------------
 
             '저장
-            Dim _StreamWriter2 As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").avs", False, System.Text.Encoding.Default)
-            MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").avs") '클린업
+            Dim _StreamWriter2 As New StreamWriter(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").avs", False, System.Text.Encoding.Default)
+            MainFrm.CleanUpListBox.Items.Add(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").avs") '클린업
             If (InStr(EncSetFrm.OutFComboBox.SelectedItem, "[AUDIO]", CompareMethod.Text) <> 0) AndAlso ShowModeV = False AndAlso ShowStatus = True Then '오디오만 인코딩일경우 맨 마지막에 프레임 1로 설정..(인코딩할때만 추가되는 스크립트..)
                 _StreamWriter2.Write(AVTextBoxV & vbNewLine & "AssumeFPS(1)")
             Else
@@ -2211,8 +2249,8 @@ DelayAudioSkip2:
 
             '네로AAC 오디오용 저장
             If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" OrElse EncSetFrm.AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
-                Dim _StreamWriter3 As New StreamWriter(My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").avs", False, System.Text.Encoding.Default)
-                MainFrm.CleanUpListBox.Items.Add(My.Application.Info.DirectoryPath & "\temp\AviSynthScriptN(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").avs") '클린업
+                Dim _StreamWriter3 As New StreamWriter(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScriptN(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").avs", False, System.Text.Encoding.Default)
+                MainFrm.CleanUpListBox.Items.Add(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScriptN(" & MainFrm.EncListListView.Items(index).SubItems(13).Text & ").avs") '클린업
                 _StreamWriter3.Write(AVTextBoxV & vbNewLine & "AssumeFPS(1)")
                 _StreamWriter3.Close()
             End If

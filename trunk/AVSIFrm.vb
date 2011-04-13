@@ -49,12 +49,12 @@ Public Class AVSIFrm
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -180,7 +180,7 @@ LANG_SKIP:
 
     Private Sub InstallButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InstallButton.Click
         Try
-            Shell("explorer.exe /n, " & My.Application.Info.DirectoryPath & "\avisynth\Avisynth_258.exe", AppWinStyle.NormalFocus)
+            Shell("explorer.exe /n, " & FunctionCls.AppInfoDirectoryPath & "\avisynth\Avisynth_258.exe", AppWinStyle.NormalFocus)
         Catch ex As Exception
         End Try
     End Sub

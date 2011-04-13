@@ -11,34 +11,35 @@
         Dim Rnd As New Random
         Dim Rndi As Integer = Rnd.Next(0, 10)
         If Rndi = 0 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.White)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.Ivory)
         ElseIf Rndi = 1 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.MistyRose)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.MistyRose)
         ElseIf Rndi = 2 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.Bisque)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.Bisque)
         ElseIf Rndi = 3 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.Khaki)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.Khaki)
         ElseIf Rndi = 4 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.LightGreen)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.LightGreen)
         ElseIf Rndi = 5 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.PaleTurquoise)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.PaleTurquoise)
         ElseIf Rndi = 6 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.MediumPurple)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.MediumPurple)
         ElseIf Rndi = 7 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.Violet)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.Violet)
         ElseIf Rndi = 8 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.HotPink)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.HotPink)
         ElseIf Rndi = 9 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.Pink)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.Pink)
         ElseIf Rndi = 10 Then
-            Me.BackColor = Color.FromKnownColor(KnownColor.Black)
+            Panel1.BackColor = Color.FromKnownColor(KnownColor.Black)
             Label1.ForeColor = Color.FromKnownColor(KnownColor.White)
         End If
+        VersionLabel.Text = "Kirara Encoder v" & _
+        My.Application.Info.Version.Major & "." & _
+        My.Application.Info.Version.Minor & "." & _
+        My.Application.Info.Version.Build & "." & _
+        My.Application.Info.Version.Revision & " " & MainFrm.PDATA
         '보이기
         Me.Show()
-        '페이드
-        For i = 0 To 1000
-            Me.Opacity = i / 1000
-        Next
     End Sub
 End Class

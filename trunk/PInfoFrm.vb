@@ -49,12 +49,12 @@ Public Class PInfoFrm
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -121,6 +121,14 @@ LANG_SKIP:
         ie = CreateObject("InternetExplorer.Application")
         ie.visible = True
         ie.navigate("http://iriyasviel.tistory.com")
+        ie = Nothing
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://air-enc.netii.net")
         ie = Nothing
     End Sub
 End Class

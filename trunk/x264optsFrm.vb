@@ -62,6 +62,8 @@ Public Class x264optsFrm
         UseMBTreeCheckBox.Checked = True
         AdaptiveQuantizersModeComboBox.Text = "Variance AQ"
         AdaptiveQuantizersStrengthNumericUpDown.Value = 1.0
+        TempBlurofestFramecomplexityNumericUpDown.Value = 20.0
+        TempBlurofQuantafterCCNumericUpDown.Value = 0.5
         'Analysis
         ChromaMECheckBox.Checked = True
         MERangeNumericUpDown.Value = 16
@@ -507,6 +509,16 @@ RELOAD:
                         If XTRSTR <> "" Then .AdaptiveQuantizersStrengthNumericUpDown.Value = XTRSTR Else .AdaptiveQuantizersStrengthNumericUpDown.Value = 1.0
                     End If
 
+                    If XTR.Name = "x264optsFrm_TempBlurofestFramecomplexityNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TempBlurofestFramecomplexityNumericUpDown.Value = XTRSTR Else .TempBlurofestFramecomplexityNumericUpDown.Value = 20.0
+                    End If
+
+                    If XTR.Name = "x264optsFrm_TempBlurofQuantafterCCNumericUpDown" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TempBlurofQuantafterCCNumericUpDown.Value = XTRSTR Else .TempBlurofQuantafterCCNumericUpDown.Value = 0.5
+                    End If
+
                     'Analysis
                     If XTR.Name = "x264optsFrm_ChromaMECheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
@@ -622,7 +634,7 @@ RELOAD:
     End Sub
 
     Private Sub x264optsFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub x264optsFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -642,12 +654,12 @@ RELOAD:
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -686,7 +698,10 @@ LANG_SKIP:
             AdaptiveQuantizersGroupBox.Enabled = False
             AverageBitrateVarianceLabel.Enabled = False
             AverageBitrateVarianceNumericUpDown.Enabled = False
-
+            TempBlurofestFramecomplexityLabel.Enabled = False
+            TempBlurofestFramecomplexityNumericUpDown.Enabled = False
+            TempBlurofQuantafterCCLabel.Enabled = False
+            TempBlurofQuantafterCCNumericUpDown.Enabled = False
         ElseIf InStr(EncSetFrm.VideoModeComboBox.SelectedItem, "[1PASS-CRF]", CompareMethod.Text) <> 0 Then '퀄리티
             TurboGroupBox.Enabled = False
 
@@ -694,6 +709,10 @@ LANG_SKIP:
             AdaptiveQuantizersGroupBox.Enabled = True
             AverageBitrateVarianceLabel.Enabled = False
             AverageBitrateVarianceNumericUpDown.Enabled = False
+            TempBlurofestFramecomplexityLabel.Enabled = False
+            TempBlurofestFramecomplexityNumericUpDown.Enabled = False
+            TempBlurofQuantafterCCLabel.Enabled = False
+            TempBlurofQuantafterCCNumericUpDown.Enabled = False
         ElseIf InStr(EncSetFrm.VideoModeComboBox.SelectedItem, "[2PASS-CBR]", CompareMethod.Text) <> 0 Then '2패스 비트레이트
             TurboGroupBox.Enabled = True
 
@@ -701,6 +720,10 @@ LANG_SKIP:
             AdaptiveQuantizersGroupBox.Enabled = True
             AverageBitrateVarianceLabel.Enabled = True
             AverageBitrateVarianceNumericUpDown.Enabled = True
+            TempBlurofestFramecomplexityLabel.Enabled = True
+            TempBlurofestFramecomplexityNumericUpDown.Enabled = True
+            TempBlurofQuantafterCCLabel.Enabled = True
+            TempBlurofQuantafterCCNumericUpDown.Enabled = True
         Else
             TurboGroupBox.Enabled = False
 
@@ -708,16 +731,20 @@ LANG_SKIP:
             AdaptiveQuantizersGroupBox.Enabled = True
             AverageBitrateVarianceLabel.Enabled = True
             AverageBitrateVarianceNumericUpDown.Enabled = True
+            TempBlurofestFramecomplexityLabel.Enabled = True
+            TempBlurofestFramecomplexityNumericUpDown.Enabled = True
+            TempBlurofQuantafterCCLabel.Enabled = True
+            TempBlurofQuantafterCCNumericUpDown.Enabled = True
         End If
 
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
     End Sub
 
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
         OKBTNCLK = True
 
-        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+        MainFrm.XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         '프리셋 설정된 파일 표시 지우기
         MainFrm.PresetLabel.Text = LangCls.MainUserStr
@@ -748,11 +775,19 @@ LANG_SKIP:
     End Sub
 
     Private Sub x264PictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles x264PictureBox.Click
-        System.Diagnostics.Process.Start("http://www.videolan.org/developers/x264.html")
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://www.videolan.org/developers/x264.html")
+        ie = Nothing
     End Sub
 
     Private Sub ffmpegPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ffmpegPictureBox.Click
-        System.Diagnostics.Process.Start("http://ffmpeg.org")
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://ffmpeg.org")
+        ie = Nothing
     End Sub
 
     Private Sub ThreadsNumericUpDown_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ThreadsNumericUpDown.LostFocus
@@ -838,5 +873,7 @@ LANG_SKIP:
     Private Sub VBVInitialBufferNumericUpDown_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles VBVInitialBufferNumericUpDown.LostFocus
         VBVInitialBufferNumericUpDown.Text = VBVInitialBufferNumericUpDown.Value
     End Sub
+
+
 
 End Class

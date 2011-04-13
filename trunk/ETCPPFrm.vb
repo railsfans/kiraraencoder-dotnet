@@ -201,6 +201,12 @@ RELOAD:
                     If XTRSTR <> "" Then ModeComboBox.Text = XTRSTR Else ModeComboBox.Text = "Blend"
                 End If
 
+                '기타
+                If XTR.Name = "ETCPPFrm_reverseCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then reverseCheckBox.Checked = XTRSTR Else reverseCheckBox.Checked = False
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -213,7 +219,7 @@ RELOAD:
     End Sub
 
     Private Sub ETCPPFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub ETCPPFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -233,12 +239,12 @@ RELOAD:
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -274,6 +280,8 @@ RELOAD:
                 If XTR.Name = "ETCPPFrmfadeinLabel" Then fadeinLabel.Text = XTR.ReadString
                 If XTR.Name = "ETCPPFrmfadeoutLabel" Then fadeoutLabel.Text = XTR.ReadString
                 If XTR.Name = "ETCPPFrmLAlignmentGroupBox" Then LAlignmentGroupBox.Text = XTR.ReadString
+                If XTR.Name = "ETCPPFrmreverseCheckBox" Then reverseCheckBox.Text = XTR.ReadString
+                If XTR.Name = "ETCPPFrmModeLabel" Then ModeLabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -285,7 +293,7 @@ RELOAD:
 LANG_SKIP:
         '=========================================
 
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
     End Sub
 
@@ -322,6 +330,8 @@ LANG_SKIP:
         XNumericUpDown.Value = 0
         YNumericUpDown.Value = 0
         ModeComboBox.Text = "Blend"
+        '기타
+        reverseCheckBox.Checked = False
     End Sub
 
     Private Sub CancelBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBTN.Click
@@ -331,7 +341,7 @@ LANG_SKIP:
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
         OKBTNCLK = True
 
-        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+        MainFrm.XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         '프리셋 설정된 파일 표시 지우기
         MainFrm.PresetLabel.Text = LangCls.MainUserStr

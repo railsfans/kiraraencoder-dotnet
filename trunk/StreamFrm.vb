@@ -472,14 +472,14 @@ Public Class StreamFrm
 
         '캐시예외
         Dim CACHEV As String = ""
-        If MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "MPEGTS" Then CACHEV = " -demuxer lavf -cache 8192"
+        If MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "MPEGTS" Then CACHEV = " -cache 8192"
         '볼륨예외
         Dim VOLV As String = " -volume 0"
         If MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "MPEGTS" Then VOLV = " -volume " & VolTrackBar.Value
 
         ProcessV = False '처리 부분 초기화
         Dim MSGB As String = ""
-        MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(10).Text & Chr(34) & _
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(10).Text & Chr(34) & _
         " -slave -identify -noquiet -nofontconfig -osdlevel 0 -idx -vo direct3d -wid " & PrePanel1.Handle.ToString & " -speed " & rateM & _
         CACHEV & ThreadV & StartSet & scaletempoV & extrastereoV & karaokeV & VisualizeMotionVectorsV & VisualizeBlockTypesV & DeinterlaceV & VOLV
 
@@ -866,12 +866,12 @@ skip:
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size

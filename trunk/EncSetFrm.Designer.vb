@@ -25,7 +25,7 @@ Partial Class EncSetFrm
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EncSetFrm))
         Me.EncSetPanel = New System.Windows.Forms.Panel
-        Me.OutFGroupBox = New System.Windows.Forms.GroupBox
+        Me.OutFLabel = New System.Windows.Forms.Label
         Me.OutFComboBox = New System.Windows.Forms.ComboBox
         Me.PresetButton = New System.Windows.Forms.Button
         Me.CancelBTN = New System.Windows.Forms.Button
@@ -33,7 +33,7 @@ Partial Class EncSetFrm
         Me.DefBTN = New System.Windows.Forms.Button
         Me.SettingTabControl = New System.Windows.Forms.TabControl
         Me.VideoTabPage = New System.Windows.Forms.TabPage
-        Me.MP4OptsGroupBox = New System.Windows.Forms.GroupBox
+        Me.MP4OptsPanel = New System.Windows.Forms.Panel
         Me.PSPMP4CheckBox = New System.Windows.Forms.CheckBox
         Me.KeyFrameGroupBox = New System.Windows.Forms.GroupBox
         Me.MinGOPSizeTextBox = New System.Windows.Forms.TextBox
@@ -49,10 +49,6 @@ Partial Class EncSetFrm
         Me.QuantizerCQPNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.QuantizerCQPTrackBar = New System.Windows.Forms.TrackBar
         Me.QuantizerCQPLabel = New System.Windows.Forms.Label
-        Me.FramerateCheckBox = New System.Windows.Forms.CheckBox
-        Me.FramerateLabel2 = New System.Windows.Forms.Label
-        Me.FramerateComboBox = New System.Windows.Forms.ComboBox
-        Me.FramerateLabel = New System.Windows.Forms.Label
         Me.QualityNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.QualityTrackBar = New System.Windows.Forms.TrackBar
         Me.QualityLabel = New System.Windows.Forms.Label
@@ -65,6 +61,12 @@ Partial Class EncSetFrm
         Me.VideoModeComboBox = New System.Windows.Forms.ComboBox
         Me.VideoCodecComboBox = New System.Windows.Forms.ComboBox
         Me.VCodecLabel = New System.Windows.Forms.Label
+        Me.FFFPSGroupBox = New System.Windows.Forms.GroupBox
+        Me.FFFPSDOCheckBox = New System.Windows.Forms.CheckBox
+        Me.FramerateLabel = New System.Windows.Forms.Label
+        Me.FramerateComboBox = New System.Windows.Forms.ComboBox
+        Me.FramerateCheckBox = New System.Windows.Forms.CheckBox
+        Me.FramerateLabel2 = New System.Windows.Forms.Label
         Me.VFTabPage = New System.Windows.Forms.TabPage
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
@@ -73,6 +75,7 @@ Partial Class EncSetFrm
         Me.DeinterlaceParityComboBox = New System.Windows.Forms.ComboBox
         Me.DeinterlaceModeComboBox = New System.Windows.Forms.ComboBox
         Me.DeinterlaceCheckBox = New System.Windows.Forms.CheckBox
+        Me.TabPage4 = New System.Windows.Forms.TabPage
         Me.ImagePPGroupBox = New System.Windows.Forms.GroupBox
         Me.FFmpegImageUnsharpCheckBox = New System.Windows.Forms.CheckBox
         Me.FFmpegImageUnsharpLabel = New System.Windows.Forms.Label
@@ -162,13 +165,6 @@ Partial Class EncSetFrm
         Me.SamplerateLabel = New System.Windows.Forms.Label
         Me.BitrateNPanel = New System.Windows.Forms.Panel
         Me.AudioBitrateNLabel = New System.Windows.Forms.Label
-        Me.AudioVolNLabel = New System.Windows.Forms.Label
-        Me.AudioVolButton = New System.Windows.Forms.Button
-        Me.AudioVolTrackBar = New System.Windows.Forms.TrackBar
-        Me.AudioVolNumericUpDown = New System.Windows.Forms.NumericUpDown
-        Me.AudioVolLabel = New System.Windows.Forms.Label
-        Me.FFmpegChComboBox = New System.Windows.Forms.ComboBox
-        Me.FFmpegChLabel = New System.Windows.Forms.Label
         Me.AAMRBitratePanel = New System.Windows.Forms.Panel
         Me.AMRBitrateComboBox = New System.Windows.Forms.ComboBox
         Me.AMRBitrateLabel = New System.Windows.Forms.Label
@@ -200,6 +196,14 @@ Partial Class EncSetFrm
         Me.NeroAACSALabel = New System.Windows.Forms.Label
         Me.NeroAACProfileComboBox = New System.Windows.Forms.ComboBox
         Me.NeroAACProfileLabel = New System.Windows.Forms.Label
+        Me.FFAudGroupBox = New System.Windows.Forms.GroupBox
+        Me.FFmpegChComboBox = New System.Windows.Forms.ComboBox
+        Me.FFmpegChLabel = New System.Windows.Forms.Label
+        Me.AudioVolLabel = New System.Windows.Forms.Label
+        Me.AudioVolNLabel = New System.Windows.Forms.Label
+        Me.AudioVolNumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.AudioVolButton = New System.Windows.Forms.Button
+        Me.AudioVolTrackBar = New System.Windows.Forms.TrackBar
         Me.ETCTabPage = New System.Windows.Forms.TabPage
         Me.SizeEncGroupBox = New System.Windows.Forms.GroupBox
         Me.SizeButton = New System.Windows.Forms.Button
@@ -209,6 +213,7 @@ Partial Class EncSetFrm
         Me.SizeEncLabel = New System.Windows.Forms.Label
         Me.SizeEncCheckBox = New System.Windows.Forms.CheckBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.RemoveMeatadataCheckBox = New System.Windows.Forms.CheckBox
         Me.SubtitleRecordingCheckBox = New System.Windows.Forms.CheckBox
         Me.FFmpegCommandGroupBox = New System.Windows.Forms.GroupBox
         Me.FFmpegCommandButton = New System.Windows.Forms.Button
@@ -239,10 +244,9 @@ Partial Class EncSetFrm
         Me.BD23450MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BDDL46900MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.EncSetPanel.SuspendLayout()
-        Me.OutFGroupBox.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
         Me.VideoTabPage.SuspendLayout()
-        Me.MP4OptsGroupBox.SuspendLayout()
+        Me.MP4OptsPanel.SuspendLayout()
         Me.KeyFrameGroupBox.SuspendLayout()
         Me.VideoGroupBox.SuspendLayout()
         Me.AdvanOptsPanel.SuspendLayout()
@@ -252,10 +256,12 @@ Partial Class EncSetFrm
         CType(Me.QualityTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuantizerNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuantizerTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FFFPSGroupBox.SuspendLayout()
         Me.VFTabPage.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         Me.ImagePPGroupBox.SuspendLayout()
         CType(Me.LumaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChromaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -292,8 +298,6 @@ Partial Class EncSetFrm
         CType(Me.LAMEMP3QNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SampleratePanel.SuspendLayout()
         Me.BitrateNPanel.SuspendLayout()
-        CType(Me.AudioVolTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AudioVolNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AAMRBitratePanel.SuspendLayout()
         Me.AbitratePanel.SuspendLayout()
         Me.AVorbisQPanel.SuspendLayout()
@@ -304,6 +308,9 @@ Partial Class EncSetFrm
         CType(Me.NeroAACQNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NeroAACBitrateTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NeroAACBitrateNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FFAudGroupBox.SuspendLayout()
+        CType(Me.AudioVolNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AudioVolTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ETCTabPage.SuspendLayout()
         Me.SizeEncGroupBox.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -315,7 +322,9 @@ Partial Class EncSetFrm
         '
         'EncSetPanel
         '
-        Me.EncSetPanel.Controls.Add(Me.OutFGroupBox)
+        Me.EncSetPanel.Controls.Add(Me.OutFLabel)
+        Me.EncSetPanel.Controls.Add(Me.OutFComboBox)
+        Me.EncSetPanel.Controls.Add(Me.PresetButton)
         Me.EncSetPanel.Controls.Add(Me.CancelBTN)
         Me.EncSetPanel.Controls.Add(Me.OKBTN)
         Me.EncSetPanel.Controls.Add(Me.DefBTN)
@@ -323,19 +332,16 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.EncSetPanel, "EncSetPanel")
         Me.EncSetPanel.Name = "EncSetPanel"
         '
-        'OutFGroupBox
+        'OutFLabel
         '
-        Me.OutFGroupBox.Controls.Add(Me.OutFComboBox)
-        Me.OutFGroupBox.Controls.Add(Me.PresetButton)
-        resources.ApplyResources(Me.OutFGroupBox, "OutFGroupBox")
-        Me.OutFGroupBox.Name = "OutFGroupBox"
-        Me.OutFGroupBox.TabStop = False
+        resources.ApplyResources(Me.OutFLabel, "OutFLabel")
+        Me.OutFLabel.Name = "OutFLabel"
         '
         'OutFComboBox
         '
         Me.OutFComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.OutFComboBox.FormattingEnabled = True
-        Me.OutFComboBox.Items.AddRange(New Object() {resources.GetString("OutFComboBox.Items"), resources.GetString("OutFComboBox.Items1"), resources.GetString("OutFComboBox.Items2"), resources.GetString("OutFComboBox.Items3"), resources.GetString("OutFComboBox.Items4"), resources.GetString("OutFComboBox.Items5"), resources.GetString("OutFComboBox.Items6"), resources.GetString("OutFComboBox.Items7"), resources.GetString("OutFComboBox.Items8"), resources.GetString("OutFComboBox.Items9"), resources.GetString("OutFComboBox.Items10"), resources.GetString("OutFComboBox.Items11"), resources.GetString("OutFComboBox.Items12"), resources.GetString("OutFComboBox.Items13"), resources.GetString("OutFComboBox.Items14")})
+        Me.OutFComboBox.Items.AddRange(New Object() {resources.GetString("OutFComboBox.Items"), resources.GetString("OutFComboBox.Items1"), resources.GetString("OutFComboBox.Items2"), resources.GetString("OutFComboBox.Items3"), resources.GetString("OutFComboBox.Items4"), resources.GetString("OutFComboBox.Items5"), resources.GetString("OutFComboBox.Items6"), resources.GetString("OutFComboBox.Items7"), resources.GetString("OutFComboBox.Items8"), resources.GetString("OutFComboBox.Items9"), resources.GetString("OutFComboBox.Items10"), resources.GetString("OutFComboBox.Items11"), resources.GetString("OutFComboBox.Items12"), resources.GetString("OutFComboBox.Items13"), resources.GetString("OutFComboBox.Items14"), resources.GetString("OutFComboBox.Items15"), resources.GetString("OutFComboBox.Items16")})
         resources.ApplyResources(Me.OutFComboBox, "OutFComboBox")
         Me.OutFComboBox.Name = "OutFComboBox"
         '
@@ -377,19 +383,19 @@ Partial Class EncSetFrm
         'VideoTabPage
         '
         Me.VideoTabPage.BackColor = System.Drawing.Color.Transparent
-        Me.VideoTabPage.Controls.Add(Me.MP4OptsGroupBox)
+        Me.VideoTabPage.Controls.Add(Me.MP4OptsPanel)
         Me.VideoTabPage.Controls.Add(Me.KeyFrameGroupBox)
         Me.VideoTabPage.Controls.Add(Me.VideoGroupBox)
+        Me.VideoTabPage.Controls.Add(Me.FFFPSGroupBox)
         resources.ApplyResources(Me.VideoTabPage, "VideoTabPage")
         Me.VideoTabPage.Name = "VideoTabPage"
         Me.VideoTabPage.UseVisualStyleBackColor = True
         '
-        'MP4OptsGroupBox
+        'MP4OptsPanel
         '
-        Me.MP4OptsGroupBox.Controls.Add(Me.PSPMP4CheckBox)
-        resources.ApplyResources(Me.MP4OptsGroupBox, "MP4OptsGroupBox")
-        Me.MP4OptsGroupBox.Name = "MP4OptsGroupBox"
-        Me.MP4OptsGroupBox.TabStop = False
+        Me.MP4OptsPanel.Controls.Add(Me.PSPMP4CheckBox)
+        resources.ApplyResources(Me.MP4OptsPanel, "MP4OptsPanel")
+        Me.MP4OptsPanel.Name = "MP4OptsPanel"
         '
         'PSPMP4CheckBox
         '
@@ -440,10 +446,6 @@ Partial Class EncSetFrm
         Me.VideoGroupBox.Controls.Add(Me.QuantizerCQPNumericUpDown)
         Me.VideoGroupBox.Controls.Add(Me.QuantizerCQPTrackBar)
         Me.VideoGroupBox.Controls.Add(Me.QuantizerCQPLabel)
-        Me.VideoGroupBox.Controls.Add(Me.FramerateCheckBox)
-        Me.VideoGroupBox.Controls.Add(Me.FramerateLabel2)
-        Me.VideoGroupBox.Controls.Add(Me.FramerateComboBox)
-        Me.VideoGroupBox.Controls.Add(Me.FramerateLabel)
         Me.VideoGroupBox.Controls.Add(Me.QualityNumericUpDown)
         Me.VideoGroupBox.Controls.Add(Me.QualityTrackBar)
         Me.VideoGroupBox.Controls.Add(Me.QualityLabel)
@@ -504,30 +506,6 @@ Partial Class EncSetFrm
         '
         resources.ApplyResources(Me.QuantizerCQPLabel, "QuantizerCQPLabel")
         Me.QuantizerCQPLabel.Name = "QuantizerCQPLabel"
-        '
-        'FramerateCheckBox
-        '
-        resources.ApplyResources(Me.FramerateCheckBox, "FramerateCheckBox")
-        Me.FramerateCheckBox.Name = "FramerateCheckBox"
-        Me.FramerateCheckBox.UseVisualStyleBackColor = True
-        '
-        'FramerateLabel2
-        '
-        resources.ApplyResources(Me.FramerateLabel2, "FramerateLabel2")
-        Me.FramerateLabel2.Name = "FramerateLabel2"
-        '
-        'FramerateComboBox
-        '
-        Me.FramerateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.FramerateComboBox.FormattingEnabled = True
-        Me.FramerateComboBox.Items.AddRange(New Object() {resources.GetString("FramerateComboBox.Items"), resources.GetString("FramerateComboBox.Items1"), resources.GetString("FramerateComboBox.Items2"), resources.GetString("FramerateComboBox.Items3"), resources.GetString("FramerateComboBox.Items4"), resources.GetString("FramerateComboBox.Items5"), resources.GetString("FramerateComboBox.Items6"), resources.GetString("FramerateComboBox.Items7"), resources.GetString("FramerateComboBox.Items8"), resources.GetString("FramerateComboBox.Items9"), resources.GetString("FramerateComboBox.Items10"), resources.GetString("FramerateComboBox.Items11"), resources.GetString("FramerateComboBox.Items12"), resources.GetString("FramerateComboBox.Items13"), resources.GetString("FramerateComboBox.Items14"), resources.GetString("FramerateComboBox.Items15"), resources.GetString("FramerateComboBox.Items16"), resources.GetString("FramerateComboBox.Items17"), resources.GetString("FramerateComboBox.Items18"), resources.GetString("FramerateComboBox.Items19"), resources.GetString("FramerateComboBox.Items20"), resources.GetString("FramerateComboBox.Items21"), resources.GetString("FramerateComboBox.Items22")})
-        resources.ApplyResources(Me.FramerateComboBox, "FramerateComboBox")
-        Me.FramerateComboBox.Name = "FramerateComboBox"
-        '
-        'FramerateLabel
-        '
-        resources.ApplyResources(Me.FramerateLabel, "FramerateLabel")
-        Me.FramerateLabel.Name = "FramerateLabel"
         '
         'QualityNumericUpDown
         '
@@ -616,6 +594,47 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.VCodecLabel, "VCodecLabel")
         Me.VCodecLabel.Name = "VCodecLabel"
         '
+        'FFFPSGroupBox
+        '
+        Me.FFFPSGroupBox.Controls.Add(Me.FFFPSDOCheckBox)
+        Me.FFFPSGroupBox.Controls.Add(Me.FramerateLabel)
+        Me.FFFPSGroupBox.Controls.Add(Me.FramerateComboBox)
+        Me.FFFPSGroupBox.Controls.Add(Me.FramerateCheckBox)
+        Me.FFFPSGroupBox.Controls.Add(Me.FramerateLabel2)
+        resources.ApplyResources(Me.FFFPSGroupBox, "FFFPSGroupBox")
+        Me.FFFPSGroupBox.Name = "FFFPSGroupBox"
+        Me.FFFPSGroupBox.TabStop = False
+        '
+        'FFFPSDOCheckBox
+        '
+        resources.ApplyResources(Me.FFFPSDOCheckBox, "FFFPSDOCheckBox")
+        Me.FFFPSDOCheckBox.Name = "FFFPSDOCheckBox"
+        Me.FFFPSDOCheckBox.UseVisualStyleBackColor = True
+        '
+        'FramerateLabel
+        '
+        resources.ApplyResources(Me.FramerateLabel, "FramerateLabel")
+        Me.FramerateLabel.Name = "FramerateLabel"
+        '
+        'FramerateComboBox
+        '
+        Me.FramerateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.FramerateComboBox.FormattingEnabled = True
+        Me.FramerateComboBox.Items.AddRange(New Object() {resources.GetString("FramerateComboBox.Items"), resources.GetString("FramerateComboBox.Items1"), resources.GetString("FramerateComboBox.Items2"), resources.GetString("FramerateComboBox.Items3"), resources.GetString("FramerateComboBox.Items4"), resources.GetString("FramerateComboBox.Items5"), resources.GetString("FramerateComboBox.Items6"), resources.GetString("FramerateComboBox.Items7"), resources.GetString("FramerateComboBox.Items8"), resources.GetString("FramerateComboBox.Items9"), resources.GetString("FramerateComboBox.Items10"), resources.GetString("FramerateComboBox.Items11"), resources.GetString("FramerateComboBox.Items12"), resources.GetString("FramerateComboBox.Items13"), resources.GetString("FramerateComboBox.Items14"), resources.GetString("FramerateComboBox.Items15"), resources.GetString("FramerateComboBox.Items16"), resources.GetString("FramerateComboBox.Items17"), resources.GetString("FramerateComboBox.Items18"), resources.GetString("FramerateComboBox.Items19"), resources.GetString("FramerateComboBox.Items20"), resources.GetString("FramerateComboBox.Items21"), resources.GetString("FramerateComboBox.Items22")})
+        resources.ApplyResources(Me.FramerateComboBox, "FramerateComboBox")
+        Me.FramerateComboBox.Name = "FramerateComboBox"
+        '
+        'FramerateCheckBox
+        '
+        resources.ApplyResources(Me.FramerateCheckBox, "FramerateCheckBox")
+        Me.FramerateCheckBox.Name = "FramerateCheckBox"
+        Me.FramerateCheckBox.UseVisualStyleBackColor = True
+        '
+        'FramerateLabel2
+        '
+        resources.ApplyResources(Me.FramerateLabel2, "FramerateLabel2")
+        Me.FramerateLabel2.Name = "FramerateLabel2"
+        '
         'VFTabPage
         '
         Me.VFTabPage.Controls.Add(Me.TabControl1)
@@ -626,6 +645,7 @@ Partial Class EncSetFrm
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         resources.ApplyResources(Me.TabControl1, "TabControl1")
@@ -635,7 +655,6 @@ Partial Class EncSetFrm
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox3)
-        Me.TabPage1.Controls.Add(Me.ImagePPGroupBox)
         resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -676,6 +695,13 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.DeinterlaceCheckBox, "DeinterlaceCheckBox")
         Me.DeinterlaceCheckBox.Name = "DeinterlaceCheckBox"
         Me.DeinterlaceCheckBox.UseVisualStyleBackColor = True
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.ImagePPGroupBox)
+        resources.ApplyResources(Me.TabPage4, "TabPage4")
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.UseVisualStyleBackColor = True
         '
         'ImagePPGroupBox
         '
@@ -1222,6 +1248,7 @@ Partial Class EncSetFrm
         Me.AudioTabPage.BackColor = System.Drawing.Color.Transparent
         Me.AudioTabPage.Controls.Add(Me.AudioGroupBox)
         Me.AudioTabPage.Controls.Add(Me.NeroAACGroupBox)
+        Me.AudioTabPage.Controls.Add(Me.FFAudGroupBox)
         resources.ApplyResources(Me.AudioTabPage, "AudioTabPage")
         Me.AudioTabPage.Name = "AudioTabPage"
         Me.AudioTabPage.UseVisualStyleBackColor = True
@@ -1231,13 +1258,6 @@ Partial Class EncSetFrm
         Me.AudioGroupBox.Controls.Add(Me.LAMEMP3QPanel)
         Me.AudioGroupBox.Controls.Add(Me.SampleratePanel)
         Me.AudioGroupBox.Controls.Add(Me.BitrateNPanel)
-        Me.AudioGroupBox.Controls.Add(Me.AudioVolNLabel)
-        Me.AudioGroupBox.Controls.Add(Me.AudioVolButton)
-        Me.AudioGroupBox.Controls.Add(Me.AudioVolTrackBar)
-        Me.AudioGroupBox.Controls.Add(Me.AudioVolNumericUpDown)
-        Me.AudioGroupBox.Controls.Add(Me.AudioVolLabel)
-        Me.AudioGroupBox.Controls.Add(Me.FFmpegChComboBox)
-        Me.AudioGroupBox.Controls.Add(Me.FFmpegChLabel)
         Me.AudioGroupBox.Controls.Add(Me.AAMRBitratePanel)
         Me.AudioGroupBox.Controls.Add(Me.AbitratePanel)
         Me.AudioGroupBox.Controls.Add(Me.AVorbisQPanel)
@@ -1347,50 +1367,6 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.AudioBitrateNLabel, "AudioBitrateNLabel")
         Me.AudioBitrateNLabel.ForeColor = System.Drawing.Color.Green
         Me.AudioBitrateNLabel.Name = "AudioBitrateNLabel"
-        '
-        'AudioVolNLabel
-        '
-        resources.ApplyResources(Me.AudioVolNLabel, "AudioVolNLabel")
-        Me.AudioVolNLabel.ForeColor = System.Drawing.Color.Green
-        Me.AudioVolNLabel.Name = "AudioVolNLabel"
-        '
-        'AudioVolButton
-        '
-        resources.ApplyResources(Me.AudioVolButton, "AudioVolButton")
-        Me.AudioVolButton.Name = "AudioVolButton"
-        Me.AudioVolButton.UseVisualStyleBackColor = True
-        '
-        'AudioVolTrackBar
-        '
-        resources.ApplyResources(Me.AudioVolTrackBar, "AudioVolTrackBar")
-        Me.AudioVolTrackBar.BackColor = System.Drawing.Color.White
-        Me.AudioVolTrackBar.Maximum = 3840
-        Me.AudioVolTrackBar.Name = "AudioVolTrackBar"
-        Me.AudioVolTrackBar.TickFrequency = 0
-        Me.AudioVolTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
-        '
-        'AudioVolNumericUpDown
-        '
-        resources.ApplyResources(Me.AudioVolNumericUpDown, "AudioVolNumericUpDown")
-        Me.AudioVolNumericUpDown.Maximum = New Decimal(New Integer() {3840, 0, 0, 0})
-        Me.AudioVolNumericUpDown.Name = "AudioVolNumericUpDown"
-        '
-        'AudioVolLabel
-        '
-        resources.ApplyResources(Me.AudioVolLabel, "AudioVolLabel")
-        Me.AudioVolLabel.Name = "AudioVolLabel"
-        '
-        'FFmpegChComboBox
-        '
-        Me.FFmpegChComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.FFmpegChComboBox.FormattingEnabled = True
-        resources.ApplyResources(Me.FFmpegChComboBox, "FFmpegChComboBox")
-        Me.FFmpegChComboBox.Name = "FFmpegChComboBox"
-        '
-        'FFmpegChLabel
-        '
-        resources.ApplyResources(Me.FFmpegChLabel, "FFmpegChLabel")
-        Me.FFmpegChLabel.Name = "FFmpegChLabel"
         '
         'AAMRBitratePanel
         '
@@ -1612,6 +1588,63 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.NeroAACProfileLabel, "NeroAACProfileLabel")
         Me.NeroAACProfileLabel.Name = "NeroAACProfileLabel"
         '
+        'FFAudGroupBox
+        '
+        Me.FFAudGroupBox.Controls.Add(Me.FFmpegChComboBox)
+        Me.FFAudGroupBox.Controls.Add(Me.FFmpegChLabel)
+        Me.FFAudGroupBox.Controls.Add(Me.AudioVolLabel)
+        Me.FFAudGroupBox.Controls.Add(Me.AudioVolNLabel)
+        Me.FFAudGroupBox.Controls.Add(Me.AudioVolNumericUpDown)
+        Me.FFAudGroupBox.Controls.Add(Me.AudioVolButton)
+        Me.FFAudGroupBox.Controls.Add(Me.AudioVolTrackBar)
+        resources.ApplyResources(Me.FFAudGroupBox, "FFAudGroupBox")
+        Me.FFAudGroupBox.Name = "FFAudGroupBox"
+        Me.FFAudGroupBox.TabStop = False
+        '
+        'FFmpegChComboBox
+        '
+        Me.FFmpegChComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.FFmpegChComboBox.FormattingEnabled = True
+        resources.ApplyResources(Me.FFmpegChComboBox, "FFmpegChComboBox")
+        Me.FFmpegChComboBox.Name = "FFmpegChComboBox"
+        '
+        'FFmpegChLabel
+        '
+        resources.ApplyResources(Me.FFmpegChLabel, "FFmpegChLabel")
+        Me.FFmpegChLabel.Name = "FFmpegChLabel"
+        '
+        'AudioVolLabel
+        '
+        resources.ApplyResources(Me.AudioVolLabel, "AudioVolLabel")
+        Me.AudioVolLabel.Name = "AudioVolLabel"
+        '
+        'AudioVolNLabel
+        '
+        resources.ApplyResources(Me.AudioVolNLabel, "AudioVolNLabel")
+        Me.AudioVolNLabel.ForeColor = System.Drawing.Color.Green
+        Me.AudioVolNLabel.Name = "AudioVolNLabel"
+        '
+        'AudioVolNumericUpDown
+        '
+        resources.ApplyResources(Me.AudioVolNumericUpDown, "AudioVolNumericUpDown")
+        Me.AudioVolNumericUpDown.Maximum = New Decimal(New Integer() {3840, 0, 0, 0})
+        Me.AudioVolNumericUpDown.Name = "AudioVolNumericUpDown"
+        '
+        'AudioVolButton
+        '
+        resources.ApplyResources(Me.AudioVolButton, "AudioVolButton")
+        Me.AudioVolButton.Name = "AudioVolButton"
+        Me.AudioVolButton.UseVisualStyleBackColor = True
+        '
+        'AudioVolTrackBar
+        '
+        resources.ApplyResources(Me.AudioVolTrackBar, "AudioVolTrackBar")
+        Me.AudioVolTrackBar.BackColor = System.Drawing.Color.White
+        Me.AudioVolTrackBar.Maximum = 3840
+        Me.AudioVolTrackBar.Name = "AudioVolTrackBar"
+        Me.AudioVolTrackBar.TickFrequency = 0
+        Me.AudioVolTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        '
         'ETCTabPage
         '
         Me.ETCTabPage.Controls.Add(Me.SizeEncGroupBox)
@@ -1670,10 +1703,17 @@ Partial Class EncSetFrm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.RemoveMeatadataCheckBox)
         Me.GroupBox1.Controls.Add(Me.SubtitleRecordingCheckBox)
         resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
+        '
+        'RemoveMeatadataCheckBox
+        '
+        resources.ApplyResources(Me.RemoveMeatadataCheckBox, "RemoveMeatadataCheckBox")
+        Me.RemoveMeatadataCheckBox.Name = "RemoveMeatadataCheckBox"
+        Me.RemoveMeatadataCheckBox.UseVisualStyleBackColor = True
         '
         'SubtitleRecordingCheckBox
         '
@@ -1850,11 +1890,11 @@ Partial Class EncSetFrm
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.EncSetPanel.ResumeLayout(False)
-        Me.OutFGroupBox.ResumeLayout(False)
+        Me.EncSetPanel.PerformLayout()
         Me.SettingTabControl.ResumeLayout(False)
         Me.VideoTabPage.ResumeLayout(False)
-        Me.MP4OptsGroupBox.ResumeLayout(False)
-        Me.MP4OptsGroupBox.PerformLayout()
+        Me.MP4OptsPanel.ResumeLayout(False)
+        Me.MP4OptsPanel.PerformLayout()
         Me.KeyFrameGroupBox.ResumeLayout(False)
         Me.KeyFrameGroupBox.PerformLayout()
         Me.VideoGroupBox.ResumeLayout(False)
@@ -1867,11 +1907,14 @@ Partial Class EncSetFrm
         CType(Me.QualityTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuantizerNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuantizerTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FFFPSGroupBox.ResumeLayout(False)
+        Me.FFFPSGroupBox.PerformLayout()
         Me.VFTabPage.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
         Me.ImagePPGroupBox.ResumeLayout(False)
         Me.ImagePPGroupBox.PerformLayout()
         CType(Me.LumaEffectSNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1911,7 +1954,6 @@ Partial Class EncSetFrm
         Me.flipGroupBox.PerformLayout()
         Me.AudioTabPage.ResumeLayout(False)
         Me.AudioGroupBox.ResumeLayout(False)
-        Me.AudioGroupBox.PerformLayout()
         Me.LAMEMP3QPanel.ResumeLayout(False)
         Me.LAMEMP3QPanel.PerformLayout()
         CType(Me.LAMEMP3QTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1920,8 +1962,6 @@ Partial Class EncSetFrm
         Me.SampleratePanel.PerformLayout()
         Me.BitrateNPanel.ResumeLayout(False)
         Me.BitrateNPanel.PerformLayout()
-        CType(Me.AudioVolTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AudioVolNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AAMRBitratePanel.ResumeLayout(False)
         Me.AAMRBitratePanel.PerformLayout()
         Me.AbitratePanel.ResumeLayout(False)
@@ -1936,6 +1976,10 @@ Partial Class EncSetFrm
         CType(Me.NeroAACQNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NeroAACBitrateTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NeroAACBitrateNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FFAudGroupBox.ResumeLayout(False)
+        Me.FFAudGroupBox.PerformLayout()
+        CType(Me.AudioVolNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AudioVolTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ETCTabPage.ResumeLayout(False)
         Me.SizeEncGroupBox.ResumeLayout(False)
         Me.SizeEncGroupBox.PerformLayout()
@@ -1982,7 +2026,6 @@ Partial Class EncSetFrm
     Friend WithEvents AdvanOptsButton As System.Windows.Forms.Button
     Friend WithEvents GOPSizeCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents AdvanOptsCheckBox As System.Windows.Forms.CheckBox
-    Friend WithEvents MP4OptsGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents PSPMP4CheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents MinGOPSizeTextBox As System.Windows.Forms.TextBox
     Friend WithEvents GOPSizeTextBox As System.Windows.Forms.TextBox
@@ -2083,7 +2126,6 @@ Partial Class EncSetFrm
     Friend WithEvents FFmpegImageUnsharpLabel As System.Windows.Forms.Label
     Friend WithEvents FFmpegImageUnsharpCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents AdvanOptsPanel As System.Windows.Forms.Panel
-    Friend WithEvents OutFGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents PresetButton As System.Windows.Forms.Button
     Friend WithEvents SamplerateCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents SampleratePanel As System.Windows.Forms.Panel
@@ -2165,4 +2207,11 @@ Partial Class EncSetFrm
     Friend WithEvents gradfun_strengthTrackBar As System.Windows.Forms.TrackBar
     Friend WithEvents gradfun_strengthButton As System.Windows.Forms.Button
     Friend WithEvents gradfunCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents RemoveMeatadataCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FFFPSDOCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
+    Friend WithEvents MP4OptsPanel As System.Windows.Forms.Panel
+    Friend WithEvents OutFLabel As System.Windows.Forms.Label
+    Friend WithEvents FFFPSGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents FFAudGroupBox As System.Windows.Forms.GroupBox
 End Class

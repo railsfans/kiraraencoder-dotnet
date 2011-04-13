@@ -55,9 +55,9 @@ Public Class VideoWindowFrm
 
         Try
             '_AviSynthClip = _AviSynthScriptEnvironment.ParseScript(AviSynthEditorFrm.AVTextBox.Text, AvisynthWrapper.AviSynthColorspace.RGB32)
-            '_AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "AVS파일", AvisynthWrapper.AviSynthColorspace.RGB32)
+            '_AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(Mainfrm.ApplicationInfoDirectoryPath & "AVS파일", AvisynthWrapper.AviSynthColorspace.RGB32)
             If BitMapB = False Then
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
                 BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
                 BitMapB = True
             Else
@@ -67,7 +67,7 @@ Public Class VideoWindowFrm
                 If BitmapV IsNot Nothing Then
                     BitmapV.Dispose()
                 End If
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
                 BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
             End If
             VideoPictureBox.Image = BitmapV
@@ -144,12 +144,12 @@ Public Class VideoWindowFrm
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size

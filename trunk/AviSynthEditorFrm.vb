@@ -148,7 +148,7 @@ Public Class AviSynthEditorFrm
             VideoWindowFrm.Close()
         Loop
 
-        If OKBTNCLK = False Then AVS_XML_LOAD(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+        If OKBTNCLK = False Then AVS_XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml")
 
     End Sub
 
@@ -239,12 +239,12 @@ RELOAD:
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -273,7 +273,7 @@ RELOAD:
                 If XTR.Name = "AviSynthEditorFrmImgSButton" Then ImgSButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmAudSButton" Then AudSButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmSubSButton" Then SubSButton.Text = XTR.ReadString
-                If XTR.Name = "AviSynthEditorFrmEtcSButton" Then etcSButton.Text = XTR.ReadString
+                If XTR.Name = "AviSynthEditorFrmEtcSButton" Then EtcSButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmPreviewButton" Then PreviewButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmRefButton" Then RefButton.Text = XTR.ReadString
                 If XTR.Name = "AviSynthEditorFrmListenButton" Then
@@ -297,7 +297,7 @@ LANG_SKIP:
         RefButton.Enabled = False
         ListenButton.Enabled = True
 
-        AVS_XML_LOAD(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+        AVS_XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml")
 
     End Sub
 
@@ -342,20 +342,20 @@ LANG_SKIP:
                 AviSynthPP.INDEX_ProcessStopChk = False
                 ListenButton.Enabled = True
             Else
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs")
+                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs")
                 _AviSynthClip.IDisposable_Dispose()
                 Dim MSGB As String = ""
 
                 If MainFrm.SEEKMODEM1B = True Then
                     ListenButton.Text = "Playback"
-                    MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
+                    MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
                     " -identify -noquiet -nofontconfig -vo direct3d"
                 Else
                     ListenButton.Text = ListenButtonSTR
                     If MainFrm.DECSTR = "DSHOW" Then
-                        MSGB = My.Application.Info.DirectoryPath & "\kiraraplayer.exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34)
+                        MSGB = FunctionCls.AppInfoDirectoryPath & "\kiraraplayer.exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34)
                     Else
-                        MSGB = My.Application.Info.DirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & My.Application.Info.DirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
+                        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
                                       " -identify -noquiet -nofontconfig -novideo"
                     End If
 
@@ -556,11 +556,11 @@ LANG_SKIP:
     End Sub
 
     Private Sub PluginToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PluginToolStripMenuItem.Click
-        Process.Start("explorer.exe", My.Application.Info.DirectoryPath & "\plugin")
+        Process.Start("explorer.exe", FunctionCls.AppInfoDirectoryPath & "\plugin")
     End Sub
 
     Private Sub ToolsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolsToolStripMenuItem.Click
-        Process.Start("explorer.exe", My.Application.Info.DirectoryPath & "\tools")
+        Process.Start("explorer.exe", FunctionCls.AppInfoDirectoryPath & "\tools")
     End Sub
 
     Private Sub PresetToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresetToolStripMenuItem.Click
@@ -589,7 +589,7 @@ LANG_SKIP:
             Exit Sub
         End If
         '설정저장//
-        MainFrm.AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+        MainFrm.AVS_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml")
 
     End Sub
 
@@ -604,7 +604,7 @@ LANG_SKIP:
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
         If MainFrm.SPreB = True Then Exit Sub
         OKBTNCLK = True
-        MainFrm.AVS_XML_SAVE(My.Application.Info.DirectoryPath & "\avs_settings.xml")
+        MainFrm.AVS_XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\avs_settings.xml")
         Close()
     End Sub
 

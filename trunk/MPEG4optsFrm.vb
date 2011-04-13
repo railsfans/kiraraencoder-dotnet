@@ -26,7 +26,11 @@ Public Class MPEG4optsFrm
     Dim OKBTNCLK As Boolean = False
 
     Private Sub ffmpegPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ffmpegPictureBox.Click
-        System.Diagnostics.Process.Start("http://ffmpeg.org")
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://ffmpeg.org")
+        ie = Nothing
     End Sub
 
     Private Sub MaxVBTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MaxVBTextBox.KeyPress
@@ -64,6 +68,7 @@ Public Class MPEG4optsFrm
         TopFieldFirstCheckBox.Checked = False
         _4MotionVectorCheckBox.Checked = False
         QPELCheckBox.Checked = False
+        GMCCheckBox.Checked = False
         'B-VOPs
         BFramesCheckBox.Checked = False
         BVOPsNumericUpDown.Value = 1
@@ -155,6 +160,11 @@ RELOAD:
                     If XTR.Name = "MPEG4optsFrm_QPELCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .QPELCheckBox.Checked = XTRSTR Else .QPELCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "MPEG4optsFrm_GMCCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .GMCCheckBox.Checked = XTRSTR Else .GMCCheckBox.Checked = False
                     End If
 
                     'B-VOPs
@@ -286,7 +296,7 @@ RELOAD:
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
         OKBTNCLK = True
 
-        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+        MainFrm.XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         '프리셋 설정된 파일 표시 지우기
         MainFrm.PresetLabel.Text = LangCls.MainUserStr
@@ -299,7 +309,7 @@ RELOAD:
     End Sub
 
     Private Sub MPEG4optsFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub MPEG4optsFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -319,12 +329,12 @@ RELOAD:
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -364,7 +374,16 @@ LANG_SKIP:
             RateControlGroupBox.Enabled = True
         End If
 
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        'Xvid MPEG-4 Codec(Xvid Core) 에서만 작동하는것.
+        If EncSetFrm.VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" Then
+            xvidPictureBox.Visible = True
+            GMCCheckBox.Enabled = True
+        Else
+            xvidPictureBox.Visible = False
+            GMCCheckBox.Enabled = False
+        End If
+
+        XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
     End Sub
 
@@ -382,5 +401,13 @@ LANG_SKIP:
             DownscalesffdBfdCheckBox.Enabled = False
             RefinettmvuibmCheckBox.Enabled = False
         End If
+    End Sub
+
+    Private Sub xvidPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xvidPictureBox.Click
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://www.xvid.org")
+        ie = Nothing
     End Sub
 End Class

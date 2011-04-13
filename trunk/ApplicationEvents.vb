@@ -10,11 +10,13 @@
     Partial Friend Class MyApplication
 
         Private Sub MyApplication_Startup(ByVal sender As Object, ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) Handles Me.Startup
+            MainFrm.LoadingBool = True
             LoadingFrm.Show()
         End Sub
 
         Private Sub MyApplication_StartupNextInstance(ByVal sender As Object, ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
 
+            If MainFrm.LoadingBool = True Then Exit Sub
             'MessageBox.Show("Kirara Encoder is already running.", "Kirara Encoder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             '최소화시 -> 일반상태로

@@ -216,7 +216,7 @@
 </value>
   </data>
   <data name="ffmpegPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>390, 310</value>
+    <value>393, 332</value>
   </data>
   <data name="ffmpegPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 70</value>
@@ -1165,7 +1165,7 @@
 </value>
   </data>
   <data name="x264PictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 310</value>
+    <value>133, 332</value>
   </data>
   <data name="x264PictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 70</value>
@@ -1288,7 +1288,7 @@
     <value>5.1</value>
   </data>
   <data name="LevelComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 24</value>
+    <value>17, 24</value>
   </data>
   <data name="LevelComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
@@ -1342,7 +1342,7 @@
     <value>High Profile</value>
   </data>
   <data name="ProfileComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 24</value>
+    <value>17, 24</value>
   </data>
   <data name="ProfileComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
@@ -1366,7 +1366,7 @@
     <value>10, 79</value>
   </data>
   <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 60</value>
+    <value>276, 60</value>
   </data>
   <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1465,7 +1465,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 401</value>
+    <value>688, 418</value>
   </data>
   <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1675,7 +1675,7 @@
     <value>4</value>
   </data>
   <data name="ReferenceFramesNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 21</value>
+    <value>247, 20</value>
   </data>
   <data name="ReferenceFramesNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 22</value>
@@ -1696,7 +1696,7 @@
     <value>5</value>
   </data>
   <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 21</value>
+    <value>14, 20</value>
   </data>
   <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 22</value>
@@ -2041,7 +2041,7 @@
     <value>14, 83</value>
   </data>
   <data name="DeblockingBetaLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>199, 22</value>
   </data>
   <data name="DeblockingBetaLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2068,7 +2068,7 @@
     <value>14, 52</value>
   </data>
   <data name="DeblockingAlphaLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>199, 22</value>
   </data>
   <data name="DeblockingAlphaLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2149,7 +2149,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 401</value>
+    <value>688, 398</value>
   </data>
   <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2169,11 +2169,113 @@
   <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="TempBlurofQuantafterCCNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 194</value>
+  </data>
+  <data name="TempBlurofQuantafterCCNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 22</value>
+  </data>
+  <data name="TempBlurofQuantafterCCNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofQuantafterCCNumericUpDown.Name" xml:space="preserve">
+    <value>TempBlurofQuantafterCCNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofQuantafterCCNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofQuantafterCCNumericUpDown.Parent" xml:space="preserve">
+    <value>RateControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofQuantafterCCNumericUpDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TempBlurofQuantafterCCLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TempBlurofQuantafterCCLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 193</value>
+  </data>
+  <data name="TempBlurofQuantafterCCLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 22</value>
+  </data>
+  <data name="TempBlurofQuantafterCCLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="TempBlurofQuantafterCCLabel.Text" xml:space="preserve">
+    <value>Temp. Blur of Quant after CC:</value>
+  </data>
+  <data name="TempBlurofQuantafterCCLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofQuantafterCCLabel.Name" xml:space="preserve">
+    <value>TempBlurofQuantafterCCLabel</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofQuantafterCCLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofQuantafterCCLabel.Parent" xml:space="preserve">
+    <value>RateControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofQuantafterCCLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 166</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 22</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofestFramecomplexityNumericUpDown.Name" xml:space="preserve">
+    <value>TempBlurofestFramecomplexityNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofestFramecomplexityNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofestFramecomplexityNumericUpDown.Parent" xml:space="preserve">
+    <value>RateControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofestFramecomplexityNumericUpDown.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 165</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 22</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityLabel.Text" xml:space="preserve">
+    <value>Temp. Blur of est. Frame complexity:</value>
+  </data>
+  <data name="TempBlurofestFramecomplexityLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofestFramecomplexityLabel.Name" xml:space="preserve">
+    <value>TempBlurofestFramecomplexityLabel</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofestFramecomplexityLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofestFramecomplexityLabel.Parent" xml:space="preserve">
+    <value>RateControlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TempBlurofestFramecomplexityLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="UseMBTreeCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="UseMBTreeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 62</value>
+    <value>381, 56</value>
   </data>
   <data name="UseMBTreeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 18</value>
@@ -2194,10 +2296,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;UseMBTreeCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="NumberofFramesforLookaheadNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 29</value>
+    <value>582, 23</value>
   </data>
   <data name="NumberofFramesforLookaheadNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 22</value>
@@ -2215,10 +2317,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;NumberofFramesforLookaheadNumericUpDown.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="Label26.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 29</value>
+    <value>326, 23</value>
   </data>
   <data name="Label26.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -2242,10 +2344,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;Label26.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="QuantizerCompressionNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 150</value>
+    <value>226, 135</value>
   </data>
   <data name="QuantizerCompressionNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 22</value>
@@ -2263,10 +2365,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;QuantizerCompressionNumericUpDown.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="Label25.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 150</value>
+    <value>15, 135</value>
   </data>
   <data name="Label25.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -2290,10 +2392,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;Label25.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="AverageBitrateVarianceNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 119</value>
+    <value>226, 107</value>
   </data>
   <data name="AverageBitrateVarianceNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 22</value>
@@ -2311,10 +2413,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;AverageBitrateVarianceNumericUpDown.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="AverageBitrateVarianceLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 119</value>
+    <value>15, 107</value>
   </data>
   <data name="AverageBitrateVarianceLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -2338,10 +2440,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;AverageBitrateVarianceLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="VBVInitialBufferNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 87</value>
+    <value>226, 79</value>
   </data>
   <data name="VBVInitialBufferNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 22</value>
@@ -2359,10 +2461,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;VBVInitialBufferNumericUpDown.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="Label23.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 87</value>
+    <value>15, 79</value>
   </data>
   <data name="Label23.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -2386,10 +2488,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;Label23.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="VBVMaximumBitrateNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 56</value>
+    <value>226, 51</value>
   </data>
   <data name="VBVMaximumBitrateNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 22</value>
@@ -2407,10 +2509,10 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;VBVMaximumBitrateNumericUpDown.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="Label22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 56</value>
+    <value>15, 51</value>
   </data>
   <data name="Label22.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -2434,7 +2536,7 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;Label22.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="VBVBufferSizeNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>226, 23</value>
@@ -2455,7 +2557,7 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;VBVBufferSizeNumericUpDown.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="Label21.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 23</value>
@@ -2482,13 +2584,13 @@
     <value>RateControlGroupBox</value>
   </data>
   <data name="&gt;&gt;Label21.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="RateControlGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 180</value>
   </data>
   <data name="RateControlGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>667, 190</value>
+    <value>667, 228</value>
   </data>
   <data name="RateControlGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2566,7 +2668,7 @@
     <value>Auto-variance AQ</value>
   </data>
   <data name="AdaptiveQuantizersModeComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 54</value>
+    <value>17, 54</value>
   </data>
   <data name="AdaptiveQuantizersModeComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 22</value>
@@ -2686,7 +2788,7 @@
     <value>1</value>
   </data>
   <data name="QPBRatioNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 91</value>
+    <value>226, 90</value>
   </data>
   <data name="QPBRatioNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 22</value>
@@ -2707,7 +2809,7 @@
     <value>2</value>
   </data>
   <data name="Label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 91</value>
+    <value>15, 90</value>
   </data>
   <data name="Label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -2899,7 +3001,7 @@
     <value>4, 23</value>
   </data>
   <data name="TabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 401</value>
+    <value>688, 418</value>
   </data>
   <data name="TabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2950,7 +3052,7 @@
     <value>422, 238</value>
   </data>
   <data name="GroupBox17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 63</value>
+    <value>255, 62</value>
   </data>
   <data name="GroupBox17.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3262,7 +3364,7 @@
     <value>Auto</value>
   </data>
   <data name="MVPredictionModeComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 21</value>
+    <value>226, 20</value>
   </data>
   <data name="MVPredictionModeComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 22</value>
@@ -3283,7 +3385,7 @@
     <value>9</value>
   </data>
   <data name="MVPredictionModeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 21</value>
+    <value>15, 20</value>
   </data>
   <data name="MVPredictionModeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 23</value>
@@ -3313,7 +3415,7 @@
     <value>10, 163</value>
   </data>
   <data name="GroupBox14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>403, 225</value>
+    <value>402, 225</value>
   </data>
   <data name="GroupBox14.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3715,7 +3817,7 @@
     <value>4</value>
   </data>
   <data name="MERangeNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 49</value>
+    <value>127, 48</value>
   </data>
   <data name="MERangeNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 22</value>
@@ -3736,7 +3838,7 @@
     <value>5</value>
   </data>
   <data name="Label30.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 49</value>
+    <value>15, 48</value>
   </data>
   <data name="Label30.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 22</value>
@@ -3766,7 +3868,7 @@
     <value>10, 8</value>
   </data>
   <data name="GroupBox12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>403, 149</value>
+    <value>402, 149</value>
   </data>
   <data name="GroupBox12.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3790,7 +3892,7 @@
     <value>4, 23</value>
   </data>
   <data name="TabPage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 401</value>
+    <value>688, 418</value>
   </data>
   <data name="TabPage4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3814,7 +3916,7 @@
     <value>10, 12</value>
   </data>
   <data name="SettingTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 428</value>
+    <value>696, 445</value>
   </data>
   <data name="SettingTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4036,7 +4138,7 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="DefBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 446</value>
+    <value>10, 463</value>
   </data>
   <data name="DefBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -4060,7 +4162,7 @@
     <value>2</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>605, 446</value>
+    <value>606, 463</value>
   </data>
   <data name="CancelBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -4084,7 +4186,7 @@
     <value>3</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>499, 446</value>
+    <value>499, 463</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -4114,7 +4216,7 @@
     <value>0, 0</value>
   </data>
   <data name="BPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>719, 483</value>
+    <value>719, 499</value>
   </data>
   <data name="BPanel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4138,7 +4240,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>719, 483</value>
+    <value>719, 499</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

@@ -25,8 +25,10 @@ Partial Class MPEG4optsFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MPEG4optsFrm))
         Me.SettingTabControl = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.xvidPictureBox = New System.Windows.Forms.PictureBox
         Me.ffmpegPictureBox = New System.Windows.Forms.PictureBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.GMCCheckBox = New System.Windows.Forms.CheckBox
         Me.QPELCheckBox = New System.Windows.Forms.CheckBox
         Me.TopFieldFirstCheckBox = New System.Windows.Forms.CheckBox
         Me.InterlacedEncodingCheckBox = New System.Windows.Forms.CheckBox
@@ -90,6 +92,7 @@ Partial Class MPEG4optsFrm
         Me.DefBTN = New System.Windows.Forms.Button
         Me.SettingTabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.xvidPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ffmpegPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -124,12 +127,21 @@ Partial Class MPEG4optsFrm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.xvidPictureBox)
         Me.TabPage1.Controls.Add(Me.ffmpegPictureBox)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'xvidPictureBox
+        '
+        Me.xvidPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.xvidPictureBox.Cursor = System.Windows.Forms.Cursors.Hand
+        resources.ApplyResources(Me.xvidPictureBox, "xvidPictureBox")
+        Me.xvidPictureBox.Name = "xvidPictureBox"
+        Me.xvidPictureBox.TabStop = False
         '
         'ffmpegPictureBox
         '
@@ -141,6 +153,7 @@ Partial Class MPEG4optsFrm
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.GMCCheckBox)
         Me.GroupBox2.Controls.Add(Me.QPELCheckBox)
         Me.GroupBox2.Controls.Add(Me.TopFieldFirstCheckBox)
         Me.GroupBox2.Controls.Add(Me.InterlacedEncodingCheckBox)
@@ -152,6 +165,12 @@ Partial Class MPEG4optsFrm
         resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.TabStop = False
+        '
+        'GMCCheckBox
+        '
+        resources.ApplyResources(Me.GMCCheckBox, "GMCCheckBox")
+        Me.GMCCheckBox.Name = "GMCCheckBox"
+        Me.GMCCheckBox.UseVisualStyleBackColor = True
         '
         'QPELCheckBox
         '
@@ -591,6 +610,7 @@ Partial Class MPEG4optsFrm
         Me.ShowInTaskbar = False
         Me.SettingTabControl.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        CType(Me.xvidPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ffmpegPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -684,4 +704,6 @@ Partial Class MPEG4optsFrm
     Friend WithEvents DefBTN As System.Windows.Forms.Button
     Friend WithEvents OKBTN As System.Windows.Forms.Button
     Friend WithEvents CancelBTN As System.Windows.Forms.Button
+    Friend WithEvents xvidPictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents GMCCheckBox As System.Windows.Forms.CheckBox
 End Class

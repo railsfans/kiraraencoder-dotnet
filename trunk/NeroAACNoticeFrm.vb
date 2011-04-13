@@ -27,11 +27,15 @@ Public Class NeroAACNoticeFrm
     End Sub
 
     Private Sub DnButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DnButton.Click
-        System.Diagnostics.Process.Start("http://www.nero.com/eng/downloads-nerodigital-nero-aac-codec.php")
+        Dim ie As Object
+        ie = CreateObject("InternetExplorer.Application")
+        ie.visible = True
+        ie.navigate("http://www.nero.com/eng/downloads-nerodigital-nero-aac-codec.php")
+        ie = Nothing
     End Sub
 
     Private Sub OButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OButton.Click
-        Process.Start("explorer.exe", My.Application.Info.DirectoryPath & "\tools")
+        Process.Start("explorer.exe", FunctionCls.AppInfoDirectoryPath & "\tools")
     End Sub
 
     Private Sub NeroAACNoticeFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -49,12 +53,12 @@ Public Class NeroAACNoticeFrm
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size

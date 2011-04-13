@@ -36,6 +36,8 @@ Partial Class ETCPPFrm
         Me.Logo0FrameTextBox = New System.Windows.Forms.TextBox
         Me.LogoGroupBox = New System.Windows.Forms.GroupBox
         Me.LogoPanel = New System.Windows.Forms.Panel
+        Me.ModeComboBox = New System.Windows.Forms.ComboBox
+        Me.ModeLabel = New System.Windows.Forms.Label
         Me.LogoTrPaLabel = New System.Windows.Forms.Label
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.YNumericUpDown = New System.Windows.Forms.NumericUpDown
@@ -75,9 +77,9 @@ Partial Class ETCPPFrm
         Me.LSSTextBox = New System.Windows.Forms.TextBox
         Me.LESTextBox = New System.Windows.Forms.TextBox
         Me.LogoCheckBox = New System.Windows.Forms.CheckBox
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.reverseCheckBox = New System.Windows.Forms.CheckBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.ModeComboBox = New System.Windows.Forms.ComboBox
         Me.RateGroupBox.SuspendLayout()
         CType(Me.RateNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EPP_Panel.SuspendLayout()
@@ -91,6 +93,7 @@ Partial Class ETCPPFrm
         CType(Me.fadeoutNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.fadeinNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoTrPaTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'RateGroupBox
@@ -152,6 +155,7 @@ Partial Class ETCPPFrm
         Me.EPP_Panel.Controls.Add(Me.DefBTN)
         Me.EPP_Panel.Controls.Add(Me.CancelBTN)
         Me.EPP_Panel.Controls.Add(Me.OKBTN)
+        Me.EPP_Panel.Controls.Add(Me.GroupBox1)
         resources.ApplyResources(Me.EPP_Panel, "EPP_Panel")
         Me.EPP_Panel.Name = "EPP_Panel"
         '
@@ -184,7 +188,7 @@ Partial Class ETCPPFrm
         'LogoPanel
         '
         Me.LogoPanel.Controls.Add(Me.ModeComboBox)
-        Me.LogoPanel.Controls.Add(Me.Label1)
+        Me.LogoPanel.Controls.Add(Me.ModeLabel)
         Me.LogoPanel.Controls.Add(Me.LogoTrPaLabel)
         Me.LogoPanel.Controls.Add(Me.GroupBox3)
         Me.LogoPanel.Controls.Add(Me.GroupBox2)
@@ -214,6 +218,19 @@ Partial Class ETCPPFrm
         Me.LogoPanel.Controls.Add(Me.LESTextBox)
         resources.ApplyResources(Me.LogoPanel, "LogoPanel")
         Me.LogoPanel.Name = "LogoPanel"
+        '
+        'ModeComboBox
+        '
+        Me.ModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ModeComboBox.FormattingEnabled = True
+        Me.ModeComboBox.Items.AddRange(New Object() {resources.GetString("ModeComboBox.Items"), resources.GetString("ModeComboBox.Items1"), resources.GetString("ModeComboBox.Items2"), resources.GetString("ModeComboBox.Items3"), resources.GetString("ModeComboBox.Items4"), resources.GetString("ModeComboBox.Items5"), resources.GetString("ModeComboBox.Items6"), resources.GetString("ModeComboBox.Items7"), resources.GetString("ModeComboBox.Items8"), resources.GetString("ModeComboBox.Items9"), resources.GetString("ModeComboBox.Items10"), resources.GetString("ModeComboBox.Items11")})
+        resources.ApplyResources(Me.ModeComboBox, "ModeComboBox")
+        Me.ModeComboBox.Name = "ModeComboBox"
+        '
+        'ModeLabel
+        '
+        resources.ApplyResources(Me.ModeLabel, "ModeLabel")
+        Me.ModeLabel.Name = "ModeLabel"
         '
         'LogoTrPaLabel
         '
@@ -467,22 +484,22 @@ Partial Class ETCPPFrm
         Me.LogoCheckBox.Name = "LogoCheckBox"
         Me.LogoCheckBox.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.reverseCheckBox)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.TabStop = False
+        '
+        'reverseCheckBox
+        '
+        resources.ApplyResources(Me.reverseCheckBox, "reverseCheckBox")
+        Me.reverseCheckBox.Name = "reverseCheckBox"
+        Me.reverseCheckBox.UseVisualStyleBackColor = True
+        '
         'OpenFileDialog1
         '
         resources.ApplyResources(Me.OpenFileDialog1, "OpenFileDialog1")
-        '
-        'Label1
-        '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
-        '
-        'ModeComboBox
-        '
-        Me.ModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ModeComboBox.FormattingEnabled = True
-        Me.ModeComboBox.Items.AddRange(New Object() {resources.GetString("ModeComboBox.Items"), resources.GetString("ModeComboBox.Items1"), resources.GetString("ModeComboBox.Items2"), resources.GetString("ModeComboBox.Items3"), resources.GetString("ModeComboBox.Items4"), resources.GetString("ModeComboBox.Items5"), resources.GetString("ModeComboBox.Items6"), resources.GetString("ModeComboBox.Items7"), resources.GetString("ModeComboBox.Items8"), resources.GetString("ModeComboBox.Items9"), resources.GetString("ModeComboBox.Items10"), resources.GetString("ModeComboBox.Items11")})
-        resources.ApplyResources(Me.ModeComboBox, "ModeComboBox")
-        Me.ModeComboBox.Name = "ModeComboBox"
         '
         'ETCPPFrm
         '
@@ -513,6 +530,8 @@ Partial Class ETCPPFrm
         CType(Me.fadeoutNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.fadeinNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogoTrPaTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -570,5 +589,7 @@ Partial Class ETCPPFrm
     Friend WithEvents XNumericUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents LogoTrPaLabel As System.Windows.Forms.Label
     Friend WithEvents ModeComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents ModeLabel As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents reverseCheckBox As System.Windows.Forms.CheckBox
 End Class

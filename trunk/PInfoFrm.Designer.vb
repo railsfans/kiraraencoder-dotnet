@@ -25,6 +25,7 @@ Partial Class PInfoFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PInfoFrm))
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.InfoTabPage = New System.Windows.Forms.TabPage
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel
         Me.Label1 = New System.Windows.Forms.Label
@@ -60,6 +61,7 @@ Partial Class PInfoFrm
         '
         'InfoTabPage
         '
+        Me.InfoTabPage.Controls.Add(Me.LinkLabel3)
         Me.InfoTabPage.Controls.Add(Me.LinkLabel1)
         Me.InfoTabPage.Controls.Add(Me.LinkLabel2)
         Me.InfoTabPage.Controls.Add(Me.Label1)
@@ -69,6 +71,12 @@ Partial Class PInfoFrm
         resources.ApplyResources(Me.InfoTabPage, "InfoTabPage")
         Me.InfoTabPage.Name = "InfoTabPage"
         Me.InfoTabPage.UseVisualStyleBackColor = True
+        '
+        'LinkLabel3
+        '
+        resources.ApplyResources(Me.LinkLabel3, "LinkLabel3")
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.TabStop = True
         '
         'LinkLabel1
         '
@@ -207,4 +215,5 @@ Partial Class PInfoFrm
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents LinkLabel3 As System.Windows.Forms.LinkLabel
 End Class

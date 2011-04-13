@@ -117,68 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;RatePCheckBox.Name" xml:space="preserve">
-    <value>RatePCheckBox</value>
-  </data>
-  <data name="&gt;&gt;RatePCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RatePCheckBox.Parent" xml:space="preserve">
-    <value>RateGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RatePCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RateCheckBox.Name" xml:space="preserve">
-    <value>RateCheckBox</value>
-  </data>
-  <data name="&gt;&gt;RateCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RateCheckBox.Parent" xml:space="preserve">
-    <value>RateGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RateCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RateNumericUpDown.Name" xml:space="preserve">
-    <value>RateNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;RateNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RateNumericUpDown.Parent" xml:space="preserve">
-    <value>RateGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RateNumericUpDown.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="RateGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 12</value>
-  </data>
-  <data name="RateGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>407, 61</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="RateGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="RateGroupBox.Text" xml:space="preserve">
-    <value>재생 속도</value>
-  </data>
-  <data name="&gt;&gt;RateGroupBox.Name" xml:space="preserve">
-    <value>RateGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RateGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RateGroupBox.Parent" xml:space="preserve">
-    <value>EPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;RateGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="RatePCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -189,6 +128,7 @@
   <data name="RatePCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RatePCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 25</value>
   </data>
@@ -264,11 +204,35 @@
   <data name="&gt;&gt;RateNumericUpDown.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="RateGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 12</value>
+  </data>
+  <data name="RateGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>407, 61</value>
+  </data>
+  <data name="RateGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="RateGroupBox.Text" xml:space="preserve">
+    <value>재생 속도</value>
+  </data>
+  <data name="&gt;&gt;RateGroupBox.Name" xml:space="preserve">
+    <value>RateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;RateGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RateGroupBox.Parent" xml:space="preserve">
+    <value>EPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;RateGroupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="DefBTN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="DefBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 440</value>
+    <value>12, 491</value>
   </data>
   <data name="DefBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -295,7 +259,7 @@
     <value>NoControl</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 440</value>
+    <value>342, 491</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -322,7 +286,7 @@
     <value>NoControl</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 440</value>
+    <value>448, 491</value>
   </data>
   <data name="CancelBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -527,31 +491,31 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;ModeComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="ModeLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ModeLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 79</value>
   </data>
-  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 14</value>
+  <data name="ModeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 14</value>
   </data>
-  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="ModeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>75</value>
   </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Mode</value>
+  <data name="ModeLabel.Text" xml:space="preserve">
+    <value>모드</value>
   </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
+  <data name="&gt;&gt;ModeLabel.Name" xml:space="preserve">
+    <value>ModeLabel</value>
   </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ModeLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ModeLabel.Parent" xml:space="preserve">
     <value>LogoPanel</value>
   </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ModeLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="LogoTrPaLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -580,6 +544,15 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   </data>
   <data name="&gt;&gt;LogoTrPaLabel.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="YNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 22</value>
+  </data>
+  <data name="YNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 22</value>
+  </data>
+  <data name="YNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;YNumericUpDown.Name" xml:space="preserve">
     <value>YNumericUpDown</value>
@@ -617,6 +590,15 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="XNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 22</value>
+  </data>
+  <data name="XNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 22</value>
+  </data>
+  <data name="XNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;XNumericUpDown.Name" xml:space="preserve">
     <value>XNumericUpDown</value>
   </data>
@@ -653,6 +635,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="LAlignment3RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment3RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment3RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 79</value>
+  </data>
+  <data name="LAlignment3RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment3RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
   <data name="&gt;&gt;LAlignment3RadioButton.Name" xml:space="preserve">
     <value>LAlignment3RadioButton</value>
   </data>
@@ -664,6 +661,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   </data>
   <data name="&gt;&gt;LAlignment3RadioButton.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="LAlignment2RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment2RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment2RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 79</value>
+  </data>
+  <data name="LAlignment2RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment2RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;LAlignment2RadioButton.Name" xml:space="preserve">
     <value>LAlignment2RadioButton</value>
@@ -677,6 +689,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;LAlignment2RadioButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="LAlignment1RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment1RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment1RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 79</value>
+  </data>
+  <data name="LAlignment1RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment1RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="&gt;&gt;LAlignment1RadioButton.Name" xml:space="preserve">
     <value>LAlignment1RadioButton</value>
   </data>
@@ -688,6 +715,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   </data>
   <data name="&gt;&gt;LAlignment1RadioButton.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="LAlignment8RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment8RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment8RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 23</value>
+  </data>
+  <data name="LAlignment8RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment8RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;LAlignment8RadioButton.Name" xml:space="preserve">
     <value>LAlignment8RadioButton</value>
@@ -701,6 +743,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;LAlignment8RadioButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="LAlignment7RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment7RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment7RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 23</value>
+  </data>
+  <data name="LAlignment7RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment7RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;LAlignment7RadioButton.Name" xml:space="preserve">
     <value>LAlignment7RadioButton</value>
   </data>
@@ -712,6 +769,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   </data>
   <data name="&gt;&gt;LAlignment7RadioButton.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="LAlignment9RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment9RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment9RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 23</value>
+  </data>
+  <data name="LAlignment9RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment9RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;LAlignment9RadioButton.Name" xml:space="preserve">
     <value>LAlignment9RadioButton</value>
@@ -725,6 +797,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;LAlignment9RadioButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="LAlignment4RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment4RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment4RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 51</value>
+  </data>
+  <data name="LAlignment4RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment4RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;LAlignment4RadioButton.Name" xml:space="preserve">
     <value>LAlignment4RadioButton</value>
   </data>
@@ -737,6 +824,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;LAlignment4RadioButton.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="LAlignment6RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment6RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment6RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 51</value>
+  </data>
+  <data name="LAlignment6RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment6RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;LAlignment6RadioButton.Name" xml:space="preserve">
     <value>LAlignment6RadioButton</value>
   </data>
@@ -748,6 +850,21 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   </data>
   <data name="&gt;&gt;LAlignment6RadioButton.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="LAlignment5RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAlignment5RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAlignment5RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 51</value>
+  </data>
+  <data name="LAlignment5RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="LAlignment5RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;LAlignment5RadioButton.Name" xml:space="preserve">
     <value>LAlignment5RadioButton</value>
@@ -1547,6 +1664,57 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;LogoGroupBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="reverseCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="reverseCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="reverseCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 20</value>
+  </data>
+  <data name="reverseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 18</value>
+  </data>
+  <data name="reverseCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="reverseCheckBox.Text" xml:space="preserve">
+    <value>리버스(동영상을 역으로 재생시켜 인코딩)</value>
+  </data>
+  <data name="&gt;&gt;reverseCheckBox.Name" xml:space="preserve">
+    <value>reverseCheckBox</value>
+  </data>
+  <data name="&gt;&gt;reverseCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reverseCheckBox.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;reverseCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 431</value>
+  </data>
+  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>535, 50</value>
+  </data>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>EPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="EPP_Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1554,7 +1722,7 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
     <value>0, 0</value>
   </data>
   <data name="EPP_Panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>563, 477</value>
+    <value>563, 532</value>
   </data>
   <data name="EPP_Panel.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -1571,296 +1739,11 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;EPP_Panel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="YNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 22</value>
-  </data>
-  <data name="YNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 22</value>
-  </data>
-  <data name="YNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;YNumericUpDown.Name" xml:space="preserve">
-    <value>YNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;YNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;YNumericUpDown.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;YNumericUpDown.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="XNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 22</value>
-  </data>
-  <data name="XNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 22</value>
-  </data>
-  <data name="XNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;XNumericUpDown.Name" xml:space="preserve">
-    <value>XNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;XNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;XNumericUpDown.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;XNumericUpDown.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LAlignment3RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment3RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment3RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 79</value>
-  </data>
-  <data name="LAlignment3RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment3RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;LAlignment3RadioButton.Name" xml:space="preserve">
-    <value>LAlignment3RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment3RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment3RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment3RadioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LAlignment2RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment2RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment2RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 79</value>
-  </data>
-  <data name="LAlignment2RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment2RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;LAlignment2RadioButton.Name" xml:space="preserve">
-    <value>LAlignment2RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment2RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment2RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment2RadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LAlignment1RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment1RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment1RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 79</value>
-  </data>
-  <data name="LAlignment1RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment1RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;LAlignment1RadioButton.Name" xml:space="preserve">
-    <value>LAlignment1RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment1RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment1RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment1RadioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LAlignment8RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment8RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment8RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 23</value>
-  </data>
-  <data name="LAlignment8RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment8RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;LAlignment8RadioButton.Name" xml:space="preserve">
-    <value>LAlignment8RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment8RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment8RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment8RadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LAlignment7RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment7RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment7RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 23</value>
-  </data>
-  <data name="LAlignment7RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment7RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LAlignment7RadioButton.Name" xml:space="preserve">
-    <value>LAlignment7RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment7RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment7RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment7RadioButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LAlignment9RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment9RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment9RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 23</value>
-  </data>
-  <data name="LAlignment9RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment9RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LAlignment9RadioButton.Name" xml:space="preserve">
-    <value>LAlignment9RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment9RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment9RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment9RadioButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LAlignment4RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment4RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment4RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 51</value>
-  </data>
-  <data name="LAlignment4RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment4RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LAlignment4RadioButton.Name" xml:space="preserve">
-    <value>LAlignment4RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment4RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment4RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment4RadioButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LAlignment6RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment6RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment6RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 51</value>
-  </data>
-  <data name="LAlignment6RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment6RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LAlignment6RadioButton.Name" xml:space="preserve">
-    <value>LAlignment6RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment6RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment6RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment6RadioButton.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="LAlignment5RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAlignment5RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAlignment5RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 51</value>
-  </data>
-  <data name="LAlignment5RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="LAlignment5RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LAlignment5RadioButton.Name" xml:space="preserve">
-    <value>LAlignment5RadioButton</value>
-  </data>
-  <data name="&gt;&gt;LAlignment5RadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignment5RadioButton.Parent" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignment5RadioButton.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="OpenFileDialog1.Filter" xml:space="preserve">
-    <value>Image Files|*.bmp;*.dds;*.ebmp;*.jpg;*.jpe;*.jpeg;*.pal;*.pcx;*.png;*.pbm;*.pgm;*.ppm;*.raw;*.sgi;*.bw;*.rgb;*.rgba;*.tga;*.tif;*.tiff;*.gif;*.exr;*.jp2;*.psd;*.hdr;|All Files(*.*)|*.*</value>
+    <value>Image Files|*.bmp;*.dds;*.ebmp;*.jpg;*.jpe;*.jpeg;*.pal;*.pcx;*.png;*.pbm;*.pgm;*.ppm;*.raw;*.sgi;*.bw;*.rgb;*.rgba;*.tga;*.tif;*.tiff;*.gif;*.exr;*.jp2;*.psd;*.hdr|All Files(*.*)|*.*</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1869,7 +1752,7 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>563, 477</value>
+    <value>563, 532</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

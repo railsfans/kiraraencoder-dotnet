@@ -232,9 +232,9 @@ Public Class FFMSIndexFrm
         End If
 
         If VideoOnly = False Then
-            MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t -1 -s 3 -d 0 " & "-m " & DEMUXER & " " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
+            MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t -1 -s 3 -d 0 " & "-m " & DEMUXER & " " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
         Else '비디오 부분만 인덱스//
-            MSGB = My.Application.Info.DirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t 0 -s 3 -d 0 " & "-m " & DEMUXER & " " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
+            MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\ffms\ffmsindex.exe" & " -f -t 0 -s 3 -d 0 " & "-m " & DEMUXER & " " & Chr(34) & IN_PATHV & Chr(34) & " " & Chr(34) & OUT_PATHV & Chr(34)
         End If
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
@@ -309,12 +309,12 @@ Public Class FFMSIndexFrm
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size

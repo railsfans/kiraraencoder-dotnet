@@ -242,7 +242,7 @@ Public Class DGIndexFrm
         End If
 
         Dim MSGB As String = ""
-        MSGB = My.Application.Info.DirectoryPath & "\tools\dgindex\dgindex.exe" & " -SD=" & Chr(34) & " -AIF=" & Chr(34) & IN_PATHV & Chr(34) & " -OF=" & Chr(34) & OUT_PATHV & Chr(34) & " -hide -exit -FO=0 -OM=1 -TN=" & TNV
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\dgindex\dgindex.exe" & " -SD=" & Chr(34) & " -AIF=" & Chr(34) & IN_PATHV & Chr(34) & " -OF=" & Chr(34) & OUT_PATHV & Chr(34) & " -hide -exit -FO=0 -OM=1 -TN=" & TNV
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
         Dim TempInputHandle As SafeFileHandle = Nothing
@@ -337,12 +337,12 @@ Public Class DGIndexFrm
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size

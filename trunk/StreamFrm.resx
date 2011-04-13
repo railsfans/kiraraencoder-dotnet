@@ -1927,73 +1927,73 @@
     <value>0, 0</value>
   </metadata>
   <data name="AllChToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="AllChToolStripMenuItem.Text" xml:space="preserve">
     <value>모든 채널</value>
   </data>
   <data name="LeftChToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="LeftChToolStripMenuItem.Text" xml:space="preserve">
     <value>좌측 채널</value>
   </data>
   <data name="RightChToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="RightChToolStripMenuItem.Text" xml:space="preserve">
     <value>우측 채널</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 6</value>
+    <value>190, 6</value>
   </data>
   <data name="SizeOriginToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="SizeOriginToolStripMenuItem.Text" xml:space="preserve">
     <value>원본 사이즈</value>
   </data>
   <data name="AspectOriginToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="AspectOriginToolStripMenuItem.Text" xml:space="preserve">
     <value>원본 비율로 유지</value>
   </data>
   <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 6</value>
+    <value>190, 6</value>
   </data>
   <data name="scaletempoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="scaletempoToolStripMenuItem.Text" xml:space="preserve">
     <value>피치 보정</value>
   </data>
   <data name="extrastereoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="extrastereoToolStripMenuItem.Text" xml:space="preserve">
     <value>엑스트라 스테레오</value>
   </data>
   <data name="karaokeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="karaokeToolStripMenuItem.Text" xml:space="preserve">
     <value>목소리 제거</value>
   </data>
   <data name="VisualizeMotionVectorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="VisualizeMotionVectorsToolStripMenuItem.Text" xml:space="preserve">
     <value>벡터 보기</value>
   </data>
   <data name="VisualizeBlockTypesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="VisualizeBlockTypesToolStripMenuItem.Text" xml:space="preserve">
     <value>블럭 타입 보기</value>
   </data>
   <data name="FFmpegDeinterlacerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
+    <value>193, 22</value>
   </data>
   <data name="FFmpegDeinterlacerToolStripMenuItem.Text" xml:space="preserve">
     <value>FFmpeg 디인터레이스</value>
@@ -2005,7 +2005,7 @@
     <value>재생옵션(&amp;O)</value>
   </data>
   <data name="SpDfToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
+    <value>67, 20</value>
   </data>
   <data name="SpDfToolStripMenuItem.Text" xml:space="preserve">
     <value>정상배속</value>
@@ -2014,19 +2014,19 @@
     <value />
   </data>
   <data name="SpDnToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
+    <value>67, 20</value>
   </data>
   <data name="SpDnToolStripMenuItem.Text" xml:space="preserve">
     <value>배속감소</value>
   </data>
   <data name="SpDuToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
+    <value>67, 20</value>
   </data>
   <data name="SpDuToolStripMenuItem.Text" xml:space="preserve">
     <value>배속증가</value>
   </data>
   <data name="SpeedXVToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
+    <value>42, 20</value>
   </data>
   <data name="SpeedXVToolStripMenuItem.Text" xml:space="preserve">
     <value>1.0x</value>

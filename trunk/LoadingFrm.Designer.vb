@@ -26,6 +26,9 @@ Partial Class LoadingFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoadingFrm))
         Me.Label1 = New System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.VersionLabel = New System.Windows.Forms.Label
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -39,25 +42,42 @@ Partial Class LoadingFrm
         '
         Me.Timer1.Enabled = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Ivory
+        Me.Panel1.Controls.Add(Me.VersionLabel)
+        Me.Panel1.Controls.Add(Me.Label1)
+        resources.ApplyResources(Me.Panel1, "Panel1")
+        Me.Panel1.Name = "Panel1"
+        '
+        'VersionLabel
+        '
+        resources.ApplyResources(Me.VersionLabel, "VersionLabel")
+        Me.VersionLabel.Name = "VersionLabel"
+        '
         'LoadingFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel1)
         Me.Cursor = System.Windows.Forms.Cursors.WaitCursor
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "LoadingFrm"
-        Me.Opacity = 0
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.TopMost = True
+        Me.TransparencyKey = System.Drawing.Color.White
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents VersionLabel As System.Windows.Forms.Label
 End Class

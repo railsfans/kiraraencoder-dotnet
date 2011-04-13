@@ -242,7 +242,7 @@ RELOAD:
     Private Sub AudioPPFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Timer1.Enabled = False
 
-        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub AudioPPFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -262,12 +262,12 @@ RELOAD:
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -326,7 +326,7 @@ LANG_SKIP:
         AviSynthChComboBox.Items.Add(LangCls.AudioPPdolbysComboBox)
         AviSynthChComboBox.Items.Add(LangCls.AudioPPdolbypComboBox)
 
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         Timer1.Enabled = True
 
@@ -507,7 +507,7 @@ LANG_SKIP:
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
         OKBTNCLK = True
 
-        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+        MainFrm.XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         '프리셋 설정된 파일 표시 지우기
         MainFrm.PresetLabel.Text = LangCls.MainUserStr

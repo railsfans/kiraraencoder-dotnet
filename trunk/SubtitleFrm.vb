@@ -366,7 +366,7 @@ RELOAD:
     End Sub
 
     Private Sub SubtitleFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub SubtitleFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -392,12 +392,12 @@ RELOAD:
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -462,7 +462,7 @@ RELOAD:
 LANG_SKIP:
         '=========================================
 
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         '윈도우 2000 디자이너
         If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
@@ -511,7 +511,7 @@ LANG_SKIP:
     Private Sub OKBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKBTN.Click
         OKBTNCLK = True
 
-        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+        MainFrm.XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         '프리셋 설정된 파일 표시 지우기
         MainFrm.PresetLabel.Text = LangCls.MainUserStr

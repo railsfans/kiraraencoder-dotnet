@@ -46,7 +46,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Windows Media Video 8")
             VideoCodecComboBox.Items.Add("Huffyuv Lossless Video Codec")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -68,7 +68,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("ITU-T H.263")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -86,7 +86,43 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("ITU-T H.263")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
+
+            '오디오->압축코덱
+            AudioCodecComboBox.Items.Clear()
+            AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("Nero AAC")
+            AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
+
+        ElseIf InStr(OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 Then
+
+            '비디오->압축코덱
+            VideoCodecComboBox.Items.Clear()
+            VideoCodecComboBox.Items.Add("MPEG-4 Video")
+            VideoCodecComboBox.Items.Add("Xvid MPEG-4 Codec(Xvid Core)")
+            VideoCodecComboBox.Items.Add("ITU-T H.263")
+            VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
+            MP4OptsPanel.Visible = False 'MP4 옵션
+
+            '오디오->압축코덱
+            AudioCodecComboBox.Items.Clear()
+            AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("Nero AAC")
+            AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("Direct Stream Copy")
+
+        ElseIf InStr(OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 Then
+
+            '비디오->압축코덱
+            VideoCodecComboBox.Items.Clear()
+            VideoCodecComboBox.Items.Add("MPEG-4 Video")
+            VideoCodecComboBox.Items.Add("Xvid MPEG-4 Codec(Xvid Core)")
+            VideoCodecComboBox.Items.Add("ITU-T H.263")
+            VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
+            VideoCodecComboBox.Items.Add("Direct Stream Copy")
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -103,7 +139,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Xvid MPEG-4 Codec(Xvid Core)")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = True 'MP4 옵션
+            MP4OptsPanel.Visible = True 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -126,7 +162,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("ITU-T H.263")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -158,7 +194,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Windows Media Video 8")
             VideoCodecComboBox.Items.Add("Huffyuv Lossless Video Codec")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -182,7 +218,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Microsoft MPEG-4 v2")
             VideoCodecComboBox.Items.Add("Microsoft MPEG-4 v3")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -197,7 +233,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("Windows Media Video 7")
             VideoCodecComboBox.Items.Add("Windows Media Video 8")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -212,7 +248,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("MPEG-1 Video")
             VideoCodecComboBox.Items.Add("MPEG-2 Video")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -228,7 +264,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Add("MPEG-1 Video")
             VideoCodecComboBox.Items.Add("MPEG-2 Video")
             VideoCodecComboBox.Items.Add("Direct Stream Copy")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -243,7 +279,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Clear()
             VideoCodecComboBox.Items.Add("RealVideo 1.0")
             VideoCodecComboBox.Items.Add("RealVideo G2")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -255,7 +291,7 @@ Public Class EncSetFrm
             VideoCodecComboBox.Items.Clear()
             VideoCodecComboBox.Items.Add("Sorenson H.263")
             VideoCodecComboBox.Items.Add("H.264(AVC) x264 core")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -269,7 +305,7 @@ Public Class EncSetFrm
             '비디오->압축코덱
             VideoCodecComboBox.Items.Clear()
             VideoCodecComboBox.Items.Add("Sorenson H.263")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -281,7 +317,7 @@ Public Class EncSetFrm
             '비디오->압축코덱
             VideoCodecComboBox.Items.Clear()
             VideoCodecComboBox.Items.Add("VP8 Codec(libvpx)")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -292,7 +328,7 @@ Public Class EncSetFrm
             '비디오->압축코덱
             VideoCodecComboBox.Items.Clear()
             VideoCodecComboBox.Items.Add("No video")
-            MP4OptsGroupBox.Visible = False 'MP4 옵션
+            MP4OptsPanel.Visible = False 'MP4 옵션
 
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
@@ -383,9 +419,10 @@ Public Class EncSetFrm
         '고급모드
         If VideoCodecComboBox.Text = "H.264(AVC) x264 core" OrElse _
             VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
+            VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" OrElse _
             VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
-             VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
-             VideoCodecComboBox.Text = "MPEG-4 Video" Then
+            VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
+            VideoCodecComboBox.Text = "MPEG-4 Video" Then
             AdvanOptsPanel.Enabled = True
         Else
             AdvanOptsPanel.Enabled = False
@@ -497,16 +534,18 @@ Public Class EncSetFrm
             FramerateLabel.Enabled = False
             FramerateComboBox.Enabled = False
             FramerateLabel2.Enabled = False
+            FFFPSDOCheckBox.Enabled = False
         Else
             FramerateLabel.Enabled = True
             FramerateComboBox.Enabled = True
             FramerateLabel2.Enabled = True
+            FFFPSDOCheckBox.Enabled = True
         End If
 
     End Sub
 
     Private Sub EncSetFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If OKBTNCLK = False Then XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        If OKBTNCLK = False Then XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
     End Sub
 
     Private Sub EncSetFrm_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Leave
@@ -530,12 +569,12 @@ Public Class EncSetFrm
         End If
 
         '선택한 언어파일이 없으면 스킵
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV) = False Then
+        If My.Computer.FileSystem.FileExists(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV) = False Then
             MsgBox(LangXMLFV & " not found")
             GoTo LANG_SKIP
         End If
 
-        Dim SR As New StreamReader(My.Application.Info.DirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
+        Dim SR As New StreamReader(FunctionCls.AppInfoDirectoryPath & "\lang\" & LangXMLFV, System.Text.Encoding.UTF8)
         Dim XTR As New System.Xml.XmlTextReader(SR)
         Try
             Dim FN As String = Me.Font.Name, FNXP As String = Me.Font.Name, FS As Single = Me.Font.Size
@@ -557,7 +596,7 @@ Public Class EncSetFrm
                 If XTR.Name = "DefBTN" Then DefBTN.Text = XTR.ReadString
 
                 If XTR.Name = "EncSetFrm" Then Me.Text = XTR.ReadString
-                If XTR.Name = "EncSetFrmOutFGroupBox" Then OutFGroupBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmOutFLabel" Then OutFLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmPresetButton" Then PresetButton.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmVideoTabPage" Then VideoTabPage.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmImageTabPage" Then ImageTabPage.Text = XTR.ReadString
@@ -578,13 +617,13 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmAdvanOptsCheckBox" Then AdvanOptsCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmKeyFrameGroupBox" Then KeyFrameGroupBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmGOPSizeCheckBox" Then GOPSizeCheckBox.Text = XTR.ReadString
-                If XTR.Name = "EncSetFrmMP4OptsGroupBox" Then MP4OptsGroupBox.Text = XTR.ReadString
+                'If XTR.Name = "EncSetFrmMP4OptsGroupBox" Then MP4OptsGroupBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmPSPMP4CheckBox" Then PSPMP4CheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmImageSizeLabel" Then ImageSizeLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmImageSizeCheckBox" Then ImageSizeCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFmpegResizeFilterLabel" Then FFmpegResizeFilterLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmAspectLabel" Then AspectLabel.Text = XTR.ReadString
-                If XTR.Name = "EncSetFrmImageGroupBox" Then ImageGroupBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmImageGroupBox" Then ImageGroupBox.Text = XTR.ReadString & " - FFmpeg"
                 'If XTR.Name = "EncSetFrmImgPPTabPage" Then ImgPPTabPage.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFmpegImageUnsharpLabel" Then FFmpegImageUnsharpLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFmpegImageUnsharpCheckBox" Then FFmpegImageUnsharpCheckBox.Text = XTR.ReadString
@@ -635,7 +674,6 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFLACBP" Then LangCls.EncSetFLACBP = XTR.ReadString
                 If XTR.Name = "EncSetPCMBP" Then LangCls.EncSetPCMBP = XTR.ReadString
                 If XTR.Name = "EncSetCharERR" Then LangCls.EncSetCharERR = XTR.ReadString
-                If XTR.Name = "EncSetFrmSubtitleRecordingCheckBox" Then SubtitleRecordingCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmhflipCheckBox" Then hflipCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmvflipCheckBox" Then vflipCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmSizeEncGroupBox" Then SizeEncGroupBox.Text = XTR.ReadString
@@ -648,6 +686,7 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmFFTurnRightRadioButton" Then FFTurnRightRadioButton.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFVerticallyCheckBox" Then FFVerticallyCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmgradfunCheckBox" Then gradfunCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmFFFPSDOCheckBox" Then FFFPSDOCheckBox.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -711,7 +750,7 @@ LANG_SKIP:
 
         '언어관련
         OutFComboBox.SelectedIndex = -1
-        XML_LOAD(My.Application.Info.DirectoryPath & "\settings.xml")
+        XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         EncSetREF()
 
@@ -739,35 +778,13 @@ LANG_SKIP:
 
         'AviSynth
         If MainFrm.AVSCheckBox.Checked = True Then
-            FramerateLabel.Visible = False
-            FramerateComboBox.Visible = False
-            FramerateCheckBox.Visible = False
-            FramerateLabel2.Visible = False
-            VideoGroupBox.Height = 245
-            KeyFrameGroupBox.Top = 260
-            MP4OptsGroupBox.Top = 370
-
-            FFmpegChComboBox.Visible = False
-            FFmpegChLabel.Visible = False
-            AudioGroupBox.Height = 115
-            NeroAACGroupBox.Top = 132
-
+            FFFPSGroupBox.Enabled = False
+            FFAudGroupBox.Enabled = False
             ImageGroupBox.Enabled = False
 
         Else
-            FramerateLabel.Visible = True
-            FramerateComboBox.Visible = True
-            FramerateCheckBox.Visible = True
-            FramerateLabel2.Visible = True
-            VideoGroupBox.Height = 280
-            KeyFrameGroupBox.Top = 295
-            MP4OptsGroupBox.Top = 405
-
-            FFmpegChComboBox.Visible = True
-            FFmpegChLabel.Visible = True
-            AudioGroupBox.Height = 212
-            NeroAACGroupBox.Top = 228
-
+            FFFPSGroupBox.Enabled = True
+            FFAudGroupBox.Enabled = True
             ImageGroupBox.Enabled = True
 
         End If
@@ -821,13 +838,14 @@ LANG_SKIP:
         QuantizerNumericUpDown.Value = 2.5
         QuantizerCQPNumericUpDown.Value = 26
         QualityNumericUpDown.Value = 26.0
-        FramerateComboBox.Text = "23.976"
+        FramerateComboBox.Text = "30"
         FramerateCheckBox.Checked = False
         AdvanOptsCheckBox.Checked = False
         GOPSizeCheckBox.Checked = False
         GOPSizeTextBox.Text = "250"
         MinGOPSizeTextBox.Text = "25"
         PSPMP4CheckBox.Checked = False
+        FFFPSDOCheckBox.Checked = True
         '영상
         ImageSizeComboBox.Text = "480 x 272"
         ImageSizeWidthTextBox.Text = "480"
@@ -888,6 +906,7 @@ LANG_SKIP:
         SubtitleRecordingCheckBox.Checked = False
         SizeEncCheckBox.Checked = False
         SizeEncTextBox.Text = "0"
+        RemoveMeatadataCheckBox.Checked = True
 
     End Sub
 
@@ -1440,7 +1459,7 @@ RELOAD:
 
                 If XTR.Name = "EncSetFrm_FramerateComboBox" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then FramerateComboBox.Text = XTRSTR Else FramerateComboBox.Text = "23.976"
+                    If XTRSTR <> "" Then FramerateComboBox.Text = XTRSTR Else FramerateComboBox.Text = "30"
                 End If
 
                 If XTR.Name = "EncSetFrm_FramerateCheckBox" Then
@@ -1471,6 +1490,11 @@ RELOAD:
                 If XTR.Name = "EncSetFrm_PSPMP4CheckBox" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then PSPMP4CheckBox.Checked = XTRSTR Else PSPMP4CheckBox.Checked = False
+                End If
+
+                If XTR.Name = "EncSetFrm_FFFPSDOCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFFPSDOCheckBox.Checked = XTRSTR Else FFFPSDOCheckBox.Checked = True
                 End If
 
                 '영상
@@ -1811,6 +1835,11 @@ RELOAD:
                     If XTRSTR <> "" Then SizeEncTextBox.Text = XTRSTR Else SizeEncTextBox.Text = "0"
                 End If
 
+                If XTR.Name = "EncSetFrm_RemoveMeatadataCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then RemoveMeatadataCheckBox.Checked = XTRSTR Else RemoveMeatadataCheckBox.Checked = True
+                End If
+
             Loop
 
         Catch ex As Exception
@@ -1962,7 +1991,9 @@ RELOAD:
                     RateControlMV = AdaptiveQuantizersModeV & " -aq_strength " & .AdaptiveQuantizersStrengthNumericUpDown.Value & _
                                     " -bufsize " & .VBVBufferSizeNumericUpDown.Value & "k" & " -maxrate " & .VBVMaximumBitrateNumericUpDown.Value & "k" & " -rc_init_occupancy " & .VBVInitialBufferNumericUpDown.Value & _
                                      " -bt " & Val(BitrateComboBox.Text) * Val(.AverageBitrateVarianceNumericUpDown.Value) & "k" & " -qcomp " & .QuantizerCompressionNumericUpDown.Value & _
-                                    " -rc_lookahead " & .NumberofFramesforLookaheadNumericUpDown.Value & UseMBTreeV
+                                    " -rc_lookahead " & .NumberofFramesforLookaheadNumericUpDown.Value & UseMBTreeV & _
+                                    " -complexityblur " & .TempBlurofestFramecomplexityNumericUpDown.Value & _
+                                    " -qblur " & .TempBlurofQuantafterCCNumericUpDown.Value
                 End If
 
                 '------------------------
@@ -2123,6 +2154,7 @@ RELOAD:
         '***********************************
         Dim MPEG4optsV As String = ""
         If (VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
+        VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" OrElse _
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
         VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
         VideoCodecComboBox.Text = "MPEG-4 Video") AndAlso AdvanOptsCheckBox.Checked = True Then
@@ -2197,6 +2229,14 @@ RELOAD:
                 End If
 
                 '------------------------
+                ' GMC (Xvid Core)
+                '------------------------
+                Dim GMCV As String = ""
+                If .GMCCheckBox.Checked = True AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" Then
+                    GMCV = " -flags +gmc"
+                End If
+
+                '------------------------
                 ' BFrames
                 '------------------------
                 Dim BFramesV As String = ""
@@ -2266,7 +2306,7 @@ RELOAD:
 
                 '---------------------------------------------------------------------------------------------------------
                 '모든모드공통
-                MPEG4optsV = ThreadsV & QuantizationTypeV & AdaptiveQuantizationV & InterlacedEncodingV & GrayscaleV & TopFieldFirstV & _4MotionVectorV & QPELV & _
+                MPEG4optsV = ThreadsV & QuantizationTypeV & AdaptiveQuantizationV & InterlacedEncodingV & GrayscaleV & TopFieldFirstV & _4MotionVectorV & QPELV & GMCV & _
                              BFramesV & " -dia_size " & LCase(.DiamondtsfmeComboBox.Text) & HQModeV & " -cmp " & LCase(.FpmcfComboBox.Text) & " -subcmp " & LCase(.SpmcfComboBox.Text) & " -mbcmp " & LCase(.McfComboBox.Text) & " -ildctcmp " & LCase(.IdcfComboBox.Text) & " -precmp " & LCase(.PmecfComboBox.Text) & _
                              RateControlV & TrellisQuantizationV & " -dct " & LCase(.DCTalgorithmComboBox.Text)
                 '---------------------------------------------------------------------------------------------------------
@@ -2274,6 +2314,7 @@ RELOAD:
             End With
         End If
         If (VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
+        VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" OrElse _
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
         VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
         VideoCodecComboBox.Text = "MPEG-4 Video") AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함
@@ -2341,6 +2382,8 @@ RELOAD:
         If VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" Then
             If InStr(OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
             InStr(OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+            InStr(OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+            InStr(OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
             InStr(OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
             InStr(OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
                 VideoCodecComboBoxV = " -vcodec libxvid"
@@ -2352,6 +2395,8 @@ RELOAD:
         If VideoCodecComboBox.Text = "H.264(AVC) x264 core" Then
             If InStr(OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
             InStr(OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+            InStr(OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+            InStr(OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
             InStr(OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
             InStr(OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
             InStr(OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 Then
@@ -2391,14 +2436,6 @@ RELOAD:
             VideoModeComboBoxV = ""
         ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[COPY]", -1) Then
             VideoModeComboBoxV = ""
-        End If
-
-        '***********************************
-        '  비디오 프레임
-        '***********************************
-        Dim FramerateComboBoxV As String = ""
-        If FramerateCheckBox.Checked = False Then
-            FramerateComboBoxV = " -r " & FramerateComboBox.Text
         End If
 
         '***********************************
@@ -2553,6 +2590,10 @@ RELOAD:
         ElseIf InStr(OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 Then
             FormatV = " -f 3gp"
         ElseIf InStr(OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 Then
+            FormatV = " -f 3g2"
+        ElseIf InStr(OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 Then
+            FormatV = " -f 3g2"
+        ElseIf InStr(OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 Then
             FormatV = " -f 3g2"
         ElseIf InStr(OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 Then
             If PSPMP4CheckBox.Checked = False Then 'PSP모드 아니면
@@ -2738,6 +2779,13 @@ RELOAD:
             SubtitleRecordingCheckBoxV = ""
         End If
 
+        '***********************************
+        ' Meatadata 제거
+        '***********************************
+        Dim RemoveMeatadataCheckBoxV As String = ""
+        If RemoveMeatadataCheckBox.Checked = True Then
+            RemoveMeatadataCheckBoxV = " -map_metadata -1"
+        End If
 
         '===================================================================================================================================
 
@@ -2813,13 +2861,13 @@ RELOAD:
                                                  FFmpegCommandTextBoxV & _
                                                  x264opts_2passV & MPEG4optsV & VP8optsV
 
-            MainFrm.FFmpegCommandStr = FormatV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.FFmpegCommandStr = FormatV & RemoveMeatadataCheckBoxV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                             PSPMP4CheckBoxV & SwscaleV & _
                                             AudioCodecComboBoxV & SamplerateComboBoxV & FFmpegChComboBoxV & AudioBitrateComboBoxV & AudioVolNumericUpDownV & _
                                             SizeLimitTextBoxV & FFmpegCommandTextBoxV & _
                                             x264optsV & MPEG4optsV & VP8optsV
 
-            MainFrm.FFmpegCommand2PassStr = FormatV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & FramerateComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.FFmpegCommand2PassStr = FormatV & RemoveMeatadataCheckBoxV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
                                                  SwscaleV & _
                                                  FFmpegCommandTextBoxV & _
                                                  x264opts_2passV & MPEG4optsV & VP8optsV
@@ -2898,7 +2946,7 @@ RELOAD:
         End If
         '========================
 
-        MainFrm.XML_SAVE(My.Application.Info.DirectoryPath & "\settings.xml")
+        MainFrm.XML_SAVE(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
 
         '프리셋 설정된 파일 표시 지우기
         MainFrm.PresetLabel.Text = LangCls.MainUserStr
@@ -3056,6 +3104,7 @@ RELOAD:
             Catch ex As Exception
             End Try
         ElseIf VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
+        VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" OrElse _
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
          VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
          VideoCodecComboBox.Text = "MPEG-4 Video" Then
