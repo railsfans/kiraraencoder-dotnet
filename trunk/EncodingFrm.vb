@@ -119,8 +119,8 @@ Public Class EncodingFrm
     Public AudioMapV As String = ""
 
     '진행위치 백업
-    Dim SSV As String = "00:00:00.00"
-    Dim SSV2 As String = "00:00:00.00"
+    Dim StartTime As Single = 0.0
+    Dim ProcessTime As Single = 0.0
 
     '경로
     Public SnapshotImgFilePathV As String = FunctionCls.AppInfoDirectoryPath & "\temp\00000001.jpg"
@@ -170,7 +170,7 @@ Public Class EncodingFrm
                             ITBV2 = Strings.Left(Strings.Mid(ITBV, ITBStart_Int), ITBEnd_Int - 1)
                         End If
                         'Press [q] to stop encoding
-                        ITBV2 = Replace(ITBV2, "Press [q] to stop encoding", "Encoded date " & Format(Now, "yyyy-MM-dd HH:mm:ss"))
+                        ITBV2 = Replace(ITBV2, "Press [q] to stop encoding", "Date " & Format(Now, "yyyy-MM-dd HH:mm:ss"))
                         PInfoTextBox.AppendText(ITBV2)
                     End If
                 Catch ex As Exception
@@ -363,11 +363,13 @@ Public Class EncodingFrm
 
                     End If
                 End If
+                '--------
                 '일시 정지/재시작, 로그 복사 버튼 활성화//
-                If PipeMode = False Then
+                If PipeMode = False Then 'Nero AAC 구분
                     SuspendResumeButton.Enabled = True
-                    LCopyButton.Enabled = True
                 End If
+                LCopyButton.Enabled = True
+                '--------
             End If
             If InStr(MsgV, "global headers", CompareMethod.Text) <> 0 AndAlso InStr(MsgV, "muxing overhead", CompareMethod.Text) <> 0 AndAlso _
             InStr(InfoTextBox.Text, "global headers", CompareMethod.Text) = 0 AndAlso InStr(InfoTextBox.Text, "muxing overhead", CompareMethod.Text) = 0 Then
@@ -724,8 +726,8 @@ Public Class EncodingFrm
                     Else
                         ProgressBar.Value = ProgressBar.Maximum
                     End If
-                    SSV = FunctionCls.TIME_TO_HMSMSTIME(ta2, True)
-                    PositionDurationLabel.Text = SSV & " / " & EncDuration
+                    ProcessTime = ta2
+                    PositionDurationLabel.Text = FunctionCls.TIME_TO_HMSMSTIME(ta2, True) & " / " & EncDuration
                 End If
 
             End If
@@ -1442,19 +1444,24 @@ DelayAudioSkip:
 
                     If StartHMSV = 0 AndAlso EndHMSV <> 0 Then '종료시간만
                         SSTV = " -ss " & delayaudioSingle & " -t " & EndHMSV
+                        StartTime = delayaudioSingle
                     ElseIf StartHMSV <> 0 AndAlso EndHMSV <> 0 Then '시작시간 or 시작시간과 종료시간
 
                         If StartHMSV <= delayaudioSingle Then
                             SSTV = " -ss " & delayaudioSingle & " -t " & EndHMSV - StartHMSV
+                            StartTime = delayaudioSingle
                         Else
                             SSTV = " -ss " & StartHMSV & " -t " & EndHMSV - StartHMSV
+                            StartTime = StartHMSV
                         End If
 
                     Else '그 외
                         SSTV = " -ss " & delayaudioSingle
+                        StartTime = delayaudioSingle
                     End If
 
-
+                Else 'AviSynth 사용
+                    StartTime = StartHMSV
                 End If
 
                 Dim _TimeV As Double = 0.0
@@ -1996,6 +2003,14 @@ DelayAudioSkip:
                         MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
                         GoTo SKIP
                     End If
+
+                    '비디오 + 오디오 인코딩이라면 로그 다시 ㅇ_ㅇ
+                    If EncSetFrm.AudioCodecComboBox.Text = "Nero AAC" Then '비디오 + 오디오
+                        '로그 추가
+                        PInfoTextBox.AppendText("Nero AAC Encoding complete" & vbNewLine & vbNewLine)
+                        EncNMStartB = False
+                    End If
+
                 End If
                 '네로 AAC 인코딩 부분//
 
@@ -2036,6 +2051,9 @@ DelayAudioSkip:
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
                                 GoTo SKIP
                             End If
+                            '로그 추가
+                            PInfoTextBox.AppendText("1-Pass Encoding complete" & vbNewLine & vbNewLine)
+                            EncNMStartB = False
 
                             EncPassStr = "[2/2Pass]"
                             EncSub(InputFilePath, VideoFilterV & FLVSamplerateV & timestampV & " -pass 2" & FramerateComboBoxV & MainFrm.AviSynthCommandStr & CalcVideoBitrateStr, SavePathStr, True)
@@ -2070,6 +2088,9 @@ DelayAudioSkip:
                                 MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
                                 GoTo SKIP
                             End If
+                            '로그 추가
+                            PInfoTextBox.AppendText("1-Pass Encoding complete" & vbNewLine & vbNewLine)
+                            EncNMStartB = False
 
                             EncPassStr = "[2/2Pass]"
                             EncSub(InputFilePath, AVMapV & SSTV & VideoFilterV & AspectV & FLVSamplerateV & timestampV & " -pass 2" & FramerateComboBoxV & MainFrm.FFmpegCommandStr & CalcVideoBitrateStr, SavePathStr, True)
@@ -2266,6 +2287,7 @@ ENC_STOP:
         MainFrm.SetFolderButton.Enabled = True
         MainFrm.DecSToolStripMenuItem.Enabled = True
         MainFrm.AviSynthToolStripMenuItem.Enabled = True
+        MainFrm.ConfigToolStripMenuItem.Enabled = True
         MainFrm.SavePathTextBox.ReadOnly = False
 
         '********************************
@@ -2703,24 +2725,19 @@ ScrSkip:
             'Snapshot
             If SnapshotFrm.ImagePPExitB = True Then
 
-                If SSV <> SSV2 OrElse SSV = "00:00:00.00" Then
+                '종료여부
+                SnapshotFrm.ImagePPExitB = False
 
-                    '종료여부
-                    SnapshotFrm.ImagePPExitB = False
-
-                    If InPRadioButton.Checked = True Then
-                        '원본
-                        If My.Computer.FileSystem.FileExists(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text) = True Then
-                            SnapshotFrm.SFSTR(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text, SSV, SnapshotPictureBox.Width, SnapshotPictureBox.Height)
-                        End If
-                    Else
-                        '출력
-                        If My.Computer.FileSystem.FileExists(SavePathStr) = True Then
-                            SnapshotFrm.SFSTR(SavePathStr, SSV, SnapshotPictureBox.Width, SnapshotPictureBox.Height)
-                        End If
+                If InPRadioButton.Checked = True Then
+                    '원본
+                    If My.Computer.FileSystem.FileExists(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text) = True Then
+                        SnapshotFrm.SFSTR(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text, FunctionCls.TIME_TO_HMSMSTIME(StartTime + ProcessTime, True), SnapshotPictureBox.Width, SnapshotPictureBox.Height)
                     End If
-
-                    SSV2 = SSV
+                Else
+                    '출력
+                    If My.Computer.FileSystem.FileExists(SavePathStr) = True Then
+                        SnapshotFrm.SFSTR(SavePathStr, FunctionCls.TIME_TO_HMSMSTIME(ProcessTime, True), SnapshotPictureBox.Width, SnapshotPictureBox.Height)
+                    End If
                 End If
 
             Else

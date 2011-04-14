@@ -174,7 +174,7 @@ Public Class SnapshotFrm
 
         Dim MSGB As String = ""
         MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & IN_PATHV & Chr(34) & _
-        " -ss " & SSV & " -frames 1 -idx -vf scale=" & WIDTHV & ":" & HEIGHTV & " -priority idle -nosound -vo jpeg:quality=100:outdir=" & OUTDIRSTR
+        " -ss " & SSV & " -frames 1 -idx -vf scale=" & WIDTHV & ":" & HEIGHTV & " -nosound -vo jpeg:quality=100:outdir=" & OUTDIRSTR
 
         EncodingFrm.DebugLabel.Text = "Duration " & SSV
 
@@ -216,4 +216,7 @@ Public Class SnapshotFrm
 
     End Sub
 
+    Private Sub SnapshotFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

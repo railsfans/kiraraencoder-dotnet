@@ -184,13 +184,13 @@
     <value>195, 147</value>
   </data>
   <data name="LinkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 14</value>
+    <value>155, 14</value>
   </data>
   <data name="LinkLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="LinkLabel2.Text" xml:space="preserve">
-    <value>Icon: IriyaSviel</value>
+    <value>Installation image: IriyaSviel</value>
   </data>
   <data name="&gt;&gt;LinkLabel2.Name" xml:space="preserve">
     <value>LinkLabel2</value>
@@ -234,7 +234,7 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAABEhSURBVHhe7VsHeBXFFhYMLYSO9CZVgVCiBOkgIL1IR0hC
+        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AABEhSURBVHhe7VsHeBXFFhYMLYSO9CZVgVCiBOkgIL1IR0hC
         lSYdpfcmoQQISFF6CKG3BEghhIA8g1SlCKFHekcQJPfe8/5/792wudzcuzcI33voft/5dnd25syZf2bO
         nJlz9p13dFwmkylNw4YNtxUqVOhct27dFu7cubOOiLjoKPp2ZDl48GAFtES0lCtXrqsDBgyYcfjw4TJv
         RyvttAK9nap79+4LXF1dH1kDgXdT2bJlj/j6+g64ceNGzrcaDEyFdGvXrv28bdu2gW5ubg+twXBxcXle
@@ -344,13 +344,13 @@
     <value>91, 36</value>
   </data>
   <data name="VersionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 14</value>
+    <value>39, 14</value>
   </data>
   <data name="VersionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="VersionLabel.Text" xml:space="preserve">
-    <value>버전 -.-.-.-</value>
+    <value>버전 -</value>
   </data>
   <data name="&gt;&gt;VersionLabel.Name" xml:space="preserve">
     <value>VersionLabel</value>

@@ -2341,13 +2341,11 @@ ReDel:
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
             Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
-            My.Application.Info.Version.Minor & "." & _
-            My.Application.Info.Version.Revision & " x64"
+            My.Application.Info.Version.Minor & " x64"
         Else
             Me.Text = "Kirara Encoder" & BetaStr & " v" & _
             My.Application.Info.Version.Major & "." & _
-            My.Application.Info.Version.Minor & "." & _
-            My.Application.Info.Version.Revision
+            My.Application.Info.Version.Minor
         End If
 
         'MPLAYEREXESTR 설정
@@ -2859,6 +2857,7 @@ UAC:
         SetFolderButton.Enabled = False
         DecSToolStripMenuItem.Enabled = False
         AviSynthToolStripMenuItem.Enabled = False
+        ConfigToolStripMenuItem.Enabled = False
         SavePathTextBox.ReadOnly = True
 
         '재생
@@ -2892,6 +2891,7 @@ UAC:
             SetFolderButton.Enabled = True
             DecSToolStripMenuItem.Enabled = True
             AviSynthToolStripMenuItem.Enabled = True
+            ConfigToolStripMenuItem.Enabled = True
             SavePathTextBox.ReadOnly = False
         End Try
 
@@ -7075,59 +7075,6 @@ RELOAD:
 
     Private Sub EncListListView_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles EncListListView.MouseUp
         EncListListViewChkB = False
-
-        '同-ERRAUD0 START
-        Try
-            '오류로그, 오디오스트림
-            If SelIndex <> -1 Then
-                '오류로그
-                If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
-                    ErrToolStripMenuItem.Enabled = False
-                Else
-                    ErrToolStripMenuItem.Enabled = True
-                End If
-                '오디오스트림
-                AudSelToolStripMenuItem.Enabled = True
-            Else
-                '오류로그
-                ErrToolStripMenuItem.Enabled = False
-                '오디오스트림
-                AudSelToolStripMenuItem.DropDownItems.Clear()
-                AudSelToolStripMenuItem.Enabled = False
-            End If
-        Catch ex As Exception
-            SelIndex = -1
-        End Try
-        '同-ERRAUD0 END
-
-    End Sub
-
-    Private Sub EncListListView_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles EncListListView.KeyUp
-
-        '同-ERRAUD0 START
-        Try
-            '오류로그, 오디오스트림
-            If SelIndex <> -1 Then
-                '오류로그
-                If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
-                    ErrToolStripMenuItem.Enabled = False
-                Else
-                    ErrToolStripMenuItem.Enabled = True
-                End If
-                '오디오스트림
-                AudSelToolStripMenuItem.Enabled = True
-            Else
-                '오류로그
-                ErrToolStripMenuItem.Enabled = False
-                '오디오스트림
-                AudSelToolStripMenuItem.DropDownItems.Clear()
-                AudSelToolStripMenuItem.Enabled = False
-            End If
-        Catch ex As Exception
-            SelIndex = -1
-        End Try
-        '同-ERRAUD0 END
-
     End Sub
 
     Private Sub Timer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer.Tick
@@ -7645,7 +7592,7 @@ RELOAD:
     Private Sub VerWebBrowser_DocumentCompleted(ByVal sender As System.Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles VerWebBrowser.DocumentCompleted
         If VerWebBrowser.Document.Title = "verchk" Then
             Dim DnVerStr As String = Replace(VerWebBrowser.DocumentText, "<title>verchk</title>", "")
-            If DnVerStr > My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Revision Then
+            If DnVerStr > My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor Then
                 NewVerToolStripMenuItem.Visible = True
             Else
                 NewVerToolStripMenuItem.Visible = False
@@ -7662,10 +7609,6 @@ RELOAD:
         ie = Nothing
     End Sub
 
-    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
-
-    End Sub
-
     Private Sub EncListListView_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles EncListListView.MouseClick
 
         '인덱스
@@ -7678,68 +7621,6 @@ RELOAD:
                 Exit Sub
             End Try
         End If
-
-        Try
-            If SelIndex <> -1 Then
-                GET_AVINFO(SelIndex) 'AV정보
-                GET_OutputINFO(SelIndex)  '출력정보
-                EncListListView.Focus() '포커스
-            End If
-        Catch ex As Exception
-            SelIndex = -1
-        End Try
-
-        '==================================================
-        '오디오 스트림 표시
-        '--------------------------------------------------
-        If SelIndex <> -1 Then
-            '리스트뷰에 있는 오디오를 목록화
-            Dim LvAudioList As String = EncListListView.Items(SelIndex).SubItems(9).Text
-            Dim ia2 As Long = 0, iia2 As Long = 0
-            Dim ta2 As String = ""
-            Dim AudIndex As Integer = 0
-
-            AudSelToolStripMenuItem.DropDownItems.Clear()
-            Do
-                ia2 = 1
-                iia2 = 1
-                ta2 = ""
-                If InStr(ia2, LvAudioList, "Stream #", CompareMethod.Text) Then
-                    iia2 = InStr(ia2, LvAudioList, "Stream #", CompareMethod.Text)
-                    If InStr(iia2, LvAudioList, "|", CompareMethod.Text) Then
-                        ia2 = InStr(iia2, LvAudioList, "|", CompareMethod.Text)
-                        ta2 = Mid(LvAudioList, iia2, ia2 - iia2 - 1)
-                    End If
-                Else
-                    ia2 = ia2 + 1
-                End If
-
-                If ta2 <> "" Then
-                    AudSelToolStripMenuItem.DropDownItems.Add(ta2, Nothing, AddressOf OutSelectAudio)
-
-                    '스트림 체크표시
-                    If EncListListView.Items(SelIndex).SubItems(4).Text = Split(ta2, ":")(0) Then
-                        CType(AudSelToolStripMenuItem.DropDownItems(AudIndex), ToolStripMenuItem).Checked = True
-                    End If
-
-                    LvAudioList = Replace(LvAudioList, ta2, "")
-                End If
-
-                AudIndex += 1
-                Application.DoEvents()
-            Loop Until (ta2 = "")
-        End If
-        '==================================================
-
-    End Sub
-
-    Private Sub OutSelectAudio(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-        '오디오 스트림 지정
-        Try
-            EncListListView.Items(SelIndex).SubItems(4).Text = Split(sender.ToString, ":")(0)
-        Catch ex As Exception
-        End Try
 
         Try
             If SelIndex <> -1 Then
@@ -7767,6 +7648,102 @@ RELOAD:
     End Sub
 
     Private Sub TitleLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TitleLabel.Click
+
+    End Sub
+
+    Private Sub ListviewContextMenuStrip_Opening(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles ListviewContextMenuStrip.Opening
+
+        Try
+            '오류로그, 오디오스트림
+            If SelIndex <> -1 Then
+                '오류로그
+                If EncListListView.Items(SelIndex).SubItems(7).Text = "" Then
+                    ErrToolStripMenuItem.Enabled = False
+                Else
+                    ErrToolStripMenuItem.Enabled = True
+                End If
+                '오디오스트림
+                AudSelToolStripMenuItem.Enabled = True
+            Else
+                '오류로그
+                ErrToolStripMenuItem.Enabled = False
+                '오디오스트림
+                AudSelToolStripMenuItem.DropDownItems.Clear()
+                AudSelToolStripMenuItem.Enabled = False
+            End If
+        Catch ex As Exception
+            SelIndex = -1
+        End Try
+
+        '==================================================
+        '오디오 스트림 표시
+        '--------------------------------------------------
+        If SelIndex <> -1 Then
+            Try
+                '리스트뷰에 있는 오디오를 목록화
+                Dim LvAudioList As String = EncListListView.Items(SelIndex).SubItems(9).Text
+                Dim ia2 As Long = 0, iia2 As Long = 0
+                Dim ta2 As String = ""
+                Dim AudIndex As Integer = 0
+                AudSelToolStripMenuItem.DropDownItems.Clear()
+                Do
+                    ia2 = 1
+                    iia2 = 1
+                    ta2 = ""
+                    If InStr(ia2, LvAudioList, "Stream #", CompareMethod.Text) Then
+                        iia2 = InStr(ia2, LvAudioList, "Stream #", CompareMethod.Text)
+                        If InStr(iia2, LvAudioList, "|", CompareMethod.Text) Then
+                            ia2 = InStr(iia2, LvAudioList, "|", CompareMethod.Text)
+                            ta2 = Mid(LvAudioList, iia2, ia2 - iia2 - 1)
+                        End If
+                    Else
+                        ia2 = ia2 + 1
+                    End If
+
+                    If ta2 <> "" Then
+                        AudSelToolStripMenuItem.DropDownItems.Add(ta2, Nothing, AddressOf OutSelectAudio)
+
+                        '스트림 체크표시
+                        If EncListListView.Items(SelIndex).SubItems(4).Text = Split(ta2, ":")(0) Then
+                            CType(AudSelToolStripMenuItem.DropDownItems(AudIndex), ToolStripMenuItem).Checked = True
+                        End If
+
+                        LvAudioList = Replace(LvAudioList, ta2, "")
+                    End If
+
+                    AudIndex += 1
+                    Application.DoEvents()
+                Loop Until (ta2 = "")
+            Catch ex As Exception
+                AudSelToolStripMenuItem.DropDownItems.Clear()
+                AudSelToolStripMenuItem.Enabled = False
+            End Try
+        End If
+        '==================================================
+
+    End Sub
+
+    Private Sub OutSelectAudio(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        '오디오 스트림 지정
+        Try
+            EncListListView.Items(SelIndex).SubItems(4).Text = Split(sender.ToString, ":")(0)
+        Catch ex As Exception
+        End Try
+
+        Try
+            If SelIndex <> -1 Then
+                GET_AVINFO(SelIndex) 'AV정보
+                GET_OutputINFO(SelIndex)  '출력정보
+                EncListListView.Focus() '포커스
+            End If
+        Catch ex As Exception
+            SelIndex = -1
+        End Try
+
+    End Sub
+
+    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
 
     End Sub
 End Class

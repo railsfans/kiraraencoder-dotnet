@@ -175,7 +175,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;StopButton.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <metadata name="IndexTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
@@ -304,7 +304,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="BitrateTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 112</value>
@@ -705,66 +705,6 @@
   <data name="&gt;&gt;LogStr.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="AlertLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AlertLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 222</value>
-  </data>
-  <data name="AlertLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 14</value>
-  </data>
-  <data name="AlertLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="AlertLabel.Text" xml:space="preserve">
-    <value>선택한 출력형식은 출력 미리 보기를 지원하지 않습니다.</value>
-  </data>
-  <data name="AlertLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;AlertLabel.Name" xml:space="preserve">
-    <value>AlertLabel</value>
-  </data>
-  <data name="&gt;&gt;AlertLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AlertLabel.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;AlertLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LCopyButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LCopyButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LCopyButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 405</value>
-  </data>
-  <data name="LCopyButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
-  </data>
-  <data name="LCopyButton.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
-  </data>
-  <data name="LCopyButton.Text" xml:space="preserve">
-    <value>로그 복사</value>
-  </data>
-  <data name="&gt;&gt;LCopyButton.Name" xml:space="preserve">
-    <value>LCopyButton</value>
-  </data>
-  <data name="&gt;&gt;LCopyButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LCopyButton.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;LCopyButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="ImgPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 34</value>
   </data>
@@ -787,7 +727,31 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;ImgPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
+  </data>
+  <data name="PInfoTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="PInfoTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 8pt</value>
+  </data>
+  <data name="PInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PInfoTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="PInfoTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PInfoTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="PInfoTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 180</value>
+  </data>
+  <data name="PInfoTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
   </data>
   <data name="&gt;&gt;PInfoTextBox.Name" xml:space="preserve">
     <value>PInfoTextBox</value>
@@ -800,6 +764,21 @@
   </data>
   <data name="&gt;&gt;PInfoTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="FileNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FileNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 188</value>
+  </data>
+  <data name="FileNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 14</value>
+  </data>
+  <data name="FileNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="FileNameLabel.Text" xml:space="preserve">
+    <value> </value>
   </data>
   <data name="&gt;&gt;FileNameLabel.Name" xml:space="preserve">
     <value>FileNameLabel</value>
@@ -832,7 +811,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;InfoPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="DebugLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -862,16 +841,94 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;DebugLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AlertLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AlertLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 223</value>
+  </data>
+  <data name="AlertLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 14</value>
+  </data>
+  <data name="AlertLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="AlertLabel.Text" xml:space="preserve">
+    <value>선택한 출력형식은 출력 미리 보기를 지원하지 않습니다.</value>
+  </data>
+  <data name="AlertLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;AlertLabel.Name" xml:space="preserve">
+    <value>AlertLabel</value>
+  </data>
+  <data name="&gt;&gt;AlertLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AlertLabel.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;AlertLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LCopyButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LCopyButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LCopyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 405</value>
+  </data>
+  <data name="LCopyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="LCopyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="LCopyButton.Text" xml:space="preserve">
+    <value>로그 복사</value>
+  </data>
+  <data name="&gt;&gt;LCopyButton.Name" xml:space="preserve">
+    <value>LCopyButton</value>
+  </data>
+  <data name="&gt;&gt;LCopyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LCopyButton.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;LCopyButton.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>0, 0</value>
   </metadata>
+  <data name="PreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="PreviewToolStripMenuItem.Text" xml:space="preserve">
+    <value>미리 보기</value>
+  </data>
+  <data name="LogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 20</value>
+  </data>
+  <data name="LogToolStripMenuItem.Text" xml:space="preserve">
+    <value>인코딩 로그</value>
+  </data>
+  <data name="ImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="ImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>표시 안 함</value>
+  </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>570, 24</value>
+    <value>569, 24</value>
   </data>
   <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>67</value>
@@ -891,21 +948,6 @@
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="DebugCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DebugCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 69</value>
-  </data>
-  <data name="DebugCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 18</value>
-  </data>
-  <data name="DebugCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="DebugCheckBox.Text" xml:space="preserve">
-    <value>디버그</value>
-  </data>
   <data name="&gt;&gt;DebugCheckBox.Name" xml:space="preserve">
     <value>DebugCheckBox</value>
   </data>
@@ -918,24 +960,6 @@
   <data name="&gt;&gt;DebugCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="OutPRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="OutPRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="OutPRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 44</value>
-  </data>
-  <data name="OutPRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 18</value>
-  </data>
-  <data name="OutPRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="OutPRadioButton.Text" xml:space="preserve">
-    <value>출력 미리 보기</value>
-  </data>
   <data name="&gt;&gt;OutPRadioButton.Name" xml:space="preserve">
     <value>OutPRadioButton</value>
   </data>
@@ -947,21 +971,6 @@
   </data>
   <data name="&gt;&gt;OutPRadioButton.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="InPRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="InPRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 22</value>
-  </data>
-  <data name="InPRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 18</value>
-  </data>
-  <data name="InPRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="InPRadioButton.Text" xml:space="preserve">
-    <value>원본 미리 보기</value>
   </data>
   <data name="&gt;&gt;InPRadioButton.Name" xml:space="preserve">
     <value>InPRadioButton</value>
@@ -1089,33 +1098,6 @@
   <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="SnapshotPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SnapshotPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 35</value>
-  </data>
-  <data name="SnapshotPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 210</value>
-  </data>
-  <data name="SnapshotPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="SnapshotPictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="&gt;&gt;SnapshotPictureBox.Name" xml:space="preserve">
-    <value>SnapshotPictureBox</value>
-  </data>
-  <data name="&gt;&gt;SnapshotPictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SnapshotPictureBox.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;SnapshotPictureBox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="ShutdownCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1141,16 +1123,43 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;ShutdownCheckBox.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 441</value>
   </metadata>
+  <data name="EncToolStripStatusLabel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="EncToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>704, 19</value>
+  </data>
+  <data name="EncToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="CPUToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CPUToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 19</value>
+  </data>
+  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 18</value>
+  </data>
+  <data name="PCNTToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="PCNTToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 19</value>
+  </data>
+  <data name="PCNTToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
   <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 441</value>
   </data>
   <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>570, 24</value>
+    <value>569, 24</value>
   </data>
   <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
@@ -1168,7 +1177,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="SuspendResumeButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1195,7 +1204,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;SuspendResumeButton.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="ForceStopButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>350, 405</value>
@@ -1219,7 +1228,34 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;ForceStopButton.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
+  </data>
+  <data name="SnapshotPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SnapshotPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 35</value>
+  </data>
+  <data name="SnapshotPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 210</value>
+  </data>
+  <data name="SnapshotPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="SnapshotPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;SnapshotPictureBox.Name" xml:space="preserve">
+    <value>SnapshotPictureBox</value>
+  </data>
+  <data name="&gt;&gt;SnapshotPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SnapshotPictureBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;SnapshotPictureBox.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="EncPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1228,7 +1264,7 @@
     <value>0, 0</value>
   </data>
   <data name="EncPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>570, 465</value>
+    <value>569, 465</value>
   </data>
   <data name="EncPanel.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -1245,86 +1281,89 @@
   <data name="&gt;&gt;EncPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PInfoTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="PInfoTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 8pt</value>
-  </data>
-  <data name="PInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PInfoTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>2147483647</value>
-  </data>
-  <data name="PInfoTextBox.Multiline" type="System.Boolean, mscorlib">
+  <data name="DebugCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="PInfoTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
+  <data name="DebugCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 69</value>
   </data>
-  <data name="PInfoTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 180</value>
+  <data name="DebugCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 18</value>
   </data>
-  <data name="PInfoTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>67</value>
+  <data name="DebugCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;PInfoTextBox.Name" xml:space="preserve">
-    <value>PInfoTextBox</value>
+  <data name="DebugCheckBox.Text" xml:space="preserve">
+    <value>디버그</value>
   </data>
-  <data name="&gt;&gt;PInfoTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;DebugCheckBox.Name" xml:space="preserve">
+    <value>DebugCheckBox</value>
   </data>
-  <data name="&gt;&gt;PInfoTextBox.Parent" xml:space="preserve">
-    <value>InfoPanel</value>
+  <data name="&gt;&gt;DebugCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PInfoTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DebugCheckBox.Parent" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;DebugCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="FileNameLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="OutPRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="FileNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 187</value>
+  <data name="OutPRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="FileNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 14</value>
+  <data name="OutPRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 44</value>
   </data>
-  <data name="FileNameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+  <data name="OutPRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 18</value>
   </data>
-  <data name="FileNameLabel.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="&gt;&gt;FileNameLabel.Name" xml:space="preserve">
-    <value>FileNameLabel</value>
-  </data>
-  <data name="&gt;&gt;FileNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileNameLabel.Parent" xml:space="preserve">
-    <value>InfoPanel</value>
-  </data>
-  <data name="&gt;&gt;FileNameLabel.ZOrder" xml:space="preserve">
+  <data name="OutPRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="PreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
+  <data name="OutPRadioButton.Text" xml:space="preserve">
+    <value>출력 미리 보기</value>
   </data>
-  <data name="PreviewToolStripMenuItem.Text" xml:space="preserve">
-    <value>미리 보기</value>
+  <data name="&gt;&gt;OutPRadioButton.Name" xml:space="preserve">
+    <value>OutPRadioButton</value>
   </data>
-  <data name="LogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 20</value>
+  <data name="&gt;&gt;OutPRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="LogToolStripMenuItem.Text" xml:space="preserve">
-    <value>인코딩 로그</value>
+  <data name="&gt;&gt;OutPRadioButton.Parent" xml:space="preserve">
+    <value>PreviewGroupBox</value>
   </data>
-  <data name="ImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
+  <data name="&gt;&gt;OutPRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="ImageToolStripMenuItem.Text" xml:space="preserve">
-    <value>표시 안 함</value>
+  <data name="InPRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="InPRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 22</value>
+  </data>
+  <data name="InPRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 18</value>
+  </data>
+  <data name="InPRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="InPRadioButton.Text" xml:space="preserve">
+    <value>원본 미리 보기</value>
+  </data>
+  <data name="&gt;&gt;InPRadioButton.Name" xml:space="preserve">
+    <value>InPRadioButton</value>
+  </data>
+  <data name="&gt;&gt;InPRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InPRadioButton.Parent" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;InPRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="PriorityComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 23</value>
@@ -1346,33 +1385,6 @@
   </data>
   <data name="&gt;&gt;PriorityComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="EncToolStripStatusLabel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="EncToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 19</value>
-  </data>
-  <data name="EncToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="CPUToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="CPUToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 19</value>
-  </data>
-  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 18</value>
-  </data>
-  <data name="PCNTToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="PCNTToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 19</value>
-  </data>
-  <data name="PCNTToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <metadata name="TimeElapsedTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>246, 17</value>
@@ -1396,7 +1408,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>570, 465</value>
+    <value>569, 465</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

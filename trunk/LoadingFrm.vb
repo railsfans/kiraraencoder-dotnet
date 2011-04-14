@@ -36,9 +36,8 @@
         End If
         VersionLabel.Text = "Kirara Encoder v" & _
         My.Application.Info.Version.Major & "." & _
-        My.Application.Info.Version.Minor & "." & _
-        My.Application.Info.Version.Build & "." & _
-        My.Application.Info.Version.Revision & " " & MainFrm.PDATA
+        My.Application.Info.Version.Minor & " SVN-r" & _
+        My.Application.Info.Version.Build & " " & MainFrm.PDATA
         '보이기
         Me.Show()
     End Sub

@@ -28,6 +28,7 @@ Partial Class LoadingFrm
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.VersionLabel = New System.Windows.Forms.Label
+        Me.Panel2 = New System.Windows.Forms.Panel
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,6 +46,7 @@ Partial Class LoadingFrm
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Ivory
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.VersionLabel)
         Me.Panel1.Controls.Add(Me.Label1)
         resources.ApplyResources(Me.Panel1, "Panel1")
@@ -55,11 +57,18 @@ Partial Class LoadingFrm
         resources.ApplyResources(Me.VersionLabel, "VersionLabel")
         Me.VersionLabel.Name = "VersionLabel"
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Name = "Panel2"
+        '
         'LoadingFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Cursor = System.Windows.Forms.Cursors.WaitCursor
         Me.DoubleBuffered = True
@@ -70,7 +79,6 @@ Partial Class LoadingFrm
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.TopMost = True
-        Me.TransparencyKey = System.Drawing.Color.White
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -80,4 +88,5 @@ Partial Class LoadingFrm
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents VersionLabel As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
 End Class

@@ -64,7 +64,6 @@ Partial Class EncodingFrm
         Me.PriorityGroupBox = New System.Windows.Forms.GroupBox
         Me.PriorityComboBox = New System.Windows.Forms.ComboBox
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.SnapshotPictureBox = New System.Windows.Forms.PictureBox
         Me.ShutdownCheckBox = New System.Windows.Forms.CheckBox
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
         Me.EncToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
@@ -73,6 +72,7 @@ Partial Class EncodingFrm
         Me.PCNTToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
         Me.SuspendResumeButton = New System.Windows.Forms.Button
         Me.ForceStopButton = New System.Windows.Forms.Button
+        Me.SnapshotPictureBox = New System.Windows.Forms.PictureBox
         Me.TimeElapsedTimer = New System.Windows.Forms.Timer(Me.components)
         Me.CapTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SnapshotTimer = New System.Windows.Forms.Timer(Me.components)
@@ -85,8 +85,8 @@ Partial Class EncodingFrm
         Me.PreviewGroupBox.SuspendLayout()
         Me.PriorityGroupBox.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.SnapshotPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.SnapshotPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OutputBox_EI
@@ -205,11 +205,11 @@ Partial Class EncodingFrm
         '
         'EncPanel
         '
-        Me.EncPanel.Controls.Add(Me.AlertLabel)
-        Me.EncPanel.Controls.Add(Me.LCopyButton)
         Me.EncPanel.Controls.Add(Me.ImgPanel)
         Me.EncPanel.Controls.Add(Me.InfoPanel)
         Me.EncPanel.Controls.Add(Me.DebugLabel)
+        Me.EncPanel.Controls.Add(Me.AlertLabel)
+        Me.EncPanel.Controls.Add(Me.LCopyButton)
         Me.EncPanel.Controls.Add(Me.MenuStrip1)
         Me.EncPanel.Controls.Add(Me.InfoTextBox)
         Me.EncPanel.Controls.Add(Me.OutputBox_EI)
@@ -217,13 +217,13 @@ Partial Class EncodingFrm
         Me.EncPanel.Controls.Add(Me.PreviewCheckBox)
         Me.EncPanel.Controls.Add(Me.PriorityGroupBox)
         Me.EncPanel.Controls.Add(Me.GroupBox3)
-        Me.EncPanel.Controls.Add(Me.SnapshotPictureBox)
         Me.EncPanel.Controls.Add(Me.ShutdownCheckBox)
         Me.EncPanel.Controls.Add(Me.StatusStrip1)
         Me.EncPanel.Controls.Add(Me.SuspendResumeButton)
         Me.EncPanel.Controls.Add(Me.ForceStopButton)
         Me.EncPanel.Controls.Add(Me.GroupBox1)
         Me.EncPanel.Controls.Add(Me.StopButton)
+        Me.EncPanel.Controls.Add(Me.SnapshotPictureBox)
         resources.ApplyResources(Me.EncPanel, "EncPanel")
         Me.EncPanel.Name = "EncPanel"
         '
@@ -354,15 +354,6 @@ Partial Class EncodingFrm
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.TabStop = False
         '
-        'SnapshotPictureBox
-        '
-        Me.SnapshotPictureBox.BackColor = System.Drawing.Color.DarkGray
-        Me.SnapshotPictureBox.ErrorImage = Nothing
-        resources.ApplyResources(Me.SnapshotPictureBox, "SnapshotPictureBox")
-        Me.SnapshotPictureBox.InitialImage = Nothing
-        Me.SnapshotPictureBox.Name = "SnapshotPictureBox"
-        Me.SnapshotPictureBox.TabStop = False
-        '
         'ShutdownCheckBox
         '
         resources.ApplyResources(Me.ShutdownCheckBox, "ShutdownCheckBox")
@@ -411,6 +402,15 @@ Partial Class EncodingFrm
         Me.ForceStopButton.Name = "ForceStopButton"
         Me.ForceStopButton.UseVisualStyleBackColor = True
         '
+        'SnapshotPictureBox
+        '
+        Me.SnapshotPictureBox.BackColor = System.Drawing.Color.DarkGray
+        Me.SnapshotPictureBox.ErrorImage = Nothing
+        resources.ApplyResources(Me.SnapshotPictureBox, "SnapshotPictureBox")
+        Me.SnapshotPictureBox.InitialImage = Nothing
+        Me.SnapshotPictureBox.Name = "SnapshotPictureBox"
+        Me.SnapshotPictureBox.TabStop = False
+        '
         'TimeElapsedTimer
         '
         Me.TimeElapsedTimer.Interval = 1000
@@ -452,9 +452,9 @@ Partial Class EncodingFrm
         Me.PreviewGroupBox.PerformLayout()
         Me.PriorityGroupBox.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
-        CType(Me.SnapshotPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.SnapshotPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

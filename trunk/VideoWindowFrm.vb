@@ -21,10 +21,9 @@
 Imports System.IO
 
 Public Class VideoWindowFrm
-
+    Dim _AviSynthClip As AvisynthWrapper.AviSynthClip = Nothing
     Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
-    Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
-    Dim BitmapV
+    Dim BitmapV As Bitmap = Nothing
     Dim BitMapB As Boolean = False
     Public FrameI As Integer = 0
     Dim PLAYVL As Boolean = False
@@ -34,17 +33,22 @@ Public Class VideoWindowFrm
 
 #Region "코어"
 
+    Private Sub img_cleanup()
+        If _AviSynthClip IsNot Nothing Then
+            _AviSynthClip.IDisposable_Dispose()
+            _AviSynthClip = Nothing
+        End If
+        If BitmapV IsNot Nothing Then
+            BitmapV = Nothing
+        End If
+    End Sub
+
     Private Sub VideoWindowFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
 
         '닫기
         FrameTimer.Enabled = False
         RealtimeTimer.Enabled = False
-        If _AviSynthClip IsNot Nothing Then
-            _AviSynthClip.IDisposable_Dispose()
-        End If
-        If BitmapV IsNot Nothing Then
-            BitmapV.Dispose()
-        End If
+        img_cleanup()
         '활성
         AviSynthEditorFrm.RefButton.Enabled = False
         AviSynthEditorFrm.PreviewButton.Enabled = True
@@ -52,7 +56,6 @@ Public Class VideoWindowFrm
     End Sub
 
     Private Sub OPEN_SUB()
-
         Try
             '_AviSynthClip = _AviSynthScriptEnvironment.ParseScript(AviSynthEditorFrm.AVTextBox.Text, AvisynthWrapper.AviSynthColorspace.RGB32)
             '_AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(Mainfrm.ApplicationInfoDirectoryPath & "AVS파일", AvisynthWrapper.AviSynthColorspace.RGB32)
@@ -61,12 +64,7 @@ Public Class VideoWindowFrm
                 BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
                 BitMapB = True
             Else
-                If _AviSynthClip IsNot Nothing Then
-                    _AviSynthClip.IDisposable_Dispose()
-                End If
-                If BitmapV IsNot Nothing Then
-                    BitmapV.Dispose()
-                End If
+                img_cleanup()
                 _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
                 BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
             End If
@@ -92,7 +90,6 @@ Public Class VideoWindowFrm
             MsgBox(ex.Message)
             Close()
         End Try
-
     End Sub
 
     Public Sub Ref_SUB()
@@ -106,12 +103,7 @@ Public Class VideoWindowFrm
             '닫기
             FrameTimer.Enabled = False
             RealtimeTimer.Enabled = False
-            If _AviSynthClip IsNot Nothing Then
-                _AviSynthClip.IDisposable_Dispose()
-            End If
-            If BitmapV IsNot Nothing Then
-                BitmapV.Dispose()
-            End If
+            img_cleanup()
             PLAYVL = False
             '---------------
             '새로고침

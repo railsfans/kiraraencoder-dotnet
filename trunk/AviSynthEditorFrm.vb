@@ -117,6 +117,7 @@ Public Class AviSynthEditorFrm
         waitbool = True
         VideoWindowFrm.Ref_SUB()
         waitbool = False
+
     End Sub
 
     Private Sub AviSynthEditorFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing

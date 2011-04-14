@@ -770,6 +770,8 @@ LANG_SKIP:
             NeroAACQTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
             VorbisQTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
             LAMEMP3QTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            gradfun_strengthTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+            gradfun_radiusTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
         End If
 
     End Sub
