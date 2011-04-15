@@ -1255,7 +1255,7 @@ LANG_SKIP:
             VTBV = SeekTrackBar.Minimum
         End If
 
-        If MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "ASF" Then
+        If MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "ASF" OrElse MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "MPEGTS" Then '디먹서 변경으로 인해 MPEGTS도 퍼센트시크
             MsgSend("pausing_keep seek " & (VTBV / SeekTrackBar.Maximum) * 100 & " 1 ")
         Else
             MsgSend("pausing_keep seek " & VTBV & " 2 ")

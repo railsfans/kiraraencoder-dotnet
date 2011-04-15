@@ -2375,6 +2375,7 @@ ENC_STOP:
                 If XTR.Name = "EncodingFrmPreview" Then
                     PreviewCheckBox.Text = XTR.ReadString
                     PreviewToolStripMenuItem.Text = PreviewCheckBox.Text
+                    PreviewGroupBox.Text = PreviewToolStripMenuItem.Text
                 End If
                 If XTR.Name = "EncodingFrmInPRadioButton" Then InPRadioButton.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmOutPRadioButton" Then OutPRadioButton.Text = XTR.ReadString

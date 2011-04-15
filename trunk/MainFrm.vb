@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.04.14]"
+    Public PDATA = "[2011.04.15]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -7579,14 +7579,6 @@ RELOAD:
             EncSetFrm.ShowDialog(Me)
         Catch ex As Exception
         End Try
-    End Sub
-
-    Private Sub WebBrowser1_DocumentCompleted(ByVal sender As System.Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
-        If WebBrowser1.Document.Title <> "kemainfrm2" Then
-            WebBrowser1.Visible = False
-        Else
-            WebBrowser1.Visible = True
-        End If
     End Sub
 
     Private Sub VerWebBrowser_DocumentCompleted(ByVal sender As System.Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles VerWebBrowser.DocumentCompleted

@@ -104,7 +104,6 @@ Partial Class MainFrm
         Me.DefPreviewImg = New System.Windows.Forms.Panel
         Me.VerWebBrowser = New System.Windows.Forms.WebBrowser
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser
         Me.Panel10 = New System.Windows.Forms.Panel
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.Panel4 = New System.Windows.Forms.Panel
@@ -437,8 +436,8 @@ Partial Class MainFrm
         '
         'AVTextBox
         '
-        Me.AVTextBox.BackColor = System.Drawing.Color.White
         resources.ApplyResources(Me.AVTextBox, "AVTextBox")
+        Me.AVTextBox.BackColor = System.Drawing.Color.White
         Me.AVTextBox.Name = "AVTextBox"
         Me.AVTextBox.ReadOnly = True
         '
@@ -650,22 +649,10 @@ Partial Class MainFrm
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.WebBrowser1)
         Me.Panel1.Controls.Add(Me.AVTextBox)
         Me.Panel1.Controls.Add(Me.Panel10)
         resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.AllowNavigation = False
-        Me.WebBrowser1.AllowWebBrowserDrop = False
-        Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
-        resources.ApplyResources(Me.WebBrowser1, "WebBrowser1")
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.ScrollBarsEnabled = False
-        Me.WebBrowser1.Url = New System.Uri("http://www.kiraraencoder.pe.kr/kemainfrm2", System.UriKind.Absolute)
         '
         'Panel10
         '
@@ -1102,7 +1089,6 @@ Partial Class MainFrm
     Friend WithEvents ToolStripMenuItem5 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents SaveFolderLabel As System.Windows.Forms.Label
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
     Friend WithEvents Panel12 As System.Windows.Forms.Panel
     Friend WithEvents FormMovePanel As System.Windows.Forms.Panel
