@@ -154,27 +154,26 @@ Public Class EncodingFrm
                 Catch ex As Exception
                 End Try
 
-                Dim ITBV As String = Replace(MsgV, vbLf, vbCrLf)
-                InfoTextBox.AppendText(ITBV)
+                InfoTextBox.AppendText(Replace(MsgV, vbLf, vbCrLf))
 
                 '보여줄 부분
                 Try
-                    Dim ITBStart_Int As Integer = InStr(ITBV, "FFmpeg version", CompareMethod.Text)
-                    Dim ITBEnd_Int As Integer = InStrRev(ITBV, "size=", -1, CompareMethod.Text)
+                    Dim ITBStart_Int As Integer = InStr(InfoTextBox.Text, "FFmpeg version", CompareMethod.Text)
+                    Dim ITBEnd_Int As Integer = InStrRev(InfoTextBox.Text, "size=", -1, CompareMethod.Text)
                     If ITBStart_Int <> 0 AndAlso ITBEnd_Int <> 0 Then
-                        Dim ITBFEnd_Int As Integer = InStrRev(ITBV, "frame=", -1, CompareMethod.Text)
+                        Dim ITBFEnd_Int As Integer = InStrRev(InfoTextBox.Text, "frame=", -1, CompareMethod.Text)
                         Dim ITBV2 As String = ""
                         If ITBFEnd_Int <> 0 Then
-                            ITBV2 = Strings.Left(Strings.Mid(ITBV, ITBStart_Int), ITBFEnd_Int - 1)
+                            ITBV2 = Strings.Left(Strings.Mid(InfoTextBox.Text, ITBStart_Int), ITBFEnd_Int - 1)
                         Else
-                            ITBV2 = Strings.Left(Strings.Mid(ITBV, ITBStart_Int), ITBEnd_Int - 1)
+                            ITBV2 = Strings.Left(Strings.Mid(InfoTextBox.Text, ITBStart_Int), ITBEnd_Int - 1)
                         End If
                         'Press [q] to stop encoding
                         ITBV2 = Replace(ITBV2, "Press [q] to stop encoding", "Date " & Format(Now, "yyyy-MM-dd HH:mm:ss"))
                         PInfoTextBox.AppendText(ITBV2)
                     End If
                 Catch ex As Exception
-                    PInfoTextBox.AppendText(ITBV)
+                    PInfoTextBox.AppendText(InfoTextBox.Text)
                 End Try
 
             End If
@@ -2843,7 +2842,12 @@ ScrSkip:
     End Sub
 
     Private Sub LCopyButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LCopyButton.Click
-        Clipboard.SetText(PInfoTextBox.Text)
+        Try
+            If PInfoTextBox.Text <> "" Then
+                Clipboard.SetText(PInfoTextBox.Text)
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub ShutdownCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownCheckBox.CheckedChanged

@@ -198,10 +198,10 @@
     <value>[AUDIO] - Audio Only</value>
   </data>
   <data name="OutFComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 9</value>
+    <value>150, 9</value>
   </data>
   <data name="OutFComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>280, 22</value>
   </data>
   <data name="OutFComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -219,10 +219,10 @@
     <value>1</value>
   </data>
   <data name="PresetButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 8</value>
+    <value>436, 8</value>
   </data>
   <data name="PresetButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 25</value>
+    <value>112, 25</value>
   </data>
   <data name="PresetButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -243,7 +243,7 @@
     <value>2</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 563</value>
+    <value>448, 563</value>
   </data>
   <data name="CancelBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -267,7 +267,7 @@
     <value>3</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 563</value>
+    <value>342, 563</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -313,112 +313,6 @@
   </data>
   <data name="&gt;&gt;DefBTN.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;VideoTabPage.Name" xml:space="preserve">
-    <value>VideoTabPage</value>
-  </data>
-  <data name="&gt;&gt;VideoTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VideoTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;VideoTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;VFTabPage.Name" xml:space="preserve">
-    <value>VFTabPage</value>
-  </data>
-  <data name="&gt;&gt;VFTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VFTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;VFTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Name" xml:space="preserve">
-    <value>ImageTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Name" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Name" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="SettingTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 40</value>
-  </data>
-  <data name="SettingTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>507, 517</value>
-  </data>
-  <data name="SettingTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SettingTabControl.Name" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;SettingTabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingTabControl.Parent" xml:space="preserve">
-    <value>EncSetPanel</value>
-  </data>
-  <data name="&gt;&gt;SettingTabControl.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EncSetPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="EncSetPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="EncSetPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 600</value>
-  </data>
-  <data name="EncSetPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EncSetPanel.Name" xml:space="preserve">
-    <value>EncSetPanel</value>
-  </data>
-  <data name="&gt;&gt;EncSetPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EncSetPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;EncSetPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;MP4OptsPanel.Name" xml:space="preserve">
     <value>MP4OptsPanel</value>
@@ -471,11 +365,12 @@
   <data name="VideoTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="VideoTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="VideoTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 490</value>
+    <value>532, 490</value>
   </data>
   <data name="VideoTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -495,6 +390,1287 @@
   <data name="&gt;&gt;VideoTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>VFTabPage</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="VFTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="VFTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>532, 490</value>
+  </data>
+  <data name="VFTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="VFTabPage.Text" xml:space="preserve">
+    <value>비디오 필터</value>
+  </data>
+  <data name="&gt;&gt;VFTabPage.Name" xml:space="preserve">
+    <value>VFTabPage</value>
+  </data>
+  <data name="&gt;&gt;VFTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VFTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;VFTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ImageGroupBox.Name" xml:space="preserve">
+    <value>ImageGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ImageGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImageGroupBox.Parent" xml:space="preserve">
+    <value>ImageTabPage</value>
+  </data>
+  <data name="&gt;&gt;ImageGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;FFTurnGroupBox.Name" xml:space="preserve">
+    <value>FFTurnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFTurnGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFTurnGroupBox.Parent" xml:space="preserve">
+    <value>ImageTabPage</value>
+  </data>
+  <data name="&gt;&gt;FFTurnGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flipGroupBox.Name" xml:space="preserve">
+    <value>flipGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flipGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flipGroupBox.Parent" xml:space="preserve">
+    <value>ImageTabPage</value>
+  </data>
+  <data name="&gt;&gt;flipGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ImageTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="ImageTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="ImageTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>532, 490</value>
+  </data>
+  <data name="ImageTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ImageTabPage.Text" xml:space="preserve">
+    <value>영상</value>
+  </data>
+  <data name="&gt;&gt;ImageTabPage.Name" xml:space="preserve">
+    <value>ImageTabPage</value>
+  </data>
+  <data name="&gt;&gt;ImageTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImageTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;ImageTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 9</value>
+  </data>
+  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 9</value>
+  </data>
+  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 14</value>
+  </data>
+  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LAMEMP3QLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAMEMP3QLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>394, 9</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 14</value>
+  </data>
+  <data name="LAMEMP3QLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Text" xml:space="preserve">
+    <value>Kbit/s</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Name" xml:space="preserve">
+    <value>LAMEMP3QLabel2</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 8</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 22</value>
+  </data>
+  <data name="LAMEMP3QComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Name" xml:space="preserve">
+    <value>LAMEMP3QComboBox</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 5</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 25</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Name" xml:space="preserve">
+    <value>LAMEMP3QTrackBar</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 8</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 22</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Name" xml:space="preserve">
+    <value>LAMEMP3QNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LAMEMP3QLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 9</value>
+  </data>
+  <data name="LAMEMP3QLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="LAMEMP3QLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LAMEMP3QLabel.Text" xml:space="preserve">
+    <value>LAME MP3 Q:</value>
+  </data>
+  <data name="LAMEMP3QLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Name" xml:space="preserve">
+    <value>LAMEMP3QLabel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LAMEMP3QPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 362</value>
+  </data>
+  <data name="LAMEMP3QPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 33</value>
+  </data>
+  <data name="LAMEMP3QPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QPanel.Name" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QPanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SamplerateCheckBox.Name" xml:space="preserve">
+    <value>SamplerateCheckBox</value>
+  </data>
+  <data name="&gt;&gt;SamplerateCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SamplerateCheckBox.Parent" xml:space="preserve">
+    <value>SampleratePanel</value>
+  </data>
+  <data name="&gt;&gt;SamplerateCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SamplerateLabel2.Name" xml:space="preserve">
+    <value>SamplerateLabel2</value>
+  </data>
+  <data name="&gt;&gt;SamplerateLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SamplerateLabel2.Parent" xml:space="preserve">
+    <value>SampleratePanel</value>
+  </data>
+  <data name="&gt;&gt;SamplerateLabel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SamplerateComboBox.Name" xml:space="preserve">
+    <value>SamplerateComboBox</value>
+  </data>
+  <data name="&gt;&gt;SamplerateComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SamplerateComboBox.Parent" xml:space="preserve">
+    <value>SampleratePanel</value>
+  </data>
+  <data name="&gt;&gt;SamplerateComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SamplerateLabel.Name" xml:space="preserve">
+    <value>SamplerateLabel</value>
+  </data>
+  <data name="&gt;&gt;SamplerateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SamplerateLabel.Parent" xml:space="preserve">
+    <value>SampleratePanel</value>
+  </data>
+  <data name="&gt;&gt;SamplerateLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SampleratePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 82</value>
+  </data>
+  <data name="SampleratePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 33</value>
+  </data>
+  <data name="SampleratePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;SampleratePanel.Name" xml:space="preserve">
+    <value>SampleratePanel</value>
+  </data>
+  <data name="&gt;&gt;SampleratePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SampleratePanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SampleratePanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AudioBitrateNLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AudioBitrateNLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 9</value>
+  </data>
+  <data name="AudioBitrateNLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 14</value>
+  </data>
+  <data name="AudioBitrateNLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="AudioBitrateNLabel.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateNLabel.Name" xml:space="preserve">
+    <value>AudioBitrateNLabel</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateNLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateNLabel.Parent" xml:space="preserve">
+    <value>BitrateNPanel</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateNLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BitrateNPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 317</value>
+  </data>
+  <data name="BitrateNPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 33</value>
+  </data>
+  <data name="BitrateNPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;BitrateNPanel.Name" xml:space="preserve">
+    <value>BitrateNPanel</value>
+  </data>
+  <data name="&gt;&gt;BitrateNPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BitrateNPanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;BitrateNPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AMRBitrateComboBox.Items" xml:space="preserve">
+    <value>4.75</value>
+  </data>
+  <data name="AMRBitrateComboBox.Items1" xml:space="preserve">
+    <value>5.15</value>
+  </data>
+  <data name="AMRBitrateComboBox.Items2" xml:space="preserve">
+    <value>5.9</value>
+  </data>
+  <data name="AMRBitrateComboBox.Items3" xml:space="preserve">
+    <value>6.7</value>
+  </data>
+  <data name="AMRBitrateComboBox.Items4" xml:space="preserve">
+    <value>7.4</value>
+  </data>
+  <data name="AMRBitrateComboBox.Items5" xml:space="preserve">
+    <value>7.95</value>
+  </data>
+  <data name="AMRBitrateComboBox.Items6" xml:space="preserve">
+    <value>10.2</value>
+  </data>
+  <data name="AMRBitrateComboBox.Items7" xml:space="preserve">
+    <value>12.2</value>
+  </data>
+  <data name="AMRBitrateComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 8</value>
+  </data>
+  <data name="AMRBitrateComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 22</value>
+  </data>
+  <data name="AMRBitrateComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;AMRBitrateComboBox.Name" xml:space="preserve">
+    <value>AMRBitrateComboBox</value>
+  </data>
+  <data name="&gt;&gt;AMRBitrateComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AMRBitrateComboBox.Parent" xml:space="preserve">
+    <value>AAMRBitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AMRBitrateComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AMRBitrateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
+  <data name="AMRBitrateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="AMRBitrateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="AMRBitrateLabel.Text" xml:space="preserve">
+    <value>비트레이트:</value>
+  </data>
+  <data name="AMRBitrateLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;AMRBitrateLabel.Name" xml:space="preserve">
+    <value>AMRBitrateLabel</value>
+  </data>
+  <data name="&gt;&gt;AMRBitrateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AMRBitrateLabel.Parent" xml:space="preserve">
+    <value>AAMRBitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AMRBitrateLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 9</value>
+  </data>
+  <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 14</value>
+  </data>
+  <data name="Label10.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="Label10.Text" xml:space="preserve">
+    <value>Kbit/s</value>
+  </data>
+  <data name="&gt;&gt;Label10.Name" xml:space="preserve">
+    <value>Label10</value>
+  </data>
+  <data name="&gt;&gt;Label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label10.Parent" xml:space="preserve">
+    <value>AAMRBitratePanel</value>
+  </data>
+  <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AAMRBitratePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 274</value>
+  </data>
+  <data name="AAMRBitratePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 33</value>
+  </data>
+  <data name="AAMRBitratePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;AAMRBitratePanel.Name" xml:space="preserve">
+    <value>AAMRBitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AAMRBitratePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AAMRBitratePanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateComboBox.Name" xml:space="preserve">
+    <value>AudioBitrateComboBox</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateComboBox.Parent" xml:space="preserve">
+    <value>AbitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateLabel.Name" xml:space="preserve">
+    <value>AudioBitrateLabel</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateLabel.Parent" xml:space="preserve">
+    <value>AbitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>AbitratePanel</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AbitratePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 50</value>
+  </data>
+  <data name="AbitratePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 33</value>
+  </data>
+  <data name="AbitratePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;AbitratePanel.Name" xml:space="preserve">
+    <value>AbitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AbitratePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AbitratePanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AbitratePanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 9</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 14</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>322, 9</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 14</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="VorbisQTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="VorbisQTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 5</value>
+  </data>
+  <data name="VorbisQTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 25</value>
+  </data>
+  <data name="VorbisQTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Name" xml:space="preserve">
+    <value>VorbisQTrackBar</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="VorbisQNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 8</value>
+  </data>
+  <data name="VorbisQNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 22</value>
+  </data>
+  <data name="VorbisQNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Name" xml:space="preserve">
+    <value>VorbisQNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="VorbisQLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
+  <data name="VorbisQLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="VorbisQLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="VorbisQLabel.Text" xml:space="preserve">
+    <value>Vorbis Q:</value>
+  </data>
+  <data name="VorbisQLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Name" xml:space="preserve">
+    <value>VorbisQLabel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="AVorbisQPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 228</value>
+  </data>
+  <data name="AVorbisQPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 33</value>
+  </data>
+  <data name="AVorbisQPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;AVorbisQPanel.Name" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;AVorbisQPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVorbisQPanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AVorbisQPanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AudioCodecComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="AudioCodecComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 22</value>
+  </data>
+  <data name="AudioCodecComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AudioCodecComboBox.Name" xml:space="preserve">
+    <value>AudioCodecComboBox</value>
+  </data>
+  <data name="&gt;&gt;AudioCodecComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioCodecComboBox.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AudioCodecComboBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ACodecLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 23</value>
+  </data>
+  <data name="ACodecLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="ACodecLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ACodecLabel.Text" xml:space="preserve">
+    <value>압축코덱:</value>
+  </data>
+  <data name="ACodecLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;ACodecLabel.Name" xml:space="preserve">
+    <value>ACodecLabel</value>
+  </data>
+  <data name="&gt;&gt;ACodecLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ACodecLabel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ACodecLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="AudioGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 10</value>
+  </data>
+  <data name="AudioGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 122</value>
+  </data>
+  <data name="AudioGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="AudioGroupBox.Text" xml:space="preserve">
+    <value>오디오</value>
+  </data>
+  <data name="&gt;&gt;AudioGroupBox.Name" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AudioGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioGroupBox.Parent" xml:space="preserve">
+    <value>AudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;AudioGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQTrackBar.Name" xml:space="preserve">
+    <value>NeroAACQTrackBar</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQTrackBar.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQTrackBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQNumericUpDown.Name" xml:space="preserve">
+    <value>NeroAACQNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQNumericUpDown.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQNumericUpDown.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQLabel.Name" xml:space="preserve">
+    <value>NeroAACQLabel</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQLabel.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACQLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;NeroAACVBRRadioButton.Name" xml:space="preserve">
+    <value>NeroAACVBRRadioButton</value>
+  </data>
+  <data name="&gt;&gt;NeroAACVBRRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACVBRRadioButton.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACVBRRadioButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;NeroAACCBRRadioButton.Name" xml:space="preserve">
+    <value>NeroAACCBRRadioButton</value>
+  </data>
+  <data name="&gt;&gt;NeroAACCBRRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACCBRRadioButton.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACCBRRadioButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;NeroAACABRRadioButton.Name" xml:space="preserve">
+    <value>NeroAACABRRadioButton</value>
+  </data>
+  <data name="&gt;&gt;NeroAACABRRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACABRRadioButton.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACABRRadioButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateTrackBar.Name" xml:space="preserve">
+    <value>NeroAACBitrateTrackBar</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateTrackBar.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateTrackBar.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Name" xml:space="preserve">
+    <value>NeroAACBitrateNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateLabel.Name" xml:space="preserve">
+    <value>NeroAACBitrateLabel</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateLabel.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACBitrateLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;NeroAACSALabel.Name" xml:space="preserve">
+    <value>NeroAACSALabel</value>
+  </data>
+  <data name="&gt;&gt;NeroAACSALabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACSALabel.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACSALabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;NeroAACProfileComboBox.Name" xml:space="preserve">
+    <value>NeroAACProfileComboBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACProfileComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACProfileComboBox.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACProfileComboBox.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;NeroAACProfileLabel.Name" xml:space="preserve">
+    <value>NeroAACProfileLabel</value>
+  </data>
+  <data name="&gt;&gt;NeroAACProfileLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACProfileLabel.Parent" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACProfileLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="NeroAACGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 250</value>
+  </data>
+  <data name="NeroAACGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 227</value>
+  </data>
+  <data name="NeroAACGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="NeroAACGroupBox.Text" xml:space="preserve">
+    <value>Nero AAC</value>
+  </data>
+  <data name="NeroAACGroupBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;NeroAACGroupBox.Name" xml:space="preserve">
+    <value>NeroAACGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NeroAACGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NeroAACGroupBox.Parent" xml:space="preserve">
+    <value>AudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;NeroAACGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;FFmpegChComboBox.Name" xml:space="preserve">
+    <value>FFmpegChComboBox</value>
+  </data>
+  <data name="&gt;&gt;FFmpegChComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFmpegChComboBox.Parent" xml:space="preserve">
+    <value>FFAudGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFmpegChComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;FFmpegChLabel.Name" xml:space="preserve">
+    <value>FFmpegChLabel</value>
+  </data>
+  <data name="&gt;&gt;FFmpegChLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFmpegChLabel.Parent" xml:space="preserve">
+    <value>FFAudGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFmpegChLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;AudioVolLabel.Name" xml:space="preserve">
+    <value>AudioVolLabel</value>
+  </data>
+  <data name="&gt;&gt;AudioVolLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioVolLabel.Parent" xml:space="preserve">
+    <value>FFAudGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AudioVolLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;AudioVolNLabel.Name" xml:space="preserve">
+    <value>AudioVolNLabel</value>
+  </data>
+  <data name="&gt;&gt;AudioVolNLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioVolNLabel.Parent" xml:space="preserve">
+    <value>FFAudGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AudioVolNLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AudioVolNumericUpDown.Name" xml:space="preserve">
+    <value>AudioVolNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;AudioVolNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioVolNumericUpDown.Parent" xml:space="preserve">
+    <value>FFAudGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AudioVolNumericUpDown.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;AudioVolButton.Name" xml:space="preserve">
+    <value>AudioVolButton</value>
+  </data>
+  <data name="&gt;&gt;AudioVolButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioVolButton.Parent" xml:space="preserve">
+    <value>FFAudGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AudioVolButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;AudioVolTrackBar.Name" xml:space="preserve">
+    <value>AudioVolTrackBar</value>
+  </data>
+  <data name="&gt;&gt;AudioVolTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioVolTrackBar.Parent" xml:space="preserve">
+    <value>FFAudGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AudioVolTrackBar.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="FFAudGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 136</value>
+  </data>
+  <data name="FFAudGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 108</value>
+  </data>
+  <data name="FFAudGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="FFAudGroupBox.Text" xml:space="preserve">
+    <value>Channel / Volume - FFmpeg</value>
+  </data>
+  <data name="&gt;&gt;FFAudGroupBox.Name" xml:space="preserve">
+    <value>FFAudGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFAudGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFAudGroupBox.Parent" xml:space="preserve">
+    <value>AudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;FFAudGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="AudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>532, 490</value>
+  </data>
+  <data name="AudioTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="AudioTabPage.Text" xml:space="preserve">
+    <value>오디오</value>
+  </data>
+  <data name="&gt;&gt;AudioTabPage.Name" xml:space="preserve">
+    <value>AudioTabPage</value>
+  </data>
+  <data name="&gt;&gt;AudioTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;AudioTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGroupBox.Name" xml:space="preserve">
+    <value>SizeEncGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGroupBox.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;SizeEncGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;FFmpegCommandGroupBox.Name" xml:space="preserve">
+    <value>FFmpegCommandGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FFmpegCommandGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FFmpegCommandGroupBox.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;FFmpegCommandGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SizeLimitGroupBox.Name" xml:space="preserve">
+    <value>SizeLimitGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SizeLimitGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeLimitGroupBox.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;SizeLimitGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;NameGroupBox.Name" xml:space="preserve">
+    <value>NameGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NameGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NameGroupBox.Parent" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;NameGroupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ETCTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="ETCTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>532, 490</value>
+  </data>
+  <data name="ETCTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ETCTabPage.Text" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="&gt;&gt;ETCTabPage.Name" xml:space="preserve">
+    <value>ETCTabPage</value>
+  </data>
+  <data name="&gt;&gt;ETCTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ETCTabPage.Parent" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;ETCTabPage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SettingTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 40</value>
+  </data>
+  <data name="SettingTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 517</value>
+  </data>
+  <data name="SettingTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SettingTabControl.Name" xml:space="preserve">
+    <value>SettingTabControl</value>
+  </data>
+  <data name="&gt;&gt;SettingTabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SettingTabControl.Parent" xml:space="preserve">
+    <value>EncSetPanel</value>
+  </data>
+  <data name="&gt;&gt;SettingTabControl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EncSetPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EncSetPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EncSetPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 600</value>
+  </data>
+  <data name="EncSetPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EncSetPanel.Name" xml:space="preserve">
+    <value>EncSetPanel</value>
+  </data>
+  <data name="&gt;&gt;EncSetPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EncSetPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EncSetPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;PSPMP4CheckBox.Name" xml:space="preserve">
     <value>PSPMP4CheckBox</value>
   </data>
@@ -511,7 +1687,7 @@
     <value>5, 452</value>
   </data>
   <data name="MP4OptsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 31</value>
+    <value>514, 31</value>
   </data>
   <data name="MP4OptsPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -619,7 +1795,7 @@
     <value>9, 344</value>
   </data>
   <data name="KeyFrameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 104</value>
+    <value>510, 104</value>
   </data>
   <data name="KeyFrameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -976,7 +2152,7 @@
     <value>9, 10</value>
   </data>
   <data name="VideoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 249</value>
+    <value>510, 249</value>
   </data>
   <data name="VideoGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1039,7 +2215,7 @@
     <value>9, 205</value>
   </data>
   <data name="AdvanOptsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 38</value>
+    <value>484, 38</value>
   </data>
   <data name="AdvanOptsPanel.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1564,7 +2740,7 @@
     <value>9, 261</value>
   </data>
   <data name="FFFPSGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 77</value>
+    <value>510, 77</value>
   </data>
   <data name="FFFPSGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1788,42 +2964,6 @@
   <data name="&gt;&gt;FramerateLabel2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>VFTabPage</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="VFTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="VFTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 490</value>
-  </data>
-  <data name="VFTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="VFTabPage.Text" xml:space="preserve">
-    <value>비디오 필터</value>
-  </data>
-  <data name="&gt;&gt;VFTabPage.Name" xml:space="preserve">
-    <value>VFTabPage</value>
-  </data>
-  <data name="&gt;&gt;VFTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VFTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;VFTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
     <value>TabPage1</value>
   </data>
@@ -1879,7 +3019,7 @@
     <value>0, 0</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 490</value>
+    <value>532, 490</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -1915,7 +3055,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 463</value>
+    <value>524, 463</value>
   </data>
   <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1987,7 +3127,7 @@
     <value>5, 5</value>
   </data>
   <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 145</value>
+    <value>510, 145</value>
   </data>
   <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -2152,7 +3292,7 @@
     <value>4, 23</value>
   </data>
   <data name="TabPage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 463</value>
+    <value>524, 463</value>
   </data>
   <data name="TabPage4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2416,7 +3556,7 @@
     <value>5, 5</value>
   </data>
   <data name="ImagePPGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 285</value>
+    <value>510, 285</value>
   </data>
   <data name="ImagePPGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -2980,7 +4120,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 463</value>
+    <value>524, 463</value>
   </data>
   <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3040,7 +4180,7 @@
     <value>5, 5</value>
   </data>
   <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 379</value>
+    <value>510, 379</value>
   </data>
   <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -3091,7 +4231,7 @@
     <value>6, 50</value>
   </data>
   <data name="hqdn3dPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 323</value>
+    <value>498, 323</value>
   </data>
   <data name="hqdn3dPanel.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -3208,7 +4348,7 @@
     <value>7, 8</value>
   </data>
   <data name="hqdn3dAutGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 190</value>
+    <value>478, 190</value>
   </data>
   <data name="hqdn3dAutGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -3490,7 +4630,7 @@
     <value>7, 200</value>
   </data>
   <data name="hqdn3dManGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 113</value>
+    <value>478, 113</value>
   </data>
   <data name="hqdn3dManGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3658,7 +4798,7 @@
     <value>4, 23</value>
   </data>
   <data name="TabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 463</value>
+    <value>524, 463</value>
   </data>
   <data name="TabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3766,7 +4906,7 @@
     <value>5, 5</value>
   </data>
   <data name="GroupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 123</value>
+    <value>510, 123</value>
   </data>
   <data name="GroupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3984,69 +5124,6 @@
   <data name="&gt;&gt;gradfunCheckBox.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;ImageGroupBox.Name" xml:space="preserve">
-    <value>ImageGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImageGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageGroupBox.Parent" xml:space="preserve">
-    <value>ImageTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImageGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;FFTurnGroupBox.Name" xml:space="preserve">
-    <value>FFTurnGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFTurnGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFTurnGroupBox.Parent" xml:space="preserve">
-    <value>ImageTabPage</value>
-  </data>
-  <data name="&gt;&gt;FFTurnGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;flipGroupBox.Name" xml:space="preserve">
-    <value>flipGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flipGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flipGroupBox.Parent" xml:space="preserve">
-    <value>ImageTabPage</value>
-  </data>
-  <data name="&gt;&gt;flipGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ImageTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="ImageTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="ImageTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 490</value>
-  </data>
-  <data name="ImageTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ImageTabPage.Text" xml:space="preserve">
-    <value>영상</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Name" xml:space="preserve">
-    <value>ImageTabPage</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;ImageTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;AspectSLabel.Name" xml:space="preserve">
     <value>AspectSLabel</value>
   </data>
@@ -4219,7 +5296,7 @@
     <value>9, 10</value>
   </data>
   <data name="ImageGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 205</value>
+    <value>510, 205</value>
   </data>
   <data name="ImageGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4664,7 +5741,7 @@
     <value>9, 291</value>
   </data>
   <data name="FFTurnGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 64</value>
+    <value>510, 64</value>
   </data>
   <data name="FFTurnGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -4841,7 +5918,7 @@
     <value>9, 224</value>
   </data>
   <data name="flipGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 58</value>
+    <value>510, 58</value>
   </data>
   <data name="flipGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -4919,549 +5996,6 @@
     <value>flipGroupBox</value>
   </data>
   <data name="&gt;&gt;vflipCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Name" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Name" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;FFAudGroupBox.Name" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFAudGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFAudGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;FFAudGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AudioTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="AudioTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 490</value>
-  </data>
-  <data name="AudioTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="AudioTabPage.Text" xml:space="preserve">
-    <value>오디오</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Name" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;AudioTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QPanel.Name" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QPanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SampleratePanel.Name" xml:space="preserve">
-    <value>SampleratePanel</value>
-  </data>
-  <data name="&gt;&gt;SampleratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SampleratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SampleratePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.Name" xml:space="preserve">
-    <value>BitrateNPanel</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Name" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Name" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Name" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Name" xml:space="preserve">
-    <value>AudioCodecComboBox</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Name" xml:space="preserve">
-    <value>ACodecLabel</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="AudioGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 10</value>
-  </data>
-  <data name="AudioGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 122</value>
-  </data>
-  <data name="AudioGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="AudioGroupBox.Text" xml:space="preserve">
-    <value>오디오</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Name" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;AudioGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
-    <value>Label7</value>
-  </data>
-  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
-    <value>Label6</value>
-  </data>
-  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel2.Name" xml:space="preserve">
-    <value>LAMEMP3QLabel2</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel2.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QComboBox.Name" xml:space="preserve">
-    <value>LAMEMP3QComboBox</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QComboBox.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QComboBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QTrackBar.Name" xml:space="preserve">
-    <value>LAMEMP3QTrackBar</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QTrackBar.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QTrackBar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Name" xml:space="preserve">
-    <value>LAMEMP3QNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QNumericUpDown.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel.Name" xml:space="preserve">
-    <value>LAMEMP3QLabel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LAMEMP3QPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 362</value>
-  </data>
-  <data name="LAMEMP3QPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 33</value>
-  </data>
-  <data name="LAMEMP3QPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QPanel.Name" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QPanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 9</value>
-  </data>
-  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="Label7.Text" xml:space="preserve">
-    <value>H</value>
-  </data>
-  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
-    <value>Label7</value>
-  </data>
-  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 9</value>
-  </data>
-  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 14</value>
-  </data>
-  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>L</value>
-  </data>
-  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
-    <value>Label6</value>
-  </data>
-  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LAMEMP3QLabel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAMEMP3QLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAMEMP3QLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>394, 9</value>
-  </data>
-  <data name="LAMEMP3QLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 14</value>
-  </data>
-  <data name="LAMEMP3QLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="LAMEMP3QLabel2.Text" xml:space="preserve">
-    <value>Kbit/s</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel2.Name" xml:space="preserve">
-    <value>LAMEMP3QLabel2</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel2.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 8</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
-  </data>
-  <data name="LAMEMP3QComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QComboBox.Name" xml:space="preserve">
-    <value>LAMEMP3QComboBox</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QComboBox.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QComboBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 5</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 25</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QTrackBar.Name" xml:space="preserve">
-    <value>LAMEMP3QTrackBar</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QTrackBar.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QTrackBar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LAMEMP3QNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 8</value>
-  </data>
-  <data name="LAMEMP3QNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
-  </data>
-  <data name="LAMEMP3QNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Name" xml:space="preserve">
-    <value>LAMEMP3QNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QNumericUpDown.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LAMEMP3QLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAMEMP3QLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 9</value>
-  </data>
-  <data name="LAMEMP3QLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="LAMEMP3QLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LAMEMP3QLabel.Text" xml:space="preserve">
-    <value>LAME MP3 Q:</value>
-  </data>
-  <data name="LAMEMP3QLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel.Name" xml:space="preserve">
-    <value>LAMEMP3QLabel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel.Parent" xml:space="preserve">
-    <value>LAMEMP3QPanel</value>
-  </data>
-  <data name="&gt;&gt;LAMEMP3QLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;SamplerateCheckBox.Name" xml:space="preserve">
-    <value>SamplerateCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SamplerateCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SamplerateCheckBox.Parent" xml:space="preserve">
-    <value>SampleratePanel</value>
-  </data>
-  <data name="&gt;&gt;SamplerateCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel2.Name" xml:space="preserve">
-    <value>SamplerateLabel2</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel2.Parent" xml:space="preserve">
-    <value>SampleratePanel</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SamplerateComboBox.Name" xml:space="preserve">
-    <value>SamplerateComboBox</value>
-  </data>
-  <data name="&gt;&gt;SamplerateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SamplerateComboBox.Parent" xml:space="preserve">
-    <value>SampleratePanel</value>
-  </data>
-  <data name="&gt;&gt;SamplerateComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel.Name" xml:space="preserve">
-    <value>SamplerateLabel</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel.Parent" xml:space="preserve">
-    <value>SampleratePanel</value>
-  </data>
-  <data name="&gt;&gt;SamplerateLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SampleratePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 82</value>
-  </data>
-  <data name="SampleratePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 33</value>
-  </data>
-  <data name="SampleratePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;SampleratePanel.Name" xml:space="preserve">
-    <value>SampleratePanel</value>
-  </data>
-  <data name="&gt;&gt;SampleratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SampleratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SampleratePanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="SamplerateCheckBox.AutoSize" type="System.Boolean, mscorlib">
@@ -5602,279 +6136,6 @@
   <data name="&gt;&gt;SamplerateLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Name" xml:space="preserve">
-    <value>AudioBitrateNLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Parent" xml:space="preserve">
-    <value>BitrateNPanel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="BitrateNPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 317</value>
-  </data>
-  <data name="BitrateNPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 33</value>
-  </data>
-  <data name="BitrateNPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.Name" xml:space="preserve">
-    <value>BitrateNPanel</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;BitrateNPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AudioBitrateNLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AudioBitrateNLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 9</value>
-  </data>
-  <data name="AudioBitrateNLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 14</value>
-  </data>
-  <data name="AudioBitrateNLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="AudioBitrateNLabel.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Name" xml:space="preserve">
-    <value>AudioBitrateNLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.Parent" xml:space="preserve">
-    <value>BitrateNPanel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateNLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Name" xml:space="preserve">
-    <value>AMRBitrateComboBox</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Name" xml:space="preserve">
-    <value>AMRBitrateLabel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Label10.Name" xml:space="preserve">
-    <value>Label10</value>
-  </data>
-  <data name="&gt;&gt;Label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label10.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AAMRBitratePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 274</value>
-  </data>
-  <data name="AAMRBitratePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 33</value>
-  </data>
-  <data name="AAMRBitratePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Name" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="AMRBitrateComboBox.Items" xml:space="preserve">
-    <value>4.75</value>
-  </data>
-  <data name="AMRBitrateComboBox.Items1" xml:space="preserve">
-    <value>5.15</value>
-  </data>
-  <data name="AMRBitrateComboBox.Items2" xml:space="preserve">
-    <value>5.9</value>
-  </data>
-  <data name="AMRBitrateComboBox.Items3" xml:space="preserve">
-    <value>6.7</value>
-  </data>
-  <data name="AMRBitrateComboBox.Items4" xml:space="preserve">
-    <value>7.4</value>
-  </data>
-  <data name="AMRBitrateComboBox.Items5" xml:space="preserve">
-    <value>7.95</value>
-  </data>
-  <data name="AMRBitrateComboBox.Items6" xml:space="preserve">
-    <value>10.2</value>
-  </data>
-  <data name="AMRBitrateComboBox.Items7" xml:space="preserve">
-    <value>12.2</value>
-  </data>
-  <data name="AMRBitrateComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 8</value>
-  </data>
-  <data name="AMRBitrateComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 22</value>
-  </data>
-  <data name="AMRBitrateComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Name" xml:space="preserve">
-    <value>AMRBitrateComboBox</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AMRBitrateLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 9</value>
-  </data>
-  <data name="AMRBitrateLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="AMRBitrateLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="AMRBitrateLabel.Text" xml:space="preserve">
-    <value>비트레이트:</value>
-  </data>
-  <data name="AMRBitrateLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Name" xml:space="preserve">
-    <value>AMRBitrateLabel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AMRBitrateLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 9</value>
-  </data>
-  <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 14</value>
-  </data>
-  <data name="Label10.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="Label10.Text" xml:space="preserve">
-    <value>Kbit/s</value>
-  </data>
-  <data name="&gt;&gt;Label10.Name" xml:space="preserve">
-    <value>Label10</value>
-  </data>
-  <data name="&gt;&gt;Label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label10.Parent" xml:space="preserve">
-    <value>AAMRBitratePanel</value>
-  </data>
-  <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateComboBox.Name" xml:space="preserve">
-    <value>AudioBitrateComboBox</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateComboBox.Parent" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateLabel.Name" xml:space="preserve">
-    <value>AudioBitrateLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateLabel.Parent" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AudioBitrateLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
-    <value>Label3</value>
-  </data>
-  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AbitratePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 50</value>
-  </data>
-  <data name="AbitratePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 33</value>
-  </data>
-  <data name="AbitratePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Name" xml:space="preserve">
-    <value>AbitratePanel</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AbitratePanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="AudioBitrateComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 8</value>
   </data>
@@ -5949,459 +6210,6 @@
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
-    <value>Label5</value>
-  </data>
-  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Name" xml:space="preserve">
-    <value>VorbisQTrackBar</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Name" xml:space="preserve">
-    <value>VorbisQNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Name" xml:space="preserve">
-    <value>VorbisQLabel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="AVorbisQPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 228</value>
-  </data>
-  <data name="AVorbisQPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 33</value>
-  </data>
-  <data name="AVorbisQPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Name" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AVorbisQPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 9</value>
-  </data>
-  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 14</value>
-  </data>
-  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>Low</value>
-  </data>
-  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
-    <value>Label5</value>
-  </data>
-  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 9</value>
-  </data>
-  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 14</value>
-  </data>
-  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>High</value>
-  </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="VorbisQTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="VorbisQTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 5</value>
-  </data>
-  <data name="VorbisQTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 25</value>
-  </data>
-  <data name="VorbisQTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Name" xml:space="preserve">
-    <value>VorbisQTrackBar</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQTrackBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="VorbisQNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 8</value>
-  </data>
-  <data name="VorbisQNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 22</value>
-  </data>
-  <data name="VorbisQNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Name" xml:space="preserve">
-    <value>VorbisQNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQNumericUpDown.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="VorbisQLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 9</value>
-  </data>
-  <data name="VorbisQLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="VorbisQLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="VorbisQLabel.Text" xml:space="preserve">
-    <value>Vorbis Q:</value>
-  </data>
-  <data name="VorbisQLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Name" xml:space="preserve">
-    <value>VorbisQLabel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.Parent" xml:space="preserve">
-    <value>AVorbisQPanel</value>
-  </data>
-  <data name="&gt;&gt;VorbisQLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="AudioCodecComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 23</value>
-  </data>
-  <data name="AudioCodecComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 22</value>
-  </data>
-  <data name="AudioCodecComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Name" xml:space="preserve">
-    <value>AudioCodecComboBox</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioCodecComboBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="ACodecLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 23</value>
-  </data>
-  <data name="ACodecLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="ACodecLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ACodecLabel.Text" xml:space="preserve">
-    <value>압축코덱:</value>
-  </data>
-  <data name="ACodecLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Name" xml:space="preserve">
-    <value>ACodecLabel</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.Parent" xml:space="preserve">
-    <value>AudioGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ACodecLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
-  </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
-  </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQTrackBar.Name" xml:space="preserve">
-    <value>NeroAACQTrackBar</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQTrackBar.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQTrackBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQNumericUpDown.Name" xml:space="preserve">
-    <value>NeroAACQNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQNumericUpDown.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQNumericUpDown.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQLabel.Name" xml:space="preserve">
-    <value>NeroAACQLabel</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQLabel.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACQLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;NeroAACVBRRadioButton.Name" xml:space="preserve">
-    <value>NeroAACVBRRadioButton</value>
-  </data>
-  <data name="&gt;&gt;NeroAACVBRRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACVBRRadioButton.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACVBRRadioButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;NeroAACCBRRadioButton.Name" xml:space="preserve">
-    <value>NeroAACCBRRadioButton</value>
-  </data>
-  <data name="&gt;&gt;NeroAACCBRRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACCBRRadioButton.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACCBRRadioButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;NeroAACABRRadioButton.Name" xml:space="preserve">
-    <value>NeroAACABRRadioButton</value>
-  </data>
-  <data name="&gt;&gt;NeroAACABRRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACABRRadioButton.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACABRRadioButton.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateTrackBar.Name" xml:space="preserve">
-    <value>NeroAACBitrateTrackBar</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateTrackBar.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateTrackBar.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Name" xml:space="preserve">
-    <value>NeroAACBitrateNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateNumericUpDown.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateLabel.Name" xml:space="preserve">
-    <value>NeroAACBitrateLabel</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateLabel.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACBitrateLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;NeroAACSALabel.Name" xml:space="preserve">
-    <value>NeroAACSALabel</value>
-  </data>
-  <data name="&gt;&gt;NeroAACSALabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACSALabel.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACSALabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileComboBox.Name" xml:space="preserve">
-    <value>NeroAACProfileComboBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileComboBox.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileComboBox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileLabel.Name" xml:space="preserve">
-    <value>NeroAACProfileLabel</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileLabel.Parent" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACProfileLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="NeroAACGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 250</value>
-  </data>
-  <data name="NeroAACGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 227</value>
-  </data>
-  <data name="NeroAACGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="NeroAACGroupBox.Text" xml:space="preserve">
-    <value>Nero AAC</value>
-  </data>
-  <data name="NeroAACGroupBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Name" xml:space="preserve">
-    <value>NeroAACGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;NeroAACGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6777,114 +6585,6 @@
   <data name="&gt;&gt;NeroAACProfileLabel.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;FFmpegChComboBox.Name" xml:space="preserve">
-    <value>FFmpegChComboBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChComboBox.Parent" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChLabel.Name" xml:space="preserve">
-    <value>FFmpegChLabel</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChLabel.Parent" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegChLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AudioVolLabel.Name" xml:space="preserve">
-    <value>AudioVolLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioVolLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolLabel.Parent" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNLabel.Name" xml:space="preserve">
-    <value>AudioVolNLabel</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNLabel.Parent" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNumericUpDown.Name" xml:space="preserve">
-    <value>AudioVolNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNumericUpDown.Parent" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolNumericUpDown.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;AudioVolButton.Name" xml:space="preserve">
-    <value>AudioVolButton</value>
-  </data>
-  <data name="&gt;&gt;AudioVolButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolButton.Parent" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;AudioVolTrackBar.Name" xml:space="preserve">
-    <value>AudioVolTrackBar</value>
-  </data>
-  <data name="&gt;&gt;AudioVolTrackBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AudioVolTrackBar.Parent" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AudioVolTrackBar.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="FFAudGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 136</value>
-  </data>
-  <data name="FFAudGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 108</value>
-  </data>
-  <data name="FFAudGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="FFAudGroupBox.Text" xml:space="preserve">
-    <value>Channel / Volume - FFmpeg</value>
-  </data>
-  <data name="&gt;&gt;FFAudGroupBox.Name" xml:space="preserve">
-    <value>FFAudGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFAudGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFAudGroupBox.Parent" xml:space="preserve">
-    <value>AudioTabPage</value>
-  </data>
-  <data name="&gt;&gt;FFAudGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="FFmpegChComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 22</value>
   </data>
@@ -7056,90 +6756,6 @@
   <data name="&gt;&gt;AudioVolTrackBar.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;SizeEncGroupBox.Name" xml:space="preserve">
-    <value>SizeEncGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGroupBox.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;SizeEncGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandGroupBox.Name" xml:space="preserve">
-    <value>FFmpegCommandGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandGroupBox.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;FFmpegCommandGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitGroupBox.Name" xml:space="preserve">
-    <value>SizeLimitGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitGroupBox.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;SizeLimitGroupBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;NameGroupBox.Name" xml:space="preserve">
-    <value>NameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NameGroupBox.Parent" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;NameGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ETCTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="ETCTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 490</value>
-  </data>
-  <data name="ETCTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="ETCTabPage.Text" xml:space="preserve">
-    <value>기타</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Name" xml:space="preserve">
-    <value>ETCTabPage</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.Parent" xml:space="preserve">
-    <value>SettingTabControl</value>
-  </data>
-  <data name="&gt;&gt;ETCTabPage.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;SizeButton.Name" xml:space="preserve">
     <value>SizeButton</value>
   </data>
@@ -7216,7 +6832,7 @@
     <value>7, 176</value>
   </data>
   <data name="SizeEncGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 88</value>
+    <value>510, 88</value>
   </data>
   <data name="SizeEncGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -7435,7 +7051,7 @@
     <value>7, 270</value>
   </data>
   <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 74</value>
+    <value>510, 74</value>
   </data>
   <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -7537,7 +7153,7 @@
     <value>7, 350</value>
   </data>
   <data name="FFmpegCommandGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 57</value>
+    <value>510, 57</value>
   </data>
   <data name="FFmpegCommandGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -7558,10 +7174,10 @@
     <value>2</value>
   </data>
   <data name="FFmpegCommandButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 19</value>
+    <value>337, 19</value>
   </data>
   <data name="FFmpegCommandButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 27</value>
+    <value>158, 27</value>
   </data>
   <data name="FFmpegCommandButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -7585,7 +7201,7 @@
     <value>15, 22</value>
   </data>
   <data name="FFmpegCommandTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 22</value>
+    <value>316, 22</value>
   </data>
   <data name="FFmpegCommandTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -7642,7 +7258,7 @@
     <value>9, 116</value>
   </data>
   <data name="SizeLimitGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>477, 54</value>
+    <value>508, 54</value>
   </data>
   <data name="SizeLimitGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -7810,7 +7426,7 @@
     <value>9, 10</value>
   </data>
   <data name="NameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 100</value>
+    <value>510, 100</value>
   </data>
   <data name="NameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8065,7 +7681,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>535, 600</value>
+    <value>564, 600</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
