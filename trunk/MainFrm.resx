@@ -879,9 +879,6 @@
   <data name="&gt;&gt;BListButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="AVTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
   <data name="AVTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 8</value>
   </data>
@@ -895,7 +892,7 @@
     <value>Vertical</value>
   </data>
   <data name="AVTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 182</value>
+    <value>207, 171</value>
   </data>
   <data name="AVTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3233,7 +3230,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>69</value>
+    <value>82</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 14</value>

@@ -436,8 +436,8 @@ Partial Class MainFrm
         '
         'AVTextBox
         '
-        resources.ApplyResources(Me.AVTextBox, "AVTextBox")
         Me.AVTextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.AVTextBox, "AVTextBox")
         Me.AVTextBox.Name = "AVTextBox"
         Me.AVTextBox.ReadOnly = True
         '
