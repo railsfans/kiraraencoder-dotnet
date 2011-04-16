@@ -705,9 +705,9 @@ Public Class MainFrm
             CommandV = Replace(CommandV, Chr(34), "")
         Else
             OpenFileDialog1.FileName = ""
-            OpenFileDialog1.Filter = "Supported Files|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.tta;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.webm;*.wma;*.wv|" & _
+            OpenFileDialog1.Filter = "Supported Files|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.tta;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.aac;*.ac3;*.amr;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.webm;*.wma;*.wv|" & _
                                      "Video Files|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.webm|" & _
-                                     "Audio Files|*.avs;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.tta;*.wav;*.wma;*.wv|" & _
+                                     "Audio Files|*.avs;*.aac;*.ac3;*.amr;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.tta;*.wav;*.wma;*.wv|" & _
                                      "All Files(*.*)|*.*"
             OpenFileDialog1.ShowDialog(Me)
             If OpenFileDialog1.FileName = "" Then
@@ -747,7 +747,7 @@ Public Class MainFrm
             Com_Object = Nothing
 
             '오디오인지 체크.. 오디오면은 렌더러랑 자막 부분 스킵
-            If LCase(Strings.Right(FilePathV, 4)) = ".aac" OrElse LCase(Strings.Right(FilePathV, 4)) = ".ac3" OrElse LCase(Strings.Right(FilePathV, 4)) = ".dts" _
+            If LCase(Strings.Right(FilePathV, 4)) = ".aac" OrElse LCase(Strings.Right(FilePathV, 4)) = ".ac3" OrElse LCase(Strings.Right(FilePathV, 4)) = ".amr" OrElse LCase(Strings.Right(FilePathV, 4)) = ".dts" _
             Or LCase(Strings.Right(FilePathV, 5)) = ".flac" OrElse LCase(Strings.Right(FilePathV, 4)) = ".m4a" OrElse LCase(Strings.Right(FilePathV, 4)) = ".mid" _
             Or LCase(Strings.Right(FilePathV, 5)) = ".midi" OrElse LCase(Strings.Right(FilePathV, 4)) = ".mp2" OrElse LCase(Strings.Right(FilePathV, 4)) = ".mp3" _
             Or LCase(Strings.Right(FilePathV, 4)) = ".ogg" OrElse LCase(Strings.Right(FilePathV, 3)) = ".ra" OrElse LCase(Strings.Right(FilePathV, 4)) = ".ram" _
@@ -1249,9 +1249,9 @@ Public Class MainFrm
     Private Sub OpenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OpenToolStripMenuItem.Click
 
         OpenFileDialog1.FileName = ""
-        OpenFileDialog1.Filter = "Supported Files|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.tta;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.webm;*.wma;*.wv|" & _
+        OpenFileDialog1.Filter = "Supported Files|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.tta;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.aac;*.ac3;*.amr;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.wav;*.webm;*.wma;*.wv|" & _
                                  "Video Files|*.avs;*.3g2;*.3gp;*.asf;*.avi;*.flv;*.k3g;*.m2t;*.m2ts;*.mkv;*.mov;*.mpg;*.mpeg;*.mp4;*.mts;*.rm;*.skm;*.wmv;*.tp;*.trp;*.ts;*.m2ts;*.m2v;*.mpv;*.pva;*.rmvb;*.vob;*.vro;*.webm|" & _
-                                 "Audio Files|*.avs;*.aac;*.ac3;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.tta;*.wav;*.wma;*.wv|" & _
+                                 "Audio Files|*.avs;*.aac;*.ac3;*.amr;*.dts;*.flac;*.m4a;*.mp2;*.mp3;*.mp4;*.ogg;*.ra;*.ram;*.tta;*.wav;*.wma;*.wv|" & _
                                  "All Files(*.*)|*.*"
         OpenFileDialog1.ShowDialog(Me)
         If OpenFileDialog1.FileName = "" Then
