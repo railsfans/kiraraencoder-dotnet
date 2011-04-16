@@ -2282,13 +2282,9 @@ ENC_STOP:
         MainFrm.EncSetButton.Enabled = True
         MainFrm.EncSButton.Enabled = True
         MainFrm.StreamSelToolStripMenuItem.Enabled = True
-        MainFrm.LangToolStripMenuItem.Enabled = True
         MainFrm.SetFolderButton.Enabled = True
-        MainFrm.DecSToolStripMenuItem.Enabled = True
-        MainFrm.AviSynthToolStripMenuItem.Enabled = True
-        MainFrm.ConfigToolStripMenuItem.Enabled = True
         MainFrm.SavePathTextBox.ReadOnly = False
-
+        MainFrm.MenuStrip1.Enabled = True
         '********************************
 
         '보이기

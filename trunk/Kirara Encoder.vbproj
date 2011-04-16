@@ -410,6 +410,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />
+    <None Include="TrayIcon.ico" />
     <None Include="Resources\bottom.PNG" />
     <None Include="Resources\fa.PNG" />
     <None Include="Resources\fb.PNG" />

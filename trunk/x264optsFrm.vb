@@ -775,19 +775,19 @@ LANG_SKIP:
     End Sub
 
     Private Sub x264PictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles x264PictureBox.Click
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://www.videolan.org/developers/x264.html")
-        ie = Nothing
+        Try
+            System.Diagnostics.Process.Start("http://www.videolan.org/developers/x264.html")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 
     Private Sub ffmpegPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ffmpegPictureBox.Click
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://ffmpeg.org")
-        ie = Nothing
+        Try
+            System.Diagnostics.Process.Start("http://ffmpeg.org")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 
     Private Sub ThreadsNumericUpDown_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ThreadsNumericUpDown.LostFocus

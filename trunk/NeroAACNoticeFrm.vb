@@ -27,11 +27,11 @@ Public Class NeroAACNoticeFrm
     End Sub
 
     Private Sub DnButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DnButton.Click
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://www.nero.com/eng/downloads-nerodigital-nero-aac-codec.php")
-        ie = Nothing
+        Try
+            System.Diagnostics.Process.Start("http://www.nero.com/eng/downloads-nerodigital-nero-aac-codec.php")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 
     Private Sub OButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OButton.Click

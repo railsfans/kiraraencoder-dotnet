@@ -108,26 +108,29 @@ LANG_SKIP:
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://www.kiraraencoder.pe.kr")
-        ie = Nothing
+        Try
+            LinkLabel1.LinkVisited = True
+            System.Diagnostics.Process.Start("http://www.kiraraencoder.pe.kr")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://iriyasviel.tistory.com")
-        ie = Nothing
+        Try
+            LinkLabel2.LinkVisited = True
+            System.Diagnostics.Process.Start("http://iriyasviel.tistory.com")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 
     Private Sub LinkLabel3_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://air-enc.netii.net")
-        ie = Nothing
+        Try
+            LinkLabel3.LinkVisited = True
+            System.Diagnostics.Process.Start("http://air-enc.netii.net")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 End Class

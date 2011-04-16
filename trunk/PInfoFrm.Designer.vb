@@ -41,6 +41,9 @@ Partial Class PInfoFrm
         Me.PPanel = New System.Windows.Forms.Panel
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.Panel3 = New System.Windows.Forms.Panel
         Me.TabControl1.SuspendLayout()
         Me.InfoTabPage.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,22 +51,23 @@ Partial Class PInfoFrm
         Me.TabPage1.SuspendLayout()
         Me.PPanel.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Controls.Add(Me.InfoTabPage)
         Me.TabControl1.Controls.Add(Me.LicenseTabPage)
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         '
         'InfoTabPage
         '
-        Me.InfoTabPage.Controls.Add(Me.LinkLabel3)
-        Me.InfoTabPage.Controls.Add(Me.LinkLabel1)
-        Me.InfoTabPage.Controls.Add(Me.LinkLabel2)
+        Me.InfoTabPage.Controls.Add(Me.Panel3)
         Me.InfoTabPage.Controls.Add(Me.Label1)
         Me.InfoTabPage.Controls.Add(Me.PictureBox1)
         Me.InfoTabPage.Controls.Add(Me.VersionLabel)
@@ -152,9 +156,8 @@ Partial Class PInfoFrm
         '
         'PPanel
         '
-        Me.PPanel.Controls.Add(Me.OKBTN)
+        Me.PPanel.Controls.Add(Me.Panel1)
         Me.PPanel.Controls.Add(Me.TabControl1)
-        Me.PPanel.Controls.Add(Me.CopyrightLabel)
         resources.ApplyResources(Me.PPanel, "PPanel")
         Me.PPanel.Name = "PPanel"
         '
@@ -169,13 +172,33 @@ Partial Class PInfoFrm
         Me.InChkToolStripMenuItem.Name = "InChkToolStripMenuItem"
         resources.ApplyResources(Me.InChkToolStripMenuItem, "InChkToolStripMenuItem")
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.CopyrightLabel)
+        resources.ApplyResources(Me.Panel1, "Panel1")
+        Me.Panel1.Name = "Panel1"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.OKBTN)
+        resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.Name = "Panel2"
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.LinkLabel1)
+        Me.Panel3.Controls.Add(Me.LinkLabel3)
+        Me.Panel3.Controls.Add(Me.LinkLabel2)
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
+        '
         'PInfoFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.PPanel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -191,9 +214,13 @@ Partial Class PInfoFrm
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.PPanel.ResumeLayout(False)
-        Me.PPanel.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -216,4 +243,7 @@ Partial Class PInfoFrm
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents LinkLabel3 As System.Windows.Forms.LinkLabel
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
 End Class

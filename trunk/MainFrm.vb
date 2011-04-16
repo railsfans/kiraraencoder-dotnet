@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.04.16]"
+    Public PDATA = "[2011.04.17]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -2853,12 +2853,9 @@ UAC:
         EncSetButton.Enabled = False
         EncSButton.Enabled = False
         StreamSelToolStripMenuItem.Enabled = False
-        LangToolStripMenuItem.Enabled = False
         SetFolderButton.Enabled = False
-        DecSToolStripMenuItem.Enabled = False
-        AviSynthToolStripMenuItem.Enabled = False
-        ConfigToolStripMenuItem.Enabled = False
         SavePathTextBox.ReadOnly = True
+        MenuStrip1.Enabled = False
 
         '재생
         If shellpid <> 0 Then
@@ -2887,12 +2884,9 @@ UAC:
             EncSetButton.Enabled = True
             EncSButton.Enabled = True
             StreamSelToolStripMenuItem.Enabled = True
-            LangToolStripMenuItem.Enabled = True
             SetFolderButton.Enabled = True
-            DecSToolStripMenuItem.Enabled = True
-            AviSynthToolStripMenuItem.Enabled = True
-            ConfigToolStripMenuItem.Enabled = True
             SavePathTextBox.ReadOnly = False
+            MenuStrip1.Enabled = True
         End Try
 
     End Sub
@@ -7314,7 +7308,7 @@ RELOAD:
 
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         Try
-            PInfoFrm.Show(Me)
+            PInfoFrm.ShowDialog(Me)
         Catch ex As Exception
         End Try
     End Sub
@@ -7534,7 +7528,7 @@ RELOAD:
     End Sub
 
     Private Sub TrayLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrayLabel.Click
-        NotifyIcon.Icon = Me.Icon
+        NotifyIcon.Icon = My.Resources.TrayIcon
         NotifyIcon.Visible = True
         If EncodingFrm.EncProcBool = True Then
             EncodingFrm.Hide()
@@ -7594,11 +7588,11 @@ RELOAD:
 
     Private Sub NewVerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewVerToolStripMenuItem.Click
         '새로운 버전 다운로드
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://www.kiraraencoder.pe.kr/newverdown")
-        ie = Nothing
+        Try
+            System.Diagnostics.Process.Start("http://www.kiraraencoder.pe.kr/newverdown")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 
     Private Sub EncListListView_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles EncListListView.MouseClick

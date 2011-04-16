@@ -26,11 +26,11 @@ Public Class MPEG4optsFrm
     Dim OKBTNCLK As Boolean = False
 
     Private Sub ffmpegPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ffmpegPictureBox.Click
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://ffmpeg.org")
-        ie = Nothing
+        Try
+            System.Diagnostics.Process.Start("http://ffmpeg.org")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 
     Private Sub MaxVBTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MaxVBTextBox.KeyPress
@@ -404,10 +404,10 @@ LANG_SKIP:
     End Sub
 
     Private Sub xvidPictureBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xvidPictureBox.Click
-        Dim ie As Object
-        ie = CreateObject("InternetExplorer.Application")
-        ie.visible = True
-        ie.navigate("http://www.xvid.org")
-        ie = Nothing
+        Try
+            System.Diagnostics.Process.Start("http://www.xvid.org")
+        Catch ex As Exception
+            MessageBox.Show("Unable to open link that was clicked.")
+        End Try
     End Sub
 End Class

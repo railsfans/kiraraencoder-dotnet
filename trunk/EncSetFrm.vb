@@ -334,7 +334,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("[MP2] MPEG-1 Audio layer 2(MP2)")
             AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame")
-            AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)")
+            'AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)") 나중에 추가
             AudioCodecComboBox.Items.Add("[MP4] FAAC")
             AudioCodecComboBox.Items.Add("[M4A] FAAC")
             AudioCodecComboBox.Items.Add("[MP4] Nero AAC")
