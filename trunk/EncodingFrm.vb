@@ -154,26 +154,36 @@ Public Class EncodingFrm
                 Catch ex As Exception
                 End Try
 
-                InfoTextBox.AppendText(Replace(MsgV, vbLf, vbCrLf))
+                InfoTextBox.AppendText(Replace(MsgV, vbLf, vbCrLf)) '정보추출
+                InfoForLogTextBox.AppendText(Replace(MsgV, vbLf, vbCrLf)) '로그추출
 
                 '보여줄 부분
                 Try
-                    Dim ITBStart_Int As Integer = InStr(InfoTextBox.Text, "FFmpeg version", CompareMethod.Text)
-                    Dim ITBEnd_Int As Integer = InStrRev(InfoTextBox.Text, "size=", -1, CompareMethod.Text)
-                    If ITBStart_Int <> 0 AndAlso ITBEnd_Int <> 0 Then
-                        Dim ITBFEnd_Int As Integer = InStrRev(InfoTextBox.Text, "frame=", -1, CompareMethod.Text)
-                        Dim ITBV2 As String = ""
-                        If ITBFEnd_Int <> 0 Then
-                            ITBV2 = Strings.Left(Strings.Mid(InfoTextBox.Text, ITBStart_Int), ITBFEnd_Int - 1)
-                        Else
-                            ITBV2 = Strings.Left(Strings.Mid(InfoTextBox.Text, ITBStart_Int), ITBEnd_Int - 1)
+                    Dim ITBStart_Int As Integer = InStr(InfoForLogTextBox.Text, "FFmpeg version", CompareMethod.Text)
+                    Dim ITBQstop_Int As Integer = InStr(InfoForLogTextBox.Text, "Press [q] to stop encoding", CompareMethod.Text)
+                    If ITBStart_Int <> 0 AndAlso ITBQstop_Int <> 0 Then
+        
+                        Dim ITBV2 As String = Strings.Mid(InfoForLogTextBox.Text, ITBStart_Int)
+                        Dim ITBFrameEnd_Int As Integer = InStrRev(ITBV2, "frame=", -1, CompareMethod.Text)
+                        Dim ITBSizeEnd_Int As Integer = InStrRev(ITBV2, "size=", -1, CompareMethod.Text)
+
+                        If ITBFrameEnd_Int <> 0 Then
+                            ITBV2 = Strings.Left(ITBV2, ITBFrameEnd_Int - 1)
+                        ElseIf ITBSizeEnd_Int <> 0 Then
+                            ITBV2 = Strings.Left(ITBV2, ITBSizeEnd_Int - 1)
                         End If
+
                         'Press [q] to stop encoding
                         ITBV2 = Replace(ITBV2, "Press [q] to stop encoding", "Date " & Format(Now, "yyyy-MM-dd HH:mm:ss"))
                         PInfoTextBox.AppendText(ITBV2)
+
+                        '완료코드
+                        InfoForLogTextBox.Text = ""
+                        EncNMStartB = True '기본 로그 완료 코드 추가;
+
                     End If
                 Catch ex As Exception
-                    PInfoTextBox.AppendText(InfoTextBox.Text)
+                    PInfoTextBox.AppendText(InfoForLogTextBox.Text)
                 End Try
 
             End If

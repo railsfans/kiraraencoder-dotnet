@@ -151,7 +151,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;OutputBox_EI.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="StopButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>456, 405</value>
@@ -175,7 +175,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;StopButton.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <metadata name="IndexTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
@@ -211,7 +211,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;InfoTextBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;BitrateTXTLabel.Name" xml:space="preserve">
     <value>BitrateTXTLabel</value>
@@ -304,7 +304,7 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="BitrateTXTLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 112</value>
@@ -705,6 +705,39 @@
   <data name="&gt;&gt;LogStr.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="InfoForLogTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>660, 67</value>
+  </data>
+  <data name="InfoForLogTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="InfoForLogTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="InfoForLogTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="InfoForLogTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 28</value>
+  </data>
+  <data name="InfoForLogTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="InfoForLogTextBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;InfoForLogTextBox.Name" xml:space="preserve">
+    <value>InfoForLogTextBox</value>
+  </data>
+  <data name="&gt;&gt;InfoForLogTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InfoForLogTextBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;InfoForLogTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ImgPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 34</value>
   </data>
@@ -727,6 +760,519 @@
     <value>EncPanel</value>
   </data>
   <data name="&gt;&gt;ImgPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PInfoTextBox.Name" xml:space="preserve">
+    <value>PInfoTextBox</value>
+  </data>
+  <data name="&gt;&gt;PInfoTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PInfoTextBox.Parent" xml:space="preserve">
+    <value>InfoPanel</value>
+  </data>
+  <data name="&gt;&gt;PInfoTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;FileNameLabel.Name" xml:space="preserve">
+    <value>FileNameLabel</value>
+  </data>
+  <data name="&gt;&gt;FileNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FileNameLabel.Parent" xml:space="preserve">
+    <value>InfoPanel</value>
+  </data>
+  <data name="&gt;&gt;FileNameLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="InfoPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 34</value>
+  </data>
+  <data name="InfoPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 212</value>
+  </data>
+  <data name="InfoPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="&gt;&gt;InfoPanel.Name" xml:space="preserve">
+    <value>InfoPanel</value>
+  </data>
+  <data name="&gt;&gt;InfoPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InfoPanel.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;InfoPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DebugLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DebugLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DebugLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 45</value>
+  </data>
+  <data name="DebugLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 14</value>
+  </data>
+  <data name="DebugLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="DebugLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;DebugLabel.Name" xml:space="preserve">
+    <value>DebugLabel</value>
+  </data>
+  <data name="&gt;&gt;DebugLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DebugLabel.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;DebugLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AlertLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AlertLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 223</value>
+  </data>
+  <data name="AlertLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 14</value>
+  </data>
+  <data name="AlertLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="AlertLabel.Text" xml:space="preserve">
+    <value>선택한 출력형식은 출력 미리 보기를 지원하지 않습니다.</value>
+  </data>
+  <data name="AlertLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;AlertLabel.Name" xml:space="preserve">
+    <value>AlertLabel</value>
+  </data>
+  <data name="&gt;&gt;AlertLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AlertLabel.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;AlertLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LCopyButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LCopyButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LCopyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 405</value>
+  </data>
+  <data name="LCopyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="LCopyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="LCopyButton.Text" xml:space="preserve">
+    <value>로그 복사</value>
+  </data>
+  <data name="&gt;&gt;LCopyButton.Name" xml:space="preserve">
+    <value>LCopyButton</value>
+  </data>
+  <data name="&gt;&gt;LCopyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LCopyButton.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;LCopyButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="PreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="PreviewToolStripMenuItem.Text" xml:space="preserve">
+    <value>미리 보기</value>
+  </data>
+  <data name="LogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 20</value>
+  </data>
+  <data name="LogToolStripMenuItem.Text" xml:space="preserve">
+    <value>인코딩 로그</value>
+  </data>
+  <data name="ImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="ImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>표시 안 함</value>
+  </data>
+  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 24</value>
+  </data>
+  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="MenuStrip1.Text" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;DebugCheckBox.Name" xml:space="preserve">
+    <value>DebugCheckBox</value>
+  </data>
+  <data name="&gt;&gt;DebugCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DebugCheckBox.Parent" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;DebugCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;OutPRadioButton.Name" xml:space="preserve">
+    <value>OutPRadioButton</value>
+  </data>
+  <data name="&gt;&gt;OutPRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OutPRadioButton.Parent" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;OutPRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;InPRadioButton.Name" xml:space="preserve">
+    <value>InPRadioButton</value>
+  </data>
+  <data name="&gt;&gt;InPRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InPRadioButton.Parent" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;InPRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PreviewGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 271</value>
+  </data>
+  <data name="PreviewGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 100</value>
+  </data>
+  <data name="PreviewGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="PreviewGroupBox.Text" xml:space="preserve">
+    <value>미리 보기</value>
+  </data>
+  <data name="&gt;&gt;PreviewGroupBox.Name" xml:space="preserve">
+    <value>PreviewGroupBox</value>
+  </data>
+  <data name="&gt;&gt;PreviewGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PreviewGroupBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;PreviewGroupBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="PreviewCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PreviewCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PreviewCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 101</value>
+  </data>
+  <data name="PreviewCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 18</value>
+  </data>
+  <data name="PreviewCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="PreviewCheckBox.Text" xml:space="preserve">
+    <value>미리 보기</value>
+  </data>
+  <data name="PreviewCheckBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PreviewCheckBox.Name" xml:space="preserve">
+    <value>PreviewCheckBox</value>
+  </data>
+  <data name="&gt;&gt;PreviewCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PreviewCheckBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;PreviewCheckBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;PriorityComboBox.Name" xml:space="preserve">
+    <value>PriorityComboBox</value>
+  </data>
+  <data name="&gt;&gt;PriorityComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PriorityComboBox.Parent" xml:space="preserve">
+    <value>PriorityGroupBox</value>
+  </data>
+  <data name="&gt;&gt;PriorityComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PriorityGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 203</value>
+  </data>
+  <data name="PriorityGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 59</value>
+  </data>
+  <data name="PriorityGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="PriorityGroupBox.Text" xml:space="preserve">
+    <value>우선 순위</value>
+  </data>
+  <data name="&gt;&gt;PriorityGroupBox.Name" xml:space="preserve">
+    <value>PriorityGroupBox</value>
+  </data>
+  <data name="&gt;&gt;PriorityGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PriorityGroupBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;PriorityGroupBox.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 249</value>
+  </data>
+  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 122</value>
+  </data>
+  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="ShutdownCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ShutdownCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 379</value>
+  </data>
+  <data name="ShutdownCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 18</value>
+  </data>
+  <data name="ShutdownCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="ShutdownCheckBox.Text" xml:space="preserve">
+    <value>인코딩 완료 후 시스템 종료</value>
+  </data>
+  <data name="&gt;&gt;ShutdownCheckBox.Name" xml:space="preserve">
+    <value>ShutdownCheckBox</value>
+  </data>
+  <data name="&gt;&gt;ShutdownCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ShutdownCheckBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;ShutdownCheckBox.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 441</value>
+  </metadata>
+  <data name="EncToolStripStatusLabel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="EncToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>901, 19</value>
+  </data>
+  <data name="EncToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="CPUToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CPUToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 19</value>
+  </data>
+  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 18</value>
+  </data>
+  <data name="PCNTToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="PCNTToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 19</value>
+  </data>
+  <data name="PCNTToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 441</value>
+  </data>
+  <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 24</value>
+  </data>
+  <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="StatusStrip1.Text" xml:space="preserve">
+    <value>StatusStrip1</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Name" xml:space="preserve">
+    <value>StatusStrip1</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="SuspendResumeButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SuspendResumeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 405</value>
+  </data>
+  <data name="SuspendResumeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="SuspendResumeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="SuspendResumeButton.Text" xml:space="preserve">
+    <value>일시 정지</value>
+  </data>
+  <data name="&gt;&gt;SuspendResumeButton.Name" xml:space="preserve">
+    <value>SuspendResumeButton</value>
+  </data>
+  <data name="&gt;&gt;SuspendResumeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SuspendResumeButton.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;SuspendResumeButton.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ForceStopButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 405</value>
+  </data>
+  <data name="ForceStopButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="ForceStopButton.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="ForceStopButton.Text" xml:space="preserve">
+    <value>강제중지</value>
+  </data>
+  <data name="&gt;&gt;ForceStopButton.Name" xml:space="preserve">
+    <value>ForceStopButton</value>
+  </data>
+  <data name="&gt;&gt;ForceStopButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ForceStopButton.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;ForceStopButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="SnapshotPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SnapshotPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 35</value>
+  </data>
+  <data name="SnapshotPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 210</value>
+  </data>
+  <data name="SnapshotPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="SnapshotPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;SnapshotPictureBox.Name" xml:space="preserve">
+    <value>SnapshotPictureBox</value>
+  </data>
+  <data name="&gt;&gt;SnapshotPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SnapshotPictureBox.Parent" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;SnapshotPictureBox.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="EncPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EncPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EncPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 465</value>
+  </data>
+  <data name="EncPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;EncPanel.Name" xml:space="preserve">
+    <value>EncPanel</value>
+  </data>
+  <data name="&gt;&gt;EncPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EncPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EncPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="PInfoTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -791,495 +1337,6 @@
   </data>
   <data name="&gt;&gt;FileNameLabel.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="InfoPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 34</value>
-  </data>
-  <data name="InfoPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 212</value>
-  </data>
-  <data name="InfoPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="&gt;&gt;InfoPanel.Name" xml:space="preserve">
-    <value>InfoPanel</value>
-  </data>
-  <data name="&gt;&gt;InfoPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InfoPanel.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;InfoPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DebugLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DebugLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="DebugLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 45</value>
-  </data>
-  <data name="DebugLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 14</value>
-  </data>
-  <data name="DebugLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <data name="DebugLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;DebugLabel.Name" xml:space="preserve">
-    <value>DebugLabel</value>
-  </data>
-  <data name="&gt;&gt;DebugLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DebugLabel.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;DebugLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AlertLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AlertLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 223</value>
-  </data>
-  <data name="AlertLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 14</value>
-  </data>
-  <data name="AlertLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="AlertLabel.Text" xml:space="preserve">
-    <value>선택한 출력형식은 출력 미리 보기를 지원하지 않습니다.</value>
-  </data>
-  <data name="AlertLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;AlertLabel.Name" xml:space="preserve">
-    <value>AlertLabel</value>
-  </data>
-  <data name="&gt;&gt;AlertLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AlertLabel.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;AlertLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LCopyButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LCopyButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LCopyButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 405</value>
-  </data>
-  <data name="LCopyButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
-  </data>
-  <data name="LCopyButton.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
-  </data>
-  <data name="LCopyButton.Text" xml:space="preserve">
-    <value>로그 복사</value>
-  </data>
-  <data name="&gt;&gt;LCopyButton.Name" xml:space="preserve">
-    <value>LCopyButton</value>
-  </data>
-  <data name="&gt;&gt;LCopyButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LCopyButton.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;LCopyButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 0</value>
-  </metadata>
-  <data name="PreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="PreviewToolStripMenuItem.Text" xml:space="preserve">
-    <value>미리 보기</value>
-  </data>
-  <data name="LogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 20</value>
-  </data>
-  <data name="LogToolStripMenuItem.Text" xml:space="preserve">
-    <value>인코딩 로그</value>
-  </data>
-  <data name="ImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="ImageToolStripMenuItem.Text" xml:space="preserve">
-    <value>표시 안 함</value>
-  </data>
-  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>569, 24</value>
-  </data>
-  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>67</value>
-  </data>
-  <data name="MenuStrip1.Text" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;DebugCheckBox.Name" xml:space="preserve">
-    <value>DebugCheckBox</value>
-  </data>
-  <data name="&gt;&gt;DebugCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DebugCheckBox.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
-  </data>
-  <data name="&gt;&gt;DebugCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;OutPRadioButton.Name" xml:space="preserve">
-    <value>OutPRadioButton</value>
-  </data>
-  <data name="&gt;&gt;OutPRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OutPRadioButton.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
-  </data>
-  <data name="&gt;&gt;OutPRadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;InPRadioButton.Name" xml:space="preserve">
-    <value>InPRadioButton</value>
-  </data>
-  <data name="&gt;&gt;InPRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InPRadioButton.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
-  </data>
-  <data name="&gt;&gt;InPRadioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PreviewGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 271</value>
-  </data>
-  <data name="PreviewGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 100</value>
-  </data>
-  <data name="PreviewGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
-  </data>
-  <data name="PreviewGroupBox.Text" xml:space="preserve">
-    <value>미리 보기</value>
-  </data>
-  <data name="&gt;&gt;PreviewGroupBox.Name" xml:space="preserve">
-    <value>PreviewGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PreviewGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PreviewGroupBox.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;PreviewGroupBox.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="PreviewCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="PreviewCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="PreviewCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>598, 101</value>
-  </data>
-  <data name="PreviewCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 18</value>
-  </data>
-  <data name="PreviewCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
-  </data>
-  <data name="PreviewCheckBox.Text" xml:space="preserve">
-    <value>미리 보기</value>
-  </data>
-  <data name="PreviewCheckBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;PreviewCheckBox.Name" xml:space="preserve">
-    <value>PreviewCheckBox</value>
-  </data>
-  <data name="&gt;&gt;PreviewCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PreviewCheckBox.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;PreviewCheckBox.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;PriorityComboBox.Name" xml:space="preserve">
-    <value>PriorityComboBox</value>
-  </data>
-  <data name="&gt;&gt;PriorityComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PriorityComboBox.Parent" xml:space="preserve">
-    <value>PriorityGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PriorityComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PriorityGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 203</value>
-  </data>
-  <data name="PriorityGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 59</value>
-  </data>
-  <data name="PriorityGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="PriorityGroupBox.Text" xml:space="preserve">
-    <value>우선 순위</value>
-  </data>
-  <data name="&gt;&gt;PriorityGroupBox.Name" xml:space="preserve">
-    <value>PriorityGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PriorityGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PriorityGroupBox.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;PriorityGroupBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 249</value>
-  </data>
-  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 122</value>
-  </data>
-  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="ShutdownCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ShutdownCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 379</value>
-  </data>
-  <data name="ShutdownCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 18</value>
-  </data>
-  <data name="ShutdownCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
-  <data name="ShutdownCheckBox.Text" xml:space="preserve">
-    <value>인코딩 완료 후 시스템 종료</value>
-  </data>
-  <data name="&gt;&gt;ShutdownCheckBox.Name" xml:space="preserve">
-    <value>ShutdownCheckBox</value>
-  </data>
-  <data name="&gt;&gt;ShutdownCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ShutdownCheckBox.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;ShutdownCheckBox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 441</value>
-  </metadata>
-  <data name="EncToolStripStatusLabel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="EncToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>704, 19</value>
-  </data>
-  <data name="EncToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="CPUToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="CPUToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 19</value>
-  </data>
-  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 18</value>
-  </data>
-  <data name="PCNTToolStripStatusLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="PCNTToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 19</value>
-  </data>
-  <data name="PCNTToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 441</value>
-  </data>
-  <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>569, 24</value>
-  </data>
-  <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
-  </data>
-  <data name="StatusStrip1.Text" xml:space="preserve">
-    <value>StatusStrip1</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip1.Name" xml:space="preserve">
-    <value>StatusStrip1</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip1.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="SuspendResumeButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="SuspendResumeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 405</value>
-  </data>
-  <data name="SuspendResumeButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
-  </data>
-  <data name="SuspendResumeButton.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="SuspendResumeButton.Text" xml:space="preserve">
-    <value>일시 정지</value>
-  </data>
-  <data name="&gt;&gt;SuspendResumeButton.Name" xml:space="preserve">
-    <value>SuspendResumeButton</value>
-  </data>
-  <data name="&gt;&gt;SuspendResumeButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SuspendResumeButton.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;SuspendResumeButton.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="ForceStopButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>350, 405</value>
-  </data>
-  <data name="ForceStopButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
-  </data>
-  <data name="ForceStopButton.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
-  </data>
-  <data name="ForceStopButton.Text" xml:space="preserve">
-    <value>강제중지</value>
-  </data>
-  <data name="&gt;&gt;ForceStopButton.Name" xml:space="preserve">
-    <value>ForceStopButton</value>
-  </data>
-  <data name="&gt;&gt;ForceStopButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ForceStopButton.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;ForceStopButton.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="SnapshotPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SnapshotPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 35</value>
-  </data>
-  <data name="SnapshotPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 210</value>
-  </data>
-  <data name="SnapshotPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="SnapshotPictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="&gt;&gt;SnapshotPictureBox.Name" xml:space="preserve">
-    <value>SnapshotPictureBox</value>
-  </data>
-  <data name="&gt;&gt;SnapshotPictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SnapshotPictureBox.Parent" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;SnapshotPictureBox.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="EncPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="EncPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="EncPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>569, 465</value>
-  </data>
-  <data name="EncPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="&gt;&gt;EncPanel.Name" xml:space="preserve">
-    <value>EncPanel</value>
-  </data>
-  <data name="&gt;&gt;EncPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EncPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;EncPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="DebugCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1408,7 +1465,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>569, 465</value>
+    <value>571, 465</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

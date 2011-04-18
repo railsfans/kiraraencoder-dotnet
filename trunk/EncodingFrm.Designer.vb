@@ -45,13 +45,13 @@ Partial Class EncodingFrm
         Me.PositionDurationLabel = New System.Windows.Forms.Label
         Me.LogStr = New System.Windows.Forms.Label
         Me.EncPanel = New System.Windows.Forms.Panel
-        Me.AlertLabel = New System.Windows.Forms.Label
-        Me.LCopyButton = New System.Windows.Forms.Button
         Me.ImgPanel = New System.Windows.Forms.Panel
         Me.InfoPanel = New System.Windows.Forms.Panel
         Me.PInfoTextBox = New System.Windows.Forms.TextBox
         Me.FileNameLabel = New System.Windows.Forms.Label
         Me.DebugLabel = New System.Windows.Forms.Label
+        Me.AlertLabel = New System.Windows.Forms.Label
+        Me.LCopyButton = New System.Windows.Forms.Button
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.PreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.LogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -78,6 +78,7 @@ Partial Class EncodingFrm
         Me.SnapshotTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SFTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SlideTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.InfoForLogTextBox = New System.Windows.Forms.TextBox
         Me.GroupBox1.SuspendLayout()
         Me.EncPanel.SuspendLayout()
         Me.InfoPanel.SuspendLayout()
@@ -205,6 +206,7 @@ Partial Class EncodingFrm
         '
         'EncPanel
         '
+        Me.EncPanel.Controls.Add(Me.InfoForLogTextBox)
         Me.EncPanel.Controls.Add(Me.ImgPanel)
         Me.EncPanel.Controls.Add(Me.InfoPanel)
         Me.EncPanel.Controls.Add(Me.DebugLabel)
@@ -226,17 +228,6 @@ Partial Class EncodingFrm
         Me.EncPanel.Controls.Add(Me.SnapshotPictureBox)
         resources.ApplyResources(Me.EncPanel, "EncPanel")
         Me.EncPanel.Name = "EncPanel"
-        '
-        'AlertLabel
-        '
-        resources.ApplyResources(Me.AlertLabel, "AlertLabel")
-        Me.AlertLabel.Name = "AlertLabel"
-        '
-        'LCopyButton
-        '
-        resources.ApplyResources(Me.LCopyButton, "LCopyButton")
-        Me.LCopyButton.Name = "LCopyButton"
-        Me.LCopyButton.UseVisualStyleBackColor = True
         '
         'ImgPanel
         '
@@ -269,6 +260,17 @@ Partial Class EncodingFrm
         '
         resources.ApplyResources(Me.DebugLabel, "DebugLabel")
         Me.DebugLabel.Name = "DebugLabel"
+        '
+        'AlertLabel
+        '
+        resources.ApplyResources(Me.AlertLabel, "AlertLabel")
+        Me.AlertLabel.Name = "AlertLabel"
+        '
+        'LCopyButton
+        '
+        resources.ApplyResources(Me.LCopyButton, "LCopyButton")
+        Me.LCopyButton.Name = "LCopyButton"
+        Me.LCopyButton.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -430,6 +432,13 @@ Partial Class EncodingFrm
         '
         Me.SlideTimer.Interval = 50
         '
+        'InfoForLogTextBox
+        '
+        Me.InfoForLogTextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.InfoForLogTextBox, "InfoForLogTextBox")
+        Me.InfoForLogTextBox.Name = "InfoForLogTextBox"
+        Me.InfoForLogTextBox.ReadOnly = True
+        '
         'EncodingFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -512,4 +521,5 @@ Partial Class EncodingFrm
     Friend WithEvents ImageToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LCopyButton As System.Windows.Forms.Button
     Friend WithEvents AlertLabel As System.Windows.Forms.Label
+    Friend WithEvents InfoForLogTextBox As System.Windows.Forms.TextBox
 End Class

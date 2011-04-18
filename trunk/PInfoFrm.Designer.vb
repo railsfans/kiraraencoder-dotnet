@@ -25,8 +25,9 @@ Partial Class PInfoFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PInfoFrm))
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.InfoTabPage = New System.Windows.Forms.TabPage
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel
+        Me.Panel3 = New System.Windows.Forms.Panel
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel
         Me.Label1 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
@@ -39,21 +40,20 @@ Partial Class PInfoFrm
         Me.CopyrightLabel = New System.Windows.Forms.Label
         Me.OKBTN = New System.Windows.Forms.Button
         Me.PPanel = New System.Windows.Forms.Panel
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
-        Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.Panel2 = New System.Windows.Forms.Panel
-        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
+        Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TabControl1.SuspendLayout()
         Me.InfoTabPage.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LicenseTabPage.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.PPanel.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -76,17 +76,25 @@ Partial Class PInfoFrm
         Me.InfoTabPage.Name = "InfoTabPage"
         Me.InfoTabPage.UseVisualStyleBackColor = True
         '
-        'LinkLabel3
+        'Panel3
         '
-        resources.ApplyResources(Me.LinkLabel3, "LinkLabel3")
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.TabStop = True
+        Me.Panel3.Controls.Add(Me.LinkLabel1)
+        Me.Panel3.Controls.Add(Me.LinkLabel3)
+        Me.Panel3.Controls.Add(Me.LinkLabel2)
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
         '
         'LinkLabel1
         '
         resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.TabStop = True
+        '
+        'LinkLabel3
+        '
+        resources.ApplyResources(Me.LinkLabel3, "LinkLabel3")
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.TabStop = True
         '
         'LinkLabel2
         '
@@ -161,17 +169,6 @@ Partial Class PInfoFrm
         resources.ApplyResources(Me.PPanel, "PPanel")
         Me.PPanel.Name = "PPanel"
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InChkToolStripMenuItem})
-        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
-        Me.MenuStrip1.Name = "MenuStrip1"
-        '
-        'InChkToolStripMenuItem
-        '
-        Me.InChkToolStripMenuItem.Name = "InChkToolStripMenuItem"
-        resources.ApplyResources(Me.InChkToolStripMenuItem, "InChkToolStripMenuItem")
-        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -185,13 +182,16 @@ Partial Class PInfoFrm
         resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
         '
-        'Panel3
+        'MenuStrip1
         '
-        Me.Panel3.Controls.Add(Me.LinkLabel1)
-        Me.Panel3.Controls.Add(Me.LinkLabel3)
-        Me.Panel3.Controls.Add(Me.LinkLabel2)
-        resources.ApplyResources(Me.Panel3, "Panel3")
-        Me.Panel3.Name = "Panel3"
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InChkToolStripMenuItem})
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
+        Me.MenuStrip1.Name = "MenuStrip1"
+        '
+        'InChkToolStripMenuItem
+        '
+        Me.InChkToolStripMenuItem.Name = "InChkToolStripMenuItem"
+        resources.ApplyResources(Me.InChkToolStripMenuItem, "InChkToolStripMenuItem")
         '
         'PInfoFrm
         '
@@ -208,19 +208,19 @@ Partial Class PInfoFrm
         Me.TabControl1.ResumeLayout(False)
         Me.InfoTabPage.ResumeLayout(False)
         Me.InfoTabPage.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LicenseTabPage.ResumeLayout(False)
         Me.LicenseTabPage.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.PPanel.ResumeLayout(False)
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
