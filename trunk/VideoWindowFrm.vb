@@ -30,7 +30,7 @@ Public Class VideoWindowFrm
     Dim GETIMG As Boolean = False
     Public TR As Boolean = False
     Dim TTIME As String = ""
-
+    Dim RealFrameI As Integer = 0
 #Region "코어"
 
     Private Sub img_cleanup()
@@ -209,6 +209,9 @@ LANG_SKIP:
             End If
             BitmapV.UnlockBits(BitmapDataV)
             BitmapV.RotateFlip(RotateFlipType.Rotate180FlipX)
+
+            RealFrameI = frameV
+            FrameI = frameV
         Catch ex As Exception
             MsgBox(ex.Message)
             Me.Close()
@@ -218,6 +221,11 @@ LANG_SKIP:
     End Sub
 
     Private Sub RealtimeTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RealtimeTimer.Tick
+
+        'FrameI CHK
+        If RealFrameI <> FrameI Then
+            FrameI = RealFrameI
+        End If
 
         If FrameI <= VideoTrackBar.Maximum Then
             VideoTrackBar.Value = FrameI
@@ -305,18 +313,21 @@ LANG_SKIP:
     End Sub
 
     Private Sub PFButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PFButton.Click
+        If GETIMG = True Then Exit Sub
         FrameTimer.Enabled = False
         If FrameI > 0 Then FrameI -= 1
         GET_IMAGE(FrameI)
     End Sub
 
     Private Sub NFButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NFButton.Click
+        If GETIMG = True Then Exit Sub
         FrameTimer.Enabled = False
         If FrameI < VideoTrackBar.Maximum Then FrameI += 1
         GET_IMAGE(FrameI)
     End Sub
 
     Private Sub PPFButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PPFButton.Click
+        If GETIMG = True Then Exit Sub
         FrameTimer.Enabled = False
         If FrameI > 0 Then
             FrameI -= 1000 / FrameTimer.Interval
@@ -326,6 +337,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub NNFButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NNFButton.Click
+        If GETIMG = True Then Exit Sub
         FrameTimer.Enabled = False
         If FrameI < VideoTrackBar.Maximum Then
             FrameI += 1000 / FrameTimer.Interval

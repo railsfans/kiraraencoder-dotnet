@@ -211,13 +211,13 @@
     <value>17, 17</value>
   </metadata>
   <data name="MoveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 20</value>
+    <value>43, 20</value>
   </data>
   <data name="MoveToolStripMenuItem.Text" xml:space="preserve">
     <value>이동</value>
   </data>
   <data name="SizeModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 20</value>
+    <value>83, 20</value>
   </data>
   <data name="SizeModeToolStripMenuItem.Text" xml:space="preserve">
     <value>사이즈 모드</value>

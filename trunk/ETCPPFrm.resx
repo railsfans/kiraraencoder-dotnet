@@ -117,7 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;RatePCheckBox.Name" xml:space="preserve">
+    <value>RatePCheckBox</value>
+  </data>
+  <data name="&gt;&gt;RatePCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RatePCheckBox.Parent" xml:space="preserve">
+    <value>RateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;RatePCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;RateCheckBox.Name" xml:space="preserve">
+    <value>RateCheckBox</value>
+  </data>
+  <data name="&gt;&gt;RateCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RateCheckBox.Parent" xml:space="preserve">
+    <value>RateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;RateCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;RateNumericUpDown.Name" xml:space="preserve">
+    <value>RateNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;RateNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RateNumericUpDown.Parent" xml:space="preserve">
+    <value>RateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;RateNumericUpDown.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="RateGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 12</value>
+  </data>
+  <data name="RateGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>407, 61</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="RateGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="RateGroupBox.Text" xml:space="preserve">
+    <value>재생 속도</value>
+  </data>
+  <data name="&gt;&gt;RateGroupBox.Name" xml:space="preserve">
+    <value>RateGroupBox</value>
+  </data>
+  <data name="&gt;&gt;RateGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RateGroupBox.Parent" xml:space="preserve">
+    <value>EPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;RateGroupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="RatePCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -128,7 +189,6 @@
   <data name="RatePCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RatePCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 25</value>
   </data>
@@ -204,35 +264,11 @@
   <data name="&gt;&gt;RateNumericUpDown.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="RateGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 12</value>
-  </data>
-  <data name="RateGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>407, 61</value>
-  </data>
-  <data name="RateGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="RateGroupBox.Text" xml:space="preserve">
-    <value>재생 속도</value>
-  </data>
-  <data name="&gt;&gt;RateGroupBox.Name" xml:space="preserve">
-    <value>RateGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RateGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RateGroupBox.Parent" xml:space="preserve">
-    <value>EPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;RateGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="DefBTN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="DefBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 491</value>
+    <value>12, 494</value>
   </data>
   <data name="DefBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -259,7 +295,7 @@
     <value>NoControl</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 491</value>
+    <value>342, 494</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -286,7 +322,7 @@
     <value>NoControl</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 491</value>
+    <value>448, 494</value>
   </data>
   <data name="CancelBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -434,6 +470,483 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;Logo0FrameTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;LogoPanel.Name" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoPanel.Parent" xml:space="preserve">
+    <value>LogoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LogoPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LogoCheckBox.Name" xml:space="preserve">
+    <value>LogoCheckBox</value>
+  </data>
+  <data name="&gt;&gt;LogoCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoCheckBox.Parent" xml:space="preserve">
+    <value>LogoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LogoCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LogoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 79</value>
+  </data>
+  <data name="LogoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>535, 351</value>
+  </data>
+  <data name="LogoGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="LogoGroupBox.Text" xml:space="preserve">
+    <value>로고</value>
+  </data>
+  <data name="&gt;&gt;LogoGroupBox.Name" xml:space="preserve">
+    <value>LogoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LogoGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoGroupBox.Parent" xml:space="preserve">
+    <value>EPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;LogoGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;reverseCheckBox.Name" xml:space="preserve">
+    <value>reverseCheckBox</value>
+  </data>
+  <data name="&gt;&gt;reverseCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reverseCheckBox.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;reverseCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 436</value>
+  </data>
+  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>535, 52</value>
+  </data>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>EPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="EPP_Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EPP_Panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EPP_Panel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>565, 531</value>
+  </data>
+  <data name="EPP_Panel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;EPP_Panel.Name" xml:space="preserve">
+    <value>EPP_Panel</value>
+  </data>
+  <data name="&gt;&gt;EPP_Panel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EPP_Panel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EPP_Panel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ModeComboBox.Name" xml:space="preserve">
+    <value>ModeComboBox</value>
+  </data>
+  <data name="&gt;&gt;ModeComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModeComboBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;ModeComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ModeLabel.Name" xml:space="preserve">
+    <value>ModeLabel</value>
+  </data>
+  <data name="&gt;&gt;ModeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModeLabel.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;ModeLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaLabel.Name" xml:space="preserve">
+    <value>LogoTrPaLabel</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaLabel.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LAlignmentGroupBox.Name" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignmentGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignmentGroupBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LAlignmentGroupBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LogoImgLabel.Name" xml:space="preserve">
+    <value>LogoImgLabel</value>
+  </data>
+  <data name="&gt;&gt;LogoImgLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoImgLabel.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoImgLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;fadeoutNumericUpDown.Name" xml:space="preserve">
+    <value>fadeoutNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;fadeoutNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fadeoutNumericUpDown.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;fadeoutNumericUpDown.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;LSMTextBox.Name" xml:space="preserve">
+    <value>LSMTextBox</value>
+  </data>
+  <data name="&gt;&gt;LSMTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSMTextBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LSMTextBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;LSP2Label.Name" xml:space="preserve">
+    <value>LSP2Label</value>
+  </data>
+  <data name="&gt;&gt;LSP2Label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSP2Label.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LSP2Label.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;fadeoutLabel.Name" xml:space="preserve">
+    <value>fadeoutLabel</value>
+  </data>
+  <data name="&gt;&gt;fadeoutLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fadeoutLabel.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;fadeoutLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;LSP1Label.Name" xml:space="preserve">
+    <value>LSP1Label</value>
+  </data>
+  <data name="&gt;&gt;LSP1Label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSP1Label.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LSP1Label.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;LECheckBox.Name" xml:space="preserve">
+    <value>LECheckBox</value>
+  </data>
+  <data name="&gt;&gt;LECheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LECheckBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LECheckBox.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;fadeinNumericUpDown.Name" xml:space="preserve">
+    <value>fadeinNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;fadeinNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fadeinNumericUpDown.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;fadeinNumericUpDown.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;LSHTextBox.Name" xml:space="preserve">
+    <value>LSHTextBox</value>
+  </data>
+  <data name="&gt;&gt;LSHTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSHTextBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LSHTextBox.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LEHTextBox.Name" xml:space="preserve">
+    <value>LEHTextBox</value>
+  </data>
+  <data name="&gt;&gt;LEHTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LEHTextBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LEHTextBox.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;fadeinLabel.Name" xml:space="preserve">
+    <value>fadeinLabel</value>
+  </data>
+  <data name="&gt;&gt;fadeinLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fadeinLabel.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;fadeinLabel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;LSCheckBox.Name" xml:space="preserve">
+    <value>LSCheckBox</value>
+  </data>
+  <data name="&gt;&gt;LSCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSCheckBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LSCheckBox.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;LEP1Label.Name" xml:space="preserve">
+    <value>LEP1Label</value>
+  </data>
+  <data name="&gt;&gt;LEP1Label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LEP1Label.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LEP1Label.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;FadeCheckBox.Name" xml:space="preserve">
+    <value>FadeCheckBox</value>
+  </data>
+  <data name="&gt;&gt;FadeCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FadeCheckBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;FadeCheckBox.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;AlphaCheckBox.Name" xml:space="preserve">
+    <value>AlphaCheckBox</value>
+  </data>
+  <data name="&gt;&gt;AlphaCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AlphaCheckBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;AlphaCheckBox.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;LEMTextBox.Name" xml:space="preserve">
+    <value>LEMTextBox</value>
+  </data>
+  <data name="&gt;&gt;LEMTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LEMTextBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LEMTextBox.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaTrackBar.Name" xml:space="preserve">
+    <value>LogoTrPaTrackBar</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaTrackBar.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaTrackBar.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;LogoImgButton.Name" xml:space="preserve">
+    <value>LogoImgButton</value>
+  </data>
+  <data name="&gt;&gt;LogoImgButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoImgButton.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoImgButton.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;LEP2Label.Name" xml:space="preserve">
+    <value>LEP2Label</value>
+  </data>
+  <data name="&gt;&gt;LEP2Label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LEP2Label.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LEP2Label.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaCheckBox.Name" xml:space="preserve">
+    <value>LogoTrPaCheckBox</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaCheckBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoTrPaCheckBox.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;LogoImgTextBox.Name" xml:space="preserve">
+    <value>LogoImgTextBox</value>
+  </data>
+  <data name="&gt;&gt;LogoImgTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoImgTextBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoImgTextBox.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;LSSTextBox.Name" xml:space="preserve">
+    <value>LSSTextBox</value>
+  </data>
+  <data name="&gt;&gt;LSSTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSSTextBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LSSTextBox.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;LESTextBox.Name" xml:space="preserve">
+    <value>LESTextBox</value>
+  </data>
+  <data name="&gt;&gt;LESTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LESTextBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LESTextBox.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="LogoPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LogoPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 51</value>
+  </data>
+  <data name="LogoPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 292</value>
+  </data>
+  <data name="LogoPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="&gt;&gt;LogoPanel.Name" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoPanel.Parent" xml:space="preserve">
+    <value>LogoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LogoPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ModeComboBox.Items" xml:space="preserve">
     <value>Blend</value>
   </data>
@@ -545,15 +1058,6 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;LogoTrPaLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="YNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 22</value>
-  </data>
-  <data name="YNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 22</value>
-  </data>
-  <data name="YNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;YNumericUpDown.Name" xml:space="preserve">
     <value>YNumericUpDown</value>
   </data>
@@ -590,13 +1094,25 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="XNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="YNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 22</value>
   </data>
-  <data name="XNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="YNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 22</value>
   </data>
-  <data name="XNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+  <data name="YNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;YNumericUpDown.Name" xml:space="preserve">
+    <value>YNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;YNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;YNumericUpDown.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;YNumericUpDown.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;XNumericUpDown.Name" xml:space="preserve">
@@ -634,6 +1150,159 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   </data>
   <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="XNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 22</value>
+  </data>
+  <data name="XNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 22</value>
+  </data>
+  <data name="XNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;XNumericUpDown.Name" xml:space="preserve">
+    <value>XNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;XNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;XNumericUpDown.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;XNumericUpDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LAlignment3RadioButton.Name" xml:space="preserve">
+    <value>LAlignment3RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment3RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment3RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment3RadioButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LAlignment2RadioButton.Name" xml:space="preserve">
+    <value>LAlignment2RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment2RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment2RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment2RadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LAlignment1RadioButton.Name" xml:space="preserve">
+    <value>LAlignment1RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment1RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment1RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment1RadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LAlignment8RadioButton.Name" xml:space="preserve">
+    <value>LAlignment8RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment8RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment8RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment8RadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LAlignment7RadioButton.Name" xml:space="preserve">
+    <value>LAlignment7RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment7RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment7RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment7RadioButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LAlignment9RadioButton.Name" xml:space="preserve">
+    <value>LAlignment9RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment9RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment9RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment9RadioButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LAlignment4RadioButton.Name" xml:space="preserve">
+    <value>LAlignment4RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment4RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment4RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment4RadioButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;LAlignment6RadioButton.Name" xml:space="preserve">
+    <value>LAlignment6RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment6RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment6RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment6RadioButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;LAlignment5RadioButton.Name" xml:space="preserve">
+    <value>LAlignment5RadioButton</value>
+  </data>
+  <data name="&gt;&gt;LAlignment5RadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignment5RadioButton.Parent" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignment5RadioButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LAlignmentGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 10</value>
+  </data>
+  <data name="LAlignmentGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 110</value>
+  </data>
+  <data name="LAlignmentGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="LAlignmentGroupBox.Text" xml:space="preserve">
+    <value>위치</value>
+  </data>
+  <data name="&gt;&gt;LAlignmentGroupBox.Name" xml:space="preserve">
+    <value>LAlignmentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LAlignmentGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAlignmentGroupBox.Parent" xml:space="preserve">
+    <value>LogoPanel</value>
+  </data>
+  <data name="&gt;&gt;LAlignmentGroupBox.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="LAlignment3RadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -877,30 +1546,6 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   </data>
   <data name="&gt;&gt;LAlignment5RadioButton.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="LAlignmentGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 10</value>
-  </data>
-  <data name="LAlignmentGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 110</value>
-  </data>
-  <data name="LAlignmentGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>71</value>
-  </data>
-  <data name="LAlignmentGroupBox.Text" xml:space="preserve">
-    <value>위치</value>
-  </data>
-  <data name="&gt;&gt;LAlignmentGroupBox.Name" xml:space="preserve">
-    <value>LAlignmentGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LAlignmentGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LAlignmentGroupBox.Parent" xml:space="preserve">
-    <value>LogoPanel</value>
-  </data>
-  <data name="&gt;&gt;LAlignmentGroupBox.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="LogoImgLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1586,30 +2231,6 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;LESTextBox.ZOrder" xml:space="preserve">
     <value>28</value>
   </data>
-  <data name="LogoPanel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LogoPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 51</value>
-  </data>
-  <data name="LogoPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 292</value>
-  </data>
-  <data name="LogoPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="&gt;&gt;LogoPanel.Name" xml:space="preserve">
-    <value>LogoPanel</value>
-  </data>
-  <data name="&gt;&gt;LogoPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LogoPanel.Parent" xml:space="preserve">
-    <value>LogoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LogoPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="LogoCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1640,29 +2261,11 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;LogoCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LogoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 79</value>
-  </data>
-  <data name="LogoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 351</value>
-  </data>
-  <data name="LogoGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="LogoGroupBox.Text" xml:space="preserve">
-    <value>로고</value>
-  </data>
-  <data name="&gt;&gt;LogoGroupBox.Name" xml:space="preserve">
-    <value>LogoGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LogoGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LogoGroupBox.Parent" xml:space="preserve">
-    <value>EPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;LogoGroupBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="OpenFileDialog1.Filter" xml:space="preserve">
+    <value>Image Files|*.bmp;*.dds;*.ebmp;*.jpg;*.jpe;*.jpeg;*.pal;*.pcx;*.png;*.pbm;*.pgm;*.ppm;*.raw;*.sgi;*.bw;*.rgb;*.rgba;*.tga;*.tif;*.tiff;*.gif;*.exr;*.jp2;*.psd;*.hdr|All Files(*.*)|*.*</value>
   </data>
   <data name="reverseCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1671,7 +2274,7 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
     <value>NoControl</value>
   </data>
   <data name="reverseCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 20</value>
+    <value>13, 21</value>
   </data>
   <data name="reverseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 18</value>
@@ -1694,57 +2297,6 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
   <data name="&gt;&gt;reverseCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 431</value>
-  </data>
-  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 50</value>
-  </data>
-  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
-    <value>EPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="EPP_Panel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="EPP_Panel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="EPP_Panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>563, 532</value>
-  </data>
-  <data name="EPP_Panel.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;EPP_Panel.Name" xml:space="preserve">
-    <value>EPP_Panel</value>
-  </data>
-  <data name="&gt;&gt;EPP_Panel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EPP_Panel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;EPP_Panel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="OpenFileDialog1.Filter" xml:space="preserve">
-    <value>Image Files|*.bmp;*.dds;*.ebmp;*.jpg;*.jpe;*.jpeg;*.pal;*.pcx;*.png;*.pbm;*.pgm;*.ppm;*.raw;*.sgi;*.bw;*.rgb;*.rgba;*.tga;*.tif;*.tiff;*.gif;*.exr;*.jp2;*.psd;*.hdr|All Files(*.*)|*.*</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1752,10 +2304,13 @@ Overlay(IS,x=&lt;#LogoXA&gt;, y=&lt;#LogoYB&gt;, mode=&lt;#logomode&gt;, mask=Sh
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>563, 532</value>
+    <value>565, 531</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

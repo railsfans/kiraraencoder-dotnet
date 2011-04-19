@@ -77,9 +77,9 @@ Partial Class ETCPPFrm
         Me.LSSTextBox = New System.Windows.Forms.TextBox
         Me.LESTextBox = New System.Windows.Forms.TextBox
         Me.LogoCheckBox = New System.Windows.Forms.CheckBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.reverseCheckBox = New System.Windows.Forms.CheckBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.reverseCheckBox = New System.Windows.Forms.CheckBox
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.RateGroupBox.SuspendLayout()
         CType(Me.RateNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EPP_Panel.SuspendLayout()
@@ -484,12 +484,9 @@ Partial Class ETCPPFrm
         Me.LogoCheckBox.Name = "LogoCheckBox"
         Me.LogoCheckBox.UseVisualStyleBackColor = True
         '
-        'GroupBox1
+        'OpenFileDialog1
         '
-        Me.GroupBox1.Controls.Add(Me.reverseCheckBox)
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.TabStop = False
+        resources.ApplyResources(Me.OpenFileDialog1, "OpenFileDialog1")
         '
         'reverseCheckBox
         '
@@ -497,9 +494,12 @@ Partial Class ETCPPFrm
         Me.reverseCheckBox.Name = "reverseCheckBox"
         Me.reverseCheckBox.UseVisualStyleBackColor = True
         '
-        'OpenFileDialog1
+        'GroupBox1
         '
-        resources.ApplyResources(Me.OpenFileDialog1, "OpenFileDialog1")
+        Me.GroupBox1.Controls.Add(Me.reverseCheckBox)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.TabStop = False
         '
         'ETCPPFrm
         '

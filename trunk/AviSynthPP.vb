@@ -726,13 +726,15 @@ ERRSKIP:
             End If
 
             '------------------------
-            ' #<channel>
+            ' #<channel> + 원본HEAACv2체크
             '========================
             '5.1 채널 -> 2채널 변환시 돌비디지털 사용여부 체크
             Dim EncListViewAudioV As String = MainFrm.EncListListView.Items(index).SubItems(9).Text
             Dim ia2 As Integer = 1, iia2 As Integer = 0
             Dim ta2 As String = ""
             Dim ChannelV As String = "#<channel>"
+            '원본HEAACv2체크
+            Dim HEAACv2Bool As Boolean = False
             '채널스크립트
             Dim CHTextBoxV As String = AviSynthEditorFrm.ChannelTextBox.Text
 
@@ -833,6 +835,11 @@ ERRSKIP:
                 CHTextBoxV = Replace(CHTextBoxV, "%RL%", "5")
                 CHTextBoxV = Replace(CHTextBoxV, "%RR%", "6")
                 'End If
+
+                '원본HEAACv2체크
+                If InStr(1, ta2, "aac", CompareMethod.Text) <> 0 AndAlso InStr(1, ta2, "2 channels (FC)", CompareMethod.Text) <> 0 Then
+                    HEAACv2Bool = True
+                End If
 
             End If
 
@@ -1896,8 +1903,19 @@ DelayAudioSkip2:
             End If
             AVTextBoxV = Replace(AVTextBoxV, "#<delayaudio2>", "DelayAudio(" & delayaudioV2 & "/1000.0)")
 
+            '#<ensure_sync>
+            If MainFrm.DECSTR = "FFMPEG" AndAlso HEAACv2Bool = True AndAlso MainFrm.EncListListView.Items(index).SubItems(3).Text = "FLV" Then 'FFMS디코더 + HEAACv2원본 + FLV원본
+                AVTextBoxV = Replace(AVTextBoxV, "#<ensure_sync>", "EnsureVBRMP3Sync()")
+            ElseIf MainFrm.DECSTR = "DSHOW" AndAlso ETCPPFrm.reverseCheckBox.Checked = True Then 'DSHOW디코더 + 리버스사용
+                AVTextBoxV = Replace(AVTextBoxV, "#<ensure_sync>", "EnsureVBRMP3Sync()")
+            End If
+
             '#<reverse>
-            AVTextBoxV = Replace(AVTextBoxV, "#<reverse>", reverseV)
+            If ETCPPFrm.reverseCheckBox.Checked = True AndAlso MainFrm.DECSTR = "FFMPEG" AndAlso HEAACv2Bool = True AndAlso MainFrm.EncListListView.Items(index).SubItems(3).Text = "FLV" Then
+                Throw New Exception("[FFmpegSource]" & vbNewLine & "Source file(FLV + HE-AAC v2) is not supported reverse encoding.")
+            Else
+                AVTextBoxV = Replace(AVTextBoxV, "#<reverse>", reverseV)
+            End If
 
             '------------------------
             '영상
