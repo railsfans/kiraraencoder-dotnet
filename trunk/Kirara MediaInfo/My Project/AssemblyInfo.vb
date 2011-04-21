@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' 어셈블리 특성 값을 검토합니다.
 
-<Assembly: AssemblyTitle("Kirara Encoder")> 
+<Assembly: AssemblyTitle("Kirara MediaInfo")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Kirara Encoder")> 
+<Assembly: AssemblyProduct("Kirara MediaInfo")> 
 <Assembly: AssemblyCopyright("Copyright © 2008-2011 LEE KIWON")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 '이 프로젝트가 COM에 노출되는 경우 다음 GUID는 typelib의 ID를 나타냅니다.
-<Assembly: Guid("d3f3a5f5-1d23-4012-a759-49e463033ab6")> 
+<Assembly: Guid("a3745196-ed70-40dd-ad97-4990fdda2fb5")> 
 
 ' 어셈블리의 버전 정보는 다음 네 가지 값으로 구성됩니다.
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 지정되도록 할 수 있습니다.
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.69.0")> 
-<Assembly: AssemblyFileVersion("1.0.69.0")> 
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> 

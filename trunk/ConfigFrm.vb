@@ -142,7 +142,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub DefBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefBTN.Click
-        BackColorPanel.BackColor = Color.FromArgb(-16777216)
+        BackColorPanel.BackColor = Color.FromArgb(-1)
         ImgTextBox.Text = ""
         ModeComboBox.Text = "Center"
 

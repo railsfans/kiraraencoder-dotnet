@@ -305,7 +305,7 @@
         RudN65tdA8sHzg46DF645Xrr8m2v29fvrLwzMBQydHc4cnjkLvvu5L2key/vZ9yff7DpIfph4SOpR+WP
         lR7X/aj3Y+uI5ciZUdfRvidBTx6Mscae/5T+04fx/Kfkp+UTqhONk2aTp6fcp24+W/1s/Hnq8/npgp+l
         f65+ofviu18cf+mbWTUz/pL/cuHX4lfyr468Xva6e9Z/9vGb5Dfzc4Vv5d8efcd41/s+7P3EfOYH7IeK
-        j3ofuz55f3q4kLyw8Bv3hPP74uYdwgAAAAlwSFlzAAALEQAACxEBf2RfkQAAJ5VJREFUeF7le3dYlUfe
+        j3ofuz55f3q4kLyw8Bv3hPP74uYdwgAAAAlwSFlzAAALEAAACxABrSO9dQAAJ5VJREFUeF7le3dYlUfe
         NtlrY4was9nsu8mbvNl3N+4muymfm16Nm9gSo4mxF+xdEBtiBexdSRQFxYINFRWQKiDSe+9dqhQFD3Bo
         hwPnfu/fnHOQZHe/7/3/e67rvuZ55plnZu57fjPzm5lzLABY/P8MC1vbdRZr166xsLe3t3BxcbFwd3e3
         uH072CIuLuHNlNT0vZlZeTnZOaWanLxaTV7RI01+sZZoJzo1BaU6TcG9LoZ6TUEJYQ7l/t7Pnwv5TpBd
@@ -604,7 +604,7 @@
     <value>Both</value>
   </data>
   <data name="TextBox0.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 188</value>
+    <value>398, 203</value>
   </data>
   <data name="TextBox0.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -629,10 +629,10 @@ Homepage: http://www.mplayerhq.hu
 
 Software included in FFmpeg
 
-Libopencore AMR-NB, AMR-WB
+opencore-amr, vo-amrwbenc, vo-aacenc
 Licensed under the Apache 2
 Download source code: http://sourceforge.net/projects/opencore-amr
-Homepage: http://opencore-amr.sourceforge.net
+Homepage: http://sourceforge.net/projects/opencore-amr
 
 FAAC
 Licensed under the LGPL
@@ -663,6 +663,15 @@ Speex
 Licensed under the BSD license
 Download source code: http://www.xiph.org/downloads
 Homepage: http://www.speex.org
+
+Libfreetype
+Licensed under the GPL v2
+Download source code: http://freetype.sourceforge.net
+Homepage: http://freetype.sourceforge.net
+
+Libgsm
+Download source code: http://www.quut.com/gsm
+Homepage: http://www.quut.com/gsm
 
 Libvpx
 Licensed under the BSD license
@@ -819,7 +828,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>Both</value>
   </data>
   <data name="TextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 188</value>
+    <value>398, 203</value>
   </data>
   <data name="TextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

@@ -118,7 +118,7 @@ Public Class MainFrm
     Public OutPRadioButtonV As Boolean = False
     Public DebugCheckBoxV As Boolean = False
     Public PreviewModeV As Integer = 2
-    Public BackColorPanelV As Color = Color.FromArgb(-16777216)
+    Public BackColorPanelV As Color = Color.FromArgb(-1)
     Public ImgTextBoxV As String = ""
     Public ModeComboBoxV As String = "Center"
 
@@ -2964,7 +2964,7 @@ UAC:
         DebugCheckBoxV = False
         PreviewModeV = 2
 
-        BackColorPanelV = Color.FromArgb(-16777216)
+        BackColorPanelV = Color.FromArgb(-1)
         ImgTextBoxV = ""
         ModeComboBoxV = "Center"
 
@@ -3498,7 +3498,7 @@ RELOAD:
 
                 If XTR.Name = "BackColorPanelV" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then BackColorPanelV = Color.FromArgb(XTRSTR) Else BackColorPanelV = Color.FromArgb(-16777216)
+                    If XTRSTR <> "" Then BackColorPanelV = Color.FromArgb(XTRSTR) Else BackColorPanelV = Color.FromArgb(-1)
                 End If
 
                 If XTR.Name = "ImgTextBoxV" Then
@@ -7156,12 +7156,9 @@ RELOAD:
             Exit Sub
         End If
 
-        If FileInfoFrm.Visible = True Then
-            FileInfoFrm.GET_TXT(WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text))
-        Else
-            FileInfoFrm.Show(Me)
-            FileInfoFrm.GET_TXT(WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text))
-        End If
+        Dim MSGB As String = ""
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\KiraraMediaInfo.exe " & Chr(34) & WinAPI.GetLongPathName(EncListListView.Items(SelIndex).SubItems(10).Text) & Chr(34)
+        Shell(MSGB, AppWinStyle.NormalFocus)
 
     End Sub
 
@@ -7219,12 +7216,9 @@ RELOAD:
             Exit Sub
         End If
 
-        If FileInfoFrm.Visible = True Then
-            FileInfoFrm.GET_TXT(SavePathTextBoxV & EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV)
-        Else
-            FileInfoFrm.Show(Me)
-            FileInfoFrm.GET_TXT(SavePathTextBoxV & EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV)
-        End If
+        Dim MSGB As String = ""
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\KiraraMediaInfo.exe " & Chr(34) & SavePathTextBoxV & EncSetFrm.HeaderTextBox.Text & FilenameV & ExtensionV & Chr(34)
+        Shell(MSGB, AppWinStyle.NormalFocus)
 
     End Sub
 
