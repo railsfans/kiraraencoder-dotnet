@@ -214,7 +214,7 @@
     <value>3, 131</value>
   </data>
   <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 79</value>
+    <value>456, 79</value>
   </data>
   <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -305,7 +305,7 @@
         RudN65tdA8sHzg46DF645Xrr8m2v29fvrLwzMBQydHc4cnjkLvvu5L2key/vZ9yff7DpIfph4SOpR+WP
         lR7X/aj3Y+uI5ciZUdfRvidBTx6Mscae/5T+04fx/Kfkp+UTqhONk2aTp6fcp24+W/1s/Hnq8/npgp+l
         f65+ofviu18cf+mbWTUz/pL/cuHX4lfyr468Xva6e9Z/9vGb5Dfzc4Vv5d8efcd41/s+7P3EfOYH7IeK
-        j3ofuz55f3q4kLyw8Bv3hPP74uYdwgAAAAlwSFlzAAALEAAACxABrSO9dQAAJ5VJREFUeF7le3dYlUfe
+        j3ofuz55f3q4kLyw8Bv3hPP74uYdwgAAAAlwSFlzAAALDwAACw8BkvkDpQAAJ5VJREFUeF7le3dYlUfe
         NtlrY4was9nsu8mbvNl3N+4muymfm16Nm9gSo4mxF+xdEBtiBexdSRQFxYINFRWQKiDSe+9dqhQFD3Bo
         hwPnfu/fnHOQZHe/7/3/e67rvuZ55plnZu57fjPzm5lzLABY/P8MC1vbdRZr166xsLe3t3BxcbFwd3e3
         uH072CIuLuHNlNT0vZlZeTnZOaWanLxaTV7RI01+sZZoJzo1BaU6TcG9LoZ6TUEJYQ7l/t7Pnwv5TpBd
@@ -568,7 +568,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="InfoTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 213</value>
+    <value>462, 213</value>
   </data>
   <data name="InfoTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -604,7 +604,7 @@
     <value>Both</value>
   </data>
   <data name="TextBox0.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 203</value>
+    <value>448, 203</value>
   </data>
   <data name="TextBox0.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -792,7 +792,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="LicenseTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 213</value>
+    <value>462, 213</value>
   </data>
   <data name="LicenseTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -828,7 +828,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>Both</value>
   </data>
   <data name="TextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 203</value>
+    <value>448, 203</value>
   </data>
   <data name="TextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1193,7 +1193,7 @@ Public License instead of this License.</value>
     <value>4, 23</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 213</value>
+    <value>462, 213</value>
   </data>
   <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1217,7 +1217,7 @@ Public License instead of this License.</value>
     <value>10, 34</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 240</value>
+    <value>470, 240</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1295,7 +1295,7 @@ Public License instead of this License.</value>
     <value>Right</value>
   </data>
   <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 0</value>
+    <value>352, 0</value>
   </data>
   <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 40</value>
@@ -1322,7 +1322,7 @@ Public License instead of this License.</value>
     <value>0, 280</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 40</value>
+    <value>492, 40</value>
   </data>
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1346,7 +1346,7 @@ Public License instead of this License.</value>
     <value>0, 0</value>
   </data>
   <data name="PPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 320</value>
+    <value>492, 320</value>
   </data>
   <data name="PPanel.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1376,7 +1376,7 @@ Public License instead of this License.</value>
     <value>0, 0</value>
   </data>
   <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 24</value>
+    <value>492, 24</value>
   </data>
   <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1403,7 +1403,7 @@ Public License instead of this License.</value>
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>442, 320</value>
+    <value>492, 320</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
