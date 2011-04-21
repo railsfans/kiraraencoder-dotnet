@@ -1561,8 +1561,10 @@ DelayAudioSkip:
                                     Else
                                         AKByteV = Val(EncSetFrm.NeroAACBitrateNumericUpDown.Value) / 8
                                     End If
-                                ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
+                                ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR-NB
                                     AKByteV = Val(EncSetFrm.AMRBitrateComboBox.Text) / 8
+                                ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-WB(libvo)" Then 'AMR-WB
+                                    AKByteV = Val(EncSetFrm.AMRWBBitrateComboBox.Text) / 8
                                 ElseIf EncSetFrm.AudioCodecComboBox.Text = "[OGG] Vorbis" OrElse EncSetFrm.AudioCodecComboBox.Text = "Vorbis" Then 'Vorbis
                                     ExAudioB = True
                                 ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC

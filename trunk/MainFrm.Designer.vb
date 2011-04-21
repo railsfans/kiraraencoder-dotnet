@@ -98,11 +98,9 @@ Partial Class MainFrm
         Me.AviSynthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.NewVerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PresetContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel
         Me.DefPreviewImg = New System.Windows.Forms.Panel
-        Me.VerWebBrowser = New System.Windows.Forms.WebBrowser
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.Panel10 = New System.Windows.Forms.Panel
         Me.Panel3 = New System.Windows.Forms.Panel
@@ -578,7 +576,7 @@ Partial Class MainFrm
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ConfigToolStripMenuItem, Me.AboutToolStripMenuItem, Me.NewVerToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ConfigToolStripMenuItem, Me.AboutToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
@@ -608,11 +606,6 @@ Partial Class MainFrm
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         resources.ApplyResources(Me.AboutToolStripMenuItem, "AboutToolStripMenuItem")
         '
-        'NewVerToolStripMenuItem
-        '
-        Me.NewVerToolStripMenuItem.Name = "NewVerToolStripMenuItem"
-        resources.ApplyResources(Me.NewVerToolStripMenuItem, "NewVerToolStripMenuItem")
-        '
         'PresetContextMenuStrip
         '
         Me.PresetContextMenuStrip.Name = "PresetContextMenuStrip"
@@ -622,7 +615,6 @@ Partial Class MainFrm
         '
         Me.MainPanel.BackColor = System.Drawing.Color.Transparent
         Me.MainPanel.Controls.Add(Me.DefPreviewImg)
-        Me.MainPanel.Controls.Add(Me.VerWebBrowser)
         Me.MainPanel.Controls.Add(Me.Panel6)
         Me.MainPanel.Controls.Add(Me.CleanUpListBox)
         Me.MainPanel.Controls.Add(Me.OutputBox_GI)
@@ -639,13 +631,6 @@ Partial Class MainFrm
         Me.DefPreviewImg.BackColor = System.Drawing.Color.Black
         resources.ApplyResources(Me.DefPreviewImg, "DefPreviewImg")
         Me.DefPreviewImg.Name = "DefPreviewImg"
-        '
-        'VerWebBrowser
-        '
-        resources.ApplyResources(Me.VerWebBrowser, "VerWebBrowser")
-        Me.VerWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.VerWebBrowser.Name = "VerWebBrowser"
-        Me.VerWebBrowser.Url = New System.Uri("http://www.kiraraencoder.pe.kr/ver.htm", System.UriKind.Absolute)
         '
         'Panel1
         '
@@ -1093,8 +1078,6 @@ Partial Class MainFrm
     Friend WithEvents Panel12 As System.Windows.Forms.Panel
     Friend WithEvents FormMovePanel As System.Windows.Forms.Panel
     Friend WithEvents LeftPanel As System.Windows.Forms.Panel
-    Friend WithEvents VerWebBrowser As System.Windows.Forms.WebBrowser
-    Friend WithEvents NewVerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConfigToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DefPreviewImg As System.Windows.Forms.Panel
     Friend WithEvents AudSelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

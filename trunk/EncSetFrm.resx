@@ -489,23 +489,134 @@
   <data name="&gt;&gt;ImageTabPage.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="AMRWBBitrateComboBox.Items" xml:space="preserve">
+    <value>6.6</value>
   </data>
-  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="AMRWBBitrateComboBox.Items1" xml:space="preserve">
+    <value>8.85</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Items2" xml:space="preserve">
+    <value>12.65</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Items3" xml:space="preserve">
+    <value>14.25</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Items4" xml:space="preserve">
+    <value>15.85</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Items5" xml:space="preserve">
+    <value>18.25</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Items6" xml:space="preserve">
+    <value>19.85</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Items7" xml:space="preserve">
+    <value>23.05</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Items8" xml:space="preserve">
+    <value>23.85</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 8</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 22</value>
+  </data>
+  <data name="AMRWBBitrateComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;AMRWBBitrateComboBox.Name" xml:space="preserve">
+    <value>AMRWBBitrateComboBox</value>
+  </data>
+  <data name="&gt;&gt;AMRWBBitrateComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AMRWBBitrateComboBox.Parent" xml:space="preserve">
+    <value>AAMRWBBitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AMRWBBitrateComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AMRWBBitrateLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 9</value>
+  <data name="AMRWBBitrateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
   </data>
-  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
+  <data name="AMRWBBitrateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
   </data>
-  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="AMRWBBitrateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="Label7.Text" xml:space="preserve">
-    <value>H</value>
+  <data name="AMRWBBitrateLabel.Text" xml:space="preserve">
+    <value>비트레이트:</value>
+  </data>
+  <data name="AMRWBBitrateLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;AMRWBBitrateLabel.Name" xml:space="preserve">
+    <value>AMRWBBitrateLabel</value>
+  </data>
+  <data name="&gt;&gt;AMRWBBitrateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AMRWBBitrateLabel.Parent" xml:space="preserve">
+    <value>AAMRWBBitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AMRWBBitrateLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 9</value>
+  </data>
+  <data name="Label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 14</value>
+  </data>
+  <data name="Label16.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="Label16.Text" xml:space="preserve">
+    <value>Kbit/s (AMR) Wide-Band</value>
+  </data>
+  <data name="&gt;&gt;Label16.Name" xml:space="preserve">
+    <value>Label16</value>
+  </data>
+  <data name="&gt;&gt;Label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label16.Parent" xml:space="preserve">
+    <value>AAMRWBBitratePanel</value>
+  </data>
+  <data name="&gt;&gt;Label16.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AAMRWBBitratePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 407</value>
+  </data>
+  <data name="AAMRWBBitratePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 33</value>
+  </data>
+  <data name="AAMRWBBitratePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;AAMRWBBitratePanel.Name" xml:space="preserve">
+    <value>AAMRWBBitratePanel</value>
+  </data>
+  <data name="&gt;&gt;AAMRWBBitratePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AAMRWBBitratePanel.Parent" xml:space="preserve">
+    <value>AudioGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AAMRWBBitratePanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;Label7.Name" xml:space="preserve">
     <value>Label7</value>
@@ -519,24 +630,6 @@
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 9</value>
-  </data>
-  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 14</value>
-  </data>
-  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>L</value>
-  </data>
   <data name="&gt;&gt;Label6.Name" xml:space="preserve">
     <value>Label6</value>
   </data>
@@ -548,24 +641,6 @@
   </data>
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="LAMEMP3QLabel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LAMEMP3QLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAMEMP3QLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>394, 9</value>
-  </data>
-  <data name="LAMEMP3QLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 14</value>
-  </data>
-  <data name="LAMEMP3QLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="LAMEMP3QLabel2.Text" xml:space="preserve">
-    <value>Kbit/s</value>
   </data>
   <data name="&gt;&gt;LAMEMP3QLabel2.Name" xml:space="preserve">
     <value>LAMEMP3QLabel2</value>
@@ -579,15 +654,6 @@
   <data name="&gt;&gt;LAMEMP3QLabel2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="LAMEMP3QComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 8</value>
-  </data>
-  <data name="LAMEMP3QComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
-  </data>
-  <data name="LAMEMP3QComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="&gt;&gt;LAMEMP3QComboBox.Name" xml:space="preserve">
     <value>LAMEMP3QComboBox</value>
   </data>
@@ -599,21 +665,6 @@
   </data>
   <data name="&gt;&gt;LAMEMP3QComboBox.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 5</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 25</value>
-  </data>
-  <data name="LAMEMP3QTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
   </data>
   <data name="&gt;&gt;LAMEMP3QTrackBar.Name" xml:space="preserve">
     <value>LAMEMP3QTrackBar</value>
@@ -627,15 +678,6 @@
   <data name="&gt;&gt;LAMEMP3QTrackBar.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="LAMEMP3QNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 8</value>
-  </data>
-  <data name="LAMEMP3QNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
-  </data>
-  <data name="LAMEMP3QNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
   <data name="&gt;&gt;LAMEMP3QNumericUpDown.Name" xml:space="preserve">
     <value>LAMEMP3QNumericUpDown</value>
   </data>
@@ -647,24 +689,6 @@
   </data>
   <data name="&gt;&gt;LAMEMP3QNumericUpDown.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="LAMEMP3QLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LAMEMP3QLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 9</value>
-  </data>
-  <data name="LAMEMP3QLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="LAMEMP3QLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LAMEMP3QLabel.Text" xml:space="preserve">
-    <value>LAME MP3 Q:</value>
-  </data>
-  <data name="LAMEMP3QLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
   </data>
   <data name="&gt;&gt;LAMEMP3QLabel.Name" xml:space="preserve">
     <value>LAMEMP3QLabel</value>
@@ -697,7 +721,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;LAMEMP3QPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;SamplerateCheckBox.Name" xml:space="preserve">
     <value>SamplerateCheckBox</value>
@@ -766,22 +790,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;SampleratePanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="AudioBitrateNLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AudioBitrateNLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 9</value>
-  </data>
-  <data name="AudioBitrateNLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 14</value>
-  </data>
-  <data name="AudioBitrateNLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="AudioBitrateNLabel.Text" xml:space="preserve">
-    <value>-</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;AudioBitrateNLabel.Name" xml:space="preserve">
     <value>AudioBitrateNLabel</value>
@@ -814,7 +823,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;BitrateNPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="AMRBitrateComboBox.Items" xml:space="preserve">
     <value>4.75</value>
@@ -895,13 +904,13 @@
     <value>213, 9</value>
   </data>
   <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 14</value>
+    <value>150, 14</value>
   </data>
   <data name="Label10.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="Label10.Text" xml:space="preserve">
-    <value>Kbit/s</value>
+    <value>Kbit/s (AMR) Narrow-Band</value>
   </data>
   <data name="&gt;&gt;Label10.Name" xml:space="preserve">
     <value>Label10</value>
@@ -934,7 +943,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AAMRBitratePanel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;AudioBitrateComboBox.Name" xml:space="preserve">
     <value>AudioBitrateComboBox</value>
@@ -991,25 +1000,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AbitratePanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 9</value>
-  </data>
-  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 14</value>
-  </data>
-  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>Low</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;Label5.Name" xml:space="preserve">
     <value>Label5</value>
@@ -1023,21 +1014,6 @@
   <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 9</value>
-  </data>
-  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 14</value>
-  </data>
-  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>High</value>
-  </data>
   <data name="&gt;&gt;Label4.Name" xml:space="preserve">
     <value>Label4</value>
   </data>
@@ -1049,18 +1025,6 @@
   </data>
   <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="VorbisQTrackBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="VorbisQTrackBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 5</value>
-  </data>
-  <data name="VorbisQTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 25</value>
-  </data>
-  <data name="VorbisQTrackBar.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
   </data>
   <data name="&gt;&gt;VorbisQTrackBar.Name" xml:space="preserve">
     <value>VorbisQTrackBar</value>
@@ -1074,15 +1038,6 @@
   <data name="&gt;&gt;VorbisQTrackBar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="VorbisQNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 8</value>
-  </data>
-  <data name="VorbisQNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 22</value>
-  </data>
-  <data name="VorbisQNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
   <data name="&gt;&gt;VorbisQNumericUpDown.Name" xml:space="preserve">
     <value>VorbisQNumericUpDown</value>
   </data>
@@ -1094,21 +1049,6 @@
   </data>
   <data name="&gt;&gt;VorbisQNumericUpDown.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="VorbisQLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 9</value>
-  </data>
-  <data name="VorbisQLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="VorbisQLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="VorbisQLabel.Text" xml:space="preserve">
-    <value>Vorbis Q:</value>
-  </data>
-  <data name="VorbisQLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
   </data>
   <data name="&gt;&gt;VorbisQLabel.Name" xml:space="preserve">
     <value>VorbisQLabel</value>
@@ -1141,7 +1081,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AVorbisQPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="AudioCodecComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 23</value>
@@ -1162,7 +1102,7 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;AudioCodecComboBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="ACodecLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 23</value>
@@ -1189,13 +1129,13 @@
     <value>AudioGroupBox</value>
   </data>
   <data name="&gt;&gt;ACodecLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="AudioGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 10</value>
   </data>
   <data name="AudioGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 122</value>
+    <value>510, 120</value>
   </data>
   <data name="AudioGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5998,6 +5938,195 @@
   <data name="&gt;&gt;vflipCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 9</value>
+  </data>
+  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 9</value>
+  </data>
+  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 14</value>
+  </data>
+  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LAMEMP3QLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LAMEMP3QLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>394, 9</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 14</value>
+  </data>
+  <data name="LAMEMP3QLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="LAMEMP3QLabel2.Text" xml:space="preserve">
+    <value>Kbit/s</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Name" xml:space="preserve">
+    <value>LAMEMP3QLabel2</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 8</value>
+  </data>
+  <data name="LAMEMP3QComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 22</value>
+  </data>
+  <data name="LAMEMP3QComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Name" xml:space="preserve">
+    <value>LAMEMP3QComboBox</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QComboBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 5</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 25</value>
+  </data>
+  <data name="LAMEMP3QTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Name" xml:space="preserve">
+    <value>LAMEMP3QTrackBar</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QTrackBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 8</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 22</value>
+  </data>
+  <data name="LAMEMP3QNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Name" xml:space="preserve">
+    <value>LAMEMP3QNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QNumericUpDown.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LAMEMP3QLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LAMEMP3QLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 9</value>
+  </data>
+  <data name="LAMEMP3QLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="LAMEMP3QLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LAMEMP3QLabel.Text" xml:space="preserve">
+    <value>LAME MP3 Q:</value>
+  </data>
+  <data name="LAMEMP3QLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Name" xml:space="preserve">
+    <value>LAMEMP3QLabel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.Parent" xml:space="preserve">
+    <value>LAMEMP3QPanel</value>
+  </data>
+  <data name="&gt;&gt;LAMEMP3QLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="SamplerateCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6136,6 +6265,33 @@
   <data name="&gt;&gt;SamplerateLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="AudioBitrateNLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AudioBitrateNLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 9</value>
+  </data>
+  <data name="AudioBitrateNLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 14</value>
+  </data>
+  <data name="AudioBitrateNLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="AudioBitrateNLabel.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateNLabel.Name" xml:space="preserve">
+    <value>AudioBitrateNLabel</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateNLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateNLabel.Parent" xml:space="preserve">
+    <value>BitrateNPanel</value>
+  </data>
+  <data name="&gt;&gt;AudioBitrateNLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="AudioBitrateComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 8</value>
   </data>
@@ -6210,6 +6366,135 @@
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 9</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 14</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>322, 9</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 14</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="VorbisQTrackBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="VorbisQTrackBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 5</value>
+  </data>
+  <data name="VorbisQTrackBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 25</value>
+  </data>
+  <data name="VorbisQTrackBar.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Name" xml:space="preserve">
+    <value>VorbisQTrackBar</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQTrackBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="VorbisQNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 8</value>
+  </data>
+  <data name="VorbisQNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 22</value>
+  </data>
+  <data name="VorbisQNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Name" xml:space="preserve">
+    <value>VorbisQNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQNumericUpDown.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="VorbisQLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
+  <data name="VorbisQLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="VorbisQLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="VorbisQLabel.Text" xml:space="preserve">
+    <value>Vorbis Q:</value>
+  </data>
+  <data name="VorbisQLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Name" xml:space="preserve">
+    <value>VorbisQLabel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.Parent" xml:space="preserve">
+    <value>AVorbisQPanel</value>
+  </data>
+  <data name="&gt;&gt;VorbisQLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

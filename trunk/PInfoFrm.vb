@@ -93,9 +93,7 @@ LANG_SKIP:
 
         NameLabel.Text = NameLabelV & " " & BitV & NameLabel2V
         CopyrightLabel.Text = My.Application.Info.Copyright
-        VersionLabel.Text = VersionLabelV & " " & _
-        My.Application.Info.Version.Major & "." & _
-        My.Application.Info.Version.Minor & " SVN-r" & _
+        VersionLabel.Text = "SVN-r" & _
         My.Application.Info.Version.Build & " " & MainFrm.PDATA
 
     End Sub
@@ -110,7 +108,7 @@ LANG_SKIP:
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Try
             LinkLabel1.LinkVisited = True
-            System.Diagnostics.Process.Start("http://www.kiraraencoder.pe.kr")
+            System.Diagnostics.Process.Start("http://code.google.com/p/kiraraencoder-dotnet/")
         Catch ex As Exception
             MessageBox.Show("Unable to open link that was clicked.")
         End Try
@@ -128,7 +126,7 @@ LANG_SKIP:
     Private Sub LinkLabel3_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
         Try
             LinkLabel3.LinkVisited = True
-            System.Diagnostics.Process.Start("http://air-enc.netii.net")
+            System.Diagnostics.Process.Start("http://kiraraenc.netii.net")
         Catch ex As Exception
             MessageBox.Show("Unable to open link that was clicked.")
         End Try

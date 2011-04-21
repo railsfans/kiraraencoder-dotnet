@@ -243,6 +243,10 @@ Partial Class EncSetFrm
         Me.DVDDLOrBD98145MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BD23450MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BDDL46900MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AAMRWBBitratePanel = New System.Windows.Forms.Panel
+        Me.AMRWBBitrateComboBox = New System.Windows.Forms.ComboBox
+        Me.AMRWBBitrateLabel = New System.Windows.Forms.Label
+        Me.Label16 = New System.Windows.Forms.Label
         Me.EncSetPanel.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
         Me.VideoTabPage.SuspendLayout()
@@ -318,6 +322,7 @@ Partial Class EncSetFrm
         Me.SizeLimitGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
         Me.TargetContextMenuStrip.SuspendLayout()
+        Me.AAMRWBBitratePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncSetPanel
@@ -1255,6 +1260,7 @@ Partial Class EncSetFrm
         '
         'AudioGroupBox
         '
+        Me.AudioGroupBox.Controls.Add(Me.AAMRWBBitratePanel)
         Me.AudioGroupBox.Controls.Add(Me.LAMEMP3QPanel)
         Me.AudioGroupBox.Controls.Add(Me.SampleratePanel)
         Me.AudioGroupBox.Controls.Add(Me.BitrateNPanel)
@@ -1878,6 +1884,32 @@ Partial Class EncSetFrm
         Me.BDDL46900MBToolStripMenuItem.Name = "BDDL46900MBToolStripMenuItem"
         resources.ApplyResources(Me.BDDL46900MBToolStripMenuItem, "BDDL46900MBToolStripMenuItem")
         '
+        'AAMRWBBitratePanel
+        '
+        Me.AAMRWBBitratePanel.Controls.Add(Me.AMRWBBitrateComboBox)
+        Me.AAMRWBBitratePanel.Controls.Add(Me.AMRWBBitrateLabel)
+        Me.AAMRWBBitratePanel.Controls.Add(Me.Label16)
+        resources.ApplyResources(Me.AAMRWBBitratePanel, "AAMRWBBitratePanel")
+        Me.AAMRWBBitratePanel.Name = "AAMRWBBitratePanel"
+        '
+        'AMRWBBitrateComboBox
+        '
+        Me.AMRWBBitrateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.AMRWBBitrateComboBox.FormattingEnabled = True
+        Me.AMRWBBitrateComboBox.Items.AddRange(New Object() {resources.GetString("AMRWBBitrateComboBox.Items"), resources.GetString("AMRWBBitrateComboBox.Items1"), resources.GetString("AMRWBBitrateComboBox.Items2"), resources.GetString("AMRWBBitrateComboBox.Items3"), resources.GetString("AMRWBBitrateComboBox.Items4"), resources.GetString("AMRWBBitrateComboBox.Items5"), resources.GetString("AMRWBBitrateComboBox.Items6"), resources.GetString("AMRWBBitrateComboBox.Items7"), resources.GetString("AMRWBBitrateComboBox.Items8")})
+        resources.ApplyResources(Me.AMRWBBitrateComboBox, "AMRWBBitrateComboBox")
+        Me.AMRWBBitrateComboBox.Name = "AMRWBBitrateComboBox"
+        '
+        'AMRWBBitrateLabel
+        '
+        resources.ApplyResources(Me.AMRWBBitrateLabel, "AMRWBBitrateLabel")
+        Me.AMRWBBitrateLabel.Name = "AMRWBBitrateLabel"
+        '
+        'Label16
+        '
+        resources.ApplyResources(Me.Label16, "Label16")
+        Me.Label16.Name = "Label16"
+        '
         'EncSetFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -1992,6 +2024,8 @@ Partial Class EncSetFrm
         Me.NameGroupBox.ResumeLayout(False)
         Me.NameGroupBox.PerformLayout()
         Me.TargetContextMenuStrip.ResumeLayout(False)
+        Me.AAMRWBBitratePanel.ResumeLayout(False)
+        Me.AAMRWBBitratePanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2214,4 +2248,8 @@ Partial Class EncSetFrm
     Friend WithEvents OutFLabel As System.Windows.Forms.Label
     Friend WithEvents FFFPSGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents FFAudGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents AAMRWBBitratePanel As System.Windows.Forms.Panel
+    Friend WithEvents AMRWBBitrateComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents AMRWBBitrateLabel As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
 End Class

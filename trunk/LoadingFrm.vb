@@ -34,11 +34,11 @@
             Panel1.BackColor = Color.FromKnownColor(KnownColor.Black)
             Label1.ForeColor = Color.FromKnownColor(KnownColor.White)
         End If
-        VersionLabel.Text = "Kirara Encoder v" & _
-        My.Application.Info.Version.Major & "." & _
-        My.Application.Info.Version.Minor & " SVN-r" & _
+        VersionLabel.Text = "Kirara Encoder SVN-r" & _
         My.Application.Info.Version.Build & " " & MainFrm.PDATA
         '보이기
         Me.Show()
     End Sub
+
+
 End Class

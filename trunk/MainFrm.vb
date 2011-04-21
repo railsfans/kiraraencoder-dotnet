@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.04.19]"
+    Public PDATA = "[2011.04.22]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -799,7 +799,7 @@ Public Class MainFrm
                 End If
                 'EncListListView.Font = New Font(Me.Font.Name, Me.Font.Size)
 
-                If XTR.Name = "MainFrmNewVerToolStripMenuItem" Then NewVerToolStripMenuItem.Text = XTR.ReadString
+                'If XTR.Name = "MainFrmNewVerToolStripMenuItem" Then NewVerToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmLangToolStripMenuItem" Then LangToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "MainFrmAboutToolStripMenuItem" Then AboutToolStripMenuItem.Text = XTR.ReadString
                 'If XTR.Name = "MainFrmEncListGroupBox" Then EncListGroupBox.Text = XTR.ReadString
@@ -1170,8 +1170,10 @@ LANG_SKIP:
                 Else
                     AKByteV = Val(EncSetFrm.NeroAACBitrateNumericUpDown.Value) / 8
                 End If
-            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
+            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR-NB
                 AKByteV = Val(EncSetFrm.AMRBitrateComboBox.Text) / 8
+            ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-WB(libvo)" Then 'AMR-WB
+                AKByteV = Val(EncSetFrm.AMRWBBitrateComboBox.Text) / 8
             ElseIf EncSetFrm.AudioCodecComboBox.Text = "[OGG] Vorbis" OrElse EncSetFrm.AudioCodecComboBox.Text = "Vorbis" Then 'Vorbis
                 ExAudioB = True
             ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC
@@ -1556,8 +1558,10 @@ LANG_SKIP:
         '=================================
         Dim SamplerateV As String = ""
         '예외코덱
-        If EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
+        If EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR-NB
             SamplerateV = "8000 Hz"
+        ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-WB(libvo)" Then 'AMR-WB
+            SamplerateV = "16000 Hz"
         Else
             If EncSetFrm.SamplerateCheckBox.Checked = True Then
                 SamplerateV = LangCls.MainOriginalSamplerate
@@ -1571,7 +1575,9 @@ LANG_SKIP:
         '=================================
         Dim ChannelV As String = ""
         '예외코덱
-        If EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
+        If EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR-NB
+            ChannelV = LangCls.Mainch10Str
+        ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-WB(libvo)" Then 'AMR-WB
             ChannelV = LangCls.Mainch10Str
         Else
             If AVSCheckBox.Checked = True Then 'AviSynth 사용
@@ -1616,8 +1622,10 @@ LANG_SKIP:
             ElseIf EncSetFrm.NeroAACVBRRadioButton.Checked = True Then
                 AudioBitrateV = "VBR Q=" & EncSetFrm.NeroAACQNumericUpDown.Value
             End If
-        ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR
+        ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" Then 'AMR-NB
             AudioBitrateV = EncSetFrm.AMRBitrateComboBox.Text & " Kbit/s"
+        ElseIf EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" OrElse EncSetFrm.AudioCodecComboBox.Text = "AMR-WB(libvo)" Then 'AMR-WB
+            AudioBitrateV = EncSetFrm.AMRWBBitrateComboBox.Text & " Kbit/s"
         ElseIf EncSetFrm.AudioCodecComboBox.Text = "[OGG] Vorbis" OrElse EncSetFrm.AudioCodecComboBox.Text = "Vorbis" Then 'Vorbis
             AudioBitrateV = "Q=" & EncSetFrm.VorbisQNumericUpDown.Value
         ElseIf EncSetFrm.AudioCodecComboBox.Text = "[FLAC] Free Lossless Audio Codec(FLAC)" OrElse EncSetFrm.AudioCodecComboBox.Text = "Free Lossless Audio Codec(FLAC)" Then 'FLAC
@@ -2339,13 +2347,11 @@ ReDel:
         Dim BetaStr As String = ""
         If BetaStrB = True Then BetaStr = " Beta"
         If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
-            Me.Text = "Kirara Encoder" & BetaStr & " v" & _
-            My.Application.Info.Version.Major & "." & _
-            My.Application.Info.Version.Minor & " x64"
+            Me.Text = "Kirara Encoder" & BetaStr & " SVN-r" & _
+            My.Application.Info.Version.Build & " x64"
         Else
-            Me.Text = "Kirara Encoder" & BetaStr & " v" & _
-            My.Application.Info.Version.Major & "." & _
-            My.Application.Info.Version.Minor
+            Me.Text = "Kirara Encoder" & BetaStr & " SVN-r" & _
+            My.Application.Info.Version.Build
         End If
 
         'MPLAYEREXESTR 설정
@@ -3031,6 +3037,7 @@ UAC:
             .AudioVolNumericUpDown.Value = 256
             .VorbisQNumericUpDown.Value = 10
             .AMRBitrateComboBox.Text = "12.2"
+            .AMRWBBitrateComboBox.Text = "23.85"
             .NeroAACProfileComboBox.Text = "AAC LC"
             .NeroAACBitrateNumericUpDown.Value = 128
             .NeroAACQNumericUpDown.Value = 0.5
@@ -4032,6 +4039,11 @@ RELOAD:
                     If XTR.Name = "EncSetFrm_AMRBitrateComboBox" Then
                         Dim XTRSTR As String = XTR.ReadString
                         If XTRSTR <> "" Then .AMRBitrateComboBox.Text = XTRSTR Else .AMRBitrateComboBox.Text = "12.2"
+                    End If
+
+                    If XTR.Name = "EncSetFrm_AMRWBBitrateComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .AMRWBBitrateComboBox.Text = XTRSTR Else .AMRWBBitrateComboBox.Text = "23.85"
                     End If
 
                     If XTR.Name = "EncSetFrm_NeroAACProfileComboBox" Then
@@ -5948,6 +5960,10 @@ RELOAD:
                 XTWriter.WriteString(.AMRBitrateComboBox.Text)
                 XTWriter.WriteEndElement()
 
+                XTWriter.WriteStartElement("EncSetFrm_AMRWBBitrateComboBox")
+                XTWriter.WriteString(.AMRWBBitrateComboBox.Text)
+                XTWriter.WriteEndElement()
+
                 XTWriter.WriteStartElement("EncSetFrm_NeroAACProfileComboBox")
                 XTWriter.WriteString(.NeroAACProfileComboBox.Text)
                 XTWriter.WriteEndElement()
@@ -7572,26 +7588,6 @@ RELOAD:
         Try
             EncSetFrm.ShowDialog(Me)
         Catch ex As Exception
-        End Try
-    End Sub
-
-    Private Sub VerWebBrowser_DocumentCompleted(ByVal sender As System.Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles VerWebBrowser.DocumentCompleted
-        If VerWebBrowser.Document.Title = "verchk" Then
-            Dim DnVerStr As String = Replace(VerWebBrowser.DocumentText, "<title>verchk</title>", "")
-            If DnVerStr > My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor Then
-                NewVerToolStripMenuItem.Visible = True
-            Else
-                NewVerToolStripMenuItem.Visible = False
-            End If
-        End If
-    End Sub
-
-    Private Sub NewVerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewVerToolStripMenuItem.Click
-        '새로운 버전 다운로드
-        Try
-            System.Diagnostics.Process.Start("http://www.kiraraencoder.pe.kr/newverdown")
-        Catch ex As Exception
-            MessageBox.Show("Unable to open link that was clicked.")
         End Try
     End Sub
 

@@ -358,7 +358,7 @@
     <value>MainPanel</value>
   </data>
   <data name="&gt;&gt;EncListListView.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="AddButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -733,7 +733,7 @@
     <value>MainPanel</value>
   </data>
   <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="AVTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 8</value>
@@ -790,7 +790,7 @@
     <value>MainPanel</value>
   </data>
   <data name="&gt;&gt;CleanUpListBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="OutputBox_GI.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 58</value>
@@ -823,7 +823,7 @@
     <value>MainPanel</value>
   </data>
   <data name="&gt;&gt;OutputBox_GI.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="Panel11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1138,7 +1138,7 @@
     <value>MainPanel</value>
   </data>
   <data name="&gt;&gt;BPanel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="PresetLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1323,15 +1323,6 @@
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>프로그램 정보</value>
   </data>
-  <data name="NewVerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 20</value>
-  </data>
-  <data name="NewVerToolStripMenuItem.Text" xml:space="preserve">
-    <value>새로운 버전을 사용할 수 있습니다</value>
-  </data>
-  <data name="NewVerToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -1354,7 +1345,7 @@
     <value>MainPanel</value>
   </data>
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <metadata name="PresetContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>161, 17</value>
@@ -1757,7 +1748,7 @@
     <value>Center</value>
   </data>
   <data name="DefPreviewImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 58</value>
+    <value>190, 58</value>
   </data>
   <data name="DefPreviewImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 18</value>
@@ -1779,30 +1770,6 @@
   </data>
   <data name="&gt;&gt;DefPreviewImg.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="VerWebBrowser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 58</value>
-  </data>
-  <data name="VerWebBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 40</value>
-  </data>
-  <data name="VerWebBrowser.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="VerWebBrowser.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;VerWebBrowser.Name" xml:space="preserve">
-    <value>VerWebBrowser</value>
-  </data>
-  <data name="&gt;&gt;VerWebBrowser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VerWebBrowser.Parent" xml:space="preserve">
-    <value>MainPanel</value>
-  </data>
-  <data name="&gt;&gt;VerWebBrowser.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="Panel10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -1850,7 +1817,7 @@
     <value>MainPanel</value>
   </data>
   <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="Panel4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2096,7 +2063,7 @@
     <value>MainPanel</value>
   </data>
   <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="MainPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -7603,12 +7570,6 @@
     <value>AboutToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;AboutToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NewVerToolStripMenuItem.Name" xml:space="preserve">
-    <value>NewVerToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;NewVerToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;FolderBrowserDialog1.Name" xml:space="preserve">

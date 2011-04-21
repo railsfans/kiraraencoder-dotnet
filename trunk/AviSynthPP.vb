@@ -959,8 +959,10 @@ ERRSKIP:
             ' #<ssrc>
             '=========================
             Dim SSRCV As String = ""
-            If EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR 일경우 예외로 8000Hz
+            If EncSetFrm.AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR-NB 일경우 예외로 8000Hz
                 SSRCV = "8000"
+            ElseIf EncSetFrm.AudioCodecComboBox.Text = "AMR-WB(libvo)" OrElse EncSetFrm.AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" Then 'AMR-WB 일경우 예외로 16000Hz
+                SSRCV = "16000"
             Else
                 If EncSetFrm.SamplerateCheckBox.Checked = False Then '원본 샘플 아님
                     SSRCV = EncSetFrm.SamplerateComboBox.Text

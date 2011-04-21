@@ -73,8 +73,10 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
             AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 Then
@@ -91,8 +93,10 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
             AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 Then
@@ -109,8 +113,10 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
             AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 Then
@@ -127,8 +133,10 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
             AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 Then
@@ -148,6 +156,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("Vorbis")
             AudioCodecComboBox.Items.Add("Direct Stream Copy")
@@ -170,8 +179,10 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
             AudioCodecComboBox.Items.Add("Free Lossless Audio Codec(FLAC)")
             AudioCodecComboBox.Items.Add("Direct Stream Copy")
 
@@ -202,6 +213,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("Vorbis")
@@ -334,11 +346,14 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("[MP2] MPEG-1 Audio layer 2(MP2)")
             AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame")
-            'AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)") 나중에 추가
+            'AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)") 나중에
             AudioCodecComboBox.Items.Add("[MP4] FAAC")
             AudioCodecComboBox.Items.Add("[M4A] FAAC")
+            AudioCodecComboBox.Items.Add("[MP4] VisualOn AAC")
+            AudioCodecComboBox.Items.Add("[M4A] VisualOn AAC")
             AudioCodecComboBox.Items.Add("[MP4] Nero AAC")
             AudioCodecComboBox.Items.Add("[AMR] AMR-NB(libopencore)")
+            AudioCodecComboBox.Items.Add("[AMR] AMR-WB(libvo)")
             AudioCodecComboBox.Items.Add("[AC3] Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("[OGG] Vorbis")
             AudioCodecComboBox.Items.Add("[WMA] Windows Media Audio 1")
@@ -640,7 +655,10 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmNeroAACSALabel" Then NeroAACSALabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmNeroAACBitrateLabel" Then NeroAACBitrateLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmNeroAACQLabel" Then NeroAACQLabel.Text = XTR.ReadString
-                If XTR.Name = "EncSetFrmAMRBitrateLabel" Then AMRBitrateLabel.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmAMRBitrateLabel" Then
+                    AMRBitrateLabel.Text = XTR.ReadString
+                    AMRWBBitrateLabel.Text = AMRBitrateLabel.Text
+                End If
                 If XTR.Name = "EncSetFrmNameGroupBox" Then NameGroupBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmHeaderLabel" Then HeaderLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmExtensionLabel" Then ExtensionLabel.Text = XTR.ReadString
@@ -891,6 +909,7 @@ LANG_SKIP:
         AudioVolNumericUpDown.Value = 256
         VorbisQNumericUpDown.Value = 10
         AMRBitrateComboBox.Text = "12.2"
+        AMRWBBitrateComboBox.Text = "23.85"
         NeroAACProfileComboBox.Text = "AAC LC"
         NeroAACBitrateNumericUpDown.Value = 128
         NeroAACQNumericUpDown.Value = 0.5
@@ -1106,9 +1125,27 @@ LANG_SKIP:
             AbitratePanel.Visible = False
             AVorbisQPanel.Visible = False
             AAMRBitratePanel.Visible = True
+            AAMRWBBitratePanel.Visible = False
             BitrateNPanel.Visible = False
             AAMRBitratePanel.Left = 15
             AAMRBitratePanel.Top = 48
+            NeroAACGroupBox.Visible = False
+            SampleratePanel.Enabled = False
+            LAMEMP3QPanel.Visible = False
+            '채널
+            AudioPPFrm.AviSynthChGroupBox.Enabled = False
+            FFmpegChComboBox.Enabled = False
+            FFmpegChLabel.Enabled = False
+
+        ElseIf AudioCodecComboBox.Text = "AMR-WB(libvo)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" Then
+
+            AbitratePanel.Visible = False
+            AVorbisQPanel.Visible = False
+            AAMRBitratePanel.Visible = False
+            AAMRWBBitratePanel.Visible = True
+            BitrateNPanel.Visible = False
+            AAMRWBBitratePanel.Left = 15
+            AAMRWBBitratePanel.Top = 48
             NeroAACGroupBox.Visible = False
             SampleratePanel.Enabled = False
             LAMEMP3QPanel.Visible = False
@@ -1122,6 +1159,7 @@ LANG_SKIP:
             AbitratePanel.Visible = False
             AVorbisQPanel.Visible = True
             AAMRBitratePanel.Visible = False
+            AAMRWBBitratePanel.Visible = False
             BitrateNPanel.Visible = False
             AVorbisQPanel.Left = 15
             AVorbisQPanel.Top = 48
@@ -1138,6 +1176,7 @@ LANG_SKIP:
             AbitratePanel.Visible = False
             AVorbisQPanel.Visible = False
             AAMRBitratePanel.Visible = False
+            AAMRWBBitratePanel.Visible = False
             BitrateNPanel.Visible = False
             LAMEMP3QPanel.Left = 15
             LAMEMP3QPanel.Top = 48
@@ -1162,6 +1201,7 @@ LANG_SKIP:
             AbitratePanel.Visible = False
             AVorbisQPanel.Visible = False
             AAMRBitratePanel.Visible = False
+            AAMRWBBitratePanel.Visible = False
             BitrateNPanel.Visible = True
             BitrateNPanel.Left = 15
             BitrateNPanel.Top = 48
@@ -1179,6 +1219,7 @@ LANG_SKIP:
             AbitratePanel.Visible = False
             AVorbisQPanel.Visible = False
             AAMRBitratePanel.Visible = False
+            AAMRWBBitratePanel.Visible = False
             BitrateNPanel.Visible = True
             BitrateNPanel.Left = 15
             BitrateNPanel.Top = 48
@@ -1196,6 +1237,7 @@ LANG_SKIP:
             AbitratePanel.Visible = False
             AVorbisQPanel.Visible = False
             AAMRBitratePanel.Visible = False
+            AAMRWBBitratePanel.Visible = False
             BitrateNPanel.Visible = True
             BitrateNPanel.Left = 15
             BitrateNPanel.Top = 48
@@ -1213,6 +1255,7 @@ LANG_SKIP:
             AbitratePanel.Visible = True
             AVorbisQPanel.Visible = False
             AAMRBitratePanel.Visible = False
+            AAMRWBBitratePanel.Visible = False
             BitrateNPanel.Visible = False
             AbitratePanel.Left = 15
             AbitratePanel.Top = 48
@@ -1754,6 +1797,11 @@ RELOAD:
                 If XTR.Name = "EncSetFrm_AMRBitrateComboBox" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then AMRBitrateComboBox.Text = XTRSTR Else AMRBitrateComboBox.Text = "12.2"
+                End If
+
+                If XTR.Name = "EncSetFrm_AMRWBBitrateComboBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then AMRWBBitrateComboBox.Text = XTRSTR Else AMRWBBitrateComboBox.Text = "23.85"
                 End If
 
                 If XTR.Name = "EncSetFrm_NeroAACProfileComboBox" Then
@@ -2476,10 +2524,14 @@ RELOAD:
             AudioCodecComboBoxV = " -acodec libmp3lame"
         ElseIf AudioCodecComboBox.Text = "FAAC" OrElse AudioCodecComboBox.Text = "[MP4] FAAC" OrElse AudioCodecComboBox.Text = "[M4A] FAAC" Then
             AudioCodecComboBoxV = " -acodec libfaac"
+        ElseIf AudioCodecComboBox.Text = "VisualOn AAC" OrElse AudioCodecComboBox.Text = "[MP4] VisualOn AAC" OrElse AudioCodecComboBox.Text = "[M4A] VisualOn AAC" Then
+            AudioCodecComboBoxV = " -acodec libvo_aacenc"
         ElseIf AudioCodecComboBox.Text = "Nero AAC" OrElse AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
             AudioCodecComboBoxV = " -acodec pcm_s16le"
         ElseIf AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then
             AudioCodecComboBoxV = " -acodec libopencore_amrnb"
+        ElseIf AudioCodecComboBox.Text = "AMR-WB(libvo)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" Then
+            AudioCodecComboBoxV = " -acodec libvo_amrwbenc"
         ElseIf AudioCodecComboBox.Text = "Dolby Digital Audio Coding-3(AC3)" OrElse AudioCodecComboBox.Text = "[AC3] Dolby Digital Audio Coding-3(AC3)" Then
             AudioCodecComboBoxV = " -acodec ac3"
         ElseIf AudioCodecComboBox.Text = "Vorbis" OrElse AudioCodecComboBox.Text = "[OGG] Vorbis" Then
@@ -2500,7 +2552,9 @@ RELOAD:
         ' AviSynth 오디오채널
         '***********************************
         Dim AviSynthChComboBoxV As String = ""
-        If AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR 일경우 예외로 1채널
+        If AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR-NB 일경우 예외로 1채널
+            AviSynthChComboBoxV = " -ac 1"
+        ElseIf AudioCodecComboBox.Text = "AMR-WB(libvo)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" Then 'AMR-WB 일경우 예외로 1채널
             AviSynthChComboBoxV = " -ac 1"
         End If
 
@@ -2508,7 +2562,9 @@ RELOAD:
         ' FFmpeg 오디오채널
         '***********************************
         Dim FFmpegChComboBoxV As String = ""
-        If AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR 일경우 예외로 1채널
+        If AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR-NB 일경우 예외로 1채널
+            FFmpegChComboBoxV = " -ac 1"
+        ElseIf AudioCodecComboBox.Text = "AMR-WB(libvo)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" Then 'AMR-WB 일경우 예외로 1채널
             FFmpegChComboBoxV = " -ac 1"
         Else
             If FFmpegChComboBox.Text = LangCls.EncSetch10ComboBox Then
@@ -2524,8 +2580,10 @@ RELOAD:
         ' 오디오 샘플레이트
         '***********************************
         Dim SamplerateComboBoxV As String = ""
-        If AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR 일경우 예외로 8000Hz
+        If AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then 'AMR-NB 일경우 예외로 8000Hz
             SamplerateComboBoxV = " -ar 8000"
+        ElseIf AudioCodecComboBox.Text = "AMR-WB(libvo)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" Then 'AMR-WB 일경우 예외로 16000Hz
+            SamplerateComboBoxV = " -ar 16000"
         Else
 
             If SamplerateCheckBox.Checked = False Then '원본 샘플레이트 아님
@@ -2565,6 +2623,9 @@ RELOAD:
 
         ElseIf AudioCodecComboBox.Text = "AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then
             AudioBitrateComboBoxV = " -ab " & AMRBitrateComboBox.Text & "k"
+
+        ElseIf AudioCodecComboBox.Text = "AMR-WB(libvo)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" Then
+            AudioBitrateComboBoxV = " -ab " & AMRWBBitrateComboBox.Text & "k"
 
         ElseIf AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
             AudioBitrateComboBoxV = " -aq " & LAMEMP3QNumericUpDown.Value & " -ab " & LAMEMP3QComboBox.Text & "k"
@@ -2627,13 +2688,13 @@ RELOAD:
                 FormatV = " -f mp2"
             ElseIf AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
                 FormatV = " -f mp3"
-            ElseIf AudioCodecComboBox.Text = "[MP4] FAAC" Then
+            ElseIf AudioCodecComboBox.Text = "[MP4] FAAC" OrElse AudioCodecComboBox.Text = "[MP4] VisualOn AAC" Then
                 FormatV = " -f mp4"
-            ElseIf AudioCodecComboBox.Text = "[M4A] FAAC" Then
+            ElseIf AudioCodecComboBox.Text = "[M4A] FAAC" OrElse AudioCodecComboBox.Text = "[M4A] VisualOn AAC" Then
                 FormatV = " -f ipod"
             ElseIf AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
                 FormatV = "" '네로 AAC 예외//
-            ElseIf AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" Then
+            ElseIf AudioCodecComboBox.Text = "[AMR] AMR-NB(libopencore)" OrElse AudioCodecComboBox.Text = "[AMR] AMR-WB(libvo)" Then
                 FormatV = " -f amr"
             ElseIf AudioCodecComboBox.Text = "[AC3] Dolby Digital Audio Coding-3(AC3)" Then
                 FormatV = " -f ac3"
