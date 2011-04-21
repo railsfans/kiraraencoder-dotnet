@@ -736,6 +736,7 @@ Partial Class StreamFrm
         Me.Controls.Add(Me.PreviewGroupBox)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MinimizeBox = False
         Me.Name = "StreamFrm"

@@ -548,11 +548,36 @@ Public Class StreamFrm
 
     End Sub
 
+    Private Sub StreamFrm_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+
+        'If e.KeyCode = 37 Then    '<        10 Backward
+        '    MsgSend("pausing_keep seek -10 0 ")
+        'End If
+
+        'If e.KeyCode = 39 Then    '>        10 Forward
+        '    MsgSend("pausing_keep seek 10 0 ")
+        'End If
+
+        'If e.KeyCode = 32 Then    'spacebar        play/pause
+        '    PreviewGroupBox.Focus()
+        '    If OpenVL = False Then
+        '        PlaySub()
+        '    Else
+        '        MsgSend("pause ")
+        '    End If
+        'End If
+
+    End Sub
+
     Private Sub StreamFrm_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        '포커스
+        PreviewGroupBox.Focus()
+
         PlaySub()
     End Sub
 
     Private Sub PlayPauseBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayPauseBTN.Click
+        PreviewGroupBox.Focus()
         If OpenVL = False Then
             PlaySub()
         Else
@@ -561,6 +586,7 @@ Public Class StreamFrm
     End Sub
 
     Private Sub StopBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StopBTN.Click
+        PreviewGroupBox.Focus()
         MsgSend("pausing seek 0 2 ")
     End Sub
 
@@ -587,6 +613,7 @@ Public Class StreamFrm
     End Sub
 
     Private Sub ForwardBTN_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ForwardBTN.MouseUp
+        PreviewGroupBox.Focus()
         If e.Button = Windows.Forms.MouseButtons.Left Then
             If ForwardTimerM.Enabled = True Then
                 ForwardTimerMV = ""
@@ -621,6 +648,7 @@ Public Class StreamFrm
     End Sub
 
     Private Sub BackwardBTN_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BackwardBTN.MouseUp
+        PreviewGroupBox.Focus()
         If e.Button = Windows.Forms.MouseButtons.Left Then
             If BackwardTimerM.Enabled = True Then
                 BackwardTimerMV = ""
@@ -1153,7 +1181,7 @@ LANG_SKIP:
         Else
             TimeSpGroupBox.Enabled = True
         End If
-
+    
     End Sub
 
     Private Sub StreamFrm_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
@@ -1191,6 +1219,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub FrameStepButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FrameStepButton.Click
+        PreviewGroupBox.Focus()
         MsgSend("frame_step ")
     End Sub
 
@@ -1561,7 +1590,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub STRCKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles STRCKButton.Click
-
+        PreviewGroupBox.Focus()
         Try
             SCheckBox.Checked = True
             SHTextBox.Text = Split(Nowhms.Text, ":")(0)
@@ -1574,7 +1603,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub ENDCKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ENDCKButton.Click
-
+        PreviewGroupBox.Focus()
         Try
             ECheckBox.Checked = True
             EHTextBox.Text = Split(Nowhms.Text, ":")(0)
@@ -1682,6 +1711,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub TimeSpButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimeSpButton.Click
+        PreviewGroupBox.Focus()
         CropGroupBox.Visible = False
         If TimeSpGroupBox.Visible = False Then
             TimeSpGroupBox.Visible = True
@@ -1692,6 +1722,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub CropButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CropButton.Click
+        PreviewGroupBox.Focus()
         TimeSpGroupBox.Visible = False
         If CropGroupBox.Visible = False Then
             CropGroupBox.Visible = True
@@ -1903,6 +1934,10 @@ LANG_SKIP:
     End Sub
 
     Private Sub Nowhms_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nowhms.Click
+
+    End Sub
+
+    Private Sub ForwardBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ForwardBTN.Click
 
     End Sub
 End Class

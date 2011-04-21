@@ -98,7 +98,7 @@ Public Class MainFrm
     Public NeroAACSTRNEP As String = ""
 
     '외부폼설정
-    Public VolTrackBarStreamFrmV As Integer = 100
+    Public VolTrackBarStreamFrmV As Integer = 10
     Public AllChToolStripMenuItemStreamFrmV As Boolean = True
     Public LeftChToolStripMenuItemStreamFrmV As Boolean = False
     Public RightChToolStripMenuItemStreamFrmV As Boolean = False
@@ -2932,7 +2932,7 @@ UAC:
 
     Private Sub APP_DefSUB()
 
-        VolTrackBarStreamFrmV = 100
+        VolTrackBarStreamFrmV = 10
         AllChToolStripMenuItemStreamFrmV = True
         LeftChToolStripMenuItemStreamFrmV = False
         RightChToolStripMenuItemStreamFrmV = False
@@ -3358,7 +3358,7 @@ RELOAD:
 
                 If XTR.Name = "VolTrackBarStreamFrmV" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then VolTrackBarStreamFrmV = XTRSTR Else VolTrackBarStreamFrmV = 100
+                    If XTRSTR <> "" Then VolTrackBarStreamFrmV = XTRSTR Else VolTrackBarStreamFrmV = 10
                 End If
 
                 If XTR.Name = "AllChToolStripMenuItemStreamFrmV" Then
