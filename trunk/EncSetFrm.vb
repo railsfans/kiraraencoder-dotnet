@@ -310,6 +310,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("FAAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC")
             AudioCodecComboBox.Items.Add("Nero AAC")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
