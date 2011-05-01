@@ -478,9 +478,38 @@ Public Class StreamFrm
         If MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(3).Text = "MPEGTS" Then VOLV = " -volume " & VolTrackBar.Value
 
         ProcessV = False '처리 부분 초기화
+
+        '--------------
+        '비디오출력드라이버
+        Dim MPlayerVideoOutputDeviceStr As String = "direct3d"
+        If MainFrm.VideoODComboBoxV = "DirectX" Then
+            MPlayerVideoOutputDeviceStr = "directx"
+        ElseIf MainFrm.VideoODComboBoxV = "DirectX noaccel" Then
+            MPlayerVideoOutputDeviceStr = "directx:noaccel"
+        ElseIf MainFrm.VideoODComboBoxV = "Direct3D 9 Renderer" Then
+            MPlayerVideoOutputDeviceStr = "direct3d"
+        ElseIf MainFrm.VideoODComboBoxV = "OpenGL" Then
+            MPlayerVideoOutputDeviceStr = "gl"
+        ElseIf MainFrm.VideoODComboBoxV = "OpenGL YUV" Then
+            MPlayerVideoOutputDeviceStr = "gl:yuv=4:force-pbo:ati-hack"
+        ElseIf MainFrm.VideoODComboBoxV = "OpenGL multiple textures version" Then
+            MPlayerVideoOutputDeviceStr = "gl2"
+        ElseIf MainFrm.VideoODComboBoxV = "MatrixView" Then
+            MPlayerVideoOutputDeviceStr = "matrixview"
+        ElseIf MainFrm.VideoODComboBoxV = "Colour AsCii Art library" Then
+            MPlayerVideoOutputDeviceStr = "caca"
+        End If
+        '--------------
+
+        '컬러키
+        Dim RV As String = "00", GV As String = "00", BV As String = "00"
+        If Len(Hex(PrePanel1.BackColor.R.ToString)) = 1 Then RV = "0" & Hex(PrePanel1.BackColor.R) Else RV = Hex(PrePanel1.BackColor.R)
+        If Len(Hex(PrePanel1.BackColor.G.ToString)) = 1 Then GV = "0" & Hex(PrePanel1.BackColor.G) Else GV = Hex(PrePanel1.BackColor.G)
+        If Len(Hex(PrePanel1.BackColor.B.ToString)) = 1 Then BV = "0" & Hex(PrePanel1.BackColor.B) Else BV = Hex(PrePanel1.BackColor.B)
+
         Dim MSGB As String = ""
         MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(10).Text & Chr(34) & _
-        " -slave -identify -noquiet -nofontconfig -osdlevel 0 -idx -vo direct3d -wid " & PrePanel1.Handle.ToString & " -speed " & rateM & _
+        " -slave -identify -noquiet -nokeepaspect -nofontconfig -osdlevel 0 -colorkey 0x" & RV & GV & BV & " -idx -vo " & MPlayerVideoOutputDeviceStr & " -wid " & PrePanel1.Handle.ToString & " -speed " & rateM & _
         CACHEV & ThreadV & StartSet & scaletempoV & extrastereoV & karaokeV & VisualizeMotionVectorsV & VisualizeBlockTypesV & DeinterlaceV & VOLV
 
         Dim TempOutputHandle As SafeFileHandle = Nothing
@@ -488,7 +517,11 @@ Public Class StreamFrm
 
         Dim StartupInfo As New WinAPI.STARTUPINFO
         StartupInfo.cb = Marshal.SizeOf(StartupInfo)
-        StartupInfo.dwFlags = WinAPI.STARTF_USESTDHANDLES Or WinAPI.STARTF_USESHOWWINDOW
+        If MPlayerVideoOutputDeviceStr = "caca" Then 'CACA
+            StartupInfo.dwFlags = WinAPI.STARTF_USESTDHANDLES
+        Else
+            StartupInfo.dwFlags = WinAPI.STARTF_USESTDHANDLES Or WinAPI.STARTF_USESHOWWINDOW
+        End If
 
         Dim SecurityAttributes As New WinAPI.SECURITY_ATTRIBUTES
         SecurityAttributes.nLength = Marshal.SizeOf(SecurityAttributes)

@@ -33,6 +33,13 @@ Public Class AviSynthEditorFrm
     Dim shellpidexename As String
     Dim shellpidstarttime As String
 
+    'x,y
+    Public VWX As Integer = 0
+    Public VWY As Integer = 0
+
+    'PtimeB
+    Public PtimeB As Single = 0.0
+
     Private Sub ImgSButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImgSButton.Click
 
         If MainFrm.SPreB = True Then Exit Sub
@@ -66,11 +73,12 @@ Public Class AviSynthEditorFrm
 
     End Sub
 
-    Private Sub PreviewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewButton.Click
+    Public Sub PreviewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewButton.Click
 
         If MainFrm.SPreB = True Then Exit Sub
-
+        If waitbool = True Then Exit Sub '중복방지
         TabControl1.Focus()
+        '-------------------------
 
         '선택된 아이템이 없으면 종료
         If MainFrm.EncListListView.SelectedItems.Count = 0 Then
@@ -96,27 +104,39 @@ Public Class AviSynthEditorFrm
             PreviewButton.Enabled = True
         Else
             If MainFrm.SEEKMODEM1B = True Then
+                Try
+                    VideoWindowFrm.Close()
+                Catch ex As Exception
+                End Try
                 PreviewButton.Enabled = True
                 If ListenButton.Enabled = True Then
                     ListenButton_Click(Nothing, Nothing)
                 End If
             Else
                 VideoWindowFrm.Close()
+                waitbool = True
                 VideoWindowFrm.Show(Me)
             End If
         End If
 
     End Sub
 
-    Private Sub RefButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefButton.Click
+    Public Sub RefButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefButton.Click
 
         If MainFrm.SPreB = True Then Exit Sub
-
+        If waitbool = True Then Exit Sub '중복 새로고침 클릭방지
         TabControl1.Focus()
+        '-------------------------
 
-        waitbool = True
-        VideoWindowFrm.Ref_SUB()
-        waitbool = False
+        'VideoWindowFrm.ref_call = True // 창 닫고 새로고침 하는 방식
+        PtimeB = VideoWindowFrm.PTime
+        'acitve
+        VideoWindowFrm.ApplyToolStripMenuItem.Enabled = False
+        RefButton.Enabled = False
+        'run
+        waitbool = True '// 그대로 새로고침 하는
+        VideoWindowFrm.Ref_SUB() '// 그대로 새로고침 하는
+        'PreviewButton_Click(Nothing, Nothing) // 창 닫고 새로고침 하는 방식
 
     End Sub
 
@@ -302,7 +322,7 @@ LANG_SKIP:
 
     End Sub
 
-    Private Sub ListenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListenButton.Click
+    Public Sub ListenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListenButton.Click
 
         If MainFrm.SPreB = True Then Exit Sub
 

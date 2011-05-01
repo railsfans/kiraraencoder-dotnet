@@ -31,7 +31,9 @@ Public Class x264optsFrm
         ThreadsNumericUpDown.Value = 0
         ProfileComboBox.Text = "Baseline Profile"
         LevelComboBox.Text = "Unrestricted AutoGuess"
-        FastfirstpassCheckBox.Checked = False
+        SlowfirstpassCheckBox.Checked = False
+        PresetsTrackBar.Value = 5
+        TuningsComboBox.Text = "Default"
         'Frame-Type
         DeblockingCheckBox.Checked = True
         DeblockingAlphaNumericUpDown.Value = 0
@@ -47,8 +49,8 @@ Public Class x264optsFrm
         PframeWeightedPredictionComboBox.Text = "Smart analysis"
         AdaptiveIFramesDecisionCheckBox.Checked = True
         'Rate Control
-        QMinNumericUpDown.Value = 10
-        QMaxNumericUpDown.Value = 51
+        QMinNumericUpDown.Value = 0
+        QMaxNumericUpDown.Value = 69
         QDeltaNumericUpDown.Value = 4
         QIPRatioNumericUpDown.Value = 1.4
         QPBRatioNumericUpDown.Value = 1.3
@@ -362,9 +364,19 @@ RELOAD:
                         If XTRSTR <> "" Then .LevelComboBox.Text = XTRSTR Else .LevelComboBox.Text = "Unrestricted AutoGuess"
                     End If
 
-                    If XTR.Name = "x264optsFrm_FastfirstpassCheckBox" Then
+                    If XTR.Name = "x264optsFrm_SlowfirstpassCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .FastfirstpassCheckBox.Checked = XTRSTR Else .FastfirstpassCheckBox.Checked = False
+                        If XTRSTR <> "" Then .SlowfirstpassCheckBox.Checked = XTRSTR Else .SlowfirstpassCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "x264optsFrm_PresetsTrackBar" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .PresetsTrackBar.Value = XTRSTR Else .PresetsTrackBar.Value = 5
+                    End If
+
+                    If XTR.Name = "x264optsFrm_TuningsComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TuningsComboBox.Text = XTRSTR Else .TuningsComboBox.Text = "Default"
                     End If
 
                     'Frame-Type
@@ -436,12 +448,12 @@ RELOAD:
                     'Rate Control
                     If XTR.Name = "x264optsFrm_QMinNumericUpDown" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .QMinNumericUpDown.Value = XTRSTR Else .QMinNumericUpDown.Value = 10
+                        If XTRSTR <> "" Then .QMinNumericUpDown.Value = XTRSTR Else .QMinNumericUpDown.Value = 0
                     End If
 
                     If XTR.Name = "x264optsFrm_QMaxNumericUpDown" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .QMaxNumericUpDown.Value = XTRSTR Else .QMaxNumericUpDown.Value = 51
+                        If XTRSTR <> "" Then .QMaxNumericUpDown.Value = XTRSTR Else .QMaxNumericUpDown.Value = 69
                     End If
 
                     If XTR.Name = "x264optsFrm_QDeltaNumericUpDown" Then
@@ -680,6 +692,16 @@ RELOAD:
                 If XTR.Name = "CancelBTN" Then CancelBTN.Text = XTR.ReadString
                 If XTR.Name = "DefBTN" Then DefBTN.Text = XTR.ReadString
 
+                If XTR.Name = "x264optsFrmTabPage1" Then TabPage1.Text = XTR.ReadString
+                If XTR.Name = "x264optsFrmThreadsGroupBox" Then ThreadsGroupBox.Text = XTR.ReadString
+                If XTR.Name = "x264optsFrmThreadsLabel" Then ThreadsLabel.Text = XTR.ReadString
+                If XTR.Name = "x264optsFrmTuningsGroupBox" Then TuningsGroupBox.Text = XTR.ReadString
+                If XTR.Name = "x264optsFrmSlowfirstpassGroupBox" Then SlowfirstpassGroupBox.Text = XTR.ReadString
+                If XTR.Name = "x264optsFrmSlowfirstpassCheckBox" Then SlowfirstpassCheckBox.Text = XTR.ReadString
+                If XTR.Name = "x264optsFrmProfileGroupBox" Then ProfileGroupBox.Text = XTR.ReadString
+                If XTR.Name = "x264optsFrmLevelGroupBox" Then LevelGroupBox.Text = XTR.ReadString
+                If XTR.Name = "x264optsFrmPresetsGroupBox" Then PresetsGroupBox.Text = XTR.ReadString
+
             Loop
         Catch ex As Exception
             MsgBox("LANG_LOAD_ERROR :" & ex.Message)
@@ -692,7 +714,7 @@ LANG_SKIP:
 
         '퀀타이저 / 퀄리티 설정
         If InStr(EncSetFrm.VideoModeComboBox.SelectedItem, "[1PASS-CQP]", CompareMethod.Text) <> 0 Then '퀀타이저
-            TurboGroupBox.Enabled = False
+            SlowfirstpassGroupBox.Enabled = False
 
             RateControlGroupBox.Enabled = False
             AdaptiveQuantizersGroupBox.Enabled = False
@@ -703,7 +725,7 @@ LANG_SKIP:
             TempBlurofQuantafterCCLabel.Enabled = False
             TempBlurofQuantafterCCNumericUpDown.Enabled = False
         ElseIf InStr(EncSetFrm.VideoModeComboBox.SelectedItem, "[1PASS-CRF]", CompareMethod.Text) <> 0 Then '퀄리티
-            TurboGroupBox.Enabled = False
+            SlowfirstpassGroupBox.Enabled = False
 
             RateControlGroupBox.Enabled = True
             AdaptiveQuantizersGroupBox.Enabled = True
@@ -714,7 +736,7 @@ LANG_SKIP:
             TempBlurofQuantafterCCLabel.Enabled = False
             TempBlurofQuantafterCCNumericUpDown.Enabled = False
         ElseIf InStr(EncSetFrm.VideoModeComboBox.SelectedItem, "[2PASS-CBR]", CompareMethod.Text) <> 0 Then '2패스 비트레이트
-            TurboGroupBox.Enabled = True
+            SlowfirstpassGroupBox.Enabled = True
 
             RateControlGroupBox.Enabled = True
             AdaptiveQuantizersGroupBox.Enabled = True
@@ -725,7 +747,7 @@ LANG_SKIP:
             TempBlurofQuantafterCCLabel.Enabled = True
             TempBlurofQuantafterCCNumericUpDown.Enabled = True
         Else
-            TurboGroupBox.Enabled = False
+            SlowfirstpassGroupBox.Enabled = False
 
             RateControlGroupBox.Enabled = True
             AdaptiveQuantizersGroupBox.Enabled = True
@@ -738,6 +760,25 @@ LANG_SKIP:
         End If
 
         XML_LOAD(FunctionCls.AppInfoDirectoryPath & "\settings.xml")
+
+        '보여질 부분
+        If EncSetFrm.AdvanOptsCheckBox.Checked = True Then
+            SettingTabControl.TabPages.Clear()
+            SettingTabControl.TabPages.Add(TabPage1)
+            SettingTabControl.TabPages.Add(TabPage2)
+            SettingTabControl.TabPages.Add(TabPage3)
+            SettingTabControl.TabPages.Add(TabPage4)
+            PresetsGroupBox.Visible = False
+        Else
+            SettingTabControl.TabPages.Clear()
+            SettingTabControl.TabPages.Add(TabPage1)
+            PresetsGroupBox.Visible = True
+        End If
+
+        '윈도우 2000 디자이너
+        If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
+            PresetsTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+        End If
 
     End Sub
 
@@ -874,6 +915,35 @@ LANG_SKIP:
         VBVInitialBufferNumericUpDown.Text = VBVInitialBufferNumericUpDown.Value
     End Sub
 
+    Private Sub PresetsTrackBar_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles PresetsTrackBar.ValueChanged
+        If PresetsTrackBar.Value = 0 Then
+            PresetsLabel.Text = "Ultra Fast"
+        ElseIf PresetsTrackBar.Value = 1 Then
+            PresetsLabel.Text = "Super Fast"
+        ElseIf PresetsTrackBar.Value = 2 Then
+            PresetsLabel.Text = "Very Fast"
+        ElseIf PresetsTrackBar.Value = 3 Then
+            PresetsLabel.Text = "Faster"
+        ElseIf PresetsTrackBar.Value = 4 Then
+            PresetsLabel.Text = "Fast"
+        ElseIf PresetsTrackBar.Value = 5 Then
+            PresetsLabel.Text = "Medium"
+        ElseIf PresetsTrackBar.Value = 6 Then
+            PresetsLabel.Text = "Slow"
+        ElseIf PresetsTrackBar.Value = 7 Then
+            PresetsLabel.Text = "Slower"
+        ElseIf PresetsTrackBar.Value = 8 Then
+            PresetsLabel.Text = "Very Slow"
+        ElseIf PresetsTrackBar.Value = 9 Then
+            PresetsLabel.Text = "Placebo"
+        End If
+    End Sub
 
+    Private Sub LevelComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LevelComboBox.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub PresetsTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresetsTrackBar.Scroll
+
+    End Sub
 End Class

@@ -36,11 +36,26 @@ Partial Class ConfigFrm
         Me.OKBTN = New System.Windows.Forms.Button
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog
         Me.ConfigPanel = New System.Windows.Forms.Panel
+        Me.TabControl1 = New System.Windows.Forms.TabControl
+        Me.PreviewTabPage = New System.Windows.Forms.TabPage
+        Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.VideoODGroupBox = New System.Windows.Forms.GroupBox
+        Me.VideoODLabel = New System.Windows.Forms.Label
+        Me.VideoODComboBox = New System.Windows.Forms.ComboBox
+        Me.MPVolumeGroupBox = New System.Windows.Forms.GroupBox
+        Me.MPVolumeLabel = New System.Windows.Forms.Label
+        Me.MPVolumeTrackBar = New System.Windows.Forms.TrackBar
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.DefBTN = New System.Windows.Forms.Button
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.PreviewGroupBox.SuspendLayout()
         Me.ConfigPanel.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.PreviewTabPage.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.VideoODGroupBox.SuspendLayout()
+        Me.MPVolumeGroupBox.SuspendLayout()
+        CType(Me.MPVolumeTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PreviewGroupBox
@@ -120,12 +135,79 @@ Partial Class ConfigFrm
         '
         'ConfigPanel
         '
+        Me.ConfigPanel.Controls.Add(Me.TabControl1)
         Me.ConfigPanel.Controls.Add(Me.CancelBTN)
         Me.ConfigPanel.Controls.Add(Me.DefBTN)
-        Me.ConfigPanel.Controls.Add(Me.PreviewGroupBox)
         Me.ConfigPanel.Controls.Add(Me.OKBTN)
         resources.ApplyResources(Me.ConfigPanel, "ConfigPanel")
         Me.ConfigPanel.Name = "ConfigPanel"
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.PreviewTabPage)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        '
+        'PreviewTabPage
+        '
+        Me.PreviewTabPage.Controls.Add(Me.PreviewGroupBox)
+        resources.ApplyResources(Me.PreviewTabPage, "PreviewTabPage")
+        Me.PreviewTabPage.Name = "PreviewTabPage"
+        Me.PreviewTabPage.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.VideoODGroupBox)
+        Me.TabPage2.Controls.Add(Me.MPVolumeGroupBox)
+        resources.ApplyResources(Me.TabPage2, "TabPage2")
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'VideoODGroupBox
+        '
+        Me.VideoODGroupBox.Controls.Add(Me.VideoODLabel)
+        Me.VideoODGroupBox.Controls.Add(Me.VideoODComboBox)
+        resources.ApplyResources(Me.VideoODGroupBox, "VideoODGroupBox")
+        Me.VideoODGroupBox.Name = "VideoODGroupBox"
+        Me.VideoODGroupBox.TabStop = False
+        '
+        'VideoODLabel
+        '
+        resources.ApplyResources(Me.VideoODLabel, "VideoODLabel")
+        Me.VideoODLabel.ForeColor = System.Drawing.Color.Green
+        Me.VideoODLabel.Name = "VideoODLabel"
+        '
+        'VideoODComboBox
+        '
+        Me.VideoODComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.VideoODComboBox.FormattingEnabled = True
+        Me.VideoODComboBox.Items.AddRange(New Object() {resources.GetString("VideoODComboBox.Items"), resources.GetString("VideoODComboBox.Items1"), resources.GetString("VideoODComboBox.Items2"), resources.GetString("VideoODComboBox.Items3"), resources.GetString("VideoODComboBox.Items4"), resources.GetString("VideoODComboBox.Items5"), resources.GetString("VideoODComboBox.Items6"), resources.GetString("VideoODComboBox.Items7")})
+        resources.ApplyResources(Me.VideoODComboBox, "VideoODComboBox")
+        Me.VideoODComboBox.Name = "VideoODComboBox"
+        '
+        'MPVolumeGroupBox
+        '
+        Me.MPVolumeGroupBox.Controls.Add(Me.MPVolumeLabel)
+        Me.MPVolumeGroupBox.Controls.Add(Me.MPVolumeTrackBar)
+        resources.ApplyResources(Me.MPVolumeGroupBox, "MPVolumeGroupBox")
+        Me.MPVolumeGroupBox.Name = "MPVolumeGroupBox"
+        Me.MPVolumeGroupBox.TabStop = False
+        '
+        'MPVolumeLabel
+        '
+        resources.ApplyResources(Me.MPVolumeLabel, "MPVolumeLabel")
+        Me.MPVolumeLabel.Name = "MPVolumeLabel"
+        '
+        'MPVolumeTrackBar
+        '
+        Me.MPVolumeTrackBar.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.MPVolumeTrackBar, "MPVolumeTrackBar")
+        Me.MPVolumeTrackBar.Maximum = 100
+        Me.MPVolumeTrackBar.Name = "MPVolumeTrackBar"
+        Me.MPVolumeTrackBar.TickFrequency = 10
+        Me.MPVolumeTrackBar.Value = 50
         '
         'CancelBTN
         '
@@ -158,6 +240,14 @@ Partial Class ConfigFrm
         Me.PreviewGroupBox.ResumeLayout(False)
         Me.PreviewGroupBox.PerformLayout()
         Me.ConfigPanel.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.PreviewTabPage.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.VideoODGroupBox.ResumeLayout(False)
+        Me.VideoODGroupBox.PerformLayout()
+        Me.MPVolumeGroupBox.ResumeLayout(False)
+        Me.MPVolumeGroupBox.PerformLayout()
+        CType(Me.MPVolumeTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -177,4 +267,13 @@ Partial Class ConfigFrm
     Friend WithEvents ModeLabel As System.Windows.Forms.Label
     Friend WithEvents imgXButton As System.Windows.Forms.Button
     Friend WithEvents DefBTN As System.Windows.Forms.Button
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents PreviewTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents MPVolumeGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents MPVolumeTrackBar As System.Windows.Forms.TrackBar
+    Friend WithEvents VideoODGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents VideoODComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents MPVolumeLabel As System.Windows.Forms.Label
+    Friend WithEvents VideoODLabel As System.Windows.Forms.Label
 End Class

@@ -73,7 +73,7 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("FAAC")
-            AudioCodecComboBox.Items.Add("VisualOn AAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
             AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
@@ -93,7 +93,7 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("FAAC")
-            AudioCodecComboBox.Items.Add("VisualOn AAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
             AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
@@ -113,7 +113,7 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("FAAC")
-            AudioCodecComboBox.Items.Add("VisualOn AAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
             AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
@@ -133,7 +133,7 @@ Public Class EncSetFrm
             '오디오->압축코덱
             AudioCodecComboBox.Items.Clear()
             AudioCodecComboBox.Items.Add("FAAC")
-            AudioCodecComboBox.Items.Add("VisualOn AAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
             AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
@@ -156,7 +156,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("FAAC")
-            AudioCodecComboBox.Items.Add("VisualOn AAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("Vorbis")
             AudioCodecComboBox.Items.Add("Direct Stream Copy")
@@ -179,7 +179,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("FAAC")
-            AudioCodecComboBox.Items.Add("VisualOn AAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("AMR-NB(libopencore)")
             AudioCodecComboBox.Items.Add("AMR-WB(libvo)")
@@ -213,7 +213,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("FAAC")
-            AudioCodecComboBox.Items.Add("VisualOn AAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("Nero AAC")
             AudioCodecComboBox.Items.Add("Dolby Digital Audio Coding-3(AC3)")
             AudioCodecComboBox.Items.Add("Vorbis")
@@ -310,7 +310,7 @@ Public Class EncSetFrm
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame")
             AudioCodecComboBox.Items.Add("MPEG-1 Audio layer 3(MP3) Lame(VBR)")
             AudioCodecComboBox.Items.Add("FAAC")
-            AudioCodecComboBox.Items.Add("VisualOn AAC")
+            AudioCodecComboBox.Items.Add("VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("Nero AAC")
 
         ElseIf InStr(OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
@@ -350,8 +350,8 @@ Public Class EncSetFrm
             'AudioCodecComboBox.Items.Add("[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)") 나중에
             AudioCodecComboBox.Items.Add("[MP4] FAAC")
             AudioCodecComboBox.Items.Add("[M4A] FAAC")
-            AudioCodecComboBox.Items.Add("[MP4] VisualOn AAC")
-            AudioCodecComboBox.Items.Add("[M4A] VisualOn AAC")
+            AudioCodecComboBox.Items.Add("[MP4] VisualOn AAC(Experimental)")
+            AudioCodecComboBox.Items.Add("[M4A] VisualOn AAC(Experimental)")
             AudioCodecComboBox.Items.Add("[MP4] Nero AAC")
             AudioCodecComboBox.Items.Add("[AMR] AMR-NB(libopencore)")
             AudioCodecComboBox.Items.Add("[AMR] AMR-WB(libvo)")
@@ -435,13 +435,24 @@ Public Class EncSetFrm
         '고급모드
         If VideoCodecComboBox.Text = "H.264(AVC) x264 core" OrElse _
             VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
-            VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" OrElse _
+            (InStr(OutFComboBox.SelectedItem, "[MKV]", CompareMethod.Text) = 0 AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)") OrElse _
             VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
             VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
             VideoCodecComboBox.Text = "MPEG-4 Video" Then
             AdvanOptsPanel.Enabled = True
+
+            If VideoCodecComboBox.Text = "H.264(AVC) x264 core" AndAlso AdvanOptsCheckBox.Checked = False Then
+                EasyPanel.Visible = True
+                KeyFrameGroupBox.Enabled = False
+            Else
+                EasyPanel.Visible = False
+                KeyFrameGroupBox.Enabled = True
+            End If
         Else
             AdvanOptsPanel.Enabled = False
+
+            EasyPanel.Visible = False
+            KeyFrameGroupBox.Enabled = True
         End If
 
     End Sub
@@ -667,7 +678,10 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmSizeLimitGroupBox" Then SizeLimitGroupBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmSizeLimitLabel" Then SizeLimitLabel.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmSizeLimitCheckBox" Then SizeLimitCheckBox.Text = XTR.ReadString
-                If XTR.Name = "EncSetFrmDeinterlaceCheckBox" Then DeinterlaceCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmDeinterlaceCheckBox" Then
+                    DeinterlaceCheckBox.Text = XTR.ReadString
+                    FFDeinterlaceCheckBox.Text = DeinterlaceCheckBox.Text
+                End If
                 If XTR.Name = "EncSetFrmFFmpegCommandGroupBox" Then FFmpegCommandGroupBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFmpegCommandButton" Then FFmpegCommandButton.Text = XTR.ReadString
                 If XTR.Name = "EncSetCBRVideoModeComboBox" Then LangCls.EncSetCBRVideoModeComboBox = XTR.ReadString
@@ -706,6 +720,8 @@ Public Class EncSetFrm
                 If XTR.Name = "EncSetFrmFFVerticallyCheckBox" Then FFVerticallyCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmgradfunCheckBox" Then gradfunCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncSetFrmFFFPSDOCheckBox" Then FFFPSDOCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmEasyLabel" Then EasyLabel.Text = XTR.ReadString
+                If XTR.Name = "EncSetFrmEasyButton" Then EasyButton.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -757,7 +773,7 @@ LANG_SKIP:
 
         '비트레이트, 오디오 비트레이트 콤보박스 재설정.
         BitrateComboBox.Items.Clear()
-        BitrateComboBox.Items.AddRange(New Object() {"50", "100", "150", "200", "250", "300", "400", "500", "700", "1000", "2000", "5000", "10000"})
+        BitrateComboBox.Items.AddRange(New Object() {"50", "100", "150", "200", "250", "300", "400", "500", "700", "1000", "2000", "5000", "10000", "50000", "100000"})
 
         AudioBitrateComboBox.Items.Clear()
         AudioBitrateComboBox.Items.AddRange(New Object() {"32", "40", "48", "56", "64", "80", "96", "112", "128", "160", "192", "224", "256", "320", "384", "448", "512", "640"})
@@ -855,10 +871,10 @@ LANG_SKIP:
         '비디오
         VideoCodecComboBox.Text = "Xvid MPEG-4 Codec"
         VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-CBR]", -1)
-        BitrateComboBox.Text = "700"
+        BitrateComboBox.Text = "1000"
         QuantizerNumericUpDown.Value = 2.5
-        QuantizerCQPNumericUpDown.Value = 26
-        QualityNumericUpDown.Value = 26.0
+        QuantizerCQPNumericUpDown.Value = 23
+        QualityNumericUpDown.Value = 23.0
         FramerateComboBox.Text = "30"
         FramerateCheckBox.Checked = False
         AdvanOptsCheckBox.Checked = False
@@ -901,6 +917,7 @@ LANG_SKIP:
         gradfunCheckBox.Checked = False
         gradfun_strengthNumericUpDown.Value = 1.2
         gradfun_radiusNumericUpDown.Value = 16
+        FFDeinterlaceCheckBox.Checked = False
         '오디오
         AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame"
         AudioBitrateComboBox.Text = "128"
@@ -1485,7 +1502,7 @@ RELOAD:
 
                 If XTR.Name = "EncSetFrm_BitrateComboBox" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then BitrateComboBox.Text = XTRSTR Else BitrateComboBox.Text = "700"
+                    If XTRSTR <> "" Then BitrateComboBox.Text = XTRSTR Else BitrateComboBox.Text = "1000"
                 End If
 
                 If XTR.Name = "EncSetFrm_QuantizerNumericUpDown" Then
@@ -1495,12 +1512,12 @@ RELOAD:
 
                 If XTR.Name = "EncSetFrm_QuantizerCQPNumericUpDown" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then QuantizerCQPNumericUpDown.Value = XTRSTR Else QuantizerCQPNumericUpDown.Value = 26
+                    If XTRSTR <> "" Then QuantizerCQPNumericUpDown.Value = XTRSTR Else QuantizerCQPNumericUpDown.Value = 23
                 End If
 
                 If XTR.Name = "EncSetFrm_QualityNumericUpDown" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then QualityNumericUpDown.Value = XTRSTR Else QualityNumericUpDown.Value = 26.0
+                    If XTRSTR <> "" Then QualityNumericUpDown.Value = XTRSTR Else QualityNumericUpDown.Value = 23.0
                 End If
 
                 If XTR.Name = "EncSetFrm_FramerateComboBox" Then
@@ -1746,6 +1763,11 @@ RELOAD:
                     If XTRSTR <> "" Then gradfun_radiusNumericUpDown.Value = XTRSTR Else gradfun_radiusNumericUpDown.Value = 16
                 End If
 
+                If XTR.Name = "EncSetFrm_FFDeinterlaceCheckBox" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then FFDeinterlaceCheckBox.Checked = XTRSTR Else FFDeinterlaceCheckBox.Checked = False
+                End If
+
                 '오디오
                 If XTR.Name = "EncSetFrm_AudioCodecComboBox" Then
                     Dim XTRSTR As String = XTR.ReadString
@@ -1919,11 +1941,72 @@ RELOAD:
                 ThreadsV = " -threads " & .ThreadsNumericUpDown.Value
 
                 '------------------------
+                ' Profile
+                '------------------------
+                '퀀타이저나 퀄리티가 0보다 작거나 같으면.. 프로필은 없는걸로..;;
+                Dim ProfileV As String = ""
+                If VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-CQP]", -1) AndAlso QuantizerCQPNumericUpDown.Value < 1 Then
+                ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-CRF]", -1) AndAlso QualityNumericUpDown.Value < 1 Then
+                Else
+                    If .ProfileComboBox.Text = "Baseline Profile" Then
+                        ProfileV = " -profile baseline"
+                    ElseIf .ProfileComboBox.Text = "Main Profile" Then
+                        ProfileV = " -profile main"
+                    ElseIf .ProfileComboBox.Text = "High Profile" Then
+                        ProfileV = " -profile high"
+                    End If
+                End If
+
+                '------------------------
                 ' LEVEL
                 '------------------------.
                 Dim LevelComboBoxV As String = ""
                 If .LevelComboBox.Text <> "Unrestricted AutoGuess" Then
                     LevelComboBoxV = " -level " & Replace(.LevelComboBox.Text, ".", "")
+                End If
+
+                '------------------------
+                ' Preset
+                '------------------------.
+                Dim PresetV As String = ""
+                'If .PresetsTrackBar.Value = 0 Then
+                '    PresetV = " -preset ultrafast"
+                'ElseIf .PresetsTrackBar.Value = 1 Then
+                '    PresetV = " -preset superfast"
+                'ElseIf .PresetsTrackBar.Value = 2 Then
+                '    PresetV = " -preset veryfast"
+                'ElseIf .PresetsTrackBar.Value = 3 Then
+                '    PresetV = " -preset faster"
+                'ElseIf .PresetsTrackBar.Value = 4 Then
+                '    PresetV = " -preset fast"
+                'ElseIf .PresetsTrackBar.Value = 5 Then
+                '    PresetV = " -preset medium"
+                'ElseIf .PresetsTrackBar.Value = 6 Then
+                '    PresetV = " -preset slow"
+                'ElseIf .PresetsTrackBar.Value = 7 Then
+                '    PresetV = " -preset slower"
+                'ElseIf .PresetsTrackBar.Value = 8 Then
+                '    PresetV = " -preset veryslow"
+                'ElseIf .PresetsTrackBar.Value = 9 Then
+                '    PresetV = " -preset placebo"
+                'End If
+
+                '------------------------
+                ' Tune
+                '------------------------.
+                Dim TuneV As String = ""
+                If .TuningsComboBox.Text = "Film" Then
+                    TuneV = " -tune film"
+                ElseIf .TuningsComboBox.Text = "Animation" Then
+                    TuneV = " -tune animation"
+                ElseIf .TuningsComboBox.Text = "Grain" Then
+                    TuneV = " -tune grain"
+                ElseIf .TuningsComboBox.Text = "PSNR" Then
+                    TuneV = " -tune psnr"
+                ElseIf .TuningsComboBox.Text = "SSIM" Then
+                    TuneV = " -tune ssim"
+                ElseIf .TuningsComboBox.Text = "Fast Decode" Then
+                    TuneV = " -tune fastdecode"
                 End If
 
                 '------------------------
@@ -2175,19 +2258,14 @@ RELOAD:
 
                 '---------------------------------------------------------------------------------------------------------
                 '모든모드공통
-                x264optsV = ThreadsV & LevelComboBoxV & _
+                x264optsV = ThreadsV & ProfileV & LevelComboBoxV & PresetV & TuneV & _
                             DeblockingCheckBoxV & CABACCheckBoxV & BFramesV & " -refs " & .ReferenceFramesNumericUpDown.Value & AdaptiveIFramesDecisionV & PframeWeightedPredictionV & _
                             " -qmin " & .QMinNumericUpDown.Value & " -qmax " & .QMaxNumericUpDown.Value & " -qdiff " & .QDeltaNumericUpDown.Value & " -i_qfactor " & i_qfactorV & " -b_qfactor " & .QPBRatioNumericUpDown.Value & " -chromaoffset " & .ChromaandLumaQPOffsetNumericUpDown.Value & RateControlMV & _
                             ChromaMEV & " -me_range " & .MERangeNumericUpDown.Value & MEMethodV & SubpixelMEV & TrellisV & " -psy_rd " & .PsyRDStrengthNumericUpDown.Value & " -psy_trellis " & .PsyTrellisStrengthNumericUpDown.Value & NoMixedReferenceFramesV & NoFastPSkipV & NoPsychovisualEnhancementsV & _
                             Adaptive8x8DCTV & MacroblocksV & " -nr " & .NoiseReductionNumericUpDown.Value & UseaccessunitdelimitersV
-
-                If .FastfirstpassCheckBox.Checked = True Then '터보
-                    x264opts_2passV = ThreadsV & LevelComboBoxV & _
-                                 DeblockingCheckBoxV & CABACCheckBoxV & BFramesV & " -refs 1" & AdaptiveIFramesDecisionV & PframeWeightedPredictionV & _
-                                 " -qmin " & .QMinNumericUpDown.Value & " -qmax " & .QMaxNumericUpDown.Value & " -qdiff " & .QDeltaNumericUpDown.Value & " -i_qfactor " & i_qfactorV & " -b_qfactor " & .QPBRatioNumericUpDown.Value & " -chromaoffset " & .ChromaandLumaQPOffsetNumericUpDown.Value & RateControlMV & _
-                                 ChromaMEV & " -me_range 16 -me_method epzs -subq 1" & TrellisV & " -psy_rd " & .PsyRDStrengthNumericUpDown.Value & " -psy_trellis " & .PsyTrellisStrengthNumericUpDown.Value & NoMixedReferenceFramesV & NoFastPSkipV & NoPsychovisualEnhancementsV & _
-                                 Adaptive8x8DCTV & MacroblocksV & " -nr " & .NoiseReductionNumericUpDown.Value & UseaccessunitdelimitersV
-
+                '첫번째 패스를 느리게할지 안 할지 여부
+                If .SlowfirstpassCheckBox.Checked = True Then 'slow
+                    x264opts_2passV = x264optsV & " -fastfirstpass 0"
                 Else
                     x264opts_2passV = x264optsV
                 End If
@@ -2195,9 +2273,99 @@ RELOAD:
 
             End With
         End If
-        If VideoCodecComboBox.Text = "H.264(AVC) x264 core" AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함
-            x264optsV = " -threads " & x264optsFrm.ThreadsNumericUpDown.Value & " -level 13 -qmin 10 -qmax 51 -qdiff 4 -i_qfactor " & 1 / 1.4 & " -b_qfactor 1.3 -chromaoffset 0"
-            x264opts_2passV = x264optsV
+        If VideoCodecComboBox.Text = "H.264(AVC) x264 core" AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함(간편설정)
+            With x264optsFrm
+
+                '고급설정 사용과 상동//
+
+                '------------------------
+                ' Threads
+                '------------------------
+                Dim ThreadsV As String = ""
+                ThreadsV = " -threads " & .ThreadsNumericUpDown.Value
+
+                '------------------------
+                ' Profile
+                '------------------------
+                '퀀타이저나 퀄리티가 0보다 작거나 같으면.. 프로필은 없는걸로..;;
+                Dim ProfileV As String = ""
+                If VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-CQP]", -1) AndAlso QuantizerCQPNumericUpDown.Value < 1 Then
+                ElseIf VideoModeComboBox.SelectedIndex = VideoModeComboBox.FindString("[1PASS-CRF]", -1) AndAlso QualityNumericUpDown.Value < 1 Then
+                Else
+                    If .ProfileComboBox.Text = "Baseline Profile" Then
+                        ProfileV = " -profile baseline"
+                    ElseIf .ProfileComboBox.Text = "Main Profile" Then
+                        ProfileV = " -profile main"
+                    ElseIf .ProfileComboBox.Text = "High Profile" Then
+                        ProfileV = " -profile high"
+                    End If
+                End If
+
+                '------------------------
+                ' LEVEL
+                '------------------------.
+                Dim LevelComboBoxV As String = ""
+                If .LevelComboBox.Text <> "Unrestricted AutoGuess" Then
+                    LevelComboBoxV = " -level " & Replace(.LevelComboBox.Text, ".", "")
+                End If
+
+                '------------------------
+                ' Preset
+                '------------------------.
+                Dim PresetV As String = ""
+                If .PresetsTrackBar.Value = 0 Then
+                    PresetV = " -preset ultrafast"
+                ElseIf .PresetsTrackBar.Value = 1 Then
+                    PresetV = " -preset superfast"
+                ElseIf .PresetsTrackBar.Value = 2 Then
+                    PresetV = " -preset veryfast"
+                ElseIf .PresetsTrackBar.Value = 3 Then
+                    PresetV = " -preset faster"
+                ElseIf .PresetsTrackBar.Value = 4 Then
+                    PresetV = " -preset fast"
+                ElseIf .PresetsTrackBar.Value = 5 Then
+                    PresetV = " -preset medium"
+                ElseIf .PresetsTrackBar.Value = 6 Then
+                    PresetV = " -preset slow"
+                ElseIf .PresetsTrackBar.Value = 7 Then
+                    PresetV = " -preset slower"
+                ElseIf .PresetsTrackBar.Value = 8 Then
+                    PresetV = " -preset veryslow"
+                ElseIf .PresetsTrackBar.Value = 9 Then
+                    PresetV = " -preset placebo"
+                End If
+
+                '------------------------
+                ' Tune
+                '------------------------.
+                Dim TuneV As String = ""
+                If .TuningsComboBox.Text = "Film" Then
+                    TuneV = " -tune film"
+                ElseIf .TuningsComboBox.Text = "Animation" Then
+                    TuneV = " -tune animation"
+                ElseIf .TuningsComboBox.Text = "Grain" Then
+                    TuneV = " -tune grain"
+                ElseIf .TuningsComboBox.Text = "PSNR" Then
+                    TuneV = " -tune psnr"
+                ElseIf .TuningsComboBox.Text = "SSIM" Then
+                    TuneV = " -tune ssim"
+                ElseIf .TuningsComboBox.Text = "Fast Decode" Then
+                    TuneV = " -tune fastdecode"
+                End If
+
+                '고급설정 사용과 상동 끝 //
+
+                '---------------------------------------------------------------------------------------------------------
+                x264optsV = ThreadsV & ProfileV & LevelComboBoxV & PresetV & TuneV
+                '첫번째 패스를 느리게할지 안 할지 여부
+                If .SlowfirstpassCheckBox.Checked = True Then 'slow
+                    x264opts_2passV = x264optsV & " -fastfirstpass 0"
+                Else
+                    x264opts_2passV = x264optsV
+                End If
+                '---------------------------------------------------------------------------------------------------------
+
+            End With
         End If
 
         '***********************************
@@ -2205,7 +2373,7 @@ RELOAD:
         '***********************************
         Dim MPEG4optsV As String = ""
         If (VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
-        VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" OrElse _
+        (InStr(OutFComboBox.SelectedItem, "[MKV]", CompareMethod.Text) = 0 AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)") OrElse _
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
         VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
         VideoCodecComboBox.Text = "MPEG-4 Video") AndAlso AdvanOptsCheckBox.Checked = True Then
@@ -2283,7 +2451,7 @@ RELOAD:
                 ' GMC (Xvid Core)
                 '------------------------
                 Dim GMCV As String = ""
-                If .GMCCheckBox.Checked = True AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" Then
+                If .GMCCheckBox.Checked = True AndAlso InStr(OutFComboBox.SelectedItem, "[MKV]", CompareMethod.Text) = 0 AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" Then
                     GMCV = " -flags +gmc"
                 End If
 
@@ -2365,14 +2533,16 @@ RELOAD:
             End With
         End If
         If (VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
-        VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" OrElse _
+        (InStr(OutFComboBox.SelectedItem, "[MKV]", CompareMethod.Text) = 0 AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)") OrElse _
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
         VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
         VideoCodecComboBox.Text = "MPEG-4 Video") AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함
             MPEG4optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
         End If
-
-
+        'xvid(XVIDCORE) + MKV 특별
+        If (InStr(OutFComboBox.SelectedItem, "[MKV]", CompareMethod.Text) <> 0 AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)") Then
+            MPEG4optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
+        End If
 
         '***********************************
         '  VP8 고급설정
@@ -2525,7 +2695,7 @@ RELOAD:
             AudioCodecComboBoxV = " -acodec libmp3lame"
         ElseIf AudioCodecComboBox.Text = "FAAC" OrElse AudioCodecComboBox.Text = "[MP4] FAAC" OrElse AudioCodecComboBox.Text = "[M4A] FAAC" Then
             AudioCodecComboBoxV = " -acodec libfaac"
-        ElseIf AudioCodecComboBox.Text = "VisualOn AAC" OrElse AudioCodecComboBox.Text = "[MP4] VisualOn AAC" OrElse AudioCodecComboBox.Text = "[M4A] VisualOn AAC" Then
+        ElseIf AudioCodecComboBox.Text = "VisualOn AAC(Experimental)" OrElse AudioCodecComboBox.Text = "[MP4] VisualOn AAC(Experimental)" OrElse AudioCodecComboBox.Text = "[M4A] VisualOn AAC(Experimental)" Then
             AudioCodecComboBoxV = " -acodec libvo_aacenc"
         ElseIf AudioCodecComboBox.Text = "Nero AAC" OrElse AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
             AudioCodecComboBoxV = " -acodec pcm_s16le"
@@ -2689,9 +2859,9 @@ RELOAD:
                 FormatV = " -f mp2"
             ElseIf AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame" OrElse AudioCodecComboBox.Text = "[MP3] MPEG-1 Audio layer 3(MP3) Lame(VBR)" Then
                 FormatV = " -f mp3"
-            ElseIf AudioCodecComboBox.Text = "[MP4] FAAC" OrElse AudioCodecComboBox.Text = "[MP4] VisualOn AAC" Then
+            ElseIf AudioCodecComboBox.Text = "[MP4] FAAC" OrElse AudioCodecComboBox.Text = "[MP4] VisualOn AAC(Experimental)" Then
                 FormatV = " -f mp4"
-            ElseIf AudioCodecComboBox.Text = "[M4A] FAAC" OrElse AudioCodecComboBox.Text = "[M4A] VisualOn AAC" Then
+            ElseIf AudioCodecComboBox.Text = "[M4A] FAAC" OrElse AudioCodecComboBox.Text = "[M4A] VisualOn AAC(Experimental)" Then
                 FormatV = " -f ipod"
             ElseIf AudioCodecComboBox.Text = "[MP4] Nero AAC" Then
                 FormatV = "" '네로 AAC 예외//
@@ -2851,6 +3021,14 @@ RELOAD:
             RemoveMeatadataCheckBoxV = " -map_metadata -1"
         End If
 
+        '***********************************
+        ' FFmpeg 디인터레이스
+        '***********************************
+        Dim FFDeinterlaceCheckBoxV As String = ""
+        If FFDeinterlaceCheckBox.Checked = True Then
+            FFDeinterlaceCheckBoxV = " -deinterlace"
+        End If
+
         '===================================================================================================================================
 
 
@@ -2915,26 +3093,32 @@ RELOAD:
         Else '비디오와 오디오 인코딩
 
 
-            MainFrm.AviSynthCommandStr = FormatV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.AviSynthCommandStr = FormatV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & _
                                             PSPMP4CheckBoxV & _
                                             AudioCodecComboBoxV & SamplerateComboBoxV & AviSynthChComboBoxV & AudioBitrateComboBoxV & _
-                                            SizeLimitTextBoxV & FFmpegCommandTextBoxV & _
-                                            x264optsV & MPEG4optsV & VP8optsV
+                                            SizeLimitTextBoxV & _
+                                            x264optsV & MPEG4optsV & VP8optsV & _
+                                            GOPSizeCheckBoxV & GOPSizeCheckBox2V & FFDeinterlaceCheckBoxV & _
+                                            FFmpegCommandTextBoxV
 
-            MainFrm.AviSynthCommand2PassStr = FormatV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
-                                                 FFmpegCommandTextBoxV & _
-                                                 x264opts_2passV & MPEG4optsV & VP8optsV
+            MainFrm.AviSynthCommand2PassStr = FormatV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & _
+                                                 x264opts_2passV & MPEG4optsV & VP8optsV & _
+                                                 GOPSizeCheckBoxV & GOPSizeCheckBox2V & FFDeinterlaceCheckBoxV & _
+                                                 FFmpegCommandTextBoxV
 
-            MainFrm.FFmpegCommandStr = FormatV & RemoveMeatadataCheckBoxV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.FFmpegCommandStr = FormatV & RemoveMeatadataCheckBoxV & SubtitleRecordingCheckBoxV & VideoCodecComboBoxV & VideoModeComboBoxV & _
                                             PSPMP4CheckBoxV & SwscaleV & _
                                             AudioCodecComboBoxV & SamplerateComboBoxV & FFmpegChComboBoxV & AudioBitrateComboBoxV & AudioVolNumericUpDownV & _
-                                            SizeLimitTextBoxV & FFmpegCommandTextBoxV & _
-                                            x264optsV & MPEG4optsV & VP8optsV
+                                            SizeLimitTextBoxV & _
+                                            x264optsV & MPEG4optsV & VP8optsV & _
+                                            GOPSizeCheckBoxV & GOPSizeCheckBox2V & FFDeinterlaceCheckBoxV & _
+                                            FFmpegCommandTextBoxV
 
-            MainFrm.FFmpegCommand2PassStr = FormatV & RemoveMeatadataCheckBoxV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & GOPSizeCheckBoxV & GOPSizeCheckBox2V & _
+            MainFrm.FFmpegCommand2PassStr = FormatV & RemoveMeatadataCheckBoxV & SubtitleRecordingCheckBoxV & " -an -pass 1" & VideoCodecComboBoxV & VideoModeComboBoxV & _
                                                  SwscaleV & _
-                                                 FFmpegCommandTextBoxV & _
-                                                 x264opts_2passV & MPEG4optsV & VP8optsV
+                                                 x264opts_2passV & MPEG4optsV & VP8optsV & _
+                                                 GOPSizeCheckBoxV & GOPSizeCheckBox2V & FFDeinterlaceCheckBoxV & _
+                                                 FFmpegCommandTextBoxV
 
         End If
 
@@ -3168,7 +3352,7 @@ RELOAD:
             Catch ex As Exception
             End Try
         ElseIf VideoCodecComboBox.Text = "Xvid MPEG-4 Codec" OrElse _
-        VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)" OrElse _
+        (InStr(OutFComboBox.SelectedItem, "[MKV]", CompareMethod.Text) = 0 AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)") OrElse _
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
          VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
          VideoCodecComboBox.Text = "MPEG-4 Video" Then
@@ -3191,9 +3375,20 @@ RELOAD:
         If AdvanOptsCheckBox.Checked = True Then
             AdvanOptsLabel.Enabled = True
             AdvanOptsButton.Enabled = True
+
+            EasyPanel.Visible = False
+            KeyFrameGroupBox.Enabled = True
         Else
             AdvanOptsLabel.Enabled = False
             AdvanOptsButton.Enabled = False
+
+            If VideoCodecComboBox.Text = "H.264(AVC) x264 core" Then
+                EasyPanel.Visible = True
+                KeyFrameGroupBox.Enabled = False
+            Else
+                EasyPanel.Visible = False
+                KeyFrameGroupBox.Enabled = True
+            End If
         End If
     End Sub
 
@@ -3477,6 +3672,16 @@ RELOAD:
             gradfun_radiusButton.Enabled = False
             gradfun_radiusTrackBar.Enabled = False
             gradfun_radiusNumericUpDown.Enabled = False
+        End If
+    End Sub
+
+ 
+    Private Sub EasyButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EasyButton.Click
+        If VideoCodecComboBox.Text = "H.264(AVC) x264 core" Then
+            Try
+                x264optsFrm.ShowDialog(Me)
+            Catch ex As Exception
+            End Try
         End If
     End Sub
 End Class

@@ -27,6 +27,11 @@ Partial Class VideoWindowFrm
         Me.VideoTrackBar = New System.Windows.Forms.TrackBar
         Me.VideoWindowPanel = New System.Windows.Forms.Panel
         Me.VideoPictureBox = New System.Windows.Forms.PictureBox
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.ETextBox = New System.Windows.Forms.TextBox
+        Me.STextBox = New System.Windows.Forms.TextBox
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.NNFButton = New System.Windows.Forms.Button
@@ -38,11 +43,16 @@ Partial Class VideoWindowFrm
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SizeModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.SetStartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.SetEndToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ApplyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.RealtimeTimer = New System.Windows.Forms.Timer(Me.components)
         Me.FrameTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.VideoTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.VideoWindowPanel.SuspendLayout()
         CType(Me.VideoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -58,6 +68,7 @@ Partial Class VideoWindowFrm
         'VideoWindowPanel
         '
         Me.VideoWindowPanel.Controls.Add(Me.VideoPictureBox)
+        Me.VideoWindowPanel.Controls.Add(Me.Panel1)
         Me.VideoWindowPanel.Controls.Add(Me.Panel2)
         Me.VideoWindowPanel.Controls.Add(Me.MenuStrip1)
         resources.ApplyResources(Me.VideoWindowPanel, "VideoWindowPanel")
@@ -69,6 +80,37 @@ Partial Class VideoWindowFrm
         resources.ApplyResources(Me.VideoPictureBox, "VideoPictureBox")
         Me.VideoPictureBox.Name = "VideoPictureBox"
         Me.VideoPictureBox.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.ETextBox)
+        Me.Panel1.Controls.Add(Me.STextBox)
+        resources.ApplyResources(Me.Panel1, "Panel1")
+        Me.Panel1.Name = "Panel1"
+        '
+        'Label3
+        '
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.Name = "Label3"
+        '
+        'Label2
+        '
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
+        '
+        'ETextBox
+        '
+        resources.ApplyResources(Me.ETextBox, "ETextBox")
+        Me.ETextBox.Name = "ETextBox"
+        Me.ETextBox.ReadOnly = True
+        '
+        'STextBox
+        '
+        resources.ApplyResources(Me.STextBox, "STextBox")
+        Me.STextBox.Name = "STextBox"
+        Me.STextBox.ReadOnly = True
         '
         'Panel2
         '
@@ -126,7 +168,7 @@ Partial Class VideoWindowFrm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MoveToolStripMenuItem, Me.SizeModeToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MoveToolStripMenuItem, Me.SizeModeToolStripMenuItem, Me.ModeToolStripMenuItem, Me.SetStartToolStripMenuItem, Me.SetEndToolStripMenuItem, Me.ApplyToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -139,6 +181,26 @@ Partial Class VideoWindowFrm
         '
         Me.SizeModeToolStripMenuItem.Name = "SizeModeToolStripMenuItem"
         resources.ApplyResources(Me.SizeModeToolStripMenuItem, "SizeModeToolStripMenuItem")
+        '
+        'ModeToolStripMenuItem
+        '
+        Me.ModeToolStripMenuItem.Name = "ModeToolStripMenuItem"
+        resources.ApplyResources(Me.ModeToolStripMenuItem, "ModeToolStripMenuItem")
+        '
+        'SetStartToolStripMenuItem
+        '
+        Me.SetStartToolStripMenuItem.Name = "SetStartToolStripMenuItem"
+        resources.ApplyResources(Me.SetStartToolStripMenuItem, "SetStartToolStripMenuItem")
+        '
+        'SetEndToolStripMenuItem
+        '
+        Me.SetEndToolStripMenuItem.Name = "SetEndToolStripMenuItem"
+        resources.ApplyResources(Me.SetEndToolStripMenuItem, "SetEndToolStripMenuItem")
+        '
+        'ApplyToolStripMenuItem
+        '
+        resources.ApplyResources(Me.ApplyToolStripMenuItem, "ApplyToolStripMenuItem")
+        Me.ApplyToolStripMenuItem.Name = "ApplyToolStripMenuItem"
         '
         'RealtimeTimer
         '
@@ -159,6 +221,8 @@ Partial Class VideoWindowFrm
         Me.VideoWindowPanel.ResumeLayout(False)
         Me.VideoWindowPanel.PerformLayout()
         CType(Me.VideoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -183,4 +247,22 @@ Partial Class VideoWindowFrm
     Friend WithEvents MoveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SizeModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents SetStartToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SetEndToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents ETextBox As System.Windows.Forms.TextBox
+    Friend WithEvents STextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ApplyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+
+    Public Sub New()
+
+        ' 이 호출은 Windows Form 디자이너에 필요합니다.
+        InitializeComponent()
+
+        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하십시오.
+
+    End Sub
 End Class

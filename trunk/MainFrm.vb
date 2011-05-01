@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.04.22]"
+    Public PDATA = "[2011.05.02]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
@@ -118,9 +118,11 @@ Public Class MainFrm
     Public OutPRadioButtonV As Boolean = False
     Public DebugCheckBoxV As Boolean = False
     Public PreviewModeV As Integer = 2
-    Public BackColorPanelV As Color = Color.FromArgb(-1)
+    Public BackColorPanelV As Color = Color.FromArgb(-16777216)
     Public ImgTextBoxV As String = ""
     Public ModeComboBoxV As String = "Center"
+    Public MPVolumeTrackBarV As Integer = 100
+    Public VideoODComboBoxV As String = "Direct3D 9 Renderer"
 
     '설정
     Dim MainWidth As String = ""
@@ -150,6 +152,11 @@ Public Class MainFrm
 
     'AVS_FPS
     Public AVS_FPS As String = ""
+
+    'VideoWindow
+    Public VideoWindowMode As Integer = 4
+    Public VideoWindowFrmW As Integer = 0
+    Public VideoWindowFrmH As Integer = 0
 
 #Region "프론트엔드 코어"
 
@@ -1445,6 +1452,7 @@ LANG_SKIP:
                 If EncSetFrm.FramerateCheckBox.Checked = True Then
 
                     'ASF WMV
+                    '3GP 3G2 K3G SKM MP4 MOV
                     'MPEG TS
                     'RM
                     'FLV SWF
@@ -1453,6 +1461,12 @@ LANG_SKIP:
 
                         If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
                         InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
                         InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
                         InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
                         InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
@@ -1475,6 +1489,12 @@ LANG_SKIP:
 
                                 If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
                                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
                                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
                                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
                                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
@@ -2245,7 +2265,7 @@ ReDel:
         '비트레이트, 오디오 비트레이트 콤보박스 재설정.
         With EncSetFrm
             .BitrateComboBox.Items.Clear()
-            .BitrateComboBox.Items.AddRange(New Object() {"50", "100", "150", "200", "250", "300", "400", "500", "700", "1000", "2000", "5000", "10000"})
+            .BitrateComboBox.Items.AddRange(New Object() {"50", "100", "150", "200", "250", "300", "400", "500", "700", "1000", "2000", "5000", "10000", "50000", "100000"})
 
             .AudioBitrateComboBox.Items.Clear()
             .AudioBitrateComboBox.Items.AddRange(New Object() {"32", "40", "48", "56", "64", "80", "96", "112", "128", "160", "192", "224", "256", "320", "384", "448", "512", "640"})
@@ -2964,9 +2984,11 @@ UAC:
         DebugCheckBoxV = False
         PreviewModeV = 2
 
-        BackColorPanelV = Color.FromArgb(-1)
+        BackColorPanelV = Color.FromArgb(-16777216)
         ImgTextBoxV = ""
         ModeComboBoxV = "Center"
+        MPVolumeTrackBarV = 100
+        VideoODComboBoxV = "Direct3D 9 Renderer"
 
         LangToolStripMenuItemV = "Auto-select"
 
@@ -2982,10 +3004,10 @@ UAC:
             '비디오
             .VideoCodecComboBox.Text = "Xvid MPEG-4 Codec"
             .VideoModeComboBox.SelectedIndex = .VideoModeComboBox.FindString("[1PASS-CBR]", -1)
-            .BitrateComboBox.Text = "700"
+            .BitrateComboBox.Text = "1000"
             .QuantizerNumericUpDown.Value = 2.5
-            .QuantizerCQPNumericUpDown.Value = 26
-            .QualityNumericUpDown.Value = 26.0
+            .QuantizerCQPNumericUpDown.Value = 23
+            .QualityNumericUpDown.Value = 23.0
             .FramerateComboBox.Text = "30"
             .FramerateCheckBox.Checked = False
             .AdvanOptsCheckBox.Checked = False
@@ -3028,6 +3050,7 @@ UAC:
             .gradfunCheckBox.Checked = False
             .gradfun_strengthNumericUpDown.Value = 1.2
             .gradfun_radiusNumericUpDown.Value = 16
+            .FFDeinterlaceCheckBox.Checked = False
             '오디오
             .AudioCodecComboBox.Text = "MPEG-1 Audio layer 3(MP3) Lame"
             .AudioBitrateComboBox.Text = "128"
@@ -3074,7 +3097,9 @@ UAC:
             .ThreadsNumericUpDown.Value = 0
             .ProfileComboBox.Text = "Baseline Profile"
             .LevelComboBox.Text = "Unrestricted AutoGuess"
-            .FastfirstpassCheckBox.Checked = False
+            .SlowfirstpassCheckBox.Checked = False
+            .PresetsTrackBar.Value = 5
+            .TuningsComboBox.Text = "Default"
             'Frame-Type
             .DeblockingCheckBox.Checked = True
             .DeblockingAlphaNumericUpDown.Value = 0
@@ -3090,8 +3115,8 @@ UAC:
             .PframeWeightedPredictionComboBox.Text = "Smart analysis"
             .AdaptiveIFramesDecisionCheckBox.Checked = True
             'Rate Control
-            .QMinNumericUpDown.Value = 10
-            .QMaxNumericUpDown.Value = 51
+            .QMinNumericUpDown.Value = 0
+            .QMaxNumericUpDown.Value = 69
             .QDeltaNumericUpDown.Value = 4
             .QIPRatioNumericUpDown.Value = 1.4
             .QPBRatioNumericUpDown.Value = 1.3
@@ -3498,7 +3523,7 @@ RELOAD:
 
                 If XTR.Name = "BackColorPanelV" Then
                     Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then BackColorPanelV = Color.FromArgb(XTRSTR) Else BackColorPanelV = Color.FromArgb(-1)
+                    If XTRSTR <> "" Then BackColorPanelV = Color.FromArgb(XTRSTR) Else BackColorPanelV = Color.FromArgb(-16777216)
                 End If
 
                 If XTR.Name = "ImgTextBoxV" Then
@@ -3509,6 +3534,16 @@ RELOAD:
                 If XTR.Name = "ModeComboBoxV" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then ModeComboBoxV = XTRSTR Else ModeComboBoxV = "Center"
+                End If
+
+                If XTR.Name = "MPVolumeTrackBarV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then MPVolumeTrackBarV = XTRSTR Else MPVolumeTrackBarV = 100
+                End If
+
+                If XTR.Name = "VideoODComboBoxV" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then VideoODComboBoxV = XTRSTR Else VideoODComboBoxV = "Direct3D 9 Renderer"
                 End If
 
                 If XTR.Name = "LangToolStripMenuItemV" Then
@@ -3726,7 +3761,7 @@ RELOAD:
 
                     If XTR.Name = "EncSetFrm_BitrateComboBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .BitrateComboBox.Text = XTRSTR Else .BitrateComboBox.Text = "700"
+                        If XTRSTR <> "" Then .BitrateComboBox.Text = XTRSTR Else .BitrateComboBox.Text = "1000"
                     End If
 
                     If XTR.Name = "EncSetFrm_QuantizerNumericUpDown" Then
@@ -3736,12 +3771,12 @@ RELOAD:
 
                     If XTR.Name = "EncSetFrm_QuantizerCQPNumericUpDown" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .QuantizerCQPNumericUpDown.Value = XTRSTR Else .QuantizerCQPNumericUpDown.Value = 26
+                        If XTRSTR <> "" Then .QuantizerCQPNumericUpDown.Value = XTRSTR Else .QuantizerCQPNumericUpDown.Value = 23
                     End If
 
                     If XTR.Name = "EncSetFrm_QualityNumericUpDown" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .QualityNumericUpDown.Value = XTRSTR Else .QualityNumericUpDown.Value = 26.0
+                        If XTRSTR <> "" Then .QualityNumericUpDown.Value = XTRSTR Else .QualityNumericUpDown.Value = 23.0
                     End If
 
                     If XTR.Name = "EncSetFrm_FramerateComboBox" Then
@@ -3987,6 +4022,11 @@ RELOAD:
                         If XTRSTR <> "" Then .gradfun_radiusNumericUpDown.Value = XTRSTR Else .gradfun_radiusNumericUpDown.Value = 16
                     End If
 
+                    If XTR.Name = "EncSetFrm_FFDeinterlaceCheckBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .FFDeinterlaceCheckBox.Checked = XTRSTR Else .FFDeinterlaceCheckBox.Checked = False
+                    End If
+
                     '오디오
                     If XTR.Name = "EncSetFrm_AudioCodecComboBox" Then
                         Dim XTRSTR As String = XTR.ReadString
@@ -4153,9 +4193,19 @@ RELOAD:
                         If XTRSTR <> "" Then .LevelComboBox.Text = XTRSTR Else .LevelComboBox.Text = "Unrestricted AutoGuess"
                     End If
 
-                    If XTR.Name = "x264optsFrm_FastfirstpassCheckBox" Then
+                    If XTR.Name = "x264optsFrm_SlowfirstpassCheckBox" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .FastfirstpassCheckBox.Checked = XTRSTR Else .FastfirstpassCheckBox.Checked = False
+                        If XTRSTR <> "" Then .SlowfirstpassCheckBox.Checked = XTRSTR Else .SlowfirstpassCheckBox.Checked = False
+                    End If
+
+                    If XTR.Name = "x264optsFrm_PresetsTrackBar" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .PresetsTrackBar.Value = XTRSTR Else .PresetsTrackBar.Value = 5
+                    End If
+
+                    If XTR.Name = "x264optsFrm_TuningsComboBox" Then
+                        Dim XTRSTR As String = XTR.ReadString
+                        If XTRSTR <> "" Then .TuningsComboBox.Text = XTRSTR Else .TuningsComboBox.Text = "Default"
                     End If
 
                     'Frame-Type
@@ -4227,12 +4277,12 @@ RELOAD:
                     'Rate Control
                     If XTR.Name = "x264optsFrm_QMinNumericUpDown" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .QMinNumericUpDown.Value = XTRSTR Else .QMinNumericUpDown.Value = 10
+                        If XTRSTR <> "" Then .QMinNumericUpDown.Value = XTRSTR Else .QMinNumericUpDown.Value = 0
                     End If
 
                     If XTR.Name = "x264optsFrm_QMaxNumericUpDown" Then
                         Dim XTRSTR As String = XTR.ReadString
-                        If XTRSTR <> "" Then .QMaxNumericUpDown.Value = XTRSTR Else .QMaxNumericUpDown.Value = 51
+                        If XTRSTR <> "" Then .QMaxNumericUpDown.Value = XTRSTR Else .QMaxNumericUpDown.Value = 69
                     End If
 
                     If XTR.Name = "x264optsFrm_QDeltaNumericUpDown" Then
@@ -5517,6 +5567,14 @@ RELOAD:
             XTWriter.WriteString(ModeComboBoxV)
             XTWriter.WriteEndElement()
 
+            XTWriter.WriteStartElement("MPVolumeTrackBarV")
+            XTWriter.WriteString(MPVolumeTrackBarV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("VideoODComboBoxV")
+            XTWriter.WriteString(VideoODComboBoxV)
+            XTWriter.WriteEndElement()
+
             XTWriter.WriteStartElement("LangToolStripMenuItemV")
             XTWriter.WriteString(LangToolStripMenuItemV)
             XTWriter.WriteEndElement()
@@ -5917,6 +5975,10 @@ RELOAD:
                 XTWriter.WriteString(.gradfun_radiusNumericUpDown.Value)
                 XTWriter.WriteEndElement()
 
+                XTWriter.WriteStartElement("EncSetFrm_FFDeinterlaceCheckBox")
+                XTWriter.WriteString(.FFDeinterlaceCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
                 '오디오
                 XTWriter.WriteStartElement("EncSetFrm_AudioCodecComboBox")
                 XTWriter.WriteString(.AudioCodecComboBox.Text)
@@ -6053,8 +6115,16 @@ RELOAD:
                 XTWriter.WriteString(.LevelComboBox.Text)
                 XTWriter.WriteEndElement()
 
-                XTWriter.WriteStartElement("x264optsFrm_FastfirstpassCheckBox")
-                XTWriter.WriteString(.FastfirstpassCheckBox.Checked)
+                XTWriter.WriteStartElement("x264optsFrm_SlowfirstpassCheckBox")
+                XTWriter.WriteString(.SlowfirstpassCheckBox.Checked)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("x264optsFrm_PresetsTrackBar")
+                XTWriter.WriteString(.PresetsTrackBar.Value)
+                XTWriter.WriteEndElement()
+
+                XTWriter.WriteStartElement("x264optsFrm_TuningsComboBox")
+                XTWriter.WriteString(.TuningsComboBox.Text)
                 XTWriter.WriteEndElement()
 
                 'Frame-Type
@@ -7239,9 +7309,31 @@ RELOAD:
         Dim ThreadV As String = ""
         If InStr(1, EncListListView.Items(SelIndex).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then ThreadV = " -lavdopts threads=" & Environ("NUMBER_OF_PROCESSORS")
 
+        '--------------
+        '비디오출력드라이버
+        Dim MPlayerVideoOutputDeviceStr As String = "direct3d"
+        If VideoODComboBoxV = "DirectX" Then
+            MPlayerVideoOutputDeviceStr = "directx"
+        ElseIf VideoODComboBoxV = "DirectX noaccel" Then
+            MPlayerVideoOutputDeviceStr = "directx:noaccel"
+        ElseIf VideoODComboBoxV = "Direct3D 9 Renderer" Then
+            MPlayerVideoOutputDeviceStr = "direct3d"
+        ElseIf VideoODComboBoxV = "OpenGL" Then
+            MPlayerVideoOutputDeviceStr = "gl"
+        ElseIf VideoODComboBoxV = "OpenGL YUV" Then
+            MPlayerVideoOutputDeviceStr = "gl:yuv=4:force-pbo:ati-hack"
+        ElseIf VideoODComboBoxV = "OpenGL multiple textures version" Then
+            MPlayerVideoOutputDeviceStr = "gl2"
+        ElseIf VideoODComboBoxV = "MatrixView" Then
+            MPlayerVideoOutputDeviceStr = "matrixview"
+        ElseIf VideoODComboBoxV = "Colour AsCii Art library" Then
+            MPlayerVideoOutputDeviceStr = "caca"
+        End If
+        '--------------
+
         Dim MSGB As String = ""
         MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & EncListListView.Items(SelIndex).SubItems(10).Text & Chr(34) & _
-        " -identify -noquiet -nofontconfig -vo direct3d -idx" & CACHEV & ThreadV
+        " -identify -noquiet -nofontconfig -vo " & MPlayerVideoOutputDeviceStr & " -idx" & CACHEV & ThreadV & " -volume " & MPVolumeTrackBarV
         Shell(MSGB, AppWinStyle.NormalFocus)
 
     End Sub
@@ -7309,9 +7401,31 @@ RELOAD:
             MPATHV = WinAPI.GetShortPathName(MPATHV)
         End If
 
+        '--------------
+        '비디오출력드라이버
+        Dim MPlayerVideoOutputDeviceStr As String = "direct3d"
+        If VideoODComboBoxV = "DirectX" Then
+            MPlayerVideoOutputDeviceStr = "directx"
+        ElseIf VideoODComboBoxV = "DirectX noaccel" Then
+            MPlayerVideoOutputDeviceStr = "directx:noaccel"
+        ElseIf VideoODComboBoxV = "Direct3D 9 Renderer" Then
+            MPlayerVideoOutputDeviceStr = "direct3d"
+        ElseIf VideoODComboBoxV = "OpenGL" Then
+            MPlayerVideoOutputDeviceStr = "gl"
+        ElseIf VideoODComboBoxV = "OpenGL YUV" Then
+            MPlayerVideoOutputDeviceStr = "gl:yuv=4:force-pbo:ati-hack"
+        ElseIf VideoODComboBoxV = "OpenGL multiple textures version" Then
+            MPlayerVideoOutputDeviceStr = "gl2"
+        ElseIf VideoODComboBoxV = "MatrixView" Then
+            MPlayerVideoOutputDeviceStr = "matrixview"
+        ElseIf VideoODComboBoxV = "Colour AsCii Art library" Then
+            MPlayerVideoOutputDeviceStr = "caca"
+        End If
+        '--------------
+
         Dim MSGB As String = ""
         MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & MPATHV & Chr(34) & _
-        " -identify -noquiet -nofontconfig -vo direct3d -idx"
+        " -identify -noquiet -nofontconfig -vo " & MPlayerVideoOutputDeviceStr & " -idx -volume " & MPVolumeTrackBarV
         Shell(MSGB, AppWinStyle.NormalFocus)
 
     End Sub

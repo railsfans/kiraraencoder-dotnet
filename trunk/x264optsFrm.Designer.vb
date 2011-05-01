@@ -25,17 +25,22 @@ Partial Class x264optsFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(x264optsFrm))
         Me.SettingTabControl = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.TuningsGroupBox = New System.Windows.Forms.GroupBox
+        Me.TuningsComboBox = New System.Windows.Forms.ComboBox
+        Me.PresetsGroupBox = New System.Windows.Forms.GroupBox
+        Me.PresetsLabel = New System.Windows.Forms.Label
+        Me.PresetsTrackBar = New System.Windows.Forms.TrackBar
         Me.ffmpegPictureBox = New System.Windows.Forms.PictureBox
         Me.x264PictureBox = New System.Windows.Forms.PictureBox
-        Me.TurboGroupBox = New System.Windows.Forms.GroupBox
-        Me.FastfirstpassCheckBox = New System.Windows.Forms.CheckBox
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox
+        Me.SlowfirstpassGroupBox = New System.Windows.Forms.GroupBox
+        Me.SlowfirstpassCheckBox = New System.Windows.Forms.CheckBox
+        Me.LevelGroupBox = New System.Windows.Forms.GroupBox
         Me.LevelComboBox = New System.Windows.Forms.ComboBox
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.ProfileGroupBox = New System.Windows.Forms.GroupBox
         Me.ProfileComboBox = New System.Windows.Forms.ComboBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.ThreadsGroupBox = New System.Windows.Forms.GroupBox
         Me.ThreadsNumericUpDown = New System.Windows.Forms.NumericUpDown
-        Me.Label1 = New System.Windows.Forms.Label
+        Me.ThreadsLabel = New System.Windows.Forms.Label
         Me.TabPage2 = New System.Windows.Forms.TabPage
         Me.CABACGroupBox = New System.Windows.Forms.GroupBox
         Me.CABACCheckBox = New System.Windows.Forms.CheckBox
@@ -64,6 +69,10 @@ Partial Class x264optsFrm
         Me.DeblockingCheckBox = New System.Windows.Forms.CheckBox
         Me.TabPage3 = New System.Windows.Forms.TabPage
         Me.RateControlGroupBox = New System.Windows.Forms.GroupBox
+        Me.TempBlurofQuantafterCCNumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.TempBlurofQuantafterCCLabel = New System.Windows.Forms.Label
+        Me.TempBlurofestFramecomplexityNumericUpDown = New System.Windows.Forms.NumericUpDown
+        Me.TempBlurofestFramecomplexityLabel = New System.Windows.Forms.Label
         Me.UseMBTreeCheckBox = New System.Windows.Forms.CheckBox
         Me.NumberofFramesforLookaheadNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.Label26 = New System.Windows.Forms.Label
@@ -139,18 +148,18 @@ Partial Class x264optsFrm
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.OKBTN = New System.Windows.Forms.Button
         Me.BPanel = New System.Windows.Forms.Panel
-        Me.TempBlurofQuantafterCCNumericUpDown = New System.Windows.Forms.NumericUpDown
-        Me.TempBlurofQuantafterCCLabel = New System.Windows.Forms.Label
-        Me.TempBlurofestFramecomplexityNumericUpDown = New System.Windows.Forms.NumericUpDown
-        Me.TempBlurofestFramecomplexityLabel = New System.Windows.Forms.Label
+        Me.SLabel = New System.Windows.Forms.Label
         Me.SettingTabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TuningsGroupBox.SuspendLayout()
+        Me.PresetsGroupBox.SuspendLayout()
+        CType(Me.PresetsTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ffmpegPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.x264PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TurboGroupBox.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.SlowfirstpassGroupBox.SuspendLayout()
+        Me.LevelGroupBox.SuspendLayout()
+        Me.ProfileGroupBox.SuspendLayout()
+        Me.ThreadsGroupBox.SuspendLayout()
         CType(Me.ThreadsNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.CABACGroupBox.SuspendLayout()
@@ -165,6 +174,8 @@ Partial Class x264optsFrm
         CType(Me.DeblockingAlphaNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.RateControlGroupBox.SuspendLayout()
+        CType(Me.TempBlurofQuantafterCCNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TempBlurofestFramecomplexityNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumberofFramesforLookaheadNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuantizerCompressionNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AverageBitrateVarianceNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -197,8 +208,6 @@ Partial Class x264optsFrm
         CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BPanel.SuspendLayout()
-        CType(Me.TempBlurofQuantafterCCNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TempBlurofestFramecomplexityNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SettingTabControl
@@ -213,15 +222,54 @@ Partial Class x264optsFrm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.TuningsGroupBox)
+        Me.TabPage1.Controls.Add(Me.PresetsGroupBox)
         Me.TabPage1.Controls.Add(Me.ffmpegPictureBox)
         Me.TabPage1.Controls.Add(Me.x264PictureBox)
-        Me.TabPage1.Controls.Add(Me.TurboGroupBox)
-        Me.TabPage1.Controls.Add(Me.GroupBox3)
-        Me.TabPage1.Controls.Add(Me.GroupBox2)
-        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.SlowfirstpassGroupBox)
+        Me.TabPage1.Controls.Add(Me.LevelGroupBox)
+        Me.TabPage1.Controls.Add(Me.ProfileGroupBox)
+        Me.TabPage1.Controls.Add(Me.ThreadsGroupBox)
         resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TuningsGroupBox
+        '
+        Me.TuningsGroupBox.Controls.Add(Me.TuningsComboBox)
+        resources.ApplyResources(Me.TuningsGroupBox, "TuningsGroupBox")
+        Me.TuningsGroupBox.Name = "TuningsGroupBox"
+        Me.TuningsGroupBox.TabStop = False
+        '
+        'TuningsComboBox
+        '
+        Me.TuningsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TuningsComboBox.FormattingEnabled = True
+        Me.TuningsComboBox.Items.AddRange(New Object() {resources.GetString("TuningsComboBox.Items"), resources.GetString("TuningsComboBox.Items1"), resources.GetString("TuningsComboBox.Items2"), resources.GetString("TuningsComboBox.Items3"), resources.GetString("TuningsComboBox.Items4"), resources.GetString("TuningsComboBox.Items5"), resources.GetString("TuningsComboBox.Items6")})
+        resources.ApplyResources(Me.TuningsComboBox, "TuningsComboBox")
+        Me.TuningsComboBox.Name = "TuningsComboBox"
+        '
+        'PresetsGroupBox
+        '
+        Me.PresetsGroupBox.Controls.Add(Me.PresetsLabel)
+        Me.PresetsGroupBox.Controls.Add(Me.PresetsTrackBar)
+        resources.ApplyResources(Me.PresetsGroupBox, "PresetsGroupBox")
+        Me.PresetsGroupBox.Name = "PresetsGroupBox"
+        Me.PresetsGroupBox.TabStop = False
+        '
+        'PresetsLabel
+        '
+        resources.ApplyResources(Me.PresetsLabel, "PresetsLabel")
+        Me.PresetsLabel.Name = "PresetsLabel"
+        '
+        'PresetsTrackBar
+        '
+        Me.PresetsTrackBar.BackColor = System.Drawing.Color.White
+        Me.PresetsTrackBar.LargeChange = 1
+        resources.ApplyResources(Me.PresetsTrackBar, "PresetsTrackBar")
+        Me.PresetsTrackBar.Maximum = 9
+        Me.PresetsTrackBar.Name = "PresetsTrackBar"
+        Me.PresetsTrackBar.TickStyle = System.Windows.Forms.TickStyle.Both
         '
         'ffmpegPictureBox
         '
@@ -239,25 +287,25 @@ Partial Class x264optsFrm
         Me.x264PictureBox.Name = "x264PictureBox"
         Me.x264PictureBox.TabStop = False
         '
-        'TurboGroupBox
+        'SlowfirstpassGroupBox
         '
-        Me.TurboGroupBox.Controls.Add(Me.FastfirstpassCheckBox)
-        resources.ApplyResources(Me.TurboGroupBox, "TurboGroupBox")
-        Me.TurboGroupBox.Name = "TurboGroupBox"
-        Me.TurboGroupBox.TabStop = False
+        Me.SlowfirstpassGroupBox.Controls.Add(Me.SlowfirstpassCheckBox)
+        resources.ApplyResources(Me.SlowfirstpassGroupBox, "SlowfirstpassGroupBox")
+        Me.SlowfirstpassGroupBox.Name = "SlowfirstpassGroupBox"
+        Me.SlowfirstpassGroupBox.TabStop = False
         '
-        'FastfirstpassCheckBox
+        'SlowfirstpassCheckBox
         '
-        resources.ApplyResources(Me.FastfirstpassCheckBox, "FastfirstpassCheckBox")
-        Me.FastfirstpassCheckBox.Name = "FastfirstpassCheckBox"
-        Me.FastfirstpassCheckBox.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.SlowfirstpassCheckBox, "SlowfirstpassCheckBox")
+        Me.SlowfirstpassCheckBox.Name = "SlowfirstpassCheckBox"
+        Me.SlowfirstpassCheckBox.UseVisualStyleBackColor = True
         '
-        'GroupBox3
+        'LevelGroupBox
         '
-        Me.GroupBox3.Controls.Add(Me.LevelComboBox)
-        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.TabStop = False
+        Me.LevelGroupBox.Controls.Add(Me.LevelComboBox)
+        resources.ApplyResources(Me.LevelGroupBox, "LevelGroupBox")
+        Me.LevelGroupBox.Name = "LevelGroupBox"
+        Me.LevelGroupBox.TabStop = False
         '
         'LevelComboBox
         '
@@ -267,12 +315,12 @@ Partial Class x264optsFrm
         resources.ApplyResources(Me.LevelComboBox, "LevelComboBox")
         Me.LevelComboBox.Name = "LevelComboBox"
         '
-        'GroupBox2
+        'ProfileGroupBox
         '
-        Me.GroupBox2.Controls.Add(Me.ProfileComboBox)
-        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.TabStop = False
+        Me.ProfileGroupBox.Controls.Add(Me.ProfileComboBox)
+        resources.ApplyResources(Me.ProfileGroupBox, "ProfileGroupBox")
+        Me.ProfileGroupBox.Name = "ProfileGroupBox"
+        Me.ProfileGroupBox.TabStop = False
         '
         'ProfileComboBox
         '
@@ -282,13 +330,13 @@ Partial Class x264optsFrm
         resources.ApplyResources(Me.ProfileComboBox, "ProfileComboBox")
         Me.ProfileComboBox.Name = "ProfileComboBox"
         '
-        'GroupBox1
+        'ThreadsGroupBox
         '
-        Me.GroupBox1.Controls.Add(Me.ThreadsNumericUpDown)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.TabStop = False
+        Me.ThreadsGroupBox.Controls.Add(Me.ThreadsNumericUpDown)
+        Me.ThreadsGroupBox.Controls.Add(Me.ThreadsLabel)
+        resources.ApplyResources(Me.ThreadsGroupBox, "ThreadsGroupBox")
+        Me.ThreadsGroupBox.Name = "ThreadsGroupBox"
+        Me.ThreadsGroupBox.TabStop = False
         '
         'ThreadsNumericUpDown
         '
@@ -296,10 +344,10 @@ Partial Class x264optsFrm
         Me.ThreadsNumericUpDown.Maximum = New Decimal(New Integer() {16, 0, 0, 0})
         Me.ThreadsNumericUpDown.Name = "ThreadsNumericUpDown"
         '
-        'Label1
+        'ThreadsLabel
         '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
+        resources.ApplyResources(Me.ThreadsLabel, "ThreadsLabel")
+        Me.ThreadsLabel.Name = "ThreadsLabel"
         '
         'TabPage2
         '
@@ -514,6 +562,32 @@ Partial Class x264optsFrm
         Me.RateControlGroupBox.Name = "RateControlGroupBox"
         Me.RateControlGroupBox.TabStop = False
         '
+        'TempBlurofQuantafterCCNumericUpDown
+        '
+        Me.TempBlurofQuantafterCCNumericUpDown.DecimalPlaces = 1
+        Me.TempBlurofQuantafterCCNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        resources.ApplyResources(Me.TempBlurofQuantafterCCNumericUpDown, "TempBlurofQuantafterCCNumericUpDown")
+        Me.TempBlurofQuantafterCCNumericUpDown.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.TempBlurofQuantafterCCNumericUpDown.Name = "TempBlurofQuantafterCCNumericUpDown"
+        '
+        'TempBlurofQuantafterCCLabel
+        '
+        resources.ApplyResources(Me.TempBlurofQuantafterCCLabel, "TempBlurofQuantafterCCLabel")
+        Me.TempBlurofQuantafterCCLabel.Name = "TempBlurofQuantafterCCLabel"
+        '
+        'TempBlurofestFramecomplexityNumericUpDown
+        '
+        Me.TempBlurofestFramecomplexityNumericUpDown.DecimalPlaces = 1
+        Me.TempBlurofestFramecomplexityNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        resources.ApplyResources(Me.TempBlurofestFramecomplexityNumericUpDown, "TempBlurofestFramecomplexityNumericUpDown")
+        Me.TempBlurofestFramecomplexityNumericUpDown.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
+        Me.TempBlurofestFramecomplexityNumericUpDown.Name = "TempBlurofestFramecomplexityNumericUpDown"
+        '
+        'TempBlurofestFramecomplexityLabel
+        '
+        resources.ApplyResources(Me.TempBlurofestFramecomplexityLabel, "TempBlurofestFramecomplexityLabel")
+        Me.TempBlurofestFramecomplexityLabel.Name = "TempBlurofestFramecomplexityLabel"
+        '
         'UseMBTreeCheckBox
         '
         resources.ApplyResources(Me.UseMBTreeCheckBox, "UseMBTreeCheckBox")
@@ -705,7 +779,7 @@ Partial Class x264optsFrm
         'QMaxNumericUpDown
         '
         resources.ApplyResources(Me.QMaxNumericUpDown, "QMaxNumericUpDown")
-        Me.QMaxNumericUpDown.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
+        Me.QMaxNumericUpDown.Maximum = New Decimal(New Integer() {69, 0, 0, 0})
         Me.QMaxNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.QMaxNumericUpDown.Name = "QMaxNumericUpDown"
         Me.QMaxNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
@@ -714,9 +788,7 @@ Partial Class x264optsFrm
         '
         resources.ApplyResources(Me.QMinNumericUpDown, "QMinNumericUpDown")
         Me.QMinNumericUpDown.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
-        Me.QMinNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.QMinNumericUpDown.Name = "QMinNumericUpDown"
-        Me.QMinNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label12
         '
@@ -1063,31 +1135,10 @@ Partial Class x264optsFrm
         resources.ApplyResources(Me.BPanel, "BPanel")
         Me.BPanel.Name = "BPanel"
         '
-        'TempBlurofQuantafterCCNumericUpDown
+        'SLabel
         '
-        Me.TempBlurofQuantafterCCNumericUpDown.DecimalPlaces = 1
-        Me.TempBlurofQuantafterCCNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        resources.ApplyResources(Me.TempBlurofQuantafterCCNumericUpDown, "TempBlurofQuantafterCCNumericUpDown")
-        Me.TempBlurofQuantafterCCNumericUpDown.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
-        Me.TempBlurofQuantafterCCNumericUpDown.Name = "TempBlurofQuantafterCCNumericUpDown"
-        '
-        'TempBlurofQuantafterCCLabel
-        '
-        resources.ApplyResources(Me.TempBlurofQuantafterCCLabel, "TempBlurofQuantafterCCLabel")
-        Me.TempBlurofQuantafterCCLabel.Name = "TempBlurofQuantafterCCLabel"
-        '
-        'TempBlurofestFramecomplexityNumericUpDown
-        '
-        Me.TempBlurofestFramecomplexityNumericUpDown.DecimalPlaces = 1
-        Me.TempBlurofestFramecomplexityNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        resources.ApplyResources(Me.TempBlurofestFramecomplexityNumericUpDown, "TempBlurofestFramecomplexityNumericUpDown")
-        Me.TempBlurofestFramecomplexityNumericUpDown.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
-        Me.TempBlurofestFramecomplexityNumericUpDown.Name = "TempBlurofestFramecomplexityNumericUpDown"
-        '
-        'TempBlurofestFramecomplexityLabel
-        '
-        resources.ApplyResources(Me.TempBlurofestFramecomplexityLabel, "TempBlurofestFramecomplexityLabel")
-        Me.TempBlurofestFramecomplexityLabel.Name = "TempBlurofestFramecomplexityLabel"
+        resources.ApplyResources(Me.SLabel, "SLabel")
+        Me.SLabel.Name = "SLabel"
         '
         'x264optsFrm
         '
@@ -1102,14 +1153,18 @@ Partial Class x264optsFrm
         Me.ShowInTaskbar = False
         Me.SettingTabControl.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TuningsGroupBox.ResumeLayout(False)
+        Me.PresetsGroupBox.ResumeLayout(False)
+        Me.PresetsGroupBox.PerformLayout()
+        CType(Me.PresetsTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ffmpegPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.x264PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TurboGroupBox.ResumeLayout(False)
-        Me.TurboGroupBox.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.SlowfirstpassGroupBox.ResumeLayout(False)
+        Me.SlowfirstpassGroupBox.PerformLayout()
+        Me.LevelGroupBox.ResumeLayout(False)
+        Me.ProfileGroupBox.ResumeLayout(False)
+        Me.ThreadsGroupBox.ResumeLayout(False)
+        Me.ThreadsGroupBox.PerformLayout()
         CType(Me.ThreadsNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.CABACGroupBox.ResumeLayout(False)
@@ -1129,6 +1184,8 @@ Partial Class x264optsFrm
         Me.TabPage3.ResumeLayout(False)
         Me.RateControlGroupBox.ResumeLayout(False)
         Me.RateControlGroupBox.PerformLayout()
+        CType(Me.TempBlurofQuantafterCCNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TempBlurofestFramecomplexityNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumberofFramesforLookaheadNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuantizerCompressionNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AverageBitrateVarianceNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1165,23 +1222,21 @@ Partial Class x264optsFrm
         CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BPanel.ResumeLayout(False)
-        CType(Me.TempBlurofQuantafterCCNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TempBlurofestFramecomplexityNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents SettingTabControl As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents ProfileGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents ThreadsGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents ThreadsNumericUpDown As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents ThreadsLabel As System.Windows.Forms.Label
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents LevelComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents ProfileComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents LevelGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents DeblockingAlphaLabel As System.Windows.Forms.Label
     Friend WithEvents DeblockingCheckBox As System.Windows.Forms.CheckBox
@@ -1282,12 +1337,18 @@ Partial Class x264optsFrm
     Friend WithEvents CancelBTN As System.Windows.Forms.Button
     Friend WithEvents OKBTN As System.Windows.Forms.Button
     Friend WithEvents BPanel As System.Windows.Forms.Panel
-    Friend WithEvents TurboGroupBox As System.Windows.Forms.GroupBox
-    Friend WithEvents FastfirstpassCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents SlowfirstpassGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents SlowfirstpassCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents x264PictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents ffmpegPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents TempBlurofQuantafterCCNumericUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents TempBlurofQuantafterCCLabel As System.Windows.Forms.Label
     Friend WithEvents TempBlurofestFramecomplexityNumericUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents TempBlurofestFramecomplexityLabel As System.Windows.Forms.Label
+    Friend WithEvents PresetsGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents PresetsLabel As System.Windows.Forms.Label
+    Friend WithEvents PresetsTrackBar As System.Windows.Forms.TrackBar
+    Friend WithEvents TuningsGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents SLabel As System.Windows.Forms.Label
+    Friend WithEvents TuningsComboBox As System.Windows.Forms.ComboBox
 End Class

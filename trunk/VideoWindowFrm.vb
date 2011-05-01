@@ -28,9 +28,30 @@ Public Class VideoWindowFrm
     Public FrameI As Integer = 0
     Dim PLAYVL As Boolean = False
     Dim GETIMG As Boolean = False
-    Public TR As Boolean = False
     Dim TTIME As String = ""
     Dim RealFrameI As Integer = 0
+
+    '재생시간추출
+    Dim SHV As String = ""
+    Dim SMV As String = ""
+    Dim SSV As String = ""
+    Dim SMSV As String = ""
+    Dim EHV As String = ""
+    Dim EMV As String = ""
+    Dim ESV As String = ""
+    Dim EMSV As String = ""
+    Dim SetSTextBoxV As Single = 0.0
+    Dim SetETextBoxV As Single = 0.0
+
+    'time
+    Public PTime As Single = 0.0
+
+    'EXITCALL
+    Public ref_call As Boolean = False
+
+    '로드기준, 배속 사용여부
+    Dim SpeedXChg As Boolean = False
+
 #Region "코어"
 
     Private Sub img_cleanup()
@@ -39,23 +60,52 @@ Public Class VideoWindowFrm
             _AviSynthClip = Nothing
         End If
         If BitmapV IsNot Nothing Then
+            BitmapV.Dispose()
             BitmapV = Nothing
         End If
     End Sub
 
     Private Sub VideoWindowFrm_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
 
+        If GETIMG = True OrElse AviSynthEditorFrm.waitbool = True Then
+            e.Cancel = True
+            Exit Sub
+        End If
+
+        '--------
+
+        '저장
+        MainFrm.VideoWindowMode = VideoPictureBox.SizeMode
+        MainFrm.VideoWindowFrmW = Me.Width
+        MainFrm.VideoWindowFrmH = Me.Height
+        AviSynthEditorFrm.VWX = Me.Location.X
+        AviSynthEditorFrm.VWY = Me.Location.Y
+
         '닫기
         FrameTimer.Enabled = False
         RealtimeTimer.Enabled = False
         img_cleanup()
+
         '활성
-        AviSynthEditorFrm.RefButton.Enabled = False
-        AviSynthEditorFrm.PreviewButton.Enabled = True
+        If ref_call = False Then
+            AviSynthEditorFrm.RefButton.Enabled = False
+            ApplyToolStripMenuItem.Enabled = False
+            AviSynthEditorFrm.PreviewButton.Enabled = True
+        End If
+
+        Me.Dispose()
 
     End Sub
 
     Private Sub OPEN_SUB()
+
+        '배속사용여부 진단(로드기준)
+        If MainFrm.AVSCheckBox.Checked = True AndAlso ETCPPFrm.RateCheckBox.Checked = True Then 'AviSynth 사용하고 배속모드 사용..
+            SpeedXChg = True
+        Else
+            SpeedXChg = False
+        End If
+
         Try
             '_AviSynthClip = _AviSynthScriptEnvironment.ParseScript(AviSynthEditorFrm.AVTextBox.Text, AvisynthWrapper.AviSynthColorspace.RGB32)
             '_AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(Mainfrm.ApplicationInfoDirectoryPath & "AVS파일", AvisynthWrapper.AviSynthColorspace.RGB32)
@@ -73,8 +123,19 @@ Public Class VideoWindowFrm
             If FrameI > _AviSynthClip.num_frames Then
                 FrameI = _AviSynthClip.num_frames
             End If
-            '0번째 프레임 이미지 얻기
-            GET_IMAGE(FrameI)
+
+            If AviSynthEditorFrm.PtimeB <> 0.0 Then
+                'x번째 프레임 이미지 얻기
+                Dim FPSV As Single = _AviSynthClip.raten / _AviSynthClip.rated
+                Dim TIMEV As Integer = FPSV * AviSynthEditorFrm.PtimeB
+                If TIMEV >= _AviSynthClip.num_frames Then TIMEV = _AviSynthClip.num_frames
+                GET_IMAGE(TIMEV)
+                AviSynthEditorFrm.PtimeB = 0.0
+            Else
+                '0번째 프레임 이미지 얻기
+                GET_IMAGE(FrameI)
+            End If
+
             '최댓값 설정
             VideoTrackBar.Maximum = _AviSynthClip.num_frames
             '프레임 설정
@@ -85,37 +146,12 @@ Public Class VideoWindowFrm
             RealtimeTimer.Enabled = True
             '활성
             AviSynthEditorFrm.RefButton.Enabled = True
+            ApplyToolStripMenuItem.Enabled = True
             AviSynthEditorFrm.PreviewButton.Enabled = False
         Catch ex As Exception
             MsgBox(ex.Message)
-            Close()
-        End Try
-    End Sub
-
-    Public Sub Ref_SUB()
-
-        Dim PLAYVL2 As Boolean = PLAYVL '재생여부저장
-
-        Try
-            Me.Text = "Loading..."
-            '활성
-            AviSynthEditorFrm.RefButton.Enabled = False
-            '닫기
-            FrameTimer.Enabled = False
-            RealtimeTimer.Enabled = False
-            img_cleanup()
-            PLAYVL = False
-            '---------------
-            '새로고침
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
-            'SEEKMODE 체크
-            If MainFrm.SEEKMODEM1B = True Then Throw New Exception(AviSynthEditorFrm.StatusLabel.Text)
-            '열기
-            OPEN_SUB()
-            '재생여부
-            If PLAYVL2 = True Then PlayButton_Click(Nothing, Nothing)
-        Catch ex As Exception
-            MsgBox(ex.Message)
+            GETIMG = False
+            AviSynthEditorFrm.waitbool = False
             Close()
         End Try
 
@@ -161,6 +197,9 @@ Public Class VideoWindowFrm
                 If XTR.Name = "VideoWindowFrmV" Then LangCls.VideoWindowFrmV = XTR.ReadString
                 If XTR.Name = "VideoWindowFrmMoveToolStripMenuItem" Then MoveToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "VideoWindowFrmSizeModeToolStripMenuItem" Then SizeModeToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "VideoWindowFrmSetStartToolStripMenuItem" Then SetStartToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "VideoWindowFrmSetEndToolStripMenuItem" Then SetEndToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "VideoWindowFrmApplyToolStripMenuItem" Then ApplyToolStripMenuItem.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -172,16 +211,112 @@ Public Class VideoWindowFrm
 LANG_SKIP:
         '=========================================
 
+        '열기
+        VideoPictureBox.SizeMode = MainFrm.VideoWindowMode
+        ModeToolStripMenuItem.Text = VideoPictureBox.SizeMode.ToString
+
+        If AviSynthEditorFrm.VWX <> 0 AndAlso AviSynthEditorFrm.VWY <> 0 Then
+            Me.Location = New System.Drawing.Point(AviSynthEditorFrm.VWX, AviSynthEditorFrm.VWY)
+        Else
+            Try
+                Me.Location = New System.Drawing.Point((Screen.GetBounds(Me).Width / 2) - Me.Width / 2, (Screen.GetBounds(Me).Height / 2) - Me.Height / 2)
+            Catch ex As Exception
+            End Try
+        End If
+
+        '시야밖일경우 시야내로
+        If Me.Location.X < Screen.GetBounds(Me).Left Then
+            Me.Location = New System.Drawing.Point(Screen.GetBounds(Me).Left, Me.Location.Y)
+        End If
+
+        If Me.Location.Y < Screen.GetBounds(Me).Top Then
+            Me.Location = New System.Drawing.Point(Me.Location.X, Screen.GetBounds(Me).Top)
+        End If
+
+        If Me.Location.X > Screen.GetBounds(Me).Right - Me.Width Then
+            Me.Location = New System.Drawing.Point(Screen.GetBounds(Me).Right - Me.Width, Me.Location.Y)
+        End If
+
+        If Me.Location.Y > Screen.GetBounds(Me).Bottom - Me.Height Then
+            Me.Location = New System.Drawing.Point(Me.Location.X, Screen.GetBounds(Me).Bottom - Me.Height)
+        End If
+
+        If MainFrm.VideoWindowFrmW <> 0 AndAlso MainFrm.VideoWindowFrmH <> 0 Then
+            Me.Width = MainFrm.VideoWindowFrmW
+            Me.Height = MainFrm.VideoWindowFrmH
+        End If
+
+        GUGAN()
         OPEN_SUB()
+
+    End Sub
+
+    Private Sub GUGAN()
+
+        '======================
+        '구간설정
+        '======================
+        Dim PTimeInfo As String = MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text
+
+        '시작시간
+        Dim i As Long = 1
+        Dim ii As Long = 0
+        Dim t As String = ""
+        If InStr(i, PTimeInfo, "[", CompareMethod.Text) Then
+            ii = InStr(i, PTimeInfo, "[", CompareMethod.Text)
+            If InStr(ii, PTimeInfo, " ", CompareMethod.Text) Then
+                i = InStr(ii, PTimeInfo, " ", CompareMethod.Text) + 1
+                t = Mid(PTimeInfo, ii, i - ii - 1)
+            End If
+        Else
+            i = i + 1
+        End If
+        If t <> "" Then
+            t = Mid(t, InStrRev(t, "[") + 1)
+            Try
+                SHV = Split(t, ":")(0)
+                SMV = Split(t, ":")(1)
+                SSV = Split(Split(t, ":")(2), ".")(0)
+                SMSV = Split(t, ".")(1)
+            Catch ex As Exception
+            End Try
+        End If
+        '종료시간
+        i = 1
+        ii = 0
+        t = ""
+        If InStr(i, PTimeInfo, "- ", CompareMethod.Text) Then
+            ii = InStr(i, PTimeInfo, "- ", CompareMethod.Text)
+            If InStr(ii, PTimeInfo, "]", CompareMethod.Text) Then
+                i = InStr(ii, PTimeInfo, "]", CompareMethod.Text) + 1
+                t = Mid(PTimeInfo, ii, i - ii - 1)
+            End If
+        Else
+            i = i + 1
+        End If
+        If t <> "" Then
+            t = Mid(t, InStrRev(t, "- ") + 2)
+            Try
+                EHV = Split(t, ":")(0)
+                EMV = Split(t, ":")(1)
+                ESV = Split(Split(t, ":")(2), ".")(0)
+                EMSV = Split(t, ".")(1)
+            Catch ex As Exception
+            End Try
+        End If
+
+        '구간설정 초기화
+        SetSTextBoxV = 0.0
+        SetETextBoxV = 0.0
+        STextBox.Text = "00:00:00.00"
+        ETextBox.Text = "00:00:00.00"
 
     End Sub
 
     Public Sub GET_IMAGE(ByVal frameV As Integer)
 
-        If TR = False Then
-            If GETIMG = True Then
-                Exit Sub
-            End If
+        If GETIMG = True Then
+            Exit Sub
         End If
 
         If InStr(Me.Text, " - Loading...", CompareMethod.Text) <> 0 Then Exit Sub
@@ -189,6 +324,7 @@ LANG_SKIP:
         '========================================================================================
 
         GETIMG = True
+
         If FrameTimer.Enabled = False OrElse FrameMoveFrm.Visible = True Then
             If Me.Text = "" Then
                 Me.Text = "Loading... [ Please wait while processing. ]"
@@ -202,20 +338,18 @@ LANG_SKIP:
             VideoPictureBox.Image = BitmapV
             Dim rectV As New Rectangle(0, 0, BitmapV.Width, BitmapV.Height)
             Dim BitmapDataV As System.Drawing.Imaging.BitmapData = BitmapV.LockBits(rectV, System.Drawing.Imaging.ImageLockMode.ReadWrite, BitmapV.PixelFormat)
-            If TR = False Then
-                _AviSynthClip.ReadFrame(BitmapDataV.Scan0, BitmapDataV.Stride, frameV)
-            Else '오류로인한 새로고침일경우 TR(T두번 R새로고침)은 True가 됨.
-                _AviSynthClip.ReadFrame2(BitmapDataV.Scan0, BitmapDataV.Stride, frameV)
-            End If
+            _AviSynthClip.ReadFrame(BitmapDataV.Scan0, BitmapDataV.Stride, frameV)
             BitmapV.UnlockBits(BitmapDataV)
             BitmapV.RotateFlip(RotateFlipType.Rotate180FlipX)
-
             RealFrameI = frameV
             FrameI = frameV
         Catch ex As Exception
             MsgBox(ex.Message)
-            Me.Close()
+            GETIMG = False
+            AviSynthEditorFrm.waitbool = False
+            Close()
         End Try
+
         GETIMG = False
 
     End Sub
@@ -235,7 +369,16 @@ LANG_SKIP:
         FunctionCls.TIME_TO_HMSMSTIME(FrameI / (_AviSynthClip.raten / _AviSynthClip.rated), True) & " / " & TTIME & _
         " [ " & FrameI & " / " & VideoTrackBar.Maximum & " ] "
 
+        PTime = FrameI / (_AviSynthClip.raten / _AviSynthClip.rated)
         If FrameTimer.Enabled = True Then PLAYVL = True Else PLAYVL = False
+
+        'ref관련
+        If AviSynthEditorFrm.waitbool = True Then
+            PTime = FrameI / (_AviSynthClip.raten / _AviSynthClip.rated)
+            AviSynthEditorFrm.RefButton.Enabled = True
+            ApplyToolStripMenuItem.Enabled = True
+            AviSynthEditorFrm.waitbool = False
+        End If
 
     End Sub
 
@@ -354,6 +497,7 @@ LANG_SKIP:
         ElseIf VideoPictureBox.SizeMode = PictureBoxSizeMode.Zoom Then
             VideoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage
         End If
+        ModeToolStripMenuItem.Text = VideoPictureBox.SizeMode.ToString
     End Sub
 
     Private Sub MoveToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoveToolStripMenuItem.Click
@@ -366,6 +510,181 @@ LANG_SKIP:
     End Sub
 
     Private Sub VideoTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VideoTrackBar.Scroll
+
+    End Sub
+
+    Private Sub SetStartToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetStartToolStripMenuItem.Click
+
+        STextBox.Text = FunctionCls.TIME_TO_HMSMSTIME(FrameI / (_AviSynthClip.raten / _AviSynthClip.rated), True)
+
+        '계산
+        Dim STextBoxV As Single = 0.0
+        Try
+            STextBoxV = Val((Split(STextBox.Text, ":")(0) * 3600)) + Val((Split(STextBox.Text, ":")(1) * 60)) + Val(Split(Split(STextBox.Text, ":")(2), ".")(0)) + Val("0." & Split(STextBox.Text, ".")(1))
+        Catch ex As Exception
+        End Try
+
+        '배속대응
+        If SpeedXChg = True Then STextBoxV *= ETCPPFrm.RateNumericUpDown.Value
+
+        '계산 - 원래 지정된 거
+        Dim OriginSTextBoxV As Single = 0.0
+        Try
+            OriginSTextBoxV = Val(SHV * 3600) + Val(SMV * 60) + Val(SSV) + Val("0." & SMSV)
+        Catch ex As Exception
+        End Try
+        '-------
+
+        If OriginSTextBoxV = 0 Then
+            SetSTextBoxV = STextBoxV
+        Else
+            SetSTextBoxV = OriginSTextBoxV + STextBoxV
+        End If
+
+    End Sub
+
+    Private Sub SetEndToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetEndToolStripMenuItem.Click
+
+        ETextBox.Text = FunctionCls.TIME_TO_HMSMSTIME(FrameI / (_AviSynthClip.raten / _AviSynthClip.rated), True)
+
+        '계산
+        Dim ETextBoxV As Single = 0.0
+        Try
+            ETextBoxV = Val((Split(ETextBox.Text, ":")(0) * 3600)) + Val((Split(ETextBox.Text, ":")(1) * 60)) + Val(Split(Split(ETextBox.Text, ":")(2), ".")(0)) + Val("0." & Split(ETextBox.Text, ".")(1))
+        Catch ex As Exception
+        End Try
+
+        '배속대응
+        If SpeedXChg = True Then ETextBoxV *= ETCPPFrm.RateNumericUpDown.Value
+
+        '계산 - 원래 지정된 거
+        Dim OriginETextBoxV As Single = 0.0
+        Try
+            OriginETextBoxV = Val(EHV * 3600) + Val(EMV * 60) + Val(ESV) + Val("0." & EMSV)
+        Catch ex As Exception
+        End Try
+        '-------
+
+        Dim TotalS As Single = VideoTrackBar.Maximum / (_AviSynthClip.raten / _AviSynthClip.rated)
+
+        '배속대응
+        If SpeedXChg = True Then TotalS *= ETCPPFrm.RateNumericUpDown.Value
+
+        If OriginETextBoxV = 0 Then
+            SetETextBoxV = ETextBoxV
+        Else
+            Dim valstr As String = Format(VideoTrackBar.Maximum / (_AviSynthClip.raten / _AviSynthClip.rated), "0.00")
+
+            '배속대응 
+            If SpeedXChg = True Then valstr *= ETCPPFrm.RateNumericUpDown.Value
+
+            SetETextBoxV = Val(valstr) - (ETextBoxV + (TotalS / VideoTrackBar.Maximum))
+        End If
+
+    End Sub
+
+    Private Sub ApplyToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ApplyToolStripMenuItem.Click
+
+        If AviSynthEditorFrm.waitbool = True Then Exit Sub '중복 새로고침 클릭방지
+
+        Dim StartTimeSetEndTime As Boolean = False
+        Dim StartTimeSetEndTimeV As String = ""
+
+        '시작시간
+        If SetSTextBoxV <> 0 Then
+            '계산 - 원래 지정된 거
+            Dim OriginSTextBoxV As Single = 0.0
+            Try
+                OriginSTextBoxV = Val(SHV * 3600) + Val(SMV * 60) + Val(SSV) + Val("0." & SMSV)
+            Catch ex As Exception
+            End Try
+            If OriginSTextBoxV = 0 Then
+                MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text = Replace(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text, _
+                                    "[00:00:00.00", "[" & FunctionCls.TIME_TO_HMSMSTIME(SetSTextBoxV, True))
+            Else
+                MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text = Replace(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text, _
+                                    "[" & FunctionCls.TIME_TO_HMSMSTIME(OriginSTextBoxV, True), "[" & FunctionCls.TIME_TO_HMSMSTIME(SetSTextBoxV, True))
+            End If
+
+            '==============================================
+            Dim OriginETextBoxV As Single = 0.0
+            Try
+                OriginETextBoxV = Val(EHV * 3600) + Val(EMV * 60) + Val(ESV) + Val("0." & EMSV)
+            Catch ex As Exception
+            End Try
+            If OriginETextBoxV = 0 Then '종료시간 임의지정
+                StartTimeSetEndTime = True
+                StartTimeSetEndTimeV = TTIME
+                MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text = Replace(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text, _
+                           "00:00:00.00]", StartTimeSetEndTimeV & "]")
+            End If
+        End If
+
+
+        '종료시간
+        If SetETextBoxV <> 0 Then
+            '계산 - 원래 지정된 거
+            Dim OriginETextBoxV As Single = 0.0
+            Try
+                OriginETextBoxV = Val(EHV * 3600) + Val(EMV * 60) + Val(ESV) + Val("0." & EMSV)
+            Catch ex As Exception
+            End Try
+            If OriginETextBoxV = 0 Then
+                If StartTimeSetEndTime = True Then
+                    MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text = Replace(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text, _
+                                                 StartTimeSetEndTimeV, FunctionCls.TIME_TO_HMSMSTIME(SetETextBoxV, True) & "]")
+                Else
+                    MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text = Replace(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text, _
+                                                 "00:00:00.00]", FunctionCls.TIME_TO_HMSMSTIME(SetETextBoxV, True) & "]")
+                End If
+            Else
+                MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text = Replace(MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(11).Text, _
+                                     FunctionCls.TIME_TO_HMSMSTIME(OriginETextBoxV, True) & "]", FunctionCls.TIME_TO_HMSMSTIME(Val(OriginETextBoxV - SetETextBoxV), True) & "]")
+            End If
+        End If
+
+        '=============================
+
+        '새로고침
+        AviSynthEditorFrm.RefButton_Click(Nothing, Nothing)
+
+    End Sub
+
+    Protected Overrides Sub Finalize()
+        MyBase.Finalize()
+    End Sub
+
+    Public Sub Ref_SUB()
+
+        Dim PLAYVL2 As Boolean = PLAYVL '재생여부저장
+        Try
+            Me.Text = "Loading..."
+            '활성
+            AviSynthEditorFrm.RefButton.Enabled = False
+            '닫기
+            FrameTimer.Enabled = False
+            RealtimeTimer.Enabled = False
+            img_cleanup()
+            PLAYVL = False
+            '---------------
+            '새로고침
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
+            If AviSynthPP.INDEX_ProcessStopChk = True Then
+                AviSynthPP.INDEX_ProcessStopChk = False
+            End If
+            'SEEKMODE 체크
+            If MainFrm.SEEKMODEM1B = True Then Throw New Exception(AviSynthEditorFrm.StatusLabel.Text)
+            '열기
+            GUGAN()
+            OPEN_SUB()
+            '재생여부
+            If PLAYVL2 = True Then PlayButton_Click(Nothing, Nothing)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            GETIMG = False
+            AviSynthEditorFrm.waitbool = False
+            Close()
+        End Try
 
     End Sub
 

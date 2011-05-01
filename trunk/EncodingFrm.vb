@@ -696,13 +696,6 @@ Public Class EncodingFrm
 
     Private Sub GETINFO(ByVal MSGV As String)
 
-        '구간버그 났는지 체크하는것
-        Dim PositionDurationLabelV, FrameLabelV, FilesizeLabelV, BitrateLabelV As String
-        PositionDurationLabelV = PositionDurationLabel.Text
-        FrameLabelV = FrameLabel.Text
-        FilesizeLabelV = FilesizeLabel.Text
-        BitrateLabelV = BitrateLabel.Text
-
         '정보 가져오기 시작
         Dim ia2 As Integer = 1, iia2 As Integer = 0
         Dim ta2 As String = ""
@@ -885,15 +878,6 @@ Public Class EncodingFrm
         Else
             If SpeedV > 0 Then
                 TimeRemainingLabel.Text = FunctionCls.TIME_TO_HMSMSTIME(((EncDurationD - EncPositionD) / SpeedV), False)
-            End If
-        End If
-
-        '구간버그 났는지 체크하는것
-        If PositionDurationLabelV = PositionDurationLabel.Text AndAlso FrameLabelV <> FrameLabel.Text AndAlso FilesizeLabelV = FilesizeLabel.Text AndAlso BitrateLabelV = BitrateLabel.Text Then
-            If MainFrm.AVSCheckBox.Checked = False Then
-                If InStr(MainFrm.EncListListView.Items(EncindexI).SubItems(11).Text, " [00:00:00.00 - 00:00:00.00]", CompareMethod.Text) = 0 Then
-                    WinAPI.PostMessageW(HWNDV, WinAPI.WM_KEYDOWN, Keys.Q, 0&)
-                End If
             End If
         End If
 
@@ -1880,6 +1864,7 @@ DelayAudioSkip:
                     Else '원본 프레임.
 
                         'ASF WMV
+                        '3GP 3G2 K3G SKM MP4 MOV
                         'MPEG TS
                         'RM
                         'FLV SWF
@@ -1888,6 +1873,12 @@ DelayAudioSkip:
 
                             If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
                             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
                             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
                             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
                             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
@@ -1910,6 +1901,12 @@ DelayAudioSkip:
 
                                     If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
                                     InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
                                     InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
                                     InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
                                     InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _

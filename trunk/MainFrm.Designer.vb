@@ -628,7 +628,7 @@ Partial Class MainFrm
         '
         'DefPreviewImg
         '
-        Me.DefPreviewImg.BackColor = System.Drawing.Color.White
+        Me.DefPreviewImg.BackColor = System.Drawing.Color.Black
         resources.ApplyResources(Me.DefPreviewImg, "DefPreviewImg")
         Me.DefPreviewImg.Name = "DefPreviewImg"
         '

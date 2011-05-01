@@ -64,10 +64,14 @@ Public Class ConfigFrm
                 If XTR.Name = "DefBTN" Then DefBTN.Text = XTR.ReadString
 
                 If XTR.Name = "ConfigFrm" Then Me.Text = XTR.ReadString
+                If XTR.Name = "ConfigFrmPreviewTabPage" Then PreviewTabPage.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmPreviewGroupBox" Then PreviewGroupBox.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmBackColorLabel" Then BackColorLabel.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmImgLabel" Then ImgLabel.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmModeLabel" Then ModeLabel.Text = XTR.ReadString
+                If XTR.Name = "ConfigFrmVideoODGroupBox" Then VideoODGroupBox.Text = XTR.ReadString
+                If XTR.Name = "ConfigFrmMPVolumeGroupBox" Then MPVolumeGroupBox.Text = XTR.ReadString
+                If XTR.Name = "ConfigFrmVideoODLabel" Then VideoODLabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -83,9 +87,16 @@ LANG_SKIP:
         BackColorPanel.BackColor = MainFrm.BackColorPanelV
         ImgTextBox.Text = MainFrm.ImgTextBoxV
         ModeComboBox.Text = MainFrm.ModeComboBoxV
+        MPVolumeTrackBar.Value = MainFrm.MPVolumeTrackBarV
+        VideoODComboBox.Text = MainFrm.VideoODComboBoxV
 
         '미리보기 이미지 적용
         PreviewImgPanel_Apply()
+
+        '윈도우 2000 디자이너
+        If Environment.OSVersion.Version.Major = 5 AndAlso Environment.OSVersion.Version.Minor = 0 Then
+            MPVolumeTrackBar.BackColor = Color.FromKnownColor(KnownColor.Control)
+        End If
 
     End Sub
 
@@ -142,9 +153,11 @@ LANG_SKIP:
     End Sub
 
     Private Sub DefBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefBTN.Click
-        BackColorPanel.BackColor = Color.FromArgb(-1)
+        BackColorPanel.BackColor = Color.FromArgb(-16777216)
         ImgTextBox.Text = ""
         ModeComboBox.Text = "Center"
+        MPVolumeTrackBar.Value = 100
+        VideoODComboBox.Text = "Direct3D 9 Renderer"
 
         PreviewImgPanel_Apply()
     End Sub
@@ -160,11 +173,21 @@ LANG_SKIP:
         MainFrm.BackColorPanelV = BackColorPanel.BackColor
         MainFrm.ImgTextBoxV = ImgTextBox.Text
         MainFrm.ModeComboBoxV = ModeComboBox.Text
+        MainFrm.MPVolumeTrackBarV = MPVolumeTrackBar.Value
+        MainFrm.VideoODComboBoxV = VideoODComboBox.Text
 
         Close()
     End Sub
 
     Private Sub CancelBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBTN.Click
         Close()
+    End Sub
+
+    Private Sub MPVolumeTrackBar_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MPVolumeTrackBar.Scroll
+
+    End Sub
+
+    Private Sub MPVolumeTrackBar_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles MPVolumeTrackBar.ValueChanged
+        MPVolumeLabel.Text = MPVolumeTrackBar.Value & "%"
     End Sub
 End Class

@@ -43,6 +43,9 @@ Partial Class EncSetFrm
         Me.GOPSizeCheckBox = New System.Windows.Forms.CheckBox
         Me.VideoGroupBox = New System.Windows.Forms.GroupBox
         Me.AdvanOptsPanel = New System.Windows.Forms.Panel
+        Me.EasyPanel = New System.Windows.Forms.Panel
+        Me.EasyButton = New System.Windows.Forms.Button
+        Me.EasyLabel = New System.Windows.Forms.Label
         Me.AdvanOptsButton = New System.Windows.Forms.Button
         Me.AdvanOptsCheckBox = New System.Windows.Forms.CheckBox
         Me.AdvanOptsLabel = New System.Windows.Forms.Label
@@ -150,6 +153,10 @@ Partial Class EncSetFrm
         Me.vflipCheckBox = New System.Windows.Forms.CheckBox
         Me.AudioTabPage = New System.Windows.Forms.TabPage
         Me.AudioGroupBox = New System.Windows.Forms.GroupBox
+        Me.AAMRWBBitratePanel = New System.Windows.Forms.Panel
+        Me.AMRWBBitrateComboBox = New System.Windows.Forms.ComboBox
+        Me.AMRWBBitrateLabel = New System.Windows.Forms.Label
+        Me.Label16 = New System.Windows.Forms.Label
         Me.LAMEMP3QPanel = New System.Windows.Forms.Panel
         Me.Label7 = New System.Windows.Forms.Label
         Me.Label6 = New System.Windows.Forms.Label
@@ -243,10 +250,8 @@ Partial Class EncSetFrm
         Me.DVDDLOrBD98145MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BD23450MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BDDL46900MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.AAMRWBBitratePanel = New System.Windows.Forms.Panel
-        Me.AMRWBBitrateComboBox = New System.Windows.Forms.ComboBox
-        Me.AMRWBBitrateLabel = New System.Windows.Forms.Label
-        Me.Label16 = New System.Windows.Forms.Label
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox
+        Me.FFDeinterlaceCheckBox = New System.Windows.Forms.CheckBox
         Me.EncSetPanel.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
         Me.VideoTabPage.SuspendLayout()
@@ -254,6 +259,7 @@ Partial Class EncSetFrm
         Me.KeyFrameGroupBox.SuspendLayout()
         Me.VideoGroupBox.SuspendLayout()
         Me.AdvanOptsPanel.SuspendLayout()
+        Me.EasyPanel.SuspendLayout()
         CType(Me.QuantizerCQPNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuantizerCQPTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QualityNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -297,6 +303,7 @@ Partial Class EncSetFrm
         Me.flipGroupBox.SuspendLayout()
         Me.AudioTabPage.SuspendLayout()
         Me.AudioGroupBox.SuspendLayout()
+        Me.AAMRWBBitratePanel.SuspendLayout()
         Me.LAMEMP3QPanel.SuspendLayout()
         CType(Me.LAMEMP3QTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LAMEMP3QNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -322,7 +329,7 @@ Partial Class EncSetFrm
         Me.SizeLimitGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
         Me.TargetContextMenuStrip.SuspendLayout()
-        Me.AAMRWBBitratePanel.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncSetPanel
@@ -469,11 +476,30 @@ Partial Class EncSetFrm
         '
         'AdvanOptsPanel
         '
+        Me.AdvanOptsPanel.Controls.Add(Me.EasyPanel)
         Me.AdvanOptsPanel.Controls.Add(Me.AdvanOptsButton)
         Me.AdvanOptsPanel.Controls.Add(Me.AdvanOptsCheckBox)
         Me.AdvanOptsPanel.Controls.Add(Me.AdvanOptsLabel)
         resources.ApplyResources(Me.AdvanOptsPanel, "AdvanOptsPanel")
         Me.AdvanOptsPanel.Name = "AdvanOptsPanel"
+        '
+        'EasyPanel
+        '
+        Me.EasyPanel.Controls.Add(Me.EasyButton)
+        Me.EasyPanel.Controls.Add(Me.EasyLabel)
+        resources.ApplyResources(Me.EasyPanel, "EasyPanel")
+        Me.EasyPanel.Name = "EasyPanel"
+        '
+        'EasyButton
+        '
+        resources.ApplyResources(Me.EasyButton, "EasyButton")
+        Me.EasyButton.Name = "EasyButton"
+        Me.EasyButton.UseVisualStyleBackColor = True
+        '
+        'EasyLabel
+        '
+        resources.ApplyResources(Me.EasyLabel, "EasyLabel")
+        Me.EasyLabel.Name = "EasyLabel"
         '
         'AdvanOptsButton
         '
@@ -495,14 +521,14 @@ Partial Class EncSetFrm
         'QuantizerCQPNumericUpDown
         '
         resources.ApplyResources(Me.QuantizerCQPNumericUpDown, "QuantizerCQPNumericUpDown")
-        Me.QuantizerCQPNumericUpDown.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
+        Me.QuantizerCQPNumericUpDown.Maximum = New Decimal(New Integer() {69, 0, 0, 0})
         Me.QuantizerCQPNumericUpDown.Name = "QuantizerCQPNumericUpDown"
         '
         'QuantizerCQPTrackBar
         '
         resources.ApplyResources(Me.QuantizerCQPTrackBar, "QuantizerCQPTrackBar")
         Me.QuantizerCQPTrackBar.BackColor = System.Drawing.Color.White
-        Me.QuantizerCQPTrackBar.Maximum = 51
+        Me.QuantizerCQPTrackBar.Maximum = 69
         Me.QuantizerCQPTrackBar.Name = "QuantizerCQPTrackBar"
         Me.QuantizerCQPTrackBar.TickFrequency = 0
         Me.QuantizerCQPTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
@@ -517,7 +543,7 @@ Partial Class EncSetFrm
         Me.QualityNumericUpDown.DecimalPlaces = 1
         Me.QualityNumericUpDown.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         resources.ApplyResources(Me.QualityNumericUpDown, "QualityNumericUpDown")
-        Me.QualityNumericUpDown.Maximum = New Decimal(New Integer() {51, 0, 0, 0})
+        Me.QualityNumericUpDown.Maximum = New Decimal(New Integer() {69, 0, 0, 0})
         Me.QualityNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.QualityNumericUpDown.Name = "QualityNumericUpDown"
         Me.QualityNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 65536})
@@ -526,12 +552,12 @@ Partial Class EncSetFrm
         '
         resources.ApplyResources(Me.QualityTrackBar, "QualityTrackBar")
         Me.QualityTrackBar.BackColor = System.Drawing.Color.White
-        Me.QualityTrackBar.Maximum = 510
+        Me.QualityTrackBar.Maximum = 690
         Me.QualityTrackBar.Minimum = 1
         Me.QualityTrackBar.Name = "QualityTrackBar"
         Me.QualityTrackBar.TickFrequency = 0
         Me.QualityTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
-        Me.QualityTrackBar.Value = 10
+        Me.QualityTrackBar.Value = 1
         '
         'QualityLabel
         '
@@ -659,6 +685,7 @@ Partial Class EncSetFrm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.GroupBox5)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
@@ -1273,6 +1300,32 @@ Partial Class EncSetFrm
         Me.AudioGroupBox.Name = "AudioGroupBox"
         Me.AudioGroupBox.TabStop = False
         '
+        'AAMRWBBitratePanel
+        '
+        Me.AAMRWBBitratePanel.Controls.Add(Me.AMRWBBitrateComboBox)
+        Me.AAMRWBBitratePanel.Controls.Add(Me.AMRWBBitrateLabel)
+        Me.AAMRWBBitratePanel.Controls.Add(Me.Label16)
+        resources.ApplyResources(Me.AAMRWBBitratePanel, "AAMRWBBitratePanel")
+        Me.AAMRWBBitratePanel.Name = "AAMRWBBitratePanel"
+        '
+        'AMRWBBitrateComboBox
+        '
+        Me.AMRWBBitrateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.AMRWBBitrateComboBox.FormattingEnabled = True
+        Me.AMRWBBitrateComboBox.Items.AddRange(New Object() {resources.GetString("AMRWBBitrateComboBox.Items"), resources.GetString("AMRWBBitrateComboBox.Items1"), resources.GetString("AMRWBBitrateComboBox.Items2"), resources.GetString("AMRWBBitrateComboBox.Items3"), resources.GetString("AMRWBBitrateComboBox.Items4"), resources.GetString("AMRWBBitrateComboBox.Items5"), resources.GetString("AMRWBBitrateComboBox.Items6"), resources.GetString("AMRWBBitrateComboBox.Items7"), resources.GetString("AMRWBBitrateComboBox.Items8")})
+        resources.ApplyResources(Me.AMRWBBitrateComboBox, "AMRWBBitrateComboBox")
+        Me.AMRWBBitrateComboBox.Name = "AMRWBBitrateComboBox"
+        '
+        'AMRWBBitrateLabel
+        '
+        resources.ApplyResources(Me.AMRWBBitrateLabel, "AMRWBBitrateLabel")
+        Me.AMRWBBitrateLabel.Name = "AMRWBBitrateLabel"
+        '
+        'Label16
+        '
+        resources.ApplyResources(Me.Label16, "Label16")
+        Me.Label16.Name = "Label16"
+        '
         'LAMEMP3QPanel
         '
         Me.LAMEMP3QPanel.Controls.Add(Me.Label7)
@@ -1884,31 +1937,18 @@ Partial Class EncSetFrm
         Me.BDDL46900MBToolStripMenuItem.Name = "BDDL46900MBToolStripMenuItem"
         resources.ApplyResources(Me.BDDL46900MBToolStripMenuItem, "BDDL46900MBToolStripMenuItem")
         '
-        'AAMRWBBitratePanel
+        'GroupBox5
         '
-        Me.AAMRWBBitratePanel.Controls.Add(Me.AMRWBBitrateComboBox)
-        Me.AAMRWBBitratePanel.Controls.Add(Me.AMRWBBitrateLabel)
-        Me.AAMRWBBitratePanel.Controls.Add(Me.Label16)
-        resources.ApplyResources(Me.AAMRWBBitratePanel, "AAMRWBBitratePanel")
-        Me.AAMRWBBitratePanel.Name = "AAMRWBBitratePanel"
+        Me.GroupBox5.Controls.Add(Me.FFDeinterlaceCheckBox)
+        resources.ApplyResources(Me.GroupBox5, "GroupBox5")
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.TabStop = False
         '
-        'AMRWBBitrateComboBox
+        'FFDeinterlaceCheckBox
         '
-        Me.AMRWBBitrateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.AMRWBBitrateComboBox.FormattingEnabled = True
-        Me.AMRWBBitrateComboBox.Items.AddRange(New Object() {resources.GetString("AMRWBBitrateComboBox.Items"), resources.GetString("AMRWBBitrateComboBox.Items1"), resources.GetString("AMRWBBitrateComboBox.Items2"), resources.GetString("AMRWBBitrateComboBox.Items3"), resources.GetString("AMRWBBitrateComboBox.Items4"), resources.GetString("AMRWBBitrateComboBox.Items5"), resources.GetString("AMRWBBitrateComboBox.Items6"), resources.GetString("AMRWBBitrateComboBox.Items7"), resources.GetString("AMRWBBitrateComboBox.Items8")})
-        resources.ApplyResources(Me.AMRWBBitrateComboBox, "AMRWBBitrateComboBox")
-        Me.AMRWBBitrateComboBox.Name = "AMRWBBitrateComboBox"
-        '
-        'AMRWBBitrateLabel
-        '
-        resources.ApplyResources(Me.AMRWBBitrateLabel, "AMRWBBitrateLabel")
-        Me.AMRWBBitrateLabel.Name = "AMRWBBitrateLabel"
-        '
-        'Label16
-        '
-        resources.ApplyResources(Me.Label16, "Label16")
-        Me.Label16.Name = "Label16"
+        resources.ApplyResources(Me.FFDeinterlaceCheckBox, "FFDeinterlaceCheckBox")
+        Me.FFDeinterlaceCheckBox.Name = "FFDeinterlaceCheckBox"
+        Me.FFDeinterlaceCheckBox.UseVisualStyleBackColor = True
         '
         'EncSetFrm
         '
@@ -1933,6 +1973,7 @@ Partial Class EncSetFrm
         Me.VideoGroupBox.PerformLayout()
         Me.AdvanOptsPanel.ResumeLayout(False)
         Me.AdvanOptsPanel.PerformLayout()
+        Me.EasyPanel.ResumeLayout(False)
         CType(Me.QuantizerCQPNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuantizerCQPTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QualityNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1986,6 +2027,8 @@ Partial Class EncSetFrm
         Me.flipGroupBox.PerformLayout()
         Me.AudioTabPage.ResumeLayout(False)
         Me.AudioGroupBox.ResumeLayout(False)
+        Me.AAMRWBBitratePanel.ResumeLayout(False)
+        Me.AAMRWBBitratePanel.PerformLayout()
         Me.LAMEMP3QPanel.ResumeLayout(False)
         Me.LAMEMP3QPanel.PerformLayout()
         CType(Me.LAMEMP3QTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2024,8 +2067,8 @@ Partial Class EncSetFrm
         Me.NameGroupBox.ResumeLayout(False)
         Me.NameGroupBox.PerformLayout()
         Me.TargetContextMenuStrip.ResumeLayout(False)
-        Me.AAMRWBBitratePanel.ResumeLayout(False)
-        Me.AAMRWBBitratePanel.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2252,4 +2295,9 @@ Partial Class EncSetFrm
     Friend WithEvents AMRWBBitrateComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents AMRWBBitrateLabel As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents EasyPanel As System.Windows.Forms.Panel
+    Friend WithEvents EasyButton As System.Windows.Forms.Button
+    Friend WithEvents EasyLabel As System.Windows.Forms.Label
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents FFDeinterlaceCheckBox As System.Windows.Forms.CheckBox
 End Class

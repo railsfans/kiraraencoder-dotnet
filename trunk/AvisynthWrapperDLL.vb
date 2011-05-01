@@ -136,10 +136,6 @@ Namespace AvisynthWrapper
          ByVal cs As String) As Integer
         End Function
         <DllImport("AvisynthWrapper", ExactSpelling:=True, SetLastError:=False, CharSet:=CharSet.Ansi)> _
-        Private Shared Function dimzon_avs_init_2(ByRef avs As IntPtr, ByVal func As String, ByVal arg As String, ByRef vi As AVSDLLVideoInfo, ByRef originalColorspace As AviSynthColorspace, ByRef originalSampleType As AudioSampleType, _
-         ByVal cs As String) As Integer
-        End Function
-        <DllImport("AvisynthWrapper", ExactSpelling:=True, SetLastError:=False, CharSet:=CharSet.Ansi)> _
         Private Shared Function dimzon_avs_destroy(ByRef avs As IntPtr) As Integer
         End Function
         <DllImport("AvisynthWrapper", ExactSpelling:=True, SetLastError:=False, CharSet:=CharSet.Ansi)> _
@@ -364,28 +360,9 @@ Namespace AvisynthWrapper
 
         Public Sub ReadFrame(ByVal addr As IntPtr, ByVal stride As Integer, ByVal frame As Integer)
             If 0 <> dimzon_avs_getvframe(_avs, addr, stride, frame) Then
-                Ref()
-            End If
-
-        End Sub
-
-        Public Sub ReadFrame2(ByVal addr As IntPtr, ByVal stride As Integer, ByVal frame As Integer)
-            If 0 <> dimzon_avs_getvframe(_avs, addr, stride, frame) Then
                 Throw New AviSynthException(getLastError())
             End If
 
-        End Sub
-
-        Public Sub Ref()
-            Try
-                AviSynthEditorFrm.waitbool = True
-                VideoWindowFrm.TR = True
-                VideoWindowFrm.Ref_SUB()
-                VideoWindowFrm.TR = False
-                AviSynthEditorFrm.waitbool = False
-            Catch ex As Exception
-                Throw New AviSynthException(getLastError())
-            End Try
         End Sub
 
         Public Sub New(ByVal func As String, ByVal arg As String, ByVal forceColorspace As AviSynthColorspace, ByVal env As AviSynthScriptEnvironment)
@@ -394,7 +371,7 @@ Namespace AvisynthWrapper
             _avs = New IntPtr(0)
             _colorSpace = AviSynthColorspace.Unknown
             _sampleType = AudioSampleType.Unknown
-            If 0 <> dimzon_avs_init_2(_avs, func, arg, _vi, _colorSpace, _sampleType, _
+            If 0 <> dimzon_avs_init(_avs, func, arg, _vi, _colorSpace, _sampleType, _
              forceColorspace.ToString()) Then
                 Dim err As String = getLastError()
                 cleanup(False)
@@ -411,6 +388,7 @@ Namespace AvisynthWrapper
             _avs = New IntPtr(0)
             If disposing Then
                 GC.SuppressFinalize(Me)
+                GC.Collect()
             End If
         End Sub
 
