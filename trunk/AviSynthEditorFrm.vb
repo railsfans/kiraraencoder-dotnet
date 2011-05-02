@@ -368,15 +368,38 @@ LANG_SKIP:
                 Dim MSGB As String = ""
 
                 If MainFrm.SEEKMODEM1B = True Then
+
+                    '--------------
+                    '비디오출력드라이버
+                    Dim MPlayerVideoOutputDeviceStr As String = "direct3d"
+                    If MainFrm.VideoODComboBoxV = "DirectX" Then
+                        MPlayerVideoOutputDeviceStr = "directx"
+                    ElseIf MainFrm.VideoODComboBoxV = "DirectX noaccel" Then
+                        MPlayerVideoOutputDeviceStr = "directx:noaccel"
+                    ElseIf MainFrm.VideoODComboBoxV = "Direct3D 9 Renderer" Then
+                        MPlayerVideoOutputDeviceStr = "direct3d"
+                    ElseIf MainFrm.VideoODComboBoxV = "OpenGL" Then
+                        MPlayerVideoOutputDeviceStr = "gl"
+                    ElseIf MainFrm.VideoODComboBoxV = "OpenGL YUV" Then
+                        MPlayerVideoOutputDeviceStr = "gl:yuv=4:force-pbo:ati-hack"
+                    ElseIf MainFrm.VideoODComboBoxV = "OpenGL multiple textures version" Then
+                        MPlayerVideoOutputDeviceStr = "gl2"
+                    ElseIf MainFrm.VideoODComboBoxV = "MatrixView" Then
+                        MPlayerVideoOutputDeviceStr = "matrixview"
+                    ElseIf MainFrm.VideoODComboBoxV = "Colour AsCii Art library" Then
+                        MPlayerVideoOutputDeviceStr = "caca"
+                    End If
+                    '--------------
+
                     ListenButton.Text = "Playback"
-                    MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
-                    " -identify -noquiet -nofontconfig -vo direct3d"
+                    MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer.exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
+                    " -identify -noquiet -nofontconfig -vo " & MPlayerVideoOutputDeviceStr
                 Else
                     ListenButton.Text = ListenButtonSTR
                     If MainFrm.DECSTR = "DSHOW" Then
                         MSGB = FunctionCls.AppInfoDirectoryPath & "\kiraraplayer.exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34)
                     Else
-                        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
+                        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer.exe " & Chr(34) & FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs" & Chr(34) & _
                                       " -identify -noquiet -nofontconfig -novideo"
                     End If
 

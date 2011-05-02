@@ -444,7 +444,7 @@ Public Class StreamFrm
         '===========
 
         Dim ThreadV As String = ""
-        If InStr(1, MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then ThreadV = " -lavdopts threads=" & Environ("NUMBER_OF_PROCESSORS")
+        If InStr(1, MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then ThreadV = " -lavdopts threads=" & System.Environment.ProcessorCount
         Dim scaletempoV As String = ""
         If scaletempoToolStripMenuItem.Checked = True Then
             scaletempoV = " -af-add scaletempo"
@@ -508,7 +508,7 @@ Public Class StreamFrm
         If Len(Hex(PrePanel1.BackColor.B.ToString)) = 1 Then BV = "0" & Hex(PrePanel1.BackColor.B) Else BV = Hex(PrePanel1.BackColor.B)
 
         Dim MSGB As String = ""
-        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(10).Text & Chr(34) & _
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer.exe " & Chr(34) & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(10).Text & Chr(34) & _
         " -slave -identify -noquiet -nokeepaspect -nofontconfig -osdlevel 0 -colorkey 0x" & RV & GV & BV & " -idx -vo " & MPlayerVideoOutputDeviceStr & " -wid " & PrePanel1.Handle.ToString & " -speed " & rateM & _
         CACHEV & ThreadV & StartSet & scaletempoV & extrastereoV & karaokeV & VisualizeMotionVectorsV & VisualizeBlockTypesV & DeinterlaceV & VOLV
 
@@ -542,7 +542,7 @@ Public Class StreamFrm
 
         '프로세스 우선순위 설정
         Dim PPInt As Integer = PriorityClass.NORMAL_PRIORITY_CLASS
-        If Environ("NUMBER_OF_PROCESSORS") = 1 Then
+        If System.Environment.ProcessorCount = 1 Then
             PPInt = PriorityClass.NORMAL_PRIORITY_CLASS
             If GetCurrentProcess <> Nothing Then SetPriorityClass(GetCurrentProcess, PriorityClass.NORMAL_PRIORITY_CLASS)
         Else

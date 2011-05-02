@@ -173,8 +173,8 @@ Public Class SnapshotFrm
         End Try
 
         Dim MSGB As String = ""
-        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & MainFrm.MPLAYEREXESTR & ".exe " & Chr(34) & IN_PATHV & Chr(34) & _
-        " -ss " & SSV & " -frames 1 -idx -vf scale=" & WIDTHV & ":" & HEIGHTV & " -nosound -vo jpeg:quality=100:outdir=" & OUTDIRSTR
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer.exe " & Chr(34) & IN_PATHV & Chr(34) & _
+        " -ss " & SSV & " -frames 1 -idx -vf scale=" & WIDTHV & ":" & HEIGHTV & " -nosound -nofontconfig -vo jpeg:quality=100:outdir=" & OUTDIRSTR
 
         EncodingFrm.DebugLabel.Text = "Duration " & SSV
 

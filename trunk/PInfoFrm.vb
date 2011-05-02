@@ -29,9 +29,10 @@ Public Class PInfoFrm
     Private Sub PInfoFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Dim BitV As String = "32"
-        If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
+        If IntPtr.Size > 4 Then '64비트
             BitV = "64"
         End If
+
         Dim NameLabelV As String = "키라라 인코더"
         Dim NameLabel2V As String = "비트"
         Dim VersionLabelV As String = "버전"

@@ -468,7 +468,7 @@ Public Class EncodingFrm
 
         Dim hwnd As Integer
         If PipeMode = True Then
-            hwnd = WinAPI.FindWindowW(vbNullString, Environ("ComSpec"))
+            hwnd = WinAPI.FindWindowW(vbNullString, System.Environment.SystemDirectory & "\cmd.exe")
         Else
             hwnd = WinAPI.FindWindowW(vbNullString, FunctionCls.AppInfoDirectoryPath & "\tools\ffmpeg\ffmpeg.exe")
         End If

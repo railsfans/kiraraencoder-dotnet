@@ -29,7 +29,7 @@ Public Class MainFrm
     Public PDATA = "[2011.05.02]"
 
     'AviSynthDLL 위치
-    Public PubAVSPATHStr As String = Environ("SystemRoot") & "\system32\avisynth.dll"
+    Public PubAVSPATHStr As String = System.Environment.SystemDirectory & "\avisynth.dll"
 
     'Beta여부
     Dim BetaStrB As Boolean = False
@@ -83,9 +83,6 @@ Public Class MainFrm
     Dim RzHeight As String
     Dim RzX As String
     Dim RzY As String
-
-    'MPLAYER
-    Public MPLAYEREXESTR As String = ""
 
     '명령어
     Public AviSynthCommandStr As String = ""
@@ -2275,14 +2272,11 @@ ReDel:
         End With
 
         'Def_FFmpegSourceTextBox 초기화 32 / 64
-        If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
+        If IntPtr.Size > 4 Then '64비트
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadCPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
-        Else
+        Else '32비트
             AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text = "LoadPlugin(" & Chr(34) & "#<toolspath>ffms\ffms2.dll" & Chr(34) & ")" & vbNewLine & AviSynthEditorFrm.Def_FFmpegSourceTextBox.Text
         End If
-
-
-
 
 
 
@@ -2366,21 +2360,12 @@ ReDel:
         '어플리케이션 설정
         Dim BetaStr As String = ""
         If BetaStrB = True Then BetaStr = " Beta"
-        If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
+        If IntPtr.Size > 4 Then '64비트
             Me.Text = "Kirara Encoder" & BetaStr & " SVN-r" & _
             My.Application.Info.Version.Build & " x64"
-        Else
+        Else '32비트
             Me.Text = "Kirara Encoder" & BetaStr & " SVN-r" & _
             My.Application.Info.Version.Build
-        End If
-
-        'MPLAYEREXESTR 설정
-        If InStr(Environ("PROCESSOR_IDENTIFIER"), "intel", CompareMethod.Text) <> 0 Then
-            MPLAYEREXESTR = "p4"
-        ElseIf InStr(Environ("PROCESSOR_IDENTIFIER"), "amd", CompareMethod.Text) <> 0 Then
-            MPLAYEREXESTR = "athlon-xp"
-        Else
-            MPLAYEREXESTR = "rtm"
         End If
 
         '관리자계정 여부
@@ -7307,7 +7292,7 @@ RELOAD:
         Dim CACHEV As String = ""
         If EncListListView.Items(SelIndex).SubItems(3).Text = "MPEGTS" Then CACHEV = " -cache 8192"
         Dim ThreadV As String = ""
-        If InStr(1, EncListListView.Items(SelIndex).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then ThreadV = " -lavdopts threads=" & Environ("NUMBER_OF_PROCESSORS")
+        If InStr(1, EncListListView.Items(SelIndex).SubItems(8).Text, "h264", CompareMethod.Text) <> 0 Then ThreadV = " -lavdopts threads=" & System.Environment.ProcessorCount
 
         '--------------
         '비디오출력드라이버
@@ -7332,7 +7317,7 @@ RELOAD:
         '--------------
 
         Dim MSGB As String = ""
-        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & EncListListView.Items(SelIndex).SubItems(10).Text & Chr(34) & _
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer.exe " & Chr(34) & EncListListView.Items(SelIndex).SubItems(10).Text & Chr(34) & _
         " -identify -noquiet -nofontconfig -vo " & MPlayerVideoOutputDeviceStr & " -idx" & CACHEV & ThreadV & " -volume " & MPVolumeTrackBarV
         Shell(MSGB, AppWinStyle.NormalFocus)
 
@@ -7424,7 +7409,7 @@ RELOAD:
         '--------------
 
         Dim MSGB As String = ""
-        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer-" & Me.MPLAYEREXESTR & ".exe " & Chr(34) & MPATHV & Chr(34) & _
+        MSGB = FunctionCls.AppInfoDirectoryPath & "\tools\mplayer\mplayer.exe " & Chr(34) & MPATHV & Chr(34) & _
         " -identify -noquiet -nofontconfig -vo " & MPlayerVideoOutputDeviceStr & " -idx -volume " & MPVolumeTrackBarV
         Shell(MSGB, AppWinStyle.NormalFocus)
 

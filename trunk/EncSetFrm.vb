@@ -2384,7 +2384,7 @@ RELOAD:
                 '------------------------
                 Dim ThreadsV As String = ""
                 If .ThreadsNumericUpDown.Value = 0 Then
-                    ThreadsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
+                    ThreadsV = " -threads " & System.Environment.ProcessorCount
                 Else
                     ThreadsV = " -threads " & .ThreadsNumericUpDown.Value
                 End If
@@ -2537,11 +2537,11 @@ RELOAD:
         VideoCodecComboBox.Text = "DivX 4 Codec(Open Divx)" OrElse _
         VideoCodecComboBox.Text = "DivX 5 Codec" OrElse _
         VideoCodecComboBox.Text = "MPEG-4 Video") AndAlso AdvanOptsCheckBox.Checked = False Then '고급설정 사용 안 함
-            MPEG4optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
+            MPEG4optsV = " -threads " & System.Environment.ProcessorCount
         End If
         'xvid(XVIDCORE) + MKV 특별
         If (InStr(OutFComboBox.SelectedItem, "[MKV]", CompareMethod.Text) <> 0 AndAlso VideoCodecComboBox.Text = "Xvid MPEG-4 Codec(Xvid Core)") Then
-            MPEG4optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
+            MPEG4optsV = " -threads " & System.Environment.ProcessorCount
         End If
 
         '***********************************
@@ -2549,7 +2549,7 @@ RELOAD:
         '***********************************
         Dim VP8optsV As String = ""
         If VideoCodecComboBox.Text = "VP8 Codec(libvpx)" Then
-            VP8optsV = " -threads " & Environ("NUMBER_OF_PROCESSORS")
+            VP8optsV = " -threads " & System.Environment.ProcessorCount
         End If
 
         '***********************************

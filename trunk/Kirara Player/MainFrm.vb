@@ -683,12 +683,12 @@ Public Class MainFrm
         madVRToolStripMenuItem.Checked = My.Settings.madVRToolStripMenuItem
 
         '어플리케이션 설정
-        If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
+        If IntPtr.Size > 4 Then '64비트
             Me.Text = "Kirara Player v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
             My.Application.Info.Version.Revision & " x64"
-        Else
+        Else '32비트
             Me.Text = "Kirara Player v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
@@ -1147,12 +1147,12 @@ Public Class MainFrm
         End If
 
         '어플리케이션 설정
-        If Environ("PROCESSOR_ARCHITECTURE") = "AMD64" Then
+        If IntPtr.Size > 4 Then '64비트
             Me.Text = "Kirara Player v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
             My.Application.Info.Version.Revision & " x64"
-        Else
+        Else '32비트
             Me.Text = "Kirara Player v" & _
             My.Application.Info.Version.Major & "." & _
             My.Application.Info.Version.Minor & "." & _
