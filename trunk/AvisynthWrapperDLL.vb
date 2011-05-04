@@ -366,7 +366,6 @@ Namespace AvisynthWrapper
         End Sub
 
         Public Sub New(ByVal func As String, ByVal arg As String, ByVal forceColorspace As AviSynthColorspace, ByVal env As AviSynthScriptEnvironment)
-
             _vi = New AVSDLLVideoInfo()
             _avs = New IntPtr(0)
             _colorSpace = AviSynthColorspace.Unknown
@@ -388,7 +387,6 @@ Namespace AvisynthWrapper
             _avs = New IntPtr(0)
             If disposing Then
                 GC.SuppressFinalize(Me)
-                GC.Collect()
             End If
         End Sub
 

@@ -81,6 +81,7 @@ Public Class PInfoFrm
                 If XTR.Name = "PInfoFrmNameLabel2" Then NameLabel2V = XTR.ReadString
                 If XTR.Name = "PInfoFrmVersionLabel" Then VersionLabelV = XTR.ReadString
                 If XTR.Name = "PInfoFrmInChkToolStripMenuItem" Then InChkToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "PInfoFrmTranslationTabPage" Then TranslationTabPage.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception

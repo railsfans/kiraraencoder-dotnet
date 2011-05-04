@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.05.02]"
+    Public PDATA = "[2011.05.05]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = System.Environment.SystemDirectory & "\avisynth.dll"
@@ -426,8 +426,66 @@ Public Class MainFrm
             End If
 
             '정상인지 체크
-            If ELVI.SubItems(12).Text = "" OrElse InStr(ELVI.SubItems(12).Text, "x", CompareMethod.Text) = 0 Then
+            If ELVI.SubItems(12).Text = "" OrElse InStr(ELVI.SubItems(12).Text, "x", CompareMethod.Text) = 0 OrElse ELVI.SubItems(12).Text = "x" Then
                 ELVI.SubItems(12).Text = "0x0"
+            End If
+
+            'ASF 검사를 위에 형식을 이때 구해온다 -ㅂ-;;;
+            '형식
+            ia2 = 1
+            iia2 = 0
+            ta2 = ""
+            If InStr(ia2, OutputBox_GI.Text, "Input #0, ", CompareMethod.Text) Then
+                iia2 = InStr(ia2, OutputBox_GI.Text, "Input #0, ", CompareMethod.Text)
+                If InStr(iia2, OutputBox_GI.Text, ", from", CompareMethod.Text) Then
+                    ia2 = InStr(iia2, OutputBox_GI.Text, ", from", CompareMethod.Text) + 1
+                    ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                End If
+            Else
+                ia2 = ia2 + 1
+            End If
+            If ta2 <> "" Then
+                ELVI.SubItems(3).Text = UCase(Mid(ta2, InStrRev(ta2, " ") + 1))
+            End If
+
+
+
+
+
+
+
+
+
+            '===========================================================================
+            '///////////////////////////// 비디오 프레임 부분
+            '===========================================================================
+
+            If ELVI.SubItems(3).Text = "ASF" Then '원본 ASF 일경우 TBR 탐색
+                '비디오프레임 tbr
+                ia2 = 1
+                iia2 = 0
+                If InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text) Then
+                    iia2 = InStr(ia2, OutputBox_GI.Text, "Video: ", CompareMethod.Text)
+                    If InStr(iia2, OutputBox_GI.Text, " tbr", CompareMethod.Text) Then
+                        ia2 = InStr(iia2, OutputBox_GI.Text, " tbr", CompareMethod.Text) + 1
+                        ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
+                    End If
+                Else
+                    ia2 = ia2 + 1
+                End If
+                If ta2 <> "" Then
+                    ta2 = Mid(ta2, InStrRev(ta2, " ") + 1)
+                    If IsNumeric(ta2) = False Then
+                        ta2 = ""
+                    End If
+                End If
+
+                If ta2 = "" Then '119.88로 가변처리?
+                    ta2 = 119.88
+                End If
+
+                '끝
+                GoTo asf_fps_skip
             End If
 
             '비디오프레임 미디어 인포
@@ -499,27 +557,25 @@ Public Class MainFrm
                     End If
                 End If
             End If
-            If ta2 = "" Then '120으로 처리.?
-                ta2 = 120
+            If ta2 = "" Then '119.88로 가변처리?
+                ta2 = 119.88
             End If
+
+asf_fps_skip:
+
             ELVI.SubItems(12).Text = ELVI.SubItems(12).Text & "," & ta2
 
-            '형식
-            ia2 = 1
-            iia2 = 0
-            ta2 = ""
-            If InStr(ia2, OutputBox_GI.Text, "Input #0, ", CompareMethod.Text) Then
-                iia2 = InStr(ia2, OutputBox_GI.Text, "Input #0, ", CompareMethod.Text)
-                If InStr(iia2, OutputBox_GI.Text, ", from", CompareMethod.Text) Then
-                    ia2 = InStr(iia2, OutputBox_GI.Text, ", from", CompareMethod.Text) + 1
-                    ta2 = Mid(OutputBox_GI.Text, iia2, ia2 - iia2 - 1)
-                End If
-            Else
-                ia2 = ia2 + 1
-            End If
-            If ta2 <> "" Then
-                ELVI.SubItems(3).Text = UCase(Mid(ta2, InStrRev(ta2, " ") + 1))
-            End If
+            '===========================================================================
+            '///////////////////////////// 비디오 프레임 부분
+            '===========================================================================
+
+
+
+
+
+
+
+
 
             '여러스트림 출력(텍스트화) #1
             Dim StreamIO As String = ""
@@ -1448,70 +1504,50 @@ LANG_SKIP:
             Else
                 If EncSetFrm.FramerateCheckBox.Checked = True Then
 
+                    '-----------------------------------------------------------
                     'ASF WMV
                     '3GP 3G2 K3G SKM MP4 MOV
                     'MPEG TS
                     'RM
                     'FLV SWF
                     '가변 보존 못하는 컨테이너, 60프레임으로 제한.
-                    If EncListListView.Items(index).SubItems(3).Text = "ASF" Then 'ASF형식은 예외로 가변 프레임처리
+                    Dim OriginFPS As String = ""
+                    Try
+                        OriginFPS = Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)
+                    Catch ex As Exception
+                        OriginFPS = ""
+                    End Try
+                    If OriginFPS <> "" Then
+                        If Val(OriginFPS) > 60 Then
 
-                        If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
-                        InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
-                            ImageFramerateV = "60 fps"
-                        Else
-                            ImageFramerateV = "120 fps(VFR)"
-                        End If
-
-                    Else
-                        Dim OriginFPS As String = ""
-                        Try
-                            OriginFPS = Split(EncListListView.Items(index).SubItems(12).Text, ",")(1)
-                        Catch ex As Exception
-                            OriginFPS = ""
-                        End Try
-                        If OriginFPS <> "" Then
-                            If Val(OriginFPS) > 60 Then
-
-                                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
-                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
-                                    ImageFramerateV = "60 fps"
-                                Else
-                                    ImageFramerateV = "120 fps(VFR)"
-                                End If
-
+                            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
+                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
+                                ImageFramerateV = "59.94 fps"
                             Else
-
-                                Try
-                                    ImageFramerateV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(1) & " fps"
-                                Catch ex As Exception
-                                End Try
-
+                                ImageFramerateV = "119.88 fps(VFR)"
                             End If
+
+                        Else
+
+                            Try
+                                ImageFramerateV = Split(EncListListView.Items(index).SubItems(12).Text, ",")(1) & " fps"
+                            Catch ex As Exception
+                            End Try
+
                         End If
                     End If
+                    '-----------------------------------------------------------
 
                 Else
 

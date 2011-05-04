@@ -24,13 +24,12 @@ Public Class VideoWindowFrm
     Dim _AviSynthClip As AvisynthWrapper.AviSynthClip = Nothing
     Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
     Dim BitmapV As Bitmap = Nothing
-    Dim BitMapB As Boolean = False
     Public FrameI As Integer = 0
     Dim PLAYVL As Boolean = False
-    Dim GETIMG As Boolean = False
+    Public GETIMG As Boolean = False
     Dim TTIME As String = ""
     Dim RealFrameI As Integer = 0
-
+    Dim FraemT As Boolean = False
     '재생시간추출
     Dim SHV As String = ""
     Dim SMV As String = ""
@@ -56,12 +55,12 @@ Public Class VideoWindowFrm
 
     Private Sub img_cleanup()
         If _AviSynthClip IsNot Nothing Then
-            _AviSynthClip.IDisposable_Dispose()
+            TryCast(_AviSynthClip, IDisposable).Dispose()
             _AviSynthClip = Nothing
         End If
-        If BitmapV IsNot Nothing Then
-            BitmapV.Dispose()
-            BitmapV = Nothing
+        If _AviSynthScriptEnvironment IsNot Nothing Then
+            TryCast(_AviSynthScriptEnvironment, IDisposable).Dispose()
+            _AviSynthScriptEnvironment = Nothing
         End If
     End Sub
 
@@ -93,6 +92,9 @@ Public Class VideoWindowFrm
             AviSynthEditorFrm.PreviewButton.Enabled = True
         End If
 
+        '원위치
+        AviSynthEditorFrm.PtimeB = 0.0
+
         Me.Dispose()
 
     End Sub
@@ -107,17 +109,13 @@ Public Class VideoWindowFrm
         End If
 
         Try
+            If _AviSynthScriptEnvironment Is Nothing Then
+                _AviSynthScriptEnvironment = New AvisynthWrapper.AviSynthScriptEnvironment()
+            End If
             '_AviSynthClip = _AviSynthScriptEnvironment.ParseScript(AviSynthEditorFrm.AVTextBox.Text, AvisynthWrapper.AviSynthColorspace.RGB32)
             '_AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(Mainfrm.ApplicationInfoDirectoryPath & "AVS파일", AvisynthWrapper.AviSynthColorspace.RGB32)
-            If BitMapB = False Then
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
-                BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
-                BitMapB = True
-            Else
-                img_cleanup()
-                _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
-                BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
-            End If
+            _AviSynthClip = _AviSynthScriptEnvironment.OpenScriptFile(FunctionCls.AppInfoDirectoryPath & "\temp\AviSynthScript(" & MainFrm.EncListListView.Items(MainFrm.SelIndex).SubItems(13).Text & ").avs", AvisynthWrapper.AviSynthColorspace.RGB32)
+            BitmapV = New Bitmap(_AviSynthClip.VideoWidth, _AviSynthClip.VideoHeight, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
             VideoPictureBox.Image = BitmapV
             'FrameI 값이 최댓값보다 크면 최댓값으로
             If FrameI > _AviSynthClip.num_frames Then
@@ -130,7 +128,6 @@ Public Class VideoWindowFrm
                 Dim TIMEV As Integer = FPSV * AviSynthEditorFrm.PtimeB
                 If TIMEV >= _AviSynthClip.num_frames Then TIMEV = _AviSynthClip.num_frames
                 GET_IMAGE(TIMEV)
-                AviSynthEditorFrm.PtimeB = 0.0
             Else
                 '0번째 프레임 이미지 얻기
                 GET_IMAGE(FrameI)
@@ -321,7 +318,7 @@ LANG_SKIP:
 
         If InStr(Me.Text, " - Loading...", CompareMethod.Text) <> 0 Then Exit Sub
 
-        '========================================================================================
+        '------------------------------------------------------------
 
         GETIMG = True
 
@@ -343,6 +340,8 @@ LANG_SKIP:
             BitmapV.RotateFlip(RotateFlipType.Rotate180FlipX)
             RealFrameI = frameV
             FrameI = frameV
+            PTime = FrameI / (_AviSynthClip.raten / _AviSynthClip.rated)
+            AviSynthEditorFrm.PtimeB = PTime
         Catch ex As Exception
             MsgBox(ex.Message)
             GETIMG = False
@@ -351,6 +350,7 @@ LANG_SKIP:
         End Try
 
         GETIMG = False
+
 
     End Sub
 
@@ -366,10 +366,9 @@ LANG_SKIP:
         End If
 
         Me.Text = LangCls.VideoWindowFrmV & " - " & _
-        FunctionCls.TIME_TO_HMSMSTIME(FrameI / (_AviSynthClip.raten / _AviSynthClip.rated), True) & " / " & TTIME & _
-        " [ " & FrameI & " / " & VideoTrackBar.Maximum & " ] "
+          FunctionCls.TIME_TO_HMSMSTIME(FrameI / (_AviSynthClip.raten / _AviSynthClip.rated), True) & " / " & TTIME & _
+          " [ " & FrameI & " / " & VideoTrackBar.Maximum & " ] "
 
-        PTime = FrameI / (_AviSynthClip.raten / _AviSynthClip.rated)
         If FrameTimer.Enabled = True Then PLAYVL = True Else PLAYVL = False
 
         'ref관련
@@ -387,7 +386,7 @@ LANG_SKIP:
     End Sub
 
     Private Sub FrameTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FrameTimer.Tick
-
+        FraemT = True
         If Me.CanFocus = False Then Exit Sub
 
         '-----------------------------------------------------
@@ -396,7 +395,7 @@ LANG_SKIP:
             FrameI += 1
         End If
         GET_IMAGE(FrameI)
-
+        FraemT = False
     End Sub
 
 #End Region
@@ -657,33 +656,52 @@ LANG_SKIP:
     Public Sub Ref_SUB()
 
         Dim PLAYVL2 As Boolean = PLAYVL '재생여부저장
+
         Try
+
+            If Me.Text = "Loading..." Then Exit Sub
+
+            '--------------------------
+
             Me.Text = "Loading..."
-            '활성
-            AviSynthEditorFrm.RefButton.Enabled = False
+
+            '재생여부
+            PLAYVL = False
+
             '닫기
             FrameTimer.Enabled = False
             RealtimeTimer.Enabled = False
             img_cleanup()
-            PLAYVL = False
+
+            '활성
+            AviSynthEditorFrm.RefButton.Enabled = False
+            ApplyToolStripMenuItem.Enabled = False
+
             '---------------
+
             '새로고침
             AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
             If AviSynthPP.INDEX_ProcessStopChk = True Then
                 AviSynthPP.INDEX_ProcessStopChk = False
             End If
+
             'SEEKMODE 체크
             If MainFrm.SEEKMODEM1B = True Then Throw New Exception(AviSynthEditorFrm.StatusLabel.Text)
+
             '열기
             GUGAN()
             OPEN_SUB()
+
             '재생여부
             If PLAYVL2 = True Then PlayButton_Click(Nothing, Nothing)
+
         Catch ex As Exception
+
             MsgBox(ex.Message)
             GETIMG = False
             AviSynthEditorFrm.waitbool = False
             Close()
+
         End Try
 
     End Sub

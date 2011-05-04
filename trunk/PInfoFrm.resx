@@ -305,7 +305,7 @@
         RudN65tdA8sHzg46DF645Xrr8m2v29fvrLwzMBQydHc4cnjkLvvu5L2key/vZ9yff7DpIfph4SOpR+WP
         lR7X/aj3Y+uI5ciZUdfRvidBTx6Mscae/5T+04fx/Kfkp+UTqhONk2aTp6fcp24+W/1s/Hnq8/npgp+l
         f65+ofviu18cf+mbWTUz/pL/cuHX4lfyr468Xva6e9Z/9vGb5Dfzc4Vv5d8efcd41/s+7P3EfOYH7IeK
-        j3ofuz55f3q4kLyw8Bv3hPP74uYdwgAAAAlwSFlzAAALDwAACw8BkvkDpQAAJ5VJREFUeF7le3dYlUfe
+        j3ofuz55f3q4kLyw8Bv3hPP74uYdwgAAAAlwSFlzAAALDgAACw4BQL7hQQAAJ5VJREFUeF7le3dYlUfe
         NtlrY4was9nsu8mbvNl3N+4muymfm16Nm9gSo4mxF+xdEBtiBexdSRQFxYINFRWQKiDSe+9dqhQFD3Bo
         hwPnfu/fnHOQZHe/7/3/e67rvuZ55plnZu57fjPzm5lzLABY/P8MC1vbdRZr166xsLe3t3BxcbFwd3e3
         uH072CIuLuHNlNT0vZlZeTnZOaWanLxaTV7RI01+sZZoJzo1BaU6TcG9LoZ6TUEJYQ7l/t7Pnwv5TpBd
@@ -588,6 +588,66 @@
   <data name="&gt;&gt;InfoTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="TextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="TextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 7</value>
+  </data>
+  <data name="TextBox2.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="TextBox2.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TextBox2.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="TextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 203</value>
+  </data>
+  <data name="TextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TextBox2.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBox2.Name" xml:space="preserve">
+    <value>TextBox2</value>
+  </data>
+  <data name="&gt;&gt;TextBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox2.Parent" xml:space="preserve">
+    <value>TranslationTabPage</value>
+  </data>
+  <data name="&gt;&gt;TextBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TranslationTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="TranslationTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 213</value>
+  </data>
+  <data name="TranslationTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TranslationTabPage.Text" xml:space="preserve">
+    <value>번역</value>
+  </data>
+  <data name="&gt;&gt;TranslationTabPage.Name" xml:space="preserve">
+    <value>TranslationTabPage</value>
+  </data>
+  <data name="&gt;&gt;TranslationTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TranslationTabPage.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TranslationTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="TextBox0.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -688,11 +748,6 @@ Xvid
 Licensed under the GPL
 Download source code: http://www.xvid.org
 Homepage: http://www.xvid.org
-
-Pthreads
-Licensed under the LGPL
-Download source code: http://sourceware.org/pthreads-win32/#download
-Homepage: http://sourceware.org/pthreads-win32
 
 Zlib
 Licensed under the zlib license
@@ -810,7 +865,7 @@ Nero AAC Binary(neroAacEnc.exe) is not included in the Kirara Encoder.</value>
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;LicenseTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="TextBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1211,7 +1266,7 @@ Public License instead of this License.</value>
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 34</value>

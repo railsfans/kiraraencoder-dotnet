@@ -162,7 +162,7 @@ Public Class EncodingFrm
                     Dim ITBStart_Int As Integer = InStr(InfoForLogTextBox.Text, "FFmpeg version", CompareMethod.Text)
                     Dim ITBQstop_Int As Integer = InStr(InfoForLogTextBox.Text, "Press [q] to stop encoding", CompareMethod.Text)
                     If ITBStart_Int <> 0 AndAlso ITBQstop_Int <> 0 Then
-        
+
                         Dim ITBV2 As String = Strings.Mid(InfoForLogTextBox.Text, ITBStart_Int)
                         Dim ITBFrameEnd_Int As Integer = InStrRev(ITBV2, "frame=", -1, CompareMethod.Text)
                         Dim ITBSizeEnd_Int As Integer = InStrRev(ITBV2, "size=", -1, CompareMethod.Text)
@@ -571,9 +571,17 @@ Public Class EncodingFrm
                 Dim VIDTEMP As String = MainFrm.EncListListView.Items(EncindexI).SubItems(8).Text
                 VIDTEMP = Replace(Strings.Left(VIDTEMP, InStr(VIDTEMP, ":") - 1), "Stream #", "")
                 If IsNumeric(VIDTEMP) = False Then
+                    '( 시작
                     If InStr(VIDTEMP, "(", CompareMethod.Text) <> 0 Then
                         Try
                             VIDTEMP = Split(VIDTEMP, "(")(0)
+                        Catch ex As Exception
+                        End Try
+                    End If
+                    '[ 시작
+                    If InStr(VIDTEMP, "[", CompareMethod.Text) <> 0 Then
+                        Try
+                            VIDTEMP = Split(VIDTEMP, "[")(0)
                         Catch ex As Exception
                         End Try
                     End If
@@ -1863,63 +1871,43 @@ DelayAudioSkip:
 
                     Else '원본 프레임.
 
+                        '-----------------------------------------------------------
                         'ASF WMV
                         '3GP 3G2 K3G SKM MP4 MOV
                         'MPEG TS
                         'RM
                         'FLV SWF
                         '가변 보존 못하는 컨테이너, 60프레임으로 제한.
-                        If MainFrm.EncListListView.Items(EncindexI).SubItems(3).Text = "ASF" Then 'ASF형식은 예외로 가변 프레임처리
+                        Dim OriginFPS As String = ""
+                        Try
+                            OriginFPS = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
+                        Catch ex As Exception
+                            OriginFPS = ""
+                        End Try
+                        If OriginFPS <> "" Then
+                            If Val(OriginFPS) > 60 Then
 
-                            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
-                            InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
-                                FramerateComboBoxV = " -r 60"
-                            Else
-                                FramerateComboBoxV = " -r 120"
-                            End If
-
-                        Else
-                            Dim OriginFPS As String = ""
-                            Try
-                                OriginFPS = Split(MainFrm.EncListListView.Items(EncindexI).SubItems(12).Text, ",")(1)
-                            Catch ex As Exception
-                                OriginFPS = ""
-                            End Try
-                            If OriginFPS <> "" Then
-                                If Val(OriginFPS) > 60 Then
-
-                                    If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
-                                    InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
-                                        FramerateComboBoxV = " -r 60"
-                                    Else
-                                        FramerateComboBoxV = " -r 120"
-                                    End If
-
+                                If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[ASF]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[WMV]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MPEG]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[TS]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[RM]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[FLV]", CompareMethod.Text) <> 0 OrElse _
+                                InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SWF]", CompareMethod.Text) <> 0 Then
+                                    FramerateComboBoxV = " -r 60000/1001"
+                                Else
+                                    FramerateComboBoxV = " -r 119.88"
                                 End If
+
                             End If
                         End If
+                        '-----------------------------------------------------------
 
                     End If
 

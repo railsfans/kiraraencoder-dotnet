@@ -129,11 +129,6 @@ Public Class AviSynthEditorFrm
         '-------------------------
 
         'VideoWindowFrm.ref_call = True // 창 닫고 새로고침 하는 방식
-        PtimeB = VideoWindowFrm.PTime
-        'acitve
-        VideoWindowFrm.ApplyToolStripMenuItem.Enabled = False
-        RefButton.Enabled = False
-        'run
         waitbool = True '// 그대로 새로고침 하는
         VideoWindowFrm.Ref_SUB() '// 그대로 새로고침 하는
         'PreviewButton_Click(Nothing, Nothing) // 창 닫고 새로고침 하는 방식
@@ -166,6 +161,7 @@ Public Class AviSynthEditorFrm
         End If
         
         Do Until VideoWindowFrm.Visible = False
+            waitbool = False '만약에;; 꼬였다면?!?
             VideoWindowFrm.Close()
         Loop
 

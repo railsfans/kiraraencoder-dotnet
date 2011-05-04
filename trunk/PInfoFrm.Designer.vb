@@ -44,6 +44,8 @@ Partial Class PInfoFrm
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.TranslationTabPage = New System.Windows.Forms.TabPage
+        Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.TabControl1.SuspendLayout()
         Me.InfoTabPage.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -54,12 +56,14 @@ Partial Class PInfoFrm
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.TranslationTabPage.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
         resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Controls.Add(Me.InfoTabPage)
+        Me.TabControl1.Controls.Add(Me.TranslationTabPage)
         Me.TabControl1.Controls.Add(Me.LicenseTabPage)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Name = "TabControl1"
@@ -193,6 +197,20 @@ Partial Class PInfoFrm
         Me.InChkToolStripMenuItem.Name = "InChkToolStripMenuItem"
         resources.ApplyResources(Me.InChkToolStripMenuItem, "InChkToolStripMenuItem")
         '
+        'TranslationTabPage
+        '
+        Me.TranslationTabPage.Controls.Add(Me.TextBox2)
+        resources.ApplyResources(Me.TranslationTabPage, "TranslationTabPage")
+        Me.TranslationTabPage.Name = "TranslationTabPage"
+        Me.TranslationTabPage.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        resources.ApplyResources(Me.TextBox2, "TextBox2")
+        Me.TextBox2.BackColor = System.Drawing.Color.White
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        '
         'PInfoFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -221,6 +239,8 @@ Partial Class PInfoFrm
         Me.Panel2.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.TranslationTabPage.ResumeLayout(False)
+        Me.TranslationTabPage.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -246,4 +266,6 @@ Partial Class PInfoFrm
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents TranslationTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
 End Class

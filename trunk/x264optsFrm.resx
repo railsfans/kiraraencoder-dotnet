@@ -1333,13 +1333,13 @@
     <value>21, 28</value>
   </data>
   <data name="SlowfirstpassCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 18</value>
+    <value>145, 18</value>
   </data>
   <data name="SlowfirstpassCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="SlowfirstpassCheckBox.Text" xml:space="preserve">
-    <value>첫번재 Pass를 느리게</value>
+    <value>첫 번째 Pass를 느리게</value>
   </data>
   <data name="&gt;&gt;SlowfirstpassCheckBox.Name" xml:space="preserve">
     <value>SlowfirstpassCheckBox</value>
@@ -1363,7 +1363,7 @@
     <value>3</value>
   </data>
   <data name="SlowfirstpassGroupBox.Text" xml:space="preserve">
-    <value>첫번째 Pass를 느리게(2Pass)</value>
+    <value>첫 번째 Pass를 느리게(2Pass)</value>
   </data>
   <data name="&gt;&gt;SlowfirstpassGroupBox.Name" xml:space="preserve">
     <value>SlowfirstpassGroupBox</value>
