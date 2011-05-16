@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.05.05]"
+    Public PDATA = "[2011.05.17]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = System.Environment.SystemDirectory & "\avisynth.dll"
@@ -111,9 +111,6 @@ Public Class MainFrm
     Public OldVerCheckBoxAVSIFrmV As Boolean = False
     Public AVSOFFCheckBoxAVSIFrmV As Boolean = False
     Public PriorityComboBoxEncodingFrmV As Integer = 2
-    Public InPRadioButtonV As Boolean = True
-    Public OutPRadioButtonV As Boolean = False
-    Public DebugCheckBoxV As Boolean = False
     Public PreviewModeV As Integer = 2
     Public BackColorPanelV As Color = Color.FromArgb(-16777216)
     Public ImgTextBoxV As String = ""
@@ -959,6 +956,7 @@ asf_fps_skip:
                 If XTR.Name = "MainDeleteERR" Then LangCls.MainDeleteERR = XTR.ReadString
                 If XTR.Name = "MainDeleteERRCap" Then LangCls.MainDeleteERRCap = XTR.ReadString
                 If XTR.Name = "MainAudSelToolStripMenuItem" Then AudSelToolStripMenuItem.Text = XTR.ReadString
+                If XTR.Name = "MainFrmToolsToolStripMenuItem" Then ToolsToolStripMenuItem.Text = XTR.ReadString
 
                 '외부언어//
                 If XTR.Name = "EncSetFrm" Then EncToolStripMenuItem.Text = XTR.ReadString
@@ -3000,9 +2998,6 @@ UAC:
         AVSOFFCheckBoxAVSIFrmV = False
 
         PriorityComboBoxEncodingFrmV = 2
-        InPRadioButtonV = True
-        OutPRadioButtonV = False
-        DebugCheckBoxV = False
         PreviewModeV = 2
 
         BackColorPanelV = Color.FromArgb(-16777216)
@@ -3520,21 +3515,6 @@ RELOAD:
                 If XTR.Name = "PriorityComboBoxEncodingFrmV" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then PriorityComboBoxEncodingFrmV = XTRSTR Else PriorityComboBoxEncodingFrmV = 2
-                End If
-
-                If XTR.Name = "InPRadioButtonV" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then InPRadioButtonV = XTRSTR Else InPRadioButtonV = True
-                End If
-
-                If XTR.Name = "OutPRadioButtonV" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then OutPRadioButtonV = XTRSTR Else OutPRadioButtonV = False
-                End If
-
-                If XTR.Name = "DebugCheckBoxV" Then
-                    Dim XTRSTR As String = XTR.ReadString
-                    If XTRSTR <> "" Then DebugCheckBoxV = XTRSTR Else DebugCheckBoxV = False
                 End If
 
                 If XTR.Name = "PreviewModeV" Then
@@ -5560,18 +5540,6 @@ RELOAD:
             XTWriter.WriteString(PriorityComboBoxEncodingFrmV)
             XTWriter.WriteEndElement()
 
-            XTWriter.WriteStartElement("InPRadioButtonV")
-            XTWriter.WriteString(InPRadioButtonV)
-            XTWriter.WriteEndElement()
-
-            XTWriter.WriteStartElement("OutPRadioButtonV")
-            XTWriter.WriteString(OutPRadioButtonV)
-            XTWriter.WriteEndElement()
-
-            XTWriter.WriteStartElement("DebugCheckBoxV")
-            XTWriter.WriteString(DebugCheckBoxV)
-            XTWriter.WriteEndElement()
-
             XTWriter.WriteStartElement("PreviewModeV")
             XTWriter.WriteString(PreviewModeV)
             XTWriter.WriteEndElement()
@@ -7539,7 +7507,7 @@ RELOAD:
 
         PlayButton.Enabled = False
         Try
-            AviSynthPP.AviSynthPreprocess(SelIndex, True, Nothing, False, True)
+            AviSynthPP.AviSynthPreprocess(SelIndex, True, Nothing, False, True, True, True)
         Catch ex As Exception
             MsgBox(ex.Message)
             PlayButton.Enabled = True
@@ -7854,7 +7822,27 @@ RELOAD:
 
     End Sub
 
-    Private Sub EncListListView_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EncListListView.SelectedIndexChanged
+    Private Sub KiraraPlayerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KiraraPlayerToolStripMenuItem.Click
+        Try
+            Shell(FunctionCls.AppInfoDirectoryPath & "\KiraraPlayer.exe", AppWinStyle.NormalFocus)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
+    Private Sub KiraraMediaInfoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KiraraMediaInfoToolStripMenuItem.Click
+        Try
+            Shell(FunctionCls.AppInfoDirectoryPath & "\KiraraMediaInfo.exe", AppWinStyle.NormalFocus)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub FFmpegVBToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FFmpegVBToolStripMenuItem.Click
+        Try
+            Shell(FunctionCls.AppInfoDirectoryPath & "\FFmpegVB.exe", AppWinStyle.NormalFocus)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

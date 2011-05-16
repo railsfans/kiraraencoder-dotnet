@@ -24,27 +24,22 @@ Partial Class AVSIFrm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AVSIFrm))
         Me.AVSIPanel = New System.Windows.Forms.Panel
-        Me.AVSOFFLabel = New System.Windows.Forms.Label
-        Me.AVSOFFCheckBox = New System.Windows.Forms.CheckBox
-        Me.InstallButton = New System.Windows.Forms.Button
-        Me.RefBTN = New System.Windows.Forms.Button
-        Me.OKBTN = New System.Windows.Forms.Button
+        Me.TabControl1 = New System.Windows.Forms.TabControl
+        Me.TabPage1 = New System.Windows.Forms.TabPage
         Me.IGroupBox = New System.Windows.Forms.GroupBox
         Me.ProductVersionLabel = New System.Windows.Forms.Label
         Me.InfoLabel = New System.Windows.Forms.Label
         Me.FileVersionLabel = New System.Windows.Forms.Label
+        Me.RefBTN = New System.Windows.Forms.Button
+        Me.InstallButton = New System.Windows.Forms.Button
+        Me.AVSOFFLabel = New System.Windows.Forms.Label
         Me.OldVerCheckBox = New System.Windows.Forms.CheckBox
-        Me.TabControl1 = New System.Windows.Forms.TabControl
-        Me.TabPage1 = New System.Windows.Forms.TabPage
-        Me.TabPage2 = New System.Windows.Forms.TabPage
-        Me.HYuvCLabel = New System.Windows.Forms.Label
-        Me.HYuvCInstallButton = New System.Windows.Forms.Button
-        Me.Label2 = New System.Windows.Forms.Label
+        Me.AVSOFFCheckBox = New System.Windows.Forms.CheckBox
+        Me.OKBTN = New System.Windows.Forms.Button
         Me.AVSIPanel.SuspendLayout()
-        Me.IGroupBox.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.IGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'AVSIPanel
@@ -54,35 +49,24 @@ Partial Class AVSIFrm
         resources.ApplyResources(Me.AVSIPanel, "AVSIPanel")
         Me.AVSIPanel.Name = "AVSIPanel"
         '
-        'AVSOFFLabel
+        'TabControl1
         '
-        resources.ApplyResources(Me.AVSOFFLabel, "AVSOFFLabel")
-        Me.AVSOFFLabel.ForeColor = System.Drawing.Color.Green
-        Me.AVSOFFLabel.Name = "AVSOFFLabel"
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
         '
-        'AVSOFFCheckBox
+        'TabPage1
         '
-        resources.ApplyResources(Me.AVSOFFCheckBox, "AVSOFFCheckBox")
-        Me.AVSOFFCheckBox.Name = "AVSOFFCheckBox"
-        Me.AVSOFFCheckBox.UseVisualStyleBackColor = True
-        '
-        'InstallButton
-        '
-        resources.ApplyResources(Me.InstallButton, "InstallButton")
-        Me.InstallButton.Name = "InstallButton"
-        Me.InstallButton.UseVisualStyleBackColor = True
-        '
-        'RefBTN
-        '
-        resources.ApplyResources(Me.RefBTN, "RefBTN")
-        Me.RefBTN.Name = "RefBTN"
-        Me.RefBTN.UseVisualStyleBackColor = True
-        '
-        'OKBTN
-        '
-        resources.ApplyResources(Me.OKBTN, "OKBTN")
-        Me.OKBTN.Name = "OKBTN"
-        Me.OKBTN.UseVisualStyleBackColor = True
+        Me.TabPage1.Controls.Add(Me.IGroupBox)
+        Me.TabPage1.Controls.Add(Me.RefBTN)
+        Me.TabPage1.Controls.Add(Me.InstallButton)
+        Me.TabPage1.Controls.Add(Me.AVSOFFLabel)
+        Me.TabPage1.Controls.Add(Me.OldVerCheckBox)
+        Me.TabPage1.Controls.Add(Me.AVSOFFCheckBox)
+        resources.ApplyResources(Me.TabPage1, "TabPage1")
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'IGroupBox
         '
@@ -108,56 +92,41 @@ Partial Class AVSIFrm
         resources.ApplyResources(Me.FileVersionLabel, "FileVersionLabel")
         Me.FileVersionLabel.Name = "FileVersionLabel"
         '
+        'RefBTN
+        '
+        resources.ApplyResources(Me.RefBTN, "RefBTN")
+        Me.RefBTN.Name = "RefBTN"
+        Me.RefBTN.UseVisualStyleBackColor = True
+        '
+        'InstallButton
+        '
+        resources.ApplyResources(Me.InstallButton, "InstallButton")
+        Me.InstallButton.Name = "InstallButton"
+        Me.InstallButton.UseVisualStyleBackColor = True
+        '
+        'AVSOFFLabel
+        '
+        resources.ApplyResources(Me.AVSOFFLabel, "AVSOFFLabel")
+        Me.AVSOFFLabel.ForeColor = System.Drawing.Color.Green
+        Me.AVSOFFLabel.Name = "AVSOFFLabel"
+        '
         'OldVerCheckBox
         '
         resources.ApplyResources(Me.OldVerCheckBox, "OldVerCheckBox")
         Me.OldVerCheckBox.Name = "OldVerCheckBox"
         Me.OldVerCheckBox.UseVisualStyleBackColor = True
         '
-        'TabControl1
+        'AVSOFFCheckBox
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        resources.ApplyResources(Me.TabControl1, "TabControl1")
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
+        resources.ApplyResources(Me.AVSOFFCheckBox, "AVSOFFCheckBox")
+        Me.AVSOFFCheckBox.Name = "AVSOFFCheckBox"
+        Me.AVSOFFCheckBox.UseVisualStyleBackColor = True
         '
-        'TabPage1
+        'OKBTN
         '
-        Me.TabPage1.Controls.Add(Me.IGroupBox)
-        Me.TabPage1.Controls.Add(Me.RefBTN)
-        Me.TabPage1.Controls.Add(Me.InstallButton)
-        Me.TabPage1.Controls.Add(Me.AVSOFFLabel)
-        Me.TabPage1.Controls.Add(Me.OldVerCheckBox)
-        Me.TabPage1.Controls.Add(Me.AVSOFFCheckBox)
-        resources.ApplyResources(Me.TabPage1, "TabPage1")
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.Label2)
-        Me.TabPage2.Controls.Add(Me.HYuvCInstallButton)
-        Me.TabPage2.Controls.Add(Me.HYuvCLabel)
-        resources.ApplyResources(Me.TabPage2, "TabPage2")
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'HYuvCLabel
-        '
-        resources.ApplyResources(Me.HYuvCLabel, "HYuvCLabel")
-        Me.HYuvCLabel.Name = "HYuvCLabel"
-        '
-        'HYuvCInstallButton
-        '
-        resources.ApplyResources(Me.HYuvCInstallButton, "HYuvCInstallButton")
-        Me.HYuvCInstallButton.Name = "HYuvCInstallButton"
-        Me.HYuvCInstallButton.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        resources.ApplyResources(Me.Label2, "Label2")
-        Me.Label2.Name = "Label2"
+        resources.ApplyResources(Me.OKBTN, "OKBTN")
+        Me.OKBTN.Name = "OKBTN"
+        Me.OKBTN.UseVisualStyleBackColor = True
         '
         'AVSIFrm
         '
@@ -172,13 +141,11 @@ Partial Class AVSIFrm
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.AVSIPanel.ResumeLayout(False)
-        Me.IGroupBox.ResumeLayout(False)
-        Me.IGroupBox.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.IGroupBox.ResumeLayout(False)
+        Me.IGroupBox.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -195,8 +162,4 @@ Partial Class AVSIFrm
     Friend WithEvents AVSOFFLabel As System.Windows.Forms.Label
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents HYuvCInstallButton As System.Windows.Forms.Button
-    Friend WithEvents HYuvCLabel As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

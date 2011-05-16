@@ -1662,6 +1662,8 @@ LANG_SKIP:
 
     Private Sub SetAsp()
 
+        'MPLAYER 멈춤 방지용.
+        Application.DoEvents()
         Dim OriWidthSz As Integer = 0
         Dim OriHeightSz As Integer = 0
         Try

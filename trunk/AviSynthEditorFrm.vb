@@ -92,7 +92,7 @@ Public Class AviSynthEditorFrm
         PreviewButton.Enabled = False
 
         Try
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False, False, False)
         Catch ex As Exception
             MsgBox(ex.Message)
             PreviewButton.Enabled = True
@@ -354,7 +354,7 @@ LANG_SKIP:
             Dim _AviSynthScriptEnvironment As New AvisynthWrapper.AviSynthScriptEnvironment()
             Dim _AviSynthClip As AvisynthWrapper.AviSynthClip
 
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False, False, False)
             If AviSynthPP.INDEX_ProcessStopChk = True Then
                 AviSynthPP.INDEX_ProcessStopChk = False
                 ListenButton.Enabled = True

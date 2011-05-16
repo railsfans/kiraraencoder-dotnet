@@ -48,6 +48,8 @@ Partial Class ConfigFrm
         Me.CancelBTN = New System.Windows.Forms.Button
         Me.DefBTN = New System.Windows.Forms.Button
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
+        Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PreviewGroupBox.SuspendLayout()
         Me.ConfigPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -56,6 +58,7 @@ Partial Class ConfigFrm
         Me.VideoODGroupBox.SuspendLayout()
         Me.MPVolumeGroupBox.SuspendLayout()
         CType(Me.MPVolumeTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PreviewGroupBox
@@ -226,10 +229,22 @@ Partial Class ConfigFrm
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         resources.ApplyResources(Me.OpenFileDialog1, "OpenFileDialog1")
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InChkToolStripMenuItem})
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
+        Me.MenuStrip1.Name = "MenuStrip1"
+        '
+        'InChkToolStripMenuItem
+        '
+        Me.InChkToolStripMenuItem.Name = "InChkToolStripMenuItem"
+        resources.ApplyResources(Me.InChkToolStripMenuItem, "InChkToolStripMenuItem")
+        '
         'ConfigFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.ConfigPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -248,7 +263,10 @@ Partial Class ConfigFrm
         Me.MPVolumeGroupBox.ResumeLayout(False)
         Me.MPVolumeGroupBox.PerformLayout()
         CType(Me.MPVolumeTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents PreviewGroupBox As System.Windows.Forms.GroupBox
@@ -276,4 +294,6 @@ Partial Class ConfigFrm
     Friend WithEvents VideoODComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents MPVolumeLabel As System.Windows.Forms.Label
     Friend WithEvents VideoODLabel As System.Windows.Forms.Label
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents InChkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

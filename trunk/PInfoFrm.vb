@@ -80,8 +80,7 @@ Public Class PInfoFrm
                 If XTR.Name = "PInfoFrmNameLabel" Then NameLabelV = XTR.ReadString
                 If XTR.Name = "PInfoFrmNameLabel2" Then NameLabel2V = XTR.ReadString
                 If XTR.Name = "PInfoFrmVersionLabel" Then VersionLabelV = XTR.ReadString
-                If XTR.Name = "PInfoFrmInChkToolStripMenuItem" Then InChkToolStripMenuItem.Text = XTR.ReadString
-                If XTR.Name = "PInfoFrmTranslationTabPage" Then TranslationTabPage.Text = XTR.ReadString
+                'If XTR.Name = "PInfoFrmTranslationTabPage" Then TranslationTabPage.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -98,13 +97,6 @@ LANG_SKIP:
         VersionLabel.Text = "SVN-r" & _
         My.Application.Info.Version.Build & " " & MainFrm.PDATA
 
-    End Sub
-
-    Private Sub InChkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InChkToolStripMenuItem.Click
-        Try
-            AVSIFrm.ShowDialog(Me)
-        Catch ex As Exception
-        End Try
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked

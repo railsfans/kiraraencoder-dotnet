@@ -96,6 +96,10 @@ Partial Class MainFrm
         Me.LangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.DecSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AviSynthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.KiraraPlayerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.KiraraMediaInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.FFmpegVBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PresetContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -576,7 +580,7 @@ Partial Class MainFrm
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ConfigToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LangToolStripMenuItem, Me.DecSToolStripMenuItem, Me.AviSynthToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ConfigToolStripMenuItem, Me.AboutToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
@@ -595,6 +599,27 @@ Partial Class MainFrm
         '
         Me.AviSynthToolStripMenuItem.Name = "AviSynthToolStripMenuItem"
         resources.ApplyResources(Me.AviSynthToolStripMenuItem, "AviSynthToolStripMenuItem")
+        '
+        'ToolsToolStripMenuItem
+        '
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KiraraPlayerToolStripMenuItem, Me.KiraraMediaInfoToolStripMenuItem, Me.FFmpegVBToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
+        resources.ApplyResources(Me.ToolsToolStripMenuItem, "ToolsToolStripMenuItem")
+        '
+        'KiraraPlayerToolStripMenuItem
+        '
+        Me.KiraraPlayerToolStripMenuItem.Name = "KiraraPlayerToolStripMenuItem"
+        resources.ApplyResources(Me.KiraraPlayerToolStripMenuItem, "KiraraPlayerToolStripMenuItem")
+        '
+        'KiraraMediaInfoToolStripMenuItem
+        '
+        Me.KiraraMediaInfoToolStripMenuItem.Name = "KiraraMediaInfoToolStripMenuItem"
+        resources.ApplyResources(Me.KiraraMediaInfoToolStripMenuItem, "KiraraMediaInfoToolStripMenuItem")
+        '
+        'FFmpegVBToolStripMenuItem
+        '
+        Me.FFmpegVBToolStripMenuItem.Name = "FFmpegVBToolStripMenuItem"
+        resources.ApplyResources(Me.FFmpegVBToolStripMenuItem, "FFmpegVBToolStripMenuItem")
         '
         'ConfigToolStripMenuItem
         '
@@ -1081,5 +1106,9 @@ Partial Class MainFrm
     Friend WithEvents ConfigToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DefPreviewImg As System.Windows.Forms.Panel
     Friend WithEvents AudSelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KiraraPlayerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KiraraMediaInfoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FFmpegVBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

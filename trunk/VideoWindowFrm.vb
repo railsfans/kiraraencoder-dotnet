@@ -680,7 +680,7 @@ LANG_SKIP:
             '---------------
 
             '새로고침
-            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False)
+            AviSynthPP.AviSynthPreprocess(MainFrm.SelIndex, True, Nothing, False, False, False, False)
             If AviSynthPP.INDEX_ProcessStopChk = True Then
                 AviSynthPP.INDEX_ProcessStopChk = False
             End If

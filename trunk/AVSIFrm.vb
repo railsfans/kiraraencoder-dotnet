@@ -84,11 +84,11 @@ Public Class AVSIFrm
                 If XTR.Name = "AVSIFrmRefBTN" Then RefBTN.Text = XTR.ReadString
                 If XTR.Name = "AVSIFrmInstallButton" Then
                     InstallButton.Text = XTR.ReadString
-                    HYuvCInstallButton.Text = InstallButton.Text
+                    'HYuvCInstallButton.Text = InstallButton.Text
                 End If
                 If XTR.Name = "AVSIFrmAVSOFFCheckBox" Then AVSOFFCheckBox.Text = XTR.ReadString
                 If XTR.Name = "AVSIFrmAVSOFFLabel" Then AVSOFFLabel.Text = XTR.ReadString
-                If XTR.Name = "AVSIFrmHYuvCLabel" Then HYuvCLabel.Text = XTR.ReadString
+                'If XTR.Name = "AVSIFrmHYuvCLabel" Then HYuvCLabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -189,18 +189,4 @@ LANG_SKIP:
         End Try
     End Sub
 
-    Private Sub OldVerCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OldVerCheckBox.CheckedChanged
-
-    End Sub
-
-    Private Sub AVSOFFCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AVSOFFCheckBox.CheckedChanged
-
-    End Sub
-
-    Private Sub HYuvCInstallButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HYuvCInstallButton.Click
-        Try
-            Shell("explorer.exe /n, " & FunctionCls.AppInfoDirectoryPath & "\yuvcodecs-1.3.exe", AppWinStyle.NormalFocus)
-        Catch ex As Exception
-        End Try
-    End Sub
 End Class

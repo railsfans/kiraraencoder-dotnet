@@ -72,6 +72,7 @@ Public Class ConfigFrm
                 If XTR.Name = "ConfigFrmVideoODGroupBox" Then VideoODGroupBox.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmMPVolumeGroupBox" Then MPVolumeGroupBox.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmVideoODLabel" Then VideoODLabel.Text = XTR.ReadString
+                If XTR.Name = "ConfigFrmInChkToolStripMenuItem" Then InChkToolStripMenuItem.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -190,4 +191,12 @@ LANG_SKIP:
     Private Sub MPVolumeTrackBar_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles MPVolumeTrackBar.ValueChanged
         MPVolumeLabel.Text = MPVolumeTrackBar.Value & "%"
     End Sub
+
+    Private Sub InChkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InChkToolStripMenuItem.Click
+        Try
+            AVSIFrm.ShowDialog(Me)
+        Catch ex As Exception
+        End Try
+    End Sub
+
 End Class

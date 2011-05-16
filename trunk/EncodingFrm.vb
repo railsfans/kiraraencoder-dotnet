@@ -519,8 +519,6 @@ Public Class EncodingFrm
 
     Private Sub LoadInitialization()
 
-        '== 미리보기 이미지 감춤
-        SnapshotFrm.ImagePP = Nothing
         '== 오브젝트
         OutputBox_EI.Text = ""
         InfoTextBox.Text = ""
@@ -1728,7 +1726,7 @@ DelayAudioSkip:
                     End If
                     'EncToolStripStatusLabel.Text = LangCls.EncodingCreatingD2V or EncodingCreatingFFINDEX // 아래에서
                     Try
-                        AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True, False)
+                        AviSynthPP.AviSynthPreprocess(EncindexI, False, PriorityV, True, False, True, False)
                     Catch ex As Exception
                         MainFrm.EncListListView.Items(EncindexI).SubItems(6).Text = LangCls.MainErrorStr
                         MainFrm.EncListListView.Items(EncindexI).SubItems(7).Text = ex.Message
@@ -2172,8 +2170,6 @@ ENC_STOP:
 
     Private Sub EncExitSub()
 
-        '미리 보기 작업 강제종료
-        SnapshotOff()
         '슬라이드타이머오프
         SlideTimer.Enabled = False
         '캡션타이머오프
@@ -2258,9 +2254,6 @@ ENC_STOP:
         '--------------------
 
         MainFrm.PriorityComboBoxEncodingFrmV = PriorityComboBox.SelectedIndex
-        MainFrm.InPRadioButtonV = InPRadioButton.Checked
-        MainFrm.OutPRadioButtonV = OutPRadioButton.Checked
-        MainFrm.DebugCheckBoxV = DebugCheckBox.Checked
 
         '---------------------
 
@@ -2364,14 +2357,7 @@ ENC_STOP:
                 If XTR.Name = "EncodingFrmForceStopButton" Then ForceStopButton.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmStopButton" Then StopButton.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmShutdownCheckBox" Then ShutdownCheckBox.Text = XTR.ReadString
-                If XTR.Name = "EncodingFrmPreview" Then
-                    PreviewCheckBox.Text = XTR.ReadString
-                    PreviewToolStripMenuItem.Text = PreviewCheckBox.Text
-                    PreviewGroupBox.Text = PreviewToolStripMenuItem.Text
-                End If
-                If XTR.Name = "EncodingFrmInPRadioButton" Then InPRadioButton.Text = XTR.ReadString
-                If XTR.Name = "EncodingFrmOutPRadioButton" Then OutPRadioButton.Text = XTR.ReadString
-                If XTR.Name = "EncodingFrmDebugCheckBox" Then DebugCheckBox.Text = XTR.ReadString
+                If XTR.Name = "EncodingFrmPreview" Then     PreviewCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmLogToolStripMenuItem" Then LogToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmImageToolStripMenuItem" Then ImageToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmLCopyButton" Then LCopyButton.Text = XTR.ReadString
@@ -2407,29 +2393,9 @@ LANG_SKIP:
 
         '설정 불러옴
         PriorityComboBox.SelectedIndex = MainFrm.PriorityComboBoxEncodingFrmV
-        InPRadioButton.Checked = MainFrm.InPRadioButtonV
-        OutPRadioButton.Checked = MainFrm.OutPRadioButtonV
-        DebugCheckBox.Checked = MainFrm.DebugCheckBoxV
 
         '로그
-        If MainFrm.PreviewModeV = 0 Then
-            PreviewCheckBox.Checked = True
-            ImgPanel.Visible = False
-            PInfoTextBox.Visible = False
-            InfoPanel.Visible = False
-            '-- 알림라벨
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
-                If OutPRadioButton.Checked = True Then
-                    AlertLabel.Visible = True
-                End If
-            End If
-            '--
-        ElseIf MainFrm.PreviewModeV = 1 Then
+        If MainFrm.PreviewModeV = 1 Then
             PreviewCheckBox.Checked = False
             ImgPanel.Visible = False
             PInfoTextBox.Visible = True
@@ -2444,7 +2410,7 @@ LANG_SKIP:
         End If
 
         '======================
-        ' 미리보기 이미지
+        ' 인코딩 로그 이미지
         '----------------------
         '이미지
         If My.Computer.FileSystem.FileExists(MainFrm.ImgTextBoxV) = True Then
@@ -2558,11 +2524,6 @@ LANG_SKIP:
                 End If
             Catch ex As Exception
             End Try
-
-            '스냅샷
-            If PreviewCheckBox.Checked = True Then
-                SnapshotOff()
-            End If
         Else
             ResumeThread(ThreadHandle_EI)
             TimeElapsedTimer.Enabled = True
@@ -2576,11 +2537,6 @@ LANG_SKIP:
                 End If
             Catch ex As Exception
             End Try
-
-            '스냅샷
-            If PreviewCheckBox.Checked = True Then
-                SnapshotOn()
-            End If
         End If
     End Sub
 
@@ -2697,123 +2653,11 @@ ScrSkip:
 
     End Sub
 
-#Region "스냅샷 관련"
-
-    Private Sub SnapshotTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SnapshotTimer.Tick
-
-        '대기중일경우 스킵
-        If EncNMStartB = False Then Exit Sub
-        '최소화일경우 스킵
-        If MainFrm.WindowState = FormWindowState.Minimized Then Exit Sub
-        '트레이일경우 스킵
-        If MainFrm.Visible = False Then Exit Sub
-
-        If Not SnapshotPictureBox.Image Is SnapshotFrm.ImagePP Then
-            If PreviewCheckBox.Checked = True Then
-                SnapshotTimer.Enabled = False
-                SnapshotTimer.Enabled = True
-            End If
-        Else
-
-            'Snapshot
-            If SnapshotFrm.ImagePPExitB = True Then
-
-                '종료여부
-                SnapshotFrm.ImagePPExitB = False
-
-                If InPRadioButton.Checked = True Then
-                    '원본
-                    If My.Computer.FileSystem.FileExists(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text) = True Then
-                        SnapshotFrm.SFSTR(MainFrm.EncListListView.Items(EncindexI).SubItems(10).Text, FunctionCls.TIME_TO_HMSMSTIME(StartTime + ProcessTime, True), SnapshotPictureBox.Width, SnapshotPictureBox.Height)
-                    End If
-                Else
-                    '출력
-                    If My.Computer.FileSystem.FileExists(SavePathStr) = True Then
-                        SnapshotFrm.SFSTR(SavePathStr, FunctionCls.TIME_TO_HMSMSTIME(ProcessTime, True), SnapshotPictureBox.Width, SnapshotPictureBox.Height)
-                    End If
-                End If
-
-            Else
-                If PreviewCheckBox.Checked = True Then
-                    SnapshotTimer.Enabled = False
-                    SnapshotTimer.Enabled = True
-                End If
-            End If
-
-        End If
-
-    End Sub
-
-    Private Sub SnapshotOn()
-        SnapshotTimer.Enabled = True
-        SFTimer.Enabled = True
-    End Sub
-
-    Private Sub SnapshotOff()
-        Try
-            If Process.GetProcessById(SnapshotFrm.ProcessID_SF).HasExited = False Then
-                WinAPI.TerminateProcess(SnapshotFrm.ProcessHandle_SF, 0&)
-            End If
-        Catch ex As Exception
-        End Try
-        SnapshotTimer.Enabled = False
-        SFTimer.Enabled = False
-    End Sub
-
-    Private Sub SFTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFTimer.Tick
-        '미리 보기 이미지 새로고침 용도
-        If PreviewCheckBox.Checked = True Then
-            If Not SnapshotPictureBox.Image Is SnapshotFrm.ImagePP Then
-                SnapshotPictureBox.Image = SnapshotFrm.ImagePP
-                DebugLabel.Text = Replace(DebugLabel.Text, "Start", "Finish")
-            ElseIf SnapshotPictureBox.Image Is Nothing Then
-                DebugLabel.Text = Replace(DebugLabel.Text, "Start", "Finish")
-            End If
-        End If
-    End Sub
-
-#End Region
-
     Private Sub PreviewCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewCheckBox.CheckedChanged
 
         '일시정지
         If SuspendB = True Then Exit Sub
 
-        '미리보기
-        If PreviewCheckBox.Checked = True Then
-            SnapshotOn()
-        Else
-            SnapshotOff()
-        End If
-
-    End Sub
-
-    Private Sub DebugCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DebugCheckBox.CheckedChanged
-        If DebugCheckBox.Checked = True Then
-            DebugLabel.Visible = True
-        Else
-            DebugLabel.Visible = False
-        End If
-    End Sub
-
-    Private Sub PreviewToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewToolStripMenuItem.Click
-        MainFrm.PreviewModeV = 0
-        PreviewCheckBox.Checked = True
-        ImgPanel.Visible = False
-        PInfoTextBox.Visible = False
-        InfoPanel.Visible = False
-        '-- 알림라벨
-        If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
-             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
-             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
-             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
-             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
-             InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
-            If OutPRadioButton.Checked = True Then
-                AlertLabel.Visible = True
-            End If
-        End If
-        '--
     End Sub
 
     Private Sub LogToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogToolStripMenuItem.Click
@@ -2847,24 +2691,4 @@ ScrSkip:
 
     End Sub
 
-    Private Sub InPRadioButton_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InPRadioButton.CheckedChanged
-        AlertLabel.Visible = False
-    End Sub
-
-    Private Sub OutPRadioButton_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OutPRadioButton.CheckedChanged
-        If PreviewCheckBox.Checked = True Then
-            '-- 알림라벨
-            If InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3GP]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[3G2]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[K3G]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[SKM]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MP4]", CompareMethod.Text) <> 0 OrElse _
-                 InStr(EncSetFrm.OutFComboBox.SelectedItem, "[MOV]", CompareMethod.Text) <> 0 Then
-                If OutPRadioButton.Checked = True Then
-                    AlertLabel.Visible = True
-                End If
-            End If
-            '--
-        End If
-    End Sub
 End Class

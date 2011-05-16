@@ -73,6 +73,8 @@ Partial Class EncSetFrm
         Me.VFTabPage = New System.Windows.Forms.TabPage
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox
+        Me.FFDeinterlaceCheckBox = New System.Windows.Forms.CheckBox
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.ParityLabel = New System.Windows.Forms.Label
         Me.DeinterlaceParityComboBox = New System.Windows.Forms.ComboBox
@@ -250,8 +252,6 @@ Partial Class EncSetFrm
         Me.DVDDLOrBD98145MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BD23450MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BDDL46900MBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox
-        Me.FFDeinterlaceCheckBox = New System.Windows.Forms.CheckBox
         Me.EncSetPanel.SuspendLayout()
         Me.SettingTabControl.SuspendLayout()
         Me.VideoTabPage.SuspendLayout()
@@ -270,6 +270,7 @@ Partial Class EncSetFrm
         Me.VFTabPage.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.ImagePPGroupBox.SuspendLayout()
@@ -329,7 +330,6 @@ Partial Class EncSetFrm
         Me.SizeLimitGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
         Me.TargetContextMenuStrip.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'EncSetPanel
@@ -690,6 +690,19 @@ Partial Class EncSetFrm
         resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.FFDeinterlaceCheckBox)
+        resources.ApplyResources(Me.GroupBox5, "GroupBox5")
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.TabStop = False
+        '
+        'FFDeinterlaceCheckBox
+        '
+        resources.ApplyResources(Me.FFDeinterlaceCheckBox, "FFDeinterlaceCheckBox")
+        Me.FFDeinterlaceCheckBox.Name = "FFDeinterlaceCheckBox"
+        Me.FFDeinterlaceCheckBox.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -1937,19 +1950,6 @@ Partial Class EncSetFrm
         Me.BDDL46900MBToolStripMenuItem.Name = "BDDL46900MBToolStripMenuItem"
         resources.ApplyResources(Me.BDDL46900MBToolStripMenuItem, "BDDL46900MBToolStripMenuItem")
         '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.FFDeinterlaceCheckBox)
-        resources.ApplyResources(Me.GroupBox5, "GroupBox5")
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.TabStop = False
-        '
-        'FFDeinterlaceCheckBox
-        '
-        resources.ApplyResources(Me.FFDeinterlaceCheckBox, "FFDeinterlaceCheckBox")
-        Me.FFDeinterlaceCheckBox.Name = "FFDeinterlaceCheckBox"
-        Me.FFDeinterlaceCheckBox.UseVisualStyleBackColor = True
-        '
         'EncSetFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -1985,6 +1985,8 @@ Partial Class EncSetFrm
         Me.VFTabPage.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
@@ -2067,8 +2069,6 @@ Partial Class EncSetFrm
         Me.NameGroupBox.ResumeLayout(False)
         Me.NameGroupBox.PerformLayout()
         Me.TargetContextMenuStrip.ResumeLayout(False)
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

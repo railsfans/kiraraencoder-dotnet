@@ -41,7 +41,8 @@ Public Class AviSynthPP
         IDLE_PRIORITY_CLASS = &H40
     End Enum
 
-    Public Shared Sub AviSynthPreprocess(ByVal index As Integer, ByVal ShowModeV As Boolean, ByVal PriorityInt As Integer, ByVal ShowStatus As Boolean, ByVal PrePlayingMode As Boolean)
+    Public Shared Sub AviSynthPreprocess(ByVal index As Integer, ByVal ShowModeV As Boolean, ByVal PriorityInt As Integer, _
+                                         ByVal ShowStatus As Boolean, ByVal PrePlayingMode As Boolean, ByVal SubTitle As Boolean, ByVal KiraraPlayer As Boolean)
 
         Dim SelAudioStreamStr As String = ""
 
@@ -1857,6 +1858,10 @@ DelayAudioSkip2:
             '공통
             '-----------------------
 
+            If SubTitle = False Then
+                AVTextBoxV = Replace(AVTextBoxV, "LoadPlugin(" & Chr(34) & "#<pluginpath>VSFilter.dll" & Chr(34) & ")", "#textsub filter is not used due to avisynth preview error. but it used to kirara player preview or encoding.")
+            End If
+
             '#<pluginpath>
             AVTextBoxV = Replace(AVTextBoxV, "#<pluginpath>", FunctionCls.AppInfoDirectoryPath & "\plugin\")
 
@@ -1952,7 +1957,9 @@ DelayAudioSkip2:
                 AVTextBoxV = Replace(AVTextBoxV, "#<coloryuv_analyze>", ColorYUVASV)
 
                 '#<textsub>
-                AVTextBoxV = Replace(AVTextBoxV, "#<textsub>", TextSubV)
+                If SubTitle = True Then
+                    AVTextBoxV = Replace(AVTextBoxV, "#<textsub>", TextSubV)
+                End If
 
                 '#<sharpen>
                 AVTextBoxV = Replace(AVTextBoxV, "#<sharpen>", "Sharpen(" & ImagePPFrm.SharpenNumericUpDown.Value & ")")
@@ -2237,8 +2244,6 @@ DelayAudioSkip2:
                 AVTextBoxV = Replace(AVTextBoxV, "#<rate>", rateV)
             End If
 
-
-
             '------------------------------------------------------------------------------------------------------------------------
 
             '====================================
@@ -2250,6 +2255,11 @@ DelayAudioSkip2:
                 AVTextBoxV = AVTextBoxV & vbNewLine & vbNewLine & CHTextBoxV
             ElseIf MainFrm.EncListListView.Items(index).SubItems(8).Text <> "None" AndAlso MainFrm.EncListListView.Items(index).SubItems(9).Text <> "None" Then '비디오 + 오디오
                 AVTextBoxV = AVTextBoxV & vbNewLine & vbNewLine & CHTextBoxV
+            End If
+
+            '키라라 플레이어 미리보기일경우 RGB에다가 PCM16
+            If KiraraPlayer = True Then
+                AVTextBoxV = AVTextBoxV & vbNewLine & vbNewLine & "ConvertToRGB() # KIRARA PLAYER ONLY"
             End If
 
             'ScriptTextBox 추가

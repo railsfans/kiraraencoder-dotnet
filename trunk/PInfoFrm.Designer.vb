@@ -42,10 +42,6 @@ Partial Class PInfoFrm
         Me.PPanel = New System.Windows.Forms.Panel
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.Panel2 = New System.Windows.Forms.Panel
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
-        Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.TranslationTabPage = New System.Windows.Forms.TabPage
-        Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.TabControl1.SuspendLayout()
         Me.InfoTabPage.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -55,15 +51,12 @@ Partial Class PInfoFrm
         Me.PPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        Me.TranslationTabPage.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
         resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Controls.Add(Me.InfoTabPage)
-        Me.TabControl1.Controls.Add(Me.TranslationTabPage)
         Me.TabControl1.Controls.Add(Me.LicenseTabPage)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Name = "TabControl1"
@@ -186,38 +179,11 @@ Partial Class PInfoFrm
         resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InChkToolStripMenuItem})
-        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
-        Me.MenuStrip1.Name = "MenuStrip1"
-        '
-        'InChkToolStripMenuItem
-        '
-        Me.InChkToolStripMenuItem.Name = "InChkToolStripMenuItem"
-        resources.ApplyResources(Me.InChkToolStripMenuItem, "InChkToolStripMenuItem")
-        '
-        'TranslationTabPage
-        '
-        Me.TranslationTabPage.Controls.Add(Me.TextBox2)
-        resources.ApplyResources(Me.TranslationTabPage, "TranslationTabPage")
-        Me.TranslationTabPage.Name = "TranslationTabPage"
-        Me.TranslationTabPage.UseVisualStyleBackColor = True
-        '
-        'TextBox2
-        '
-        resources.ApplyResources(Me.TextBox2, "TextBox2")
-        Me.TextBox2.BackColor = System.Drawing.Color.White
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        '
         'PInfoFrm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.PPanel)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "PInfoFrm"
@@ -237,12 +203,7 @@ Partial Class PInfoFrm
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.TranslationTabPage.ResumeLayout(False)
-        Me.TranslationTabPage.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
@@ -255,8 +216,6 @@ Partial Class PInfoFrm
     Friend WithEvents TextBox0 As System.Windows.Forms.TextBox
     Friend WithEvents PPanel As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents InChkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents OKBTN As System.Windows.Forms.Button
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
@@ -266,6 +225,4 @@ Partial Class PInfoFrm
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents TranslationTabPage As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
 End Class

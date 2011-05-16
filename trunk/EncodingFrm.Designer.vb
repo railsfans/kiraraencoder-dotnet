@@ -45,6 +45,7 @@ Partial Class EncodingFrm
         Me.PositionDurationLabel = New System.Windows.Forms.Label
         Me.LogStr = New System.Windows.Forms.Label
         Me.EncPanel = New System.Windows.Forms.Panel
+        Me.InfoForLogTextBox = New System.Windows.Forms.TextBox
         Me.ImgPanel = New System.Windows.Forms.Panel
         Me.InfoPanel = New System.Windows.Forms.Panel
         Me.PInfoTextBox = New System.Windows.Forms.TextBox
@@ -53,13 +54,8 @@ Partial Class EncodingFrm
         Me.AlertLabel = New System.Windows.Forms.Label
         Me.LCopyButton = New System.Windows.Forms.Button
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
-        Me.PreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.LogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PreviewGroupBox = New System.Windows.Forms.GroupBox
-        Me.DebugCheckBox = New System.Windows.Forms.CheckBox
-        Me.OutPRadioButton = New System.Windows.Forms.RadioButton
-        Me.InPRadioButton = New System.Windows.Forms.RadioButton
         Me.PreviewCheckBox = New System.Windows.Forms.CheckBox
         Me.PriorityGroupBox = New System.Windows.Forms.GroupBox
         Me.PriorityComboBox = New System.Windows.Forms.ComboBox
@@ -72,22 +68,18 @@ Partial Class EncodingFrm
         Me.PCNTToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
         Me.SuspendResumeButton = New System.Windows.Forms.Button
         Me.ForceStopButton = New System.Windows.Forms.Button
-        Me.SnapshotPictureBox = New System.Windows.Forms.PictureBox
         Me.TimeElapsedTimer = New System.Windows.Forms.Timer(Me.components)
         Me.CapTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SnapshotTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SFTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SlideTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.InfoForLogTextBox = New System.Windows.Forms.TextBox
         Me.GroupBox1.SuspendLayout()
         Me.EncPanel.SuspendLayout()
         Me.InfoPanel.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.PreviewGroupBox.SuspendLayout()
         Me.PriorityGroupBox.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
-        CType(Me.SnapshotPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OutputBox_EI
@@ -215,7 +207,6 @@ Partial Class EncodingFrm
         Me.EncPanel.Controls.Add(Me.MenuStrip1)
         Me.EncPanel.Controls.Add(Me.InfoTextBox)
         Me.EncPanel.Controls.Add(Me.OutputBox_EI)
-        Me.EncPanel.Controls.Add(Me.PreviewGroupBox)
         Me.EncPanel.Controls.Add(Me.PreviewCheckBox)
         Me.EncPanel.Controls.Add(Me.PriorityGroupBox)
         Me.EncPanel.Controls.Add(Me.GroupBox3)
@@ -225,9 +216,15 @@ Partial Class EncodingFrm
         Me.EncPanel.Controls.Add(Me.ForceStopButton)
         Me.EncPanel.Controls.Add(Me.GroupBox1)
         Me.EncPanel.Controls.Add(Me.StopButton)
-        Me.EncPanel.Controls.Add(Me.SnapshotPictureBox)
         resources.ApplyResources(Me.EncPanel, "EncPanel")
         Me.EncPanel.Name = "EncPanel"
+        '
+        'InfoForLogTextBox
+        '
+        Me.InfoForLogTextBox.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.InfoForLogTextBox, "InfoForLogTextBox")
+        Me.InfoForLogTextBox.Name = "InfoForLogTextBox"
+        Me.InfoForLogTextBox.ReadOnly = True
         '
         'ImgPanel
         '
@@ -274,14 +271,9 @@ Partial Class EncodingFrm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreviewToolStripMenuItem, Me.LogToolStripMenuItem, Me.ImageToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogToolStripMenuItem, Me.ImageToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
-        '
-        'PreviewToolStripMenuItem
-        '
-        Me.PreviewToolStripMenuItem.Name = "PreviewToolStripMenuItem"
-        resources.ApplyResources(Me.PreviewToolStripMenuItem, "PreviewToolStripMenuItem")
         '
         'LogToolStripMenuItem
         '
@@ -292,35 +284,6 @@ Partial Class EncodingFrm
         '
         Me.ImageToolStripMenuItem.Name = "ImageToolStripMenuItem"
         resources.ApplyResources(Me.ImageToolStripMenuItem, "ImageToolStripMenuItem")
-        '
-        'PreviewGroupBox
-        '
-        Me.PreviewGroupBox.Controls.Add(Me.DebugCheckBox)
-        Me.PreviewGroupBox.Controls.Add(Me.OutPRadioButton)
-        Me.PreviewGroupBox.Controls.Add(Me.InPRadioButton)
-        resources.ApplyResources(Me.PreviewGroupBox, "PreviewGroupBox")
-        Me.PreviewGroupBox.Name = "PreviewGroupBox"
-        Me.PreviewGroupBox.TabStop = False
-        '
-        'DebugCheckBox
-        '
-        resources.ApplyResources(Me.DebugCheckBox, "DebugCheckBox")
-        Me.DebugCheckBox.Name = "DebugCheckBox"
-        Me.DebugCheckBox.UseVisualStyleBackColor = True
-        '
-        'OutPRadioButton
-        '
-        resources.ApplyResources(Me.OutPRadioButton, "OutPRadioButton")
-        Me.OutPRadioButton.Name = "OutPRadioButton"
-        Me.OutPRadioButton.TabStop = True
-        Me.OutPRadioButton.UseVisualStyleBackColor = True
-        '
-        'InPRadioButton
-        '
-        resources.ApplyResources(Me.InPRadioButton, "InPRadioButton")
-        Me.InPRadioButton.Name = "InPRadioButton"
-        Me.InPRadioButton.TabStop = True
-        Me.InPRadioButton.UseVisualStyleBackColor = True
         '
         'PreviewCheckBox
         '
@@ -404,15 +367,6 @@ Partial Class EncodingFrm
         Me.ForceStopButton.Name = "ForceStopButton"
         Me.ForceStopButton.UseVisualStyleBackColor = True
         '
-        'SnapshotPictureBox
-        '
-        Me.SnapshotPictureBox.BackColor = System.Drawing.Color.DarkGray
-        Me.SnapshotPictureBox.ErrorImage = Nothing
-        resources.ApplyResources(Me.SnapshotPictureBox, "SnapshotPictureBox")
-        Me.SnapshotPictureBox.InitialImage = Nothing
-        Me.SnapshotPictureBox.Name = "SnapshotPictureBox"
-        Me.SnapshotPictureBox.TabStop = False
-        '
         'TimeElapsedTimer
         '
         Me.TimeElapsedTimer.Interval = 1000
@@ -432,13 +386,6 @@ Partial Class EncodingFrm
         '
         Me.SlideTimer.Interval = 50
         '
-        'InfoForLogTextBox
-        '
-        Me.InfoForLogTextBox.BackColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.InfoForLogTextBox, "InfoForLogTextBox")
-        Me.InfoForLogTextBox.Name = "InfoForLogTextBox"
-        Me.InfoForLogTextBox.ReadOnly = True
-        '
         'EncodingFrm
         '
         resources.ApplyResources(Me, "$this")
@@ -457,13 +404,10 @@ Partial Class EncodingFrm
         Me.InfoPanel.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.PreviewGroupBox.ResumeLayout(False)
-        Me.PreviewGroupBox.PerformLayout()
         Me.PriorityGroupBox.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        CType(Me.SnapshotPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -497,17 +441,12 @@ Partial Class EncodingFrm
     Friend WithEvents CapTimer As System.Windows.Forms.Timer
     Friend WithEvents EncToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents SnapshotTimer As System.Windows.Forms.Timer
-    Friend WithEvents SnapshotPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents ProgressBar As System.Windows.Forms.ToolStripProgressBar
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents PriorityGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents PreviewCheckBox As System.Windows.Forms.CheckBox
-    Friend WithEvents PreviewGroupBox As System.Windows.Forms.GroupBox
-    Friend WithEvents OutPRadioButton As System.Windows.Forms.RadioButton
-    Friend WithEvents InPRadioButton As System.Windows.Forms.RadioButton
     Friend WithEvents SFTimer As System.Windows.Forms.Timer
     Friend WithEvents DebugLabel As System.Windows.Forms.Label
-    Friend WithEvents DebugCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents InfoPanel As System.Windows.Forms.Panel
     Friend WithEvents FileNameLabel As System.Windows.Forms.Label
     Friend WithEvents SlideTimer As System.Windows.Forms.Timer
@@ -516,7 +455,6 @@ Partial Class EncodingFrm
     Friend WithEvents PCNTToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ImgPanel As System.Windows.Forms.Panel
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents PreviewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LogToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ImageToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LCopyButton As System.Windows.Forms.Button

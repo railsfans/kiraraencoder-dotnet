@@ -117,246 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>AVSIPanel</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Name" xml:space="preserve">
-    <value>OKBTN</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Parent" xml:space="preserve">
-    <value>AVSIPanel</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AVSIPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="AVSIPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="AVSIPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>565, 332</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AVSIPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AVSIPanel.Name" xml:space="preserve">
-    <value>AVSIPanel</value>
-  </data>
-  <data name="&gt;&gt;AVSIPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSIPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;AVSIPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AVSOFFLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AVSOFFLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 159</value>
-  </data>
-  <data name="AVSOFFLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 14</value>
-  </data>
-  <data name="AVSOFFLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="AVSOFFLabel.Text" xml:space="preserve">
-    <value>프로그램 정보 -&gt; 설치 확인에서 이 창을 다시 볼 수 있습니다.</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFLabel.Name" xml:space="preserve">
-    <value>AVSOFFLabel</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFLabel.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="AVSOFFCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AVSOFFCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 135</value>
-  </data>
-  <data name="AVSOFFCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 18</value>
-  </data>
-  <data name="AVSOFFCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="AVSOFFCheckBox.Text" xml:space="preserve">
-    <value>AviSynth를 사용하지 않음</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFCheckBox.Name" xml:space="preserve">
-    <value>AVSOFFCheckBox</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFCheckBox.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFCheckBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="InstallButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 209</value>
-  </data>
-  <data name="InstallButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 25</value>
-  </data>
-  <data name="InstallButton.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="InstallButton.Text" xml:space="preserve">
-    <value>설치하기</value>
-  </data>
-  <data name="&gt;&gt;InstallButton.Name" xml:space="preserve">
-    <value>InstallButton</value>
-  </data>
-  <data name="&gt;&gt;InstallButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InstallButton.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;InstallButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="RefBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 209</value>
-  </data>
-  <data name="RefBTN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 25</value>
-  </data>
-  <data name="RefBTN.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="RefBTN.Text" xml:space="preserve">
-    <value>새로 고침</value>
-  </data>
-  <data name="&gt;&gt;RefBTN.Name" xml:space="preserve">
-    <value>RefBTN</value>
-  </data>
-  <data name="&gt;&gt;RefBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RefBTN.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;RefBTN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>437, 294</value>
-  </data>
-  <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 25</value>
-  </data>
-  <data name="OKBTN.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="OKBTN.Text" xml:space="preserve">
-    <value>확인</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Name" xml:space="preserve">
-    <value>OKBTN</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.Parent" xml:space="preserve">
-    <value>AVSIPanel</value>
-  </data>
-  <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ProductVersionLabel.Name" xml:space="preserve">
-    <value>ProductVersionLabel</value>
-  </data>
-  <data name="&gt;&gt;ProductVersionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ProductVersionLabel.Parent" xml:space="preserve">
-    <value>IGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ProductVersionLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;InfoLabel.Name" xml:space="preserve">
-    <value>InfoLabel</value>
-  </data>
-  <data name="&gt;&gt;InfoLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InfoLabel.Parent" xml:space="preserve">
-    <value>IGroupBox</value>
-  </data>
-  <data name="&gt;&gt;InfoLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;FileVersionLabel.Name" xml:space="preserve">
-    <value>FileVersionLabel</value>
-  </data>
-  <data name="&gt;&gt;FileVersionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileVersionLabel.Parent" xml:space="preserve">
-    <value>IGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FileVersionLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="IGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 15</value>
-  </data>
-  <data name="IGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 110</value>
-  </data>
-  <data name="IGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="IGroupBox.Text" xml:space="preserve">
-    <value>파일버전 2.5.8.5 버전 이상 필요</value>
-  </data>
-  <data name="&gt;&gt;IGroupBox.Name" xml:space="preserve">
-    <value>IGroupBox</value>
-  </data>
-  <data name="&gt;&gt;IGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;IGroupBox.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;IGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ProductVersionLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ProductVersionLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 58</value>
   </data>
@@ -435,6 +200,105 @@
   <data name="&gt;&gt;FileVersionLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="IGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="IGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 110</value>
+  </data>
+  <data name="IGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="IGroupBox.Text" xml:space="preserve">
+    <value>파일버전 2.5.8.5 버전 이상 필요</value>
+  </data>
+  <data name="&gt;&gt;IGroupBox.Name" xml:space="preserve">
+    <value>IGroupBox</value>
+  </data>
+  <data name="&gt;&gt;IGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IGroupBox.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;IGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RefBTN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 209</value>
+  </data>
+  <data name="RefBTN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 25</value>
+  </data>
+  <data name="RefBTN.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="RefBTN.Text" xml:space="preserve">
+    <value>새로 고침</value>
+  </data>
+  <data name="&gt;&gt;RefBTN.Name" xml:space="preserve">
+    <value>RefBTN</value>
+  </data>
+  <data name="&gt;&gt;RefBTN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RefBTN.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;RefBTN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="InstallButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 209</value>
+  </data>
+  <data name="InstallButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 25</value>
+  </data>
+  <data name="InstallButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="InstallButton.Text" xml:space="preserve">
+    <value>설치하기</value>
+  </data>
+  <data name="&gt;&gt;InstallButton.Name" xml:space="preserve">
+    <value>InstallButton</value>
+  </data>
+  <data name="&gt;&gt;InstallButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InstallButton.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;InstallButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AVSOFFLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AVSOFFLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 159</value>
+  </data>
+  <data name="AVSOFFLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 14</value>
+  </data>
+  <data name="AVSOFFLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="AVSOFFLabel.Text" xml:space="preserve">
+    <value>환경 설정 -&gt; 설치 확인에서 이 창을 다시 볼 수 있습니다.</value>
+  </data>
+  <data name="&gt;&gt;AVSOFFLabel.Name" xml:space="preserve">
+    <value>AVSOFFLabel</value>
+  </data>
+  <data name="&gt;&gt;AVSOFFLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVSOFFLabel.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;AVSOFFLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="OldVerCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -462,110 +326,20 @@
   <data name="&gt;&gt;OldVerCheckBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
-    <value>TabPage1</value>
+  <data name="AVSOFFCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="AVSOFFCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 135</value>
   </data>
-  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
-    <value>TabControl1</value>
+  <data name="AVSOFFCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 18</value>
   </data>
-  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="AVSOFFCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="&gt;&gt;TabPage2.Name" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;TabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPage2.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 276</value>
-  </data>
-  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>AVSIPanel</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;IGroupBox.Name" xml:space="preserve">
-    <value>IGroupBox</value>
-  </data>
-  <data name="&gt;&gt;IGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;IGroupBox.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;IGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RefBTN.Name" xml:space="preserve">
-    <value>RefBTN</value>
-  </data>
-  <data name="&gt;&gt;RefBTN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RefBTN.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;RefBTN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;InstallButton.Name" xml:space="preserve">
-    <value>InstallButton</value>
-  </data>
-  <data name="&gt;&gt;InstallButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InstallButton.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;InstallButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFLabel.Name" xml:space="preserve">
-    <value>AVSOFFLabel</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFLabel.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;AVSOFFLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;OldVerCheckBox.Name" xml:space="preserve">
-    <value>OldVerCheckBox</value>
-  </data>
-  <data name="&gt;&gt;OldVerCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OldVerCheckBox.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;OldVerCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="AVSOFFCheckBox.Text" xml:space="preserve">
+    <value>AviSynth를 사용하지 않음</value>
   </data>
   <data name="&gt;&gt;AVSOFFCheckBox.Name" xml:space="preserve">
     <value>AVSOFFCheckBox</value>
@@ -582,6 +356,7 @@
   <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -606,152 +381,73 @@
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 11</value>
   </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 276</value>
   </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;HYuvCInstallButton.Name" xml:space="preserve">
-    <value>HYuvCInstallButton</value>
-  </data>
-  <data name="&gt;&gt;HYuvCInstallButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HYuvCInstallButton.Parent" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;HYuvCInstallButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;HYuvCLabel.Name" xml:space="preserve">
-    <value>HYuvCLabel</value>
-  </data>
-  <data name="&gt;&gt;HYuvCLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HYuvCLabel.Parent" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;HYuvCLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="TabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>531, 249</value>
-  </data>
-  <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TabPage2.Text" xml:space="preserve">
-    <value>Helix YUV Codecs</value>
-  </data>
-  <data name="&gt;&gt;TabPage2.Name" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;TabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPage2.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="HYuvCLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 69</value>
-  </data>
-  <data name="HYuvCLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 132</value>
-  </data>
-  <data name="HYuvCLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="HYuvCLabel.Text" xml:space="preserve">
-    <value>* 설치를 안 해도 인코딩시 문제가 없습니다.
-
-* 키라라 플레이어 미리보기 용도로만 사용되는 코덱입니다.
-
-* 해당 코덱이 없으면 키라라 플레이어 미리보기시 검은 화면만 나오게 됩니다.</value>
-  </data>
-  <data name="&gt;&gt;HYuvCLabel.Name" xml:space="preserve">
-    <value>HYuvCLabel</value>
-  </data>
-  <data name="&gt;&gt;HYuvCLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HYuvCLabel.Parent" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;HYuvCLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="HYuvCInstallButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="HYuvCInstallButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 209</value>
-  </data>
-  <data name="HYuvCInstallButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 25</value>
-  </data>
-  <data name="HYuvCInstallButton.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="HYuvCInstallButton.Text" xml:space="preserve">
-    <value>설치하기</value>
-  </data>
-  <data name="&gt;&gt;HYuvCInstallButton.Name" xml:space="preserve">
-    <value>HYuvCInstallButton</value>
-  </data>
-  <data name="&gt;&gt;HYuvCInstallButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HYuvCInstallButton.Parent" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;HYuvCInstallButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 14pt</value>
-  </data>
-  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 23</value>
-  </data>
-  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 23</value>
-  </data>
-  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>Helix YUV Codecs for Kirara Player</value>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
   </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>AVSIPanel</value>
   </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>TabPage2</value>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+  <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>437, 294</value>
+  </data>
+  <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 25</value>
+  </data>
+  <data name="OKBTN.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="OKBTN.Text" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="&gt;&gt;OKBTN.Name" xml:space="preserve">
+    <value>OKBTN</value>
+  </data>
+  <data name="&gt;&gt;OKBTN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OKBTN.Parent" xml:space="preserve">
+    <value>AVSIPanel</value>
+  </data>
+  <data name="&gt;&gt;OKBTN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AVSIPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AVSIPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="AVSIPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>565, 332</value>
+  </data>
+  <data name="AVSIPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AVSIPanel.Name" xml:space="preserve">
+    <value>AVSIPanel</value>
+  </data>
+  <data name="&gt;&gt;AVSIPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AVSIPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AVSIPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
