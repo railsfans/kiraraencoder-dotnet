@@ -142,7 +142,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;imgXButton.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;imgXButton.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -178,7 +178,7 @@
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ModeComboBox.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;ModeComboBox.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -208,7 +208,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ModeLabel.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;ModeLabel.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -235,7 +235,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ImgButton.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;ImgButton.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -256,7 +256,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ImgTextBox.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;ImgTextBox.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -286,7 +286,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ImgLabel.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;ImgLabel.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -307,7 +307,7 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BackColorPanel.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;BackColorPanel.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -334,7 +334,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BackColorLabel.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;BackColorLabel.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -343,7 +343,7 @@
     <value>14, 21</value>
   </data>
   <data name="PreviewImgPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 202</value>
+    <value>402, 202</value>
   </data>
   <data name="PreviewImgPanel.TabIndex" type="System.Int32, mscorlib">
     <value>69</value>
@@ -355,40 +355,40 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PreviewImgPanel.Parent" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+    <value>ImgGroupBox</value>
   </data>
   <data name="&gt;&gt;PreviewImgPanel.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="PreviewGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ImgGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 10</value>
   </data>
-  <data name="PreviewGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>390, 360</value>
+  <data name="ImgGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>430, 360</value>
   </data>
-  <data name="PreviewGroupBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="ImgGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="PreviewGroupBox.Text" xml:space="preserve">
-    <value>인코딩 로그 이미지(360x200)</value>
+  <data name="ImgGroupBox.Text" xml:space="preserve">
+    <value>인코딩 로그 이미지</value>
   </data>
-  <data name="&gt;&gt;PreviewGroupBox.Name" xml:space="preserve">
-    <value>PreviewGroupBox</value>
+  <data name="&gt;&gt;ImgGroupBox.Name" xml:space="preserve">
+    <value>ImgGroupBox</value>
   </data>
-  <data name="&gt;&gt;PreviewGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;ImgGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PreviewGroupBox.Parent" xml:space="preserve">
-    <value>PreviewTabPage</value>
+  <data name="&gt;&gt;ImgGroupBox.Parent" xml:space="preserve">
+    <value>EncFrmTabPage</value>
   </data>
-  <data name="&gt;&gt;PreviewGroupBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ImgGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="OKBTN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="OKBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 446</value>
+    <value>257, 446</value>
   </data>
   <data name="OKBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -414,31 +414,31 @@
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="PreviewTabPage.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EncFrmTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
   </data>
-  <data name="PreviewTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="EncFrmTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="PreviewTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 376</value>
+  <data name="EncFrmTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>446, 376</value>
   </data>
-  <data name="PreviewTabPage.TabIndex" type="System.Int32, mscorlib">
+  <data name="EncFrmTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="PreviewTabPage.Text" xml:space="preserve">
-    <value>인코딩 로그 이미지</value>
+  <data name="EncFrmTabPage.Text" xml:space="preserve">
+    <value>인코딩 폼</value>
   </data>
-  <data name="&gt;&gt;PreviewTabPage.Name" xml:space="preserve">
-    <value>PreviewTabPage</value>
+  <data name="&gt;&gt;EncFrmTabPage.Name" xml:space="preserve">
+    <value>EncFrmTabPage</value>
   </data>
-  <data name="&gt;&gt;PreviewTabPage.Type" xml:space="preserve">
+  <data name="&gt;&gt;EncFrmTabPage.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PreviewTabPage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EncFrmTabPage.Parent" xml:space="preserve">
     <value>TabControl1</value>
   </data>
-  <data name="&gt;&gt;PreviewTabPage.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EncFrmTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="VideoODLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -496,7 +496,7 @@
     <value>19, 31</value>
   </data>
   <data name="VideoODComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 22</value>
+    <value>391, 22</value>
   </data>
   <data name="VideoODComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -517,7 +517,7 @@
     <value>6, 10</value>
   </data>
   <data name="VideoODGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 88</value>
+    <value>430, 88</value>
   </data>
   <data name="VideoODGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -568,7 +568,7 @@
     <value>16, 32</value>
   </data>
   <data name="MPVolumeTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 45</value>
+    <value>394, 45</value>
   </data>
   <data name="MPVolumeTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -589,7 +589,7 @@
     <value>6, 108</value>
   </data>
   <data name="MPVolumeGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 116</value>
+    <value>430, 116</value>
   </data>
   <data name="MPVolumeGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -616,7 +616,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 376</value>
+    <value>446, 376</value>
   </data>
   <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -640,7 +640,7 @@
     <value>12, 36</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 403</value>
+    <value>454, 403</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>74</value>
@@ -661,7 +661,7 @@
     <value>NoControl</value>
   </data>
   <data name="CancelBTN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 446</value>
+    <value>363, 446</value>
   </data>
   <data name="CancelBTN.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -718,7 +718,7 @@
     <value>0, 0</value>
   </data>
   <data name="ConfigPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 484</value>
+    <value>479, 484</value>
   </data>
   <data name="ConfigPanel.TabIndex" type="System.Int32, mscorlib">
     <value>73</value>
@@ -754,7 +754,7 @@
     <value>0, 0</value>
   </data>
   <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 24</value>
+    <value>479, 24</value>
   </data>
   <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>74</value>
@@ -781,7 +781,7 @@
     <value>7, 14</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>445, 484</value>
+    <value>479, 484</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

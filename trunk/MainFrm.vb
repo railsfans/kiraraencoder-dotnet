@@ -26,7 +26,7 @@ Imports System.Xml
 Public Class MainFrm
 
     '배포일
-    Public PDATA = "[2011.05.17]"
+    Public PDATA = "[2011.05.18]"
 
     'AviSynthDLL 위치
     Public PubAVSPATHStr As String = System.Environment.SystemDirectory & "\avisynth.dll"
@@ -117,6 +117,8 @@ Public Class MainFrm
     Public ModeComboBoxV As String = "Center"
     Public MPVolumeTrackBarV As Integer = 100
     Public VideoODComboBoxV As String = "Direct3D 9 Renderer"
+    Public EncodingFrmW As Integer = 624
+    Public EncodingFrmH As Integer = 520
 
     '설정
     Dim MainWidth As String = ""
@@ -3006,6 +3008,9 @@ UAC:
         MPVolumeTrackBarV = 100
         VideoODComboBoxV = "Direct3D 9 Renderer"
 
+        EncodingFrmW = 624
+        EncodingFrmH = 520
+
         LangToolStripMenuItemV = "Auto-select"
 
     End Sub
@@ -3545,6 +3550,16 @@ RELOAD:
                 If XTR.Name = "VideoODComboBoxV" Then
                     Dim XTRSTR As String = XTR.ReadString
                     If XTRSTR <> "" Then VideoODComboBoxV = XTRSTR Else VideoODComboBoxV = "Direct3D 9 Renderer"
+                End If
+
+                If XTR.Name = "EncodingFrmW" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then EncodingFrmW = XTRSTR Else EncodingFrmW = 624
+                End If
+
+                If XTR.Name = "EncodingFrmH" Then
+                    Dim XTRSTR As String = XTR.ReadString
+                    If XTRSTR <> "" Then EncodingFrmH = XTRSTR Else EncodingFrmH = 520
                 End If
 
                 If XTR.Name = "LangToolStripMenuItemV" Then
@@ -5562,6 +5577,14 @@ RELOAD:
 
             XTWriter.WriteStartElement("VideoODComboBoxV")
             XTWriter.WriteString(VideoODComboBoxV)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("EncodingFrmW")
+            XTWriter.WriteString(EncodingFrmW)
+            XTWriter.WriteEndElement()
+
+            XTWriter.WriteStartElement("EncodingFrmH")
+            XTWriter.WriteString(EncodingFrmH)
             XTWriter.WriteEndElement()
 
             XTWriter.WriteStartElement("LangToolStripMenuItemV")

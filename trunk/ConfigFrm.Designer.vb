@@ -23,7 +23,7 @@ Partial Class ConfigFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ConfigFrm))
-        Me.PreviewGroupBox = New System.Windows.Forms.GroupBox
+        Me.ImgGroupBox = New System.Windows.Forms.GroupBox
         Me.imgXButton = New System.Windows.Forms.Button
         Me.ModeComboBox = New System.Windows.Forms.ComboBox
         Me.ModeLabel = New System.Windows.Forms.Label
@@ -37,7 +37,7 @@ Partial Class ConfigFrm
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog
         Me.ConfigPanel = New System.Windows.Forms.Panel
         Me.TabControl1 = New System.Windows.Forms.TabControl
-        Me.PreviewTabPage = New System.Windows.Forms.TabPage
+        Me.EncFrmTabPage = New System.Windows.Forms.TabPage
         Me.TabPage2 = New System.Windows.Forms.TabPage
         Me.VideoODGroupBox = New System.Windows.Forms.GroupBox
         Me.VideoODLabel = New System.Windows.Forms.Label
@@ -50,10 +50,10 @@ Partial Class ConfigFrm
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.InChkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PreviewGroupBox.SuspendLayout()
+        Me.ImgGroupBox.SuspendLayout()
         Me.ConfigPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.PreviewTabPage.SuspendLayout()
+        Me.EncFrmTabPage.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.VideoODGroupBox.SuspendLayout()
         Me.MPVolumeGroupBox.SuspendLayout()
@@ -61,20 +61,20 @@ Partial Class ConfigFrm
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'PreviewGroupBox
+        'ImgGroupBox
         '
-        Me.PreviewGroupBox.Controls.Add(Me.imgXButton)
-        Me.PreviewGroupBox.Controls.Add(Me.ModeComboBox)
-        Me.PreviewGroupBox.Controls.Add(Me.ModeLabel)
-        Me.PreviewGroupBox.Controls.Add(Me.ImgButton)
-        Me.PreviewGroupBox.Controls.Add(Me.ImgTextBox)
-        Me.PreviewGroupBox.Controls.Add(Me.ImgLabel)
-        Me.PreviewGroupBox.Controls.Add(Me.BackColorPanel)
-        Me.PreviewGroupBox.Controls.Add(Me.BackColorLabel)
-        Me.PreviewGroupBox.Controls.Add(Me.PreviewImgPanel)
-        resources.ApplyResources(Me.PreviewGroupBox, "PreviewGroupBox")
-        Me.PreviewGroupBox.Name = "PreviewGroupBox"
-        Me.PreviewGroupBox.TabStop = False
+        Me.ImgGroupBox.Controls.Add(Me.imgXButton)
+        Me.ImgGroupBox.Controls.Add(Me.ModeComboBox)
+        Me.ImgGroupBox.Controls.Add(Me.ModeLabel)
+        Me.ImgGroupBox.Controls.Add(Me.ImgButton)
+        Me.ImgGroupBox.Controls.Add(Me.ImgTextBox)
+        Me.ImgGroupBox.Controls.Add(Me.ImgLabel)
+        Me.ImgGroupBox.Controls.Add(Me.BackColorPanel)
+        Me.ImgGroupBox.Controls.Add(Me.BackColorLabel)
+        Me.ImgGroupBox.Controls.Add(Me.PreviewImgPanel)
+        resources.ApplyResources(Me.ImgGroupBox, "ImgGroupBox")
+        Me.ImgGroupBox.Name = "ImgGroupBox"
+        Me.ImgGroupBox.TabStop = False
         '
         'imgXButton
         '
@@ -147,18 +147,18 @@ Partial Class ConfigFrm
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.PreviewTabPage)
+        Me.TabControl1.Controls.Add(Me.EncFrmTabPage)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         '
-        'PreviewTabPage
+        'EncFrmTabPage
         '
-        Me.PreviewTabPage.Controls.Add(Me.PreviewGroupBox)
-        resources.ApplyResources(Me.PreviewTabPage, "PreviewTabPage")
-        Me.PreviewTabPage.Name = "PreviewTabPage"
-        Me.PreviewTabPage.UseVisualStyleBackColor = True
+        Me.EncFrmTabPage.Controls.Add(Me.ImgGroupBox)
+        resources.ApplyResources(Me.EncFrmTabPage, "EncFrmTabPage")
+        Me.EncFrmTabPage.Name = "EncFrmTabPage"
+        Me.EncFrmTabPage.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -252,11 +252,11 @@ Partial Class ConfigFrm
         Me.Name = "ConfigFrm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.PreviewGroupBox.ResumeLayout(False)
-        Me.PreviewGroupBox.PerformLayout()
+        Me.ImgGroupBox.ResumeLayout(False)
+        Me.ImgGroupBox.PerformLayout()
         Me.ConfigPanel.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
-        Me.PreviewTabPage.ResumeLayout(False)
+        Me.EncFrmTabPage.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.VideoODGroupBox.ResumeLayout(False)
         Me.VideoODGroupBox.PerformLayout()
@@ -269,7 +269,7 @@ Partial Class ConfigFrm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PreviewGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents ImgGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents BackColorLabel As System.Windows.Forms.Label
     Friend WithEvents PreviewImgPanel As System.Windows.Forms.Panel
     Friend WithEvents ImgLabel As System.Windows.Forms.Label
@@ -286,7 +286,7 @@ Partial Class ConfigFrm
     Friend WithEvents imgXButton As System.Windows.Forms.Button
     Friend WithEvents DefBTN As System.Windows.Forms.Button
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents PreviewTabPage As System.Windows.Forms.TabPage
+    Friend WithEvents EncFrmTabPage As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents MPVolumeGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents MPVolumeTrackBar As System.Windows.Forms.TrackBar

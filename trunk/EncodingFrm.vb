@@ -2254,6 +2254,8 @@ ENC_STOP:
         '--------------------
 
         MainFrm.PriorityComboBoxEncodingFrmV = PriorityComboBox.SelectedIndex
+        MainFrm.EncodingFrmW = Me.Width
+        MainFrm.EncodingFrmH = Me.Height
 
         '---------------------
 
@@ -2357,11 +2359,9 @@ ENC_STOP:
                 If XTR.Name = "EncodingFrmForceStopButton" Then ForceStopButton.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmStopButton" Then StopButton.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmShutdownCheckBox" Then ShutdownCheckBox.Text = XTR.ReadString
-                If XTR.Name = "EncodingFrmPreview" Then     PreviewCheckBox.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmLogToolStripMenuItem" Then LogToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmImageToolStripMenuItem" Then ImageToolStripMenuItem.Text = XTR.ReadString
                 If XTR.Name = "EncodingFrmLCopyButton" Then LCopyButton.Text = XTR.ReadString
-                If XTR.Name = "EncodingFrmAlertLabel" Then AlertLabel.Text = XTR.ReadString
 
             Loop
         Catch ex As Exception
@@ -2393,20 +2393,18 @@ LANG_SKIP:
 
         '설정 불러옴
         PriorityComboBox.SelectedIndex = MainFrm.PriorityComboBoxEncodingFrmV
+        Me.Width = MainFrm.EncodingFrmW
+        Me.Height = MainFrm.EncodingFrmH
+        Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2
+        Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) / 2
 
         '로그
         If MainFrm.PreviewModeV = 1 Then
-            PreviewCheckBox.Checked = False
             ImgPanel.Visible = False
             PInfoTextBox.Visible = True
-            InfoPanel.Visible = True
-            AlertLabel.Visible = False
         Else
-            PreviewCheckBox.Checked = False
             ImgPanel.Visible = True
             PInfoTextBox.Visible = False
-            InfoPanel.Visible = True
-            AlertLabel.Visible = False
         End If
 
         '======================
@@ -2451,6 +2449,10 @@ LANG_SKIP:
 
         '명령어 받기
         EncSetFrm.GETFFCMD()
+
+    End Sub
+
+    Private Sub EncodingFrm_LocationChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.LocationChanged
 
     End Sub
 
@@ -2649,33 +2651,23 @@ LANG_SKIP:
 
             End If
 ScrSkip:
+        Else
+            WaitCnt = 0
+            FileNameLabel.Left = 10
         End If
-
-    End Sub
-
-    Private Sub PreviewCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PreviewCheckBox.CheckedChanged
-
-        '일시정지
-        If SuspendB = True Then Exit Sub
 
     End Sub
 
     Private Sub LogToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogToolStripMenuItem.Click
         MainFrm.PreviewModeV = 1
-        PreviewCheckBox.Checked = False
         ImgPanel.Visible = False
         PInfoTextBox.Visible = True
-        InfoPanel.Visible = True
-        AlertLabel.Visible = False
     End Sub
 
     Private Sub ImageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImageToolStripMenuItem.Click
         MainFrm.PreviewModeV = 2
-        PreviewCheckBox.Checked = False
         ImgPanel.Visible = True
         PInfoTextBox.Visible = False
-        InfoPanel.Visible = True
-        AlertLabel.Visible = False
     End Sub
 
     Private Sub LCopyButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LCopyButton.Click
@@ -2685,10 +2677,6 @@ ScrSkip:
             End If
         Catch ex As Exception
         End Try
-    End Sub
-
-    Private Sub ShutdownCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownCheckBox.CheckedChanged
-
     End Sub
 
 End Class

@@ -45,29 +45,32 @@ Partial Class EncodingFrm
         Me.PositionDurationLabel = New System.Windows.Forms.Label
         Me.LogStr = New System.Windows.Forms.Label
         Me.EncPanel = New System.Windows.Forms.Panel
-        Me.InfoForLogTextBox = New System.Windows.Forms.TextBox
-        Me.ImgPanel = New System.Windows.Forms.Panel
-        Me.InfoPanel = New System.Windows.Forms.Panel
-        Me.PInfoTextBox = New System.Windows.Forms.TextBox
-        Me.FileNameLabel = New System.Windows.Forms.Label
-        Me.DebugLabel = New System.Windows.Forms.Label
-        Me.AlertLabel = New System.Windows.Forms.Label
+        Me.Panel4 = New System.Windows.Forms.Panel
+        Me.ShutdownCheckBox = New System.Windows.Forms.CheckBox
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox
+        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.PriorityGroupBox = New System.Windows.Forms.GroupBox
+        Me.PriorityComboBox = New System.Windows.Forms.ComboBox
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.ForceStopButton = New System.Windows.Forms.Button
         Me.LCopyButton = New System.Windows.Forms.Button
+        Me.SuspendResumeButton = New System.Windows.Forms.Button
+        Me.InfoForLogTextBox = New System.Windows.Forms.TextBox
+        Me.DebugLabel = New System.Windows.Forms.Label
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.LogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PreviewCheckBox = New System.Windows.Forms.CheckBox
-        Me.PriorityGroupBox = New System.Windows.Forms.GroupBox
-        Me.PriorityComboBox = New System.Windows.Forms.ComboBox
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.ShutdownCheckBox = New System.Windows.Forms.CheckBox
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
         Me.EncToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
         Me.CPUToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
         Me.ProgressBar = New System.Windows.Forms.ToolStripProgressBar
         Me.PCNTToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
-        Me.SuspendResumeButton = New System.Windows.Forms.Button
-        Me.ForceStopButton = New System.Windows.Forms.Button
+        Me.ImgPanel = New System.Windows.Forms.Panel
+        Me.InfoPanel = New System.Windows.Forms.Panel
+        Me.PInfoTextBox = New System.Windows.Forms.TextBox
+        Me.Panel5 = New System.Windows.Forms.Panel
+        Me.FileNameLabel = New System.Windows.Forms.Label
         Me.TimeElapsedTimer = New System.Windows.Forms.Timer(Me.components)
         Me.CapTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SnapshotTimer = New System.Windows.Forms.Timer(Me.components)
@@ -75,11 +78,16 @@ Partial Class EncodingFrm
         Me.SlideTimer = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.EncPanel.SuspendLayout()
-        Me.InfoPanel.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        Me.PriorityGroupBox.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.PriorityGroupBox.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        Me.InfoPanel.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'OutputBox_EI
@@ -93,7 +101,7 @@ Partial Class EncodingFrm
         '
         resources.ApplyResources(Me.StopButton, "StopButton")
         Me.StopButton.Name = "StopButton"
-        Me.StopButton.UseVisualStyleBackColor = True
+        Me.StopButton.UseVisualStyleBackColor = False
         '
         'IndexTimer
         '
@@ -198,26 +206,100 @@ Partial Class EncodingFrm
         '
         'EncPanel
         '
+        Me.EncPanel.Controls.Add(Me.Panel4)
+        Me.EncPanel.Controls.Add(Me.Panel3)
+        Me.EncPanel.Controls.Add(Me.Panel1)
         Me.EncPanel.Controls.Add(Me.InfoForLogTextBox)
-        Me.EncPanel.Controls.Add(Me.ImgPanel)
-        Me.EncPanel.Controls.Add(Me.InfoPanel)
         Me.EncPanel.Controls.Add(Me.DebugLabel)
-        Me.EncPanel.Controls.Add(Me.AlertLabel)
-        Me.EncPanel.Controls.Add(Me.LCopyButton)
         Me.EncPanel.Controls.Add(Me.MenuStrip1)
         Me.EncPanel.Controls.Add(Me.InfoTextBox)
         Me.EncPanel.Controls.Add(Me.OutputBox_EI)
-        Me.EncPanel.Controls.Add(Me.PreviewCheckBox)
-        Me.EncPanel.Controls.Add(Me.PriorityGroupBox)
-        Me.EncPanel.Controls.Add(Me.GroupBox3)
-        Me.EncPanel.Controls.Add(Me.ShutdownCheckBox)
         Me.EncPanel.Controls.Add(Me.StatusStrip1)
-        Me.EncPanel.Controls.Add(Me.SuspendResumeButton)
-        Me.EncPanel.Controls.Add(Me.ForceStopButton)
-        Me.EncPanel.Controls.Add(Me.GroupBox1)
-        Me.EncPanel.Controls.Add(Me.StopButton)
+        Me.EncPanel.Controls.Add(Me.ImgPanel)
+        Me.EncPanel.Controls.Add(Me.InfoPanel)
         resources.ApplyResources(Me.EncPanel, "EncPanel")
         Me.EncPanel.Name = "EncPanel"
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.ShutdownCheckBox)
+        Me.Panel4.Controls.Add(Me.GroupBox3)
+        resources.ApplyResources(Me.Panel4, "Panel4")
+        Me.Panel4.Name = "Panel4"
+        '
+        'ShutdownCheckBox
+        '
+        resources.ApplyResources(Me.ShutdownCheckBox, "ShutdownCheckBox")
+        Me.ShutdownCheckBox.Name = "ShutdownCheckBox"
+        Me.ShutdownCheckBox.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
+        Me.GroupBox3.Controls.Add(Me.PositionDurationTXTLabel)
+        Me.GroupBox3.Controls.Add(Me.TimeRemainingTXTLabel)
+        Me.GroupBox3.Controls.Add(Me.PositionDurationLabel)
+        Me.GroupBox3.Controls.Add(Me.FilesizeTXTLabel)
+        Me.GroupBox3.Controls.Add(Me.TimeRemainingLabel)
+        Me.GroupBox3.Controls.Add(Me.FilesizeLabel)
+        Me.GroupBox3.Controls.Add(Me.TimeElapsedLabel)
+        Me.GroupBox3.Controls.Add(Me.TimeElapsedTXTLabel)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.TabStop = False
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.GroupBox1)
+        Me.Panel3.Controls.Add(Me.PriorityGroupBox)
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
+        '
+        'PriorityGroupBox
+        '
+        Me.PriorityGroupBox.Controls.Add(Me.PriorityComboBox)
+        resources.ApplyResources(Me.PriorityGroupBox, "PriorityGroupBox")
+        Me.PriorityGroupBox.Name = "PriorityGroupBox"
+        Me.PriorityGroupBox.TabStop = False
+        '
+        'PriorityComboBox
+        '
+        Me.PriorityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.PriorityComboBox.FormattingEnabled = True
+        resources.ApplyResources(Me.PriorityComboBox, "PriorityComboBox")
+        Me.PriorityComboBox.Name = "PriorityComboBox"
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.LCopyButton)
+        Me.Panel1.Controls.Add(Me.SuspendResumeButton)
+        resources.ApplyResources(Me.Panel1, "Panel1")
+        Me.Panel1.Name = "Panel1"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.StopButton)
+        Me.Panel2.Controls.Add(Me.ForceStopButton)
+        resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.Name = "Panel2"
+        '
+        'ForceStopButton
+        '
+        resources.ApplyResources(Me.ForceStopButton, "ForceStopButton")
+        Me.ForceStopButton.Name = "ForceStopButton"
+        Me.ForceStopButton.UseVisualStyleBackColor = False
+        '
+        'LCopyButton
+        '
+        resources.ApplyResources(Me.LCopyButton, "LCopyButton")
+        Me.LCopyButton.Name = "LCopyButton"
+        Me.LCopyButton.UseVisualStyleBackColor = False
+        '
+        'SuspendResumeButton
+        '
+        resources.ApplyResources(Me.SuspendResumeButton, "SuspendResumeButton")
+        Me.SuspendResumeButton.Name = "SuspendResumeButton"
+        Me.SuspendResumeButton.UseVisualStyleBackColor = False
         '
         'InfoForLogTextBox
         '
@@ -226,48 +308,10 @@ Partial Class EncodingFrm
         Me.InfoForLogTextBox.Name = "InfoForLogTextBox"
         Me.InfoForLogTextBox.ReadOnly = True
         '
-        'ImgPanel
-        '
-        Me.ImgPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        resources.ApplyResources(Me.ImgPanel, "ImgPanel")
-        Me.ImgPanel.Name = "ImgPanel"
-        '
-        'InfoPanel
-        '
-        Me.InfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.InfoPanel.Controls.Add(Me.PInfoTextBox)
-        Me.InfoPanel.Controls.Add(Me.FileNameLabel)
-        resources.ApplyResources(Me.InfoPanel, "InfoPanel")
-        Me.InfoPanel.Name = "InfoPanel"
-        '
-        'PInfoTextBox
-        '
-        Me.PInfoTextBox.BackColor = System.Drawing.Color.White
-        Me.PInfoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        resources.ApplyResources(Me.PInfoTextBox, "PInfoTextBox")
-        Me.PInfoTextBox.Name = "PInfoTextBox"
-        Me.PInfoTextBox.ReadOnly = True
-        '
-        'FileNameLabel
-        '
-        resources.ApplyResources(Me.FileNameLabel, "FileNameLabel")
-        Me.FileNameLabel.Name = "FileNameLabel"
-        '
         'DebugLabel
         '
         resources.ApplyResources(Me.DebugLabel, "DebugLabel")
         Me.DebugLabel.Name = "DebugLabel"
-        '
-        'AlertLabel
-        '
-        resources.ApplyResources(Me.AlertLabel, "AlertLabel")
-        Me.AlertLabel.Name = "AlertLabel"
-        '
-        'LCopyButton
-        '
-        resources.ApplyResources(Me.LCopyButton, "LCopyButton")
-        Me.LCopyButton.Name = "LCopyButton"
-        Me.LCopyButton.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -285,52 +329,11 @@ Partial Class EncodingFrm
         Me.ImageToolStripMenuItem.Name = "ImageToolStripMenuItem"
         resources.ApplyResources(Me.ImageToolStripMenuItem, "ImageToolStripMenuItem")
         '
-        'PreviewCheckBox
-        '
-        resources.ApplyResources(Me.PreviewCheckBox, "PreviewCheckBox")
-        Me.PreviewCheckBox.Name = "PreviewCheckBox"
-        Me.PreviewCheckBox.UseVisualStyleBackColor = True
-        '
-        'PriorityGroupBox
-        '
-        Me.PriorityGroupBox.Controls.Add(Me.PriorityComboBox)
-        resources.ApplyResources(Me.PriorityGroupBox, "PriorityGroupBox")
-        Me.PriorityGroupBox.Name = "PriorityGroupBox"
-        Me.PriorityGroupBox.TabStop = False
-        '
-        'PriorityComboBox
-        '
-        Me.PriorityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.PriorityComboBox.FormattingEnabled = True
-        resources.ApplyResources(Me.PriorityComboBox, "PriorityComboBox")
-        Me.PriorityComboBox.Name = "PriorityComboBox"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.PositionDurationTXTLabel)
-        Me.GroupBox3.Controls.Add(Me.TimeRemainingTXTLabel)
-        Me.GroupBox3.Controls.Add(Me.PositionDurationLabel)
-        Me.GroupBox3.Controls.Add(Me.FilesizeTXTLabel)
-        Me.GroupBox3.Controls.Add(Me.TimeRemainingLabel)
-        Me.GroupBox3.Controls.Add(Me.FilesizeLabel)
-        Me.GroupBox3.Controls.Add(Me.TimeElapsedLabel)
-        Me.GroupBox3.Controls.Add(Me.TimeElapsedTXTLabel)
-        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.TabStop = False
-        '
-        'ShutdownCheckBox
-        '
-        resources.ApplyResources(Me.ShutdownCheckBox, "ShutdownCheckBox")
-        Me.ShutdownCheckBox.Name = "ShutdownCheckBox"
-        Me.ShutdownCheckBox.UseVisualStyleBackColor = True
-        '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EncToolStripStatusLabel, Me.CPUToolStripStatusLabel, Me.ProgressBar, Me.PCNTToolStripStatusLabel})
         resources.ApplyResources(Me.StatusStrip1, "StatusStrip1")
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.SizingGrip = False
         '
         'EncToolStripStatusLabel
         '
@@ -355,17 +358,38 @@ Partial Class EncodingFrm
         resources.ApplyResources(Me.PCNTToolStripStatusLabel, "PCNTToolStripStatusLabel")
         Me.PCNTToolStripStatusLabel.Name = "PCNTToolStripStatusLabel"
         '
-        'SuspendResumeButton
+        'ImgPanel
         '
-        resources.ApplyResources(Me.SuspendResumeButton, "SuspendResumeButton")
-        Me.SuspendResumeButton.Name = "SuspendResumeButton"
-        Me.SuspendResumeButton.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.ImgPanel, "ImgPanel")
+        Me.ImgPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ImgPanel.Name = "ImgPanel"
         '
-        'ForceStopButton
+        'InfoPanel
         '
-        resources.ApplyResources(Me.ForceStopButton, "ForceStopButton")
-        Me.ForceStopButton.Name = "ForceStopButton"
-        Me.ForceStopButton.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.InfoPanel, "InfoPanel")
+        Me.InfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.InfoPanel.Controls.Add(Me.PInfoTextBox)
+        Me.InfoPanel.Controls.Add(Me.Panel5)
+        Me.InfoPanel.Name = "InfoPanel"
+        '
+        'PInfoTextBox
+        '
+        Me.PInfoTextBox.BackColor = System.Drawing.Color.White
+        Me.PInfoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.PInfoTextBox, "PInfoTextBox")
+        Me.PInfoTextBox.Name = "PInfoTextBox"
+        Me.PInfoTextBox.ReadOnly = True
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.FileNameLabel)
+        resources.ApplyResources(Me.Panel5, "Panel5")
+        Me.Panel5.Name = "Panel5"
+        '
+        'FileNameLabel
+        '
+        resources.ApplyResources(Me.FileNameLabel, "FileNameLabel")
+        Me.FileNameLabel.Name = "FileNameLabel"
         '
         'TimeElapsedTimer
         '
@@ -392,7 +416,6 @@ Partial Class EncodingFrm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.EncPanel)
         Me.Controls.Add(Me.LogStr)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "EncodingFrm"
         Me.ShowIcon = False
@@ -400,14 +423,21 @@ Partial Class EncodingFrm
         Me.GroupBox1.ResumeLayout(False)
         Me.EncPanel.ResumeLayout(False)
         Me.EncPanel.PerformLayout()
-        Me.InfoPanel.ResumeLayout(False)
-        Me.InfoPanel.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.PriorityGroupBox.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.PriorityGroupBox.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        Me.InfoPanel.ResumeLayout(False)
+        Me.InfoPanel.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -444,7 +474,6 @@ Partial Class EncodingFrm
     Friend WithEvents ProgressBar As System.Windows.Forms.ToolStripProgressBar
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents PriorityGroupBox As System.Windows.Forms.GroupBox
-    Friend WithEvents PreviewCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents SFTimer As System.Windows.Forms.Timer
     Friend WithEvents DebugLabel As System.Windows.Forms.Label
     Friend WithEvents InfoPanel As System.Windows.Forms.Panel
@@ -458,6 +487,10 @@ Partial Class EncodingFrm
     Friend WithEvents LogToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ImageToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LCopyButton As System.Windows.Forms.Button
-    Friend WithEvents AlertLabel As System.Windows.Forms.Label
     Friend WithEvents InfoForLogTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
 End Class

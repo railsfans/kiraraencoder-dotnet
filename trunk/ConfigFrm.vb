@@ -64,8 +64,8 @@ Public Class ConfigFrm
                 If XTR.Name = "DefBTN" Then DefBTN.Text = XTR.ReadString
 
                 If XTR.Name = "ConfigFrm" Then Me.Text = XTR.ReadString
-                If XTR.Name = "ConfigFrmPreviewTabPage" Then PreviewTabPage.Text = XTR.ReadString
-                If XTR.Name = "ConfigFrmPreviewGroupBox" Then PreviewGroupBox.Text = XTR.ReadString
+                If XTR.Name = "ConfigFrmEncFrmTabPage" Then EncFrmTabPage.Text = XTR.ReadString
+                If XTR.Name = "ConfigFrmImgGroupBox" Then ImgGroupBox.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmBackColorLabel" Then BackColorLabel.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmImgLabel" Then ImgLabel.Text = XTR.ReadString
                 If XTR.Name = "ConfigFrmModeLabel" Then ModeLabel.Text = XTR.ReadString

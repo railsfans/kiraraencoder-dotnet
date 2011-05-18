@@ -235,7 +235,7 @@
     <value>True</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 91</value>
+    <value>10, 102</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 14</value>
@@ -261,8 +261,8 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCwAA
-        CwsBbQSEtwAAJ5hJREFUeF7le3dclUfaNslvY4was9nsu8mbvMm7G3eT3ZTPTe9xE1tiNDH2gr0LYkOs
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCgAA
+        CwoBv0NmUwAAJ5hJREFUeF7le3dclUfaNslvY4was9nsu8mbvMm7G3eT3ZTPTe9xE1tiNDH2gr0LYkOs
         gL0riaKgWLChogJSBUR6771LlaLgAQ7tcOBc33XPOQdJdvd73/+/5/e7mOeZZ56Zua65Z+aemcNjACz+
         v75sbddarFmz2sLe3t7CxcXFwt3d3eLWrWCLuLiEN1NS0/dkZuXlZOeUanLyajV5RQ81+cVaop3o1BSU
         6jQFd7sY6jUFJYQ5lPu7v3wu5DtBdkGrJiahQnPZ847mpyPumrPuVzT5+UWa7u5uTU+PQdPR0anR6To1
@@ -435,7 +435,7 @@
 </value>
   </data>
   <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 14</value>
+    <value>20, 21</value>
   </data>
   <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 64</value>
@@ -465,7 +465,7 @@
     <value>True</value>
   </data>
   <data name="VersionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 36</value>
+    <value>102, 43</value>
   </data>
   <data name="VersionLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 14</value>
@@ -495,7 +495,7 @@
     <value>True</value>
   </data>
   <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 14</value>
+    <value>102, 21</value>
   </data>
   <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 14</value>
@@ -1161,7 +1161,7 @@ Public License instead of this License.</value>
     <value>2</value>
   </data>
   <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 12</value>
+    <value>10, 14</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>470, 237</value>
